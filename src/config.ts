@@ -18,7 +18,7 @@ export const DEFAULTS: Config = {
   startUrl: START_URL,
   continueButtons: ['Продолжить', 'Дальше', 'Понятно', 'Поехали', 'Начать урок'],
   nextButtons: ['Следующий урок', 'К следующему уроку'],
-  questionSelector: 'form.quiz:not(:has(.quiz-form-choice_display-logic_quiz))',
+  questionSelector: '.quiz:not(:has(.quiz-form-choice_display-logic_quiz))',
   successSelector: '[data-testid="quiz-success"]',
   failureSelector: '[data-testid="quiz-error"]',
   submitButtons: ['Проверить', 'Ответить', 'Узнать ответ'], retryButtons: ['Попробовать ещё раз', 'Попробовать еще раз'],

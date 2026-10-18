@@ -4,7 +4,7 @@ import { createInterface } from 'node:readline/promises';
 const command = process.argv[2] ?? 'help';
 async function main(): Promise<void> {
   if (command === 'help') {
-    console.log('Команды: login, inspect, explore, run, projects'); return;
+    console.log('Команды: login, inspect, explore, run, projects, status'); return;
   }
   if (command === 'login' || command === 'inspect') {
     const context = await openBrowser(command !== 'login' && !process.argv.includes('--headed'));
@@ -30,6 +30,9 @@ async function main(): Promise<void> {
   }
   if (command === 'projects') {
     const { projectCommand } = await import('./projects.js'); await projectCommand(process.argv.slice(3)); return;
+  }
+  if (command === 'status') {
+    const { status } = await import('./status.js'); await status(); return;
   }
   throw new Error(`Неизвестная команда: ${command}`);
 }

@@ -91,6 +91,20 @@ test('Тренажёр оценивается по статусу проверк
     assert.equal(await trainerOutcome(page), 'wrong');
   } finally { await page.close(); }
 });
+test('Сопоставление считается принятым только после проверки всех строк', async () => {
+  const page = await browser.newPage();
+  try {
+    await page.setContent(`<section class="quiz quiz_answered"><section class="quiz-form-matching">
+      <div class="quiz-form-matching__prompt quiz-form-matching__prompt_correct">ul</div>
+      <div class="quiz-form-matching__prompt">ol</div></section></section>`);
+    const root = page.locator('.quiz');
+    assert.equal(await quizOutcome(root, DEFAULTS), 'wrong');
+    await page.locator('.quiz-form-matching__prompt').last().evaluate(el => el.classList.add('quiz-form-matching__prompt_correct'));
+    assert.equal(await quizOutcome(root, DEFAULTS), 'correct');
+    await root.evaluate(el => el.classList.remove('quiz_answered'));
+    assert.equal(await quizOutcome(root, DEFAULTS), 'unknown');
+  } finally { await page.close(); }
+});
 test('Ожидающий ответ вопроса наблюдается после перезапуска без повторной отправки', async () => {
   const page = await browser.newPage();
   const original = process.cwd();

@@ -6,6 +6,7 @@ import { scrollLesson } from './scroll.js';
 import { loadProjects } from './projects.js';
 import { submitProject } from './submission.js';
 import { solveTrainer } from './trainer.js';
+import { captureMatching, solveMatching } from './matching.js';
 import type { BrowserContext, Page, Locator } from 'playwright';
 import type { Config } from './config.js';
 import { atomicJson, journal, lockRun, readJson } from './store.js';
@@ -36,20 +37,24 @@ async function trainerStep(page: Page, research: boolean): Promise<'advanced' | 
 }
 
 async function questionStep(page: Page, root: Locator, cfg: Config, research: boolean): Promise<boolean> {
-  if (await solveQuiz(page, root, cfg)) return true;
+  const matching = await root.locator('.quiz-form-matching').count() > 0;
+  if (await (matching ? solveMatching(page, root, cfg) : solveQuiz(page, root, cfg))) return true;
   if (!research) return false;
-  const pending = await readJson<{ key: string } | null>('.local/pending-question.json', null);
+  const pendingFile = matching ? '.local/pending-matching.json' : '.local/pending-question.json';
+  const decisionsFile = matching ? '.local/matching-decisions.json' : '.local/decisions.json';
+  const pending = await readJson<{ key?: string; quizId?: string } | null>(pendingFile, null);
   if (!pending) return false;
-  console.log(`Исследование вопроса: .local/pending-question.json. Ожидаю ответ в .local/decisions.json: ${pending.key}`);
+  const key = pending.key ?? pending.quizId!;
+  console.log(`Исследование вопроса: ${pendingFile}. Ожидаю ответ в ${decisionsFile}: ${key}`);
   let attempted = '';
   const deadline = Date.now() + 1800000;
   while (Date.now() < deadline) {
-    const decisions = await readJson<Record<string, string[]>>('.local/decisions.json', {});
-    const decision = decisions[pending.key];
+    const decisions = await readJson<Record<string, unknown>>(decisionsFile, {});
+    const decision = decisions[key];
     const signature = JSON.stringify(decision);
     if (decision && signature !== attempted) {
       attempted = signature;
-      if (await solveQuiz(page, root, { ...cfg, retryableLessons: [...cfg.retryableLessons, new URL(page.url()).pathname] })) return true;
+      if (await (matching ? solveMatching(page, root, cfg) : solveQuiz(page, root, { ...cfg, retryableLessons: [...cfg.retryableLessons, new URL(page.url()).pathname] }))) return true;
       console.log(`Ответ требует разбора: ${await snapshot(page, 'question-review')}`);
     }
     await page.waitForTimeout(2000);
@@ -138,14 +143,21 @@ export async function run(): Promise<void> {
         let answeredQuestion = false;
         for (let i = 0; i < await roots.count(); i++) {
           const root = roots.nth(i);
-          if (await quizOutcome(root, cfg) === 'correct') continue;
+          if (await quizOutcome(root, cfg) === 'correct') {
+            if (await root.locator('.quiz-form-matching').count()) await captureMatching(root, cfg);
+            continue;
+          }
           if (!await questionStep(page, root, cfg, research)) {
             pause(`Нужен разбор вопроса. ${await snapshot(page, 'question')}`); return;
           }
           answeredQuestion = true; break;
         }
         if (answeredQuestion) continue;
-        await atomicJson(`.local/lessons/${lessonId(lesson.url) ?? 'unknown'}.json`, { url: safeUrl(lesson.url), title: lesson.title, text: await page.locator('body').innerText() });
+        await atomicJson(`.local/lessons/${lessonId(lesson.url) ?? 'unknown'}.json`, {
+          url: safeUrl(lesson.url), title: lesson.title, text: await page.locator('body').innerText(),
+          links: await page.locator('.theory-viewer a[href]').evaluateAll(links => links.map(el => ({ text: el.textContent, url: (el as HTMLAnchorElement).href }))),
+          images: await page.locator('.theory-viewer img[src]').evaluateAll(images => images.map(el => ({ alt: el.getAttribute('alt'), url: (el as HTMLImageElement).src }))),
+        });
         const nextControl = page.locator('[data-test-id="next-lesson-control-button"]').filter({ visible: true });
         const next = await nextControl.count() === 1 && await nextControl.isEnabled() ? nextControl : await exactButton(page, cfg.nextButtons);
         if (next) {

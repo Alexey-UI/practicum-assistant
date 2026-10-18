@@ -54,6 +54,8 @@ export async function questionFrom(root: Locator): Promise<Question> {
 export async function quizOutcome(root: Locator, cfg: Config): Promise<'correct' | 'wrong' | 'unknown'> {
   const observed = await root.evaluate(el => {
     if (!el.classList.contains('quiz_answered')) return 'unknown';
+    const rows = [...el.querySelectorAll('.quiz-form-matching__prompt')];
+    if (rows.length) return rows.every(row => row.classList.contains('quiz-form-matching__prompt_correct')) ? 'correct' : 'wrong';
     const options = [...el.querySelectorAll('.quiz-form-choice__option')];
     if (!options.some(option => option.classList.contains('quiz-form-choice__option_should-be-checked'))) return 'unknown';
     return options.every(option => option.classList.contains('quiz-form-choice__option_checked') === option.classList.contains('quiz-form-choice__option_should-be-checked')) ? 'correct' : 'wrong';
