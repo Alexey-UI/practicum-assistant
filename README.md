@@ -132,6 +132,7 @@ npm run projects -- publish ono-tebe-nado-ad
 в `practicum.config.json` (`feedbackPolicy: "neutral"`). Свободный отзыв программа
 не пишет; если нейтрального ответа нет, останавливается для разбора.
 
-Третий проект: `slozhno-sosredotochitsya-ad`, локальная проверка `npm run check:focus`.
+Третий проект «Сложно сосредоточиться» (`slozhno-sosredotochitsya-ad`) прошёл
+официальный GitHub Action и принят Практикумом. Локальная проверка: `npm run check:focus`.
 Проверка охватывает шесть ширин экрана, галерею, клавиатуру, сохранение темы и
 шесть сочетаний выбранной темы с системной.
