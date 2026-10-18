@@ -1,0 +1,10 @@
+node_modules/
+.local/
+artifacts/
+workspaces/
+solutions/
+.env
+.env.*
+!.env.example
+*.log
+.DS_Store

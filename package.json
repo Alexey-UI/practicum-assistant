@@ -1,0 +1,29 @@
+{
+  "name": "practicum-assistant",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22.18"
+  },
+  "scripts": {
+    "login": "tsx src/cli.ts login",
+    "inspect": "tsx src/cli.ts inspect",
+    "explore": "tsx src/cli.ts explore",
+    "start": "tsx src/cli.ts run",
+    "projects": "tsx src/cli.ts projects",
+    "check:ono": "tsx scripts/check-ono.ts",
+    "check": "tsc --noEmit",
+    "test": "tsx --test tests/*.test.ts"
+  },
+  "dependencies": {
+    "playwright": "^1.56.0"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "html-validate": "^11.16.4",
+    "prettier": "^3.9.10",
+    "tsx": "^4.20.0",
+    "typescript": "^5.9.0"
+  }
+}
