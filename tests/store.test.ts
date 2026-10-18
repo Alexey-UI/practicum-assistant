@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import { mkdtemp, rm } from 'node:fs/promises';
 import os from 'node:os';
 import path from 'node:path';
-import { Answers, questionKey, type Question } from '../src/store.js';
+import { Answers, questionKey, type Question, atomicJson } from '../src/store.js';
 import { candidates } from '../src/quiz.js';
 import { allowedUrl, safeUrl } from '../src/browser.js';
 
@@ -26,6 +26,18 @@ test('Нельзя сохранить ответ без подтверждени
     await assert.rejects(answers.confirm(question, ['Произвольный ответ'], 'correct'));
     await assert.rejects(answers.confirm(question, question.options, 'correct'));
     assert.equal(await answers.get(question), undefined);
+  } finally { await rm(dir, { recursive: true, force: true }); }
+});
+test('Проверенный ответ доступен из переносимой базы без локальной истории', async () => {
+  const dir = await mkdtemp(path.join(os.tmpdir(), 'practicum-bundle-'));
+  try {
+    const file = path.join(dir, 'bundle.json');
+    await atomicJson(file, { [questionKey(question)]: { answers: ['Язык разметки'], evidence: 'correct', confirmedAt: '2026-10-18T00:00:00Z' } });
+    const answers = new Answers(path.join(dir, 'empty.json'), file);
+    assert.deepEqual(await answers.get({ ...question, options: [...question.options].reverse() }), ['Язык разметки']);
+    assert.equal(await answers.get({ ...question, prompt: 'Другой вопрос' }), undefined);
+    await atomicJson(file, { [questionKey(question)]: { answers: ['Язык разметки'], evidence: '', confirmedAt: '2026-10-18T00:00:00Z' } });
+    await assert.rejects(answers.get(question));
   } finally { await rm(dir, { recursive: true, force: true }); }
 });
 test('Перебор ограничен даже для вопросов с большим количеством флажков', () => {

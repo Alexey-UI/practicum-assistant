@@ -7,6 +7,7 @@ import { loadProjects } from './projects.js';
 import { submitProject } from './submission.js';
 import { solveTrainer } from './trainer.js';
 import { captureMatching, solveMatching } from './matching.js';
+import { solveFeedback } from './feedback.js';
 import type { BrowserContext, Page, Locator } from 'playwright';
 import type { Config } from './config.js';
 import { atomicJson, journal, lockRun, readJson } from './store.js';
@@ -37,6 +38,7 @@ async function trainerStep(page: Page, research: boolean): Promise<'advanced' | 
 }
 
 async function questionStep(page: Page, root: Locator, cfg: Config, research: boolean): Promise<boolean> {
+  if (await root.evaluate(el => el.classList.contains('quiz_type_feedback'))) return solveFeedback(page, root, cfg);
   const matching = await root.locator('.quiz-form-matching').count() > 0;
   if (await (matching ? solveMatching(page, root, cfg) : solveQuiz(page, root, cfg))) return true;
   if (!research) return false;

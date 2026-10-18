@@ -1,0 +1,17 @@
+{
+  "taskId": "c45b70b8-b2a7-457e-a05f-3475f2876434",
+  "lessonId": "6346b9bf-3d06-4e79-827f-e92ecdec702b",
+  "instructions": "В секции с классом content есть блок с классом cards-list, а внутри него — блок с классом card. Имена классов должны подсказать вам, что это список и пункт списка соответственно. Список тоже маркированный. Поправьте.",
+  "files": [
+    {
+      "name": "index.html",
+      "initialHash": "deb900ac86be82088b91dc690b2408a459cb9234bcc69c8a176dbfe96b199870",
+      "content": "<!DOCTYPE html>\n<html lang=\"ru\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <title>Что если не писать код?</title>\n    <link rel=\"stylesheet\" href=\"./fonts/fonts.css\" />\n    <link rel=\"stylesheet\" href=\"./styles/style.css\" />\n  </head>\n  <body>\n    <header class=\"header\">\n      <a class=\"logo\"><h1>Что если не писать код?</h1></a>\n      <nav class=\"menu\">\n        <ul class=\"menu__list\">\n          <li class=\"menu__item menu__item_active\"><a>главная</a></li>\n          <li class=\"menu__item\"><a href=\"#0\">о проекте</a></li>\n        </ul>\n      </nav>\n    </header>\n    <main class=\"main\">\n      <section class=\"content\">\n        <ul class=\"cards-list\">\n          <li class=\"card\">\n            <img src=\"./images/selfie.png\" alt=\"иллюстрация с селфи\" />\n            <div>Устроить селфи-марафон</div>\n          </li>\n          <li class=\"card\">\n            <img src=\"./images/boxes.png\" alt=\"иллюстрация разбор коробок\" />\n            <div>Разобрать ненужные вещи</div>\n          </li>\n          <li class=\"card\">\n            <img\n              src=\"./images/shop.png\"\n              alt=\"иллюстрация с кредитными карточками\"\n            />\n            <div>Сходить по магазинам</div>\n          </li>\n          <li class=\"card\">\n            <img src=\"./images/photo.png\" alt=\"иллюстрация с рамкой для фото\" />\n            <div>Листать фотографии в соцсетях</div>\n          </li>\n          <li class=\"card\">\n            <img\n              src=\"./images/location.png\"\n              alt=\"иллюстрация с меткой на карте\"\n            />\n            <div>Посетить новое место</div>\n          </li>\n          <li class=\"card\">\n            <img\n              src=\"./images/chat.png\"\n              alt=\"иллюстрация человек за ноутбуком\"\n            />\n            <div>Переписываться с друзьями</div>\n          </li>\n          <li class=\"card\">\n            <img src=\"./images/vlog.png\" alt=\"иллюстрация с камерой\" />\n            <div>Снять видео для блога</div>\n          </li>\n        </ul>\n      </section>\n      <aside class=\"sidebar\">\n        <div class=\"banner\">\n          <div>Реклама</div>\n          <div>Незабываемый отдых в горах</div>\n          <video src=\"https://code.s3.yandex.net/fullstack_developer/fullstack_developer_sp1_t3_y4_vid.mp4\" muted autoplay loop></video>\n        </div>\n      </aside>\n    </main>\n    <footer class=\"footer\">\n      <div>made by VЁRSTKA</div>\n    </footer>\n  </body>\n</html>"
+    }
+  ],
+  "verifiedAt": "2026-10-18T20:14:39.842Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Все любят карточки. Вот и они."
+  }
+}

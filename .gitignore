@@ -8,3 +8,4 @@ solutions/
 !.env.example
 *.log
 .DS_Store
+practicum.config.json

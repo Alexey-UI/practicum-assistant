@@ -13,10 +13,12 @@
     "start": "tsx src/cli.ts run",
     "projects": "tsx src/cli.ts projects",
     "status": "tsx src/cli.ts status",
+    "answers": "tsx src/cli.ts answers",
     "check:ono": "tsx scripts/check-ono.ts",
     "check:window": "tsx scripts/check-window.ts",
     "check": "tsc --noEmit",
-    "test": "tsx --test tests/*.test.ts"
+    "test": "tsx --test tests/*.test.ts",
+    "check:focus": "tsx scripts/check-focus.ts"
   },
   "dependencies": {
     "playwright": "^1.56.0"

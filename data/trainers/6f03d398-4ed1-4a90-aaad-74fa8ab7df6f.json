@@ -1,0 +1,16 @@
+{
+  "taskId": "6f03d398-4ed1-4a90-aaad-74fa8ab7df6f",
+  "lessonId": "6346b9bf-3d06-4e79-827f-e92ecdec702b",
+  "files": [
+    {
+      "name": "index.html",
+      "initialHash": "dd66967649d54c41f91a6b969fc593c4000ef64bd18c127787704b4406df8354",
+      "content": "<!DOCTYPE html>\n<html lang=\"ru\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <title>Что если не писать код?</title>\n    <link rel=\"stylesheet\" href=\"./fonts/fonts.css\" />\n    <link rel=\"stylesheet\" href=\"./styles/style.css\" />\n  </head>\n  <body>\n    <header class=\"header\">\n      <a class=\"logo\"><h1>Что если не писать код?</h1></a>\n      <div class=\"menu\">\n        <div class=\"menu__list\">\n          <div class=\"menu__item menu__item_active\"><a>главная</a></div>\n          <div class=\"menu__item\"><a href=\"#0\">о проекте</a></div>\n        </div>\n      </div>\n    </header>\n    <main class=\"main\">\n      <section class=\"content\">\n        <div class=\"cards-list\">\n          <div class=\"card\">\n            <img src=\"./images/selfie.png\" alt=\"иллюстрация с селфи\" />\n            <div>Устроить селфи-марафон</div>\n          </div>\n          <div class=\"card\">\n            <img src=\"./images/boxes.png\" alt=\"иллюстрация разбор коробок\" />\n            <div>Разобрать ненужные вещи</div>\n          </div>\n          <div class=\"card\">\n            <img\n              src=\"./images/shop.png\"\n              alt=\"иллюстрация с кредитными карточками\"\n            />\n            <div>Сходить по магазинам</div>\n          </div>\n          <div class=\"card\">\n            <img src=\"./images/photo.png\" alt=\"иллюстрация с рамкой для фото\" />\n            <div>Листать фотографии в соцсетях</div>\n          </div>\n          <div class=\"card\">\n            <img\n              src=\"./images/location.png\"\n              alt=\"иллюстрация с меткой на карте\"\n            />\n            <div>Посетить новое место</div>\n          </div>\n          <div class=\"card\">\n            <img\n              src=\"./images/chat.png\"\n              alt=\"иллюстрация человек за ноутбуком\"\n            />\n            <div>Переписываться с друзьями</div>\n          </div>\n          <div class=\"card\">\n            <img src=\"./images/vlog.png\" alt=\"иллюстрация с камерой\" />\n            <div>Снять видео для блога</div>\n          </div>\n        </div>\n      </section>\n      <aside class=\"sidebar\">\n        <div class=\"banner\">\n          <div>Реклама</div>\n          <div>Незабываемый отдых в горах</div>\n          <video src=\"https://code.s3.yandex.net/fullstack_developer/fullstack_developer_sp1_t3_y4_vid.mp4\" muted autoplay loop></video>\n        </div>\n      </aside>\n    </main>\n    <footer class=\"footer\">\n      <div>made by VЁRSTKA</div>\n    </footer>\n  </body>\n</html>"
+    }
+  ],
+  "verifiedAt": "2026-10-18T20:12:11.631Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "С шапкой мы ещё не закончили, пока выглядит так себе."
+  }
+}

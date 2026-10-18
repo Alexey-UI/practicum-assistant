@@ -6,6 +6,7 @@ import { exactButton, questionFrom, quizOutcome } from '../src/quiz.js';
 import { DEFAULTS } from '../src/config.js';
 import { scrollLesson } from '../src/scroll.js';
 import { trainerOutcome } from '../src/trainer.js';
+import { solveFeedback } from '../src/feedback.js';
 import { solveQuiz } from '../src/quiz.js';
 import { Answers, atomicJson, questionKey } from '../src/store.js';
 import { mkdtemp, rm } from 'node:fs/promises';
@@ -129,4 +130,25 @@ test('Ожидающий ответ вопроса наблюдается пос
     await page.close();
     await rm(dir, { recursive: true, force: true });
   }
+});
+test('Опрос получает нейтральный ответ по настройке, свободный отзыв остаётся пустым', async () => {
+  const page = await browser.newPage();
+  const original = process.cwd();
+  const dir = await mkdtemp(path.join(tmpdir(), 'practicum-feedback-'));
+  try {
+    process.chdir(dir);
+    const html = `<section class="quiz quiz_type_feedback" data-test-id="quiz-feedback-abcdef">
+      <h2 class="quiz__title">Как дела?</h2><label class="quiz__option"><input type="radio" name="mood">Отлично!</label>
+      <label class="quiz__option"><input type="radio" name="mood">В целом нормально</label>
+      <button class="quiz__move-on" onclick="this.parentElement.classList.add('quiz_answered')">Далее</button></section>`;
+    await page.setContent(html);
+    assert.equal(await solveFeedback(page, page.locator('.quiz'), DEFAULTS), false);
+    assert.equal(await page.locator('input:checked').count(), 0);
+    assert.equal(await solveFeedback(page, page.locator('.quiz'), { ...DEFAULTS, feedbackPolicy: 'neutral' }), true);
+    assert.equal(await page.locator('input').last().isChecked(), true);
+    await page.setContent(html.replace('quiz-feedback-abcdef', 'quiz-feedback-fedcba').replace('</h2>', '</h2><textarea></textarea>'));
+    assert.equal(await solveFeedback(page, page.locator('.quiz'), { ...DEFAULTS, feedbackPolicy: 'neutral' }), false);
+    assert.equal(await page.locator('textarea').inputValue(), '');
+    assert.equal(await page.locator('input:checked').count(), 0);
+  } finally { process.chdir(original); await page.close(); await rm(dir, { recursive: true, force: true }); }
 });

@@ -1,6 +1,6 @@
 import type { Page } from 'playwright';
 import { createHash } from 'node:crypto';
-import { atomicJson, journal, readJson } from './store.js';
+import { atomicJson, journal, readJson, normalize } from './store.js';
 import { safeUrl, lessonId, settle } from './browser.js';
 
 export interface EditorFile { path: string; language: string; content: string; hash: string }
@@ -47,6 +47,7 @@ export async function trainerOutcome(page: Page): Promise<'correct' | 'wrong' | 
 export interface TrainerSolution {
   taskId: string;
   lessonId: string;
+  instructions?: string;
   files: Array<{ name: string; initialHash: string; content: string }>;
   verifiedAt: string;
   evidence: { selector: string; message: string };
@@ -65,6 +66,7 @@ export async function solveTrainer(page: Page, candidate = false): Promise<'adva
   if (solution.taskId !== task.taskId || solution.lessonId !== lessonId(task.url) || (!candidate && (!solution.verifiedAt || !solution.evidence?.message.trim())) || !solution.files.length) {
     throw new Error('Решение тренажёра не подтверждено или относится к другому заданию');
   }
+  if (solution.instructions && normalize(solution.instructions) !== normalize(task.instructions)) throw new Error('Текст задания изменился: требуется повторный разбор');
   const solutionHash = contentHash(JSON.stringify(solution.files));
   const stateFile = `.local/trainers/${task.taskId}.json`;
   const state = await readJson<TaskState | null>(stateFile, null);
@@ -112,7 +114,7 @@ export async function solveTrainer(page: Page, candidate = false): Promise<'adva
   await atomicJson(stateFile, { phase: 'accepted', solutionHash, updatedAt: new Date().toISOString() } satisfies TaskState);
   if (candidate) {
     const evidence = await page.locator('.trainer-footer__message.notification_type_success:not(.draggable-notification__manikin) .notification__content').filter({ visible: true }).first().innerText();
-    await atomicJson(`data/trainers/${task.taskId}.json`, { ...solution, verifiedAt: new Date().toISOString(), evidence: { selector: '.trainer-footer__message.notification_type_success', message: evidence } });
+    await atomicJson(`data/trainers/${task.taskId}.json`, { ...solution, instructions: task.instructions, verifiedAt: new Date().toISOString(), evidence: { selector: '.trainer-footer__message.notification_type_success', message: evidence } });
   }
   await journal('trainer-accepted', { taskId: task.taskId, url: task.url });
   await next.waitFor({ state: 'visible', timeout: 30000 });
@@ -120,6 +122,12 @@ export async function solveTrainer(page: Page, candidate = false): Promise<'adva
   await next.click();
   await page.waitForURL(url => url.href !== before, { waitUntil: 'commit', timeout: 180000 });
   await settle(page);
+  if (new URL(page.url()).pathname.startsWith('/trainer/')) {
+    await page.waitForFunction(previous => {
+      const nextText = document.querySelector('.task-description__markdown')?.textContent?.normalize('NFKC').replace(/\s+/g, ' ').trim();
+      return !!nextText && nextText !== previous;
+    }, normalize(task.instructions), { timeout: 180000 });
+  }
   return lessonId(page.url()) === solution.lessonId ? 'advanced' : 'finished';
 }
 

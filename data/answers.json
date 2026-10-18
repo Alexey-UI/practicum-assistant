@@ -1,0 +1,104 @@
+{
+  "6ef3a4b4c27ac4e170fd9cda416036a6fe6fcaab0a02cfbbec96d35445c100b7": {
+    "answers": [
+      "Одиночный"
+    ],
+    "evidence": "quiz_answered: selected options match should-be-checked markers",
+    "confirmedAt": "2026-10-18T20:18:41.691Z"
+  },
+  "d0d1110f73e73fa8d670f3545fbcd5b4e7cd597bbe0a78c963d331ca07d51315": {
+    "answers": [
+      "src",
+      "alt",
+      "width"
+    ],
+    "evidence": "quiz_answered: selected options match should-be-checked markers",
+    "confirmedAt": "2026-10-18T20:19:03.813Z"
+  },
+  "526d182a9699c9cb38c8fc9848fdf545d6ce31b2047853c5e511ddb2a812321e": {
+    "answers": [
+      "Что браузеру предстоит работать с HTML-страницей"
+    ],
+    "evidence": "quiz_answered: selected options match should-be-checked markers",
+    "confirmedAt": "2026-10-18T20:22:20.147Z"
+  },
+  "2283e3dd83b6a8db8f3810adf8d4124df53554fe594e9e40f8fa9df2c52a0a58": {
+    "answers": [
+      "В теге <body>"
+    ],
+    "evidence": "quiz_answered: selected options match should-be-checked markers",
+    "confirmedAt": "2026-10-18T20:23:56.695Z"
+  },
+  "81cd51c22edfea10b178d3314d7c971c791e132e3677bdcc299b21a0b06b6404": {
+    "answers": [
+      "Название страницы",
+      "Кодировку страницы",
+      "Иконку страницы"
+    ],
+    "evidence": "quiz_answered: selected options match should-be-checked markers",
+    "confirmedAt": "2026-10-18T20:25:21.504Z"
+  },
+  "a62e94c708837a6eb007ccbf85c89435bf24306fd5bb3816a35c4b6e3b3d768a": {
+    "answers": [
+      "<h2 style=\"font-size: 20px;\">Заголовок</h2>"
+    ],
+    "evidence": "quiz_answered: selected options match should-be-checked markers",
+    "confirmedAt": "2026-10-18T20:26:29.827Z"
+  },
+  "ba4022243c4d43911de4d59922aa125f59728a18fb63875a7d5f7c5f4d3b954e": {
+    "answers": [
+      "<style>"
+    ],
+    "evidence": "quiz_answered: selected options match should-be-checked markers",
+    "confirmedAt": "2026-10-18T20:27:43.101Z"
+  },
+  "e05e9955c4e88c47d606a9cc008d71a6f2af91cb92a77f3a0d4d77c6485b2beb": {
+    "answers": [
+      "<link rel=\"stylesheet\" href=\"styles.css\" />"
+    ],
+    "evidence": "quiz_answered: selected options match should-be-checked markers",
+    "confirmedAt": "2026-10-18T20:28:39.981Z"
+  },
+  "417c051af9c04fe9a9d513a2206678a41cbce403453757b9a6a42cac3fb4a065": {
+    "answers": [
+      "alt"
+    ],
+    "evidence": "quiz_answered: selected options match should-be-checked markers",
+    "confirmedAt": "2026-10-18T20:36:32.034Z"
+  },
+  "175c67490d92787e9c104f764151b079542a738d39bc292d4d1242059992f47e": {
+    "answers": [
+      "font-size"
+    ],
+    "evidence": "quiz_answered: selected options match should-be-checked markers",
+    "confirmedAt": "2026-10-18T20:38:04.158Z"
+  },
+  "90f738acecc13a772e7b50fe6f8df112b8ceac2a34fbfe7406e77b62dc1a20ec": {
+    "answers": [
+      "<p>"
+    ],
+    "evidence": "quiz_answered: selected options match should-be-checked markers",
+    "confirmedAt": "2026-10-18T20:40:18.306Z"
+  },
+  "dceb01bbdd25231032b964677d94c905acc4478d45b9f89b22baae095c0102f4": {
+    "answers": [
+      "Занимает всю доступную ширину родительского элемента"
+    ],
+    "evidence": "quiz_answered: selected options match should-be-checked markers",
+    "confirmedAt": "2026-10-18T20:42:27.689Z"
+  },
+  "5c1fafb0ccccdf063a1834ff65a0caaaa1f4d9162802b002b9663054766dbe90": {
+    "answers": [
+      "Браузер назначает некоторым элементам отступы по умолчанию"
+    ],
+    "evidence": "quiz_answered: selected options match should-be-checked markers",
+    "confirmedAt": "2026-10-18T20:46:22.806Z"
+  },
+  "65d2274ffbfc9e8bfaf0be472076a2f648d832df84a252853b5b341561957381": {
+    "answers": [
+      "margin"
+    ],
+    "evidence": "quiz_answered: selected options match should-be-checked markers",
+    "confirmedAt": "2026-10-18T20:47:50.891Z"
+  }
+}
