@@ -1,0 +1,17 @@
+{
+  "taskId": "a5ebc020-fdff-487a-80c7-2ee8cff470c3",
+  "lessonId": "22f6779d-4b06-4298-bf98-ac0641ec706b",
+  "files": [
+    {
+      "name": "script.js",
+      "initialHash": "1adc73a6da253cfdabecb79643302266cd44cf48081963cb956f1bb8a8bcdf4a",
+      "content": "let phrases = [\n  'отправить другу смешную гифку',\n  'посмотреть скидки на авиабилеты',\n  'разобраться, о чём поют рэперы',\n  'Arzamas',\n  'расставить книги на полке по цвету',\n  'читать про зарплаты в Сан-Франциско'\n];\n\nlet randIndex = Math.floor(Math.random() * 6);\nconsole.log(randIndex);\nconsole.log(phrases[randIndex]);"
+    }
+  ],
+  "instructionsHash": "d0933489dacc613e6124067254ac478142d008205f1e248c605a6e41dd631a58",
+  "verifiedAt": "2026-10-19T10:23:27.226Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Посмотрите в консоль — наверняка там появился полезный совет. Только не следуйте ему прямо сейчас, продолжайте писать код."
+  }
+}

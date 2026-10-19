@@ -1,7 +1,7 @@
 import { openBrowser, navigate, snapshot, settle, safeUrl, lessonId, isTrainerTaskUrl, lessonUrl as canonicalLesson } from './browser.js';
 import { catalog, checkCompletion, observedSolved, saveObservedSolved, type Lesson } from './catalog.js';
 import { loadConfig } from './config.js';
-import { exactButton, quizOutcome, solveQuiz } from './quiz.js';
+import { captureChoiceAnswer, exactButton, quizOutcome, solveQuiz } from './quiz.js';
 import { scrollLesson } from './scroll.js';
 import { loadProjects } from './projects.js';
 import { prepareManualProject, submitProject } from './submission.js';
@@ -182,6 +182,7 @@ export async function run(): Promise<void> {
         for (let i = 0; i < await roots.count(); i++) {
           const root = roots.nth(i);
           if (await quizOutcome(root, cfg) === 'correct') {
+            await captureChoiceAnswer(root, cfg);
             if (await root.locator('.quiz-form-matching').count()) await captureMatching(root, cfg);
             if (await root.evaluate(el => el.classList.contains('quiz_type_text'))) await captureTextAnswer(root);
             continue;

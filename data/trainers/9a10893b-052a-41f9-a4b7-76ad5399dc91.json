@@ -1,0 +1,17 @@
+{
+  "taskId": "9a10893b-052a-41f9-a4b7-76ad5399dc91",
+  "lessonId": "da32a9ac-d442-4323-acf6-65f94f0ea0ad",
+  "files": [
+    {
+      "name": "script.js",
+      "initialHash": "d1371d7e8e61f16768fdcb8dd0ab8fed08e72464d37ecdecc6d84cdd8575c51c",
+      "content": "let phrases = [\n  'отправить другу смешную гифку',\n  'посмотреть скидки на авиабилеты',\n  'разобраться, о чём поют рэперы',\n  'Arzamas',\n  'расставить книги на полке по цвету',\n  'читать про зарплаты в Сан-Франциско'\n];\nlet randIndex = Math.random() * 6;\nconsole.log(randIndex);\n"
+    }
+  ],
+  "instructionsHash": "ff13a819bcf360392bbf6fb34ad243a0fab254e0293323a987d609c083469326",
+  "verifiedAt": "2026-10-19T10:00:20.049Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Диапазон случайных чисел вырос в 6 раз. Школьная учительница математики была бы приятно удивлена вашим новым увлечением."
+  }
+}

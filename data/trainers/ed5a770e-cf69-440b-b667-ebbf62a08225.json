@@ -1,0 +1,17 @@
+{
+  "taskId": "ed5a770e-cf69-440b-b667-ebbf62a08225",
+  "lessonId": "d8be11ab-31dd-48b7-ac52-c8128ee65f33",
+  "files": [
+    {
+      "name": "script.js",
+      "initialHash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "content": "let phrases = [];\n"
+    }
+  ],
+  "instructionsHash": "99c39a52a8301b487c7c73ccf6da6a839123a936dab8f15349e29a432a417e6e",
+  "verifiedAt": "2026-10-19T09:58:24.752Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Теперь мяч на стороне копирайтера. Пусть присылает фразы, вам есть куда их положить."
+  }
+}

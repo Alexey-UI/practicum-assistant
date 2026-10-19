@@ -1,0 +1,17 @@
+{
+  "taskId": "a5369ba5-389c-4527-a77b-e2f5254c6d31",
+  "lessonId": "d3faa16f-9557-4e76-9a93-237507166c41",
+  "files": [
+    {
+      "name": "script.js",
+      "initialHash": "613b4fc35df3c0e36fe201f3a7c4af4d454f6f0f5eff62003550736fc9ce3383",
+      "content": "let phrases = [\n  'отправить другу смешную гифку',\n  'посмотреть скидки на авиабилеты',\n  'разобраться, о чём поют рэперы',\n  'Arzamas',\n  'расставить книги на полке по цвету',\n  'читать про зарплаты в Сан-Франциско'\n];\n\nfunction getRandomElement() {\n  let randIndex = Math.floor(Math.random() * phrases.length);\n  console.log(randIndex);\n  console.log(phrases[randIndex]);\n}\n\ngetRandomElement();\n"
+    }
+  ],
+  "instructionsHash": "a27ff027ca8ea8729bd859943bfb1c60c62a214a9f1c408bff41514389c5f34d",
+  "verifiedAt": "2026-10-19T10:42:41.766Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "С этого момента выводить случайный элемент массива в консоль можно одной строкой — вызовом getRandomElement. Магия функций."
+  }
+}

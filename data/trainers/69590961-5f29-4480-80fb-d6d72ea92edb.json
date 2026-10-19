@@ -1,0 +1,17 @@
+{
+  "taskId": "69590961-5f29-4480-80fb-d6d72ea92edb",
+  "lessonId": "f8557492-a69a-4c41-b94a-4152ddc07714",
+  "files": [
+    {
+      "name": "script.js",
+      "initialHash": "c1d248becce422ea6b5e085c92482f38bc25fd14eacbe3fafb99aa2f0e00a6a2",
+      "content": "let phrases = [\n  'отправить другу смешную гифку',\n  'посмотреть скидки на авиабилеты',\n  'разобраться, о чём поют рэперы',\n  'Arzamas',\n  'расставить книги на полке по цвету',\n  'читать про зарплаты в Сан-Франциско',\n  'прочитать новости и ужаснуться в комментариях',\n  'попасть в поток грустных песен и вспомнить все ошибки молодости',\n  'посмотреть трейлер сериала и заодно первый сезон',\n  'проверить непрочитанное в Telegram-каналах'\n];\n\nfunction getRandomElement(arr) {\n  let randIndex = Math.floor(Math.random() * arr.length);\n  return arr[randIndex];\n}\n\nlet button = document.querySelector('.button');\nlet phrase = document.querySelector('.phrase');\nlet advice = document.querySelector('.advice');\nlet image = document.querySelector('.image');\n\nbutton.addEventListener('click', function () {\n  let randomElement = getRandomElement(phrases);\n  if (randomElement.length > 40) {\n    advice.style.fontSize = '33px';\n  } else {\n    advice.style.fontSize = '42px';\n  }\n  phrase.textContent = randomElement;\n});"
+    }
+  ],
+  "instructionsHash": "85aee8c3424b3133fd7e80692447177bbd56f170d447a6261d2420d5f053c09e",
+  "verifiedAt": "2026-10-19T10:46:52.736Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Говорят, последний сезон «Игры престолов» не очень. Зато первый какой был, надо будет пересмотреть."
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "taskId": "5d965871-1285-4bdd-ac3d-acf7965dd6d3",
+  "lessonId": "f8557492-a69a-4c41-b94a-4152ddc07714",
+  "files": [
+    {
+      "name": "script.js",
+      "initialHash": "14f0551727cf8350a53161d459250420f947373a368dca126fd6e8f7e41a5652",
+      "content": "let phrases = [\n  'отправить другу смешную гифку',\n  'посмотреть скидки на авиабилеты',\n  'разобраться, о чём поют рэперы',\n  'Arzamas',\n  'расставить книги на полке по цвету',\n  'читать про зарплаты в Сан-Франциско',\n  'прочитать новости и ужаснуться в комментариях',\n  'попасть в поток грустных песен и вспомнить все ошибки молодости',\n  'посмотреть трейлер сериала и заодно первый сезон',\n  'проверить непрочитанное в Telegram-каналах'\n];\n\nfunction getRandomElement(arr) {\n  let randIndex = Math.floor(Math.random() * arr.length);\n  return arr[randIndex];\n}\n\nlet button = document.querySelector('.button');\nlet phrase = document.querySelector('.phrase');\nlet advice = document.querySelector('.advice');\nlet image = document.querySelector('.image');\n\nbutton.addEventListener('click', function () {\n  let randomElement = getRandomElement(phrases);\n  phrase.textContent = randomElement;\n});"
+    }
+  ],
+  "instructionsHash": "f6ea37258c878dfd4ddba7da8b7cb563960fec9058b72b03cde5b4ba223b3321",
+  "verifiedAt": "2026-10-19T10:46:18.346Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "«Everybody's gotta learn sometime» — мы не смогли удержаться и включили грустную песню. В ней поётся, что каждый когда-то чему-то учится. Она про вас и про JavaScript."
+  }
+}

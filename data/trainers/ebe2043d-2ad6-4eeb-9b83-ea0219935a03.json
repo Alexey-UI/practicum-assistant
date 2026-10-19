@@ -1,0 +1,17 @@
+{
+  "taskId": "ebe2043d-2ad6-4eeb-9b83-ea0219935a03",
+  "lessonId": "b9d4e939-0a56-482c-9b0e-92895269e77c",
+  "files": [
+    {
+      "name": "script.js",
+      "initialHash": "360406e539167720b754016bbd22dd385a05148b3375c6e3376faea767d092b3",
+      "content": "let phrases = [\n  'отправить другу смешную гифку',\n  'посмотреть скидки на авиабилеты',\n  'разобраться, о чём поют рэперы',\n  'Arzamas',\n  'расставить книги на полке по цвету',\n  'читать про зарплаты в Сан-Франциско'\n];\n\nfunction getRandomElement(arr) {\n  let randIndex = Math.floor(Math.random() * arr.length);\n  return arr[randIndex];\n}\n\nlet button = document.querySelector('.button');\nlet phrase = document.querySelector('.phrase');\nlet advice = document.querySelector('.advice');\nlet image = document.querySelector('.image');\n\nphrase.textContent = getRandomElement(phrases);\n\nbutton.addEventListener('click', function () {\n  console.log('Счастье не за горами');\n});\n"
+    }
+  ],
+  "instructionsHash": "cc0e8cdf2f9df93ca02af71598262d2cbb22a2c3b0563a13d1b1fe48b5189dcd",
+  "verifiedAt": "2026-10-19T10:45:09.511Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Пользуясь моментом, передаём привет всем пермякам. Впрочем, это привет всем, кто научился обрабатывать клик по элементу."
+  }
+}

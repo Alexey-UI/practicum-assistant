@@ -1,0 +1,17 @@
+{
+  "taskId": "399dc671-8880-46dd-bb48-20d6e7d5f9a6",
+  "lessonId": "d8be11ab-31dd-48b7-ac52-c8128ee65f33",
+  "files": [
+    {
+      "name": "script.js",
+      "initialHash": "c2ce4e4da2d43e058d84c288b439d00ad262f265dbf35137571594cd44927fb4",
+      "content": "let phrases = [\n  'отправить другу смешную гифку',\n  'посмотреть скидки на авиабилеты',\n  'разобраться, о чём поют рэперы',\n  'Arzamas',\n  'расставить книги на полке по цвету',\n  'читать про зарплаты в Сан-Франциско'\n];\nconsole.log(phrases[0]);\n"
+    }
+  ],
+  "instructionsHash": "1b9044aa283c3bf0f6aa6416ed203ec4c210477554db2c5ea2315ca7c40050b0",
+  "verifiedAt": "2026-10-19T09:58:54.186Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Знакомство с нумерацией массивов — тот самый момент, когда «нулевой приоритет» начинает означать первое место."
+  }
+}

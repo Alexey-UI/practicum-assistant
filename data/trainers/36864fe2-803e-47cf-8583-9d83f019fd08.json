@@ -1,0 +1,17 @@
+{
+  "taskId": "36864fe2-803e-47cf-8583-9d83f019fd08",
+  "lessonId": "da32a9ac-d442-4323-acf6-65f94f0ea0ad",
+  "files": [
+    {
+      "name": "script.js",
+      "initialHash": "844c9b5660eb2ddeb6d71f9074be3cb54046585eb1fbb95a045f2cafade7697b",
+      "content": "let phrases = [\n  'отправить другу смешную гифку',\n  'посмотреть скидки на авиабилеты',\n  'разобраться, о чём поют рэперы',\n  'Arzamas',\n  'расставить книги на полке по цвету',\n  'читать про зарплаты в Сан-Франциско'\n];\nlet randIndex = Math.random();\nconsole.log(randIndex);\n"
+    }
+  ],
+  "instructionsHash": "68efbd2d4fcb4fbdf0a8ca6ec831be3404319984d4015eee20ce3b30506931a5",
+  "verifiedAt": "2026-10-19T09:59:59.288Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Вот и одно из более чем квадриллиона случайных дробных значений между 0 и 1. Занятий для прокрастинации всё равно больше."
+  }
+}

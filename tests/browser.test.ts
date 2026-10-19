@@ -9,7 +9,7 @@ import { trainerOutcome, selectEditorFile, solveTrainer, contentHash } from '../
 import { readTextQuestion, solveTextQuestion, captureTextAnswer } from '../src/text-quiz.js';
 import { solveFeedback } from '../src/feedback.js';
 import { solveQuiz } from '../src/quiz.js';
-import { Answers, atomicJson, questionKey } from '../src/store.js';
+import { Answers, atomicJson, questionKey, readJson } from '../src/store.js';
 import { mkdtemp, rm } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import path from 'node:path';
@@ -98,6 +98,37 @@ test('Ответ оценивается по маркерам Практикум
     await form.evaluate(el => el.classList.remove('quiz_answered'));
     assert.equal(await quizOutcome(form, DEFAULTS), 'unknown');
   } finally { await page.close(); }
+});
+test('Радиовопрос допускает несколько правильных альтернатив, чекбоксы требуют полного набора', async () => {
+  const page = await browser.newPage();
+  const original = process.cwd();
+  const dir = await mkdtemp(path.join(tmpdir(), 'practicum-radio-'));
+  try {
+    process.chdir(dir);
+    await page.setContent(`<form class="quiz quiz_answered"><legend>На что похож вызов функции?</legend>
+      <div class="quiz-form-choice__option quiz-form-choice__option_should-be-checked"><label><input type="radio" checked disabled><div class="quiz-form-choice__option-content">Не знаю</div></label></div>
+      <div class="quiz-form-choice__option quiz-form-choice__option_checked quiz-form-choice__option_should-be-checked"><label><input type="radio" checked disabled><div class="quiz-form-choice__option-content">console.log()</div></label></div>
+      <div class="quiz-form-choice__option"><label><input type="radio" disabled><div class="quiz-form-choice__option-content">Неверный вариант</div></label></div>
+      <button type="button" onclick="document.body.dataset.clicks='1'">Проверить</button></form>`);
+    const root = page.locator('form');
+    const question = await questionFrom(root);
+    const file = `.local/questions/${questionKey(question)}.json`;
+    await atomicJson(file, { phase: 'wrong', answers: ['console.log()'] });
+    assert.equal(await solveQuiz(page, root, DEFAULTS), true);
+    assert.deepEqual(await new Answers().get(question), ['console.log()']);
+    assert.equal((await readJson<{ phase: string }>(file, { phase: '' })).phase, 'correct');
+    assert.equal(await page.locator('body').getAttribute('data-clicks'), null);
+    await root.locator('input').evaluateAll(inputs => inputs.forEach(input => (input as HTMLInputElement).type = 'checkbox'));
+    assert.equal(await quizOutcome(root, DEFAULTS), 'wrong');
+    await root.locator('input').evaluateAll(inputs => inputs.forEach(input => (input as HTMLInputElement).type = 'radio'));
+    await root.locator('.quiz-form-choice__option').nth(1).evaluate(el => el.classList.remove('quiz-form-choice__option_checked'));
+    await root.locator('.quiz-form-choice__option').nth(2).evaluate(el => el.classList.add('quiz-form-choice__option_checked'));
+    assert.equal(await quizOutcome(root, DEFAULTS), 'wrong');
+  } finally {
+    process.chdir(original);
+    await page.close();
+    await rm(dir, { recursive: true, force: true });
+  }
 });
 test('Урок проматывается во внутреннем контейнере, включая догруженный фрагмент', async () => {
   const page = await browser.newPage({ viewport: { width: 1100, height: 700 } });

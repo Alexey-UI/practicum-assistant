@@ -1,0 +1,17 @@
+{
+  "taskId": "29d0919e-ecc4-4e08-ab66-b3b544b2b3b9",
+  "lessonId": "da32a9ac-d442-4323-acf6-65f94f0ea0ad",
+  "files": [
+    {
+      "name": "script.js",
+      "initialHash": "a05e1fa79ca6cc4459076b46e8774e98be829890496fb8295e7218ca119be27a",
+      "content": "let phrases = [\n  'отправить другу смешную гифку',\n  'посмотреть скидки на авиабилеты',\n  'разобраться, о чём поют рэперы',\n  'Arzamas',\n  'расставить книги на полке по цвету',\n  'читать про зарплаты в Сан-Франциско'\n];\nlet randIndex = Math.random();\n"
+    }
+  ],
+  "instructionsHash": "1f064086253bc1daf6b50e4f481f4bfb9c0b68b6e0eb86ece588b5cb94b48190",
+  "verifiedAt": "2026-10-19T09:59:44.593Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Похоже, всё правильно. А ещё похоже на казино — что-то случайное произошло прямо сейчас, только вы этого не увидели. Посмóтрите, что там?"
+  }
+}

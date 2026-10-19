@@ -1,0 +1,17 @@
+{
+  "taskId": "0c4efd71-5ee5-4520-94f8-bbfcbdb48774",
+  "lessonId": "67786b93-bf3e-4962-9be9-2a993dbdc1a9",
+  "files": [
+    {
+      "name": "script.js",
+      "initialHash": "82fb3f76de0bc1ef51e9fed67aa00775ae3ba3390f180aa13036dc88d3a2d06f",
+      "content": "let phrases = [\n  'отправить другу смешную гифку',\n  'посмотреть скидки на авиабилеты',\n  'разобраться, о чём поют рэперы',\n  'Arzamas',\n  'расставить книги на полке по цвету',\n  'читать про зарплаты в Сан-Франциско'\n];\n\nfunction getRandomElement(arr) {\n  let randIndex = Math.floor(Math.random() * arr.length);\n  return arr[randIndex];\n}\n\nlet button = document.querySelector('.button');\nlet advice = document.querySelector('.advice');\nlet phrase = document.querySelector('.phrase');\nlet image = document.querySelector('.image');\nphrase.textContent = getRandomElement(phrases);\n"
+    }
+  ],
+  "instructionsHash": "66894048d6f007384b1c76a5b6627be5e0baf8e8c9962855a2a7c38d31521daa",
+  "verifiedAt": "2026-10-19T10:44:34.071Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Теперь при обновлении страницы на ней появляется случайная фраза. Сайт начинает работать!"
+  }
+}

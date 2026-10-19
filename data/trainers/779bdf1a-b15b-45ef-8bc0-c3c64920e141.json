@@ -1,0 +1,17 @@
+{
+  "taskId": "779bdf1a-b15b-45ef-8bc0-c3c64920e141",
+  "lessonId": "f8557492-a69a-4c41-b94a-4152ddc07714",
+  "files": [
+    {
+      "name": "script.js",
+      "initialHash": "79276a47196a4a4323bf495eac893e8c9c76cbea4ce21f0192f460514f90511d",
+      "content": "let phrases = [\n  'отправить другу смешную гифку',\n  'посмотреть скидки на авиабилеты',\n  'разобраться, о чём поют рэперы',\n  'Arzamas',\n  'расставить книги на полке по цвету',\n  'читать про зарплаты в Сан-Франциско',\n  'прочитать новости и ужаснуться в комментариях',\n  'попасть в поток грустных песен и вспомнить все ошибки молодости',\n  'посмотреть трейлер сериала и заодно первый сезон',\n  'проверить непрочитанное в Telegram-каналах'\n];\n\nfunction getRandomElement(arr) {\n  let randIndex = Math.floor(Math.random() * arr.length);\n  return arr[randIndex];\n}\n\nlet button = document.querySelector('.button');\nlet phrase = document.querySelector('.phrase');\nlet advice = document.querySelector('.advice');\nlet image = document.querySelector('.image');\n\nbutton.addEventListener('click', function () {\n  let randomElement = getRandomElement(phrases);\n  if (randomElement.length > 40) {\n    advice.style.fontSize = '33px';\n  }\n  phrase.textContent = randomElement;\n});"
+    }
+  ],
+  "instructionsHash": "69360dcebe73746797137c1cd330fd38877c9d01293e4032213f8a4c1affe6b0",
+  "verifiedAt": "2026-10-19T10:46:42.018Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "— JavaScript, уменьши, пожалуйста, шрифт.\n— console.log('Есть одно условие');\n— Какое?\n— randomElement.length > 40"
+  }
+}

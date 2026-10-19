@@ -296,5 +296,40 @@
     ],
     "evidence": "quiz_answered: selected options match should-be-checked markers",
     "confirmedAt": "2026-10-19T07:57:03.457Z"
+  },
+  "789490c014b83d99e1a0c0e2777bbaca472a41cc730b325375f585b6ff7e48dd": {
+    "answers": [
+      "Чтобы понять, что творится в программе"
+    ],
+    "evidence": "quiz_answered: selected options match should-be-checked markers",
+    "confirmedAt": "2026-10-19T08:13:55.491Z"
+  },
+  "b8302cf23db5bc325e8c8b5d09c861907a1688da7d7b90a3f648e5a78ccbcf2b": {
+    "answers": [
+      "Math.random() * 10."
+    ],
+    "evidence": "quiz_answered: selected options match should-be-checked markers",
+    "confirmedAt": "2026-10-19T09:59:26.612Z"
+  },
+  "e41d76cdf85cec4b5fd05a6a92b666d15ee9054c7b27496dd7b2751b7627bd8a": {
+    "answers": [
+      "Когда мы используем console.log, alert или Math.random, то тоже пишем круглые скобки. Как при вызове sayHello."
+    ],
+    "evidence": "quiz_answered: actual selected option classes are accepted by the platform",
+    "confirmedAt": "2026-10-19T10:42:17.234Z"
+  },
+  "3a92f839f2fb71aa6aa507bc91c576b6d2e0c2cfce953760768545127e1c8bcb": {
+    "answers": [
+      "false"
+    ],
+    "evidence": "quiz_answered: actual selected option classes are accepted by the platform",
+    "confirmedAt": "2026-10-19T10:45:32.609Z"
+  },
+  "8f75c20f553ac3dfe28df1c2d503cf9c920b64cfe17dfb94abf4005c47d34839": {
+    "answers": [
+      "false"
+    ],
+    "evidence": "quiz_answered: actual selected option classes are accepted by the platform",
+    "confirmedAt": "2026-10-19T10:45:46.883Z"
   }
 }

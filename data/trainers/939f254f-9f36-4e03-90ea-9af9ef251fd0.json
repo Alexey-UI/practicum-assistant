@@ -1,0 +1,17 @@
+{
+  "taskId": "939f254f-9f36-4e03-90ea-9af9ef251fd0",
+  "lessonId": "d8be11ab-31dd-48b7-ac52-c8128ee65f33",
+  "files": [
+    {
+      "name": "script.js",
+      "initialHash": "591eb99be8700587a396e02c7aef8216b450ca7d9805f12a99225acd50416873",
+      "content": "let phrases = [\n  'отправить другу смешную гифку',\n  'посмотреть скидки на авиабилеты',\n  'разобраться, о чём поют рэперы',\n  'Arzamas',\n  'расставить книги на полке по цвету',\n  'читать про зарплаты в Сан-Франциско'\n];\nconsole.log(phrases[0]);\nconsole.log(phrases[2]);\nconsole.log(phrases[4]);\n"
+    }
+  ],
+  "instructionsHash": "cbb7e3d2251f855e58ab7abd30af8ccde0576d1337969ce5bb703b4c5511b829",
+  "verifiedAt": "2026-10-19T09:59:06.835Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Если б нам платили каждый раз, когда мы используем console.log."
+  }
+}

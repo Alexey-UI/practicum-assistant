@@ -1,0 +1,17 @@
+{
+  "taskId": "26b331c4-0aa8-4848-b8bb-6f624f7dfb44",
+  "lessonId": "b9d4e939-0a56-482c-9b0e-92895269e77c",
+  "files": [
+    {
+      "name": "script.js",
+      "initialHash": "3fdb050528a1a27e7e60cee2b448ad37096ac2d4b43ac83e93205b9ad04b4f6c",
+      "content": "let phrases = [\n  'отправить другу смешную гифку',\n  'посмотреть скидки на авиабилеты',\n  'разобраться, о чём поют рэперы',\n  'Arzamas',\n  'расставить книги на полке по цвету',\n  'читать про зарплаты в Сан-Франциско'\n];\n\nfunction getRandomElement(arr) {\n  let randIndex = Math.floor(Math.random() * arr.length);\n  return arr[randIndex];\n}\n\nlet button = document.querySelector('.button');\nlet phrase = document.querySelector('.phrase');\nlet advice = document.querySelector('.advice');\nlet image = document.querySelector('.image');\n\nbutton.addEventListener('click', function () {\n  phrase.textContent = getRandomElement(phrases);\n});\n"
+    }
+  ],
+  "instructionsHash": "bdc263dc8404347a4fe75b71a14a2734f56504bdb0dcdfd41546f7385672baa8",
+  "verifiedAt": "2026-10-19T10:45:18.219Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Клик-клик-клик. Генератор подсказок для прокрастинаторов заработал.\nПо нашей статистике, после этого урока многие студенты куда-то пропадают. Пытаемся понять, почему так происходит. Вы не знаете?"
+  }
+}

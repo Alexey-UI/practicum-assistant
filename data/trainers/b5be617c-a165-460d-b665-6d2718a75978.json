@@ -1,0 +1,17 @@
+{
+  "taskId": "b5be617c-a165-460d-b665-6d2718a75978",
+  "lessonId": "f8557492-a69a-4c41-b94a-4152ddc07714",
+  "files": [
+    {
+      "name": "script.js",
+      "initialHash": "acf84a854d48ce450ec13aeaf9b161fab5d59571de65a4cd09278a476065a43f",
+      "content": "let phrases = [\n  'отправить другу смешную гифку',\n  'посмотреть скидки на авиабилеты',\n  'разобраться, о чём поют рэперы',\n  'Arzamas',\n  'расставить книги на полке по цвету',\n  'читать про зарплаты в Сан-Франциско',\n  'прочитать новости и ужаснуться в комментариях',\n  'попасть в поток грустных песен и вспомнить все ошибки молодости',\n  'посмотреть трейлер сериала и заодно первый сезон',\n  'проверить непрочитанное в Telegram-каналах'\n];\n\nfunction getRandomElement(arr) {\n  let randIndex = Math.floor(Math.random() * arr.length);\n  return arr[randIndex];\n}\n\nlet button = document.querySelector('.button');\nlet phrase = document.querySelector('.phrase');\nlet advice = document.querySelector('.advice');\nlet image = document.querySelector('.image');\n\nbutton.addEventListener('click', function () {\n  let randomElement = getRandomElement(phrases);\n  if (randomElement.length > 40) {\n  }\n  phrase.textContent = randomElement;\n});"
+    }
+  ],
+  "instructionsHash": "360fb421da95b0e1b26701858eb3542e0050bd196d6148e7c6bc7507fa64d67c",
+  "verifiedAt": "2026-10-19T10:46:30.984Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Если элемент.длина больше, чем 40, то.\nОбратите внимание, лексика ваших команд всё больше напоминает язык общения с роботом. Это и есть программирование."
+  }
+}

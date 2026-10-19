@@ -1,0 +1,17 @@
+{
+  "taskId": "c356dcc4-dfa9-4524-bca0-caceff404026",
+  "lessonId": "d8be11ab-31dd-48b7-ac52-c8128ee65f33",
+  "files": [
+    {
+      "name": "script.js",
+      "initialHash": "9e659a00898139fbf59065ea01520bd75e4f0e7591ca730cfe61c22d352eb4ef",
+      "content": "let phrases = [\n  'отправить другу смешную гифку',\n  'посмотреть скидки на авиабилеты',\n  'разобраться, о чём поют рэперы',\n  'Arzamas',\n  'расставить книги на полке по цвету',\n  'читать про зарплаты в Сан-Франциско'\n];\n"
+    }
+  ],
+  "instructionsHash": "13ed9408ff0b2bc83ef719136dd5986760f2965c712da837c02be6f24700472f",
+  "verifiedAt": "2026-10-19T09:58:41.497Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Ответ можно записать в одну строчку — ошибки не будет. Но фразы удобнее читать, если они расположены в столбик."
+  }
+}

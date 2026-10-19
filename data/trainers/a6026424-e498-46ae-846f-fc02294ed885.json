@@ -1,0 +1,17 @@
+{
+  "taskId": "a6026424-e498-46ae-846f-fc02294ed885",
+  "lessonId": "00ac9a12-86df-448c-a081-8a882440365e",
+  "files": [
+    {
+      "name": "index.html",
+      "initialHash": "7e19d48b88290d99e8cab2eab3a811f05231bb13fd454706bc812b0f0dc6fcbe",
+      "content": "<!DOCTYPE html>\n<html lang=\"ru\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <meta http-equiv=\"X-UA-Compatible\" content=\"ie=edge\">\n  <title>Procrastinate.</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n  <link rel=\"icon\" type=\"image\" href=\"https://code.s3.yandex.net/web-code/js-favicon.ico\">\n</head>\n<body>\n  <div class=\"header\">\n    <p class=\"logo\">Procrastinate.</p>\n    <div class=\"button\">Ещё идея</div>\n  </div>\n\n  <img class=\"image\" src=\"https://code.s3.yandex.net/web-code/procrastinate/9.png\">\n\n  <div class=\"advice\">\n    <span>Не писать код, а</span>\n    <span class=\"phrase\">что бы поделать?</span>\n    <img class=\"cursor\" src=\"https://code.s3.yandex.net/web-code/cursor.gif\">\n  </div>\n\n  <p class=\"footer\">© 2020 Сделал Тим Бернерс-Ли</p>\n\n\n  <script src=\"script.js\"></script>\n</body>\n</html>\n"
+    }
+  ],
+  "instructionsHash": "3f9272f0c4c86ca5753dda7e45e8433d257e610ecd19846093b15dfb23708509",
+  "verifiedAt": "2026-10-19T09:56:26.956Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Теперь HTML и JavaScript будут работать в связке. Не хуже, чем братья Березуцкие в своё время. Чтобы продвинуться дальше, пора изучить массивы."
+  }
+}

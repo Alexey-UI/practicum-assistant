@@ -1,0 +1,17 @@
+{
+  "taskId": "894baba6-d1c0-4b80-a85f-05b672f72850",
+  "lessonId": "d3faa16f-9557-4e76-9a93-237507166c41",
+  "files": [
+    {
+      "name": "script.js",
+      "initialHash": "a8f943e068eb363ceacd09f24a504a8af3431431b44c32e0e13ef16649887ccf",
+      "content": "let phrases = [\n  'отправить другу смешную гифку',\n  'посмотреть скидки на авиабилеты',\n  'разобраться, о чём поют рэперы',\n  'Arzamas',\n  'расставить книги на полке по цвету',\n  'читать про зарплаты в Сан-Франциско'\n];\n\nfunction getRandomElement() {\n  let randIndex = Math.floor(Math.random() * phrases.length);\n  console.log(randIndex);\n  console.log(phrases[randIndex]);\n}\n"
+    }
+  ],
+  "instructionsHash": "adf4d24be1906f0f92b1bdbd656e609278aa3d857047d52421e012c103ebfae4",
+  "verifiedAt": "2026-10-19T10:42:33.132Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Хм. Случайный индекс и соответствующий ему элемент перестали выводиться в консоль. \nКонечно, ведь вы только создали функцию, но не вызвали её. В следующем задании будет чем заняться."
+  }
+}

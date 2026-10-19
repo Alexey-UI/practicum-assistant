@@ -1,0 +1,17 @@
+{
+  "taskId": "ec22c384-b222-4aa3-b82a-23d104d8530c",
+  "lessonId": "3cf328ae-c6f3-4e21-9c1c-1f7e2e2e40a0",
+  "files": [
+    {
+      "name": "script.js",
+      "initialHash": "82c027acaffbf3e50d87d67370ca28fa9cf0bfec8c5e0ac0a541157bc5064273",
+      "content": "let phrases = [\n  'отправить другу смешную гифку',\n  'посмотреть скидки на авиабилеты',\n  'разобраться, о чём поют рэперы',\n  'Arzamas',\n  'расставить книги на полке по цвету',\n  'читать про зарплаты в Сан-Франциско'\n];\n\nfunction getRandomElement(arr) {\n  let randIndex = Math.floor(Math.random() * arr.length);\n  return arr[randIndex];\n}\n\nlet randomElement = getRandomElement(phrases);"
+    }
+  ],
+  "instructionsHash": "3445f83c4a1c0d4ce8b87bedac88cdbfe2682aae0b5f1c9779fdea02ef6eaf78",
+  "verifiedAt": "2026-10-19T10:43:48.322Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Как говорил Франц Кафка: «функция — это топор для замёрзшего в нас моря». Может быть, он говорил это не про функции, но мы запомнили именно так."
+  }
+}

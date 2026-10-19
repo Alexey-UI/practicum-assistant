@@ -1,0 +1,17 @@
+{
+  "taskId": "4a0a94e2-71fa-4325-ac28-27c47b711b28",
+  "lessonId": "da32a9ac-d442-4323-acf6-65f94f0ea0ad",
+  "files": [
+    {
+      "name": "script.js",
+      "initialHash": "8a46edf6c2bafd76fd7602633d7a9c2b9719ad1abff408e7beec95946008b6d1",
+      "content": "let phrases = [\n  'отправить другу смешную гифку',\n  'посмотреть скидки на авиабилеты',\n  'разобраться, о чём поют рэперы',\n  'Arzamas',\n  'расставить книги на полке по цвету',\n  'читать про зарплаты в Сан-Франциско'\n];\nlet randIndex = Math.random() * 6;\nconsole.log(randIndex);\nconsole.log(phrases[randIndex]);\n"
+    }
+  ],
+  "instructionsHash": "166f28416631a827ff47d878fdd957330f2adbc63d40239cf35e337909c1844c",
+  "verifiedAt": "2026-10-19T10:00:34.715Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Результат вывода — undefined. Всё правильно, потому что индекс элемента не может быть дробным. Поэтому ничего не остается, кроме как получить «неопределённость» в консоли.\nКак с этим быть — в следующем уроке."
+  }
+}

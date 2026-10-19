@@ -1,0 +1,17 @@
+{
+  "taskId": "e7f8656d-fad2-4739-98e6-7a03e43a5e80",
+  "lessonId": "3cf328ae-c6f3-4e21-9c1c-1f7e2e2e40a0",
+  "files": [
+    {
+      "name": "script.js",
+      "initialHash": "63f910d10356669d44b1c9ebbc0db6a59dddf305e235e59c5e7c65120233effb",
+      "content": "let phrases = [\n  'отправить другу смешную гифку',\n  'посмотреть скидки на авиабилеты',\n  'разобраться, о чём поют рэперы',\n  'Arzamas',\n  'расставить книги на полке по цвету',\n  'читать про зарплаты в Сан-Франциско'\n];\n\nfunction getRandomElement(arr) {\n  let randIndex = Math.floor(Math.random() * arr.length);\n  return arr[randIndex];\n}\n\ngetRandomElement(phrases);"
+    }
+  ],
+  "instructionsHash": "c9b565746cd4028b60969ccc3bdf4100d6a6b1ebd9a7ab08aea809c0a9d5e888",
+  "verifiedAt": "2026-10-19T10:43:39.708Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Функции — это не так просто, как color: red. Но раз вы здесь, знайте: у вас отлично получается."
+  }
+}

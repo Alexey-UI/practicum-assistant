@@ -1,0 +1,17 @@
+{
+  "taskId": "e1768c93-53c5-4158-b8d1-a505e70120ac",
+  "lessonId": "cdb96d85-fdab-47d3-82b3-ff7a9721035f",
+  "files": [
+    {
+      "name": "script.js",
+      "initialHash": "3fe6d7033943c495703bb760cb09a5dd566e0aec59a72e4e51ba3422a3e6e496",
+      "content": "let phrases = [\n  { text: 'отправить другу смешную гифку', image: 'https://code.s3.yandex.net/web-code/procrastinate/1.gif' },\n  'посмотреть скидки на авиабилеты',\n  'разобраться, о чём поют рэперы',\n  'Arzamas',\n  'расставить книги на полке по цвету',\n  'читать про зарплаты в Сан-Франциско',\n  'прочитать новости и ужаснуться в комментариях',\n  'попасть в поток грустных песен и вспомнить все ошибки молодости',\n  'посмотреть трейлер сериала и заодно первый сезон',\n  'проверить непрочитанное в Telegram-каналах'\n];\n\nfunction getRandomElement(arr) {\n  let randIndex = Math.floor(Math.random() * arr.length);\n  return arr[randIndex];\n}\n\nlet button = document.querySelector('.button');\nlet phrase = document.querySelector('.phrase');\nlet advice = document.querySelector('.advice');\nlet image = document.querySelector('.image');\n\nbutton.addEventListener('click', function () {\n  let randomElement = getRandomElement(phrases);\n  phrase.textContent = randomElement;\n\n  if (randomElement.length > 40) {\n    advice.style.fontSize = '33px';\n  } else {\n    advice.style.fontSize = '42px';\n  }\n});"
+    }
+  ],
+  "instructionsHash": "db39f73fe413fa1bf5f00c7a18785553a8e8b0269169fd552d9a8a16a63c01e5",
+  "verifiedAt": "2026-10-19T10:47:15.615Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Хорошо, осталось ещё девять картинок. Шутка, мы избавим вас от рутины."
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "taskId": "d0c6e3f4-0900-4747-b3b6-3fb5e5dd3c38",
+  "lessonId": "67786b93-bf3e-4962-9be9-2a993dbdc1a9",
+  "files": [
+    {
+      "name": "script.js",
+      "initialHash": "4d79ba85337d2b99416db8bfc7ece3c8c8ce28ccec1e309fe3ca5cdf6f2d5f43",
+      "content": "let phrases = [\n  'отправить другу смешную гифку',\n  'посмотреть скидки на авиабилеты',\n  'разобраться, о чём поют рэперы',\n  'Arzamas',\n  'расставить книги на полке по цвету',\n  'читать про зарплаты в Сан-Франциско'\n];\n\nfunction getRandomElement(arr) {\n  let randIndex = Math.floor(Math.random() * arr.length);\n  return arr[randIndex];\n}\n\nlet button = document.querySelector('.button');\n"
+    }
+  ],
+  "instructionsHash": "3638c73c5cb013b76d3e294e85524ab8ab36d9d61d1b8f960604172a0035e2e8",
+  "verifiedAt": "2026-10-19T10:44:16.050Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Теперь вся информация о кнопке лежит в переменной button. \nЕсли хотите сохранить элемент с классом, не обманывайте себя — называйте переменную так же, как и класс. Не придётся запоминать, кого как зовут."
+  }
+}

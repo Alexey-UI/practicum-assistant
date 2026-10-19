@@ -1,0 +1,17 @@
+{
+  "taskId": "6b07d0aa-5bdb-41e4-b280-6beae224bd24",
+  "lessonId": "5d18ac57-100b-4d3f-805d-19491093072f",
+  "files": [
+    {
+      "name": "script.js",
+      "initialHash": "a7d1b9e456917a7fd78c15b7ed9d063fb80c186152cf97b6aff43bf559b4df2a",
+      "content": "let phrases = [\n  'отправить другу смешную гифку',\n  'посмотреть скидки на авиабилеты',\n  'разобраться, о чём поют рэперы',\n  'Arzamas',\n  'расставить книги на полке по цвету',\n  'читать про зарплаты в Сан-Франциско'\n];\n\nfunction getRandomElement(items) {\n  let randIndex = Math.floor(Math.random() * items.length);\n  console.log(randIndex);\n  console.log(items[randIndex]);\n}\n\ngetRandomElement(phrases);"
+    }
+  ],
+  "instructionsHash": "22c51e9fc0d43023885ccbaea0986d18b8814c81afa43b77295a848ae0dce054",
+  "verifiedAt": "2026-10-19T10:43:11.861Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Теперь при вызове getRandomElement можно передавать на вход любой массив, и функция вернёт его случайный элемент. Хотите — выберет карту из колоды, хотите — совет прокрастинатору, а хотите — счастливый билет.\nНа этом магия функций начинается."
+  }
+}

@@ -60,12 +60,31 @@ export async function quizOutcome(root: Locator, cfg: Config): Promise<'correct'
     if (rows.length) return rows.every(row => row.classList.contains('quiz-form-matching__prompt_correct')) ? 'correct' : 'wrong';
     const options = [...el.querySelectorAll('.quiz-form-choice__option')];
     if (!options.some(option => option.classList.contains('quiz-form-choice__option_should-be-checked'))) return 'unknown';
+    if (el.querySelector('input[type="radio"], [role="radio"]')) {
+      // After grading, the platform also checks the inputs of unselected acceptable
+      // alternatives. The option class retains the learner's actual selection.
+      const selected = options.filter(option => option.classList.contains('quiz-form-choice__option_checked'));
+      return selected.length === 1 && selected[0].classList.contains('quiz-form-choice__option_should-be-checked') ? 'correct' : 'wrong';
+    }
     return options.every(option => option.classList.contains('quiz-form-choice__option_checked') === option.classList.contains('quiz-form-choice__option_should-be-checked')) ? 'correct' : 'wrong';
   });
   if (observed !== 'unknown') return observed;
   if (await root.locator(cfg.successSelector).first().isVisible()) return 'correct';
   if (await root.locator(cfg.failureSelector).first().isVisible()) return 'wrong';
   return 'unknown';
+}
+
+export async function captureChoiceAnswer(root: Locator, cfg: Config): Promise<void> {
+  if (!await root.locator('.quiz-form-choice__option').count() || await quizOutcome(root, cfg) !== 'correct') return;
+  const question = await questionFrom(root);
+  const values = (await root.locator('.quiz-form-choice__option_checked .quiz-form-choice__option-content').allTextContents()).map(normalize);
+  if (!values.length || (!question.multiple && values.length !== 1) || values.some(value => !question.options.includes(value))) return;
+  await new Answers().confirm(question, values, 'quiz_answered: actual selected option classes are accepted by the platform');
+  const file = `.local/questions/${questionKey(question)}.json`;
+  const prior = await readJson<{ phase: string; answers: string[] } | null>(file, null);
+  if (prior && JSON.stringify([...prior.answers].sort()) === JSON.stringify([...values].sort())) {
+    await atomicJson(file, { ...prior, phase: 'correct' });
+  }
 }
 
 async function feedback(root: Locator, cfg: Config, page: Page): Promise<'correct' | 'wrong' | 'unknown'> {
@@ -79,7 +98,7 @@ async function feedback(root: Locator, cfg: Config, page: Page): Promise<'correc
 }
 
 export async function solveQuiz(page: Page, root: Locator, cfg: Config): Promise<boolean> {
-  if (await quizOutcome(root, cfg) === 'correct') return true;
+  if (await quizOutcome(root, cfg) === 'correct') { await captureChoiceAnswer(root, cfg); return true; }
   const question = await questionFrom(root);
   const key = questionKey(question);
   const answers = new Answers();

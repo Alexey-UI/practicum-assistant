@@ -1,0 +1,17 @@
+{
+  "taskId": "a11130cd-2c88-413f-86f8-ddff2368c2d5",
+  "lessonId": "3cf328ae-c6f3-4e21-9c1c-1f7e2e2e40a0",
+  "files": [
+    {
+      "name": "script.js",
+      "initialHash": "7b091c94a2e361136f81ceb9d9e95c3efc2c90348e89493e32381fd5f40f1a4f",
+      "content": "let phrases = [\n  'отправить другу смешную гифку',\n  'посмотреть скидки на авиабилеты',\n  'разобраться, о чём поют рэперы',\n  'Arzamas',\n  'расставить книги на полке по цвету',\n  'читать про зарплаты в Сан-Франциско'\n];\n\nfunction getRandomElement(arr) {\n  let randIndex = Math.floor(Math.random() * arr.length);\n  return arr[randIndex];\n}\n\nlet randomElement = getRandomElement(phrases);\n\nconsole.log(randomElement);\n"
+    }
+  ],
+  "instructionsHash": "9f98c13c834f69e802c16c7bc63e7ada58eb0eddd1e8ed41e63b0cc77f894bd9",
+  "verifiedAt": "2026-10-19T10:43:56.946Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Можете считать, что освоили функции. В следующем уроке — разговор о том, как связать код с происходящим на странице."
+  }
+}

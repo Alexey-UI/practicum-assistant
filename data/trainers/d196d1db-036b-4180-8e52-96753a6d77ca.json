@@ -1,0 +1,17 @@
+{
+  "taskId": "d196d1db-036b-4180-8e52-96753a6d77ca",
+  "lessonId": "67786b93-bf3e-4962-9be9-2a993dbdc1a9",
+  "files": [
+    {
+      "name": "script.js",
+      "initialHash": "1fb1b1947e62e4561d8f08869caddac2214f60f47d017a1ca619d79da9293353",
+      "content": "let phrases = [\n  'отправить другу смешную гифку',\n  'посмотреть скидки на авиабилеты',\n  'разобраться, о чём поют рэперы',\n  'Arzamas',\n  'расставить книги на полке по цвету',\n  'читать про зарплаты в Сан-Франциско'\n];\n\nfunction getRandomElement(arr) {\n  let randIndex = Math.floor(Math.random() * arr.length);\n  return arr[randIndex];\n}\n\nlet button = document.querySelector('.button');\nlet advice = document.querySelector('.advice');\nlet phrase = document.querySelector('.phrase');\nlet image = document.querySelector('.image');\n"
+    }
+  ],
+  "instructionsHash": "9f93d9b884708e3e92f48500bfa5e93da44f03e54fd2ef2818591ac88b53b302",
+  "verifiedAt": "2026-10-19T10:44:25.441Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Вы выбрали четыре элемента. Хороший выбор."
+  }
+}

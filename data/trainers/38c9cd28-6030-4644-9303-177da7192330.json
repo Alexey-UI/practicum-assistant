@@ -1,0 +1,17 @@
+{
+  "taskId": "38c9cd28-6030-4644-9303-177da7192330",
+  "lessonId": "22f6779d-4b06-4298-bf98-ac0641ec706b",
+  "files": [
+    {
+      "name": "script.js",
+      "initialHash": "6f7198cefaf9782684e6c78d9053742447816cc6cad38d000f99da38b0211e06",
+      "content": "let phrases = [\n  'отправить другу смешную гифку',\n  'посмотреть скидки на авиабилеты',\n  'разобраться, о чём поют рэперы',\n  'Arzamas',\n  'расставить книги на полке по цвету',\n  'читать про зарплаты в Сан-Франциско'\n];\n\nlet randIndex = Math.floor(Math.random() * phrases.length);\nconsole.log(randIndex);\nconsole.log(phrases[randIndex]);"
+    }
+  ],
+  "instructionsHash": "529cdfbb804a41830361a33d05770d472ca5037d31dfcc2270b3ccc20b3b91e5",
+  "verifiedAt": "2026-10-19T10:23:45.908Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Физик: чтобы получить по-настоящему случайное число, нужен надёжный источник энтропии: тепловой шум или радиоактивный распад.\nРазработчик: Math.floor(Math.random() * phrases.length). \nВо-первых, это красиво. Во-вторых, вы научились этому за два урока. Впереди ещё много красоты."
+  }
+}
