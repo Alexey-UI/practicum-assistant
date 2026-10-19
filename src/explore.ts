@@ -1,9 +1,17 @@
 import { createInterface } from 'node:readline';
 import { openBrowser, START_URL, snapshot, settle, allowedUrl, safeUrl, navigate } from './browser.js';
+import { lockRun } from './store.js';
 
 // A local terminal bridge for inspecting the authenticated UI without remote debugging ports.
 export async function explore(): Promise<void> {
-  const context = await openBrowser(!process.argv.includes('--headed'));
+  const unlock = await lockRun();
+  let stopping = false;
+  let context: Awaited<ReturnType<typeof openBrowser>> | undefined;
+  const stop = () => { stopping = true; void context?.close().catch(() => {}); };
+  process.once('SIGINT', stop);
+  process.once('SIGTERM', stop);
+  try {
+  context = await openBrowser(!process.argv.includes('--headed'));
   const page = context.pages()[0] ?? await context.newPage();
   const network: Array<{ url: string; status?: number; failure?: string }> = [];
   page.on('response', response => {
@@ -18,6 +26,7 @@ export async function explore(): Promise<void> {
   try {
     const flag = process.argv.indexOf('--url');
     await navigate(page, flag >= 0 ? process.argv[flag + 1] : START_URL);
+    if (process.stdin.destroyed || process.stdin.readableEnded) return;
     console.log('Браузер готов. JSON: {"action":"snapshot"}, {"action":"click","role":"button","name":"..."}, {"action":"goto","url":"..."}, {"action":"close"}');
     for await (const line of terminal) {
       if (!line.trim()) continue;
@@ -82,4 +91,11 @@ export async function explore(): Promise<void> {
       } catch (error) { console.error((error as Error).message); }
     }
   } finally { terminal.close(); await context.close(); }
+  } catch (error) {
+    if (!stopping) throw error;
+  } finally {
+    process.off('SIGINT', stop);
+    process.off('SIGTERM', stop);
+    try { await context?.close(); } finally { await unlock(); }
+  }
 }

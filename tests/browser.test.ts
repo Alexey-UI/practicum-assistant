@@ -176,6 +176,36 @@ test('Возобновление обновляет каталог только 
   } finally { await page.close(); await rm(dir, { recursive: true, force: true }); }
 });
 
+test('Табличный опрос с пустым заголовком выбирает нейтральную колонку и сохраняет пустой отзыв', async () => {
+  const page = await browser.newPage();
+  const original = process.cwd();
+  const dir = await mkdtemp(path.join(tmpdir(), 'practicum-matrix-feedback-'));
+  try {
+    process.chdir(dir);
+    await page.setContent(`<section class="quiz quiz_type_feedback" data-test-id="quiz-feedback-aabbcc">
+      <p class="quiz__title"></p><div class="quiz__question-content"><div class="likert-scale">
+      <p id="yes" class="likert-scale__grade-label">Да</p><p id="neutral" class="likert-scale__grade-label">не знаю</p>
+      ${['Теория', 'Практика'].map((text, index) => `<div class="likert-scale__statement-row">${text}
+        <label><input type="radio" name="q${index}" aria-labelledby="yes"></label>
+        <label><input type="radio" name="q${index}" aria-labelledby="neutral"></label></div>`).join('')}
+      </div></div><button class="quiz__move-on">Далее</button><div class="quiz__counter">1 — 2</div></section>`);
+    await page.locator('.quiz__move-on').evaluate(button => button.addEventListener('click', () => {
+      document.body.dataset.neutral = String(document.querySelectorAll('input[aria-labelledby="neutral"]:checked').length);
+      document.querySelector('.quiz__question-content')!.innerHTML = '<p>Отзыв по желанию</p><textarea></textarea>';
+      document.querySelector('.quiz__counter')!.textContent = '2 — 2';
+      (button as HTMLButtonElement).disabled = true;
+      document.body.dataset.submitted = '1';
+    }));
+    assert.equal(await solveFeedback(page, page.locator('.quiz'), { ...DEFAULTS, feedbackPolicy: 'neutral' }), false);
+    assert.equal(await page.locator('body').getAttribute('data-submitted'), '1');
+    assert.equal(await page.locator('body').getAttribute('data-neutral'), '2');
+    assert.equal(await page.locator('textarea').inputValue(), '');
+    // Restart observes the new step and never submits a blocked blank review.
+    assert.equal(await solveFeedback(page, page.locator('.quiz'), { ...DEFAULTS, feedbackPolicy: 'neutral' }), false);
+    assert.equal(await page.locator('body').getAttribute('data-submitted'), '1');
+  } finally { process.chdir(original); await page.close(); await rm(dir, { recursive: true, force: true }); }
+});
+
 test('Текстовое задание сохраняется только после положительного маркера и не отправляется повторно', async () => {
   const page = await browser.newPage();
   const original = process.cwd();

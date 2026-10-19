@@ -127,14 +127,16 @@ export async function run(): Promise<void> {
       await saveObservedSolved(observed);
       for (const row of lessons) if (observed.has(canonicalLesson(row.url))) row.solved = true;
       if (observed.has(canonicalLesson(lesson.url))) {
-        const project = projects.find(project => project.review !== 'teacher' && canonicalLesson(project.lessonUrl) === canonicalLesson(lesson.url));
+        const project = projects.find(project => (!project.review || project.review === 'platform') && canonicalLesson(project.lessonUrl) === canonicalLesson(lesson.url));
         if (project) await submitProject(page, project);
         await journal('lesson-already-solved', { url: canonicalLesson(lesson.url) });
         continue;
       }
 
       const heading = await titleNode.count() ? await titleNode.first().innerText() : await page.title();
-      if (/сдача проектной работы/i.test(heading) || await taskTab.isVisible()) {
+      const knownProject = projects.find(project => canonicalLesson(project.lessonUrl) === canonicalLesson(lesson.url));
+      if (knownProject?.review === 'self') await prepareManualProject(knownProject);
+      if (knownProject?.review !== 'self' && (/сдача проектной работы/i.test(heading) || await taskTab.isVisible())) {
         const project = (await loadProjects()).find(project => new URL(project.lessonUrl).pathname === new URL(page.url()).pathname);
         if (project) {
           if (project.review === 'teacher') {
@@ -156,6 +158,7 @@ export async function run(): Promise<void> {
         return;
       }
       let completed = false;
+      let deferred = false;
       for (let step = 0; step < cfg.maxSteps; step++) {
         if (new URL(page.url()).pathname.startsWith('/trainer/')) {
           const result = await trainerStep(page, research);
@@ -184,10 +187,20 @@ export async function run(): Promise<void> {
             continue;
           }
           if (!await questionStep(page, root, cfg, research)) {
+            if (cfg.feedbackPolicy === 'neutral' && await root.evaluate(el => el.classList.contains('quiz_type_feedback'))) {
+              const artifacts = await snapshot(page, 'feedback-deferred');
+              const pending = await readJson<Record<string, unknown>>('.local/deferred-lessons.json', {});
+              pending[canonicalLesson(lesson.url)] = { reason: 'Опрос требует свободного отзыва или не имеет однозначного нейтрального ответа', artifacts, observedAt: new Date().toISOString() };
+              await atomicJson('.local/deferred-lessons.json', pending);
+              await journal('feedback-deferred', { url: canonicalLesson(lesson.url), artifacts });
+              console.log(`Опрос оставлен незавершённым, остальные уроки продолжатся: ${artifacts}`);
+              deferred = true; break;
+            }
             pause(`Нужен разбор вопроса. ${await snapshot(page, 'question')}`); return;
           }
           answeredQuestion = true; break;
         }
+        if (deferred) break;
         if (answeredQuestion) continue;
         await atomicJson(`.local/lessons/${lessonId(lesson.url) ?? 'unknown'}.json`, {
           url: safeUrl(lesson.url), title: lesson.title, text: await page.locator('body').innerText(),
@@ -231,7 +244,7 @@ export async function run(): Promise<void> {
         }
         await settle(page);
       }
-      if (!completed) throw new Error('Достигнут лимит шагов урока');
+      if (!completed && !deferred) throw new Error('Достигнут лимит шагов урока');
     }
     console.log('Обход выбранных уроков завершён.');
   } catch (error) {

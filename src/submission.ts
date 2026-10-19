@@ -11,7 +11,7 @@ const exec = promisify(execFile);
 interface Submission { commit: string; phase: 'requested' | 'accepted' | 'complete'; lessonUrl: string; updatedAt?: string }
 
 export async function prepareManualProject(project: Project): Promise<void> {
-  if (project.review !== 'teacher') throw new Error('Проект не требует ручной сдачи');
+  if (project.review !== 'teacher' && project.review !== 'self') throw new Error('Проект требует приёмки платформой');
   await projectCommand(['prepare', project.id]);
   await projectCommand(['verify', project.id]);
   await projectCommand(['publish', project.id]);
@@ -19,13 +19,13 @@ export async function prepareManualProject(project: Project): Promise<void> {
   if (!published) throw new Error('Нет подтверждения публикации проекта');
   const draft = `.local/hand-ins/${project.id}.json`;
   await atomicJson(draft, {
-    project: project.id, phase: 'draft', lessonUrl: project.lessonUrl,
+    project: project.id, phase: project.review === 'self' ? 'self-checked' : 'draft', lessonUrl: project.lessonUrl,
     repository: `https://github.com/${project.destination}`, commit: published.destinationCommit,
     instructions: 'Сверить требования сдачи на странице курса. Личные сведения заполняет пользователь. Документы, формы и сообщения преподавателю автоматически не отправляются.',
     updatedAt: new Date().toISOString(),
   });
   await journal('project-manual-draft', { id: project.id, draft });
-  console.log(`Работа опубликована; сдача преподавателю оставлена локальным черновиком: ${draft}. Приёмка не засчитана.`);
+  console.log(project.review === 'self' ? `Самопроверка работы завершена: ${draft}. Внешняя приёмка не засчитана.` : `Работа опубликована; сдача преподавателю оставлена локальным черновиком: ${draft}. Приёмка не засчитана.`);
 }
 
 async function accepted(page: Page): Promise<boolean> {
@@ -53,7 +53,7 @@ async function waitCI(page: Page, project: Project, commit: string): Promise<voi
 }
 
 export async function submitProject(page: Page, project: Project): Promise<boolean> {
-  if (project.review === 'teacher') throw new Error('Ручная сдача допускает только локальный черновик');
+  if (project.review === 'teacher' || project.review === 'self') throw new Error('У проекта нет автоматической приёмки');
   const file = `.local/submissions/${project.id}.json`;
   let pending = await readJson<Submission | null>(file, null);
   const pathname = new URL(project.lessonUrl).pathname;

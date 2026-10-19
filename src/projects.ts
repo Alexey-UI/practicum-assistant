@@ -15,7 +15,7 @@ export interface Project {
   destination: string;
   commit: string;
   pages?: boolean;
-  review?: 'platform' | 'teacher';
+  review?: 'platform' | 'teacher' | 'self';
   checks: Array<{ program: 'npm' | 'node'; args: string[] }>;
 }
 interface Manifest { version: 1; projects: Project[] }
@@ -40,7 +40,7 @@ export async function loadProjects(): Promise<Project[]> {
     ids.add(item.id);
     if (!REPO.test(item.source) || !REPO.test(item.destination) || !/^[a-f0-9]{40}$/.test(item.commit)) throw new Error('Нужны репозитории Alexey-UI и полный SHA проверенного коммита');
     if (item.pages !== undefined && typeof item.pages !== 'boolean') throw new Error('Некорректная настройка GitHub Pages');
-    if (item.review !== undefined && !['platform', 'teacher'].includes(item.review)) throw new Error('Некорректный способ приёмки проекта');
+    if (item.review !== undefined && !['platform', 'teacher', 'self'].includes(item.review)) throw new Error('Некорректный способ приёмки проекта');
     if (!safeRelative(item.sourcePath)) throw new Error('Некорректная папка эталона');
     if (!Array.isArray(item.checks) || item.checks.length === 0) throw new Error('Для эталона нужны команды проверки');
     for (const check of item.checks) {
