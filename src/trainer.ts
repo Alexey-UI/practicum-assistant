@@ -12,7 +12,9 @@ interface MonacoWindow extends Window { monaco?: { editor: {
 export const contentHash = (content: string) => createHash('sha256').update(content.replace(/\r\n/g, '\n')).digest('hex');
 
 export async function selectEditorFile(page: Page, name: string): Promise<void> {
-  const file = page.locator('.files-tree').getByText(name, { exact: true }).filter({ visible: true });
+  const treeFile = page.locator('.files-tree').getByText(name, { exact: true }).filter({ visible: true });
+  const tabText = page.getByText(name, { exact: true }).and(page.locator('article.tab__text'));
+  const file = await treeFile.count() ? treeFile : page.locator('section.tab').filter({ has: tabText, visible: true });
   if (await file.count() !== 1) throw new Error(`Файл ${name} не найден или неоднозначен в дереве редактора`);
   await file.click();
 }

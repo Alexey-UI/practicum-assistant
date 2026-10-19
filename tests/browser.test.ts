@@ -5,7 +5,7 @@ import { readLessons, observedSolved, saveObservedSolved } from '../src/catalog.
 import { exactButton, questionFrom, quizOutcome } from '../src/quiz.js';
 import { DEFAULTS } from '../src/config.js';
 import { scrollLesson } from '../src/scroll.js';
-import { trainerOutcome } from '../src/trainer.js';
+import { trainerOutcome, selectEditorFile } from '../src/trainer.js';
 import { readTextQuestion, solveTextQuestion, captureTextAnswer } from '../src/text-quiz.js';
 import { solveFeedback } from '../src/feedback.js';
 import { solveQuiz } from '../src/quiz.js';
@@ -17,6 +17,20 @@ import path from 'node:path';
 let browser: Browser;
 before(async () => { browser = await chromium.launch({ channel: 'chrome', headless: true }); });
 after(async () => { await browser?.close(); });
+test('Файл редактора выбирается в дереве и во вкладках с перекрывающей текст подсказкой', async () => {
+  const page = await browser.newPage();
+  try {
+    await page.setContent('<div class="files-tree"><span onclick="document.body.dataset.file=this.textContent">script.js</span></div>');
+    await selectEditorFile(page, 'script.js');
+    assert.equal(await page.locator('body').getAttribute('data-file'), 'script.js');
+    await page.setContent(`<style>.tab { position: relative; width: 200px; height: 50px; } .element-hint { position: absolute; inset: 0; }</style>
+      <section class="tab" onclick="document.body.dataset.file='script.js'"><span class="element-hint"></span><article class="tab__text">script.js</article></section>
+      <section class="tab" onclick="document.body.dataset.file='script.js.map'"><article class="tab__text">script.js.map</article></section>`);
+    await selectEditorFile(page, 'script.js');
+    assert.equal(await page.locator('body').getAttribute('data-file'), 'script.js');
+    await assert.rejects(selectEditorFile(page, 'missing.js'));
+  } finally { await page.close(); }
+});
 test('Каталог отличает галочку solved от доступного урока и фильтрует чужие ссылки', async () => {
   const page = await browser.newPage();
   try {
