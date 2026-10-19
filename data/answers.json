@@ -177,5 +177,40 @@
     ],
     "evidence": "quiz_answered: selected options match should-be-checked markers",
     "confirmedAt": "2026-10-19T05:32:24.822Z"
+  },
+  "79d6fbeba7958614987138e0a2353682c10d4458a72c76a7ead2a4ef05f79677": {
+    "answers": [
+      "<section>"
+    ],
+    "evidence": "quiz_answered: selected options match should-be-checked markers",
+    "confirmedAt": "2026-10-19T07:29:10.431Z"
+  },
+  "5f0ca109531d274662926d4375d0460baa0270842a51a21d7491fcbbd2d4e243": {
+    "answers": [
+      "Задать атрибутом class ярлык для тега в HTML и использовать этот ярлык в CSS"
+    ],
+    "evidence": "quiz_answered: selected options match should-be-checked markers",
+    "confirmedAt": "2026-10-19T07:30:31.652Z"
+  },
+  "3953edd37be225fef7f6831856e7abc7b6ed3534e658dff85c7cd9f6b2aca989": {
+    "answers": [
+      "Все блочные элементы"
+    ],
+    "evidence": "quiz_answered: selected options match should-be-checked markers",
+    "confirmedAt": "2026-10-19T07:32:02.140Z"
+  },
+  "1df110f32a873d1e7a40ad047f18a2ebb74bf6cbdf10400d240071eb9534ed50": {
+    "answers": [
+      "Ширину родителя"
+    ],
+    "evidence": "quiz_answered: selected options match should-be-checked markers",
+    "confirmedAt": "2026-10-19T07:32:48.288Z"
+  },
+  "804282b7f8d24b0a7d6e254fc19e03b4e4ff601a2808db4bd835a1aabeec2ba3": {
+    "answers": [
+      "Нет"
+    ],
+    "evidence": "quiz_answered: selected options match should-be-checked markers",
+    "confirmedAt": "2026-10-19T07:33:36.961Z"
   }
 }

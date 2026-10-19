@@ -9,3 +9,4 @@ solutions/
 *.log
 .DS_Store
 practicum.config.json
+/*.pdf
