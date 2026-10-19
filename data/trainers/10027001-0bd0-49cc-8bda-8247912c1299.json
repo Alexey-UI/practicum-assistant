@@ -1,0 +1,18 @@
+{
+  "taskId": "10027001-0bd0-49cc-8bda-8247912c1299",
+  "lessonId": "07ccdea7-81ba-433c-b459-cd918e24cf28",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "files": [
+    {
+      "name": "style.css",
+      "initialHash": "04c510eea463aa318fcdb75f05648f93ab76833f96898fd16098d3249648fc3d",
+      "content": "body {\n  display: flex;\n  flex-direction: column;\n  height: 100vh;\n  margin: 0;\n  font-family: sans-serif;\n  background-color: rgb(71 71 121);\n}\n\nh1,\np {\n  margin: 0;\n}\n\n.header {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  padding-top: 20px;\n}\n\nh1 {\n  display: inline-block;\n  border-radius: 50px;\n  padding: 20px;\n  color: tomato;\n  font-weight: normal;\n  font-size: 24px;\n  background-color: #1e1e1e;\n}\n\n.game-zone {\n  position: relative;\n  flex-grow: 1;\n  height: 100%;\n  padding: 80px 0;\n}\n\n.grid {\n  justify-items: center;\n  align-items: center;\n  display: grid;\n  grid-template-columns: repeat(4, 80px);\n  grid-template-rows: repeat(4, 80px);\n  place-content: center;\n  height: 100%;\n  color: #fff;\n  font-size: 18px;\n}\n\n.cell {\n  position: relative;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  width: 60px;\n  height: 60px;\n  border-radius: 50%;\n  background-color: #1e1e1e;\n  cursor: pointer;\n}\n\n.cell:hover {\n  transform: scale(1.03);\n}"
+    }
+  ],
+  "instructionsHash": "2489105549bc6dcc502f7c9e7c4d7c30016973712f32382d4e15aed3fc537f24",
+  "verifiedAt": "2026-10-19T17:16:29.800Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Теперь всё ровно, можно поиграть!"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "taskId": "fae9ad74-9410-4513-a8ba-ced00cd8223f",
+  "lessonId": "f8bd0d37-0f8f-4d1b-82bb-c07ffe54e532",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "files": [
+    {
+      "name": "index.html",
+      "initialHash": "67d93a277b5cb7e6c3ae949fe9506329e52664deb9df7074a6d719c817ef3ad6",
+      "content": "<!DOCTYPE html>\n<html lang=\"ru\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <title>Найди пару</title>\n    <link rel=\"stylesheet\" href=\"./styles/style.css\" />\n    <link rel=\"stylesheet\" href=\"./styles/vendor.css\" />\n  </head>\n  <body>\n    <header class=\"header\">\n      <h1>Нажимайте на квадраты и ищите пары</h1>\n    </header>\n    <main class=\"game-zone\">\n      <section class=\"grid\">\n        <div class=\"cell q\">&lt;q&gt;</div>\n        <div class=\"cell p\">&lt;p&gt;</div>\n        <div class=\"cell li\">&lt;li&gt;</div>\n        <div class=\"cell a\">&lt;a&gt;</div>\n        <div class=\"cell ul\">&lt;ul&gt;</div>\n        <div class=\"cell ol\">&lt;ol&gt;</div>\n        <div class=\"cell dl\">&lt;dl&gt;</div>\n        <div class=\"cell em\">&lt;em&gt;</div>\n        <div class=\"cell q\">&lt;/q&gt;</div>\n        <div class=\"cell a\">&lt;/a&gt;</div>\n        <div class=\"cell ul\">&lt;/ul&gt;</div>\n        <div class=\"cell dl\">&lt;/dl&gt;</div>\n        <div class=\"cell li\">&lt;/li&gt;</div>\n        <div class=\"cell ol\">&lt;/ol&gt;</div>\n        <div class=\"cell em\">&lt;/em&gt;</div>\n        <div class=\"cell p\">&lt;/p&gt;</div>\n      </section>\n    </main>\n    <script src=\"./scripts/game.js\"></script>\n  </body>\n</html>"
+    }
+  ],
+  "instructionsHash": "21d6721b53d2d014e90d396561992f49fea4623e3d44b74b34c87ea825861edd",
+  "verifiedAt": "2026-10-19T17:15:53.935Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Наигрались? Осталось всего одно упражнение перед заминкой."
+  }
+}

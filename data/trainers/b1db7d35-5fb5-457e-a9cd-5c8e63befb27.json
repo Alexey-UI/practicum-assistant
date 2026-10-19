@@ -1,0 +1,18 @@
+{
+  "taskId": "b1db7d35-5fb5-457e-a9cd-5c8e63befb27",
+  "lessonId": "12ac490d-1453-4bc3-b7d8-0092bf4a5790",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "files": [
+    {
+      "name": "style.css",
+      "initialHash": "42162e272e9861930e91c949c7f0938a1d237b922e306677ce04196798d73224",
+      "content": ".root {\n  display: grid;\n  grid-template-columns: repeat(8, 1fr);\n  grid-template-rows: 100px repeat(2, 1fr) 100px;\n  grid-template-areas:\n    'header header header header header header header header'\n    '. sidebar main main main main widget_position_top .'\n    '. sidebar main main main main widget_position_bottom .'\n    'footer footer footer footer footer footer footer footer';\n  gap: 2em;\n  box-sizing: border-box;\n  height: 100vh;\n  margin: 0;\n  padding: 20px;\n  color: #fff;\n  font-family: Inter, sans-serif;\n  background-color: #1e1e1e;\n}\n\n.root__item {\n  box-sizing: border-box;\n  border: 2px dotted tomato;\n  border-radius: 10px;\n  padding: 20px;\n}\n\n.title {\n  z-index: 1;\n  margin: 0;\n  font-weight: normal;\n  font-size: 32px;\n  text-align: center;\n}\n\n.header {\n  grid-area: header;\n}\n\n.header .title {\n  font-size: 40px;\n}\n\n.sidebar {\n  grid-area: sidebar;\n}\n\n.sidebar__menu-list {\n  margin: 0;\n  padding: 0;\n  font-size: 14px;\n  list-style: none;\n}\n\n.sidebar__menu-list li {\n  margin-bottom: 8px;\n}\n\n.sidebar__menu-list a {\n  color: inherit;\n}\n\n.main {\n  grid-area: main;\n  overflow-y: scroll;\n}\n\n.main .title {\n  margin-bottom: 30px;\n}\n\n.card {\n  display: flex;\n  align-items: flex-start;\n  gap: 20px;\n  box-sizing: border-box;\n  margin-bottom: 20px;\n  border-radius: 20px;\n  padding: 20px;\n  color: #1e1e1e;\n  background-color: #fff;\n}\n\n.card__image {\n  width: 100px;\n}\n\n.card__title {\n  margin: 0 0 12px;\n  font-weight: normal;\n  font-size: 16px;\n}\n\n.card__text {\n  margin: 0;\n  font-size: 14px;\n}\n\n.widget {\n  position: relative;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  border: none;\n  background-position: center;\n  background-size: cover;\n}\n\n.widget::after {\n  content: '';\n  position: absolute;\n  inset: 0;\n  background-color: rgb(0 0 0/0.4);\n}\n\n.widget_position_top {\n  grid-area: widget_position_top;\n  background-image: url(./images/banner-1.jpg);\n}\n\n.widget_position_bottom {\n  grid-area: widget_position_bottom;\n  background-image: url(./images/banner-2.jpg);\n}\n\n.footer {\n  display: flex;\n  grid-area: footer;\n  justify-content: center;\n  align-items: center;\n}"
+    }
+  ],
+  "instructionsHash": "765b356524cb91c6cbddd387818699c25712b772a6089bceaf0babb21a155d51",
+  "verifiedAt": "2026-10-19T17:12:01.047Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Здорово! Всё сработало. Свойство grid-template-areas уникальное. Не указывая размеров и координат, мы управляем расположением и размерами грид-элементов внутри контейнера. Это похоже на программистское волшебство!"
+  }
+}

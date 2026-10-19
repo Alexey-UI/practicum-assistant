@@ -1,0 +1,18 @@
+{
+  "taskId": "ffab7e18-67d5-4c70-86c7-3cad826cd05f",
+  "lessonId": "71e51e83-8b38-401b-bce1-28dfb95ad801",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "files": [
+    {
+      "name": "style.css",
+      "initialHash": "b865b5bed2c5cec87de1b6616e9f8ef39ec7fd03d788001f7c474832031efac5",
+      "content": "body {\n  display: flex;\n  flex-direction: column;\n  height: 100vh;\n  margin: 0;\n  font-family: sans-serif;\n  background-color: rgb(71 71 121);\n}\n\nh1,\np {\n  margin: 0;\n}\n\n.header {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  padding-top: 20px;\n}\n\nh1 {\n  display: inline-block;\n  border-radius: 50px;\n  padding: 20px;\n  color: tomato;\n  font-weight: normal;\n  font-size: 24px;\n  background-color: #1e1e1e;\n}\n\n.game-zone {\n  position: relative;\n  flex-grow: 1;\n  height: 100%;\n  padding: 80px 0;\n}\n\n.grid {\n  justify-content: center;\n  align-content: center;\n  display: grid;\n  grid-template-columns: repeat(4, 80px);\n  grid-template-rows: repeat(4, 80px);\n  height: 100%;\n  color: #fff;\n  font-size: 18px;\n}\n\n.cell {\n  position: relative;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  width: 60px;\n  height: 60px;\n  border-radius: 50%;\n  background-color: #1e1e1e;\n  cursor: pointer;\n}\n\n.cell:hover {\n  transform: scale(1.03);\n}"
+    }
+  ],
+  "instructionsHash": "342480825a34218729b1724015fcca21b8fdf7e6fb4d83bbefe14ccaae2ceab0",
+  "verifiedAt": "2026-10-19T17:14:57.141Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Выравнивать всё по центру — это такая частая задача верстальщика."
+  }
+}

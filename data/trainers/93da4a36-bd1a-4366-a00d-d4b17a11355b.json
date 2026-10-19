@@ -1,0 +1,18 @@
+{
+  "taskId": "93da4a36-bd1a-4366-a00d-d4b17a11355b",
+  "lessonId": "07ccdea7-81ba-433c-b459-cd918e24cf28",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "files": [
+    {
+      "name": "style.css",
+      "initialHash": "4b3bc8a4cea3f3c53f26c07ef27e1c33bc8e4ff8b16bcbe07fde596627c09ed1",
+      "content": ".root {\n  display: grid;\n  grid-template-columns: repeat(8, 1fr);\n  grid-template-rows: 100px repeat(2, 1fr) 100px;\n  grid-template-areas:\n    'header header header header header header header header'\n    '. sidebar main main main main widget_position_top .'\n    '. sidebar main main main main widget_position_bottom .'\n    'footer footer footer footer footer footer footer footer';\n  gap: 2em;\n  box-sizing: border-box;\n  height: 100vh;\n  margin: 0;\n  padding: 20px;\n  color: #fff;\n  font-family: Inter, sans-serif;\n  background-color: #1e1e1e;\n}\n\n.root__item {\n  box-sizing: border-box;\n  border: 2px dotted tomato;\n  border-radius: 10px;\n  padding: 20px;\n}\n\n.title {\n  z-index: 1;\n  margin: 0;\n  font-weight: normal;\n  font-size: 32px;\n  text-align: center;\n}\n\n.header {\n  grid-area: header;\n}\n\n.header .title {\n  font-size: 40px;\n}\n\n.sidebar {\n  grid-area: sidebar;\n}\n\n.sidebar__menu-list {\n  margin: 0;\n  padding: 0;\n  font-size: 14px;\n  list-style: none;\n}\n\n.sidebar__menu-list li {\n  margin-bottom: 8px;\n}\n\n.sidebar__menu-list a {\n  color: inherit;\n}\n\n.main {\n  grid-area: main;\n  overflow-y: scroll;\n}\n\n.main .title {\n  margin-bottom: 30px;\n}\n\n.card {\n  display: flex;\n  align-items: flex-start;\n  gap: 20px;\n  box-sizing: border-box;\n  margin-bottom: 20px;\n  border-radius: 20px;\n  padding: 20px;\n  color: #1e1e1e;\n  background-color: #fff;\n}\n\n.card__image {\n  width: 100px;\n}\n\n.card__title {\n  margin: 0 0 12px;\n  font-weight: normal;\n  font-size: 16px;\n}\n\n.card__text {\n  margin: 0;\n  font-size: 14px;\n}\n\n.widget {\n  position: relative;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  border: none;\n  background-position: center;\n  background-size: cover;\n}\n\n.widget::after {\n  content: '';\n  position: absolute;\n  inset: 0;\n  background-color: rgb(0 0 0/0.4);\n}\n\n.widget_position_top {\n  grid-area: widget_position_top;\n  background-image: url(./images/banner-1.jpg);\n}\n\n.widget_position_bottom {\n  grid-area: widget_position_bottom;\n  background-image: url(./images/banner-2.jpg);\n}\n\n.footer {\n  align-self: center;\n  grid-area: footer;\n}"
+    }
+  ],
+  "instructionsHash": "7993f4a9f49e6c6fd59b64df3992399d6ec6bd6616043983ed540109c00613fb",
+  "verifiedAt": "2026-10-19T17:16:50.481Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Ладно, мы схитрили. Свойство justify-content не заменить на align-self. Ничего не поменялось из-за text-align для title. Подумайте об этом. Но вот флекс-контейнер тут совсем не нужен, ведь есть грид."
+  }
+}

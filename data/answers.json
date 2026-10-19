@@ -342,5 +342,82 @@
     ],
     "evidence": "quiz_answered: actual selected option classes are accepted by the platform",
     "confirmedAt": "2026-10-19T15:22:02.645Z"
+  },
+  "cb90c5d3c97c4a0f3dc4115c0e6aeb48fc908db7f3a11db571c946031c4e4074": {
+    "answers": [
+      "дочерние элементы визуально отделены от родительских табом или пробелом;",
+      "отступ должен быть единообразным: если везде два пробела, то два, если четыре, то четыре;",
+      "можно комментировать переиспользуемые блоки;",
+      "можно комментировать пометкой TODO: то, что нужно исправить в вёрстке;"
+    ],
+    "evidence": "quiz_answered: actual selected option classes are accepted by the platform",
+    "confirmedAt": "2026-10-19T17:18:17.536Z"
+  },
+  "d0e3144df61de876bea88a829f2f01504c317b6db29f0bc19fd642d498bf5469": {
+    "answers": [
+      "свойства внутри фигурных скобок должны быть отделены табуляцией;",
+      "после селектора, перед фигурной скобкой ставится пробел;",
+      "каждое свойство пишут с новой строки;",
+      "стоит комментировать то, что не сможете вспомнить через месяц."
+    ],
+    "evidence": "quiz_answered: actual selected option classes are accepted by the platform",
+    "confirmedAt": "2026-10-19T17:18:17.576Z"
+  },
+  "f53b2aa4801e81948e952b227c163cb463b4f54578762187eace9e5ee3001f80": {
+    "answers": [
+      "Инструменты программистов часто выглядят пугающе. У них как будто нет интерфейса. Программист куда-то вводит текст, и там что-то происходит, как в кино про хакеров. Может, «Гит» — что-то из этой серии?"
+    ],
+    "evidence": "quiz_answered: actual selected option classes are accepted by the platform",
+    "confirmedAt": "2026-10-19T17:20:15.626Z"
+  },
+  "f0d5e133364f40eda7131292d77c8c28dc86bedbe9a9880f26abfbfe6a5c2fa9": {
+    "answers": [
+      "Выбрать место, где она будет создана."
+    ],
+    "evidence": "quiz_answered: actual selected option classes are accepted by the platform",
+    "confirmedAt": "2026-10-19T17:20:15.652Z"
+  },
+  "3035dc9cb4b1398167429dd78a923d66cc5a1552c9aad4ba86ec24326d00d2a3": {
+    "answers": [
+      "git init"
+    ],
+    "evidence": "quiz_answered: actual selected option classes are accepted by the platform",
+    "confirmedAt": "2026-10-19T17:21:01.753Z"
+  },
+  "9d4903e276284d0e1c317b343e0a7b56a7de5302161a1d93ab9d526ec127ed68": {
+    "answers": [
+      "git add --all",
+      "git add -A"
+    ],
+    "evidence": "quiz_answered: actual selected option classes are accepted by the platform",
+    "confirmedAt": "2026-10-19T17:21:01.771Z"
+  },
+  "788a71ac7d4732bd618a9932e15b9c7e861e885b2bc2af0790893213d9212261": {
+    "answers": [
+      "Обновить содержимое файлов. Зафиксировать их командой git add -A. Вызвать git commit -m \"обновление файлов\" для сохранения версии."
+    ],
+    "evidence": "quiz_answered: actual selected option classes are accepted by the platform",
+    "confirmedAt": "2026-10-19T17:21:42.704Z"
+  },
+  "bb3fce5470e453912f54904a640c4ee9f6f3a5d3d1c27c8e7cdbe4249f5c0050": {
+    "answers": [
+      "«Гит» — это софт для контроля версий файлов. «Гитхаб» — облачная платформа для хранения git-репозиториев."
+    ],
+    "evidence": "quiz_answered: actual selected option classes are accepted by the platform",
+    "confirmedAt": "2026-10-19T17:22:19.501Z"
+  },
+  "cb3392a5188833e8cdfab269e66e8f61ddd9c665fa62f686c821444ebe9387f2": {
+    "answers": [
+      "Нет, клонировать можно любой публичный репозиторий."
+    ],
+    "evidence": "quiz_answered: actual selected option classes are accepted by the platform",
+    "confirmedAt": "2026-10-19T17:24:14.525Z"
+  },
+  "caa42af3501f84be98395c6cca94b826873a3ee85b9d964414d2b217b1c6edd1": {
+    "answers": [
+      "Найти его на «Гитхабе», нажать кнопку ”Clone and download“, скопировать ссылку. Перейти в терминал, ввести команду git clone и вставить скопированную ссылку."
+    ],
+    "evidence": "quiz_answered: actual selected option classes are accepted by the platform",
+    "confirmedAt": "2026-10-19T17:24:14.543Z"
   }
 }
