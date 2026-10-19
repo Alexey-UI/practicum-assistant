@@ -14,6 +14,7 @@ export interface Project {
   sourcePath: string;
   destination: string;
   commit: string;
+  pages?: boolean;
   checks: Array<{ program: 'npm' | 'node'; args: string[] }>;
 }
 interface Manifest { version: 1; projects: Project[] }
@@ -37,6 +38,7 @@ export async function loadProjects(): Promise<Project[]> {
     if (!/^[a-z0-9][a-z0-9-]*$/.test(item.id) || ids.has(item.id)) throw new Error('Некорректный или повторный id проекта');
     ids.add(item.id);
     if (!REPO.test(item.source) || !REPO.test(item.destination) || !/^[a-f0-9]{40}$/.test(item.commit)) throw new Error('Нужны репозитории Alexey-UI и полный SHA проверенного коммита');
+    if (item.pages !== undefined && typeof item.pages !== 'boolean') throw new Error('Некорректная настройка GitHub Pages');
     if (!safeRelative(item.sourcePath)) throw new Error('Некорректная папка эталона');
     if (!Array.isArray(item.checks) || item.checks.length === 0) throw new Error('Для эталона нужны команды проверки');
     for (const check of item.checks) {
@@ -99,6 +101,26 @@ async function prepare(project: Project): Promise<void> {
   console.log(`Подготовлено: ${target}; служебные файлы Git и GitHub Actions сохранены.`);
 }
 
+// Official API: https://docs.github.com/en/rest/pages/pages#create-a-github-pages-site
+async function ensurePages(project: Project): Promise<void> {
+  if (!project.pages) return;
+  const endpoint = `repos/${project.destination}/pages`;
+  let site: { source?: { branch: string; path: string }; html_url: string };
+  try {
+    const { stdout } = await exec('gh', ['api', endpoint], { timeout: 90000 });
+    site = JSON.parse(stdout);
+  } catch (error) {
+    if (!/HTTP 404/.test((error as { stderr?: string }).stderr ?? '')) throw error;
+    // A lost response is resolved by the GET on the next run, not a blind POST retry.
+    const { stdout } = await exec('gh', ['api', '--method', 'POST', endpoint, '-f', 'build_type=legacy', '-f', 'source[branch]=main', '-f', 'source[path]=/'], { timeout: 90000 });
+    site = JSON.parse(stdout);
+  }
+  if (site.source?.branch !== 'main' || site.source.path !== '/') throw new Error('Настройки GitHub Pages отличаются от main:/; нужен разбор перед изменением');
+  const expected = `https://alexey-ui.github.io/${project.id}/`;
+  if (site.html_url?.toLowerCase() !== expected.toLowerCase()) throw new Error('Адрес сайта GitHub Pages отличается от ожидаемого');
+  console.log(`GitHub Pages настроен: ${site.html_url}`);
+}
+
 async function publish(project: Project): Promise<void> {
   const saved = await assertPrepared(project);
   if (!saved.verifiedAt) throw new Error('Сначала выполни verify');
@@ -123,6 +145,7 @@ async function publish(project: Project): Promise<void> {
   if (visibility.trim() === 'true') await exec('gh', ['repo', 'edit', project.destination, '--visibility', 'public', '--accept-visibility-change-consequences'], { timeout: 180000 });
   else if (visibility.trim() !== 'false') throw new Error('Не удалось проверить публичность репозитория');
   await exec('git', ['push', 'origin', 'main'], { cwd, timeout: 180000 });
+  await ensurePages(project);
   const { stdout: sha } = await exec('git', ['rev-parse', 'HEAD'], { cwd });
   await atomicJson(`.local/projects/${project.id}.published.json`, { ...saved, destinationCommit: sha.trim(), publishedAt: new Date().toISOString() });
   console.log(`Опубликовано: https://github.com/${project.destination}/commit/${sha.trim()}`);

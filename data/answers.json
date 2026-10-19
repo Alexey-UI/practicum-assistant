@@ -163,5 +163,19 @@
     ],
     "evidence": "quiz_answered: selected options match should-be-checked markers",
     "confirmedAt": "2026-10-19T05:16:11.018Z"
+  },
+  "3a3c2c586513a98948bcd5aa6b456954ef73f24abedfef6becce52408e37748f": {
+    "answers": [
+      "font-family: 'название шрифта', 'Arial', sans-serif; text-align: center"
+    ],
+    "evidence": "quiz_answered: selected options match should-be-checked markers",
+    "confirmedAt": "2026-10-19T05:31:24.616Z"
+  },
+  "55ea864dc097c33f87a7fc21b44201addc5bd8aed230552adcc99eb3ceb1bd68": {
+    "answers": [
+      "text-decoration: underline , text-transform: lowercase , font-style: italic"
+    ],
+    "evidence": "quiz_answered: selected options match should-be-checked markers",
+    "confirmedAt": "2026-10-19T05:32:24.822Z"
   }
 }
