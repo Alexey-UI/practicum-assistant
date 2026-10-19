@@ -1,0 +1,17 @@
+{
+  "taskId": "529bc633-6f6c-47e0-a4b3-15e3f71213da",
+  "lessonId": "639e3a44-4abd-48db-95ad-08600c269437",
+  "files": [
+    {
+      "name": "style.css",
+      "initialHash": "7cc623f1df3c58254a814c1dc5b24f338d7f99fbe043e3e131a4703728cd8549",
+      "content": ".page {\n  margin: 0;\n  font-family: Helvetica, Arial, sans-serif;\n  background: #000;\n}\n\n.header {\n  display: flex;\n  align-items: center;\n  min-height: 80px;\n  padding: 0 60px;\n}\n\n.header img {\n  width: 200px;\n}\n\n.gallery {\n  display: grid;\n  grid-template-columns: repeat(4, 1fr) 2fr 200px;\n  grid-template-rows: repeat(6, 1fr);\n  gap: 10px;\n  box-sizing: border-box;\n  min-height: calc(100vh - 80px);\n  padding: 0 60px 60px;\n}\n\n.gallery__item {\n  box-sizing: border-box;\n  margin: 0;\n}\n\n.gallery__image {\n  width: 100%;\n  height: 100%;\n  max-height: 100%;\n  object-fit: cover;\n}\n\n.gallery__item:nth-child(7) {\n  grid-column: 6 / -1;\n  grid-row: 1 / -1;\n}\n\n.gallery__item:nth-child(5) {\n  grid-column: 4 / 6;\n  grid-row: 4 / -1;\n}\n\n.gallery__item:nth-child(1) {\n  grid-column: span 2;\n  grid-row: span 2;\n}\n\n.gallery__item:nth-child(3) {\n  grid-column: span 2;\n  grid-row: span 2;\n}\n\n.gallery__item:nth-child(2) {\n  grid-column: 3 / 6;\n  grid-row: span 3;\n}\n\n.gallery__item:nth-child(4) {\n  grid-column: 1 / 4;\n  grid-row: span 2;\n}\n\n.gallery__item:nth-child(6) {\n  grid-column: 3;\n  grid-row: 4;\n\n}"
+    }
+  ],
+  "instructionsHash": "7c94b46bc301c9513e40f6751ae28590f84798d7ac99cd621acdb1a274e2cfc6",
+  "verifiedAt": "2026-10-19T16:04:48.519Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Готово! Вы научились пользоваться системой координат внутри грид-контейнера и располагать в нём грид-элементы. Это полезный навык. Он помогает создавать сложные сетки, которые очень непросто реализовать внутри одного флекс-контейнера."
+  }
+}

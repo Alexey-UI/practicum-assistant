@@ -1,0 +1,17 @@
+{
+  "taskId": "d6c5f2e4-2ea8-4193-8a47-dea1cac0c06f",
+  "lessonId": "966a3a98-b34a-4ae3-9bdc-aa85f46a97c2",
+  "files": [
+    {
+      "name": "style.css",
+      "initialHash": "52d6973f1bee17bc7e87da0f4d3c3e1c06587c19d114fa9bed61031dc47eee8c",
+      "content": ".root {\n  max-width: 985px;\n  min-height: 100vh;\n  margin: 0 auto;\n  font-family: Helvetica, Arial, sans-serif;\n  font-size: 14px;\n}\n\n.gallery {\n  display: grid;\n  grid-template-columns: 33% 33% 33%;\n  grid-template-rows: auto;\n  min-height: calc(100vh - 72px);\n}\n\n.radio {\n  display: flex;\n  align-items: center;\n  cursor: pointer;\n}\n\n.radio__box:checked + .radio__span::before {\n  width: 50%;\n  height: 50%;\n}\n\n.radio__box {\n  position: absolute;\n  visibility: hidden;\n  opacity: 0;\n  font-size: 0;\n  line-height: 0;\n}\n\n.radio__span {\n  position: relative;\n  display: block;\n  flex-shrink: 0;\n  width: 18px;\n  height: 18px;\n  margin-right: 5px;\n  border: 1px solid black;\n  border-radius: 50%;\n  background-color: transparent;\n}\n\n.radio__span::before {\n  content: '';\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  display: block;\n  width: 0;\n  height: 0;\n  border-radius: 50%;\n  background-color: #ffdb4d;\n  transition: 0.6s;\n  transform: translate(-50%, -50%);\n}\n\n.gallery-form {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  padding: 20px 0;\n}\n\n.gallery__image {\n  display: none;\n  width: 100%;\n  max-width: 100%;\n  height: 100%;\n  max-height: 100%;\n  object-fit: cover;\n}\n\n.gallery__image_selected {\n  display: block;\n}"
+    }
+  ],
+  "instructionsHash": "bb7ad688dd75dc0f06315603bdcf8ba846c22e176c7b65817a4cba69c77110c8",
+  "verifiedAt": "2026-10-19T16:01:15.494Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Всё заработало и больше не сломается."
+  }
+}

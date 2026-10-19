@@ -1,0 +1,17 @@
+{
+  "taskId": "390f7258-aaa2-4904-ba02-62d7cfa1a396",
+  "lessonId": "8166defd-7f9e-49e0-a573-bbba30ac88c9",
+  "files": [
+    {
+      "name": "style.css",
+      "initialHash": "c2ec118cf86bb7afae18886947722296bf382d98de3b24d5dc8dbd22d5238b1b",
+      "content": ".page {\n  margin: 0;\n  font-family: Helvetica, Arial, sans-serif;\n  background: #000;\n}\n\n.header {\n  display: flex;\n  align-items: center;\n  min-height: 80px;\n  padding: 0 60px;\n}\n\n.header img {\n  width: 200px;\n}\n\n.gallery {\n  display: grid;\n  grid-template-columns: repeat(4, 1fr) 2fr 200px;\n  grid-template-rows: repeat(6, 1fr);\n  gap: 10px;\n  box-sizing: border-box;\n  min-height: calc(100vh - 80px);\n  padding: 0 60px 60px;\n}\n\n.gallery__item {\n  box-sizing: border-box;\n  margin: 0;\n}\n\n.gallery__image {\n  width: 100%;\n  min-height: 100%;\n  max-height: 100%;\n  object-fit: cover;\n}"
+    }
+  ],
+  "instructionsHash": "8f7f52942163027177562338c9a5379ab416db1e8f6b14ef271da9f6d1f75178",
+  "verifiedAt": "2026-10-19T16:03:17.473Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Сетка становится сложнее, а вы продолжаете делать успехи! Теперь использование repeat кажется не таким уж и бессмысленным, правда?"
+  }
+}

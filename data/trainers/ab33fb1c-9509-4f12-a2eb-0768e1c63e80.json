@@ -1,0 +1,17 @@
+{
+  "taskId": "ab33fb1c-9509-4f12-a2eb-0768e1c63e80",
+  "lessonId": "68b90d1f-6d00-4124-89b2-d6f7f57237fa",
+  "files": [
+    {
+      "name": "style.css",
+      "initialHash": "915072a57fbfc1ace6308f91c329b09ad0359315d1064c948c302a37d8b7b2bb",
+      "content": ".root {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  min-height: 100vh;\n  margin: 0;\n  font-family: Helvetica, Arial, sans-serif;\n  font-size: 14px;\n  background: #f2f2f2;\n}\n\n.root__container {\n  column-gap: 30px;\n  row-gap: 30px;\n  display: grid;\n  grid-template-columns: 1fr 1fr 1fr;\n  max-width: 980px;\n}\n\n.card {\n  display: flex;\n  flex-direction: column;\n  border-radius: 2px;\n  box-shadow: -1px 2px 4px rgb(0 0 0 / 0.25), 1px 1px 3px rgb(0 0 0 / 0.1);\n  background-color: #fff;\n}\n\n.card__image {\n  width: 100%;\n  height: 100%;\n  max-height: 170px;\n  object-fit: cover;\n}\n\n.card__title {\n  margin-bottom: 10px;\n  font-size: 24px;\n}\n\n.card__link {\n  display: inline-block;\n  border-radius: 2px;\n  padding: 10px;\n  color: black;\n  text-decoration: none;\n}\n\n.card__wrap {\n  flex-grow: 1;\n  padding: 0 10px 15px;\n}\n\n.card__link:hover {\n  background-color: rgb(255 219 77);\n}"
+    }
+  ],
+  "instructionsHash": "41d1b81bf68958a8106cde704616cc748f81f38e1e1f5ae8c56a78c08c51c1f2",
+  "verifiedAt": "2026-10-19T16:01:48.108Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Круто! Обратите внимание, что отступы не создаются у крайних грид-элементов контейнера. Эта особенность делает применение gap выигрышным по сравнению с margin."
+  }
+}

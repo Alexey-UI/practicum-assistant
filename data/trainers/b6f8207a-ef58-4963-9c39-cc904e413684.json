@@ -1,0 +1,17 @@
+{
+  "taskId": "b6f8207a-ef58-4963-9c39-cc904e413684",
+  "lessonId": "639e3a44-4abd-48db-95ad-08600c269437",
+  "files": [
+    {
+      "name": "style.css",
+      "initialHash": "893ad7bb3ec158516b6d550d31101c3622900c2cda718ca8ab3c850ea6bc2681",
+      "content": ".page {\n  margin: 0;\n  font-family: Helvetica, Arial, sans-serif;\n  background: #000;\n}\n\n.header {\n  display: flex;\n  align-items: center;\n  min-height: 80px;\n  padding: 0 60px;\n}\n\n.header img {\n  width: 200px;\n}\n\n.gallery {\n  display: grid;\n  grid-template-columns: repeat(4, 1fr) 2fr 200px;\n  grid-template-rows: repeat(6, 1fr);\n  gap: 10px;\n  box-sizing: border-box;\n  min-height: calc(100vh - 80px);\n  padding: 0 60px 60px;\n}\n\n.gallery__item {\n  box-sizing: border-box;\n  margin: 0;\n}\n\n.gallery__image {\n  width: 100%;\n  height: 100%;\n  max-height: 100%;\n  object-fit: cover;\n}\n\n.gallery__item:nth-child(7) {\n  grid-column: 6 / -1;\n  grid-row: 1 / -1;\n}\n\n.gallery__item:nth-child(5) {\n  grid-column: 4 / 6;\n  grid-row: 4 / -1;\n}\n\n.gallery__item:nth-child(1) {\n  grid-column: span 2;\n  grid-row: span 2;\n}\n\n.gallery__item:nth-child(3) {\n  grid-column: span 2;\n  grid-row: span 2;\n}\n\n.gallery__item:nth-child(2) {\n  grid-column: 3 / 6;\n  grid-row: span 3;\n\n}\n\n.gallery__item:nth-child(4) {\n  grid-column: 1 / 4;\n  grid-row: span 2;\n\n}\n\n.gallery__item:nth-child(6) {\n\n}"
+    }
+  ],
+  "instructionsHash": "b45be24fa288c54cf48b190e06a59eb68748d865f946c372ce7131a17eb02bdb",
+  "verifiedAt": "2026-10-19T16:04:35.909Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Круто! Теперь галерея преобразилась и выглядит действительно сложной."
+  }
+}

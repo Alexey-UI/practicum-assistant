@@ -74,6 +74,17 @@ test('Изменённое условие тренажёра блокирует 
     await page.goto(`https://practicum.yandex.ru/trainer/test/lesson/${lessonId}/task/${taskId}/`);
     await assert.rejects(solveTrainer(page), /Условие задания изменилось/);
     assert.equal(await page.getByRole('textbox').inputValue(), '');
+    await atomicJson(`data/trainers/${taskId}.json`, {
+      taskId, lessonId, instructionsHash: contentHash('Новое условие'),
+      contextHash: contentHash(JSON.stringify([{ url: 'https://example.test/old.svg', alt: 'Схема' }])),
+      files: [{ name: 'script.js', initialHash: contentHash(''), content: 'console.log(1);' }],
+      verifiedAt: '2026-10-19T00:00:00Z', evidence: { message: 'Принято' },
+    });
+    await page.locator('.task-description__markdown').evaluate(el => {
+      const image = document.createElement('img'); image.src = 'https://example.test/new.svg'; image.alt = 'Схема'; el.append(image);
+    });
+    await assert.rejects(solveTrainer(page), /Иллюстрации задания изменились/);
+    assert.equal(await page.getByRole('textbox').inputValue(), '');
   } finally { process.chdir(original); await page.close(); await rm(dir, { recursive: true, force: true }); }
 });
 test('Неоднозначные кнопки останавливают действие; скрытые и disabled исключаются', async () => {

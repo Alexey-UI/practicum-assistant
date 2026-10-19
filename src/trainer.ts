@@ -19,7 +19,7 @@ export async function selectEditorFile(page: Page, name: string): Promise<void> 
   await file.click();
 }
 
-export async function readTrainer(page: Page): Promise<{ taskId: string; url: string; instructions: string; files: EditorFile[] }> {
+export async function readTrainer(page: Page): Promise<{ taskId: string; url: string; instructions: string; images: Array<{ url: string; alt: string }>; contextHash: string; files: EditorFile[] }> {
   await page.getByRole('textbox', { name: 'Содержимое редактора', exact: true }).waitFor({ state: 'visible', timeout: 180000 });
   await page.locator('.task-description__markdown').filter({ hasText: /\S/, visible: true }).waitFor({ timeout: 180000 });
   const files = await page.evaluate(() => {
@@ -29,7 +29,11 @@ export async function readTrainer(page: Page): Promise<{ taskId: string; url: st
   });
   const taskId = new URL(page.url()).pathname.match(/\/task\/([^/]+)\//)?.[1];
   if (!taskId) throw new Error('Не определён ID задания тренажёра');
-  const result = { taskId, url: safeUrl(page.url()), instructions: await page.locator('.task-description__markdown').innerText(), files: files.map(file => ({ ...file, hash: contentHash(file.content) })) };
+  const images = await page.locator('.task-description__markdown img').evaluateAll(elements => elements.map(el => ({ url: (el as HTMLImageElement).src, alt: el.getAttribute('alt') ?? '' })));
+  const contextHash = contentHash(JSON.stringify(images.map(image => {
+    const url = new URL(image.url); return { url: `${url.origin}${url.pathname}`, alt: image.alt };
+  })));
+  const result = { taskId, url: safeUrl(page.url()), instructions: await page.locator('.task-description__markdown').innerText(), images, contextHash, files: files.map(file => ({ ...file, hash: contentHash(file.content) })) };
   await atomicJson('.local/pending-task.json', result);
   return result;
 }
@@ -51,6 +55,7 @@ export interface TrainerSolution {
   lessonId: string;
   instructions?: string;
   instructionsHash?: string;
+  contextHash?: string;
   files: Array<{ name: string; initialHash: string; content: string }>;
   verifiedAt: string;
   evidence: { selector: string; message: string };
@@ -77,6 +82,7 @@ export async function solveTrainer(page: Page, candidate = false): Promise<'adva
   }
   if (solution.instructions && normalize(solution.instructions) !== normalize(task.instructions)) throw new Error('Текст задания изменился: требуется повторный разбор');
   if (solution.instructionsHash && solution.instructionsHash !== contentHash(normalize(task.instructions))) throw new Error('Условие задания изменилось: требуется повторный разбор');
+  if (solution.contextHash && solution.contextHash !== task.contextHash) throw new Error('Иллюстрации задания изменились: требуется повторный разбор');
   const solutionHash = contentHash(JSON.stringify(solution.files));
   const stateFile = `.local/trainers/${task.taskId}.json`;
   const state = await readJson<TaskState | null>(stateFile, null);
@@ -133,7 +139,7 @@ export async function solveTrainer(page: Page, candidate = false): Promise<'adva
   if (candidate) {
     const evidence = await page.locator('.trainer-footer__message.notification_type_success:not(.draggable-notification__manikin) .notification__content').filter({ visible: true }).first().innerText();
     const { instructions: _instructions, ...portable } = solution;
-    await atomicJson(`data/trainers/${task.taskId}.json`, { ...portable, instructionsHash: contentHash(normalize(task.instructions)), verifiedAt: new Date().toISOString(), evidence: { selector: '.trainer-footer__message.notification_type_success', message: evidence } });
+    await atomicJson(`data/trainers/${task.taskId}.json`, { ...portable, instructionsHash: contentHash(normalize(task.instructions)), contextHash: task.contextHash, verifiedAt: new Date().toISOString(), evidence: { selector: '.trainer-footer__message.notification_type_success', message: evidence } });
   }
   await journal('trainer-accepted', { taskId: task.taskId, url: task.url });
   await next.waitFor({ state: 'visible', timeout: 30000 });

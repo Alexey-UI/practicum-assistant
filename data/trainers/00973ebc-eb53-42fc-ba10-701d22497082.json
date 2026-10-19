@@ -1,0 +1,17 @@
+{
+  "taskId": "00973ebc-eb53-42fc-ba10-701d22497082",
+  "lessonId": "639e3a44-4abd-48db-95ad-08600c269437",
+  "files": [
+    {
+      "name": "style.css",
+      "initialHash": "5c2298fa89905c58b4f801004a43b5b95969bf7e656cb163dd8b381eedcb6b0e",
+      "content": ".page {\n  margin: 0;\n  font-family: Helvetica, Arial, sans-serif;\n  background: #000;\n}\n\n.header {\n  display: flex;\n  align-items: center;\n  min-height: 80px;\n  padding: 0 60px;\n}\n\n.header img {\n  width: 200px;\n}\n\n.gallery {\n  display: grid;\n  grid-template-columns: repeat(4, 1fr) 2fr 200px;\n  grid-template-rows: repeat(6, 1fr);\n  gap: 10px;\n  box-sizing: border-box;\n  min-height: calc(100vh - 80px);\n  padding: 0 60px 60px;\n}\n\n.gallery__item {\n  box-sizing: border-box;\n  margin: 0;\n}\n\n.gallery__image {\n  width: 100%;\n  min-height: 100%;\n  max-height: 100%;\n  object-fit: cover;\n}\n\n.gallery__item:nth-child(7) {\n  grid-column: 6 / -1;\n  grid-row: 1 / -1;\n}\n\n.gallery__item:nth-child(5) {\n  grid-column: 4 / 6;\n  grid-row: 4 / -1;\n}\n\n.gallery__item:nth-child(1) {\n  grid-column: span 2;\n  grid-row: span 2;\n\n}\n\n.gallery__item:nth-child(3) {\n  grid-column: span 2;\n  grid-row: span 2;\n\n}\n\n.gallery__item:nth-child(2) {\n\n}\n\n.gallery__item:nth-child(4) {\n\n}\n\n.gallery__item:nth-child(6) {\n\n}"
+    }
+  ],
+  "instructionsHash": "6cc8092ced409e48e314848a58b30f26c85de0fe188ef535cd669c6803a04169",
+  "verifiedAt": "2026-10-19T16:04:21.243Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Гриды предоставляют много удобных возможностей, превращая вёрстку в сборку мозаики!"
+  }
+}

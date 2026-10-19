@@ -1,0 +1,17 @@
+{
+  "taskId": "f8c6022b-162a-4fda-b07f-623bba30385a",
+  "lessonId": "8a6cea8d-8309-42ec-9d8a-887802160419",
+  "files": [
+    {
+      "name": "style.css",
+      "initialHash": "7a79a29c3ba401350d4ec5aef10f448c9c1b5e2d48b382583a722faa572c6f85",
+      "content": ".root {\n  display: grid;\n  max-width: 980px;\n  margin: 0 auto;\n  font-family: Helvetica, Arial, sans-serif;\n  font-size: 26px;\n}\n\n.root__container {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  min-height: calc(100vh / 3);\n}\n\n.header {\n  padding: 10px;\n  color: black;\n  background: #f2f2f2;\n}\n\n.content {\n  padding: 10px;\n  color: white;\n  background: #1f1f1f;\n}\n\n.footer {\n  padding: 10px;\n  background: #2f80ed;\n}"
+    }
+  ],
+  "instructionsHash": "08b0869c260c5826a5579bfc5bfe4037bb113f5af825ead982f76fd33bae9c4e",
+  "verifiedAt": "2026-10-19T16:00:09.401Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Полёт нормальный — все вложенные в root блоки пока что ведут себя как обычные блочные элементы. Кажется, не хватает магии."
+  }
+}

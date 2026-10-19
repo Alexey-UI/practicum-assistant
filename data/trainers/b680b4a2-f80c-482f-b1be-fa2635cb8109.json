@@ -1,0 +1,17 @@
+{
+  "taskId": "b680b4a2-f80c-482f-b1be-fa2635cb8109",
+  "lessonId": "639e3a44-4abd-48db-95ad-08600c269437",
+  "files": [
+    {
+      "name": "style.css",
+      "initialHash": "025b7ac0f7842bcb756c6ad0440842e4a80ca20675f277b07c4d54d0db243c5d",
+      "content": ".page {\n  margin: 0;\n  font-family: Helvetica, Arial, sans-serif;\n  background: #000;\n}\n\n.header {\n  display: flex;\n  align-items: center;\n  min-height: 80px;\n  padding: 0 60px;\n}\n\n.header img {\n  width: 200px;\n}\n\n.gallery {\n  display: grid;\n  grid-template-columns: repeat(4, 1fr) 2fr 200px;\n  grid-template-rows: repeat(6, 1fr);\n  gap: 10px;\n  box-sizing: border-box;\n  min-height: calc(100vh - 80px);\n  padding: 0 60px 60px;\n}\n\n.gallery__item {\n  box-sizing: border-box;\n  margin: 0;\n}\n\n.gallery__image {\n  width: 100%;\n  min-height: 100%;\n  max-height: 100%;\n  object-fit: cover;\n}\n\n.gallery__item:nth-child(7) {\n  grid-column: 6 / -1;\n  grid-row: 1 / -1;\n\n}\n\n.gallery__item:nth-child(5) {\n  grid-column: 4 / 6;\n  grid-row: 4 / -1;\n\n}\n\n.gallery__item:nth-child(1) {\n\n}\n\n.gallery__item:nth-child(3) {\n\n}\n\n.gallery__item:nth-child(2) {\n\n}\n\n.gallery__item:nth-child(4) {\n\n}\n\n.gallery__item:nth-child(6) {\n\n}"
+    }
+  ],
+  "instructionsHash": "9498fb1fafe2d20e999f9531002ccd3c744445130624ee18cac3129e0301687f",
+  "verifiedAt": "2026-10-19T16:04:10.545Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Такого во флексах точно не увидишь внутри одного контейнера!"
+  }
+}

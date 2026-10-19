@@ -1,0 +1,17 @@
+{
+  "taskId": "b6684e04-fe3f-4d8a-8249-6b2b8e3485b6",
+  "lessonId": "550fa433-8aac-403d-bcf9-fde0966a6492",
+  "files": [
+    {
+      "name": "style.css",
+      "initialHash": "04824301d5948df60fb4d6a794dcf76daff87f4dc463e55a0c6fc9bca658ad24",
+      "content": ".page {\n  margin: 0;\n  font-family: Helvetica, Arial, sans-serif;\n  background: #000;\n}\n\n.header {\n  display: flex;\n  align-items: center;\n  min-height: 80px;\n  padding: 0 60px;\n}\n\n.header img {\n  width: 200px;\n}\n\n.gallery {\n  grid-template-columns: repeat(5, auto) 200px;\n  grid-template-rows: repeat(6, auto);\n  display: grid;\n  gap: 10px;\n  box-sizing: border-box;\n  min-height: calc(100vh - 80px);\n  padding: 0 60px 60px;\n}\n\n.gallery__item {\n  box-sizing: border-box;\n  margin: 0;\n}\n\n.gallery__image {\n  width: 100%;\n  min-height: 100%;\n  max-height: 100%;\n  object-fit: cover;\n}"
+    }
+  ],
+  "instructionsHash": "09da24a9c5d0ee90e6c8643cc823f128dcc8d12ed9024d8cdf9325b6883cebdd",
+  "verifiedAt": "2026-10-19T16:02:39.502Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Начало положено! В следующих уроках эта галерея преобразится до неузнаваемости."
+  }
+}
