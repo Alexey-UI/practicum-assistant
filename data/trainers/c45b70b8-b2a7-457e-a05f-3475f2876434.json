@@ -1,7 +1,6 @@
 {
   "taskId": "c45b70b8-b2a7-457e-a05f-3475f2876434",
   "lessonId": "6346b9bf-3d06-4e79-827f-e92ecdec702b",
-  "instructions": "В секции с классом content есть блок с классом cards-list, а внутри него — блок с классом card. Имена классов должны подсказать вам, что это список и пункт списка соответственно. Список тоже маркированный. Поправьте.",
   "files": [
     {
       "name": "index.html",
@@ -13,5 +12,6 @@
   "evidence": {
     "selector": ".trainer-footer__message.notification_type_success",
     "message": "Все любят карточки. Вот и они."
-  }
+  },
+  "instructionsHash": "bcf4ed58364443bdf0dba553c692680df6bd976178a1f257e4bce0008f864467"
 }

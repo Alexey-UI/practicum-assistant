@@ -1,0 +1,17 @@
+{
+  "taskId": "015a2a8e-c94c-4b02-9edc-001d5ef6db5f",
+  "lessonId": "c1e3815a-48b1-46f8-b0c4-a12cd38a68d8",
+  "files": [
+    {
+      "name": "script.js",
+      "initialHash": "de2de37295382f3da5a258d66d4613b23522bbe3f0fabc18923b0537bb31c946",
+      "content": "let time;\ntime = 34;\nconsole.log('Старт поездки. Осталось минут: ' + time);\ntime = time - 15;\nconsole.log('Немного сториз в соцсетях. Осталось минут: ' + time);\ntime = time - 10;\nconsole.log('Немного не новостей, но событий. Осталось минут: ' + time);\ntime = 0;\n"
+    }
+  ],
+  "instructionsHash": "43a38b2d85a5b922c58effb05f080a9b798a620dfb39aedf3cad0f304755b168",
+  "verifiedAt": "2026-10-19T08:36:14.889Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Время вышло, осталось сообщить об этом туристу."
+  }
+}

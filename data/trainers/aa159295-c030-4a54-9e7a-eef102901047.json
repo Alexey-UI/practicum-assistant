@@ -1,0 +1,17 @@
+{
+  "taskId": "aa159295-c030-4a54-9e7a-eef102901047",
+  "lessonId": "c1e3815a-48b1-46f8-b0c4-a12cd38a68d8",
+  "files": [
+    {
+      "name": "script.js",
+      "initialHash": "18ff34af0baa11c9a0f525d5711a8195120dd625b82afbd15c3d036df8fdf5c7",
+      "content": "let time;\ntime = 34;\nconsole.log('Старт поездки. Осталось минут: ' + time);\ntime = time - 15;\nconsole.log('Немного сториз в соцсетях. Осталось минут: ' + time);\ntime = time - 10;\nconsole.log('Немного не новостей, но событий. Осталось минут: ' + time);\ntime = 0;\nconsole.log('Вы приехали. Добро пожаловать в Таллин.');\n"
+    }
+  ],
+  "instructionsHash": "0da646006cfc745dadc86f4f58029ed4c8e299c1d82c298b5bfdb0ed100d2c07",
+  "verifiedAt": "2026-10-19T08:36:43.603Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Турист на месте, поставил пять звёзд. Теперь у вас все шансы получить работу в Яндекс Такси. В команде разработчиков сервиса, конечно же."
+  }
+}

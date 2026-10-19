@@ -1,0 +1,17 @@
+{
+  "taskId": "6986270a-0fa3-4058-a374-b7bcd08e19d3",
+  "lessonId": "c1e3815a-48b1-46f8-b0c4-a12cd38a68d8",
+  "files": [
+    {
+      "name": "script.js",
+      "initialHash": "c72bb3b9d2e10a57bdfe094347627363235cea8378ed5ece535336de4d8fbce6",
+      "content": "let time;\ntime = 34;\nconsole.log('Старт поездки. Осталось минут: ' + time);\ntime = time - 15;\n"
+    }
+  ],
+  "instructionsHash": "2e2ed6d2dd1f7185610c65ec0ff1b17f5440d46f98d91e7178273a15f0bc139e",
+  "verifiedAt": "2026-10-19T08:35:20.449Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Судя по всему, ваша программа изменила значение переменной и оставшееся время поездки. Чтобы эти изменения не остались тайной, предстоит вывести их в консоль."
+  }
+}

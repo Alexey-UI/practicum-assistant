@@ -1,0 +1,17 @@
+{
+  "taskId": "7976d7fd-95f9-4668-af94-c95d0ddd566d",
+  "lessonId": "29687a1d-a959-43dc-b956-8fb32b2f588f",
+  "files": [
+    {
+      "name": "script.js",
+      "initialHash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "content": "let time;\n"
+    }
+  ],
+  "instructionsHash": "8ad209fdbd8e27d7b6982fe16300d97db2f9869525e8838dba4eabadbf77ba65",
+  "verifiedAt": "2026-10-19T08:33:25.615Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Переменная создана. Ещё пара шагов — и станет понятно, когда турист въедет в Таллин."
+  }
+}

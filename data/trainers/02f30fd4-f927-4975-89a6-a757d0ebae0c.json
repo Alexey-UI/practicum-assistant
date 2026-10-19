@@ -1,0 +1,17 @@
+{
+  "taskId": "02f30fd4-f927-4975-89a6-a757d0ebae0c",
+  "lessonId": "29687a1d-a959-43dc-b956-8fb32b2f588f",
+  "files": [
+    {
+      "name": "script.js",
+      "initialHash": "2766eeeb97cb50e172a49c97ee2e249f153d00b331ec76b317b1a56c236ce590",
+      "content": "let time;\ntime = 34;\nconsole.log(time);\n"
+    }
+  ],
+  "instructionsHash": "bdc08b1d9342b8676a3a0e9dd79855be567b979b964442f23644d0d4c39cce67",
+  "verifiedAt": "2026-10-19T08:34:02.896Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Теперь в консоли красуется число 34. Вот так вы сохранили данные в переменную и обратились к ней по имени."
+  }
+}

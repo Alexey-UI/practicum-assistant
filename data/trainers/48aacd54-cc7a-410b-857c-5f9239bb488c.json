@@ -1,0 +1,17 @@
+{
+  "taskId": "48aacd54-cc7a-410b-857c-5f9239bb488c",
+  "lessonId": "4e04991b-624f-4695-a45f-6bd481855277",
+  "files": [
+    {
+      "name": "script.js",
+      "initialHash": "137e0be6f4c85365445b6d0fdd85ce46b5c144b5aba159bf0247a4e812573641",
+      "content": "console.log('я не хочу работать');\n"
+    }
+  ],
+  "verifiedAt": "2026-10-19T08:23:05.974Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Пока Олег не работает, базовые типы данных вам покоряются."
+  },
+  "instructionsHash": "394bcd462f2fa686275bc8e938f4709a432a0dd66ca9d77c34d99f7eede68f47"
+}

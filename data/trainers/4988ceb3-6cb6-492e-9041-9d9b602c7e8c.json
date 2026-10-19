@@ -1,0 +1,17 @@
+{
+  "taskId": "4988ceb3-6cb6-492e-9041-9d9b602c7e8c",
+  "lessonId": "37699621-08a0-48e5-99d5-699ed5943f8a",
+  "files": [
+    {
+      "name": "script.js",
+      "initialHash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "content": "console.log((128 + 254 + 137 + 201) / 60);\n"
+    }
+  ],
+  "verifiedAt": "2026-10-19T08:21:16.801Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Прокрастинация, числа, математика — это 🖤. \nНо чтобы ответить на вопрос начальства «Олег, где макет?», нужно знать, как работать в JS с текстом."
+  },
+  "instructionsHash": "b1086472a89579ef597f1b1c435d0bce0293460a369cab8c6b241e0b70ce0f72"
+}

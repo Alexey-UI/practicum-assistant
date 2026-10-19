@@ -1,0 +1,17 @@
+{
+  "taskId": "93978823-3149-4846-bfd9-65b8cfebc6d6",
+  "lessonId": "29687a1d-a959-43dc-b956-8fb32b2f588f",
+  "files": [
+    {
+      "name": "script.js",
+      "initialHash": "665592838eebde0425991708d4c69debc511997d037bc0e31c9c51a54edb4e13",
+      "content": "let time;\ntime = 34;\nconsole.log('Старт поездки. Осталось минут: ' + time);\n"
+    }
+  ],
+  "instructionsHash": "9cc00a007e7964ea379479d97b2b4c1b992add80255138c2441c5c3f0797fb08",
+  "verifiedAt": "2026-10-19T08:34:17.528Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Турист в томительном ожидании Таллина.\nОбратите внимание: кавычки определили границы текста, а знак + соединил этот текст со значением переменной time. Теперь в консоли вполне читаемое сообщение."
+  }
+}

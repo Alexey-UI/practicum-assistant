@@ -1,0 +1,17 @@
+{
+  "taskId": "63a23eaf-0b99-4f9c-8664-eda397780b00",
+  "lessonId": "29687a1d-a959-43dc-b956-8fb32b2f588f",
+  "files": [
+    {
+      "name": "script.js",
+      "initialHash": "f15250a810aea7e83febdf59549e4e3c804c4e0753e20d8746127501184a6d44",
+      "content": "let time;\nconsole.log(time);\n"
+    }
+  ],
+  "instructionsHash": "4372e4d60eb43469f0ce1fa6a09e801b34af74d2fe6295032e2333e4aa6cf818",
+  "verifiedAt": "2026-10-19T08:33:46.239Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Посмотрите в консоль: там написано undefined? Всё правильно, ведь коробка time пока пуста и значение в ней не определено.\nГлавное, что удалось достучаться до переменной. Значит, вы создали её правильно."
+  }
+}

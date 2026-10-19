@@ -1,0 +1,17 @@
+{
+  "taskId": "4eb09fb9-0cc8-48e5-9042-51de0eda4d2b",
+  "lessonId": "c1e3815a-48b1-46f8-b0c4-a12cd38a68d8",
+  "files": [
+    {
+      "name": "script.js",
+      "initialHash": "47d8b1c7eb301e15f13d791f215412901fbf70f0be8c29abb7f1fb3fbf6cd101",
+      "content": "let time;\ntime = 34;\nconsole.log('Старт поездки. Осталось минут: ' + time);\ntime = time - 15;\nconsole.log('Немного сториз в соцсетях. Осталось минут: ' + time);\ntime = time - 10;\nconsole.log('Немного не новостей, но событий. Осталось минут: ' + time);\n"
+    }
+  ],
+  "instructionsHash": "75f16db0449b20be0f74a36f95cbd7649aa8fc81740f7737ed4e153833aea732",
+  "verifiedAt": "2026-10-19T08:35:56.170Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Сколько минут осталось? Не больше, чем вам до конца урока."
+  }
+}

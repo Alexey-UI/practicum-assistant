@@ -1,7 +1,6 @@
 {
   "taskId": "cd458117-36af-4ade-bf07-373e117e6ac2",
   "lessonId": "af15bda5-5080-4189-9bcb-192b79620d6b",
-  "instructions": "JavaScript делает сайт интерактивным. Например, добавляет новый контент на страницу. Чтобы в этом убедиться, скопируйте этот код во вкладку script.js и нажмите кнопку «проверить»:\nСкопировать код\n\nJAVASCRIPT\n\ndocument.write('В чём сила?'); ",
   "files": [
     {
       "name": "script.js",
@@ -13,5 +12,6 @@
   "evidence": {
     "selector": ".trainer-footer__message.notification_type_success",
     "message": "Сила — в правде. В JavaScript команды добавления и удаления контента требуются достаточно часто, но есть команда, которую используют куда чаще. Расскажем об этом в следующем уроке."
-  }
+  },
+  "instructionsHash": "9c29e5a5edbcbd1d79125c3c68ddb54b6b79c43bcace7305c33fc8447f865fdc"
 }

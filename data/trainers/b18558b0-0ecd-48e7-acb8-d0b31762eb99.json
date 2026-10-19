@@ -1,0 +1,17 @@
+{
+  "taskId": "b18558b0-0ecd-48e7-acb8-d0b31762eb99",
+  "lessonId": "37699621-08a0-48e5-99d5-699ed5943f8a",
+  "files": [
+    {
+      "name": "script.js",
+      "initialHash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "content": "console.log(40000 + 22000);\n"
+    }
+  ],
+  "verifiedAt": "2026-10-19T08:20:17.340Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Вычисления показывают, что педагогу есть смысл взять в руки швабру :("
+  },
+  "instructionsHash": "a587d925a8cb4b52ecaf8b85361826478023c6131b5263d71c1d4fd659480f27"
+}

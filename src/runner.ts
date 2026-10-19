@@ -1,4 +1,4 @@
-import { openBrowser, navigate, snapshot, settle, safeUrl, lessonId, lessonUrl as canonicalLesson } from './browser.js';
+import { openBrowser, navigate, snapshot, settle, safeUrl, lessonId, isTrainerTaskUrl, lessonUrl as canonicalLesson } from './browser.js';
 import { catalog, checkCompletion, observedSolved, saveObservedSolved, type Lesson } from './catalog.js';
 import { loadConfig } from './config.js';
 import { exactButton, quizOutcome, solveQuiz } from './quiz.js';
@@ -160,7 +160,7 @@ export async function run(): Promise<void> {
       let completed = false;
       let deferred = false;
       for (let step = 0; step < cfg.maxSteps; step++) {
-        if (new URL(page.url()).pathname.startsWith('/trainer/')) {
+        if (isTrainerTaskUrl(page.url())) {
           const result = await trainerStep(page, research);
           if (result === 'pending') {
             pause(`Нужен разбор задания тренажёра. ${await snapshot(page, 'trainer')}`); return;
@@ -211,11 +211,12 @@ export async function run(): Promise<void> {
         const next = await nextControl.count() === 1 && await nextControl.isEnabled() ? nextControl : await exactButton(page, cfg.nextButtons);
         if (next) {
           const previous = page.url();
-          const nextLabel = await next.innerText();
           await next.click();
           await page.waitForURL(url => url.href !== previous, { waitUntil: 'commit', timeout: 180000 });
+          await titleNode.or(taskTab).or(editor).filter({ visible: true }).first().waitFor({ state: 'visible', timeout: 180000 });
           await settle(page);
-          if (/перейти к заданию|к следующему заданию|следующее задание/i.test(nextLabel) && lessonId(page.url()) === lessonId(lesson.url)) {
+          await journal('lesson-transition', { from: safeUrl(previous), url: safeUrl(page.url()) });
+          if (lessonId(page.url()) === lessonId(lesson.url)) {
             await journal('task-open', { url: safeUrl(page.url()) });
             continue;
           }

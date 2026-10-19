@@ -1,5 +1,5 @@
 import { createInterface } from 'node:readline';
-import { openBrowser, START_URL, snapshot, settle, allowedUrl, safeUrl, navigate } from './browser.js';
+import { openBrowser, START_URL, snapshot, settle, allowedUrl, safeUrl, navigate, isTrainerTaskUrl } from './browser.js';
 import { lockRun } from './store.js';
 
 // A local terminal bridge for inspecting the authenticated UI without remote debugging ports.
@@ -42,7 +42,7 @@ export async function explore(): Promise<void> {
           const { solveTrainer, readTrainer } = await import(`./trainer.js?inspect=${Date.now()}`) as typeof import('./trainer.js');
           const result = await solveTrainer(page, action.action === 'check-candidate');
           console.log(JSON.stringify({ trainer: result, url: safeUrl(page.url()) }));
-          if (new URL(page.url()).pathname.startsWith('/trainer/')) {
+          if (isTrainerTaskUrl(page.url())) {
             const task = await readTrainer(page);
             console.log(JSON.stringify({ taskId: task.taskId, files: task.files.map(file => ({ path: file.path, hash: file.hash })), saved: '.local/pending-task.json' }));
           }

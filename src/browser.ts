@@ -66,3 +66,9 @@ export function lessonUrl(raw: string): string {
 export function lessonId(raw: string): string | undefined {
   return new URL(raw).pathname.match(/\/(?:lessons|lesson)\/([^/]+)(?:\/|$)/)?.[1];
 }
+
+export function isTrainerTaskUrl(raw: string): boolean {
+  if (!allowedUrl(raw)) return false;
+  const pathname = new URL(raw).pathname;
+  return pathname.startsWith('/trainer/') && /\/task\/[^/]+(?:\/|$)/.test(pathname);
+}

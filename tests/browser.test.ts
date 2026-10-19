@@ -5,7 +5,7 @@ import { readLessons, observedSolved, saveObservedSolved } from '../src/catalog.
 import { exactButton, questionFrom, quizOutcome } from '../src/quiz.js';
 import { DEFAULTS } from '../src/config.js';
 import { scrollLesson } from '../src/scroll.js';
-import { trainerOutcome, selectEditorFile } from '../src/trainer.js';
+import { trainerOutcome, selectEditorFile, solveTrainer, contentHash } from '../src/trainer.js';
 import { readTextQuestion, solveTextQuestion, captureTextAnswer } from '../src/text-quiz.js';
 import { solveFeedback } from '../src/feedback.js';
 import { solveQuiz } from '../src/quiz.js';
@@ -46,6 +46,27 @@ test('Каталог отличает галочку solved от доступн�
     assert.equal(lessons[2].url, 'https://practicum.yandex.ru/learn/locked');
     assert.ok(lessons.every(l => l.project));
   } finally { await page.close(); }
+});
+test('Изменённое условие тренажёра блокирует старое решение до редактирования кода', async () => {
+  const page = await browser.newPage();
+  const original = process.cwd();
+  const dir = await mkdtemp(path.join(tmpdir(), 'practicum-trainer-condition-'));
+  const taskId = 'aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa';
+  const lessonId = 'bbbbbbbb-bbbb-bbbb-bbbb-bbbbbbbbbbbb';
+  try {
+    process.chdir(dir);
+    await atomicJson(`data/trainers/${taskId}.json`, {
+      taskId, lessonId, instructionsHash: contentHash('Старое условие'),
+      files: [{ name: 'script.js', initialHash: contentHash(''), content: 'console.log(1);' }],
+      verifiedAt: '2026-10-19T00:00:00Z', evidence: { message: 'Принято' },
+    });
+    await page.route('**/*', route => route.fulfill({ contentType: 'text/html; charset=utf-8', body: `<textarea aria-label="Содержимое редактора"></textarea>
+      <div class="task-description__markdown">Новое условие</div>
+      <script>window.monaco={editor:{getModels:()=>[{uri:{path:'/script.js'},getLanguageId:()=>'javascript',getValue:()=>''}]}}</script>` }));
+    await page.goto(`https://practicum.yandex.ru/trainer/test/lesson/${lessonId}/task/${taskId}/`);
+    await assert.rejects(solveTrainer(page), /Условие задания изменилось/);
+    assert.equal(await page.getByRole('textbox').inputValue(), '');
+  } finally { process.chdir(original); await page.close(); await rm(dir, { recursive: true, force: true }); }
 });
 test('Неоднозначные кнопки останавливают действие; скрытые и disabled исключаются', async () => {
   const page = await browser.newPage();

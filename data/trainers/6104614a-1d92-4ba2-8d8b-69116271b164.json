@@ -1,0 +1,17 @@
+{
+  "taskId": "6104614a-1d92-4ba2-8d8b-69116271b164",
+  "lessonId": "37699621-08a0-48e5-99d5-699ed5943f8a",
+  "files": [
+    {
+      "name": "script.js",
+      "initialHash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "content": "console.log((1 / 23) * 23);\n"
+    }
+  ],
+  "verifiedAt": "2026-10-19T08:21:00.135Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Да, всё верно: одно ДТП в месяц. Пишете за рулём регулярно — значит, едва успеваете чиниться. Попробуйте голосовые сообщения."
+  },
+  "instructionsHash": "58a4d7cc44aeca992019a4d7a8c2b979f55f130bac7fb2a7f7f5a3ce18cbf90d"
+}

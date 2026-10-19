@@ -5,9 +5,15 @@ import os from 'node:os';
 import path from 'node:path';
 import { Answers, questionKey, type Question, atomicJson } from '../src/store.js';
 import { candidates } from '../src/quiz.js';
-import { allowedUrl, safeUrl } from '../src/browser.js';
+import { allowedUrl, safeUrl, isTrainerTaskUrl } from '../src/browser.js';
 
 const question: Question = { prompt: 'Что означает HTML?', options: ['Язык разметки', 'Язык стилей'], multiple: false };
+test('Теория под /trainer/ отличается от адреса задания редактора', () => {
+  assert.equal(isTrainerTaskUrl('https://practicum.yandex.ru/trainer/ap-frontend-st/lesson/72225c3c-ce29-4f79-8f4b-197eef4f083b/'), false);
+  assert.equal(isTrainerTaskUrl('https://practicum.yandex.ru/trainer/ap-frontend-st/lesson/37699621-08a0-48e5-99d5-699ed5943f8a/task/b18558b0-0ecd-48e7-acb8-d0b31762eb99/'), true);
+  assert.equal(isTrainerTaskUrl('https://practicum.yandex.ru/learn/ap-frontend-st/lessons/example/'), false);
+  assert.equal(isTrainerTaskUrl('https://other.example/trainer/program/lesson/id/task/id/'), false);
+});
 test('Ответ сохраняется по тексту и находится при перестановке вариантов', async () => {
   const dir = await mkdtemp(path.join(os.tmpdir(), 'practicum-test-'));
   try {

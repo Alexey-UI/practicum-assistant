@@ -1,0 +1,17 @@
+{
+  "taskId": "3ed3559c-1527-4ef0-a23a-acb9253d5841",
+  "lessonId": "4e04991b-624f-4695-a45f-6bd481855277",
+  "files": [
+    {
+      "name": "script.js",
+      "initialHash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "content": "console.log('Один человек гнался за другим, тогда как тот, который убегал, в свою очередь гнался за третьим, который, не чувствуя за собой погони, просто шёл быстрым шагом по мостовой');\n"
+    }
+  ],
+  "verifiedAt": "2026-10-19T08:22:35.243Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Так, не чувствуя за собой погони, Даниил Хармс попал в консоль."
+  },
+  "instructionsHash": "f86f07859f6cde137f826e6f295ac7421114088338ad1a1efaca663fa73ca4b0"
+}

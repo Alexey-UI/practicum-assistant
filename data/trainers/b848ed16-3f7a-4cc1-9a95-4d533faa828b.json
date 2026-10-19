@@ -1,0 +1,17 @@
+{
+  "taskId": "b848ed16-3f7a-4cc1-9a95-4d533faa828b",
+  "lessonId": "c1e3815a-48b1-46f8-b0c4-a12cd38a68d8",
+  "files": [
+    {
+      "name": "script.js",
+      "initialHash": "6b4949f24f9fb921dac84e5b59f1704296a3537ceab3b8fe4394fbf23ae92b08",
+      "content": "let time;\ntime = 34;\nconsole.log('Старт поездки. Осталось минут: ' + time);\ntime = time - 15;\nconsole.log('Немного сториз в соцсетях. Осталось минут: ' + time);\n"
+    }
+  ],
+  "instructionsHash": "271f6102ab38b29f713048bf61377746df751baf3c392a69b6f9b70df7aa1997",
+  "verifiedAt": "2026-10-19T08:35:33.184Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "«Сториз» жизнь сокращает, JavaScript — удлиняет. Давно доказано."
+  }
+}

@@ -1,7 +1,7 @@
 import type { Page } from 'playwright';
 import { createHash } from 'node:crypto';
 import { atomicJson, journal, readJson, normalize } from './store.js';
-import { safeUrl, lessonId, settle } from './browser.js';
+import { safeUrl, lessonId, settle, isTrainerTaskUrl } from './browser.js';
 
 export interface EditorFile { path: string; language: string; content: string; hash: string }
 interface MonacoModel { uri: { path: string }; getLanguageId(): string; getValue(): string }
@@ -50,6 +50,7 @@ export interface TrainerSolution {
   taskId: string;
   lessonId: string;
   instructions?: string;
+  instructionsHash?: string;
   files: Array<{ name: string; initialHash: string; content: string }>;
   verifiedAt: string;
   evidence: { selector: string; message: string };
@@ -69,6 +70,7 @@ export async function solveTrainer(page: Page, candidate = false): Promise<'adva
     throw new Error('Решение тренажёра не подтверждено или относится к другому заданию');
   }
   if (solution.instructions && normalize(solution.instructions) !== normalize(task.instructions)) throw new Error('Текст задания изменился: требуется повторный разбор');
+  if (solution.instructionsHash && solution.instructionsHash !== contentHash(normalize(task.instructions))) throw new Error('Условие задания изменилось: требуется повторный разбор');
   const solutionHash = contentHash(JSON.stringify(solution.files));
   const stateFile = `.local/trainers/${task.taskId}.json`;
   const state = await readJson<TaskState | null>(stateFile, null);
@@ -91,7 +93,10 @@ export async function solveTrainer(page: Page, candidate = false): Promise<'adva
           throw new Error(`Исходный файл ${file.name} изменён: нужен разбор перед применением эталона`);
         }
       }
-      for (const file of solution.files) await writeEditor(page, file.name, file.content);
+      for (const file of solution.files) {
+        const existing = task.files.filter(item => item.path.split('/').pop() === file.name);
+        if (existing.length !== 1 || existing[0].hash !== contentHash(file.content)) await writeEditor(page, file.name, file.content);
+      }
       const oldMessage = page.locator('.trainer-footer__message:not(.draggable-notification__manikin) .notification__close').filter({ visible: true });
       if (await oldMessage.count() === 1) await oldMessage.click();
       await atomicJson(stateFile, { phase: 'requested', solutionHash, updatedAt: new Date().toISOString() } satisfies TaskState);
@@ -116,7 +121,8 @@ export async function solveTrainer(page: Page, candidate = false): Promise<'adva
   await atomicJson(stateFile, { phase: 'accepted', solutionHash, updatedAt: new Date().toISOString() } satisfies TaskState);
   if (candidate) {
     const evidence = await page.locator('.trainer-footer__message.notification_type_success:not(.draggable-notification__manikin) .notification__content').filter({ visible: true }).first().innerText();
-    await atomicJson(`data/trainers/${task.taskId}.json`, { ...solution, instructions: task.instructions, verifiedAt: new Date().toISOString(), evidence: { selector: '.trainer-footer__message.notification_type_success', message: evidence } });
+    const { instructions: _instructions, ...portable } = solution;
+    await atomicJson(`data/trainers/${task.taskId}.json`, { ...portable, instructionsHash: contentHash(normalize(task.instructions)), verifiedAt: new Date().toISOString(), evidence: { selector: '.trainer-footer__message.notification_type_success', message: evidence } });
   }
   await journal('trainer-accepted', { taskId: task.taskId, url: task.url });
   await next.waitFor({ state: 'visible', timeout: 30000 });
@@ -124,13 +130,13 @@ export async function solveTrainer(page: Page, candidate = false): Promise<'adva
   await next.click();
   await page.waitForURL(url => url.href !== before, { waitUntil: 'commit', timeout: 180000 });
   await settle(page);
-  if (new URL(page.url()).pathname.startsWith('/trainer/')) {
+  if (isTrainerTaskUrl(page.url())) {
     await page.waitForFunction(previous => {
       const nextText = document.querySelector('.task-description__markdown')?.textContent?.normalize('NFKC').replace(/\s+/g, ' ').trim();
       return !!nextText && nextText !== previous;
     }, normalize(task.instructions), { timeout: 180000 });
   }
-  return lessonId(page.url()) === solution.lessonId ? 'advanced' : 'finished';
+  return isTrainerTaskUrl(page.url()) && lessonId(page.url()) === solution.lessonId ? 'advanced' : 'finished';
 }
 
 export async function writeEditor(page: Page, name: string, content: string): Promise<void> {
