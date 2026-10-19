@@ -2,6 +2,7 @@ import { chromium } from 'playwright';
 import assert from 'node:assert/strict';
 import path from 'node:path';
 import { mkdir } from 'node:fs/promises';
+import { fileURLToPath } from 'node:url';
 import { serveProject } from './project-server.js';
 
 const server = await serveProject(path.resolve(process.argv[2] ?? 'workspaces/to-do'));
@@ -87,8 +88,9 @@ try {
   assert.deepEqual(errors, []);
   await page.reload();
   await page.evaluate(() => document.fonts.ready);
-  await mkdir('artifacts/todo-local', { recursive: true });
-  await page.screenshot({ path: 'artifacts/todo-local/desktop.png', fullPage: true });
+  const artifacts = fileURLToPath(new URL('../artifacts/todo-local/', import.meta.url));
+  await mkdir(artifacts, { recursive: true });
+  await page.screenshot({ path: path.join(artifacts, 'desktop.png'), fullPage: true });
   console.log('To-do: начальный список, добавление, копирование, удаление, редактирование, Enter/Escape, перезагрузка, пустой список, повреждённое/недоступное хранилище и текст без исполнения HTML проверены.');
 } finally {
   await browser.close();
