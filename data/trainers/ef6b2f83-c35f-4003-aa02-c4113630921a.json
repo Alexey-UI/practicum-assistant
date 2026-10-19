@@ -1,0 +1,17 @@
+{
+  "taskId": "ef6b2f83-c35f-4003-aa02-c4113630921a",
+  "lessonId": "952fba42-6561-4545-b749-7fafac5daf7a",
+  "files": [
+    {
+      "name": "index.html",
+      "initialHash": "59f1411f14840fe0f77110eb7d730e0222eebdbb8ee9b2a165f54a4c99dda239",
+      "content": "<!DOCTYPE html>\n<html lang=\"ru\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <title>Что если не писать код?</title>\n    <link rel=\"stylesheet\" href=\"./fonts/fonts.css\" />\n    <link rel=\"stylesheet\" href=\"./styles/style.css\" />\n  </head>\n  <body>\n    <header class=\"header\">\n      <a class=\"logo\"><h1>Что если не писать код?</h1></a>\n      <nav class=\"menu\">\n        <ul class=\"menu__list\">\n          <li class=\"menu__item menu__item_active\"><a>главная</a></li>\n          <li class=\"menu__item\"><a href=\"#0\">о проекте</a></li>\n        </ul>\n      </nav>\n    </header>\n    <main class=\"main\">\n      <section class=\"content\">\n        <ul class=\"cards-list\">\n          <li class=\"card\">\n            <img src=\"./images/selfie.png\" alt=\"иллюстрация с селфи\" />\n            <p>Устроить селфи-марафон</p>\n          </li>\n          <li class=\"card\">\n            <img src=\"./images/boxes.png\" alt=\"иллюстрация разбор коробок\" />\n            <p>Разобрать ненужные вещи</p>\n          </li>\n          <li class=\"card\">\n            <img\n              src=\"./images/shop.png\"\n              alt=\"иллюстрация с кредитными карточками\"\n            />\n            <p>Сходить по магазинам</p>\n          </li>\n          <li class=\"card\">\n            <img src=\"./images/photo.png\" alt=\"иллюстрация с рамкой для фото\" />\n            <p>Листать фотографии в соцсетях</p>\n          </li>\n          <li class=\"card\">\n            <img\n              src=\"./images/location.png\"\n              alt=\"иллюстрация с меткой на карте\"\n            />\n            <p>Посетить новое место</p>\n          </li>\n          <li class=\"card\">\n            <img\n              src=\"./images/chat.png\"\n              alt=\"иллюстрация человек за ноутбуком\"\n            />\n            <p>Переписываться с друзьями</p>\n          </li>\n          <li class=\"card\">\n            <img src=\"./images/vlog.png\" alt=\"иллюстрация с камерой\" />\n            <p>Снять видео для блога</p>\n          </li>\n        </ul>\n      </section>\n      <aside class=\"sidebar\">\n        <div class=\"banner\">\n          <div>Реклама</div>\n          <div>Незабываемый отдых в горах</div>\n          <video src=\"https://code.s3.yandex.net/fullstack_developer/fullstack_developer_sp1_t3_y4_vid.mp4\" muted autoplay loop></video>\n        </div>\n      </aside>\n    </main>\n    <footer class=\"footer\">\n      <div>made by VЁRSTKA</div>\n    </footer>\n  </body>\n</html>"
+    }
+  ],
+  "instructionsHash": "2654dca5a66e86f31ada049415d1dbd0c4ba7d97d3754d67a27b49e99925e9e3",
+  "verifiedAt": "2026-10-19T11:39:51.955Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Текст по центру, вдруг вы не заметили."
+  }
+}

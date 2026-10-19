@@ -1,0 +1,17 @@
+{
+  "taskId": "a10b307a-0e3a-4839-bb84-b3fc29fbc33e",
+  "lessonId": "243429e2-a4a7-497a-afeb-6e87a56e5195",
+  "files": [
+    {
+      "name": "fonts.css",
+      "initialHash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "content": "@font-face {\n  font-family: 'IBM Plex Serif';\n  src: url('https://pictures.s3.yandex.net/fonts/Ibmplexserif.woff2');\n  font-weight: normal;\n}\n\n@font-face {\n  font-family: 'Ubuntu';\n  src: url('https://pictures.s3.yandex.net/fonts/ubuntu.woff2');\n  font-weight: normal;\n}\n\n@font-face {\n  font-family: 'Istok Web';\n  src: url('https://pictures.s3.yandex.net/fonts/istokregular.woff2');\n  font-weight: normal;\n}\n"
+    }
+  ],
+  "instructionsHash": "68329c435d74d86c5c5a6a2ff234f9ab8a8ce747cb304a819074ecc4b7a6b0e1",
+  "verifiedAt": "2026-10-19T15:13:04.035Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Шрифт самого нового формата прикреплён к файлу стилей. Но пока только одно начертание, нужно больше."
+  }
+}

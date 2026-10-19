@@ -55,7 +55,13 @@ export interface TrainerSolution {
   verifiedAt: string;
   evidence: { selector: string; message: string };
 }
-interface TaskState { phase: 'requested' | 'accepted' | 'wrong'; solutionHash: string; updatedAt: string }
+interface AttemptFile { name: string; initialHash: string; contentHash: string }
+interface TaskState { phase: 'requested' | 'accepted' | 'wrong'; solutionHash: string; updatedAt: string; files?: AttemptFile[] }
+
+export function canReplaceTrainerFile(currentHash: string, file: TrainerSolution['files'][number], previous?: AttemptFile): boolean {
+  return [file.initialHash, contentHash(file.content)].includes(currentHash) ||
+    !!previous && previous.initialHash === file.initialHash && previous.contentHash === currentHash;
+}
 
 // A task is advanced only after real checker feedback or a previously accepted
 // submission whose Next button is still available. Uncertain requests are observed.
@@ -74,6 +80,7 @@ export async function solveTrainer(page: Page, candidate = false): Promise<'adva
   const solutionHash = contentHash(JSON.stringify(solution.files));
   const stateFile = `.local/trainers/${task.taskId}.json`;
   const state = await readJson<TaskState | null>(stateFile, null);
+  const attemptFiles = solution.files.map(file => ({ name: file.name, initialHash: file.initialHash, contentHash: contentHash(file.content) }));
   const next = page.locator('[data-test-id="next-task-button"]');
   let outcome = await trainerOutcome(page);
   const accepted = state?.phase === 'accepted' && state.solutionHash === solutionHash && await next.isVisible() && await next.isEnabled();
@@ -83,13 +90,17 @@ export async function solveTrainer(page: Page, candidate = false): Promise<'adva
     if (state?.phase === 'requested') {
       if (state.solutionHash !== solutionHash) throw new Error('Сначала нужно выяснить результат предыдущей отправки тренажёра');
     } else {
+      const previousFiles = candidate && state?.phase === 'wrong' ? state.files ?? [] : [];
+      if (previousFiles.some(previous => !solution.files.some(file => file.name === previous.name && file.initialHash === previous.initialHash))) {
+        throw new Error('Повторное решение должно сохранять исходные хеши и включать все ранее изменённые файлы');
+      }
       // Compare each initial file before changing anything. Unknown edits are
       // preserved in pending-task.json for investigation instead of overwritten.
       for (const file of solution.files) {
         await selectEditorFile(page, file.name);
         const matches = (await readTrainer(page)).files.filter(item => item.path.split('/').pop() === file.name);
         const current = matches.length === 1 ? matches[0] : undefined;
-        if (!current || ![file.initialHash, contentHash(file.content)].includes(current.hash)) {
+        if (!current || !canReplaceTrainerFile(current.hash, file, previousFiles.find(previous => previous.name === file.name))) {
           throw new Error(`Исходный файл ${file.name} изменён: нужен разбор перед применением эталона`);
         }
       }
@@ -99,7 +110,7 @@ export async function solveTrainer(page: Page, candidate = false): Promise<'adva
       }
       const oldMessage = page.locator('.trainer-footer__message:not(.draggable-notification__manikin) .notification__close').filter({ visible: true });
       if (await oldMessage.count() === 1) await oldMessage.click();
-      await atomicJson(stateFile, { phase: 'requested', solutionHash, updatedAt: new Date().toISOString() } satisfies TaskState);
+      await atomicJson(stateFile, { phase: 'requested', solutionHash, files: attemptFiles, updatedAt: new Date().toISOString() } satisfies TaskState);
       await journal('trainer-check-requested', { taskId: task.taskId, solutionHash });
       await page.locator('[data-test-id="check-task-button"]').click();
     }
@@ -111,14 +122,14 @@ export async function solveTrainer(page: Page, candidate = false): Promise<'adva
     }
     if (outcome === 'unknown') return 'pending';
     if (outcome === 'wrong') {
-      await atomicJson(stateFile, { phase: 'wrong', solutionHash, updatedAt: new Date().toISOString() } satisfies TaskState);
+      await atomicJson(stateFile, { phase: 'wrong', solutionHash, files: attemptFiles, updatedAt: new Date().toISOString() } satisfies TaskState);
       const feedback = await page.locator('.trainer-footer__message:not(.draggable-notification__manikin) .notification__content').filter({ visible: true }).allTextContents();
       await atomicJson('.local/trainer-review.json', { taskId: task.taskId, outcome, feedback });
       await journal('trainer-check-wrong', { taskId: task.taskId, feedback });
       return 'pending';
     }
   }
-  await atomicJson(stateFile, { phase: 'accepted', solutionHash, updatedAt: new Date().toISOString() } satisfies TaskState);
+  await atomicJson(stateFile, { phase: 'accepted', solutionHash, files: attemptFiles, updatedAt: new Date().toISOString() } satisfies TaskState);
   if (candidate) {
     const evidence = await page.locator('.trainer-footer__message.notification_type_success:not(.draggable-notification__manikin) .notification__content').filter({ visible: true }).first().innerText();
     const { instructions: _instructions, ...portable } = solution;

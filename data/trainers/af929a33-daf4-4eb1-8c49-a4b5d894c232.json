@@ -1,0 +1,17 @@
+{
+  "taskId": "af929a33-daf4-4eb1-8c49-a4b5d894c232",
+  "lessonId": "243429e2-a4a7-497a-afeb-6e87a56e5195",
+  "files": [
+    {
+      "name": "fonts.css",
+      "initialHash": "e4e33b118c1d24e0b10dced43c1c142f43dc745b9943a35bf23637e024739326",
+      "content": "@font-face {\n  font-family: 'IBM Plex Serif';\n  src: url(https://pictures.s3.yandex.net/fonts/Ibmplexserif.woff2);\n  font-weight: normal;\n}\n\n@font-face {\n  font-family: Ubuntu;\n  src: url(https://pictures.s3.yandex.net/fonts/ubuntu.woff2);\n  font-weight: normal;\n}\n\n@font-face {\n  font-family: 'Istok Web';\n  src: url(https://pictures.s3.yandex.net/fonts/istokregular.woff2);\n  font-weight: normal;\n}\n\n@font-face {\n  font-family: 'IBM Plex Serif';\n  src: url('https://pictures.s3.yandex.net/fonts/Ibmplexserifsemibold.woff2');\n  font-weight: bold;\n}\n\n@font-face {\n  font-family: 'Ubuntu';\n  src: url('https://pictures.s3.yandex.net/fonts/ubuntubold.woff2');\n  font-weight: bold;\n}\n\n@font-face {\n  font-family: 'Istok Web';\n  src: url('https://pictures.s3.yandex.net/fonts/istokbold.woff2');\n  font-weight: bold;\n}\n"
+    }
+  ],
+  "instructionsHash": "e1aca657ab879b5cdfe843583eebf927aaab19fca7772e71bdb9a8231b77d84f",
+  "verifiedAt": "2026-10-19T15:13:41.387Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Теперь в вашем распоряжении два вида начертания. Перейдём к форматам."
+  }
+}

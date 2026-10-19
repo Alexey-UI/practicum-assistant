@@ -1,0 +1,17 @@
+{
+  "taskId": "d2e7deaa-eb1c-4161-8e63-4a7a1409eda5",
+  "lessonId": "fca44e89-f48b-441e-b6c8-74033dd0fe06",
+  "files": [
+    {
+      "name": "index.html",
+      "initialHash": "8ceb5d78fd1de641776ceba1e55f1b7d6814466e26bf2ee533273bd703b70a26",
+      "content": "<!DOCTYPE html>\n<html lang=\"ja\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <title>From Japan with love</title>\n    <link rel=\"stylesheet\" href=\"./styles/style.css\" />\n  </head>\n  <body>\n    <p class=\"words\">\n      ブタがブタをぶったらぶたれたブタがぶったブタをぶったのでぶったブタとぶたれたブタがぶったおれた\n    </p>\n  </body>\n</html>"
+    }
+  ],
+  "instructionsHash": "88819d06dbc2c2c80ec1d90d28c7d935aa9c9248e53706a227dff841786304c6",
+  "verifiedAt": "2026-10-19T11:41:02.868Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "古池や\n蛙飛びこむ\n水の音"
+  }
+}

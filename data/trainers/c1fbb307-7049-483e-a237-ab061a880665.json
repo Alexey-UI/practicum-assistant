@@ -1,0 +1,17 @@
+{
+  "taskId": "c1fbb307-7049-483e-a237-ab061a880665",
+  "lessonId": "d7273254-d57e-4a4f-90e0-482d3a6a392e",
+  "files": [
+    {
+      "name": "script.js",
+      "initialHash": "5c33c1d876492ba7a32f505c371c80a00530b3b5f8eefd79ad42bc8a881e44aa",
+      "content": "let phrases = [\n  { text: 'отправить другу смешную гифку', image: 'https://code.s3.yandex.net/web-code/procrastinate/1.gif' },\n  { text: 'посмотреть скидки на авиабилеты', image: 'https://code.s3.yandex.net/web-code/procrastinate/2.png' },\n  { text: 'разобраться, о чём поют рэперы', image: 'https://code.s3.yandex.net/web-code/procrastinate/3.png' },\n  { text: 'Arzamas', image: 'https://code.s3.yandex.net/web-code/procrastinate/4.png' },\n  { text: 'расставить книги на полке по цвету', image: 'https://code.s3.yandex.net/web-code/procrastinate/5.png' },\n  { text: 'читать про зарплаты в Сан-Франциско', image: 'https://code.s3.yandex.net/web-code/procrastinate/6.png' },\n  { text: 'прочитать новости и ужаснуться в комментариях', image: 'https://code.s3.yandex.net/web-code/procrastinate/7.png' },\n  { text: 'попасть в поток грустных песен и вспомнить все ошибки молодости', image: 'https://code.s3.yandex.net/web-code/procrastinate/8.png' },\n  { text: 'посмотреть трейлер сериала и заодно первый сезон', image: 'https://code.s3.yandex.net/web-code/procrastinate/9.png' },\n  { text: 'проверить непрочитанное в Telegram-каналах', image: 'https://code.s3.yandex.net/web-code/procrastinate/10.png' }\n];\n\nfunction getRandomElement(arr) {\n  let randIndex = Math.floor(Math.random() * arr.length);\n  return arr[randIndex];\n}\n\nlet button = document.querySelector('.button');\nlet phrase = document.querySelector('.phrase');\nlet advice = document.querySelector('.advice');\nlet image = document.querySelector('.image');\n\nbutton.addEventListener('click', function () {\n  let randomElement = getRandomElement(phrases);\n  smoothly(phrase, 'textContent', randomElement.text);\n  image.src = randomElement.image;\n\n  if (randomElement.text.length > 40) {\n    advice.style.fontSize = '33px';\n  } else {\n    advice.style.fontSize = '42px';\n  }\n});"
+    }
+  ],
+  "instructionsHash": "7903f965b1ecfad9f9afbc42420f76c6d6d74192e83ea099d0c33d3d9d1e3873",
+  "verifiedAt": "2026-10-19T11:07:01.108Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Клик-клик. Текст меняется плавно, но картинка нет. Сейчас исправим это."
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "taskId": "7a8bfb54-d79f-46bf-b4d2-d58dd26eb3b5",
+  "lessonId": "d7273254-d57e-4a4f-90e0-482d3a6a392e",
+  "files": [
+    {
+      "name": "index.html",
+      "initialHash": "e405af56ecbd71577aa436e1c5212dd1ba05ac735f5d8c79e6ef10e492aa5d24",
+      "content": "<!DOCTYPE html>\n<html lang=\"ru\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <meta http-equiv=\"X-UA-Compatible\" content=\"ie=edge\">\n  <title>Procrastinate.</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n  <link rel=\"icon\" type=\"image\" href=\"https://code.s3.yandex.net/web-code/js-favicon.ico\">\n</head>\n<body>\n  <div class=\"header\">\n    <p class=\"logo\">Procrastinate.</p>\n    <div class=\"button\">Ещё идея</div>\n  </div>\n\n  <img class=\"image\" src=\"https://code.s3.yandex.net/web-code/procrastinate/9.png\">\n\n  <div class=\"advice\">\n    <span>Не писать код, а</span>\n    <span class=\"phrase\">что бы поделать?</span>\n    <img class=\"cursor\" src=\"https://code.s3.yandex.net/web-code/cursor.gif\">\n  </div>\n\n  <p class=\"footer\">© 2020 Сделал Тим Бернерс-Ли</p>\n\n  <script src=\"https://code.s3.yandex.net/web-code/smoothly.js\"></script>\n  <script src=\"script.js\"></script>\n</body>\n</html>"
+    }
+  ],
+  "instructionsHash": "1177d535e1a80307af300ffdeaf5742fb4689769480189db03cf9fa0a299e7e9",
+  "verifiedAt": "2026-10-19T11:06:46.359Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Библиотека подключена. Ура, как говорится."
+  }
+}

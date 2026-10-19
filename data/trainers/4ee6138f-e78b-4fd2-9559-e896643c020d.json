@@ -1,0 +1,17 @@
+{
+  "taskId": "4ee6138f-e78b-4fd2-9559-e896643c020d",
+  "lessonId": "8387853e-ae4b-48de-bbc6-4df0eba0dfc6",
+  "files": [
+    {
+      "name": "style.css",
+      "initialHash": "f3c332b3f6b774652401b0549cb8e48678d5024a388d272d663995065c4e04fe",
+      "content": "html,\nbody {\n  box-sizing: border-box;\n  height: 100%;\n  font-family: Inter, sans-serif;\n}\n\nbody {\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  min-width: 1024px;\n  margin: 0;\n  padding: 100px;\n  background-color: gold;\n}\n\nheader {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  margin-bottom: 40px;\n}\n\nheader h1 {\n  margin: 0;\n  font-weight: normal;\n  font-size: 40px;\n}\n\nheader img {\n  height: 120px;\n}\n\n.book {\n  display: flex;\n  gap: 20px;\n}\n\n.menu {\n  width: 300px;\n  border-radius: 10px;\n  padding: 20px;\n  background-color: rgb(0 0 0 / 0.8);\n}\n\n.menu ul {\n  margin: 0;\n  padding: 0;\n  list-style: none;\n}\n\n.menu ul li {\n  margin-bottom: 20px;\n}\n\n.menu ul li a {\n  color: #fff;\n  text-decoration: none;\n}\n\n.content {\n  box-sizing: border-box;\n  width: calc(100% - 300px);\n  max-height: 400px;\n  border-radius: 10px;\n  padding: 20px 40px;\n  overflow: scroll;\n  scroll-behavior: smooth;\n  line-height: 1.35;\n  background-color: #fff;\n}"
+    }
+  ],
+  "instructionsHash": "5948abc0c5fe1db3e002a925dc21400530560d6946d665a41d9f8cc160567429",
+  "verifiedAt": "2026-10-19T11:43:11.268Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "В современном вебе идентификаторы, пожалуй, только для этого и нужны."
+  }
+}

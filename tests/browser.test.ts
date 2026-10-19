@@ -5,7 +5,7 @@ import { readLessons, observedSolved, saveObservedSolved } from '../src/catalog.
 import { exactButton, questionFrom, quizOutcome } from '../src/quiz.js';
 import { DEFAULTS } from '../src/config.js';
 import { scrollLesson } from '../src/scroll.js';
-import { trainerOutcome, selectEditorFile, solveTrainer, contentHash } from '../src/trainer.js';
+import { trainerOutcome, selectEditorFile, solveTrainer, contentHash, canReplaceTrainerFile } from '../src/trainer.js';
 import { readTextQuestion, solveTextQuestion, captureTextAnswer } from '../src/text-quiz.js';
 import { solveFeedback } from '../src/feedback.js';
 import { solveQuiz } from '../src/quiz.js';
@@ -15,6 +15,14 @@ import { tmpdir } from 'node:os';
 import path from 'node:path';
 
 let browser: Browser;
+test('Исправленная попытка тренажёра допускает только свои изменения и сохраняет исходный хеш', () => {
+  const file = { name: 'fonts.css', initialHash: contentHash(''), content: 'font-weight: normal;' };
+  const previous = { name: 'fonts.css', initialHash: contentHash(''), contentHash: contentHash('font-weight: 400;') };
+  assert.equal(canReplaceTrainerFile(previous.contentHash, file, previous), true);
+  assert.equal(canReplaceTrainerFile(contentHash('чужая правка'), file, previous), false);
+  assert.equal(canReplaceTrainerFile(previous.contentHash, file), false);
+  assert.equal(canReplaceTrainerFile(previous.contentHash, file, { ...previous, initialHash: contentHash('другой исходник') }), false);
+});
 before(async () => { browser = await chromium.launch({ channel: 'chrome', headless: true }); });
 after(async () => { await browser?.close(); });
 test('Файл редактора выбирается в дереве и во вкладках с перекрывающей текст подсказкой', async () => {
