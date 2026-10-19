@@ -1,0 +1,17 @@
+{
+  "taskId": "791e9e85-2297-449c-b55b-410cf16cc147",
+  "lessonId": "b3489d9f-0531-4179-a5b9-44cb3e98dc59",
+  "files": [
+    {
+      "name": "style.css",
+      "initialHash": "926d10b8698a9c856333e93ae433ae8ee4d2d6ef385ee74818c05dad7a0fcf54",
+      "content": "*,\n*::before,\n*::after {\n  box-sizing: border-box;\n}\n\nhtml,\nbody {\n  height: 100%;\n}\n\nbody {\n  margin: 0;\n  font-family: Inter, sans-serif;\n  background-image: url(../images/bg.jpg);\n  background-position: center top;\n  background-size: cover;\n}\n\n.popup {\n  display: flex;\n  position: fixed;\n  inset: 0;\n  background-color: rgb(0 0 0/0.8);\n}\n\n.popup__content {\n  margin: auto;\n  position: relative;\n  width: 600px;\n  border-radius: 10px;\n  padding: 40px;\n  font-size: 16px;\n  line-height: 1.35;\n  background-color: #fff;\n}\n\n.close-popup {\n  position: absolute;\n  top: 0;\n  right: 0;\n  width: 18px;\n  height: 18px;\n  border: none;\n  padding: 0;\n  background-color: transparent;\n  transform: translate(100%, -100%);\n}\n\n.close-popup img {\n  width: 100%;\n  height: 100%;\n  object-fit: contain;\n  object-position: center;\n}"
+    }
+  ],
+  "instructionsHash": "7c9ed64b656c97776473cf8c5de439d3a4ddbf0b459f52024c7f8254155c6e00",
+  "verifiedAt": "2026-10-19T15:16:09.623Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Модальное окно работает, но не закрывается. Для этого нужен JavaScript. Браузеры подумывают сделать отдельный тег для модальных окон, но пока это не внедрили."
+  }
+}

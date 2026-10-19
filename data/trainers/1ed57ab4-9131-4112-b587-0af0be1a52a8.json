@@ -1,0 +1,17 @@
+{
+  "taskId": "1ed57ab4-9131-4112-b587-0af0be1a52a8",
+  "lessonId": "b77f0ec4-51cd-4de8-bfa5-59c0733e5e8d",
+  "files": [
+    {
+      "name": "style.css",
+      "initialHash": "4acd517375bbee3c8f015377cf31c50ee6e7f37d1b24d0efadf9e8ffe37bd156",
+      "content": "body {\n  margin: auto;\n  background-color: #1e1e1e;\n}\n\n.buttons {\n  align-content: center;\n  display: flex;\n  flex-wrap: wrap;\n  align-items: center;\n  gap: 20px;\n  width: 80%;\n  height: 100vh;\n  margin: auto;\n}\n\n.button {\n  width: 100px;\n  height: 100px;\n  border: none;\n  border-radius: 10px;\n  font-size: 60px;\n  background-color: #fff;\n  cursor: pointer;\n}\n\n.button:hover {\n  box-shadow: 0 0 10px #fff;\n}"
+    }
+  ],
+  "instructionsHash": "7ff2261cd4c8de37b3a8ec7dd93f7a2893d7feac6baa2e0e03df5f97a4a945d9",
+  "verifiedAt": "2026-10-19T15:21:24.910Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Уже получше, но теперь будем делать вообще улёт."
+  }
+}

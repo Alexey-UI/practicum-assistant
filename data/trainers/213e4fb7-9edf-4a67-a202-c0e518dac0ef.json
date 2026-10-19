@@ -1,0 +1,17 @@
+{
+  "taskId": "213e4fb7-9edf-4a67-a202-c0e518dac0ef",
+  "lessonId": "587aba26-359a-4c13-a412-b4aa9918354d",
+  "files": [
+    {
+      "name": "style.css",
+      "initialHash": "5da9f2d8196aa368262dc42ee54856e3d33bc7c71650e9820b60dd119abd101a",
+      "content": "body {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  min-height: 100vh;\n  margin: 0;\n  background-color: #396083;\n}\n\n.gallery {\n  display: flex;\n  gap: 10px;\n  width: 650px;\n  height: 400px;\n}\n\n.gallery__column_type_left {\n  width: 255px;\n}\n\n.gallery__column_type_right {\n  display: flex;\n  flex-direction: column;\n  gap: 10px;\n  width: 385px;\n}\n\n.gallery__column img {\n  object-fit: cover;\n  object-position: center;\n}\n\n.gallery__column_type_left img {\n  width: 100%;\n  height: 100%;\n}\n\n.gallery__column_type_right img {\n  width: 100%;\n  height: 195px;\n}"
+    }
+  ],
+  "instructionsHash": "ee75990d07793877c0b2a9ff6563ee92515d53a110276da2631c0fe156255295",
+  "verifiedAt": "2026-10-19T15:20:03.830Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Тот же самый эффект, что при margin: auto; внутри флекс-контейнера. Но совсем другой смысл. Тут всем управляет контейнер, а не элемент отстраивает свои поля."
+  }
+}

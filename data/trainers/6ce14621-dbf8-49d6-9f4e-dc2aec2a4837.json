@@ -1,0 +1,17 @@
+{
+  "taskId": "6ce14621-dbf8-49d6-9f4e-dc2aec2a4837",
+  "lessonId": "3739da99-35fa-4a5d-9aa4-38906fa82227",
+  "files": [
+    {
+      "name": "fonts.css",
+      "initialHash": "9cc744ccaf24e17b827d95c8b5bcbd16a8d8122916bca3a46f1eac8ad8c853c9",
+      "content": "@font-face {\n  font-display: swap;\n  font-family: 'IBM Plex Serif';\n  src:\n    url(https://pictures.s3.yandex.net/fonts/Ibmplexserif.woff2) format('woff2'),\n       url(https://pictures.s3.yandex.net/fonts/Ibmplexserif.woff) format('woff'),\n       url(https://pictures.s3.yandex.net/fonts/Ibmplexserif.ttf) format('truetype');\n  font-weight: normal;\n}\n\n@font-face {\n  font-display: swap;\n  font-family: Ubuntu;\n  src:\n    url(https://pictures.s3.yandex.net/fonts/ubuntu.woff2) format('woff2'),\n       url(https://pictures.s3.yandex.net/fonts/ubuntu.woff) format('woff'),\n       url(https://pictures.s3.yandex.net/fonts/ubuntu.ttf) format('truetype');\n  font-weight: normal;\n}\n\n@font-face {\n  font-display: swap;\n  font-family: 'Istok Web';\n  src:\n    url(https://pictures.s3.yandex.net/fonts/istokregular.woff2) format('woff2'),\n       url(https://pictures.s3.yandex.net/fonts/istokregular.woff) format('woff'),\n       url(https://pictures.s3.yandex.net/fonts/istokregular.ttf) format('truetype');\n  font-weight: normal;\n}\n\n@font-face {\n  font-display: swap;\n  font-family: 'IBM Plex Serif';\n  src:\n    url(https://pictures.s3.yandex.net/fonts/Ibmplexserifsemibold.woff2) format('woff2'),\n       url(https://pictures.s3.yandex.net/fonts/Ibmplexserifsemibold.woff) format('woff'),\n       url(https://pictures.s3.yandex.net/fonts/Ibmplexserifsemibold.ttf) format('truetype');\n  font-weight: bold;\n}\n\n@font-face {\n  font-display: swap;\n  font-family: Ubuntu;\n  src:\n    url(https://pictures.s3.yandex.net/fonts/ubuntubold.woff2) format('woff2'),\n       url(https://pictures.s3.yandex.net/fonts/ubuntubold.woff) format('woff'),\n       url(https://pictures.s3.yandex.net/fonts/ubuntubold.ttf) format('truetype');\n  font-weight: bold;\n}\n\n@font-face {\n  font-display: swap;\n  font-family: 'Istok Web';\n  src:\n    url(https://pictures.s3.yandex.net/fonts/istokbold.woff2) format('woff2'),\n       url(https://pictures.s3.yandex.net/fonts/istokbold.woff) format('woff'),\n       url(https://pictures.s3.yandex.net/fonts/istokbold.ttf) format('truetype');\n  font-weight: bold;\n}"
+    }
+  ],
+  "instructionsHash": "2f0ebaafafed35ebdf5e1205a237b80d17e8b468910d5e643ac44e80ba696e0e",
+  "verifiedAt": "2026-10-19T15:14:30.863Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Теперь пора показать шрифты на странице."
+  }
+}

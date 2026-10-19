@@ -1,0 +1,17 @@
+{
+  "taskId": "558f8234-1c5d-4ff6-a3c0-a1bbac50cfcb",
+  "lessonId": "92235169-4777-42ed-92ac-11e334febb54",
+  "files": [
+    {
+      "name": "style.css",
+      "initialHash": "004138666eaed47cd94465b5ea50546c67fe5875b3aa3695ce189c47455f54c8",
+      "content": "body {\n  min-height: 100vh;\n  margin: 0;\n  background-color: #396083;\n}\n\n.gallery {\n  justify-content: space-between;\n  display: flex;\n  width: 650px;\n  height: 400px;\n}\n\n.gallery__column_type_left {\n  width: 255px;\n}\n\n.gallery__column_type_right {\n  width: 385px;\n}\n\n.gallery__column img {\n  object-fit: cover;\n  object-position: center;\n}\n\n.gallery__column_type_left img {\n  width: 100%;\n  height: 100%;\n}\n\n.gallery__column_type_right img {\n  width: 100%;\n  height: 195px;\n}"
+    }
+  ],
+  "instructionsHash": "a0ff2ce1037a2c62b138fce44b5d7b004aebe62f8a3d64cb4e85906ecfd0ae9a",
+  "verifiedAt": "2026-10-19T15:18:57.049Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Великий английский, язык Байрона и Шекспира. Between two columns."
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "taskId": "10e9e708-d87b-4e8b-946b-79e3bd052b2d",
+  "lessonId": "92235169-4777-42ed-92ac-11e334febb54",
+  "files": [
+    {
+      "name": "style.css",
+      "initialHash": "3d46148a3b415edc5e8383eddc6739734a8ea188fd6f31cf3ae11cfb3cb29302",
+      "content": "body {\n  min-height: 100vh;\n  margin: 0;\n  background-color: #396083;\n}\n\n.gallery {\n  display: flex;\n  justify-content: space-between;\n  width: 650px;\n  height: 400px;\n}\n\n.gallery__column_type_left {\n  width: 255px;\n}\n\n.gallery__column_type_right {\n  display: flex;\n  flex-direction: column;\n  justify-content: space-between;\n  width: 385px;\n}\n\n.gallery__column img {\n  object-fit: cover;\n  object-position: center;\n}\n\n.gallery__column_type_left img {\n  width: 100%;\n  height: 100%;\n}\n\n.gallery__column_type_right img {\n  width: 100%;\n  height: 195px;\n}"
+    }
+  ],
+  "instructionsHash": "6413a22e4e3a09c82d1fc96563615602848a54df991774d1862b63b20946594b",
+  "verifiedAt": "2026-10-19T15:19:11.975Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Сетка изображений теперь ровная. Всё благодаря вам."
+  }
+}

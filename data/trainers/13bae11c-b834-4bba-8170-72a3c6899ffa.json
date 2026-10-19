@@ -1,0 +1,17 @@
+{
+  "taskId": "13bae11c-b834-4bba-8170-72a3c6899ffa",
+  "lessonId": "b041751a-e456-4378-ad17-05d230637e6d",
+  "files": [
+    {
+      "name": "style.css",
+      "initialHash": "08a73b66542ae3399d4ad88d87c9150feb0225a2dec73da96a8e57a6a7d7940c",
+      "content": "body {\n  display: flex;\n  min-height: 100vh;\n  background-color: rgb(169 0 169);\n}\n\n.round {\n  display: flex;\n  margin: auto;\n  width: 250px;\n  height: 250px;\n  border-radius: 50%;\n  background-color: #000;\n}\n\n.round .round {\n  width: 200px;\n  height: 200px;\n  background-color: navy;\n}\n\n.round .round .round {\n  width: 150px;\n  height: 150px;\n  background-color: white;\n}\n\n.round .round .round .round {\n  width: 100px;\n  height: 100px;\n  background-color: green;\n}\n\n.round .round .round .round .round {\n  width: 50px;\n  height: 50px;\n  background-color: red;\n}"
+    }
+  ],
+  "instructionsHash": "4ad7eaf0419ecc2ee6c62cf781516cdcd8e915a605105387a340ab08589614c2",
+  "verifiedAt": "2026-10-19T15:17:48.942Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "После тренажёрки можно сходить в бар поиграть в дартс с друзьями."
+  }
+}

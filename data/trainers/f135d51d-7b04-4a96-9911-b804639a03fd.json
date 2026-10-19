@@ -1,0 +1,17 @@
+{
+  "taskId": "f135d51d-7b04-4a96-9911-b804639a03fd",
+  "lessonId": "cf79efd7-870e-4249-a546-a1a7231ebef4",
+  "files": [
+    {
+      "name": "style.css",
+      "initialHash": "7b99b08f5972a56eb4b92cc6c86e0efaf156817fecc8c486b599d7ee6b4d7b7a",
+      "content": "body {\n  min-height: 100vh;\n  margin: 0;\n  background-color: #396083;\n}\n\n.gallery {\n  display: flex;\n  width: 650px;\n  height: 400px;\n}\n\n.gallery__column_type_left {\n  width: 255px;\n}\n\n.gallery__column_type_right {\n  width: 385px;\n}\n\n.gallery__column img {\n  object-fit: cover;\n  object-position: center;\n}\n\n.gallery__column_type_left img {\n  width: 100%;\n  height: 100%;\n}\n\n.gallery__column_type_right img {\n  width: 100%;\n  height: 195px;\n}"
+    }
+  ],
+  "instructionsHash": "7124b303fd08f555c7b5bb396d2d50e062dacd657404d7ac27074e89b762e2c3",
+  "verifiedAt": "2026-10-19T15:18:28.221Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Две колонки так две колонки, но есть нюанс."
+  }
+}
