@@ -4,7 +4,7 @@ import { loadConfig } from './config.js';
 import { exactButton, quizOutcome, solveQuiz } from './quiz.js';
 import { scrollLesson } from './scroll.js';
 import { loadProjects } from './projects.js';
-import { submitProject } from './submission.js';
+import { prepareManualProject, submitProject } from './submission.js';
 import { solveTrainer } from './trainer.js';
 import { captureMatching, solveMatching } from './matching.js';
 import { solveTextQuestion, captureTextAnswer } from './text-quiz.js';
@@ -87,6 +87,9 @@ export async function run(): Promise<void> {
     const course = courseFlag >= 0 ? args[courseFlag + 1] : undefined;
     const onlyProjects = args.includes('--projects-first');
     const research = args.includes('--research');
+    const projects = await loadProjects();
+    const skippedProjects = args.flatMap((arg, index) => arg === '--skip-project' ? [args[index + 1]] : []);
+    if (skippedProjects.some(id => !projects.some(project => project.id === id))) throw new Error('Для --skip-project нужен известный ID проекта');
     let lessons: Lesson[];
     if (urlFlag >= 0) {
       lessons = [{ url: args[urlFlag + 1], title: 'Урок по ссылке', course: '', topic: '', solved: false, project: false }];
@@ -104,6 +107,12 @@ export async function run(): Promise<void> {
     if (args.includes('--catalog-only')) { console.log('Каталог сохранён в .local/catalog.json'); return; }
     const verified = await readJson<Record<string, string>>('.local/completed.json', {});
     for (const lesson of lessons) {
+      const skipped = projects.find(project => skippedProjects.includes(project.id) && canonicalLesson(project.lessonUrl) === canonicalLesson(lesson.url));
+      if (skipped) {
+        console.log(`Проект временно отложен: ${skipped.title}. Прохождение не засчитано.`);
+        await journal('project-deferred', { id: skipped.id, url: lesson.url });
+        continue;
+      }
       if (lesson.locked) { await journal('lesson-locked', { url: lesson.url, title: lesson.title }); continue; }
       // Catalog is authoritative; local history alone never makes a lesson solved.
       if (lesson.solved) continue;
@@ -118,6 +127,8 @@ export async function run(): Promise<void> {
       await saveObservedSolved(observed);
       for (const row of lessons) if (observed.has(canonicalLesson(row.url))) row.solved = true;
       if (observed.has(canonicalLesson(lesson.url))) {
+        const project = projects.find(project => project.review !== 'teacher' && canonicalLesson(project.lessonUrl) === canonicalLesson(lesson.url));
+        if (project) await submitProject(page, project);
         await journal('lesson-already-solved', { url: canonicalLesson(lesson.url) });
         continue;
       }
@@ -126,6 +137,10 @@ export async function run(): Promise<void> {
       if (/сдача проектной работы/i.test(heading) || await taskTab.isVisible()) {
         const project = (await loadProjects()).find(project => new URL(project.lessonUrl).pathname === new URL(page.url()).pathname);
         if (project) {
+          if (project.review === 'teacher') {
+            await prepareManualProject(project);
+            continue;
+          }
           if (await submitProject(page, project)) {
             verified[safeUrl(lesson.url)] = new Date().toISOString();
             await atomicJson('.local/completed.json', verified);

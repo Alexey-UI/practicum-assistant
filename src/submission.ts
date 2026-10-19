@@ -10,6 +10,24 @@ import { scrollLesson } from './scroll.js';
 const exec = promisify(execFile);
 interface Submission { commit: string; phase: 'requested' | 'accepted' | 'complete'; lessonUrl: string; updatedAt?: string }
 
+export async function prepareManualProject(project: Project): Promise<void> {
+  if (project.review !== 'teacher') throw new Error('Проект не требует ручной сдачи');
+  await projectCommand(['prepare', project.id]);
+  await projectCommand(['verify', project.id]);
+  await projectCommand(['publish', project.id]);
+  const published = await readJson<{ destinationCommit: string } | null>(`.local/projects/${project.id}.published.json`, null);
+  if (!published) throw new Error('Нет подтверждения публикации проекта');
+  const draft = `.local/hand-ins/${project.id}.json`;
+  await atomicJson(draft, {
+    project: project.id, phase: 'draft', lessonUrl: project.lessonUrl,
+    repository: `https://github.com/${project.destination}`, commit: published.destinationCommit,
+    instructions: 'Сверить требования сдачи на странице курса. Личные сведения заполняет пользователь. Документы, формы и сообщения преподавателю автоматически не отправляются.',
+    updatedAt: new Date().toISOString(),
+  });
+  await journal('project-manual-draft', { id: project.id, draft });
+  console.log(`Работа опубликована; сдача преподавателю оставлена локальным черновиком: ${draft}. Приёмка не засчитана.`);
+}
+
 async function accepted(page: Page): Promise<boolean> {
   return page.getByText('Задание принято — отличная работа!', { exact: true }).isVisible();
 }
@@ -35,12 +53,13 @@ async function waitCI(page: Page, project: Project, commit: string): Promise<voi
 }
 
 export async function submitProject(page: Page, project: Project): Promise<boolean> {
+  if (project.review === 'teacher') throw new Error('Ручная сдача допускает только локальный черновик');
   const file = `.local/submissions/${project.id}.json`;
   let pending = await readJson<Submission | null>(file, null);
   const pathname = new URL(project.lessonUrl).pathname;
   const solved = page.locator(`.sidebar__lesson_status_solved[href="${pathname}"]`);
   if (await solved.count()) {
-    await atomicJson(file, { commit: pending?.commit ?? '', phase: 'complete', lessonUrl: project.lessonUrl, updatedAt: new Date().toISOString() });
+    await atomicJson(file, { ...pending, commit: pending?.commit ?? '', phase: 'complete', lessonUrl: project.lessonUrl, updatedAt: new Date().toISOString() });
     return true;
   }
 
@@ -73,7 +92,7 @@ export async function submitProject(page: Page, project: Project): Promise<boole
   const deadline = Date.now() + 600000;
   while (Date.now() < deadline) {
     if (await accepted(page)) {
-      const state: Submission = { commit: pending?.commit ?? '', phase: 'accepted', lessonUrl: project.lessonUrl, updatedAt: new Date().toISOString() };
+      const state: Submission = { ...pending, commit: pending?.commit ?? '', phase: 'accepted', lessonUrl: project.lessonUrl, updatedAt: new Date().toISOString() };
       await atomicJson(file, state);
       await journal('project-accepted', { id: project.id, url: safeUrl(page.url()) });
       const forward = page.getByRole('button', { name: 'Вперёд', exact: true });

@@ -19,7 +19,8 @@
     "check": "tsc --noEmit",
     "test": "tsx --test tests/*.test.ts",
     "check:focus": "tsx scripts/check-focus.ts",
-    "check:closing": "tsx scripts/check-closing.ts"
+    "check:closing": "tsx scripts/check-closing.ts",
+    "check:todo": "tsx scripts/check-todo.ts"
   },
   "dependencies": {
     "playwright": "^1.56.0"

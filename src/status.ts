@@ -18,7 +18,13 @@ export async function status(): Promise<void> {
   });
   const projects = await loadProjects();
   let acceptedProjects = 0;
+  let preparedManualProjects = 0;
   for (const project of projects) {
+    if (project.review === 'teacher') {
+      const draft = await readJson<{ phase: string } | null>(`.local/hand-ins/${project.id}.json`, null);
+      if (draft?.phase === 'draft') preparedManualProjects++;
+      continue;
+    }
     const submission = await readJson<{ phase: string } | null>(`.local/submissions/${project.id}.json`, null);
     if (submission?.phase === 'complete' || completed[project.lessonUrl] || lessons.some(lesson => lesson.url === project.lessonUrl && lesson.solved)) acceptedProjects++;
   }
@@ -28,7 +34,7 @@ export async function status(): Promise<void> {
     locked: courses.reduce((sum, course) => sum + course.locked, 0),
     verifiedTextQuestions: await countFiles('data/text-questions'),
     verifiedTrainerTasks: await countFiles('data/trainers'), verifiedMatchingTasks: await countFiles('data/matching'),
-    referenceProjects: projects.length, acceptedProjects,
+    referenceProjects: projects.length, acceptedProjects, preparedManualProjects,
   };
   await atomicJson('.local/status.json', result);
   console.log(JSON.stringify(result, null, 2));
