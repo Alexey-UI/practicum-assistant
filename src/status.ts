@@ -26,6 +26,7 @@ export async function status(): Promise<void> {
     catalogComplete: index.complete, catalogUpdatedAt: index.updatedAt, courses,
     lessons: lessons.length, solved: courses.reduce((sum, course) => sum + course.solved, 0),
     locked: courses.reduce((sum, course) => sum + course.locked, 0),
+    verifiedTextQuestions: await countFiles('data/text-questions'),
     verifiedTrainerTasks: await countFiles('data/trainers'), verifiedMatchingTasks: await countFiles('data/matching'),
     referenceProjects: projects.length, acceptedProjects,
   };

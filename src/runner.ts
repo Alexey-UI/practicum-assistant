@@ -7,6 +7,7 @@ import { loadProjects } from './projects.js';
 import { submitProject } from './submission.js';
 import { solveTrainer } from './trainer.js';
 import { captureMatching, solveMatching } from './matching.js';
+import { solveTextQuestion, captureTextAnswer } from './text-quiz.js';
 import { solveFeedback } from './feedback.js';
 import type { BrowserContext, Page, Locator } from 'playwright';
 import type { Config } from './config.js';
@@ -40,13 +41,15 @@ async function trainerStep(page: Page, research: boolean): Promise<'advanced' | 
 async function questionStep(page: Page, root: Locator, cfg: Config, research: boolean): Promise<boolean> {
   if (await root.evaluate(el => el.classList.contains('quiz_type_feedback'))) return solveFeedback(page, root, cfg);
   const matching = await root.locator('.quiz-form-matching').count() > 0;
-  if (await (matching ? solveMatching(page, root, cfg) : solveQuiz(page, root, cfg))) return true;
+  const text = await root.evaluate(el => el.classList.contains('quiz_type_text'));
+  const solve = () => text ? solveTextQuestion(page, root) : matching ? solveMatching(page, root, cfg) : solveQuiz(page, root, cfg);
+  if (await solve()) return true;
   if (!research) return false;
-  const pendingFile = matching ? '.local/pending-matching.json' : '.local/pending-question.json';
-  const decisionsFile = matching ? '.local/matching-decisions.json' : '.local/decisions.json';
-  const pending = await readJson<{ key?: string; quizId?: string } | null>(pendingFile, null);
+  const pendingFile = text ? '.local/pending-text-question.json' : matching ? '.local/pending-matching.json' : '.local/pending-question.json';
+  const decisionsFile = text ? '.local/text-decisions.json' : matching ? '.local/matching-decisions.json' : '.local/decisions.json';
+  const pending = await readJson<{ key?: string; quizId?: string; id?: string } | null>(pendingFile, null);
   if (!pending) return false;
-  const key = pending.key ?? pending.quizId!;
+  const key = pending.key ?? pending.quizId ?? pending.id!;
   console.log(`Снимок вопроса: ${await snapshot(page, 'pending-question')}`);
   console.log(`Исследование вопроса: ${pendingFile}. Ожидаю ответ в ${decisionsFile}: ${key}`);
   let attempted = '';
@@ -57,7 +60,7 @@ async function questionStep(page: Page, root: Locator, cfg: Config, research: bo
     const signature = JSON.stringify(decision);
     if (decision && signature !== attempted) {
       attempted = signature;
-      if (await (matching ? solveMatching(page, root, cfg) : solveQuiz(page, root, { ...cfg, retryableLessons: [...cfg.retryableLessons, new URL(page.url()).pathname] }))) return true;
+      if (await (text ? solveTextQuestion(page, root) : matching ? solveMatching(page, root, cfg) : solveQuiz(page, root, { ...cfg, retryableLessons: [...cfg.retryableLessons, new URL(page.url()).pathname] }))) return true;
       console.log(`Ответ требует разбора: ${await snapshot(page, 'question-review')}`);
     }
     await page.waitForTimeout(2000);
@@ -70,7 +73,8 @@ export async function run(): Promise<void> {
   const unlock = await lockRun();
   let context: BrowserContext | undefined;
   let activePage: Page | undefined;
-  const stop = () => { void context?.close().catch(() => {}); };
+  let stopping = false;
+  const stop = () => { stopping = true; void context?.close().catch(() => {}); };
   process.once('SIGINT', stop);
   process.once('SIGTERM', stop);
   try {
@@ -161,6 +165,7 @@ export async function run(): Promise<void> {
           const root = roots.nth(i);
           if (await quizOutcome(root, cfg) === 'correct') {
             if (await root.locator('.quiz-form-matching').count()) await captureMatching(root, cfg);
+            if (await root.evaluate(el => el.classList.contains('quiz_type_text'))) await captureTextAnswer(root);
             continue;
           }
           if (!await questionStep(page, root, cfg, research)) {
@@ -215,6 +220,7 @@ export async function run(): Promise<void> {
     }
     console.log('Обход выбранных уроков завершён.');
   } catch (error) {
+    if (stopping) { console.log('Проходчик остановлен; состояние сохранено.'); return; }
     if (activePage && !activePage.isClosed()) {
       try { console.log(`Диагностика ошибки: ${await snapshot(activePage, 'error')}`); } catch { /* Preserve the original error. */ }
     }

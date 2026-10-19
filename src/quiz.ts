@@ -55,6 +55,7 @@ export async function quizOutcome(root: Locator, cfg: Config): Promise<'correct'
   const observed = await root.evaluate(el => {
     if (!el.classList.contains('quiz_answered')) return 'unknown';
     if (el.classList.contains('quiz_type_feedback')) return 'correct';
+    if (el.classList.contains('quiz_type_text')) return el.querySelector('.quiz__content-block_status_success') ? 'correct' : 'unknown';
     const rows = [...el.querySelectorAll('.quiz-form-matching__prompt')];
     if (rows.length) return rows.every(row => row.classList.contains('quiz-form-matching__prompt_correct')) ? 'correct' : 'wrong';
     const options = [...el.querySelectorAll('.quiz-form-choice__option')];

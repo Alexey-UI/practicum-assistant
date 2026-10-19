@@ -1,0 +1,7 @@
+{
+  "id": "quiz-text-94d700ed-c0df-426a-932e-dba8d09d4634",
+  "promptHash": "7790854f5be74ec7ee885a7b1f17d988a349aab2405357f6832aa6ffa64a0981",
+  "answer": "rgb(51 255 187 / 0.5)",
+  "verifiedAt": "2026-10-19T05:29:56.144Z",
+  "evidence": ".quiz_answered .quiz__content-block_status_success"
+}

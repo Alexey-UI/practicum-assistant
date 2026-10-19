@@ -6,6 +6,7 @@ import { exactButton, questionFrom, quizOutcome } from '../src/quiz.js';
 import { DEFAULTS } from '../src/config.js';
 import { scrollLesson } from '../src/scroll.js';
 import { trainerOutcome } from '../src/trainer.js';
+import { readTextQuestion, solveTextQuestion, captureTextAnswer } from '../src/text-quiz.js';
 import { solveFeedback } from '../src/feedback.js';
 import { solveQuiz } from '../src/quiz.js';
 import { Answers, atomicJson, questionKey } from '../src/store.js';
@@ -173,4 +174,28 @@ test('Возобновление обновляет каталог только 
     assert.ok(rows[0].observedAt);
     assert.equal(rows[1].solved, false);
   } finally { await page.close(); await rm(dir, { recursive: true, force: true }); }
+});
+
+test('Текстовое задание сохраняется только после положительного маркера и не отправляется повторно', async () => {
+  const page = await browser.newPage();
+  const original = process.cwd();
+  const dir = await mkdtemp(path.join(tmpdir(), 'practicum-text-'));
+  try {
+    process.chdir(dir);
+    const html = `<section class="quiz quiz_type_text" data-test-id="quiz-text-abcdef"><div class="quiz__content">Переведите #3fb в rgb с альфа-каналом 0.5</div>
+      <textarea class="quiz__input-control"></textarea><button onclick="this.parentElement.classList.add('quiz_answered');const result=document.createElement('p');result.className='quiz__content-block_status_success';result.textContent=this.parentElement.querySelector('textarea').value;this.parentElement.append(result);this.remove();document.body.dataset.clicks='1'">Узнать ответ</button></section>`;
+    await page.setContent(html);
+    const root = page.locator('.quiz');
+    assert.equal(await solveTextQuestion(page, root), false);
+    assert.equal(await captureTextAnswer(root), false);
+    const question = await readTextQuestion(root);
+    await atomicJson('.local/text-decisions.json', { [question.id]: { promptHash: question.promptHash, answer: 'rgb(51 255 187 / 0.5)' } });
+    assert.equal(await solveTextQuestion(page, root), true);
+    assert.equal(await solveTextQuestion(page, root), true);
+    assert.equal(await page.locator('body').getAttribute('data-clicks'), '1');
+    assert.equal(await quizOutcome(root, DEFAULTS), 'correct');
+    await page.locator('.quiz__content-block_status_success').evaluate(el => el.setAttribute('class', 'quiz__content-block'));
+    assert.equal(await captureTextAnswer(root), false);
+    assert.equal(await quizOutcome(root, DEFAULTS), 'unknown');
+  } finally { process.chdir(original); await page.close(); await rm(dir, { recursive: true, force: true }); }
 });

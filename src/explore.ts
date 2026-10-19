@@ -24,6 +24,10 @@ export async function explore(): Promise<void> {
       try {
         const action = JSON.parse(line);
         if (action.action === 'close') break;
+        if (action.action === 'text-question') {
+          const { solveTextQuestion } = await import(`./text-quiz.js?inspect=${Date.now()}`) as typeof import('./text-quiz.js');
+          console.log(JSON.stringify({ solved: await solveTextQuestion(page, page.locator('.quiz_type_text')) })); continue;
+        }
         if (action.action === 'network') { console.log(JSON.stringify(network)); continue; }
         if (action.action === 'check-candidate' || action.action === 'solve-task') {
           const { solveTrainer, readTrainer } = await import(`./trainer.js?inspect=${Date.now()}`) as typeof import('./trainer.js');
@@ -62,7 +66,9 @@ export async function explore(): Promise<void> {
           if (count !== 1) throw new Error(`Найдено элементов: ${count}; нужен один точный селектор`);
           await target.click({ noWaitAfter: true });
         } else if (action.action === 'fill') {
-          await page.getByLabel(action.label, { exact: true }).fill(action.value);
+          const field = action.css ? page.locator(action.css) : page.getByLabel(action.label, { exact: true });
+          if (await field.count() !== 1) throw new Error('Поле ввода не найдено или неоднозначно');
+          await field.fill(action.value);
         } else if (action.action === 'wait') {
           await page.locator(action.css ?? 'h1').filter({ hasText: /\S/, visible: true }).first().waitFor({ timeout: 180000 });
         } else if (action.action === 'scroll') {

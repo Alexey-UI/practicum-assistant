@@ -114,5 +114,54 @@
     ],
     "evidence": "quiz_answered: selected options match should-be-checked markers",
     "confirmedAt": "2026-10-19T05:05:35.133Z"
+  },
+  "8a8556e223221632bf84bbcc1184a9dfe1550bbd0cd2d24625da9a6a32b91cf5": {
+    "answers": [
+      "<header>"
+    ],
+    "evidence": "quiz_answered: selected options match should-be-checked markers",
+    "confirmedAt": "2026-10-19T05:07:10.672Z"
+  },
+  "33bf45bba9197ffcd5fde63fa2e0f8a1c295a1f5ecdbe7031cb367e5dab6afd1": {
+    "answers": [
+      "Размеров родителя"
+    ],
+    "evidence": "quiz_answered: selected options match should-be-checked markers",
+    "confirmedAt": "2026-10-19T05:09:14.544Z"
+  },
+  "e42e1898c248b49b8b71d44efa6571284c21e994ce8dbe5a918e366ce8106ebe": {
+    "answers": [
+      "Размеров окна браузера"
+    ],
+    "evidence": "quiz_answered: selected options match should-be-checked markers",
+    "confirmedAt": "2026-10-19T05:09:46.597Z"
+  },
+  "02684bb254f604d3bb5236d39102d515b8daec4e5f95bfd911540295ecea19f5": {
+    "answers": [
+      "В начале файла CSS"
+    ],
+    "evidence": "quiz_answered: selected options match should-be-checked markers",
+    "confirmedAt": "2026-10-19T05:10:26.665Z"
+  },
+  "973fc3c71a0d9628306948018d37f733875707f0b293baab63f9043790cc945e": {
+    "answers": [
+      "#33ffbb"
+    ],
+    "evidence": "quiz_answered: selected options match should-be-checked markers",
+    "confirmedAt": "2026-10-19T05:11:17.591Z"
+  },
+  "87b37e57e2402a354eceb2c5925b4f471ef9b22729398cc734b79f20f9b68586": {
+    "answers": [
+      "color"
+    ],
+    "evidence": "quiz_answered: selected options match should-be-checked markers",
+    "confirmedAt": "2026-10-19T05:15:25.664Z"
+  },
+  "3c809b61f830828856525264d5d468ad9d279ccd3e1e1b56be1887cf6010406c": {
+    "answers": [
+      "background-image: url(путь до изображения), background-size: cover, background-repeat: no-repeat"
+    ],
+    "evidence": "quiz_answered: selected options match should-be-checked markers",
+    "confirmedAt": "2026-10-19T05:16:11.018Z"
   }
 }
