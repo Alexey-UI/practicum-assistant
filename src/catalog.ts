@@ -2,7 +2,7 @@ import type { Page } from 'playwright';
 import { allowedUrl, START_URL, navigate, settle, lessonUrl as canonicalLesson } from './browser.js';
 import { atomicJson, normalize, readJson } from './store.js';
 
-export interface Lesson { course: string; topic: string; title: string; url: string; solved: boolean; project: boolean; locked?: boolean }
+export interface Lesson { course: string; topic: string; title: string; url: string; solved: boolean; project: boolean; locked?: boolean; observedAt?: string }
 const LESSONS = '.course-navigation-lesson';
 const TOPICS = '.course-navigation-topic';
 
@@ -95,4 +95,22 @@ export async function checkCompletion(page: Page, lessonUrl: string): Promise<bo
   } finally {
     if (await page.locator('.modal-content__close').isVisible()) await page.locator('.modal-content__close').click();
   }
+}
+
+// Refresh only from real solved markers on the loaded platform page.
+// Local completion history is deliberately not used to skip a lesson.
+export async function observedSolved(page: Page): Promise<Set<string>> {
+  const hrefs = await page.locator('.sidebar__lesson.sidebar__lesson_status_solved[href]').evaluateAll(rows => rows.map(row => row.getAttribute('href')!));
+  return new Set(hrefs.map(href => new URL(href, START_URL).href).filter(allowedUrl).map(canonicalLesson));
+}
+
+export async function saveObservedSolved(urls: Set<string>, file = '.local/catalog.json'): Promise<void> {
+  const rows = await readJson<Lesson[]>(file, []);
+  let changed = false;
+  for (const row of rows) {
+    if (urls.has(canonicalLesson(row.url)) && !row.solved) {
+      row.solved = true; row.observedAt = new Date().toISOString(); changed = true;
+    }
+  }
+  if (changed) await atomicJson(file, rows);
 }

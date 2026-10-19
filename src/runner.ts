@@ -1,5 +1,5 @@
 import { openBrowser, navigate, snapshot, settle, safeUrl, lessonId, lessonUrl as canonicalLesson } from './browser.js';
-import { catalog, checkCompletion, type Lesson } from './catalog.js';
+import { catalog, checkCompletion, observedSolved, saveObservedSolved, type Lesson } from './catalog.js';
 import { loadConfig } from './config.js';
 import { exactButton, quizOutcome, solveQuiz } from './quiz.js';
 import { scrollLesson } from './scroll.js';
@@ -47,6 +47,7 @@ async function questionStep(page: Page, root: Locator, cfg: Config, research: bo
   const pending = await readJson<{ key?: string; quizId?: string } | null>(pendingFile, null);
   if (!pending) return false;
   const key = pending.key ?? pending.quizId!;
+  console.log(`Снимок вопроса: ${await snapshot(page, 'pending-question')}`);
   console.log(`Исследование вопроса: ${pendingFile}. Ожидаю ответ в ${decisionsFile}: ${key}`);
   let attempted = '';
   const deadline = Date.now() + 1800000;
@@ -69,6 +70,9 @@ export async function run(): Promise<void> {
   const unlock = await lockRun();
   let context: BrowserContext | undefined;
   let activePage: Page | undefined;
+  const stop = () => { void context?.close().catch(() => {}); };
+  process.once('SIGINT', stop);
+  process.once('SIGTERM', stop);
   try {
     context = await openBrowser(!process.argv.includes('--headed'));
     const page = context.pages()[0] ?? await context.newPage();
@@ -106,6 +110,14 @@ export async function run(): Promise<void> {
       const editor = page.getByRole('textbox', { name: 'Содержимое редактора', exact: true });
       await titleNode.or(taskTab).or(editor).filter({ visible: true }).first().waitFor({ state: 'visible', timeout: 180000 });
       await journal('lesson-open', { url: safeUrl(page.url()), title: lesson.title });
+      const observed = await observedSolved(page);
+      await saveObservedSolved(observed);
+      for (const row of lessons) if (observed.has(canonicalLesson(row.url))) row.solved = true;
+      if (observed.has(canonicalLesson(lesson.url))) {
+        await journal('lesson-already-solved', { url: canonicalLesson(lesson.url) });
+        continue;
+      }
+
       const heading = await titleNode.count() ? await titleNode.first().innerText() : await page.title();
       if (/сдача проектной работы/i.test(heading) || await taskTab.isVisible()) {
         const project = (await loadProjects()).find(project => new URL(project.lessonUrl).pathname === new URL(page.url()).pathname);
@@ -113,6 +125,7 @@ export async function run(): Promise<void> {
           if (await submitProject(page, project)) {
             verified[safeUrl(lesson.url)] = new Date().toISOString();
             await atomicJson('.local/completed.json', verified);
+            await saveObservedSolved(new Set([canonicalLesson(lesson.url)]));
             await journal('lesson-completed', { url: safeUrl(lesson.url), project: project.id });
             continue;
           }
@@ -134,6 +147,7 @@ export async function run(): Promise<void> {
           if (await checkCompletion(page, lesson.url)) {
             verified[canonicalLesson(lesson.url)] = new Date().toISOString();
             await atomicJson('.local/completed.json', verified);
+            await saveObservedSolved(new Set([canonicalLesson(lesson.url)]));
             await journal('lesson-completed', { url: canonicalLesson(lesson.url), trainer: true });
             completed = true; break;
           }
@@ -176,6 +190,7 @@ export async function run(): Promise<void> {
           if (await checkCompletion(page, lesson.url)) {
             verified[canonicalLesson(lesson.url)] = new Date().toISOString();
             await atomicJson('.local/completed.json', verified);
+            await saveObservedSolved(new Set([canonicalLesson(lesson.url)]));
             await journal('lesson-completed', { url: canonicalLesson(lesson.url) });
             completed = true; break;
           }
@@ -205,6 +220,8 @@ export async function run(): Promise<void> {
     }
     throw error;
   } finally {
+    process.off('SIGINT', stop);
+    process.off('SIGTERM', stop);
     try { await context?.close(); } finally { await unlock(); }
   }
 }

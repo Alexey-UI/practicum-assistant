@@ -100,5 +100,19 @@
     ],
     "evidence": "quiz_answered: selected options match should-be-checked markers",
     "confirmedAt": "2026-10-18T20:47:50.891Z"
+  },
+  "cdedce52da45e1c4b02580b908524d46d9367a36ecc41e35c210f10eea9b7187": {
+    "answers": [
+      "color"
+    ],
+    "evidence": "quiz_answered: selected options match should-be-checked markers",
+    "confirmedAt": "2026-10-19T05:05:21.107Z"
+  },
+  "d0deac0975722db845a4f47127f4c12ec1116fa25cfde124c6bb93baa85a1b16": {
+    "answers": [
+      "Укажу margin: auto;"
+    ],
+    "evidence": "quiz_answered: selected options match should-be-checked markers",
+    "confirmedAt": "2026-10-19T05:05:35.133Z"
   }
 }

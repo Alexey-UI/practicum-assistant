@@ -1,7 +1,7 @@
 import { test, before, after } from 'node:test';
 import assert from 'node:assert/strict';
 import { chromium, type Browser } from 'playwright';
-import { readLessons } from '../src/catalog.js';
+import { readLessons, observedSolved, saveObservedSolved } from '../src/catalog.js';
 import { exactButton, questionFrom, quizOutcome } from '../src/quiz.js';
 import { DEFAULTS } from '../src/config.js';
 import { scrollLesson } from '../src/scroll.js';
@@ -151,4 +151,26 @@ test('Опрос получает нейтральный ответ по нас�
     assert.equal(await page.locator('textarea').inputValue(), '');
     assert.equal(await page.locator('input:checked').count(), 0);
   } finally { process.chdir(original); await page.close(); await rm(dir, { recursive: true, force: true }); }
+});
+
+test('Возобновление обновляет каталог только по настоящим галочкам текущего интерфейса', async () => {
+  const page = await browser.newPage();
+  const dir = await mkdtemp(path.join(tmpdir(), 'practicum-progress-'));
+  try {
+    const file = path.join(dir, 'catalog.json');
+    const done = 'https://practicum.yandex.ru/learn/done';
+    const pending = 'https://practicum.yandex.ru/learn/pending';
+    await atomicJson(file, [{ url: done, solved: false }, { url: pending, solved: false }]);
+    await page.setContent(`<a class="sidebar__lesson sidebar__lesson_status_solved" href="/learn/done"></a>
+      <a class="sidebar__lesson" href="/learn/pending"></a>
+      <a class="sidebar__lesson sidebar__lesson_status_solved" href="https://other.example/learn/external"></a>`);
+    const observed = await observedSolved(page);
+    assert.deepEqual([...observed], [done]);
+    await saveObservedSolved(observed, file);
+    const { readFile } = await import('node:fs/promises');
+    const rows = JSON.parse(await readFile(file, 'utf8'));
+    assert.equal(rows[0].solved, true);
+    assert.ok(rows[0].observedAt);
+    assert.equal(rows[1].solved, false);
+  } finally { await page.close(); await rm(dir, { recursive: true, force: true }); }
 });
