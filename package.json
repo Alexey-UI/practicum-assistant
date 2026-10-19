@@ -21,7 +21,8 @@
     "check:focus": "tsx scripts/check-focus.ts",
     "check:closing": "tsx scripts/check-closing.ts",
     "check:todo": "tsx scripts/check-todo.ts",
-    "check:mesto": "tsx scripts/check-mesto.ts"
+    "check:mesto": "tsx scripts/check-mesto.ts",
+    "check:mesto-api": "tsx scripts/check-mesto-api.ts"
   },
   "dependencies": {
     "playwright": "^1.56.0"

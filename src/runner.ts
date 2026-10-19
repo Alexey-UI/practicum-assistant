@@ -136,7 +136,7 @@ export async function run(): Promise<void> {
       const heading = await titleNode.count() ? await titleNode.first().innerText() : await page.title();
       const knownProject = projects.find(project => canonicalLesson(project.lessonUrl) === canonicalLesson(lesson.url));
       if (knownProject?.review === 'self') await prepareManualProject(knownProject);
-      if (knownProject?.review !== 'self' && (/сдача проектной работы/i.test(heading) || await taskTab.isVisible())) {
+      if (knownProject?.review !== 'self' && (knownProject || /сдача (?:итогового проекта|проектной работы)/i.test(heading) || await taskTab.isVisible())) {
         const project = (await loadProjects()).find(project => new URL(project.lessonUrl).pathname === new URL(page.url()).pathname);
         if (project) {
           if (project.review === 'teacher') {

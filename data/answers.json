@@ -212,5 +212,89 @@
     ],
     "evidence": "quiz_answered: selected options match should-be-checked markers",
     "confirmedAt": "2026-10-19T07:33:36.961Z"
+  },
+  "c19d94abbb44c7cc457ae8e4d3a18ffce7a339861e58948bf688236d8f1766d2": {
+    "answers": [
+      "padding"
+    ],
+    "evidence": "quiz_answered: selected options match should-be-checked markers",
+    "confirmedAt": "2026-10-19T07:35:20.093Z"
+  },
+  "f88d193e54c600fac3c7e5b0d0e1fbed199da528bf82157ef0123806a7ccc3a0": {
+    "answers": [
+      "Они идут всегда по часовой стрелке"
+    ],
+    "evidence": "quiz_answered: selected options match should-be-checked markers",
+    "confirmedAt": "2026-10-19T07:36:53.947Z"
+  },
+  "5bb3d949d29e6eb0be282ec11b1f9633dc769c1e6d6cce6d6e3219a93da1862e": {
+    "answers": [
+      "Между внешним и внутренним отступом"
+    ],
+    "evidence": "quiz_answered: selected options match should-be-checked markers",
+    "confirmedAt": "2026-10-19T07:40:21.996Z"
+  },
+  "7e7be1f804314ce983ba9645c43ed5e74547a4b4d50dfd3563dce4cb5153b002": {
+    "answers": [
+      "Толщина, начертание, цвет"
+    ],
+    "evidence": "quiz_answered: selected options match should-be-checked markers",
+    "confirmedAt": "2026-10-19T07:42:38.199Z"
+  },
+  "d77f02004b54fad833894b6504ae5410c6b1572cbe09fefa826783c8fe9f5b59": {
+    "answers": [
+      "content-box"
+    ],
+    "evidence": "quiz_answered: selected options match should-be-checked markers",
+    "confirmedAt": "2026-10-19T07:43:58.497Z"
+  },
+  "6434835ed91d15cdae8583818ed169622280c11f0c69514235669206a1227999": {
+    "answers": [
+      "*"
+    ],
+    "evidence": "quiz_answered: selected options match should-be-checked markers",
+    "confirmedAt": "2026-10-19T07:44:22.511Z"
+  },
+  "5f3217c7245dccf324ac30b30a83868623b2cf02197f8cdbb1801eb6f3142be3": {
+    "answers": [
+      "display"
+    ],
+    "evidence": "quiz_answered: selected options match should-be-checked markers",
+    "confirmedAt": "2026-10-19T07:45:25.221Z"
+  },
+  "61ffa7cec0a5ac1a12730ef371d684e62bc594ea27e5973404606d5118204f1c": {
+    "answers": [
+      "Ширина подстраивается под контент в элементе"
+    ],
+    "evidence": "quiz_answered: selected options match should-be-checked markers",
+    "confirmedAt": "2026-10-19T07:49:01.527Z"
+  },
+  "fcfd2767947971caa1521182be07be2e79137647fa45c42c32c7ba25bbc66435": {
+    "answers": [
+      "Сколько угодно"
+    ],
+    "evidence": "quiz_answered: selected options match should-be-checked markers",
+    "confirmedAt": "2026-10-19T07:50:34.315Z"
+  },
+  "a6c1bb50bdf7f81620f8a89515aeccdbd5331494d265832f4b49ae9c98c1a265": {
+    "answers": [
+      "С помощью box-shadow"
+    ],
+    "evidence": "quiz_answered: selected options match should-be-checked markers",
+    "confirmedAt": "2026-10-19T07:53:26.465Z"
+  },
+  "0514f19ed0d99b3ff66ca563fb554a22d8144557df9a52f74ba360243afd38a8": {
+    "answers": [
+      "<footer>"
+    ],
+    "evidence": "quiz_answered: selected options match should-be-checked markers",
+    "confirmedAt": "2026-10-19T07:56:00.516Z"
+  },
+  "340a300554b487c0dbb067f820b4b781a9a3e06cad71b9a78acd9cd8414c7dc5": {
+    "answers": [
+      "display: flex, margin: auto"
+    ],
+    "evidence": "quiz_answered: selected options match should-be-checked markers",
+    "confirmedAt": "2026-10-19T07:57:03.457Z"
   }
 }

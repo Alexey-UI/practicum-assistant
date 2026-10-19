@@ -21,6 +21,7 @@ export async function prepareManualProject(project: Project): Promise<void> {
   await atomicJson(draft, {
     project: project.id, phase: project.review === 'self' ? 'self-checked' : 'draft', lessonUrl: project.lessonUrl,
     repository: `https://github.com/${project.destination}`, commit: published.destinationCommit,
+    verification: project.verification ?? 'local', requiresLiveApiCheck: project.verification === 'mock-api',
     instructions: 'Сверить требования сдачи на странице курса. Личные сведения заполняет пользователь. Документы, формы и сообщения преподавателю автоматически не отправляются.',
     updatedAt: new Date().toISOString(),
   });
