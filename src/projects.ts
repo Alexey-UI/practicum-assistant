@@ -134,7 +134,7 @@ async function publish(project: Project): Promise<void> {
     if (stdout.split('\0').filter(Boolean).some(file => !(file in saved.files))) throw new Error('Найдены изменения за пределами эталона');
   }
   const { stdout: tracked } = await exec('git', ['ls-files', '-z'], { cwd });
-  if (tracked.split('\0').filter(Boolean).some(file => !(file in saved.files) && !file.startsWith('.github/workflows/'))) throw new Error('В репозитории есть дополнительные файлы вне эталона: требуется разбор перед публикацией');
+  if (tracked.split('\0').filter(Boolean).some(file => !(file in saved.files) && !file.startsWith('.github/'))) throw new Error('В репозитории есть дополнительные файлы вне эталона: требуется разбор перед публикацией');
   await exec('git', ['add', '--', ...Object.keys(saved.files)], { cwd });
   const { stdout: staged } = await exec('git', ['diff', '--cached', '--name-only'], { cwd });
   if (staged.trim()) {
