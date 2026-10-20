@@ -1,0 +1,18 @@
+{
+  "taskId": "03a89814-4c95-41a6-bd73-0a853964f86f",
+  "lessonId": "e50b3bf7-7c7d-43d7-b731-dfbd166c1484",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "files": [
+    {
+      "name": "style.css",
+      "initialHash": "210da6309c08681aa644c617b03195c2ec2ab0db7d0bb47acc5fdfa6decf8647",
+      "content": "*,\n*::before,\n*::after {\n  box-sizing: border-box;\n}\n\nbody {\n  display: grid;\n  place-items: center;\n  min-block-size: 100dvb;\n  margin: 0;\n  padding: 2em;\n  font-family: 'Open Sans', sans-serif;\n  font-size: 18px;\n  background-color: #6756a2;\n  background-image: url(../images/shanghai.jpg);\n  background-position: center;\n  background-size: cover;\n}\n\n.title {\n  margin: 0;\n  padding: 0.2em;\n  color: rgb(255 255 255 / 0.8);\n  font-size: clamp(2.5rem, 0.8929rem + 7.1429vi, 6.25rem);\n  text-transform: uppercase;\n  background-color: rgb(255 0 0 / 0.5);\n}\n@media (prefers-contrast: more) {\n  body {\n    background-image: none;\n  }\n  .title {\n    color: rgb(255 255 255);\n    background-color: rgb(255 0 0);\n  }\n}\n"
+    }
+  ],
+  "instructionsHash": "016e455344559fad6e5d42dddd185949d2cf34055056ec08b5387f605aa926fc",
+  "verifiedAt": "2026-10-20T09:45:10.932Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Пользователей радовать приятно, это и есть работа верстальщика."
+  }
+}

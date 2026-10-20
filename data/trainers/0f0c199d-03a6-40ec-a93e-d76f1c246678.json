@@ -1,0 +1,18 @@
+{
+  "taskId": "0f0c199d-03a6-40ec-a93e-d76f1c246678",
+  "lessonId": "e50b3bf7-7c7d-43d7-b731-dfbd166c1484",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "files": [
+    {
+      "name": "index.html",
+      "initialHash": "d0c719af3f43987e026400fc53323ff25c480af07cd58f7206383aba18304c0d",
+      "content": "<!DOCTYPE html>\n<html lang=\"ru\">\n  <head>\n    <meta name=\"color-scheme\" content=\"light dark\" />\n    <meta charset=\"UTF-8\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <title>Пользовательские предпочтения</title>\n  </head>\n  <body></body>\n</html>"
+    }
+  ],
+  "instructionsHash": "10344674e7b32fb26507f022053b32532117d28c9993040db681f7964fe29a51",
+  "verifiedAt": "2026-10-20T09:43:48.016Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Всегда добавляйте этот тег перед разработкой цветовых тем."
+  }
+}

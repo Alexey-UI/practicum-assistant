@@ -1,0 +1,18 @@
+{
+  "taskId": "a3e8c35f-e8be-4dbe-9839-4b4b4a477c24",
+  "lessonId": "e50b3bf7-7c7d-43d7-b731-dfbd166c1484",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "files": [
+    {
+      "name": "theme-dark.css",
+      "initialHash": "759374769ccf941e0a12a8bbc021554b964d294e9a122d2594a65c0d5afcb37d",
+      "content": "@media (prefers-color-scheme: dark) {\n  :root {\n    --bg-color: #1e1e1e;\n    --text-color: #fff;\n    --article-bg-color: #5f0dee;\n  }\n}\n"
+    }
+  ],
+  "instructionsHash": "7a6f20e7c81b063655cb85567ae8119fa25fcb74d9022d39b03702cc5e31e6bb",
+  "verifiedAt": "2026-10-20T09:44:00.758Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Замечательно, ваш дизайн начал слушать пользователей."
+  }
+}

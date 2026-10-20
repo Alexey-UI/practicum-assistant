@@ -1,0 +1,18 @@
+{
+  "id": "ec831fdc10900337d77883c547a1e738806d16c9d6b2438af3fe190a4f30fd2a",
+  "lessonId": "4d9fdffb-9a2a-44d4-89a3-71abf3b0965e",
+  "url": "https://sandbox.practicum-team.ru/tasks/03-design/06-different-devices/05-prefers/example-08/pre/",
+  "instructionsHash": "35c7f1ffd6176657cc9077e7f22d423b308d2b9ac0676e0a237cc74dcc3cb260",
+  "files": [
+    {
+      "name": "styles/style.css",
+      "initialHash": "9f4939e0e330590a2725619d34c3acb7e1a882f3ee006375df92c9a87a4635a2",
+      "content": "* {\n  box-sizing: border-box;\n  margin: 0;\n}\n\n.page {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  min-width: 500px;\n  min-height: calc(100vh - 100px);\n  padding: 50px;\n  font-family: 'Open Sans', sans-serif;\n  background-image: url(https://code.s3.yandex.net/web-code/images/dotted.svg);\n}\n\n.quote {\n  max-width: 850px;\n  border: 1px solid #000;\n  padding: 50px;\n  background-color: #fff;\n}\n\n.quote__text {\n  font-size: 32px;\n  font-style: italic;\n  line-height: 1.37;\n}\n\n.quote__cite {\n  display: block;\n  margin-block-start: 25px;\n  margin-block-end: 0;\n  font-size: 18px;\n  font-style: italic;\n  line-height: 1.4;\n  text-align: right;\n}\n\n/* Напишите стили для prefers-contrast */\n\n@media (prefers-contrast: more) {\n  .quote {\n    border: 3px solid #000000;\n    background-color: #ffc802;\n  }\n}\n"
+    }
+  ],
+  "verifiedAt": "2026-10-20T09:43:22.082Z",
+  "evidence": {
+    "selector": ".result .icon-status-success",
+    "message": "Всё отлично!"
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "taskId": "cab23dd7-2fc9-4665-8846-d3b56a1f6083",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "lessonId": "e50b3bf7-7c7d-43d7-b731-dfbd166c1484",
+  "files": [
+    {
+      "name": "theme-dark.css",
+      "initialHash": "32e4359db2395dc35147ee761f1a937372acda184531b56c7e9728c5d60c6d4f",
+      "content": "/* Стили принудительно включенной тёмной темы */\n\n@media (prefers-color-scheme: dark) {\n  :root {\n    --bg-color: #1e1e1e;\n    --text-color: #fff;\n    --article-bg-color: #5f0dee;\n  }\n}\n:root.dark-mode {\n  --bg-color: #1e1e1e;\n  --text-color: #fff;\n  --article-bg-color: #5f0dee;\n}\n"
+    },
+    {
+      "name": "theme-light.css",
+      "initialHash": "9f43329d5bb501fd069293058b8f93234a8d92f6854bd0a0c96dae1529dc0a2f",
+      "content": "/* Стили принудительно включенной светлой темы */\n:root.light-mode {\n  --bg-color: #f2f2f2;\n  --text-color: #000;\n  --article-bg-color: #6dc1fd;\n}\n"
+    }
+  ],
+  "instructionsHash": "4fb7e73f89a00447648c1ccc1afeb2b066cf3727fda1dabb66fbb06e4602f43c",
+  "verifiedAt": "2026-10-20T09:44:27.579Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Так работают все цветовые темы на сайтах. Отлично!"
+  }
+}

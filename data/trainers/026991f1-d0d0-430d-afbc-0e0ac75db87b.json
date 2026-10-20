@@ -1,0 +1,18 @@
+{
+  "taskId": "026991f1-d0d0-430d-afbc-0e0ac75db87b",
+  "lessonId": "e5d68220-afb9-49a0-b0ab-4d7f08dc68a3",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "files": [
+    {
+      "name": "style.css",
+      "initialHash": "43786e6233d2a0a6d4afec1a9df4ba9a29414e8fef46859edfb23ecf4188a69c",
+      "content": "*,\n*::before,\n*::after {\n  box-sizing: border-box;\n}\n\nbody {\n  min-block-size: 100dvb;\n  margin: 0;\n  padding: 2em;\n  font-family: 'Open Sans', sans-serif;\n  font-size: 18px;\n  background-color: #ffc802;\n}\n\nh1,\nh2,\nh3,\np {\n  margin: 0;\n}\n\nimg {\n  inline-size: 100%;\n}\n\nul {\n  margin: 0;\n  padding: 0;\n  list-style: none;\n}\n\n.content {\n  display: grid;\n  grid-template-columns: 1fr 2fr;\n  gap: 1em;\n}\n\n.friends ul {\n  container-name: cards-list;\n  display: grid;\n  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));\n  gap: 1em;\n  container-type: inline-size;\n}\n\n.recommendations {\n  grid-column: 1 / -1;\n  overflow: hidden;\n}\n\n.recommendations ul {\n  container-name: cards-list;\n  display: flex;\n  gap: 1em;\n  padding: 0.5em;\n  overflow-x: scroll;\n  container-type: inline-size;\n}\n\n.title {\n  margin-block-end: 1em;\n  font-size: 2em;\n  text-transform: uppercase;\n}\n\n.card {\n  container-name: card;\n  container-type: inline-size;\n  min-inline-size: 350px;\n  border: 1px solid #000;\n  background-color: #fff;\n}\n\n@container cards-list (inline-size >= 400px) {\n  .card {\n    display: grid;\n    grid-template-columns: 1fr 1fr;\n  }\n}\n\n.card__image {\n  object-fit: cover;\n  object-position: center;\n  aspect-ratio: 1 / 1;\n}\n\n.card__description {\n  display: grid;\n  grid-template-rows: min-content min-content 1fr;\n  padding: 1em;\n}\n\n.card__title {\n  margin-block-end: 0.1em;\n  font-size: 1.5em;\n  text-transform: uppercase;\n}\n\n.button {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  inline-size: fit-content;\n  block-size: fit-content;\n  border: 1px solid #000;\n  padding: 0.5em 1em;\n  color: #000;\n  font-family: inherit;\n  font-weight: bold;\n  font-size: 1em;\n  text-decoration: none;\n  text-transform: uppercase;\n  background-color: #6dc1fd;\n}\n\n.button:hover {\n  box-shadow: inset 0 0 0 100px rgb(0 0 0 / 0.15);\n  cursor: pointer;\n}\n\n.button:focus {\n  outline: 2px solid #000;\n  outline-offset: 0;\n}\n\n.card__profile-link {\n  align-self: end;\n  margin-top: 1em;\n}\n\n@media (width <= 768px) {\n  .content {\n    grid-template-columns: 1fr;\n  }\n\n  .recommendations {\n    grid-column: 1;\n  }\n}"
+    }
+  ],
+  "instructionsHash": "790394950db88228311d051c8cef3d606e76ad3f40383f32812b73d8157c9eab",
+  "verifiedAt": "2026-10-20T09:48:48.378Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Ух, что сейчас будет!"
+  }
+}

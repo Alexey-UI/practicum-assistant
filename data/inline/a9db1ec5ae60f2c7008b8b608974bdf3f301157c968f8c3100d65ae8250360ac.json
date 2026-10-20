@@ -1,0 +1,18 @@
+{
+  "id": "a9db1ec5ae60f2c7008b8b608974bdf3f301157c968f8c3100d65ae8250360ac",
+  "lessonId": "4d9fdffb-9a2a-44d4-89a3-71abf3b0965e",
+  "url": "https://sandbox.practicum-team.ru/tasks/03-design/06-different-devices/05-prefers/example-06/pre/",
+  "instructionsHash": "67468440e6e92cc66d453c80b279c3162d4f9cd9504593b1ca3c57c6c97d44f2",
+  "files": [
+    {
+      "name": "styles/style.css",
+      "initialHash": "6c3862a11e46da84906437e53964de5957ccc37693ab4cee76739481554f5885",
+      "content": "* {\n  box-sizing: border-box;\n}\n\n.page {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  min-height: 100vh;\n  margin: 0;\n  background-image: url(https://code.s3.yandex.net/web-code/images/dotted-l.svg);\n}\n\n.button {\n  border: 1px solid #000;\n  padding: 10px 65px;\n  color: #000;\n  font-weight: 800;\n  font-size: 24px;\n  text-transform: uppercase;\n  background-color: #ffc802;\n  animation: shaking 0.5s linear infinite both;\n}\n\n.button:hover {\n  box-shadow: inset 0 0 0 100px rgb(0 0 0 / 0.15);\n  cursor: pointer;\n}\n\n/* Укажите правила для prefers-reduced-motion */\n\n@keyframes shaking {\n  0% {\n    transform: translateX(0);\n  }\n\n  25% {\n    transform: translateX(5px);\n  }\n\n  50% {\n    transform: translateX(-5px);\n  }\n\n  75% {\n    transform: translateX(5px);\n  }\n\n  100% {\n    transform: translateX(0);\n  }\n}\n\n@media (prefers-reduced-motion: reduce) {\n  .button {\n    animation-duration: 3s;\n  }\n}\n"
+    }
+  ],
+  "verifiedAt": "2026-10-20T09:43:10.236Z",
+  "evidence": {
+    "selector": ".result .icon-status-success",
+    "message": "Всё отлично!"
+  }
+}
