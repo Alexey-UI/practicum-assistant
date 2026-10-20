@@ -1,0 +1,18 @@
+{
+  "taskId": "98beb8fe-87d8-471d-b044-54893db10945",
+  "lessonId": "da26fa35-c16a-46e7-908f-8b7fab9135ed",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "files": [
+    {
+      "name": "style.css",
+      "initialHash": "f0652bd422062edddf27ae0be77fe53d84c04e1fda13e698b92aea3ec1994837",
+      "content": "* {\n  box-sizing: border-box;\n}\n\nbody {\n  display: grid;\n  place-items: center;\n  min-width: 360px;\n  min-height: 100vh;\n  margin: 0;\n  padding: 40px;\n  font-family: 'Open Sans', sans-serif;\n  font-size: 18px;\n  background-image: url(https://code.s3.yandex.net/web-code/images/dotted.svg);\n}\n\nh1,\nh2,\np,\nul,\nli {\n  margin: 0;\n  padding: 0;\n}\n\n.visually-hidden {\n  position: absolute;\n  width: 1px;\n  height: 1px;\n  margin: -1px;\n  border: 0;\n  padding: 0;\n  overflow: hidden;\n  clip: rect(0 0 0 0);\n}\n\n.card {\n  padding: 40px;\n  background-color: #fff;\n}\n\n.card__title {\n  margin-bottom: 40px;\n  font-weight: 800;\n  font-size: 31px;\n  text-transform: uppercase;\n}\n\n.card__text {\n  margin-bottom: 40px;\n  font-weight: 800;\n  font-size: 31px;\n  text-transform: uppercase;\n}\n\n.card__text input {\n  width: 200px;\n  border: none;\n  border-bottom: 2px solid currentColor;\n  font-family: inherit;\n  font-weight: inherit;\n  font-size: inherit;\n  text-transform: uppercase;\n  background-color: transparent;\n}\n\n.card__text input:focus {\n  outline: none;\n}\n\n.card__text input:focus-visible {\n  outline: initial;\n}\n\n.card__button {\n  border: 1px solid #000;\n  padding: 10px 65px;\n  color: #000;\n  font-family: inherit;\n  font-weight: 800;\n  font-size: inherit;\n  text-transform: uppercase;\n  background-color: #ffc802;\n}\n\n.card__button:hover {\n  box-shadow: inset 0 0 0 100px rgb(0 0 0 / 0.15);\n  cursor: pointer;\n}\n\n.card__button:focus {\n  outline: 2px solid #000;\n  outline-offset: 0;\n}\n\n.overlay {\n  position: fixed;\n  inset: 0;\n  display: none;\n  background-color: rgb(0 0 0 / 0.5);\n}\n\n.answer {\n  position: fixed;\n  top: 0;\n  right: 0;\n  display: flex;\n  flex-direction: column;\n  width: 70%;\n  height: 100%;\n  padding: 20px;\n  overflow-y: auto;\n  background-color: #fff;\n  transition: translate 1s ease-in-out;\n  translate: 100%;\n}\n\n.answer_is-open {\n  translate: 0;\n}\n\n.answer__header {\n  display: flex;\n  justify-content: space-between;\n  align-items: flex-start;\n  margin-bottom: 40px;\n  font-weight: 800;\n  font-size: 31px;\n  text-transform: uppercase;\n}\n\n.answer__iframe {\n  width: 100%;\n  aspect-ratio: 16 / 9;\n}\n\n.answer__close {\n  align-self: center;\n  width: 50px;\n  height: 50px;\n  border: none;\n  background-color: transparent;\n  background-image: url(../svg/close.svg);\n  background-repeat: no-repeat;\n  background-position: center;\n  background-size: contain;\n  cursor: pointer;\n}\n\n.answer__close:hover {\n  opacity: 0.6;\n}\nbody:has(.answer_is-open) .overlay {\n  display: block;\n}\n"
+    }
+  ],
+  "instructionsHash": "4b1a13964e898bf63c6fa3a7c5d92c4c480f5ed433d3d31df9d67b3c044f12fa",
+  "verifiedAt": "2026-10-20T07:28:27.774Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Вы отлично потрудились! Пора переходить к другим псевдоклассам и псевдоэлементам."
+  }
+}

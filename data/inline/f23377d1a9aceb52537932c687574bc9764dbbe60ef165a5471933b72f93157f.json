@@ -1,0 +1,18 @@
+{
+  "id": "f23377d1a9aceb52537932c687574bc9764dbbe60ef165a5471933b72f93157f",
+  "lessonId": "9ab667a4-eedb-458f-89da-4436f4a6f977",
+  "url": "https://sandbox.practicum-team.ru/tasks/02-interactivity-and-accessibility/04-pseudo/07-pseudo-elements/example-03/pre/",
+  "instructionsHash": "34f78851732fdf6e1a14d4b943987049f22777f28ce996fc0e8777ba27b3e6b6",
+  "files": [
+    {
+      "name": "styles/style.css",
+      "initialHash": "f517741a57fe43f352bae1fcbbf228dc8708b1c8b40f26f19c191ee186b1c2e2",
+      "content": "html,\nbody {\n  height: 100%;\n  font-family: 'Open Sans', sans-serif;\n}\n\nbody {\n  min-width: 850px;\n  margin: 0;\n}\n\n.header {\n  display: flex;\n  place-items: center;\n  box-sizing: border-box;\n  width: 100%;\n  min-height: 500px;\n  padding: 50px 0;\n  background: url(./images/background.jpg) no-repeat center / cover;\n}\n\n.header-title {\n  width: 70%;\n  max-width: 560px;\n  margin: 0 auto;\n  color: white;\n  font-size: 60px;\n  text-align: center;\n  text-transform: uppercase;\n}\n\n/* Ниже напишите правило для .header::before */\n\n.header::before {\n  content: 'Я здесь!';\n}\n"
+    }
+  ],
+  "verifiedAt": "2026-10-20T07:29:48.667Z",
+  "evidence": {
+    "selector": ".result .icon-status-success",
+    "message": "Всё отлично!"
+  }
+}

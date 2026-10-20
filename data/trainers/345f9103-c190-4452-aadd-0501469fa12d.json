@@ -1,0 +1,18 @@
+{
+  "taskId": "345f9103-c190-4452-aadd-0501469fa12d",
+  "lessonId": "da26fa35-c16a-46e7-908f-8b7fab9135ed",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "files": [
+    {
+      "name": "style.css",
+      "initialHash": "2b30a7094dd6a286b01c0f9050d00496ecf7a79321454dbb05b6d6af9f71d063",
+      "content": "* {\n  box-sizing: border-box;\n}\n\nbody {\n  min-width: 360px;\n  min-height: 100vh;\n  margin: 0;\n  padding: 40px;\n  font-family: 'Open Sans', sans-serif;\n  font-size: 18px;\n  background-image: url(https://code.s3.yandex.net/web-code/images/dotted.svg);\n}\n\nh1,\nh2,\np,\nul,\nli {\n  margin: 0;\n  padding: 0;\n}\n\n.cards-list__link {\n  color: inherit;\n  text-decoration: none;\n}\n\n.cards-list__item:hover {\n  outline: 2px solid #fd24af;\n}\n\n.cards-list {\n  width: fit-content;\n  margin: auto;\n  padding: 40px 0;\n  list-style: none;\n}\n\n.cards-list__item:not(:last-of-type) {\n  margin-bottom: 40px;\n}\n\n.card {\n  display: flex;\n  flex-direction: column;\n  max-width: 900px;\n  border: 1px solid #000;\n  background-color: #fff;\n}\n\n.card__image {\n  width: 100%;\n  object-fit: cover;\n  object-position: center;\n}\n\n.card__description {\n  display: flex;\n  flex-direction: column;\n  justify-content: space-between;\n  padding: 40px;\n  text-align: center;\n}\n\n.card__title {\n  margin-bottom: 20px;\n  font-weight: 800;\n  font-size: 31px;\n  text-transform: uppercase;\n}\n.card:not(:has(.card__image)) {\n  background-color: #6dc1fd;\n}\n"
+    }
+  ],
+  "instructionsHash": "431eebd57bd65f93995dd72eb34080208c49838f0e0e5e15015a209fc3f89cce",
+  "verifiedAt": "2026-10-20T07:26:26.798Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Приятный бонус от использования псевдоклассов — вы не множите классы в HTML."
+  }
+}

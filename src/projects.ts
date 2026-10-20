@@ -6,6 +6,7 @@ import path from 'node:path';
 import { tmpdir } from 'node:os';
 import { atomicJson, readJson } from './store.js';
 import { loadConfig } from './config.js';
+import { allowedUrl, lessonId, lessonUrl as canonicalLesson } from './browser.js';
 
 const exec = promisify(execFile);
 export interface Project {
@@ -37,6 +38,14 @@ export function projectCheckArgs(args: string[]): string[] {
   return args.map((arg, index) => arg === '/private/tmp/practicum-npm-cache' && args[index - 1] === '--cache' ? path.join(tmpdir(), 'practicum-npm-cache') : arg);
 }
 
+export function projectLessonUrl(template: string, catalog: Array<{ url: string }>): string {
+  const valid = (url: string) => allowedUrl(url) && new URL(url).pathname.startsWith('/learn/ap-frontend-st/') && !!lessonId(url);
+  if (!valid(template)) throw new Error('Неверный адрес урока проекта');
+  const matches = [...new Set(catalog.filter(row => valid(row.url) && lessonId(row.url) === lessonId(template)).map(row => canonicalLesson(row.url)))];
+  if (matches.length > 1) throw new Error('В каталоге неоднозначный адрес урока проекта');
+  return matches[0] ?? template;
+}
+
 async function githubIdentity(project: Project): Promise<{ login: string; id: number }> {
   const { stdout } = await exec('gh', ['api', 'user', '--jq', '{login: .login, id: .id}']);
   const user = JSON.parse(stdout);
@@ -56,6 +65,8 @@ async function digest(file: string): Promise<string> { return createHash('sha256
 export async function loadProjects(): Promise<Project[]> {
   const manifest = await readJson<Manifest>(FILE, { version: 1, projects: [] });
   const cfg = await loadConfig();
+  const catalog = await readJson<Array<{ url: string }>>('.local/catalog.json', []);
+  if (!Array.isArray(catalog)) throw new Error('Неверный формат каталога уроков');
   if (manifest.version !== 1 || !Array.isArray(manifest.projects)) throw new Error('Неверный формат манифеста проектов');
   const ids = new Set();
   for (const item of manifest.projects) {
@@ -73,7 +84,7 @@ export async function loadProjects(): Promise<Project[]> {
       if (!['npm', 'node'].includes(check.program) || !Array.isArray(check.args) || !check.args.every(x => typeof x === 'string')) throw new Error('Некорректная команда проверки');
     }
   }
-  return manifest.projects.map(item => ({ ...item, destination: projectDestination(item.destination, cfg.githubOwner) }));
+  return manifest.projects.map(item => ({ ...item, destination: projectDestination(item.destination, cfg.githubOwner), lessonUrl: projectLessonUrl(item.lessonUrl, catalog) }));
 }
 
 async function clone(repo: string, dir: string): Promise<void> {
