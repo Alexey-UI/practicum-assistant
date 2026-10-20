@@ -1,0 +1,18 @@
+{
+  "taskId": "ab6b65d7-32dc-4885-829f-1f39d4067a55",
+  "lessonId": "28bf2401-dbd4-4871-afd5-0f25d946b7d5",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "files": [
+    {
+      "name": "style.css",
+      "initialHash": "37d738e22010dca0785b28cc3b0e403836008f19f32916fdaa63f1e29bae8224",
+      "content": "@keyframes marquee {\n  0% {\n    transform: translateX(120%);\n  }\n\n  100% {\n    transform: translateX(-200%);\n  }\n}\n\n* {\n  box-sizing: border-box;\n}\n\nbody {\n  min-width: 360px;\n  min-height: 100vh;\n  margin: 0;\n  padding: 20px 0;\n  font-family: 'Open Sans', sans-serif;\n  font-size: 18px;\n  background-image: url(https://code.s3.yandex.net/web-code/images/dotted.svg);\n}\n\nh1,\nh2,\np,\nul,\nli {\n  margin: 0;\n  padding: 0;\n}\n\n.content__item:not(.banner) {\n  width: 90%;\n  margin: auto;\n  padding: 40px;\n  background-color: #fff;\n}\n\n.content__item:not(.banner) a {\n  color: currentColor;\n  text-decoration: none;\n}\n\n.content__item:not(.banner):hover {\n  outline: 2px solid #fd24af;\n}\n\n.content__item h2 {\n  margin-bottom: 20px;\n  text-transform: uppercase;\n}\n\n.content__item:not(:last-child) {\n  margin-bottom: 20px;\n}\n\n.banner {\n  overflow: hidden;\n  color: #fff;\n  background-color: #fd24af;\n}\n\n.banner:hover {\n  box-shadow: 0 0 10px 0 #fd24af;\n}\n\n.banner a {\n  display: block;\n  padding: 20px 0;\n  font-size: 24px;\n  animation: marquee 50s linear infinite;\n  white-space: nowrap;\n}"
+    }
+  ],
+  "instructionsHash": "93657b3f4d2a264c3282784ad2a9e04355782de5b6dab85febe6e1681dac6d36",
+  "verifiedAt": "2026-10-20T07:22:53.740Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Отлично! Теперь стили карточек применяются только к нужным элементам, а баннер исключён из общей выборки."
+  }
+}
