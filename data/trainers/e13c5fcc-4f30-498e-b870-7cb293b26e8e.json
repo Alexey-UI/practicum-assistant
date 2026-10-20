@@ -1,0 +1,18 @@
+{
+  "taskId": "e13c5fcc-4f30-498e-b870-7cb293b26e8e",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "lessonId": "ee9cfabf-fdf9-4bd9-a22d-50445b5eabb5",
+  "files": [
+    {
+      "name": "index.html",
+      "initialHash": "54a7b46d46dab270451755e0ec8eea72c6023635a163698cc1e5ef4d385e432c",
+      "content": "<!DOCTYPE html>\n<html lang=\"ru\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <title>Вайб</title>\n    <link\n      rel=\"stylesheet\"\n      href=\"https://code.s3.yandex.net/web-code/fonts/fonts.css\"\n    />\n    <link rel=\"stylesheet\" href=\"./styles/variables.css\" />\n    <link rel=\"stylesheet\" href=\"./styles/style.css\" />\n  </head>\n  <body>\n    <header class=\"header\">\n      <h1>Вайб</h1>\n      <button\n        popovertarget=\"menu-dialog\" popovertargetaction=\"show\"\n        class=\"header__menu-button header__menu-button_cmd_open\"\n      >\n        <span class=\"visually-hidden\">Показать меню</span>\n      </button>\n      <nav id=\"menu-dialog\" class=\"header__menu\" popover>\n        <ul>\n          <li><a href=\"#\">Повайбить</a></li>\n          <li><a href=\"#\">Развайбить</a></li>\n          <li><a href=\"#\">Отвайбить</a></li>\n        </ul>\n        <button\n          popovertarget=\"menu-dialog\" popovertargetaction=\"hide\"\n          class=\"header__menu-button header__menu-button_cmd_close\"\n        >\n          <span class=\"visually-hidden\">Скрыть меню</span>\n        </button>\n      </nav>\n    </header>\n    <main>\n      <img\n        class=\"illustration\"\n        src=\"./svg/illustration.svg\"\n        role=\"presentation\"\n      />\n      <section class=\"text\">\n        <p>\n          Вайб, или вибрация, является энергетическим полем, которое окружает\n          каждого из нас. Это особая эмоциональная и энергетическая аура,\n          которая олицетворяет нашу индивидуальность и состояние души. Вайб\n          влияет на наше восприятие и взаимодействие с окружающим миром, а также\n          на то, какие события и люди притягиваются к нам.\n        </p>\n        <p>\n          Чтобы развивать положительную вайбрацию, нужно быть в гармонии с собой\n          и своими чувствами. Это означает быть открытым к новым возможностям,\n          иметь позитивное отношение и доверять внутренним интуитивным\n          ощущениям.\n        </p>\n        <p>\n          Вайб также связан с энергией, которую мы излучаем. Если наше\n          энергетическое поле полно позитивной вибрации, мы притягиваем к себе\n          положительные события, людей и возможности. В то же время, если наша\n          вайбрация низкая или отрицательная, мы притягиваем к себе негативные\n          ситуации и людей.\n        </p>\n        <p>\n          Чтобы поднять свою вайбрацию, полезно практиковать регулярные духовные\n          практики, такие как медитация, йога, положительные аффирмации и\n          визуализация. Также важно быть в кругу позитивных и вдохновляющих\n          людей, которые поддерживают нас и помогают нам расти духовно.\n        </p>\n      </section>\n    </main>\n    <footer class=\"footer\"></footer>\n    <script src=\"./scripts/script.js\"></script>\n  </body>\n</html>"
+    }
+  ],
+  "instructionsHash": "52a2ca2270d90eb5a091acb9a2d9f56b1dd211b0c3dc75ba3805c78d2498e1a1",
+  "verifiedAt": "2026-10-20T11:54:02.570Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Сначала ломаем, потом строим! Не переживайте, проблема решаемая."
+  }
+}
