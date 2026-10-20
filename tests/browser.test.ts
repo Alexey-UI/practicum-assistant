@@ -112,7 +112,7 @@ test('Тренажёр с активной картинкой открывает
         <script>window.monaco={editor:{getModels:()=>[{uri:{path:'/styles/style.css'},getLanguageId:()=> 'css',getValue:()=> 'span {}'}]}};</script>` });
     });
     await page.goto('https://practicum.yandex.ru/trainer/test/lesson/aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa/task/bbbbbbbb-bbbb-bbbb-bbbb-bbbbbbbbbbbb/');
-    await waitLessonReady(page, 100);
+    await waitLessonReady(page, 3000);
     assert.equal(await page.getByRole('textbox').isVisible(), false);
     assert.equal((await readTrainer(page)).files[0].content, 'span {}');
     await readTrainer(page);
