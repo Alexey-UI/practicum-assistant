@@ -1,0 +1,18 @@
+{
+  "taskId": "cbf1bfc5-9235-4859-840f-6cdf51ea0e8d",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "lessonId": "0c8815a6-1908-496f-9af6-79ac1cc012d8",
+  "files": [
+    {
+      "name": "subscribe-form.css",
+      "initialHash": "1710a860362f8f1eb9fbc15399535fbaa423432ff9b41babd86820a7448afad8",
+      "content": ".subscribe-form {\n  container-type: inline-size;\n  display: grid;\n  align-content: center;\n  gap: 10px;\n  inline-size: 100%;\n  padding: var(--internal-padding, 40px 20px);\n  color: var(--subscribe-form-color, #000);\n  background-color: var(--subscribe-form-background-color, #feafe8);\n}\n\n.subscribe-form__title {\n  max-inline-size: 800px;\n  margin-block-end: 0.2em;\n  font-weight: bold;\n  font-size: 31px;\n  text-transform: uppercase;\n}\n\n.subscribe-form__input {\n  inline-size: 100%;\n  border: 2px solid currentColor;\n  padding: 0.5em 1em;\n  font-family: inherit;\n  font-weight: inherit;\n  font-size: inherit;\n  text-transform: uppercase;\n  background-color: transparent;\n}\n\n.subscribe-form__button {\n  border: 2px solid currentColor;\n  padding: 0.5em 1em;\n  font-weight: bold;\n  text-transform: uppercase;\n  background-color: var(--subscribe-form-button-bg-color, #80d994);\n  cursor: pointer;\n}\n\n.subscribe-form__label_type_checkbox input {\n  accent-color: currentColor;\n}\n\n.subscribe-form__button:hover {\n  opacity: 0.6;\n}\n\n.subscribe-form__agreement-text {\n  font-size: 0.8em;\n  text-align: center;\n}\n@container (width >= 500px) {\n  .subscribe-form__title { grid-column: 1 / 3; }\n  .subscribe-form__label { grid-column: 1; }\n  .subscribe-form__button { grid-column: 2; }\n  .subscribe-form__agreement-text { grid-column: 1 / 3; }\n}\n"
+    }
+  ],
+  "instructionsHash": "9cc00efb22e7a7e9c2cc55c10bfa0b9caf8cd31ae0b2fe85fd4603db0c9cea20",
+  "verifiedAt": "2026-10-20T09:59:03.948Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Теперь форма ведёт себя адаптивно, ориентируясь на собственный размер. Чудо!"
+  }
+}

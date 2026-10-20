@@ -1,0 +1,18 @@
+{
+  "taskId": "5ea5167a-42af-4ea8-aadd-4891cfbf4708",
+  "lessonId": "0c8815a6-1908-496f-9af6-79ac1cc012d8",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "files": [
+    {
+      "name": "index.css",
+      "initialHash": "88819105b9b8415275dd840f302700cb33f8510acf41f652d9755568f06c031b",
+      "content": ".header {\n  position: relative;\n  z-index: 1;\n  display: grid;\n  grid-template-columns: 1fr min-content;\n  padding: var(--section-padding, 20px 40px);\n}\n\n.text-content {\n  padding: var(--section-padding, 20px 40px);\n}\n\n.icons {\n  padding: var(--section-padding, 20px 40px);\n}\n\n.icons__text-wrapper {\n  margin-block-end: 1em;\n}\n@media (width >= 1000px) {\n  .hero-and-form {\n    display: grid;\n    grid-template-columns: 2fr 1fr;\n  }\n  .icons {\n    display: grid;\n    grid-template-columns: 1fr 1fr;\n    gap: 20px;\n  }\n  .icons__text-wrapper {\n    margin-block-end: 0;\n  }\n}\n@media (width >= 1400px) {\n  .icons {\n    grid-template-columns: 2fr 1fr;\n  }\n}\n"
+    }
+  ],
+  "instructionsHash": "55a2dd5f485b10709b6762bbfb185b7f9181a2ca70ef495f1ccce1632d2aa6db",
+  "verifiedAt": "2026-10-20T09:57:27.806Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Почему мы сразу перешли в десктоп? Всё просто — все остальные изменения касаются компонентов"
+  }
+}

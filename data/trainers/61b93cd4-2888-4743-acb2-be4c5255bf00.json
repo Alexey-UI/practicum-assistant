@@ -1,0 +1,23 @@
+{
+  "taskId": "61b93cd4-2888-4743-acb2-be4c5255bf00",
+  "lessonId": "0c8815a6-1908-496f-9af6-79ac1cc012d8",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "files": [
+    {
+      "name": "index.css",
+      "initialHash": "f57757e9b0c0264c6a2f7996e0b6444ead39f5813054be07fae5ff8d09392da5",
+      "content": ".header {\n  position: relative;\n  z-index: 1;\n  display: grid;\n  grid-template-columns: 1fr min-content;\n  padding: var(--section-padding, 20px 40px);\n  container-type: inline-size;\n}\n\n.text-content {\n  padding: var(--section-padding, 20px 40px);\n}\n\n.icons {\n  container-type: inline-size;\n  padding: var(--section-padding, 20px 40px);\n}\n\n.icons__text-wrapper {\n  margin-block-end: 1em;\n}\n\n@media (width >= 1000px) {\n  .hero-and-form {\n    display: grid;\n    grid-template-columns: 2fr 1fr;\n  }\n\n  .icons {\n    display: grid;\n    grid-template-columns: 1fr 1fr;\n    gap: 20px;\n  }\n\n  .icons__text-wrapper {\n    margin-block-end: 0;\n  }\n}\n\n@media (width >= 1400px) {\n  .icons {\n    grid-template-columns: 2fr 1fr;\n  }\n}\n@container (width >= 500px) {\n  .icons-list {\n    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));\n  }\n}\n"
+    },
+    {
+      "name": "icons-list.css",
+      "initialHash": "b9533c2f5e31f4edb301e1051fa875710e8b8ffdebf9d9121808f0be08a09a76",
+      "content": ".icons-list {\n  display: grid;\n  place-items: center;\n  gap: 20px;\n  inline-size: 100%;\n}\n\n.icons-list__item {\n  inline-size: 100%;\n  border: 2px solid currentColor;\n}\n\n.icons-list__link {\n  display: flex;\n  align-items: center;\n  gap: 10px;\n  padding: 20px;\n}\n\n.icons-list__link:hover {\n  text-decoration: none;\n  background-color: var(--icons-list-link-hover-background-color, #80d994);\n}\n\n.icons-list__image {\n  inline-size: 30%;\n}\n\n.icons-list__text {\n  font-weight: bold;\n  font-size: 18px;\n  text-align: center;\n  text-transform: uppercase;\n}\n@container (width >= 500px) {\n  .icons-list { grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); }\n}\n"
+    }
+  ],
+  "instructionsHash": "ce9ba7a24736b8c85acecc724da595f5e289afcf619503b3b587fefd2b834c63",
+  "verifiedAt": "2026-10-20T10:00:12.153Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Всё! Иногда контекст — это секция, а иногда его нужно создать внутри компонента."
+  }
+}

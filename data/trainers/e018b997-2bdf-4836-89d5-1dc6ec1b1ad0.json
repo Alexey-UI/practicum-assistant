@@ -1,0 +1,18 @@
+{
+  "taskId": "e018b997-2bdf-4836-89d5-1dc6ec1b1ad0",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "lessonId": "0c8815a6-1908-496f-9af6-79ac1cc012d8",
+  "files": [
+    {
+      "name": "hero.css",
+      "initialHash": "1d597c02f42a123bbcee3c51871c335b0b513df60508d0bc1f9fd8986d68625e",
+      "content": ".hero {\n  container-type: inline-size;\n  position: relative;\n  display: grid;\n  align-content: center;\n  inline-size: 100%;\n  min-block-size: 60dvb;\n  border: 2px solid #000;\n  padding: var(--internal-padding, 40px 20px);\n  color: var(--hero-text-color, #fff);\n  background-color: var(--hero-bg-color, #ffc802);\n  background-image: var(--hero-bg-image-url, url(../../../images/hero-bg.jpg));\n  background-position: center;\n  background-size: cover;\n}\n\n.hero::before {\n  content: '';\n  position: absolute;\n  inset: 0;\n  background-color: rgb(0 0 0 / 0.5);\n}\n\n.hero * {\n  z-index: 0;\n}\n\n.hero__title {\n  max-inline-size: 800px;\n  margin-block-end: 0.2em;\n  font-size: 54px;\n  text-transform: uppercase;\n}\n\n.hero__text {\n  max-inline-size: 1000px;\n  margin-block-end: 1em;\n}\n\n.hero__button {\n  inline-size: fit-content;\n  border: 2px solid currentColor;\n  padding: 0.5em 2em;\n  font-weight: bold;\n  text-transform: uppercase;\n  background-color: transparent;\n  cursor: pointer;\n}\n\n.hero__button:hover {\n  opacity: 0.6;\n}\n@container (width <= 600px) {\n  .hero__title { font-size: 45px; }\n}\n"
+    }
+  ],
+  "instructionsHash": "46b5aeb9527b36164cae94f6e8e382cc5fbc3547dd45d96fb76454f6277c346a",
+  "verifiedAt": "2026-10-20T09:59:19.228Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Вы уже мастерски владеете контейнерными запросами"
+  }
+}

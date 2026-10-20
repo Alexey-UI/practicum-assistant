@@ -1,0 +1,23 @@
+{
+  "taskId": "8877b6ef-c734-4225-995f-3dab1b4f5d0f",
+  "lessonId": "0c8815a6-1908-496f-9af6-79ac1cc012d8",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "files": [
+    {
+      "name": "menu.css",
+      "initialHash": "c9d512ebf1a2ce8216af888b25c1685ece1889481db75b749ea559c7a877dd23",
+      "content": ".menu {\n  position: relative;\n  inline-size: fit-content;\n}\n\n.menu__toggle {\n  inline-size: var(--menu-toggle-size, 40px);\n  border: 2px solid currentColor;\n  background-color: transparent;\n  background-image: url(../../../svg/menu-closed.svg);\n  background-repeat: no-repeat;\n  background-position: center;\n  background-size: contain;\n  cursor: pointer;\n  aspect-ratio: 1 / 1;\n}\n\n.menu__toggle:hover {\n  opacity: 0.6;\n}\n\n.menu__toggle_is-opened {\n  background-image: url(../../../svg/menu-opened.svg);\n}\n\n.menu__list {\n  position: absolute;\n  inset: var(--menu-toggle-size, 40px) 0 auto auto;\n  z-index: 2;\n  display: none;\n  inline-size: fit-content;\n  block-size: fit-content;\n  margin-block-start: 5px;\n  border: 2px solid currentColor;\n  background-color: var(--menu-background-color, #80d994);\n}\n\n.menu__toggle_is-opened ~ .menu__list {\n  display: block;\n}\n\n.menu__list-item:not(:last-child) {\n  border-bottom: 2px solid currentColor;\n}\n\n.menu__list-link {\n  display: block;\n  padding: 0.5em 1em;\n  white-space: nowrap;\n}\n\n.menu__list-link:hover {\n  text-decoration: none;\n  background-color: var(--menu-link-hover-background-color, #fff);\n}\n@container (width >= 500px) {\n  .menu__toggle { display: none; }\n  .menu__toggle_is-opened ~ .menu__list { display: flex; }\n  .menu__list {\n    display: flex;\n    position: static;\n    border: none;\n    background-color: initial;\n  }\n  .menu__list-item:not(:last-child) { border-bottom: none; }\n  .menu__list-link { text-decoration: underline; }\n  .menu__list-link:hover { text-decoration: underline; }\n}\n"
+    },
+    {
+      "name": "index.css",
+      "initialHash": "131aabd2f1f911149af3f85940b769713b6ef1a9e715a08421620387be8bb64d",
+      "content": ".header {\n  container-type: inline-size;\n  position: relative;\n  z-index: 1;\n  display: grid;\n  grid-template-columns: 1fr min-content;\n  padding: var(--section-padding, 20px 40px);\n}\n\n.text-content {\n  padding: var(--section-padding, 20px 40px);\n}\n\n.icons {\n  padding: var(--section-padding, 20px 40px);\n}\n\n.icons__text-wrapper {\n  margin-block-end: 1em;\n}\n\n@media (width >= 1000px) {\n  .hero-and-form {\n    display: grid;\n    grid-template-columns: 2fr 1fr;\n  }\n\n  .icons {\n    display: grid;\n    grid-template-columns: 1fr 1fr;\n    gap: 20px;\n  }\n\n  .icons__text-wrapper {\n    margin-block-end: 0;\n  }\n}\n\n@media (width >= 1400px) {\n  .icons {\n    grid-template-columns: 2fr 1fr;\n  }\n}"
+    }
+  ],
+  "instructionsHash": "b4564608f89923472de37eb9f7c476b66c6cfe2e3cca53093702f0a1d590fe2e",
+  "verifiedAt": "2026-10-20T09:58:44.718Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Замечательно! Всё то же самое можно было описать и медиазапросами для ширины окна браузера. Но, перефразируя великих, компонентам — компонентово."
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "taskId": "06718f7e-a682-48ea-abeb-21397e2b3c3d",
+  "lessonId": "0c8815a6-1908-496f-9af6-79ac1cc012d8",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "files": [
+    {
+      "name": "variables.css",
+      "initialHash": "5969db149ba0f3db98d27437b7f6c43ec116ba3156c32b710ec109699b12f389",
+      "content": ":root {\n  --main-font: 'PT Sans';\n  --menu-toggle-size: 40px;\n  --section-padding: 20px 10px;\n  --main-font-size: 18px;\n  --menu-background-color: #80d994;\n  --menu-link-hover-background-color: #fff;\n  --hero-bg-image-url: url(../../../images/hero-bg.jpg);\n  --hero-text-color: #fff;\n  --subscribe-form-background-color: #feafe8;\n  --subscribe-form-color: #000;\n  --subscribe-form-button-bg-color: #80d994;\n  --text-container-bg-color: #fff;\n  --text-container-text-color: #000;\n  --icons-list-link-hover-background-color: #80d994;\n  --internal-padding: 40px 20px;\n}\n@media (width >= 600px) {\n  :root {\n    --section-padding: 40px 20px;\n    --internal-padding: 40px;\n  }\n}\n"
+    }
+  ],
+  "instructionsHash": "f6e490a649e236ad6dbb56e9b12163ac148b30ab4b70e2139d455f72e8d088e5",
+  "verifiedAt": "2026-10-20T09:57:39.595Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Отлично! Теперь не будет ощущения, что элементы прилипли к краям на больших мониторах"
+  }
+}

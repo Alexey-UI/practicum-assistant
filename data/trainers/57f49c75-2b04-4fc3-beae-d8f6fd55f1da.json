@@ -1,0 +1,18 @@
+{
+  "taskId": "57f49c75-2b04-4fc3-beae-d8f6fd55f1da",
+  "lessonId": "0c8815a6-1908-496f-9af6-79ac1cc012d8",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "files": [
+    {
+      "name": "index.css",
+      "initialHash": "617e1b17d2d44f211f3e221bfd8cd3d468c9f0cb3ddae8148a2d0cc6e56e7b9f",
+      "content": ".header {\n  grid-template-columns: 1fr min-content;\n  display: grid;\n  position: relative;\n  z-index: 1;\n  padding: var(--section-padding, 20px 40px);\n}\n\n.text-content {\n  padding: var(--section-padding, 20px 40px);\n}\n\n.icons {\n  padding: var(--section-padding, 20px 40px);\n}\n\n.icons__text-wrapper {\n  margin-block-end: 1em;\n}"
+    }
+  ],
+  "instructionsHash": "fe9d94921ba45688dc1bb04de1658975457f5d857ce61c62380ad32009ea1265",
+  "verifiedAt": "2026-10-20T09:56:50.573Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Пока никакой адаптивы — но оцените, как легко собирать интерфейс из готовых компонентов!"
+  }
+}
