@@ -1,0 +1,18 @@
+{
+  "taskId": "3d716084-86c9-430d-8dc6-cb0f1fe94667",
+  "lessonId": "c69877ad-1704-487e-85a9-8d77b15e3302",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "files": [
+    {
+      "name": "script.js",
+      "initialHash": "ccca4a1821f43ebf1bdbe29dcb7e46d713b8047f48cdcaeb622d554b47debd29",
+      "content": "console.log(7 !== 7);\nconsole.log('aA' === 'Aa');\nconsole.log(((25 * 12 + 1) * 4) / 5 !== (50 * 6 + 2 * 0.5) / 1.25);\n"
+    }
+  ],
+  "instructionsHash": "547c43b1e4d4a74f1d116bffd8c9bad8870566b1fd953b8dfec64ef3620c64ce",
+  "verifiedAt": "2026-10-20T12:07:08.605Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Смесь правды и лжи — всё равно враньё."
+  }
+}

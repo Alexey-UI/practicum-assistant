@@ -1,0 +1,18 @@
+{
+  "taskId": "5f5b894e-e1db-476d-a225-6e207d166551",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "lessonId": "1d313aeb-6839-4aa9-9ce6-ff7be5acef4a",
+  "files": [
+    {
+      "name": "script.js",
+      "initialHash": "52c927735f261dddbc341bb652c7733769ec3de86712e6b0ce66ab999231253f",
+      "content": "function isLeapYear(year) {\n  \n  if ((year % 400 === 0) || ((year % 4 === 0) && !(year % 100 === 0))) {\n    return year + ' год - високосный';\n  } else {\n    return year + ' год - невисокосный';\n  }\n}\nlet checkResult = isLeapYear(2020);\nalert(checkResult);\nconsole.log(checkResult);\n"
+    }
+  ],
+  "instructionsHash": "70cffb4af3e668c88f318bc926adea7f56312fecba1c13fec99b28aecec54efe",
+  "verifiedAt": "2026-10-20T12:12:12.017Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Мы вызываем функцию и по-разному обрабатываем результат её работы."
+  }
+}

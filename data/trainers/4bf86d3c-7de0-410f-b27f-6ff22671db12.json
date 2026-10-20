@@ -1,0 +1,18 @@
+{
+  "taskId": "4bf86d3c-7de0-410f-b27f-6ff22671db12",
+  "lessonId": "c69877ad-1704-487e-85a9-8d77b15e3302",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "files": [
+    {
+      "name": "script.js",
+      "initialHash": "1b3315227e6bc181bc9f5ec69c87d98bd23359ad0f67508c534d66bb239b1d20",
+      "content": "let year = 2019;\n\nif (year % 4 === 0) {\n  console.log(year + ' год - високосный');\n} \n// допишите код здесь\nelse {\n  console.log(year + ' год - невисокосный');\n}\n"
+    }
+  ],
+  "instructionsHash": "0e87ff8e8f29c398ef524e5cf2dacba9973ae473d1e52f851d397fe7ce27fcba",
+  "verifiedAt": "2026-10-20T12:07:40.927Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "В невисокосный год больше всех не везёт людям, рождённым 29 февраля. День рождения как бы есть, а дня — нет."
+  }
+}

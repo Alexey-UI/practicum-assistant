@@ -1,0 +1,18 @@
+{
+  "taskId": "184908f1-348f-4e1e-9031-ff8b89c6eaa3",
+  "lessonId": "20dc0675-67d0-4049-bee3-77c3d62d61bf",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "files": [
+    {
+      "name": "script.js",
+      "initialHash": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "content": "console.log('Владивосток' + ' ' + 2000);\n"
+    }
+  ],
+  "instructionsHash": "2f6976229e6f2532c39952a2fc5a6f563e01370fa1d8419820b480494bea5489",
+  "verifiedAt": "2026-10-20T12:05:37.346Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Интересный факт: песня «Владивосток 2000» группы «Мумий Тролль» появилась за 20 лет до выхода в оборот купюры в 2000 рублей с городом Владивосток на ней."
+  }
+}

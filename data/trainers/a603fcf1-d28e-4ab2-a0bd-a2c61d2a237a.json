@@ -1,0 +1,18 @@
+{
+  "taskId": "a603fcf1-d28e-4ab2-a0bd-a2c61d2a237a",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "lessonId": "1d313aeb-6839-4aa9-9ce6-ff7be5acef4a",
+  "files": [
+    {
+      "name": "script.js",
+      "initialHash": "bfe9ca0c594c3a61dbf826a0ce5ebb95e028762423ca327f395a0bea1fe7b8ae",
+      "content": "let counter = 0;\n\nfunction increaseCounter() {\n    counter++;\n}\n\nincreaseCounter();\nincreaseCounter();\nincreaseCounter();\n\nconsole.log(counter);\n"
+    }
+  ],
+  "instructionsHash": "c633460b221887d89afd1d923197275f6b4bdfb7f8eedaac32eace412f696a53",
+  "verifiedAt": "2026-10-20T12:11:11.923Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Вы успешно вызвали функцию без параметров! Да ещё и три раза."
+  }
+}

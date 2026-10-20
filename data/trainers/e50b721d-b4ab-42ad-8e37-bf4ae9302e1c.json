@@ -1,0 +1,18 @@
+{
+  "taskId": "e50b721d-b4ab-42ad-8e37-bf4ae9302e1c",
+  "lessonId": "21dbf9d3-1493-4bb5-850d-64ac561a4b29",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "files": [
+    {
+      "name": "script.js",
+      "initialHash": "4b33f17a06a81d98848df40433bf1a7846a34e0db7f1d2bc629167ec1d536a58",
+      "content": "let morningList = [\n    'Встать с кровати',\n    'Почистить зубы',\n    'Проверить сториз в Инстаграме',\n    'Позавтракать'];\n\n// Допишите код здесь, не меняя определение массив\nmorningList[2] = 'Сделать зарядку';\nmorningList[morningList.length] = 'Помыть посуду';\nconsole.log(morningList);\n"
+    }
+  ],
+  "instructionsHash": "42a1976374c11cfdf8485d166df628ed1a1566dedbeed4b90824e2a258658ef1",
+  "verifiedAt": "2026-10-20T12:08:56.888Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Во время физических упражнений мозг выделяет больше эндорфинов — «гормонов счастья». Поэтому даже пятиминутная зарядка сделает вас счастливее."
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "taskId": "644da0de-cd60-47d0-a203-27a53ebfa5c4",
+  "lessonId": "6f7f6952-46cf-46ac-b4ea-426e7db1aa52",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "files": [
+    {
+      "name": "script.js",
+      "initialHash": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "content": "let fahrenheit = 451;\n"
+    }
+  ],
+  "instructionsHash": "d4069b8a72160f027db12880ee8848f6e064553fdfcc8070f12b5d63c26d255f",
+  "verifiedAt": "2026-10-20T12:06:15.246Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Теперь есть переменная, которую можно использовать в вычислениях."
+  }
+}

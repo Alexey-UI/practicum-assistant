@@ -1,0 +1,18 @@
+{
+  "taskId": "f8480267-e997-4c73-b29e-a037dccefea8",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "lessonId": "5dc11783-2235-4476-8a85-00177d5ea61b",
+  "files": [
+    {
+      "name": "script.js",
+      "initialHash": "6a815d658a6c9684060aaab282ecf7339c1b7dec0d9aa7e5870c191ca5cc41c2",
+      "content": "let employee = {\n  firstName: 'Василий',\n  lastName: 'Теркин',\n  age: 28\n};\n\nfunction getFullName(employee) {\n  return employee.firstName + ' ' + employee.lastName;\n}\n\nemployee.fullName = getFullName(employee);\nconsole.log(employee);\n"
+    }
+  ],
+  "instructionsHash": "806ceaed6d1ce38963947393caccfa2ba5ed91a110b6ea2261cc132e8199b0b4",
+  "verifiedAt": "2026-10-20T12:12:55.858Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Отлично! getFullName стала универсальной — теперь результат её работы можно использовать и в консоли, и в модальном окне, и где-то в интерфейсе."
+  }
+}

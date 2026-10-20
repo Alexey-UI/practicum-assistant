@@ -1,0 +1,18 @@
+{
+  "taskId": "a28ab0c4-2001-4f7d-aae4-8dee43b6ca4c",
+  "lessonId": "676baf5a-8cb2-4135-aa0a-01082fdbacba",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "files": [
+    {
+      "name": "script.js",
+      "initialHash": "f37ec4b3128193475b4eb02fc0ac346363836da86f5391a6798cefd54890f91c",
+      "content": "let morningList = [\n  'Встать с кровати',\n  'Почистить зубы',\n  'Сделать зарядку',\n  'Позавтракать',\n  'Помыть посуду'\n];\nfor (let i = 0; i < morningList.length; i++) {\n  console.log(morningList[i]);\n}\n"
+    }
+  ],
+  "instructionsHash": "a30947a14f94ca230758a374dd504c1f0e09383586b6e72c9b130c36132e4b80",
+  "verifiedAt": "2026-10-20T12:09:25.741Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Теперь каждый из элементов списка выводится в консоль по отдельности."
+  }
+}

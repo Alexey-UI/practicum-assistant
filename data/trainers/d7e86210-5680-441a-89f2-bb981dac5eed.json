@@ -1,0 +1,18 @@
+{
+  "taskId": "d7e86210-5680-441a-89f2-bb981dac5eed",
+  "lessonId": "5dc11783-2235-4476-8a85-00177d5ea61b",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "files": [
+    {
+      "name": "script.js",
+      "initialHash": "ba2bb4b537d48e81d388c26edb4953a8d43e08aee42d5fa18eff8d9688183b4c",
+      "content": "let employee = {\n  firstName: 'Василий',\n  lastName: 'Тёркин',\n  age: 28\n};\nconsole.log(employee);\n"
+    }
+  ],
+  "instructionsHash": "de0d926f1ddaf2e6282747ecc00e26d486b28bca56a9702eced14732e9be28d0",
+  "verifiedAt": "2026-10-20T12:12:32.219Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Всё так. Кстати, Борис Пастернак считал «Тёркина» высшим достижением военной литературы."
+  }
+}

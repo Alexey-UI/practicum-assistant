@@ -1,0 +1,18 @@
+{
+  "taskId": "8f5c9618-63cc-402f-a0d3-3eaef3f32723",
+  "lessonId": "6f7f6952-46cf-46ac-b4ea-426e7db1aa52",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "files": [
+    {
+      "name": "script.js",
+      "initialHash": "4f674929deb82dd5529903276e53b2a1316534063e8647394c88cf92a0b29762",
+      "content": "let fahrenheit = 451;\nlet celsius = (fahrenheit - 32) / 1.8;\nconsole.log(`${fahrenheit} градуса по Фаренгейту - это ${celsius} градуса по Цельсию.`);\n"
+    }
+  ],
+  "instructionsHash": "90de6b799c3f5902477cfa819317e45e19ef1aec094ed9f1acdf333c41ed720f",
+  "verifiedAt": "2026-10-20T12:06:39.431Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "451 градус по Фаренгейту — температура горения бумаги. Теперь мы знаем, сколько это по шкале Цельсия."
+  }
+}

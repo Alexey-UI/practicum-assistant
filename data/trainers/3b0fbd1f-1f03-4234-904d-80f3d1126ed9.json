@@ -1,0 +1,18 @@
+{
+  "taskId": "3b0fbd1f-1f03-4234-904d-80f3d1126ed9",
+  "lessonId": "20dc0675-67d0-4049-bee3-77c3d62d61bf",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "files": [
+    {
+      "name": "script.js",
+      "initialHash": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "content": "alert('Прочти меня и сразу же закрой!');\n"
+    }
+  ],
+  "instructionsHash": "227fc4f41666687ebfe481c10a6d787e5974924dce13810b4a312e95dd922fc3",
+  "verifiedAt": "2026-10-20T12:05:08.778Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Тест: если вы выбрали граничными символами одинарные кавычки '' — вы экстраверт; если двойные \"\" — интроверт, а если обратные кавычки `` — значит, вы дочитали теоретическую часть до конца."
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "taskId": "51448a59-17e0-44e9-a73c-ef24718589be",
+  "lessonId": "20dc0675-67d0-4049-bee3-77c3d62d61bf",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "files": [
+    {
+      "name": "script.js",
+      "initialHash": "d359d4482ae11372cff8451c1f5b076fd7a77350a85d531e0c515d4f78066f57",
+      "content": "console.log(`Первое произведение \nА.С. Пушкина было опубликовано \nв ${1799 + 12 + 3} году`);\n"
+    }
+  ],
+  "instructionsHash": "86f8c39767ac314a96b790d65e8efaa7f21435974ffe8dfc6a848ad3b9d862ad",
+  "verifiedAt": "2026-10-20T12:05:50.463Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Подумай обо всём и выбери любое:\nБыть славным — хорошо, спокойным — лучше вдвое."
+  }
+}

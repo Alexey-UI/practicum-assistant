@@ -1,0 +1,18 @@
+{
+  "taskId": "fb251518-2b10-4494-a9aa-45194c45b486",
+  "lessonId": "1d313aeb-6839-4aa9-9ce6-ff7be5acef4a",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "files": [
+    {
+      "name": "script.js",
+      "initialHash": "15b7a53b5be4d91fd5601f27b7187f01d0e3e6f64b7c77f02642e2690153ffb0",
+      "content": "function isLeapYear(year) {\n  \n  if ((year % 400 === 0) || ((year % 4 === 0) && !(year % 100 === 0))) {\n    console.log(year + ' год - високосный');\n  } else {\n    console.log(year + ' год - невисокосный');\n  }\n}\nisLeapYear(2020);\nisLeapYear(2021);\nisLeapYear(2022);\n"
+    }
+  ],
+  "instructionsHash": "585e167dc2436030a9a23a40dbc1d963b4854a5d60e5b64074f574376b3f7852",
+  "verifiedAt": "2026-10-20T12:11:49.308Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Обратите внимание на сообщения в консоли: единожды написанный код выполнился три раза."
+  }
+}

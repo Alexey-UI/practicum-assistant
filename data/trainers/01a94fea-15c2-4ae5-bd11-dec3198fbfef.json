@@ -1,0 +1,18 @@
+{
+  "taskId": "01a94fea-15c2-4ae5-bd11-dec3198fbfef",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "lessonId": "676baf5a-8cb2-4135-aa0a-01082fdbacba",
+  "files": [
+    {
+      "name": "script.js",
+      "initialHash": "bed4550a6c8500f1c85278c7d30158f0a511f7b307e0a6b6dcfbbd43183a808f",
+      "content": "let morningList = [\n  'Встать с кровати',\n  'Почистить зубы',\n  'Сделать зарядку',\n  'Позавтракать',\n  'Помыть посуду'\n];\n\nfor(let i = 0; i < morningList.length; i += 2) {\n  console.log(morningList[i]);\n}\n"
+    }
+  ],
+  "instructionsHash": "8d505e97a3071add665cd3e0a6ac33a715328636f9d6b9f9afd2650fbf6fe438",
+  "verifiedAt": "2026-10-20T12:09:46.813Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Вы показали, что счётчик цикла не обязан увеличиваться именно на 1."
+  }
+}

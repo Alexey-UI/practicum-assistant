@@ -1,0 +1,18 @@
+{
+  "taskId": "0514ac15-6674-464f-9461-ed8b7dde5d4f",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "lessonId": "1d313aeb-6839-4aa9-9ce6-ff7be5acef4a",
+  "files": [
+    {
+      "name": "script.js",
+      "initialHash": "25ba69039411e78b2aa7200bf395f72e8cb97d0b49d356114056b0e16b373871",
+      "content": "function isLeapYear() {\n  let year = 2020;\n  \n  if ((year % 400 === 0) || ((year % 4 === 0) && !(year % 100 === 0))) {\n    console.log(year + ' год - високосный');\n  } else {\n    console.log(year + ' год - невисокосный');\n  }\n}\n"
+    }
+  ],
+  "instructionsHash": "6dd27e237159640d7fced11ec7c749d894d3c6cc0212793aeb10f944470d8192",
+  "verifiedAt": "2026-10-20T12:11:25.052Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Функция создана, но в консоли пока ничего нет. Это потому, что функция не была вызвана."
+  }
+}

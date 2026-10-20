@@ -1,0 +1,18 @@
+{
+  "taskId": "0ada094f-ea10-4e60-b9f0-a1b015cfa270",
+  "lessonId": "21dbf9d3-1493-4bb5-850d-64ac561a4b29",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "files": [
+    {
+      "name": "script.js",
+      "initialHash": "d8289990e8268663a38a646cd94680111d562811c7a69a9f692d46b744a8efd9",
+      "content": "let morningList = [\n  'Встать с кровати',\n  'Почистить зубы',\n  'Проверить сториз',\n  'Позавтракать'\n];\nconsole.log(morningList);\n"
+    }
+  ],
+  "instructionsHash": "4b08c0e2d5dae9fb114f4e3dc7624ad86f1573cacdc0c16f983d955c7c54bf77",
+  "verifiedAt": "2026-10-20T12:08:16.211Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Необязательно проверять сториз с чистыми зубами, можно это делать и до всех остальных дел."
+  }
+}

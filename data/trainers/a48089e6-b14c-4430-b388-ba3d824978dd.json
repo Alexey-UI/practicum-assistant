@@ -1,0 +1,18 @@
+{
+  "taskId": "a48089e6-b14c-4430-b388-ba3d824978dd",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "lessonId": "1d313aeb-6839-4aa9-9ce6-ff7be5acef4a",
+  "files": [
+    {
+      "name": "script.js",
+      "initialHash": "46996eb477e568b46af06477361bfaf7b210c27214910d03d1c468693097843b",
+      "content": "function isLeapYear(year) {\n  \n  if ((year % 400 === 0) || ((year % 4 === 0) && !(year % 100 === 0))) {\n    return year + ' год - високосный';\n  } else {\n    return year + ' год - невисокосный';\n  }\n}\nisLeapYear(2020);\nisLeapYear(2021);\nisLeapYear(2022);\n"
+    }
+  ],
+  "instructionsHash": "84350fc0fb23a8487fe7cc19cc922b4b2e025adf0ebbab9ac1a4bb436f3fc765",
+  "verifiedAt": "2026-10-20T12:12:00.431Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Функция всё ещё вызывается, но сообщений в консоли больше нет. Всё потому, что результат вызова пока никуда не идёт."
+  }
+}

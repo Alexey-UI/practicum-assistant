@@ -1,0 +1,18 @@
+{
+  "taskId": "1656b518-3ada-4c4e-99c2-b622c6e10280",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "lessonId": "1d313aeb-6839-4aa9-9ce6-ff7be5acef4a",
+  "files": [
+    {
+      "name": "script.js",
+      "initialHash": "6114e17b794aee4bb96e351434d212cdbc761b4fbb01da8ad1c52ed7b8afbd07",
+      "content": "function isLeapYear(year) {\n  \n  if ((year % 400 === 0) || ((year % 4 === 0) && !(year % 100 === 0))) {\n    console.log(year + ' год - високосный');\n  } else {\n    console.log(year + ' год - невисокосный');\n  }\n}\n"
+    }
+  ],
+  "instructionsHash": "b15335e979866650808114405273cdb2a60003d27501efea0a84bd7344809a83",
+  "verifiedAt": "2026-10-20T12:11:36.150Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Теперь функция стала универсальной — можно передавать любой год при вызове."
+  }
+}

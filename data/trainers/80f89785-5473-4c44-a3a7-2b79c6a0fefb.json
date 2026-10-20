@@ -1,0 +1,18 @@
+{
+  "taskId": "80f89785-5473-4c44-a3a7-2b79c6a0fefb",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "lessonId": "5dc11783-2235-4476-8a85-00177d5ea61b",
+  "files": [
+    {
+      "name": "script.js",
+      "initialHash": "51a4baff4e2ad650367119cf81404e635e6adcfd2010a927b277ccb7f7e49164",
+      "content": "let employee = {\n  firstName: 'Василий',\n  lastName: 'Тёркин',\n  age: 28\n};\nfunction getFullName(employee) {\n  console.log(employee.firstName + ' ' + employee.lastName);\n}\n\ngetFullName(employee);\n"
+    }
+  ],
+  "instructionsHash": "e3bc43030efe90eef58cd7ab8fa060856e16bad6913227b49094a560d3967648",
+  "verifiedAt": "2026-10-20T12:12:44.791Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Правильно. Передаём благодарности от нашего отдела HR."
+  }
+}

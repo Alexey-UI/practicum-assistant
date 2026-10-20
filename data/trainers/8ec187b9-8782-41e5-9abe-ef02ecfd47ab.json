@@ -1,0 +1,18 @@
+{
+  "taskId": "8ec187b9-8782-41e5-9abe-ef02ecfd47ab",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "lessonId": "21dbf9d3-1493-4bb5-850d-64ac561a4b29",
+  "files": [
+    {
+      "name": "script.js",
+      "initialHash": "bf49eedd15655a28d43f08fafc25206dcfacca5e0c96c402e0ddcca5b90a4312",
+      "content": "let morningList = [\n  'Встать с кровати',\n  'Почистить зубы',\n  'Проверить сториз в Инстаграме',\n  'Позавтракать'\n];\n\nconsole.log(morningList[0]); // Выведите первый элемент\nconsole.log(morningList[morningList.length - 1]); // Выведите последний элемент"
+    }
+  ],
+  "instructionsHash": "70925f395a5257ec9727aa6cb9f04b30e817ac223eb7b8315a4b540cb3494274",
+  "verifiedAt": "2026-10-20T12:08:37.610Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Можно завтракать и не вставая с кровати, так даже вкуснее."
+  }
+}

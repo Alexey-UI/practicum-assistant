@@ -1,0 +1,18 @@
+{
+  "taskId": "3ff79807-890d-4bc3-a4db-068b3e9e818b",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "lessonId": "c69877ad-1704-487e-85a9-8d77b15e3302",
+  "files": [
+    {
+      "name": "script.js",
+      "initialHash": "ba5f603f97fcaaf1e4c30a61b43c1194e15b0d34028260d890b2e57b8b93e264",
+      "content": "let year = 2019;\n\nif (year % 400 === 0 || (year % 4 === 0 && year % 100 !== 0)) {\n  console.log(year + ' год - високосный');\n} \n// допишите код здесь\nelse {\n  console.log(year + ' год - невисокосный');\n}\n"
+    }
+  ],
+  "instructionsHash": "78bc323b24e71b6ec47f7e53af1f8b6bdcc84784fc1dd6127a6dfd083c9eb51b",
+  "verifiedAt": "2026-10-20T12:07:54.020Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Вы правильно использовали булевы операции в выражении if. Ваша проверка — настоящая."
+  }
+}

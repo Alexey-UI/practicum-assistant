@@ -1,0 +1,18 @@
+{
+  "taskId": "c0f79564-6cd1-4ba4-b714-4aa6c79879f9",
+  "lessonId": "6f7f6952-46cf-46ac-b4ea-426e7db1aa52",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "files": [
+    {
+      "name": "script.js",
+      "initialHash": "98db738a093d8377c0136a2dd29fbf6c698bb52b8f130795291bd3d66efa6ae6",
+      "content": "let fahrenheit = 451;\nlet celsius = (fahrenheit - 32) / 1.8;\n"
+    }
+  ],
+  "instructionsHash": "652245425db73e0f1c63b9470d1f1b8a36970e3050fd9711816ee6c0a7c31469",
+  "verifiedAt": "2026-10-20T12:06:26.327Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Вы только что использовали значение одной переменной при расчёте другой."
+  }
+}

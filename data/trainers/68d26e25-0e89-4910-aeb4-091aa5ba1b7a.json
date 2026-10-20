@@ -1,0 +1,18 @@
+{
+  "taskId": "68d26e25-0e89-4910-aeb4-091aa5ba1b7a",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "lessonId": "676baf5a-8cb2-4135-aa0a-01082fdbacba",
+  "files": [
+    {
+      "name": "script.js",
+      "initialHash": "f23826237e248ac2ab6e3c7742b3d08b708969af9c361dce86e5aa9f55341490",
+      "content": "let morningList = [\n  'Встать с кровати',\n  'Почистить зубы',\n  'Сделать зарядку',\n  'Позавтракать',\n  'Помыть посуду'\n];\n\nlet i = 0;\nwhile (i < morningList.length) {\n  console.log(morningList[i]);\n  i += 1;\n}\n"
+    }
+  ],
+  "instructionsHash": "1d9959a9f27dd7e251c9872b65c75038ddc0601328819ba359191d687d19469a",
+  "verifiedAt": "2026-10-20T12:10:33.751Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Цикл while позволяет реализовать всё то же, что и цикл for, хотя не так лаконично."
+  }
+}

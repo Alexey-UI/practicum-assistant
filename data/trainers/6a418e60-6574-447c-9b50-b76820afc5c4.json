@@ -1,0 +1,18 @@
+{
+  "taskId": "6a418e60-6574-447c-9b50-b76820afc5c4",
+  "lessonId": "c69877ad-1704-487e-85a9-8d77b15e3302",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "files": [
+    {
+      "name": "script.js",
+      "initialHash": "b7fa03d4bdc2e47d5a8816207f1df7953e0113b794999153f47812c10f1b4ece",
+      "content": "let year = 2020;\n\nif (year % 4 === 0) {\n  console.log(year + ' год - високосный');\n}\n"
+    }
+  ],
+  "instructionsHash": "c89948815b434fec89f76e9d0e210f554003ad26f1167770d7c4fa50e4335267",
+  "verifiedAt": "2026-10-20T12:07:27.857Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Проверка выполнена, а значит, утверждение подкреплено математически."
+  }
+}
