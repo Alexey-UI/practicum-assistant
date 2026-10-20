@@ -3,7 +3,8 @@ import assert from 'node:assert/strict';
 import { chromium } from 'playwright';
 import { handleExerciseDialogs } from '../src/exercise-dialogs.js';
 
-test('Известный учебный prompt выходит из цикла, ответы не переносятся в другие задания и сообщения', { timeout: 15000 }, async () => {
+// Includes Chrome's cold start, which took over 15s under parallel Windows CI load.
+test('Известный учебный prompt выходит из цикла, ответы не переносятся в другие задания и сообщения', { timeout: 60000 }, async () => {
   const browser = await chromium.launch({ channel: 'chrome', headless: true });
   try {
     const context = await browser.newContext();
