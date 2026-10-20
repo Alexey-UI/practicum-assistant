@@ -1,0 +1,18 @@
+{
+  "taskId": "2ad7ad6a-5688-4096-8ea9-b0d3624a3fbe",
+  "lessonId": "3239b752-fab4-47ea-aa4c-50161009d537",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "files": [
+    {
+      "name": "script.js",
+      "initialHash": "758c1a0beda2bd3ae831beaedaf5109ced2d0e296a45fd2767815e696a8ebc03",
+      "content": "let container = document.querySelector('.container');\nlet songsContainer = container.querySelector('.songs-container');\nlet songs = songsContainer.querySelectorAll('.song');\nlet addButton = container.querySelector('.form__submit-btn_action_add');\nlet resetButton = container.querySelector('.form__submit-btn_action_reset');\nif (songs.length === 0) {\n  resetButton.setAttribute('disabled', true);\n  resetButton.classList.add('form__submit-btn_disabled');\n}\nelse {\n  resetButton.removeAttribute('disabled');\n  resetButton.classList.remove('form__submit-btn_disabled');\n}\nfunction addSong() {\n  songsContainer.innerHTML += `\n    <div class=\"song\">\n      <h4 class=\"song__artist\">Кино</h4>\n      <p class=\"song__title\">Дерево</p>\n      <button class=\"song__like\"></button>\n    </div>\n  `;\n}\n\naddSong();\naddSong();\naddSong();\n"
+    }
+  ],
+  "instructionsHash": "72b5187b3aa7dba1df9b2806e3a8a8527f5e298a692620b3058c5f60bc937a9f",
+  "verifiedAt": "2026-10-20T12:23:38.549Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Работает! Но пока у нас получается плейлист из одинаковых песен. Разработчики называют это «захардкодить», то есть указать явные значения вместо переменных."
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "taskId": "1743558e-e382-4c7a-81d8-be93a322592a",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "lessonId": "6efd5352-bb94-4b2f-8fa7-86f2375a987c",
+  "files": [
+    {
+      "name": "script.js",
+      "initialHash": "59caad3fd83e37df58f23660118710bb3cc7ff28fe32711011b7faff99b0ca32",
+      "content": "let container = document.querySelector('.container');\nlet songsContainer = container.querySelector('.songs-container');\nlet songs = songsContainer.querySelectorAll('.song');\nlet addButton = container.querySelector('.form__submit-btn_action_add');\nlet resetButton = container.querySelector('.form__submit-btn_action_reset');\nif (songs.length === 0) {\n  resetButton.setAttribute('disabled', true);\n  resetButton.setAttribute('style', 'background-color: #f1f1f1');\n}\n"
+    }
+  ],
+  "instructionsHash": "fdb1dc4669fc6af6fb9cfa1594becead3d4691643a1e2726119caeddb76f2b98",
+  "verifiedAt": "2026-10-20T12:21:57.988Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Отлично! Отметим, что задачу можно решить двумя способами:\nСкопировать код\n\nJAVASCRIPT\n\nresetButton.setAttribute('style', 'background-color: #f1f1f1');\n// или\nresetButton.style.backgroundColor = '#f1f1f1'; "
+  }
+}

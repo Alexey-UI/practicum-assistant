@@ -1,0 +1,18 @@
+{
+  "taskId": "82b1bb38-48c5-4e88-9ce8-347efe80ca82",
+  "lessonId": "6efd5352-bb94-4b2f-8fa7-86f2375a987c",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "files": [
+    {
+      "name": "script.js",
+      "initialHash": "a19a0360f900d5411862825788ba48ca85bb762ce98080ef64c0cb04a8fbd2d3",
+      "content": "let container = document.querySelector('.container');\nlet songsContainer = container.querySelector('.songs-container');\nlet songs = songsContainer.querySelectorAll('.song');\nlet addButton = container.querySelector('.form__submit-btn_action_add');\nlet resetButton = container.querySelector('.form__submit-btn_action_reset');\nif (songs.length === 0) {\n  resetButton.setAttribute('disabled', true);\n}\n"
+    }
+  ],
+  "instructionsHash": "18bfcf36ad87f628a7e5722880fb40a9c0797e6b19e22ee64d5283b0c6e98c7b",
+  "verifiedAt": "2026-10-20T12:21:28.793Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Заметьте, при нажатии на «Очистить плейлист» голубая рамка больше не появляется."
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "taskId": "33b41ee1-bccb-42c5-898e-6b133782bf1e",
+  "lessonId": "477761db-2a71-4cf8-8be1-2de8b0e9d946",
+  "contextHash": "6125adb14184496d99231c4aab66f036327052de950f021c8fcaaf06aca9d259",
+  "files": [
+    {
+      "name": "script.js",
+      "initialHash": "3d32693297670e2f2d09d12f945fa2adf9d40cab02c38dd8343e4ea78048545d",
+      "content": "let container = document.querySelector('.container');\n"
+    }
+  ],
+  "instructionsHash": "c72f639bc0abaaa766b47ffead389132704f9258793d3caa2032c3219c2c7c1f",
+  "verifiedAt": "2026-10-20T12:20:28.936Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Элемент выбран, а значит мы можем работать с ним дальше."
+  }
+}

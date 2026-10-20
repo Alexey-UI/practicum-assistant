@@ -1,0 +1,18 @@
+{
+  "taskId": "5dc10a6c-4532-4e40-a647-12802144c98e",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "lessonId": "09b6cabf-dc6f-409b-a859-50cbc2794585",
+  "files": [
+    {
+      "name": "script.js",
+      "initialHash": "b2e07bbb84925452b73698469c577a7a229cf599647920e894d98762516c531d",
+      "content": "let container = document.querySelector('.container');\nlet songsContainer = container.querySelector('.songs-container');\nlet addButton = container.querySelector('.form__submit-btn_action_add');\nlet resetButton = container.querySelector('.form__submit-btn_action_reset');\n\nfunction renderAdded() {\n  let songs = songsContainer.querySelectorAll('.song');\n  let noSongsElement = container.querySelector('.no-songs');\n\n  if (songs.length === 0) {\n    resetButton.setAttribute('disabled', true);\n    resetButton.classList.add('form__submit-btn_disabled');\n    noSongsElement.classList.remove('no-songs_hidden');\n  } else {\n    resetButton.removeAttribute('disabled');\n    resetButton.classList.remove('form__submit-btn_disabled');\n    noSongsElement.classList.add('no-songs_hidden');\n  }\n}\n\nfunction addSong() {\n  let artist = document.querySelector('.input__text_type_artist');\n  let song = document.querySelector('.input__text_type_song');\n\n  songsContainer.insertAdjacentHTML('beforeend', `\n\t\t<div class=\"song\">\n      <h4 class=\"song__artist\">${artist.value}</h4>\n      <p class=\"song__title\">${song.value}</p>\n\t\t  <button class=\"song__like\"></button>\n\t\t</div>\n  `);\n\n  artist.value = '';\n  song.value = '';\n  renderAdded();\n}\n\naddButton.addEventListener('click', addSong);\n\nrenderAdded();\n"
+    }
+  ],
+  "instructionsHash": "f067779e2f0f6757660fbbcd0f66457af418e0e9dc31fef1cea5b221f3ae3644",
+  "verifiedAt": "2026-10-20T12:26:16.938Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Попробуйте добавить в плейлист новую песню — текстовые поля очищаются.\nЭто было последнее задание. Лайки и очистку плейлиста вы доделаете в следующих темах."
+  }
+}

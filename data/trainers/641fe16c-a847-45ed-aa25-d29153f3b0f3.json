@@ -1,0 +1,18 @@
+{
+  "taskId": "641fe16c-a847-45ed-aa25-d29153f3b0f3",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "lessonId": "09b6cabf-dc6f-409b-a859-50cbc2794585",
+  "files": [
+    {
+      "name": "script.js",
+      "initialHash": "9682447b79ded76ff76b69fae24f8cbdc8510962d93642c97a4a018d54c3c974",
+      "content": "let container = document.querySelector('.container');\nlet songsContainer = container.querySelector('.songs-container');\nlet addButton = container.querySelector('.form__submit-btn_action_add');\nlet resetButton = container.querySelector('.form__submit-btn_action_reset');\nfunction renderAdded() {\n  let songs = songsContainer.querySelectorAll('.song');\n  let noSongsElement = container.querySelector('.no-songs');\n  if (songs.length === 0) {\n    resetButton.setAttribute('disabled', true);\n    resetButton.classList.add('form__submit-btn_disabled');\n    noSongsElement.classList.remove('no-songs_hidden');\n  }\n  else {\n    resetButton.removeAttribute('disabled');\n    resetButton.classList.remove('form__submit-btn_disabled');\n    noSongsElement.classList.add('no-songs_hidden');\n  }\n}\n\nfunction addSong() {\n  let artist = container.querySelector('.input__text_type_artist');\n  let song = container.querySelector('.input__text_type_song');\n  songsContainer.insertAdjacentHTML('beforeend', `\n    <div class=\"song\">\n      <h4 class=\"song__artist\">${artist.value}</h4>\n      <p class=\"song__title\">${song.value}</p>\n      <button class=\"song__like\"></button>\n    </div>\n  `);\n  renderAdded();\n}\n\n\n\n\n\naddButton.addEventListener('click', addSong);\nrenderAdded();\n\n"
+    }
+  ],
+  "instructionsHash": "ce21ae6a91abd94af56ce1f5fe36a3e6ed29ff519dfee2ddc3930700c45992eb",
+  "verifiedAt": "2026-10-20T12:26:01.860Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Напишите что-нибудь в каждом из текстовых полей и нажмите «Добавить». Теперь из них берутся название песни и исполнитель!"
+  }
+}

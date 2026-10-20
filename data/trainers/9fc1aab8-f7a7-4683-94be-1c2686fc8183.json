@@ -1,0 +1,18 @@
+{
+  "taskId": "9fc1aab8-f7a7-4683-94be-1c2686fc8183",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "lessonId": "51c46a41-e3d4-43c0-8e5d-9af813675863",
+  "files": [
+    {
+      "name": "script.js",
+      "initialHash": "8d21aefa43f5a9df71f7bd1a584fcb717b18c424da51364a08909295d7121835",
+      "content": "let container = document.querySelector('.container');\nlet songsContainer = container.querySelector('.songs-container');\nlet addButton = container.querySelector('.form__submit-btn_action_add');\nlet resetButton = container.querySelector('.form__submit-btn_action_reset');\nfunction renderAdded() {\n  let songs = songsContainer.querySelectorAll('.song');\n  if (songs.length === 0) {\n    resetButton.setAttribute('disabled', true);\n    resetButton.classList.add('form__submit-btn_disabled');\n  }\n  else {\n    resetButton.removeAttribute('disabled');\n    resetButton.classList.remove('form__submit-btn_disabled');\n  }\n}\n\nfunction addSong() {\n  songsContainer.innerHTML += `\n    <div class=\"song\">\n      <h4 class=\"song__artist\">Кино</h4>\n      <p class=\"song__title\">Дерево</p>\n      <button class=\"song__like\"></button>\n    </div>\n  `;\n}\n\n\n\n\n\naddButton.addEventListener('click', addSong);"
+    }
+  ],
+  "instructionsHash": "fe12461b55ca94c3fd1d193fe2077e91a071f47994af77a994ada4e46d12f6dc",
+  "verifiedAt": "2026-10-20T12:24:17.258Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Кажется, ничего не изменилось: мы объявили функцию renderAdded, но пока её нигде не вызывали. Сделаем это в следующем задании."
+  }
+}

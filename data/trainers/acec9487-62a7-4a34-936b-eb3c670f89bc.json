@@ -1,0 +1,18 @@
+{
+  "taskId": "acec9487-62a7-4a34-936b-eb3c670f89bc",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "lessonId": "55085e4d-0198-4bb8-8f15-e260d5de52d0",
+  "files": [
+    {
+      "name": "script.js",
+      "initialHash": "574b3b40c5e0d5d0fb3086571460b46dd9ac53e3318fc6e2e841e4c0abbb4b3d",
+      "content": "let container = document.querySelector('.container');\nlet songsContainer = container.querySelector('.songs-container');\nlet songs = songsContainer.querySelectorAll('.song');\nlet addButton = container.querySelector('.form__submit-btn_action_add');\nlet resetButton = container.querySelector('.form__submit-btn_action_reset');\nif (songs.length === 0) {\n  resetButton.setAttribute('disabled', true);\n  resetButton.classList.add('form__submit-btn_disabled');\n}\n"
+    }
+  ],
+  "instructionsHash": "46d5ba2244a890448910047b828242c0827db714eecf8e56192d2ea80e0613af",
+  "verifiedAt": "2026-10-20T12:22:25.132Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Кнопка неактивна, но опять стала жёлтой. Так и должно быть, ведь мы ещё не написали стили для неактивного состояния."
+  }
+}

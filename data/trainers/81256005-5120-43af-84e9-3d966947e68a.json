@@ -1,0 +1,18 @@
+{
+  "taskId": "81256005-5120-43af-84e9-3d966947e68a",
+  "lessonId": "477761db-2a71-4cf8-8be1-2de8b0e9d946",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "files": [
+    {
+      "name": "script.js",
+      "initialHash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "content": "console.log(document);\nconsole.log(Math);\n"
+    }
+  ],
+  "instructionsHash": "ce246a45d874f0d4caf154c5f17331300c3ccf836c72c9fb0eb7660fec51a5e0",
+  "verifiedAt": "2026-10-20T12:20:15.840Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Откройте консоль и понажимайте на объекты и их составные части: из чего состоит объект document? А объект Math?"
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "taskId": "3a5b0f10-b1ee-441f-b402-14e994aecde9",
+  "lessonId": "20395e6a-48a9-458e-9511-6078d05b488d",
+  "contextHash": "2dff0fd5947577b39f4ee21f2ffa4e65ff162705eeb662d01cc18286ea79ad05",
+  "files": [
+    {
+      "name": "script.js",
+      "initialHash": "8f4b977158bc8a1e527fa17d0e9f42968ca821b03149fa4393d14cc8913a0f13",
+      "content": "const container = document.querySelector('.container');\nconst songsContainer = container.querySelector('.songs-container');\nconst addButton = container.querySelector('.input__btn_action_add');\nconst resetButton = container.querySelector('.input__btn_action_reset');\nconst noSongsElement = container.querySelector('.no-songs');\n\nfunction renderHasSongs() {\n  resetButton.removeAttribute('disabled');\n  resetButton.classList.remove('input__btn_disabled');\n  noSongsElement.classList.add('no-songs_hidden');\n}\n\nfunction renderNoSongs() {\n  resetButton.setAttribute('disabled', true);\n  resetButton.classList.add('input__btn_disabled');\n  noSongsElement.classList.remove('no-songs_hidden');\n}\n\nfunction addSong(artistValue, titleValue) {\n  songsContainer.insertAdjacentHTML('beforeend', `\n    <div class=\"song\">\n      <h4 class=\"song__artist\">${artistValue}</h4>\n      <p class=\"song__title\">${titleValue}</p>\n      <button class=\"song__like\"></button>\n    </div>\n  `);\n}\n\naddButton.addEventListener('click', function () {\n  const artist = document.querySelector('.input__text_type_artist');\n  const title = document.querySelector('.input__text_type_title');\n\n  addSong(artist.value, title.value);\n  renderHasSongs();\n\n  artist.value = '';\n  title.value = '';\n});\n"
+    }
+  ],
+  "previewActions": [
+    {
+      "action": "fill",
+      "selector": ".input__text_type_artist",
+      "value": "<img src=\"https://invalid_url\" onerror=\"alert('but most of all, samy is my hero')\" >"
+    },
+    {
+      "action": "fill",
+      "selector": ".input__text_type_title",
+      "value": "Учебная проверка"
+    },
+    {
+      "action": "click",
+      "selector": ".input__btn_action_add",
+      "expectAlert": "but most of all, samy is my hero"
+    }
+  ],
+  "instructionsHash": "d0b4f7f171d1c96ab4033442cb62d78fce82b5701ba480173bedbc352ced9199",
+  "verifiedAt": "2026-10-20T12:33:54.006Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Видите alert? Если разрешите делиться такими плейлистами, кто-нибудь добавит вместо песни вредоносный код, который выполнится на странице посетителя. Двигайтесь дальше и узнайте, как избежать такой уязвимости."
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "taskId": "069f2367-5466-4ac6-90d1-4bb417388404",
+  "lessonId": "477761db-2a71-4cf8-8be1-2de8b0e9d946",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "files": [
+    {
+      "name": "script.js",
+      "initialHash": "94366315177478a0ee7fcb62772610702395a1715d08bf8423a56ad9983728b2",
+      "content": "let container = document.querySelector('.container');\nlet songsContainer = container.querySelector('.songs-container');\nlet songs = songsContainer.querySelectorAll('.song');\nlet addButton = container.querySelector('.form__submit-btn_action_add');\nlet resetButton = container.querySelector('.form__submit-btn_action_reset');\n"
+    }
+  ],
+  "instructionsHash": "092a437b5dffbd8c162aa4fb54202b0fd264e332116532e295e4c95f5b71b0fe",
+  "verifiedAt": "2026-10-20T12:21:08.192Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Кнопки, как и другие HTML-элементы, могут быть найдены методом .querySelector."
+  }
+}

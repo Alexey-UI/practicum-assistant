@@ -1,0 +1,18 @@
+{
+  "taskId": "fa32e7fb-028a-401b-884b-4661ba9f1cab",
+  "lessonId": "477761db-2a71-4cf8-8be1-2de8b0e9d946",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "files": [
+    {
+      "name": "script.js",
+      "initialHash": "790fd576aed926302ffc545e8c1a37568abf3270b6651840dfe7c3deddcc8c71",
+      "content": "let container = document.querySelector('.container');\nlet songsContainer = container.querySelector('.songs-container');\nlet songs = songsContainer.querySelectorAll('.song');\n"
+    }
+  ],
+  "instructionsHash": "756d9d6f756c899a9e25ef00a3d41f635b19f786b059f91ef24f9c19510a29ce",
+  "verifiedAt": "2026-10-20T12:20:57.054Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Вы только что получили список всех песен в плейлисте. Пока этот список пустой, но скоро..."
+  }
+}

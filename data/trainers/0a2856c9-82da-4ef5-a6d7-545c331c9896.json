@@ -1,0 +1,18 @@
+{
+  "taskId": "0a2856c9-82da-4ef5-a6d7-545c331c9896",
+  "lessonId": "477761db-2a71-4cf8-8be1-2de8b0e9d946",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "files": [
+    {
+      "name": "script.js",
+      "initialHash": "61138d1d467ce1cff48b42d68298cc9d97c92820bf35c89d37d3ab0fbc1b05ce",
+      "content": "let container = document.querySelector('.container');\nlet songsContainer = container.querySelector('.songs-container');\n"
+    }
+  ],
+  "instructionsHash": "9e806d18a38a587099a0dedb1d6b9b2875e79fed168a74552d3e38f112a0e37b",
+  "verifiedAt": "2026-10-20T12:20:43.757Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Как видите, .querySelector можно вызывать не только у объекта document, но и у других элементов."
+  }
+}

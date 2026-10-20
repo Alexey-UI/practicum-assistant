@@ -1,0 +1,18 @@
+{
+  "taskId": "95a924ec-8506-403e-87b3-e332440a58d9",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "lessonId": "51c46a41-e3d4-43c0-8e5d-9af813675863",
+  "files": [
+    {
+      "name": "script.js",
+      "initialHash": "d43927d2828f2cb06f1504b3832525ea2fbfc73db15401ec02aa49a4d88cd4e9",
+      "content": "let container = document.querySelector('.container');\nlet songsContainer = container.querySelector('.songs-container');\nlet addButton = container.querySelector('.form__submit-btn_action_add');\nlet resetButton = container.querySelector('.form__submit-btn_action_reset');\nfunction renderAdded() {\n  let songs = songsContainer.querySelectorAll('.song');\n  if (songs.length === 0) {\n    resetButton.setAttribute('disabled', true);\n    resetButton.classList.add('form__submit-btn_disabled');\n  }\n  else {\n    resetButton.removeAttribute('disabled');\n    resetButton.classList.remove('form__submit-btn_disabled');\n  }\n}\n\nfunction addSong() {\n  songsContainer.innerHTML += `\n    <div class=\"song\">\n      <h4 class=\"song__artist\">Кино</h4>\n      <p class=\"song__title\">Дерево</p>\n      <button class=\"song__like\"></button>\n    </div>\n  `;\n  renderAdded();\n}\n\n\n\n\n\naddButton.addEventListener('click', addSong);\nrenderAdded();"
+    }
+  ],
+  "instructionsHash": "4c4f9d38e9e975db54ee12f2e5392fca110696b6e5ff53dda21a400741bae8ae",
+  "verifiedAt": "2026-10-20T12:24:32.367Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Теперь при открытии страницы кнопка окрашена в серый. Попробуйте нажать «Добавить» — и кнопка изменит цвет."
+  }
+}

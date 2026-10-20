@@ -1,0 +1,18 @@
+{
+  "taskId": "db27729c-4db7-40af-b02a-01f5a5b772cc",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "lessonId": "51c46a41-e3d4-43c0-8e5d-9af813675863",
+  "files": [
+    {
+      "name": "script.js",
+      "initialHash": "431ce78b13f73102e06e4f81f9b0f0fe83321577f0ae82e1a257d442b45cde31",
+      "content": "let container = document.querySelector('.container');\nlet songsContainer = container.querySelector('.songs-container');\nlet songs = songsContainer.querySelectorAll('.song');\nlet addButton = container.querySelector('.form__submit-btn_action_add');\nlet resetButton = container.querySelector('.form__submit-btn_action_reset');\nif (songs.length === 0) {\n  resetButton.setAttribute('disabled', true);\n  resetButton.classList.add('form__submit-btn_disabled');\n}\nelse {\n  resetButton.removeAttribute('disabled');\n  resetButton.classList.remove('form__submit-btn_disabled');\n}\nfunction addSong() {\n  songsContainer.innerHTML += `\n    <div class=\"song\">\n      <h4 class=\"song__artist\">Кино</h4>\n      <p class=\"song__title\">Дерево</p>\n      <button class=\"song__like\"></button>\n    </div>\n  `;\n}\n\n\n\n\n\naddButton.addEventListener('click', addSong);"
+    }
+  ],
+  "instructionsHash": "17a7b328cc637be9a2cdd31d74ebbeb96f6d8745ae42c39136da3701c5404111",
+  "verifiedAt": "2026-10-20T12:24:02.111Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Если нажать «Добавить», плейлист пополнится новой песней. Система постепенно начинает работать."
+  }
+}

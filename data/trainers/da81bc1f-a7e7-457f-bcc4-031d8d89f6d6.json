@@ -1,0 +1,18 @@
+{
+  "taskId": "da81bc1f-a7e7-457f-bcc4-031d8d89f6d6",
+  "lessonId": "09b6cabf-dc6f-409b-a859-50cbc2794585",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "files": [
+    {
+      "name": "script.js",
+      "initialHash": "d68655b58d151040904eb46224ce6368a52e1c9004889cc939f5e9caeae45fad",
+      "content": "let container = document.querySelector('.container');\nlet songsContainer = container.querySelector('.songs-container');\nlet addButton = container.querySelector('.form__submit-btn_action_add');\nlet resetButton = container.querySelector('.form__submit-btn_action_reset');\nfunction renderAdded() {\n  let songs = songsContainer.querySelectorAll('.song');\n  let noSongsElement = container.querySelector('.no-songs');\n  if (songs.length === 0) {\n    resetButton.setAttribute('disabled', true);\n    resetButton.classList.add('form__submit-btn_disabled');\n    noSongsElement.classList.remove('no-songs_hidden');\n  }\n  else {\n    resetButton.removeAttribute('disabled');\n    resetButton.classList.remove('form__submit-btn_disabled');\n    noSongsElement.classList.add('no-songs_hidden');\n  }\n}\n\nfunction addSong() {\n  songsContainer.insertAdjacentHTML('beforeend', `\n    <div class=\"song\">\n      <h4 class=\"song__artist\">Кино</h4>\n      <p class=\"song__title\">Дерево</p>\n      <button class=\"song__like\"></button>\n    </div>\n  `);\n  renderAdded();\n}\n\n\n\n\n\naddButton.addEventListener('click', addSong);\nrenderAdded();\nconsole.log(typeof container.querySelector('.input__text_type_artist').value);\n"
+    }
+  ],
+  "instructionsHash": "f219e6d72bc207c11992972270eb39a8bf10a5a0c7e91abef5e1491a97a40a14",
+  "verifiedAt": "2026-10-20T12:25:42.738Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "В консоли оказалось string. Значит, в свойстве value элемента input хранится строка с текстом, введённым в это поле ввода. Она-то нам и нужна!"
+  }
+}

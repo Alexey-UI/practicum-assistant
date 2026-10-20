@@ -1,0 +1,18 @@
+{
+  "taskId": "649052ba-5d5c-4486-bdec-ae35e0592685",
+  "lessonId": "55085e4d-0198-4bb8-8f15-e260d5de52d0",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "files": [
+    {
+      "name": "script.js",
+      "initialHash": "88ede287ebe0af4cbec9a43c5f1b6c399133d26eef000fbcb3d2e24e10c726b2",
+      "content": "let container = document.querySelector('.container');\nlet songsContainer = container.querySelector('.songs-container');\nlet songs = songsContainer.querySelectorAll('.song');\nlet addButton = container.querySelector('.form__submit-btn_action_add');\nlet resetButton = container.querySelector('.form__submit-btn_action_reset');\nif (songs.length === 0) {\n  resetButton.setAttribute('disabled', true);\n  resetButton.classList.add('form__submit-btn_disabled');\n}\nelse {\n  resetButton.removeAttribute('disabled');\n  resetButton.classList.remove('form__submit-btn_disabled');\n}\n"
+    }
+  ],
+  "instructionsHash": "65d4b2d3164438a35fab719bd77977ab8c08ab61c0b81dbea960fabac7c67a1c",
+  "verifiedAt": "2026-10-20T12:22:51.320Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Теперь кнопка «Очистить плейлист» станет активной, когда будет, что очищать."
+  }
+}

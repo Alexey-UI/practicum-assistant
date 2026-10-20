@@ -1,0 +1,18 @@
+{
+  "taskId": "7deafb66-b9ab-4428-ac07-955208afcf27",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "lessonId": "bf222861-31ac-4f0c-973b-525f5986a841",
+  "files": [
+    {
+      "name": "script.js",
+      "initialHash": "81eaed8ece852e7eea007fb04644bf1dd06aa634e5e2588877cf642a919cdee0",
+      "content": "let container = document.querySelector('.container');\nlet songsContainer = container.querySelector('.songs-container');\nlet addButton = container.querySelector('.form__submit-btn_action_add');\nlet resetButton = container.querySelector('.form__submit-btn_action_reset');\nfunction renderAdded() {\n  let songs = songsContainer.querySelectorAll('.song');\n  let noSongsElement = container.querySelector('.no-songs');\n  if (songs.length === 0) {\n    resetButton.setAttribute('disabled', true);\n    resetButton.classList.add('form__submit-btn_disabled');\n    noSongsElement.classList.remove('no-songs_hidden');\n  }\n  else {\n    resetButton.removeAttribute('disabled');\n    resetButton.classList.remove('form__submit-btn_disabled');\n    noSongsElement.classList.add('no-songs_hidden');\n  }\n}\n\nfunction addSong() {\n  songsContainer.insertAdjacentHTML('beforeend', `\n    <div class=\"song\">\n      <h4 class=\"song__artist\">Кино</h4>\n      <p class=\"song__title\">Дерево</p>\n      <button class=\"song__like\"></button>\n    </div>\n  `);\n  renderAdded();\n}\n\n\n\n\n\naddButton.addEventListener('click', addSong);\nrenderAdded();"
+    }
+  ],
+  "instructionsHash": "3839114534d41c1947a7dbb4e242c0d90ff43df374d4bcac02b03372703adc52",
+  "verifiedAt": "2026-10-20T12:25:21.337Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "С точки зрения пользователя ничего не поменялось. Но мы больше не заменяем всё содержимое при каждой вставке. Мы просто вставляем в конец новую разметку."
+  }
+}

@@ -2,6 +2,7 @@ import type { Page } from 'playwright';
 import { createHash } from 'node:crypto';
 import { atomicJson, journal, readJson, normalize } from './store.js';
 import { safeUrl, lessonId, settle, isTrainerTaskUrl, trainerTextTabs } from './browser.js';
+import type { PreviewAction } from './preview-actions.js';
 
 export interface EditorFile { path: string; language: string; content: string; hash: string }
 interface MonacoModel { uri: { path: string }; getLanguageId(): string; getValue(): string }
@@ -114,12 +115,17 @@ export interface TrainerSolution {
   contextHash?: string;
   verification?: 'self';
   practiceChecks?: Array<{ selector: string; hover: Record<string, string>; active?: Record<string, string> }>;
+  previewActions?: PreviewAction[];
   files: Array<{ name: string; initialHash: string; content: string }>;
   verifiedAt: string;
   evidence: { selector: string; message: string };
 }
 interface AttemptFile { name: string; initialHash: string; contentHash: string }
 interface TaskState { phase: 'requested' | 'accepted' | 'wrong'; solutionHash: string; updatedAt: string; files?: AttemptFile[] }
+
+export function trainerSolutionHash(solution: Pick<TrainerSolution, 'files' | 'previewActions'>): string {
+  return contentHash(JSON.stringify(solution.previewActions ? { files: solution.files, previewActions: solution.previewActions } : solution.files));
+}
 
 export function canReplaceTrainerFile(currentHash: string, file: TrainerSolution['files'][number], previous?: AttemptFile): boolean {
   return [file.initialHash, contentHash(file.content)].includes(currentHash) ||
@@ -148,7 +154,7 @@ export async function solveTrainer(page: Page, candidate = false): Promise<'adva
   if (solution.instructionsHash && solution.instructionsHash !== contentHash(normalize(task.instructions))) throw new Error('Условие задания изменилось: требуется повторный разбор');
   if (solution.contextHash && solution.contextHash !== task.contextHash) throw new Error('Иллюстрации задания изменились: требуется повторный разбор');
   if (solution.verification === 'self') return (await import('./practice.js')).solvePractice(page, task, solution, candidate);
-  const solutionHash = contentHash(JSON.stringify(solution.files));
+  const solutionHash = trainerSolutionHash(solution);
   const stateFile = `.local/trainers/${task.taskId}.json`;
   const state = await readJson<TaskState | null>(stateFile, null);
   const attemptFiles = solution.files.map(file => ({ name: file.name, initialHash: file.initialHash, contentHash: contentHash(file.content) }));
@@ -179,6 +185,7 @@ export async function solveTrainer(page: Page, candidate = false): Promise<'adva
         const existing = task.files.filter(item => item.path.split('/').pop() === file.name);
         if (existing.length !== 1 || existing[0].hash !== contentHash(file.content)) await writeEditor(page, file.name, file.content);
       }
+      if (solution.previewActions) await (await import('./preview-actions.js')).runPreviewActions(page, task.taskId, solution.previewActions);
       const oldMessage = page.locator('.trainer-footer__message:not(.draggable-notification__manikin) .notification__close').filter({ visible: true });
       if (await oldMessage.count() === 1) await oldMessage.click();
       const check = page.locator('[data-test-id="check-task-button"]');

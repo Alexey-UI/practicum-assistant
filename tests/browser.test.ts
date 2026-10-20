@@ -5,7 +5,7 @@ import { readLessons, observedSolved, saveObservedSolved } from '../src/catalog.
 import { exactButton, questionFrom, quizOutcome } from '../src/quiz.js';
 import { DEFAULTS } from '../src/config.js';
 import { scrollLesson } from '../src/scroll.js';
-import { trainerOutcome, selectEditorFile, solveTrainer, readTrainer, advanceTrainer, contentHash, canReplaceTrainerFile, isTrainerDemonstration, captureTrainerHint } from '../src/trainer.js';
+import { trainerOutcome, selectEditorFile, solveTrainer, readTrainer, advanceTrainer, contentHash, canReplaceTrainerFile, isTrainerDemonstration, captureTrainerHint, trainerSolutionHash } from '../src/trainer.js';
 import { readTextQuestion, solveTextQuestion, captureTextAnswer } from '../src/text-quiz.js';
 import { solveFeedback } from '../src/feedback.js';
 import { solveQuiz } from '../src/quiz.js';
@@ -23,6 +23,14 @@ test('Исправленная попытка тренажёра допуска�
   assert.equal(canReplaceTrainerFile(contentHash('чужая правка'), file, previous), false);
   assert.equal(canReplaceTrainerFile(previous.contentHash, file), false);
   assert.equal(canReplaceTrainerFile(previous.contentHash, file, { ...previous, initialHash: contentHash('другой исходник') }), false);
+});
+test('Изменённый UI-сценарий имеет отдельное состояние проверки, прежние задания сохраняют свои хеши', () => {
+  const files = [{ name: 'script.js', initialHash: contentHash(''), content: 'let value = 1;' }];
+  const first = { files, previewActions: [{ action: 'fill' as const, selector: 'input', value: 'первое' }] };
+  const second = { files, previewActions: [{ action: 'fill' as const, selector: 'input', value: 'другое' }] };
+  assert.equal(trainerSolutionHash({ files }), contentHash(JSON.stringify(files)));
+  assert.notEqual(trainerSolutionHash(first), trainerSolutionHash(second));
+  assert.notEqual(trainerSolutionHash(first), trainerSolutionHash({ files }));
 });
 before(async () => { browser = await chromium.launch({ channel: 'chrome', headless: true }); });
 after(async () => { await browser?.close(); });

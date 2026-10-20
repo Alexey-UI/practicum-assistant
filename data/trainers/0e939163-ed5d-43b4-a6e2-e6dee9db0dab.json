@@ -1,0 +1,18 @@
+{
+  "taskId": "0e939163-ed5d-43b4-a6e2-e6dee9db0dab",
+  "lessonId": "3239b752-fab4-47ea-aa4c-50161009d537",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "files": [
+    {
+      "name": "script.js",
+      "initialHash": "6d71a1f870f0dbca43b364a6072d3d3b64af68fa0ba95c905f54acf28a297d6d",
+      "content": "let container = document.querySelector('.container');\nlet songsContainer = container.querySelector('.songs-container');\nlet songs = songsContainer.querySelectorAll('.song');\nlet addButton = container.querySelector('.form__submit-btn_action_add');\nlet resetButton = container.querySelector('.form__submit-btn_action_reset');\nif (songs.length === 0) {\n  resetButton.setAttribute('disabled', true);\n  resetButton.classList.add('form__submit-btn_disabled');\n}\nelse {\n  resetButton.removeAttribute('disabled');\n  resetButton.classList.remove('form__submit-btn_disabled');\n}\nfunction addSong() {\n  songsContainer.innerHTML += `\n    <div class=\"song\">\n      <h4 class=\"song__artist\">Кино</h4>\n      <p class=\"song__title\">Дерево</p>\n      <button class=\"song__like\"></button>\n    </div>\n  `;\n}\n\naddSong();\n"
+    }
+  ],
+  "instructionsHash": "df2e0c429789bc742d7981031f97363e6324f00b1e175d8cc43ae1d500422844",
+  "verifiedAt": "2026-10-20T12:23:21.032Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Работает. Но есть пара проблем:\nкаждый новый вызов функции будет перезаписывать содержимое контейнера songs-container. Песни будут не добавляться, а перезаписывать друг друга;\nдаже после добавления песни надпись «Нет добавленных песен» не исчезла.\nСкоро мы это исправим."
+  }
+}

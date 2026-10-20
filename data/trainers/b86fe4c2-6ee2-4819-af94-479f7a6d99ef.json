@@ -1,0 +1,18 @@
+{
+  "taskId": "b86fe4c2-6ee2-4819-af94-479f7a6d99ef",
+  "contextHash": "c2ba73cd67abafcc287b4ccdb8979b1d87f1c20160fb042cd1d7ce6d681d4e5e",
+  "lessonId": "51c46a41-e3d4-43c0-8e5d-9af813675863",
+  "files": [
+    {
+      "name": "script.js",
+      "initialHash": "30b67537eadb168d3409768f3543b701656438bc43dc5e924b9666286ad2db7d",
+      "content": "let container = document.querySelector('.container');\nlet songsContainer = container.querySelector('.songs-container');\nlet addButton = container.querySelector('.form__submit-btn_action_add');\nlet resetButton = container.querySelector('.form__submit-btn_action_reset');\nfunction renderAdded() {\n  let songs = songsContainer.querySelectorAll('.song');\n  let noSongsElement = container.querySelector('.no-songs');\n  if (songs.length === 0) {\n    resetButton.setAttribute('disabled', true);\n    resetButton.classList.add('form__submit-btn_disabled');\n    noSongsElement.classList.remove('no-songs_hidden');\n  }\n  else {\n    resetButton.removeAttribute('disabled');\n    resetButton.classList.remove('form__submit-btn_disabled');\n    noSongsElement.classList.add('no-songs_hidden');\n  }\n}\n\nfunction addSong() {\n  songsContainer.innerHTML += `\n    <div class=\"song\">\n      <h4 class=\"song__artist\">Кино</h4>\n      <p class=\"song__title\">Дерево</p>\n      <button class=\"song__like\"></button>\n    </div>\n  `;\n  renderAdded();\n}\n\n\n\n\n\naddButton.addEventListener('click', addSong);\nrenderAdded();"
+    }
+  ],
+  "instructionsHash": "152e2355462778e38a5a1efbb5f911a5ecdb7bfd60fc396db2bf372a97528910",
+  "verifiedAt": "2026-10-20T12:24:45.512Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Логика готова, но надпись остаётся, когда мы добавляем треки. Всё потому, что класса no-songs_hidden нет в CSS. Допишем его в следующем задании."
+  }
+}
