@@ -1,0 +1,18 @@
+{
+  "id": "295b285308a95ecd529ee1fe90712804b249f4cef78f3b0eb9e846e894555866",
+  "lessonId": "c770eead-dc70-450d-9b3c-3b3ffe459a91",
+  "url": "https://sandbox.practicum-team.ru/tasks/01-semantics-and-layout/05-positioning/05-z-index/example-01/pre/",
+  "instructionsHash": "ec33dc291a97c969a56e46bdb89b49f9aeb36ba4a36ed3baef5ab3208f23becc",
+  "files": [
+    {
+      "name": "css/styles.css",
+      "initialHash": "ff2e4a598e48cffed783901d530e830eda23ee8a4a212c651a544569e479c43d",
+      "content": "* {\n  box-sizing: border-box;\n}\n\nhtml {\n  min-height: 100%;\n}\n\nbody {\n  box-sizing: border-box;\n  min-width: 850px;\n  min-height: 100%;\n  margin: 0;\n  padding: 25px;\n  font-family: 'Open Sans', sans-serif;\n  font-size: 18px;\n  background-color: #000;\n}\n\na:hover {\n  color: #fd24af;\n}\n\n.page {\n  /* position: relative; */\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  height: 100%;\n  margin: 50px;\n  padding: 25px;\n  background-color: #5f0dee;\n}\n\n.card {\n  position: relative;\n  display: flex;\n  flex-direction: column;\n  justify-content: flex-start;\n  align-items: center;\n  width: 450px;\n  height: 450px;\n  border: 3px solid #fd24af;\n  padding: 15px;\n  color: white;\n  z-index: 0;\n}\n\n.card-title {\n  font-weight: 800;\n  font-size: 38px;\n  text-transform: uppercase;\n}\n\n.card-img {\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n  object-fit: cover;\n  z-index: -1;\n}\n\n.card-link {\n  color: currentColor;\n}\n"
+    }
+  ],
+  "verifiedAt": "2026-10-20T15:27:30.765Z",
+  "evidence": {
+    "selector": ".result .icon-status-success",
+    "message": "Всё отлично!"
+  }
+}

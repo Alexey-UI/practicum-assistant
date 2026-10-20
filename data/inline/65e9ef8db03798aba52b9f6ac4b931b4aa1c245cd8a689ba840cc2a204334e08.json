@@ -1,0 +1,18 @@
+{
+  "id": "65e9ef8db03798aba52b9f6ac4b931b4aa1c245cd8a689ba840cc2a204334e08",
+  "lessonId": "f8bd0d37-0f8f-4d1b-82bb-c07ffe54e532",
+  "url": "https://sandbox.practicum-team.ru/tasks/01-semantics-and-layout/06-grid-layout/10-aligning-and-justifying-items/example-01/pre/",
+  "instructionsHash": "24408a3119fd0be0d11db812d678894bdc69f2889398241033387e0714a2bdf4",
+  "files": [
+    {
+      "name": "styles/style.css",
+      "initialHash": "69d619f44d179c9725fe64f53aab42de10d253ae7cd426e26b7781a13cacf20b",
+      "content": "* {\n  box-sizing: border-box;\n}\n\nbody {\n  display: grid;\n  grid-template-columns: repeat(3, 200px);\n  grid-template-rows: repeat(2, 80px);\n  justify-content: center;\n  align-content: center;\n\n  \n  gap: 10px;\n  min-width: 850px;\n  min-height: 100vh;\n  margin: 0;\n  font-family: 'Open Sans', sans-serif;\n  background-color: #5f0dee;\n  justify-items: center;\n  align-items: center;\n}\n\np {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  margin: 0;\n  border: 2px solid #000;\n  padding: 10px;\n  font-size: 24px;\n  background-color: #fff;\n}\n"
+    }
+  ],
+  "verifiedAt": "2026-10-20T15:29:57.347Z",
+  "evidence": {
+    "selector": ".result .icon-status-success",
+    "message": "Всё отлично!"
+  }
+}

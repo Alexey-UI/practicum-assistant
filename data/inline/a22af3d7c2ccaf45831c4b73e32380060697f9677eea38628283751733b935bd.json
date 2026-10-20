@@ -1,0 +1,18 @@
+{
+  "id": "a22af3d7c2ccaf45831c4b73e32380060697f9677eea38628283751733b935bd",
+  "lessonId": "587aba26-359a-4c13-a412-b4aa9918354d",
+  "url": "https://sandbox.practicum-team.ru/tasks/01-semantics-and-layout/04-flexbox/06-align-items/example-03/pre/",
+  "instructionsHash": "2f065eb23d15201a05dad72a2826f22e34dc1aea53ad921b762b45229fe905ce",
+  "files": [
+    {
+      "name": "styles/style.css",
+      "initialHash": "47ab65c2d8b0be785132567e59598bbcfba1d8ca86b642402c77ebcc3478a7d2",
+      "content": "* {\n  box-sizing: border-box;\n}\n\nhtml,\nbody {\n  height: 100%;\n}\n\nbody {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  min-width: 900px;\n  margin: 0;\n  font-family: 'Open Sans', sans-serif;\n  font-size: 18px;\n  background-image: url(https://code.s3.yandex.net/web-code/images/dotted-l.svg);\n}\n\n.main {\n  max-width: 1200px;\n  margin: 0 auto;\n  padding: 50px 25px;\n  background-color: #fff;\n}\n\n.title {\n  text-align: center;\n}\n\n.diary {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n}\n\n.diary__img {\n  width: 150px;\n}\n\n.diary__list {\n  margin-left: 50px;\n  font-size: 24px;\n}\n"
+    }
+  ],
+  "verifiedAt": "2026-10-20T15:23:53.642Z",
+  "evidence": {
+    "selector": ".result .icon-status-success",
+    "message": "Всё отлично!"
+  }
+}

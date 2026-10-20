@@ -1,0 +1,18 @@
+{
+  "id": "3c5ed62f080fb6072ec58c899313ca04d6514e858db743311c0001a2082a754a",
+  "lessonId": "f5fa293b-4dcd-4185-b23d-d480f355b295",
+  "url": "https://sandbox.practicum-team.ru/tasks/01-semantics-and-layout/05-positioning/04-position-absolute/example-03/pre/",
+  "instructionsHash": "8c90fb4dd4a0f70c947116c1fe122d6809375e3ccaec5bd3ac24f7fb2a9f7b2f",
+  "files": [
+    {
+      "name": "css/styles.css",
+      "initialHash": "ff2e4a598e48cffed783901d530e830eda23ee8a4a212c651a544569e479c43d",
+      "content": "* {\n  box-sizing: border-box;\n}\n\nhtml {\n  min-height: 100%;\n}\n\nbody {\n  box-sizing: border-box;\n  min-width: 850px;\n  min-height: 100%;\n  margin: 0;\n  padding: 25px;\n  font-family: 'Open Sans', sans-serif;\n  font-size: 18px;\n  background-color: #000;\n}\n\na:hover {\n  color: #fd24af;\n}\n\n.page {\n  \n  display: flex;\n  justify-content: center;\n  align-items: center;\n  height: 100%;\n  margin: 50px;\n  padding: 25px;\n  background-color: #5f0dee;\n  position: relative;\n}\n\n.card {\n  /* position: relative; */\n  display: flex;\n  flex-direction: column;\n  justify-content: flex-start;\n  align-items: center;\n  width: 450px;\n  height: 450px;\n  border: 3px solid #fd24af;\n  padding: 15px;\n  color: white;\n}\n\n.card-title {\n  font-weight: 800;\n  font-size: 38px;\n  text-transform: uppercase;\n}\n\n.card-img {\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n  object-fit: cover;\n}\n\n.card-link {\n  color: currentColor;\n}\n"
+    }
+  ],
+  "verifiedAt": "2026-10-20T15:27:19.556Z",
+  "evidence": {
+    "selector": ".result .icon-status-success",
+    "message": "Всё отлично!"
+  }
+}

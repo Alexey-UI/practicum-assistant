@@ -1,0 +1,18 @@
+{
+  "id": "ac100b5c361b997545bce954cfd086a3ed5c4383e3a0aaba16063c9617ad8dbe",
+  "lessonId": "12ac490d-1453-4bc3-b7d8-0092bf4a5790",
+  "url": "https://sandbox.practicum-team.ru/tasks/01-semantics-and-layout/06-grid-layout/08-grid-area/example-01/pre/",
+  "instructionsHash": "45457b574d7d99e836f33fa4f128bc5f8f9e38a3bee56173133d501d79959c01",
+  "files": [
+    {
+      "name": "styles/style.css",
+      "initialHash": "27bc1e7d3d89a1a4d8c15406bab9d72d0092934ae0098fc703e2f3142a2013dd",
+      "content": "* {\n  box-sizing: border-box;\n}\n\nbody {\n  min-width: 850px;\n  margin: 0;\n  font-family: 'Open Sans', sans-serif;\n  font-size: 18px;\n}\n\n.page {\n  display: grid;\n  grid-template-columns: repeat(5, 1fr);\n  gap: 8px;\n  min-height: 100vh;\n  margin: 0;\n}\n\nheader,\nfigure,\naside,\nsection,\nfooter {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  margin: 0;\n  font-size: 32px;\n  background-color: #feafe8;\n}\n\n.header {\n  grid-area: header;\n}\n\n.pic {\n  grid-area: pic;\n}\n\n.aside {\n  grid-area: aside;\n}\n\n.promo {\n  grid-area: promo;\n}\n\n.footer {\n  grid-area: footer;\n}\n"
+    }
+  ],
+  "verifiedAt": "2026-10-20T15:29:35.343Z",
+  "evidence": {
+    "selector": ".result .icon-status-success",
+    "message": "Всё отлично!"
+  }
+}

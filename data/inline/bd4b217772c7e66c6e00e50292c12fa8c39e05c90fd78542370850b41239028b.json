@@ -1,0 +1,18 @@
+{
+  "id": "bd4b217772c7e66c6e00e50292c12fa8c39e05c90fd78542370850b41239028b",
+  "lessonId": "892c3e11-4d7f-418c-9cb4-cd059ef8af48",
+  "url": "https://sandbox.practicum-team.ru/tasks/01-semantics-and-layout/04-flexbox/11-order/example-02/pre/",
+  "instructionsHash": "dd2dd9c434c3f68c86a9ac420387452154fc300551ba810774e0b5dafe531267",
+  "files": [
+    {
+      "name": "styles/style.css",
+      "initialHash": "e54c483c42b2affa3e2a75c245abf5637ef549ffdb7db9d4954943374f87dd2f",
+      "content": "* {\n  box-sizing: border-box;\n}\n\nhtml {\n  height: 100%;\n}\n\nbody {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  min-width: 850px;\n  min-height: 100%;\n  margin: 0;\n  padding: 0 50px;\n  color: #fff;\n  font-family: 'Open Sans', sans-serif;\n  font-size: 18px;\n  background-image: url(https://code.s3.yandex.net/web-code/images/dotted.svg);\n}\n\n.main {\n  display: flex;\n  flex-wrap: wrap;\n  justify-content: center;\n  align-content: center;\n  gap: 20px;\n  max-width: 960px;\n  padding: 25px;\n  background-color: #fff;\n}\n  \n.banner {\n  width: 100%;\n  padding: 15px 25px;\n}\n  \n.banner_first {\n  background-color: #5f0dee;\n}\n  \n.banner_second {\n  \n  \n  background-color: #6dc1fd;\n  order: 1;\n}\n  \n.banner_third {\n  background-color: #80d994;\n}\n\n.banner_fourth {\n  background-color: #ffc802;\n}\n\n.banner__text {\n  font-size: 42px;\n  text-align: center;\n}\n"
+    }
+  ],
+  "verifiedAt": "2026-10-20T15:25:44.320Z",
+  "evidence": {
+    "selector": ".result .icon-status-success",
+    "message": "Всё отлично!"
+  }
+}

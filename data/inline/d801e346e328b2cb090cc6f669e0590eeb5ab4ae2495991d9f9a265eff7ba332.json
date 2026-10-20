@@ -1,0 +1,18 @@
+{
+  "id": "d801e346e328b2cb090cc6f669e0590eeb5ab4ae2495991d9f9a265eff7ba332",
+  "lessonId": "966a3a98-b34a-4ae3-9bdc-aa85f46a97c2",
+  "url": "https://sandbox.practicum-team.ru/tasks/01-semantics-and-layout/06-grid-layout/03-rows-and-columns/example-01/pre/",
+  "instructionsHash": "a245f895fba085163e304f2ca2f76252bf9ca97017eab267d7c2f31804d300b9",
+  "files": [
+    {
+      "name": "styles/style.css",
+      "initialHash": "0313ce389a440d32704e3262005c19a886e53df09133e1704fedf38fbf09986d",
+      "content": "* {\n  box-sizing: border-box;\n}\n\nbody {\n  min-width: 850px;\n  margin: 0;\n  font-family: 'Open Sans', sans-serif;\n  background-color: #000;\n}\n\n.container {\n  display: grid;\n  grid-template-columns: 190px 200px 270px;\n  grid-template-rows: 150px 150px 100px;\n}\n\n.container p {\n  margin: 0;\n  padding: 10px;\n  font-size: 40px;\n}\n\n.container p:first-of-type {\n  background-color: white;\n}\n\n.container p:nth-of-type(2) {\n  background-color: #feafe8;\n}\n\n.container p:nth-of-type(3) {\n  background-color: #80d994;\n}\n\n.container p:nth-of-type(4) {\n  background-color: #feafe8;\n}\n\n.container p:nth-of-type(5) {\n  background-color: #80d994;\n}\n\n.container p:nth-of-type(6) {\n  background-color: white;\n}\n\n.container p:nth-of-type(7) {\n  background-color: white;\n}\n\n.container p:nth-of-type(8) {\n  background-color: #feafe8;\n}\n\n.container p:nth-of-type(9) {\n  background-color: #80d994;\n}\n"
+    }
+  ],
+  "verifiedAt": "2026-10-20T15:28:33.526Z",
+  "evidence": {
+    "selector": ".result .icon-status-success",
+    "message": "Всё отлично!"
+  }
+}

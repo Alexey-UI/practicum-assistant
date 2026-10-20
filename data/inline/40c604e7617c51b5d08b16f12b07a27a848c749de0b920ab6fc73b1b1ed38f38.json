@@ -1,0 +1,18 @@
+{
+  "id": "40c604e7617c51b5d08b16f12b07a27a848c749de0b920ab6fc73b1b1ed38f38",
+  "lessonId": "892c3e11-4d7f-418c-9cb4-cd059ef8af48",
+  "url": "https://sandbox.practicum-team.ru/tasks/01-semantics-and-layout/04-flexbox/12-align-self/example-01/pre/",
+  "instructionsHash": "ba00565e9137130747c534a8fe399185e28733e1d0e190e6a4c1f9a3df3e4ac3",
+  "files": [
+    {
+      "name": "styles/style.css",
+      "initialHash": "cc1db8d0007c7f71f27a2502de968980f15b0842f11d390e571c1773521979a0",
+      "content": "* {\n  box-sizing: border-box;\n}\n\nhtml {\n  height: 100%;\n}\n\nbody {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  min-width: 850px;\n  min-height: 100%;\n  margin: 0;\n  font-family: 'Open Sans', sans-serif;\n  font-size: 18px;\n  background-color: #ffc802;\n}\n\n.main {\n  display: flex;\n  flex-wrap: wrap;\n  justify-content: center;\n  align-content: center;\n  gap: 20px;\n  max-width: 1440px;\n  padding: 50px 25px;\n}\n \n.day {\n  display: flex;\n  justify-content: space-between;\n  align-items: flex-start;\n  width: 50%;\n  border: 3px solid #000;\n  padding: 20px;\n  background-color: #fff;\n}\n  \n.day__name {\n  width: 30%;\n}\n\n.day__schedule {\n  width: 40%;\n}\n\n.day__mood {\n  \n\n  width: 30%;\n  align-self: center;\n}\n\n.day__image {\n  display: block;\n  width: 50px;\n  margin: auto;\n}\n"
+    }
+  ],
+  "verifiedAt": "2026-10-20T15:25:52.582Z",
+  "evidence": {
+    "selector": ".result .icon-status-success",
+    "message": "Всё отлично!"
+  }
+}

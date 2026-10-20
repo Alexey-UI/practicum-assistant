@@ -1,0 +1,18 @@
+{
+  "id": "549d2549f8e523e484d5e45ca9eb428e71795742e420f8d55ad91c41ec159cbe",
+  "lessonId": "876a4661-ea39-400e-b555-04bb8dbb79d4",
+  "url": "https://sandbox.practicum-team.ru/tasks/01-semantics-and-layout/05-positioning/07-position-sticky/example-02/pre/",
+  "instructionsHash": "b1bb1149329fc848d0ea25ee6d91517dff646d79c5550f5ae44bf2b7ddae5d73",
+  "files": [
+    {
+      "name": "css/styles.css",
+      "initialHash": "5713dd08503acfb45ad9779450e1171c5806c8e394367c668af773e2ee9fbbba",
+      "content": "* {\n  box-sizing: border-box;\n}\n\nbody {\n  min-width: 850px;\n  margin: 0;\n  padding: 25px;\n  font-family: 'Open Sans', sans-serif;\n  font-size: 18px;\n  background-image: url(https://code.s3.yandex.net/web-code/images/dotted.svg);\n}\n\n.section {\n  display: flex;\n  justify-content: space-between;\n  align-items: flex-start;\n  gap: 25px;\n  box-sizing: border-box;\n  height: 100vh;\n  min-height: 550px;\n  border: 1px solid #000;\n  padding: 25px;\n  background-color: #fff;\n}\n\n.section:not(:last-child) {\n  margin-bottom: 50px;\n}\n\n.section-content {\n  display: flex;\n  flex-wrap: wrap;\n  gap: 10px;\n  width: 50%;\n  height: 100%;\n}\n\n.section-block {\n  flex-grow: 1;\n  width: 40%;\n  height: 50%;\n  border: 1px solid #000;\n}\n\n.section-image {\n  width: 100%;\n  height: 100%;\n  object-fit: cover;\n  object-position: center;\n}\n\n.section-title {\n  position: sticky;\n  margin: 0;\n  font-weight: 800;\n  font-size: 38px;\n  text-transform: uppercase;\n  top: 20px;\n}\n"
+    }
+  ],
+  "verifiedAt": "2026-10-20T15:27:58.386Z",
+  "evidence": {
+    "selector": ".result .icon-status-success",
+    "message": "Всё отлично!"
+  }
+}

@@ -86,6 +86,44 @@ test('Пример для чтения не отправляется на про
   } finally { process.chdir(original); await page.close(); await rm(dir, { recursive: true, force: true }); }
 });
 
+test('Повтор одного sandbox в уроке хранит отдельное решение и принимает только исходник или проверенный код предыдущего примера', async () => {
+  const page = await browser.newPage(); const original = process.cwd(); const dir = await mkdtemp(path.join(tmpdir(), 'practicum-inline-repeat-'));
+  try {
+    process.chdir(dir); await fixture(page, true);
+    await page.locator('.theory-viewer').evaluate(el => el.insertAdjacentHTML('beforeend', '<section><p>Теперь используйте сокращённую запись.</p><div class="iframe-wrapper"><iframe src="https://sandbox.practicum-team.ru/tasks/test/pre/"></iframe></div></section>'));
+    const first = await readInline(page, 0); const second = await readInline(page, 1);
+    assert.notEqual(first.id, second.id);
+    assert.notEqual(first.instructionsHash, second.instructionsHash);
+    await atomicJson(`.local/inline-solutions/${first.id}.json`, { ...first, files: [{ name: 'index.html', initialHash: first.files[0].hash, content: 'fixed' }] });
+    assert.equal(await solveInline(page, 0, true), true);
+    const saved = await readJson<InlineSolution | null>(`data/inline/${first.id}.json`, null);
+    assert.ok(saved);
+    assert.equal(await solveInline(page, 1), false);
+    await atomicJson(`.local/inline-solutions/${second.id}.json`, { ...second, files: [{ name: 'index.html', initialHash: second.files[0].hash, content: 'shorthand' }] });
+    const frame = await sandboxFrame(page, 1);
+    await frame.getByRole('textbox').fill('unrelated user edit');
+    await assert.rejects(() => applyInline(page, 1), /Исходный файл.*изменился/);
+    assert.equal(await frame.locator('body').getAttribute('data-clicks'), null);
+    // The real sandbox restores the previous occurrence's accepted code by URL.
+    await frame.getByRole('textbox').fill('fixed');
+    assert.equal(await solveInline(page, 1, true), true);
+    assert.equal(await frame.locator('body').getAttribute('data-clicks'), '1');
+    assert.equal(await (await sandboxFrame(page, 0)).locator('body').getAttribute('data-clicks'), '1');
+    assert.deepEqual(await readJson(`data/inline/${first.id}.json`, null), saved);
+    assert.equal((await readJson<{ phase: string }>(`.local/inline/${second.id}.json`, { phase: '' })).phase, 'correct');
+    const firstFrame = await sandboxFrame(page, 0);
+    await firstFrame.getByRole('textbox').fill('shorthand');
+    await applyInline(page, 0, false);
+    assert.equal(await firstFrame.getByRole('textbox').inputValue(), 'fixed', 'Возобновление допускает только подтверждённый код другого экземпляра');
+    const pending = await readJson<Record<string, unknown>>(`.local/inline/${second.id}.json`, {});
+    await atomicJson(`.local/inline/${second.id}.json`, { ...pending, phase: 'requested', detectedResult: undefined });
+    await assert.rejects(() => applyInline(page, 1), /результат предыдущей проверки/);
+    assert.equal(await frame.locator('body').getAttribute('data-clicks'), '1');
+    await firstFrame.getByRole('textbox').fill('shorthand');
+    await assert.rejects(() => applyInline(page, 0, false), /Исходный файл.*изменился/);
+  } finally { process.chdir(original); await page.close(); await rm(dir, { recursive: true, force: true }); }
+});
+
 test('Асинхронное переключение вкладок не смешивает исходники HTML и CSS', async () => {
   const page = await browser.newPage(); const original = process.cwd(); const dir = await mkdtemp(path.join(tmpdir(), 'practicum-inline-tabs-'));
   try {

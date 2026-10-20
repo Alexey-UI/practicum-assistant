@@ -1,0 +1,18 @@
+{
+  "id": "93d61a6684f120391e09bb1c0e5b33eb4fc0a12a0d163ad3b463166b3fb72df6",
+  "lessonId": "a41f8377-e386-46e8-9b58-8ff3ac67ebac",
+  "url": "https://sandbox.practicum-team.ru/tasks/01-semantics-and-layout/05-positioning/06-position-fixed/example-01/pre/",
+  "instructionsHash": "2ccad84771e2d6f618fbb71635a883cf24d969d502bde59f3dc40acf1328147b",
+  "files": [
+    {
+      "name": "css/styles.css",
+      "initialHash": "67c4493e9d2f3c09d83bae116b8a65f96f45604560010e53f7752c8ea8da671f",
+      "content": "* {\n  box-sizing: border-box;\n}\n\nbody {\n  min-width: 850px;\n  margin: 0;\n  font-family: 'Open Sans', sans-serif;\n  font-size: 18px;\n}\n\n.header {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  padding: 25px;\n  background-color: rgb(255 255 255 / 0.5);\n  position: fixed;\n}\n\n.logo {\n  color: currentColor;\n  font-size: 25px;\n  text-decoration: none;\n}\n\n.menu-list {\n  display: flex;\n  gap: 15px;\n  list-style-type: none;\n}\n\n.menu-link {\n  color: currentColor;\n  text-decoration: none;\n}\n\n.menu-link:hover {\n  color: #fd24af;\n  text-decoration: underline;\n}\n\n.section {\n  display: grid;\n  justify-content: center;\n  align-items: center;\n  gap: 25px;\n  height: 100vh;\n  padding: 0 50px;\n}\n\n.section-title {\n  font-weight: 800;\n  font-size: 38px;\n  text-transform: uppercase;\n}\n\n.section:first-of-type {\n  background-color: #c4c4c4;\n}\n\n.section:nth-of-type(2) {\n  background-color: #feafe8;\n}\n\n.section:nth-of-type(3) {\n  background-color: #ffc802;\n}\n\n.section:nth-of-type(4) {\n  background-color: #6dc1fd;\n}\n\n.section:last-of-type {\n  background-color: #80d994;\n}\n"
+    }
+  ],
+  "verifiedAt": "2026-10-20T15:27:41.293Z",
+  "evidence": {
+    "selector": ".result .icon-status-success",
+    "message": "Всё отлично!"
+  }
+}

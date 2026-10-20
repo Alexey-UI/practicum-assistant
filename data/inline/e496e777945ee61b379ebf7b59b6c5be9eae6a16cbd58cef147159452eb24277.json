@@ -1,0 +1,18 @@
+{
+  "id": "e496e777945ee61b379ebf7b59b6c5be9eae6a16cbd58cef147159452eb24277",
+  "lessonId": "966a3a98-b34a-4ae3-9bdc-aa85f46a97c2",
+  "url": "https://sandbox.practicum-team.ru/tasks/01-semantics-and-layout/06-grid-layout/03-rows-and-columns/example-02/pre/",
+  "instructionsHash": "cdacb6d6595660c83e80720dd231ffb57c6c2fc41905199732c8ea65ed1024a9",
+  "files": [
+    {
+      "name": "index.html",
+      "initialHash": "85a634178f8134bcd331d27e102c6bb36f42fb35cf361270f7e79adb5d8add22",
+      "content": "<!DOCTYPE html>\n<html lang=\"ru\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <title>Время поныть</title>\n  <link rel=\"stylesheet\" href=\"https://code.s3.yandex.net/web-code/fonts/fonts.css\">\n  <link rel=\"stylesheet\" href=\"styles/style.css\">\n</head>\n<body>\n  <div class=\"container\">\n    <p>как</p>\n    <p>много</p>\n    <p>информации</p>\n    <p>неужели</p>\n    <p>я</p>\n    <p>всё</p>\n    <p>это</p>\n  </div>\n</body>\n</html>\n"
+    }
+  ],
+  "verifiedAt": "2026-10-20T15:29:00.920Z",
+  "evidence": {
+    "selector": ".result .icon-status-success",
+    "message": "Всё отлично!"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "id": "23b6c06fcdd7ccbdfdb47b4e2ee3e6365969b1c5a0363f2bf3ab77a459bb262c",
+  "lessonId": "227c0a5b-0ad1-43c0-ae7a-02aae5046afe",
+  "url": "https://sandbox.practicum-team.ru/tasks/01-semantics-and-layout/04-flexbox/08-flex-wrap/example-02/pre/",
+  "instructionsHash": "4df474c266e1b0c80a71da3c519f9da8886c9495a0781f250eb0b372f2c18359",
+  "files": [
+    {
+      "name": "styles/style.css",
+      "initialHash": "8fdebdf180342be40db8e8ad70fbf99749a35e3739c5d4df5b506efc419595d7",
+      "content": "* {\n  box-sizing: border-box;\n}\n\nhtml,\nbody {\n  min-height: 100%;\n}\n\nbody {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  min-width: 850px;\n  margin: 0;\n  font-family: 'Open Sans', sans-serif;\n  font-size: 18px;\n}\n\n.page-title {\n  max-width: 780px;\n  margin: 0 auto 50px;\n  text-align: center;\n}\n\n.content {\n  display: flex;\n  flex-wrap: wrap;\n  max-width: 780px;\n  margin: 0 50px;\n}\n\n.card {\n  display: flex;\n  align-items: center;\n  width: 350px;\n  border: 1px solid #fd24af;\n  padding: 25px;\n}\n\n.card__img {\n  width: 150px;\n  margin-right: 5%;\n}\n"
+    }
+  ],
+  "verifiedAt": "2026-10-20T15:24:46.485Z",
+  "evidence": {
+    "selector": ".result .icon-status-success",
+    "message": "Всё отлично!"
+  }
+}

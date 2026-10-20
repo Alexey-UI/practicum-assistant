@@ -7,6 +7,7 @@ interface MirrorElement extends HTMLElement { CodeMirror?: { getValue(): string 
 export interface InlineTask {
   id: string; lessonId: string; url: string; instructions: string; instructionsHash: string;
   previousInstructionsHash?: string;
+  sharedOccurrenceIds?: string[];
   files: Array<{ name: string; content: string; hash: string }>;
 }
 export interface InlineSolution {
@@ -156,7 +157,15 @@ export async function readInline(page: Page, index: number, onlyNames?: string[]
   const url = safeUrl(frame.url());
   const ownerLesson = lessonId(page.url());
   if (!ownerLesson) throw new Error('Не определён урок встроенного примера');
-  const task = { id: contentHash(url), lessonId: ownerLesson, url, instructions: normalize(instructions.clean), instructionsHash: contentHash(normalize(instructions.clean)), previousInstructionsHash: contentHash(normalize(instructions.previous)), files };
+  const sources = await page.locator('.theory-viewer iframe').evaluateAll(frames => frames.map(frame => (frame as HTMLIFrameElement).src));
+  const sameSource = (source: string) => source && safeUrl(source).replace(/\/+$/, '') === url.replace(/\/+$/, '');
+  const occurrence = sources.slice(0, index).filter(sameSource).length;
+  // Keep existing IDs for the first copy. Later copies can have a different
+  // prompt even though the sandbox stores their editor contents by the same URL.
+  const occurrenceId = (number: number) => contentHash(number ? JSON.stringify({ url, lessonId: ownerLesson, occurrence: number }) : url);
+  const sharedOccurrenceIds = sources.filter(sameSource).map((_, number) => occurrenceId(number)).filter(id => id !== occurrenceId(occurrence));
+  const task = { id: occurrenceId(occurrence), lessonId: ownerLesson, url, instructions: normalize(instructions.clean), instructionsHash: contentHash(normalize(instructions.clean)), previousInstructionsHash: contentHash(normalize(instructions.previous)),
+    ...(sharedOccurrenceIds.length ? { sharedOccurrenceIds } : {}), files };
   if (!onlyNames) await atomicJson('.local/pending-inline.json', task);
   return task;
 }
@@ -169,10 +178,22 @@ export async function applyInline(page: Page, index: number, candidate = true): 
   if (state?.phase === 'requested') throw new Error('Перед редактированием нужно выяснить результат предыдущей проверки');
   const previousFiles = candidate && state?.phase === 'wrong' ? state.files ?? [] : [];
   if (previousFiles.some(previous => !solution.files.some(file => file.name === previous.name && file.initialHash === previous.initialHash))) throw new Error('Сохраните исходные хеши и все файлы предыдущей попытки');
+  let inheritedFiles: NonNullable<InlineState['files']> = [];
+  for (const sharedId of task.sharedOccurrenceIds ?? []) {
+    const previous = await readJson<InlineSolution | null>(`data/inline/${sharedId}.json`, null);
+    const receipt = await readJson<InlineState | null>(`.local/inline/${sharedId}.json`, null);
+    if (previous?.id === sharedId && previous.lessonId === task.lessonId && previous.url === task.url
+      && previous.verifiedAt && previous.evidence?.message && receipt?.phase === 'correct' && receipt.verifiedAt
+      && receipt.solutionHash === contentHash(JSON.stringify(previous.files))
+      && previous.files.every(file => receipt.files?.some(saved => saved.name === file.name && saved.initialHash === file.initialHash && saved.contentHash === contentHash(file.content)))) {
+      inheritedFiles.push(...receipt.files ?? []);
+    }
+  }
   const frame = await sandboxFrame(page, index);
   for (const file of solution.files) {
     const existing = task.files.find(item => item.name === file.name);
-    if (!existing || !canReplaceTrainerFile(existing.hash, file, previousFiles.find(previous => previous.name === file.name))) throw new Error(`Исходный файл ${file.name} изменился: требуется разбор`);
+    if (!existing || !(canReplaceTrainerFile(existing.hash, file, previousFiles.find(previous => previous.name === file.name))
+      || inheritedFiles.some(previous => previous.name === file.name && canReplaceTrainerFile(existing.hash, file, previous)))) throw new Error(`Исходный файл ${file.name} изменился: требуется разбор`);
   }
   for (const file of solution.files) {
     if (task.files.find(item => item.name === file.name)!.hash === contentHash(file.content)) continue;

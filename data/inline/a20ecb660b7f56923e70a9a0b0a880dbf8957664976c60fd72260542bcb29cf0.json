@@ -1,0 +1,18 @@
+{
+  "id": "a20ecb660b7f56923e70a9a0b0a880dbf8957664976c60fd72260542bcb29cf0",
+  "lessonId": "2ee5eba7-1115-4f1d-ab19-e806fae74b77",
+  "url": "https://sandbox.practicum-team.ru/tasks/01-semantics-and-layout/04-flexbox/13-basis-grow-shrink/example-04/pre/",
+  "instructionsHash": "d17a7232cb85dd4d1884e6fb920f2f43e4d2fc69003fd0135d0c6251190a9756",
+  "files": [
+    {
+      "name": "styles/style.css",
+      "initialHash": "b177c1cdda36eebfb051980052ae687b6e2921a9d664cd4a620d22dc6d7210df",
+      "content": "* {\n  box-sizing: border-box;\n}\n\nhtml {\n  height: 100%;\n}\n\nbody {\n  display: flex;\n  flex-direction: column;\n  min-width: 1200px;\n  min-height: 100%;\n  margin: 0;\n  font-family: 'Open Sans', sans-serif;\n  font-size: 18px;\n}\n\nheader,\nfooter {\n  display: flex;\n  justify-content: center;\n  padding: 25px 15px;\n  background-color: #80d994;\n}\n\nh1 {\n  font-weight: 800;\n  font-size: 45px;\n  text-transform: uppercase;\n}\n\nh2 {\n  margin: 0;\n  font-weight: 800;\n  font-size: 38px;\n  text-transform: uppercase;\n}\n\n.main {\n  display: flex;\n  flex-grow: 1;\n  justify-content: center;\n}\n\n.content {\n  display: flex;\n  flex-wrap: nowrap;\n  align-items: center;\n  gap: 25px;\n  width: 100%;\n  max-width: 1200px;\n  padding: 15px;\n}\n\n.card {\n  flex-basis: 300px;\n  min-height: 200px;\n  border: 2px solid #000;\n  text-align: center;\n}\n\n.card__content {\n  padding: 15px 10px;\n}\n\n.card__image {\n  width: 100%;\n  height: 200px;\n  border-bottom: 2px solid black;\n  object-fit: cover;\n}\n\n.card_first {\n  flex-shrink: 3;\n}\n\n.card_second {\n  flex-shrink: 0;\n}\n"
+    }
+  ],
+  "verifiedAt": "2026-10-20T15:26:16.570Z",
+  "evidence": {
+    "selector": ".result .icon-status-success",
+    "message": "Всё отлично!"
+  }
+}

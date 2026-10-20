@@ -1,0 +1,18 @@
+{
+  "id": "807c466a05df6c5cc0786f02578bf01a03accdb42eb21cb67efa759a70b89454",
+  "lessonId": "68b90d1f-6d00-4124-89b2-d6f7f57237fa",
+  "url": "https://sandbox.practicum-team.ru/tasks/01-semantics-and-layout/06-grid-layout/04-gaps/example-01/pre/",
+  "instructionsHash": "159b4a4decdf509ce35aad653fb97e8a8f802b870ba7ff6555909c1321f5c135",
+  "files": [
+    {
+      "name": "styles/style.css",
+      "initialHash": "ba61d1a0d6f4a11ca5d747f23cab776757fa3871b8257cf92f7fcc50dcc87964",
+      "content": "* {\n  box-sizing: border-box;\n}\n\nbody {\n  min-width: 850px;\n  margin: 0;\n  font-family: 'Open Sans', sans-serif;\n  background-color: #000;\n}\n\n.container {\n  display: grid;\n  grid-template-columns: 190px 200px 270px;\n  grid-template-rows: 150px 150px 100px;\n  gap: 10px;\n}\n\n.container p {\n  margin: 0;\n  padding: 10px;\n  font-size: 40px;\n}\n\n.container p:first-of-type {\n  background-color: white;\n}\n\n.container p:nth-of-type(2) {\n  background-color: #feafe8;\n}\n\n.container p:nth-of-type(3) {\n  background-color: #80d994;\n}\n\n.container p:nth-of-type(4) {\n  background-color: #feafe8;\n}\n\n.container p:nth-of-type(5) {\n  background-color: #80d994;\n}\n\n.container p:nth-of-type(6) {\n  background-color: white;\n}\n\n.container p:nth-of-type(7) {\n  background-color: white;\n}\n\n.container p:nth-of-type(8) {\n  background-color: #feafe8;\n}\n\n.container p:nth-of-type(9) {\n  background-color: #80d994;\n}\n"
+    }
+  ],
+  "verifiedAt": "2026-10-20T15:29:09.074Z",
+  "evidence": {
+    "selector": ".result .icon-status-success",
+    "message": "Всё отлично!"
+  }
+}
