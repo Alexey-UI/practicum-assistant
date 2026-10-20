@@ -1,0 +1,18 @@
+{
+  "id": "6ea77c6b4f3a335618d2ead91d20ff3d5b49a26c1012483f6eead2560892b467",
+  "lessonId": "e00a881f-7b76-4a0e-af3f-d1bfbb95ee2f",
+  "url": "https://sandbox.practicum-team.ru/tasks/04-beautishcha/05-decoration/08-conic-gradient/example-07/pre/",
+  "instructionsHash": "b6e9fa930b2cf1f675de521a4749c31337694b77afaf18dfff8e9834a77196fe",
+  "files": [
+    {
+      "name": "styles/style.css",
+      "initialHash": "987fbc486991f8f0a23c4426250a6b590a9ab8b5cf2994e33120bc4b5603f199",
+      "content": "html {\n  block-size: 100%;\n}\n\nbody {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  margin: 0;\n  font-family: 'Open Sans', sans-serif;\n  background: url(https://code.s3.yandex.net/web-code/images/dotted-l.svg);\n  block-size: 100%;\n  min-inline-size: 650px;\n}\n\n.wrapper {\n  display: flex;\n  gap: 60px;\n  border: 1px solid #000;\n  padding: 50px;\n  background-color: #fff;\n  max-inline-size: 850px;\n}\n\n.content {\n  min-inline-size: 200px;\n}\n\n.content h2 {\n  margin-block-start: 5px;\n  font-size: 22px;\n}\n\nli {\n  position: relative;\n  margin-block-end: 10px;\n  list-style: none;\n}\n\nli::before {\n  content: '';\n  position: absolute;\n  margin-inline-end: 8px;\n  border: 1px solid black;\n  inset-block-start: 5px;\n  inset-inline-start: -20px;\n  inline-size: 12px;\n  block-size: 12px;\n}\n\nli:nth-child(1)::before {\n  background-color: #5f0dee;\n}\n\nli:nth-child(2)::before {\n  background-color: #80d994;\n}\n\nli:nth-child(3)::before {\n  background-color: #fd24af;\n}\n\nli:nth-child(4)::before {\n  background-color: #6dc1fd;\n}\n\nli:nth-child(5)::before {\n  background-color: #ffc802;\n}\n\n.chart {\n  flex-shrink: 0;\n  border-radius: 50%;\n  background-image: conic-gradient( #5f0dee 15%, #80d994 15% 20%, #fd24af 20% 33%, #6dc1fd 33% 50%, #ffc802 50% );\n  inline-size: 300px;\n  block-size: 300px;\n}\n"
+    }
+  ],
+  "verifiedAt": "2026-10-20T11:15:06.457Z",
+  "evidence": {
+    "selector": ".result .icon-status-success",
+    "message": "Всё отлично!"
+  }
+}

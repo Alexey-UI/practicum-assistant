@@ -1,0 +1,18 @@
+{
+  "taskId": "4baeed4e-1bf6-408c-a508-573407e287e5",
+  "lessonId": "9902ed5e-97e6-46ad-bc26-b70881185d29",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "files": [
+    {
+      "name": "style.css",
+      "initialHash": "c0b26e8c9690e7f7c77db64d5e129a3fe2248271a62fd158dead9860e501cacd",
+      "content": "*,\n*::before,\n*::after {\n  box-sizing: border-box;\n}\n\nbody {\n  inline-size: 100dvi;\n  block-size: 100dvb;\n  margin: 0;\n  padding: 0;\n  overflow: hidden;\n  background-color: black;\n}\n\n.sun {\n  position: absolute;\n  z-index: 2;\n  inline-size: 100%;\n  block-size: 50%;\n  opacity: 0.5;\n  background-image:\n    radial-gradient(circle at bottom, rgb(254 255 255 / 0.8) 5%, rgb(236 255 0) 10%, rgb(253 50 41) 25%, rgb(243 0 0) 40%, rgb(93 0 0) 100%),\n    radial-gradient(circle at bottom, rgb(242 248 247) 0%, rgb(249 249 28) 3%, rgb(247 214 46) 8%, rgb(248 200 95) 12%, rgb(201 165 132) 30%, rgb(115 130 133) 50%, rgb(46 97 122) 85%, rgb(24 75 106) 100%);\n  background-repeat: no-repeat;\n  inset-block-start: 0;\n  inset-inline-end: 0%;\n}\n\n.sky {\n  position: absolute;\n  z-index: 1;\n  inline-size: 100%;\n  block-size: 50%;\n  opacity: 0.52;\n  background-image: linear-gradient(to top, rgb(249 251 240) 10%, rgb(215 253 254) 20%, rgb(167 222 253) 40%, rgb(110 175 255) 100%);\n  inset-block-start: 0;\n  inset-inline-end: 0;\n}\n\n.horizon {\n  position: absolute;\n  z-index: 1;\n  inline-size: 100%;\n  block-size: 50%;\n  opacity: 0.99;\n  background-image: linear-gradient(to top, rgb(212 87 43 / 0.9) 0%, rgb(246 149 52 / 0.8) 20%, rgb(24 75 106 / 0) 100%);\n  background-repeat: no-repeat;\n  inset-block-start: 0;\n  inset-inline-end: 0;\n}\n\n.water {\n  position: absolute;\n  z-index: 2;\n  inline-size: 100%;\n  block-size: 50%;\n  overflow: hidden;\n  background-image: linear-gradient(to top, rgb(0 25 45) 0%, rgb(14 71 117) 35%, rgb(26 126 174) 70%, rgb(62 168 220) 100%);\n  background-repeat: no-repeat;\n  inset-block-end: 0;\n  inset-inline-end: 0;\n}\n\n.water-distance {\n  position: absolute;\n  z-index: 2;\n  inline-size: 100%;\n  block-size: 50%;\n  background-image: linear-gradient(to top, rgb(0 0 0 / 0) 10%, rgb(0 0 0 / 0.2) 44%, rgb(0 0 0 / 0.65) 95%, rgb(0 0 0 / 0.62) 100%);\n  background-repeat: no-repeat;\n  inset-block-end: 0;\n  inset-inline-end: 0;\n}\n\n.water-reflection-container {\n  position: absolute;\n  z-index: 2;\n  inline-size: 103%;\n  block-size: 50%;\n  overflow: hidden;\n  perspective: 30px;\n  perspective-origin: 50% -12%;\n  inset-block-start: 50%;\n  inset-inline-end: -3%;\n}\n\n.water-reflection-middle {\n  position: absolute;\n  z-index: 2;\n  inline-size: 200%;\n  block-size: 55%;\n  opacity: 0.7;\n  background-repeat: no-repeat;\n  transform: rotateX(45deg);\n  inset-block-start: 0;\n  inset-inline-end: -50%;\n  background-image: radial-gradient(ellipse at 50% 0, rgb(247 177 72) 3%, rgb(248 175 65) 6%, rgb(207 62 30 / 0.4) 35%, rgb(176 91 48 / 0.1) 45%, rgb(141 88 47 / 0) 60%, rgb(141 88 47 / 0) 100%);\n}"
+    }
+  ],
+  "instructionsHash": "961245f1723523ce61d962bc2c3dfafb8648a7bea0ba16ae447ae69544b0d2e7",
+  "verifiedAt": "2026-10-20T11:13:58.425Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Чудеса компьютерной графики!"
+  }
+}

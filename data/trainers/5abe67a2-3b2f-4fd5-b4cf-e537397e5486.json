@@ -1,0 +1,18 @@
+{
+  "taskId": "5abe67a2-3b2f-4fd5-b4cf-e537397e5486",
+  "lessonId": "9902ed5e-97e6-46ad-bc26-b70881185d29",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "files": [
+    {
+      "name": "style.css",
+      "initialHash": "a2ba9c3827423698d14baa1bc814fa1f37803d4e3e774b2777ae558f25c366d4",
+      "content": "*,\n*::before,\n*::after {\n  box-sizing: border-box;\n}\n\nbody {\n  inline-size: 100dvi;\n  block-size: 100dvb;\n  margin: 0;\n  padding: 0;\n  overflow: hidden;\n  background-color: black;\n}\n\n.sun {\n  position: absolute;\n  z-index: 2;\n  inline-size: 100%;\n  block-size: 50%;\n  opacity: 0.5;\n  background-repeat: no-repeat;\n  inset-block-start: 0;\n  inset-inline-end: 0%;\n  background-image: radial-gradient(circle at bottom, rgb(254 255 255 / 0.8) 5%, rgb(236 255 0) 10%, rgb(253 50 41) 25%, rgb(243 0 0) 40%, rgb(93 0 0) 100%), radial-gradient(circle at bottom, rgb(242 248 247) 0%, rgb(249 249 28) 3%, rgb(247 214 46) 8%, rgb(248 200 95) 12%, rgb(201 165 132) 30%, rgb(115 130 133) 50%, rgb(46 97 122) 85%, rgb(24 75 106) 100%);\n}\n\n.sky {\n  position: absolute;\n  z-index: 1;\n  inline-size: 100%;\n  block-size: 50%;\n  opacity: 0.52;\n  background-image: linear-gradient(to top, rgb(249 251 240) 10%, rgb(215 253 254) 20%, rgb(167 222 253) 40%, rgb(110 175 255) 100%);\n  inset-block-start: 0;\n  inset-inline-end: 0;\n}\n\n.horizon {\n  position: absolute;\n  z-index: 1;\n  inline-size: 100%;\n  block-size: 50%;\n  opacity: 0.99;\n  background-image: linear-gradient(to top, rgb(212 87 43 / 0.9) 0%, rgb(246 149 52 / 0.8) 20%, rgb(24 75 106 / 0) 100%);\n  background-repeat: no-repeat;\n  inset-block-start: 0;\n  inset-inline-end: 0;\n}\n\n.water {\n  position: absolute;\n  z-index: 2;\n  inline-size: 100%;\n  block-size: 50%;\n  overflow: hidden;\n  background-image: linear-gradient(to top, rgb(0 25 45) 0%, rgb(14 71 117) 35%, rgb(26 126 174) 70%, rgb(62 168 220) 100%);\n  background-repeat: no-repeat;\n  inset-block-end: 0;\n  inset-inline-end: 0;\n}"
+    }
+  ],
+  "instructionsHash": "1b324125422372ca4d268c9e166788e1a9e8e4f6dd190b55b0da61e67d38617e",
+  "verifiedAt": "2026-10-20T11:12:31.457Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Вау! Вау! Вау!"
+  }
+}

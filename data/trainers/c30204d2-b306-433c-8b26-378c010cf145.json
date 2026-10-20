@@ -1,0 +1,18 @@
+{
+  "taskId": "c30204d2-b306-433c-8b26-378c010cf145",
+  "lessonId": "2e693968-dd06-4411-9d12-196f67360d29",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "files": [
+    {
+      "name": "style.css",
+      "initialHash": "b744c25dec5cdf1ed2de1a38048b1a846ef1393adacf40776e4211789f7dafb5",
+      "content": "*,\n*::before,\n*::after {\n  box-sizing: border-box;\n}\n\nbody {\n  margin: 0;\n  font-family: 'Open Sans', sans-serif;\n  font-size: 18px;\n  background-color: #fff;\n  background-image: url(https://code.s3.yandex.net/web-code/images/dotted.svg);\n}\n\n.cover {\n  position: relative;\n  display: grid;\n  place-items: center;\n  padding: 5%;\n  text-transform: uppercase;\n  background-position: center;\n  background-size: cover;\n  aspect-ratio: 16 / 9;\n}\n\n.cover-image {\n  position: absolute;\n  inset: 0;\n  z-index: -1;\n  inline-size: 100%;\n  block-size: 100%;\n  object-fit: cover;\n  filter: brightness(70%);\n}\n\n.heading {\n  color: #fff;\n  font-family: sans-serif;\n  font-size: 4em;\n  hyphens: auto;\n  text-wrap: balance;\n}\n\n.content {\n  inline-size: 90%;\n  margin: 40px auto;\n  border: 1px solid #000;\n  padding: 2em;\n  background-color: #fff;\n}\n\n.content__title {\n  margin: 0;\n  font-size: 45px;\n  text-transform: uppercase;\n  hyphens: auto;\n}"
+    }
+  ],
+  "instructionsHash": "db6d5465a5f279db6ccc6b095b147f989d2bbcc98d1b57bfc108013a5a3f7e7e",
+  "verifiedAt": "2026-10-20T11:08:38.720Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Одной строчкой! Вау!"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "id": "9a0255dc750456b78de7231e783ffe389f69b6362ed91451304c0859f2628c5c",
+  "lessonId": "e00a881f-7b76-4a0e-af3f-d1bfbb95ee2f",
+  "url": "https://sandbox.practicum-team.ru/tasks/04-beautishcha/05-decoration/08-conic-gradient/example-01/pre/",
+  "instructionsHash": "ec78dad57e194aa97ab56af1178ccfb074d581c7f7cbc2402c0f671f0dc14116",
+  "files": [
+    {
+      "name": "styles/style.css",
+      "initialHash": "e68485ec93f16635e4e0e9e8946d3b57ab7d2abef5f323d867b66ca5039bf09f",
+      "content": "html {\n  block-size: 100%;\n}\n\nbody {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  margin: 0;\n  font-family: 'Open Sans', sans-serif;\n  background: url(https://code.s3.yandex.net/web-code/images/dotted-l.svg);\n  block-size: 100%;\n}\n\ndiv {\n  background-image: conic-gradient(#6dc1fd, #feafe8, #6dc1fd);\n  inline-size: 100%;\n  block-size: 100%;\n}\n"
+    }
+  ],
+  "verifiedAt": "2026-10-20T11:14:12.980Z",
+  "evidence": {
+    "selector": ".result .icon-status-success",
+    "message": "Всё отлично!"
+  }
+}

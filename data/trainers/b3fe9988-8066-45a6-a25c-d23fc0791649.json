@@ -1,0 +1,18 @@
+{
+  "taskId": "b3fe9988-8066-45a6-a25c-d23fc0791649",
+  "lessonId": "2e693968-dd06-4411-9d12-196f67360d29",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "files": [
+    {
+      "name": "style.css",
+      "initialHash": "444834f028102b8adbd73d43a155d777556f015f9528b207313ed0fb3460c359",
+      "content": "*,\n*::before,\n*::after {\n  box-sizing: border-box;\n}\n\nbody {\n  min-inline-size: 600px;\n  margin: 0;\n  font-family: 'Open Sans', sans-serif;\n  font-size: 18px;\n  background-color: #fff;\n  background-image: url(https://code.s3.yandex.net/web-code/images/dotted.svg);\n}\n\nh1,\nh2,\np,\nul {\n  margin: 0;\n}\n\nul {\n  padding: 0;\n  list-style: none;\n}\n\na {\n  color: inherit;\n  text-decoration: none;\n}\n\n.visually-hidden {\n  position: absolute;\n  inline-size: 1px;\n  block-size: 1px;\n  margin: -1px;\n  border: 0;\n  padding: 0;\n  overflow: hidden;\n  clip: rect(0 0 0 0);\n}\n\n.header {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  padding: 0.5em 1em;\n  background-color: #6dc1fd;\n}\n\n.title {\n  font-weight: 800;\n  font-size: 45px;\n  text-transform: uppercase;\n}\n\n.menu {\n  position: relative;\n}\n\n.menu__button {\n  inline-size: 40px;\n  block-size: 40px;\n  border: 4px solid #000;\n  background-color: transparent;\n  background-image: url(../svg/profile.svg);\n  background-repeat: no-repeat;\n  background-position: center;\n  background-size: contain;\n  cursor: pointer;\n}\n\n.menu.is-opened .menu__button {\n  background-image: url(../svg/close.svg);\n}\n\n.menu__button:hover {\n  background-color: #ffc802;\n}\n\n.menu ul {\n  position: absolute;\n  right: 0  ;\n  bottom: 0;\n  z-index: 2;\n  display: none;\n  translate: 0 120%;\n}\n\n.menu.is-opened ul {\n  display: block;\n}\n\n.menu li:not(:last-child) {\n  margin-block-end: 0.5em;\n}\n\n.menu a {\n  display: block;\n  border: 1px solid #000;\n  padding: 0.5em 1em;\n  font-weight: bold;\n  text-align: center;\n  background-color: #fff;\n}\n\n.menu a:hover {\n  background-color: #ffc802;\n}\n\n.content {\n  display: grid;\n  grid-template-columns: 2fr 1fr;\n  gap: 1em;\n  padding: 3em 1em;\n}\n\n.feed__item:not(:last-child) {\n  margin-block-end: 2em;\n}\n\n.card {\n  padding: 2em;\n  box-shadow: 0 0 0.5em rgb(0 0 0 / 0.2);\n  background-color: #fff;\n}\n\n.card__title {\n  margin-block-end: 0.5em;\n  font-weight: 800;\n  font-size: 31px;\n  text-transform: uppercase;\n}\n\n.card__preview-text {\n  margin-block-end: 2em;\n}\n\n.card__more-link {\n  border: 1px solid #000;\n  padding: 0.5em 2em;\n  color: #000;\n  font-family: inherit;\n  font-weight: 800;\n  font-size: inherit;\n  text-transform: uppercase;\n  background-color: #ffc802;\n}\n\n.card__more-link:hover {\n  box-shadow: inset 0 0 0 100px rgb(0 0 0 / 0.15);\n  cursor: pointer;\n}\n\n.card__more-link:focus {\n  outline: 2px solid #000;\n  outline-offset: 0;\n}\n\n.hashtags {\n  display: grid;\n  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));\n  align-content: start;\n  gap: 0.5em;\n}\n\n.hashtags__link {\n  display: block;\n  block-size: fit-content;\n  border: 1px solid #000;\n  padding: 0.5em 1em;\n  font-weight: bold;\n  text-align: center;\n  background-color: #fff;\n}\n\n.hashtags__link:hover {\n  background-color: #ffc802;\n}\nbody:has(.menu.is-opened) .hashtags {\n  filter: blur(5px);\n  pointer-events: none;\n}\n"
+    }
+  ],
+  "instructionsHash": "66a02649883eee4a2c4f31ca5ebc6bc3a9658168aee20d451d5cc590e831285f",
+  "verifiedAt": "2026-10-20T11:10:03.968Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Круто!  Селектор :has() даёт невиданную мощь в интерактивности!"
+  }
+}

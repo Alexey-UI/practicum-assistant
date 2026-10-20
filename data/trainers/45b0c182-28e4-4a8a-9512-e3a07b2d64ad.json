@@ -1,0 +1,18 @@
+{
+  "taskId": "45b0c182-28e4-4a8a-9512-e3a07b2d64ad",
+  "lessonId": "2e693968-dd06-4411-9d12-196f67360d29",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "files": [
+    {
+      "name": "style.css",
+      "initialHash": "5a8f4212c14bc4fdc0f14b8609e5d5e9efeb9dcc093b6a478fee8030c8cb2e94",
+      "content": "*,\n*::before,\n*::after {\n  box-sizing: border-box;\n}\n\nbody {\n  display: grid;\n  place-items: center;\n  min-block-size: 100dvb;\n  margin: 0;\n  padding: 2em;\n  font-family: 'Open Sans', sans-serif;\n  font-size: 18px;\n  background-color: #000;\n}\n\nh1 {\n  margin: 0;\n  color: #fff;\n  font-size: 3em;\n  text-align: center;\n  text-transform: uppercase;\n  text-wrap: balance;\n}\n\n.martini {\n  inline-size: 40%;\n  filter: drop-shadow(var(--x-shadow, 0) var(--y-shadow, 0) 2px #fd24af);\n}\n\n@media (width <= 720px) {\n  .martini {\n    inline-size: 90%;\n  }\n}"
+    }
+  ],
+  "instructionsHash": "089997f20745ecf7d821014694208a4de4f415e4b19cf10f30af84228b000211",
+  "verifiedAt": "2026-10-20T11:09:41.280Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Не рекомендуем злоупотреблять."
+  }
+}

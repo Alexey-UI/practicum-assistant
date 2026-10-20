@@ -1,0 +1,18 @@
+{
+  "taskId": "e3c19545-157c-41df-aa92-3ea07fdecf73",
+  "lessonId": "838515cf-2a5d-4032-a956-ab69f9c28a6a",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "files": [
+    {
+      "name": "style.css",
+      "initialHash": "3d7386e11d109b448c662aa55c5053b8bdf51380968e6c192c5260953336f244",
+      "content": "*,\n*::before,\n*::after {\n  box-sizing: border-box;\n}\n\nbody {\n  inline-size: 100dvi;\n  block-size: 100dvb;\n  margin: 0;\n  padding: 0;\n  overflow: hidden;\n  background-color: black;\n}\n\n.sky {\n  position: absolute;\n  z-index: 1;\n  inline-size: 100%;\n  block-size: 50%;\n  opacity: 0.52;\n  inset-block-start: 0;\n  inset-inline-end: 0;\n  background-image: linear-gradient(to top, rgb(249 251 240) 10%, rgb(215 253 254) 20%, rgb(167 222 253) 40%, rgb(110 175 255) 100%);\n}\n\n.horizon {\n  position: absolute;\n  z-index: 1;\n  inline-size: 100%;\n  block-size: 50%;\n  opacity: 0.99;\n  background-repeat: no-repeat;\n  inset-block-start: 0;\n  inset-inline-end: 0;\n  background-image: linear-gradient(to top, rgb(212 87 43 / 0.9) 0%, rgb(246 149 52 / 0.8) 20%, rgb(24 75 106 / 0) 100%);\n}\n\n.water {\n  position: absolute;\n  z-index: 2;\n  inline-size: 100%;\n  block-size: 50%;\n  overflow: hidden;\n  background-repeat: no-repeat;\n  inset-block-end: 0;\n  inset-inline-end: 0;\n  background-image: linear-gradient(to top, rgb(0 25 45) 0%, rgb(14 71 117) 35%, rgb(26 126 174) 70%, rgb(62 168 220) 100%);\n}"
+    }
+  ],
+  "instructionsHash": "fd3c72157785b5184a08dcd9622312592cf7b07e1b84090bc79b59653a6f2cde",
+  "verifiedAt": "2026-10-20T11:11:44.415Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Из тьмы возникли небо и вода. И было это хорошо."
+  }
+}
