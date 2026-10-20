@@ -5,11 +5,11 @@ import { readLessons, observedSolved, saveObservedSolved } from '../src/catalog.
 import { exactButton, questionFrom, quizOutcome } from '../src/quiz.js';
 import { DEFAULTS } from '../src/config.js';
 import { scrollLesson } from '../src/scroll.js';
-import { trainerOutcome, selectEditorFile, solveTrainer, readTrainer, advanceTrainer, contentHash, canReplaceTrainerFile } from '../src/trainer.js';
+import { trainerOutcome, selectEditorFile, solveTrainer, readTrainer, advanceTrainer, contentHash, canReplaceTrainerFile, isTrainerDemonstration } from '../src/trainer.js';
 import { readTextQuestion, solveTextQuestion, captureTextAnswer } from '../src/text-quiz.js';
 import { solveFeedback } from '../src/feedback.js';
 import { solveQuiz } from '../src/quiz.js';
-import { Answers, atomicJson, questionKey, readJson } from '../src/store.js';
+import { Answers, atomicJson, questionKey, readJson, normalize } from '../src/store.js';
 import { mkdtemp, rm } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import path from 'node:path';
@@ -26,6 +26,29 @@ test('Исправленная попытка тренажёра допуска�
 });
 before(async () => { browser = await chromium.launch({ channel: 'chrome', headless: true }); });
 after(async () => { await browser?.close(); });
+test('Шаг чтения переходит дальше без проверки только при точном совпадении контекста и исходников', async () => {
+  const page = await browser.newPage(); const original = process.cwd(); const dir = await mkdtemp(path.join(tmpdir(), 'practicum-trainer-demo-'));
+  try {
+    process.chdir(dir);
+    await page.route('https://practicum.yandex.ru/**', route => route.fulfill({ contentType: 'text/html; charset=utf-8', body: `<textarea aria-label="Содержимое редактора"></textarea><div class="task-description__markdown">Только изучите структуру проекта.</div><button data-test-id="next-task-button" onclick="location.href='/learn/test/lessons/cccccccc-cccc-cccc-cccc-cccccccccccc/'">Далее</button><script>window.monaco={editor:{getModels:()=>[{uri:{path:'/index.html'},getLanguageId:()=> 'html',getValue:()=> '<main></main>'}]}};</script>` }));
+    await page.goto('https://practicum.yandex.ru/trainer/test/lesson/aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa/task/bbbbbbbb-bbbb-bbbb-bbbb-bbbbbbbbbbbb/');
+    const task = await readTrainer(page);
+    assert.equal(await isTrainerDemonstration(task), false);
+    await atomicJson(`data/trainer-demos/${task.taskId}.json`, { taskId: task.taskId, lessonId: 'aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa', instructionsHash: contentHash(normalize(task.instructions)), contextHash: task.contextHash, files: task.files.map(({ path, hash }) => ({ path, hash })), reason: 'Явный шаг чтения без проверки.', reviewedAt: new Date().toISOString() });
+    assert.equal(await isTrainerDemonstration(task), true);
+    assert.equal(await isTrainerDemonstration({ ...task, instructions: 'Решите новую задачу.' }), false);
+    assert.equal(await isTrainerDemonstration({ ...task, contextHash: 'changed' }), false);
+    assert.equal(await isTrainerDemonstration({ ...task, url: task.url.replace('/lesson/aaaaaaaa-', '/lesson/cccccccc-') }), false);
+    assert.equal(await isTrainerDemonstration({ ...task, files: task.files.map(file => ({ ...file, hash: 'changed' })) }), false);
+    await page.locator('body').evaluate(el => { const button = document.createElement('button'); button.dataset.testId = 'check-task-button'; el.append(button); });
+    await assert.rejects(() => solveTrainer(page), /Интерфейс шага для чтения изменился/);
+    assert.equal(page.url(), task.url);
+    await page.locator('[data-test-id="check-task-button"]').evaluate(el => el.remove());
+    assert.equal(await solveTrainer(page), 'finished');
+    assert.equal(await readJson(`data/trainers/${task.taskId}.json`, null), null);
+    assert.equal(await readJson(`.local/trainers/${task.taskId}.json`, null), null);
+  } finally { process.chdir(original); await page.close(); await rm(dir, { recursive: true, force: true }); }
+});
 test('Пустой следующий шаг передаётся обработчику повторной загрузки без отправки ответа', { timeout: 10000 }, async () => {
   const page = await browser.newPage(); const original = process.cwd(); const dir = await mkdtemp(path.join(tmpdir(), 'practicum-empty-task-'));
   try {

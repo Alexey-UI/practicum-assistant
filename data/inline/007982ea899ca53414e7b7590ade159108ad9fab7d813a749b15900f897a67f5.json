@@ -1,0 +1,18 @@
+{
+  "id": "007982ea899ca53414e7b7590ade159108ad9fab7d813a749b15900f897a67f5",
+  "lessonId": "0c8815a6-1908-496f-9af6-79ac1cc012d8",
+  "url": "https://sandbox.practicum-team.ru/tasks/03-design/08-approaches/03-breakpoints/example-01/pre/",
+  "instructionsHash": "1b0dc41f0493136de67cb3c691f27f328ea72c52e1e8c4d117ab33f0551e679e",
+  "files": [
+    {
+      "name": "styles/style.css",
+      "initialHash": "103f03a162e92bdb6a347a002a4d88c93982274519d010368a5420f1b44fa6fb",
+      "content": "* {\n  box-sizing: border-box;\n  margin: 0;\n}\n\n.page {\n  display: grid;\n  grid-template-columns: 55% 45%;\n  grid-template-rows: auto 1fr auto;\n  min-height: 100vh;\n  font-family: 'Open Sans', sans-serif;\n  font-size: 18px;\n  line-height: 25px;\n  background-image: url(https://code.s3.yandex.net/web-code/images/dotted.svg);\n}\n\n/* Используя desktop first задайте поведение для блока .page при ширине меньше 656px */\n\n.page__header {\n  grid-column: 2 / -1;\n  grid-row: 1 / 2;\n  padding: 50px;\n  font-weight: 800;\n  font-size: 38px;\n  line-height: 39px;\n  text-align: center;\n  text-transform: uppercase;\n  background-color: #ffc802;\n}\n\n.page__img {\n  grid-column: 1 / 2;\n  grid-row: 2 / 3;\n  width: 100%;\n  height: 100%;\n  object-fit: cover;\n}\n\n.page__quote {\n  grid-column: 2 / -1;\n  grid-row: 2 / 3;\n  padding: 30px;\n  background-color: #fff;\n}\n\n.page__cite {\n  grid-column: -1 / -2;\n  grid-row: -1 / -2;\n  padding: 30px;\n  background-color: #ffc802;\n}\n\n@media (max-width: 656px) {\n  .page {\n    display: flex;\n    flex-direction: column;\n  }\n}\n"
+    }
+  ],
+  "verifiedAt": "2026-10-20T09:52:20.569Z",
+  "evidence": {
+    "selector": ".result .icon-status-success",
+    "message": "Всё отлично!"
+  }
+}

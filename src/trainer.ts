@@ -60,6 +60,13 @@ export async function trainerOutcome(page: Page): Promise<'correct' | 'wrong' | 
   return 'unknown';
 }
 
+export async function isTrainerDemonstration(task: Awaited<ReturnType<typeof readTrainer>>): Promise<boolean> {
+  const record = await readJson<{ taskId: string; lessonId: string; instructionsHash: string; contextHash: string; files: Array<{ path: string; hash: string }>; reason: string; reviewedAt: string } | null>(`data/trainer-demos/${task.taskId}.json`, null);
+  if (!record || record.taskId !== task.taskId || record.lessonId !== lessonId(task.url) || !record.reason?.trim() || !record.reviewedAt || record.instructionsHash !== contentHash(normalize(task.instructions)) || record.contextHash !== task.contextHash) return false;
+  const signature = (files: Array<{ path: string; hash: string }>) => JSON.stringify(files.map(({ path, hash }) => ({ path, hash })).sort((a, b) => a.path.localeCompare(b.path)));
+  return task.files.length > 0 && signature(record.files) === signature(task.files);
+}
+
 export interface TrainerSolution {
   taskId: string;
   lessonId: string;
@@ -87,6 +94,12 @@ export async function solveTrainer(page: Page, candidate = false): Promise<'adva
   if (await close.isVisible()) await close.click();
   const task = await readTrainer(page);
   if (!/^[a-f0-9-]+$/.test(task.taskId)) throw new Error('Некорректный ID задания');
+  if (await isTrainerDemonstration(task)) {
+    const next = page.locator('[data-test-id="next-task-button"]');
+    if (await page.locator('[data-test-id="check-task-button"]').count() || !await next.isVisible() || !await next.isEnabled()) throw new Error('Интерфейс шага для чтения изменился: требуется повторный разбор');
+    await journal('trainer-demonstration-read', { taskId: task.taskId, url: task.url });
+    return advanceTrainer(page, task.instructions, lessonId(task.url)!);
+  }
   const solution = await readJson<TrainerSolution | null>(`${candidate ? '.local/task-solutions' : 'data/trainers'}/${task.taskId}.json`, null) ?? (!candidate ? await readJson<TrainerSolution | null>(`data/practice/${task.taskId}.json`, null) : null);
   if (!solution) return 'pending';
   if (solution.taskId !== task.taskId || solution.lessonId !== lessonId(task.url) || (!candidate && (!solution.verifiedAt || !solution.evidence?.message.trim())) || !solution.files.length) {
@@ -129,9 +142,11 @@ export async function solveTrainer(page: Page, candidate = false): Promise<'adva
       }
       const oldMessage = page.locator('.trainer-footer__message:not(.draggable-notification__manikin) .notification__close').filter({ visible: true });
       if (await oldMessage.count() === 1) await oldMessage.click();
+      const check = page.locator('[data-test-id="check-task-button"]');
+      await check.waitFor({ state: 'visible', timeout: 30000 });
       await atomicJson(stateFile, { phase: 'requested', solutionHash, files: attemptFiles, updatedAt: new Date().toISOString() } satisfies TaskState);
       await journal('trainer-check-requested', { taskId: task.taskId, solutionHash });
-      await page.locator('[data-test-id="check-task-button"]').click();
+      await check.click();
     }
     const deadline = Date.now() + 300000;
     while (Date.now() < deadline) {

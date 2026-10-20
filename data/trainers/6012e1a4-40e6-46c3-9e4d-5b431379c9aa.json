@@ -1,0 +1,18 @@
+{
+  "taskId": "6012e1a4-40e6-46c3-9e4d-5b431379c9aa",
+  "lessonId": "b5d25b7a-89d2-44a6-9da6-784fab275967",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "files": [
+    {
+      "name": "style.css",
+      "initialHash": "d894ff9e5475d83d8d6137e55cc95ed04c3d0d7675b8ed6b7d39b001ea24af36",
+      "content": "*,\n*::before,\n*::after {\n  box-sizing: border-box;\n}\n\nbody {\n  display: grid;\n  grid-template-columns: 1fr min-content;\n  align-content: center;\n  gap: 40px;\n  min-block-size: 100dvb;\n  margin: 0;\n  padding: 40px;\n  color: #fff;\n  font-family: 'Open Sans', sans-serif;\n  font-size: 18px;\n  background-color: #000;\n}\n\na {\n  color: inherit;\n}\n\nh1,\np {\n  margin: 0;\n}\n\nul {\n  margin: 0;\n  padding: 0;\n  list-style: none;\n}\n\n.title {\n  grid-column: 1 / -1;\n  max-inline-size: 800px;\n  font-size: 64px;\n  text-transform: uppercase;\n}\n\n.cover-video {\n  position: absolute;\n  inset: 0;\n  z-index: -1;\n  inline-size: 100%;\n  block-size: 100%;\n  object-fit: cover;\n  object-position: center;\n}\n\n.cover-image {\n  display: none;\n}\n\n.content {\n  grid-column: 1 / -1;\n  max-inline-size: 900px;\n}\n\n.button {\n  display: block;\n  inline-size: fit-content;\n  block-size: fit-content;\n  border: 2px solid currentColor;\n  padding: 0.5em 1em;\n  color: currentColor;\n  font-weight: bold;\n  font-size: inherit;\n  text-decoration: none;\n  text-transform: uppercase;\n  background-color: transparent;\n  cursor: pointer;\n}\n\n.button:hover {\n  color: #000;\n  background-color: #fff;\n}\n\n.social-links {\n  display: flex;\n  gap: 20px;\n}\n\n@media (width <= 600px) {\n  body {\n    grid-template-columns: 1fr;\n    gap: 20px;\n    padding: 0;\n    color: #000;\n    background-color: #fff;\n  }\n\n  .cover-video {\n    display: none;\n  }\n  .title {\n    grid-column: 1;\n    grid-row: 1;\n    align-self: end;\n    color: #fff;\n    font-size: 40px;\n    padding: 40px 20px 0;\n  }\n  .button_type_book {\n    grid-column: 1;\n    grid-row: 2;\n    color: #fff;\n    margin: 0 20px 40px;\n  }\n  .cover-image {\n    display: block;\n    grid-column: 1;\n    grid-row: 1 / 3;\n    z-index: -1;\n    inline-size: 100%;\n    block-size: 100%;\n    object-fit: cover;\n  }\n  .content {\n    padding: 0 20px;\n  }\n  .social-links {\n    padding: 20px;\n  }\n  .social-links__button:hover {\n    background-color: #000;\n    color: #fff;\n  }\n}"
+    }
+  ],
+  "instructionsHash": "f65283ba427e89f7d9c8d5d85d6aabd2a50e2ec8022435b51177ed6d31dc2da1",
+  "verifiedAt": "2026-10-20T09:51:39.451Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Отличная работа! Всё то же самое можно было сделать в Mobile First подходе. Но здесь десктопная версия значительно проще по структуре и не подталкивает совершить ошибку. Следующее задание — последний штрих."
+  }
+}

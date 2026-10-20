@@ -1,0 +1,58 @@
+{
+  "taskId": "33745b64-4cc4-4907-b8f9-111fb0f2e6b7",
+  "lessonId": "0c8815a6-1908-496f-9af6-79ac1cc012d8",
+  "instructionsHash": "7673d903f7ef44ec97b8b830d0ef4800c189cd4ddd8b4bf79b1e43320e5b3476",
+  "contextHash": "14d3e9013b5d6f7124cbe3bb28e3eb748080b2b8f5e6e53d9a41395d9020154c",
+  "files": [
+    {
+      "path": "/index.html",
+      "hash": "1cea75110a97dc0e650aa5807a6bd976857694a1eaa55b5c7c59183bf926c8d6"
+    },
+    {
+      "path": "/styles/components/hero/hero.css",
+      "hash": "1d597c02f42a123bbcee3c51871c335b0b513df60508d0bc1f9fd8986d68625e"
+    },
+    {
+      "path": "/styles/components/icons-list/icons-list.css",
+      "hash": "b9533c2f5e31f4edb301e1051fa875710e8b8ffdebf9d9121808f0be08a09a76"
+    },
+    {
+      "path": "/styles/components/logo/logo.css",
+      "hash": "da1a1c4a5d3b05a91080e3d01989fb74aca481d54d5a39e4ae644a9a9f1da511"
+    },
+    {
+      "path": "/styles/components/menu/menu.css",
+      "hash": "c9d512ebf1a2ce8216af888b25c1685ece1889481db75b749ea559c7a877dd23"
+    },
+    {
+      "path": "/styles/components/paragraph/paragraph.css",
+      "hash": "7aff523691db95aaf56dff1e5d74f03d10bd0881a65b4c75c14249661c2701fa"
+    },
+    {
+      "path": "/styles/components/section-title/section-title.css",
+      "hash": "58dca672691c4d9ef3172e873007d456ae714dccfc778c5b93f22d8c58df8792"
+    },
+    {
+      "path": "/styles/components/subscribe-form/subscribe-form.css",
+      "hash": "1710a860362f8f1eb9fbc15399535fbaa423432ff9b41babd86820a7448afad8"
+    },
+    {
+      "path": "/styles/components/text-container/text-container.css",
+      "hash": "2726a043e65d9604f0a502e049911833f62b1d0f05ec2bdabe46a8322c402b0c"
+    },
+    {
+      "path": "/styles/globals/globals.css",
+      "hash": "83cae7a4fac37c6c70532ae8ba6fa57a1b95c67b9c4ff94fdf1b159f9c9683de"
+    },
+    {
+      "path": "/styles/globals/variables.css",
+      "hash": "5969db149ba0f3db98d27437b7f6c43ec116ba3156c32b710ec109699b12f389"
+    },
+    {
+      "path": "/styles/layout/components.css",
+      "hash": "b66062a85b82c6ff2438eda4706a8e78249bbe86a4baffa0fa243fb3fa16f291"
+    }
+  ],
+  "reason": "Условие прямо просит только изучить структуру проекта. В реальном интерфейсе нет кнопки проверки, есть доступная кнопка Далее.",
+  "reviewedAt": "2026-10-20T09:55:09.831543+00:00"
+}

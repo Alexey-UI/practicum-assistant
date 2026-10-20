@@ -1,0 +1,18 @@
+{
+  "taskId": "8e35ae96-a035-447b-ad36-df16b50928ea",
+  "lessonId": "b5d25b7a-89d2-44a6-9da6-784fab275967",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "files": [
+    {
+      "name": "index.html",
+      "initialHash": "92c29e43dbc9383aa203601a509029297f6b789a4bae358484fe9adfce622385",
+      "content": "<!DOCTYPE html>\n<html lang=\"ru\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <title>Прогулки по лесу со Стасом Басовым</title>\n    <link\n      rel=\"stylesheet\"\n      href=\"https://code.s3.yandex.net/web-code/fonts/fonts.css\"\n    />\n    <link rel=\"stylesheet\" href=\"./styles/style.css\" />\n  </head>\n  <body>\n    <h1 class=\"title\">Прогулки по&nbsp;лесу со&nbsp;Стасом Басовым</h1>\n    <div class=\"content\">\n      <p>\n        Стас Басов — удивительный собеседник и путешественник, который всегда\n        рад поделиться своими знаниями о природе во время прогулки по лесу. Он\n        внимательно наблюдает за окружающим миром и указывает на детали, которые\n        часто остаются незамеченными за спешкой обыденной жизни. Путешествие с\n        ним по лесу — это не просто прогулка, это приключение, где каждое\n        дерево, каждая птица и маленький цветок скрывают за собой особую\n        историю. Вместе со Стасом Басовым, лес становится живым, а прогулки по\n        нему — увлекательной экскурсией в мир природы.\n      </p>\n    </div>\n    <button class=\"button button_type_book\" type=\"button\">Забронировать</button>\n    <ul class=\"social-links\">\n      <li class=\"social-links__item\">\n        <a class=\"button social-links__button\" href=\"#\">Vk</a>\n      </li>\n      <li class=\"social-links__item\">\n        <a class=\"button social-links__button\" href=\"#\">Youtube</a>\n      </li>\n    </ul>\n\n    <video\n      class=\"cover-video\"\n      poster=\"./images/cover.jpg\"\n      src=\"./video/forest.mp4\"\n      autoplay\n      muted\n      loop\n    ></video>\n    <picture class=\"cover-image\">\n      <source media=\"(orientation: portrait)\" srcset=\"./images/cover-portrait.jpg\" />\n      <img\n        class=\"cover-image\"\n        src=\"./images/cover.jpg\"\n        alt=\"Фото с прогулки по лесу со Стасом Басовым\"\n      />\n    </picture>\n  </body>\n</html>"
+    }
+  ],
+  "instructionsHash": "4d1358eba9506aac8009a93b97c9b6d04cd75e5dc230f6e22855dc8ecd4a5b96",
+  "verifiedAt": "2026-10-20T09:51:52.146Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Вот и всё. С виду простой макет, а подводных камней — как в горной реке."
+  }
+}

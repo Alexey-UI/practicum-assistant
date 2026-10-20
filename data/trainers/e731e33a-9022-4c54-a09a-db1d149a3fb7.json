@@ -1,0 +1,18 @@
+{
+  "taskId": "e731e33a-9022-4c54-a09a-db1d149a3fb7",
+  "lessonId": "b5d25b7a-89d2-44a6-9da6-784fab275967",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "files": [
+    {
+      "name": "style.css",
+      "initialHash": "190c238bffda00c4dcdf4b1597596c0180629a5f24eb623beaf178908b371db0",
+      "content": "*,\n*::before,\n*::after {\n  box-sizing: border-box;\n}\n\nbody {\n  display: flex;\n  flex-direction: column;\n  min-block-size: 100dvb;\n  margin: 0;\n  font-family: 'Open Sans', sans-serif;\n  font-size: 18px;\n  background-color: #fff;\n}\n\nh1,\nh2,\nh3,\nh4,\nh5,\nh6,\np,\nul {\n  margin: 0;\n}\n\nul {\n  padding: 0;\n  list-style: none;\n}\n\na {\n  color: inherit;\n}\n\n.header {\n  display: grid;\n  place-items: center;\n  padding: 5px 20px;\n  color: #fff;\n  background-color: #5f0dee;\n}\n\n.header__logo {\n  font-size: 54px;\n  line-height: 1;\n}\n\n.profile {\n  flex-grow: 1;\n  padding: 20px;\n}\n\n.profile__picture {\n  display: block;\n  max-inline-size: 400px;\n  margin: 0 auto;\n}\n\n.profile__name {\n  padding: 20px 0;\n  font-size: 45px;\n  text-align: center;\n  text-transform: uppercase;\n}\n\n.buttons-list {\n  display: grid;\n  gap: 5px;\n}\n\n.buttons-list button {\n  display: block;\n  inline-size: 100%;\n  border: 1px solid #000;\n  padding: 10px 65px;\n  color: #000;\n  font-family: inherit;\n  font-weight: 800;\n  font-size: inherit;\n  text-transform: uppercase;\n  background-color: #ffc802;\n}\n\n.buttons-list button:hover {\n  box-shadow: inset 0 0 0 100px rgb(0 0 0 / 0.15);\n  cursor: pointer;\n}\n\n.buttons-list button:focus {\n  outline: 2px solid #000;\n  outline-offset: 0;\n}\n\n.profile__about-info {\n  padding: 40px 0;\n}\n\n.profile__about-title {\n  margin-block-end: 0.5em;\n  font-size: 31px;\n  text-transform: uppercase;\n}\n\n.profile__paragraph:not(:last-child) {\n  margin-block-end: 1em;\n}\n\n.footer {\n  padding: 20px 40px;\n  color: #fff;\n  background-color: #5f0dee;\n}\n\n@media (width >= 600px) {\n  .profile {\n    display: grid;\n    grid-template-columns: min-content 1fr;\n    grid-template-rows: min-content min-content 1fr;\n    align-items: start;\n    gap: 20px;\n  }\n  .profile__picture {\n    grid-column: 1;\n    grid-row: span 2;\n  }\n  .profile__name {\n    text-align: start;\n  }\n  .profile__about-info {\n    padding: 0;\n    grid-column: 2;\n    grid-row: 2 / 4;\n  }\n  .buttons-list {\n    grid-column: 1;\n    grid-row: 3;\n  }\n  .links-list {\n    display: flex;\n    gap: 20px;\n  }\n}"
+    }
+  ],
+  "instructionsHash": "cda9ed9b022eee6ffa9a5ed3ba89675efe4223bd60d5f81717ab5601f5528b5c",
+  "verifiedAt": "2026-10-20T09:51:05.951Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Ну вот и все, макет готов! Кажется, верстать от мобильного тут было выгоднее, иначе мы нагородили бы обёрток, а потом страдали."
+  }
+}
