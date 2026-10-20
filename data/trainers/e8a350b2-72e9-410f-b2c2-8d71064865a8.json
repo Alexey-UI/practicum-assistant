@@ -1,0 +1,18 @@
+{
+  "taskId": "e8a350b2-72e9-410f-b2c2-8d71064865a8",
+  "lessonId": "d690188d-1286-4366-b1eb-596e9e30db30",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "files": [
+    {
+      "name": "index.html",
+      "initialHash": "d472bdb75f7e7c91deeb4dd756ecd681514aa19081cfe931b1802f1e609ff954",
+      "content": "<!DOCTYPE html>\n<html lang=\"ru\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <title>Интерактивные элементы</title>\n    <link\n      rel=\"stylesheet\"\n      href=\"https://code.s3.yandex.net/web-code/fonts/fonts.css\"\n    />\n    <link rel=\"stylesheet\" href=\"./styles/style.css\" />\n  </head>\n\n  <body>\n    <button class=\"button\" type=\"button\">Честное слово, я кнопка</button>\n  </body>\n</html>"
+    }
+  ],
+  "instructionsHash": "b3a4afb72bbe265b298f1260ee5ed4d6cdd3ffe7dce96e1ee61609828b22ec31",
+  "verifiedAt": "2026-10-20T07:55:25.483Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Теперь кнопка и выглядит как кнопка, и крякает пишется как кнопка."
+  }
+}

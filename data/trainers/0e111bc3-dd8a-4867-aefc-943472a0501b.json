@@ -1,0 +1,18 @@
+{
+  "taskId": "0e111bc3-dd8a-4867-aefc-943472a0501b",
+  "lessonId": "9e857014-3cc8-4051-9bef-642cf6ce55ec",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "files": [
+    {
+      "name": "index.html",
+      "initialHash": "d1780a4bba2f8aa8c66a15fd2137929adef18a8856ef94db03cc44189bd3d6b8",
+      "content": "<!DOCTYPE html>\n<html lang=\"ru\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\" />\n    <title>Заголовки</title>\n    <link\n      rel=\"stylesheet\"\n      href=\"https://code.s3.yandex.net/web-code/fonts/fonts.css\"\n    />\n    <link rel=\"stylesheet\" href=\"./styles/style.css\" />\n  </head>\n\n  <body>\n    <div class=\"content\">\n      <h1 class=\"main-title\">Как испортить доступность сайта?</h1>\n      <h2 class=\"title\">Семантика</h2>\n      <p>\n        О доступности часто думают как о не обязательной фишке, которая требует\n        дополнительных усилий. Что было бы, если довести эту идею до абсурда?\n      </p>\n      <h3 class=\"subtitle\">Заголовки</h3>\n      <p>Заголовки — это лишняя трата места на странице.</p>\n      <h3 class=\"subtitle\">Семантические теги</h3>\n      <p>\n        div forever! Это универсальный тег, к тому же его можно как угодно\n        стилизовать.\n      </p>\n      <h3 class=\"subtitle\">Интерактивные элементы</h3>\n      <p>\n        Элементы, на которые можно нажать, тоже размечайте дивом. Ссылки и\n        кнопки не нужны!\n      </p>\n      <h2 class=\"title\">Дизайн</h2>\n      <p><span class=\"rainbow\">Чем ярче, тем сайт красивее!</span></p>\n    </div>\n  </body>\n</html>"
+    }
+  ],
+  "instructionsHash": "4f0a7578ae5fd72a153d6d752b11becef260ba092cbd1f636071f6cd10110d4b",
+  "verifiedAt": "2026-10-20T07:53:08.641Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Отлично! Теперь заголовки увидят и люди, и скринридеры."
+  }
+}

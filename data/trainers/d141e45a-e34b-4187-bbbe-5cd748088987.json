@@ -1,0 +1,18 @@
+{
+  "taskId": "d141e45a-e34b-4187-bbbe-5cd748088987",
+  "lessonId": "d690188d-1286-4366-b1eb-596e9e30db30",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "files": [
+    {
+      "name": "index.html",
+      "initialHash": "915b5b72ccc7a86c54fd0c9f1af70a2f7bb9fdb183b598dd27ca6946fe4dd0fd",
+      "content": "<!DOCTYPE html>\n<html lang=\"ru\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <title>aria-hidden</title>\n    <link\n      rel=\"stylesheet\"\n      href=\"https://code.s3.yandex.net/web-code/fonts/fonts.css\"\n    />\n    <link rel=\"stylesheet\" href=\"./styles/style.css\" />\n  </head>\n\n  <body>\n    <article class=\"card\">\n      <img src=\"./images/cute.jpg\" />\n      <h3>Пленительная милота</h3>\n      <button class=\"card__button\">\n        <span class=\"rainbow\">Положить в корзину</span>\n        <svg\n          class=\"card__button-image\"\n          aria-hidden=\"true\"\n          width=\"26\"\n          height=\"26\"\n          fill=\"url(#linear-gradient)\"\n          viewBox=\"0 0 16 16\"\n        >\n          <path\n            d=\"M5.757 1.071a.5.5 0 0 1 .172.686L3.383 6h9.234L10.07 1.757a.5.5 0 1 1 .858-.514L13.783 6H15a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1v4.5a2.5 2.5 0 0 1-2.5 2.5h-9A2.5 2.5 0 0 1 1 13.5V9a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h1.217L5.07 1.243a.5.5 0 0 1 .686-.172zM2 9v4.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V9H2zM1 7v1h14V7H1zm3 3a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3A.5.5 0 0 1 4 10zm2 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3A.5.5 0 0 1 6 10zm2 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3A.5.5 0 0 1 8 10zm2 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3a.5.5 0 0 1 .5-.5zm2 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0v-3a.5.5 0 0 1 .5-.5z\"\n          />\n          <linearGradient id=\"linear-gradient\">\n            <stop offset=\"0%\" stop-color=\"yellow\" />\n            <stop offset=\"40%\" stop-color=\"green\" />\n            <stop offset=\"60%\" stop-color=\"blue\" />\n            <stop offset=\"100%\" stop-color=\"violet\" />\n          </linearGradient>\n        </svg>\n      </button>\n    </article>\n  </body>\n</html>"
+    }
+  ],
+  "instructionsHash": "484488a239b5c984806f1a819c4c4a539d71521bdfa3b06b69fa3fe9a1cbfcbc",
+  "verifiedAt": "2026-10-20T07:57:00.270Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Иконку всё ещё видно, но она не мешает просматривать структуру страницы."
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "id": "1e93eede558796ca867afd9adb7529c9bae3092150b5a3c7759e7788cc514876",
+  "lessonId": "d690188d-1286-4366-b1eb-596e9e30db30",
+  "url": "https://sandbox.practicum-team.ru/tasks/02-interactivity-and-accessibility/05-accesibility/05-how-to-hide-elements/example-03/pre/",
+  "instructionsHash": "02b24a7e3a68035ac4bc74589571e5f733269a0c92b3a66177ccd8c4d46b536d",
+  "files": [
+    {
+      "name": "index.html",
+      "initialHash": "d637c5cd17c6f513fc4045f743e1c9af338dfb10b51e6b9e5f1427d7668e2aaf",
+      "content": "<!DOCTYPE html>\n<html lang=\"ru\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <title>Menu</title>\n    <link\n      rel=\"stylesheet\"\n      href=\"https://code.s3.yandex.net/web-code/fonts/fonts.css\"\n    />\n    <link rel=\"stylesheet\" href=\"./styles/style.css\" />\n  </head>\n  <body>\n    <header class=\"header\">\n      <a class=\"logo-link\">\n        <img src=\"./images/logo.svg\" alt=\"Логотип vёрстка\" />\n      </a>\n      <button class=\"header__menu-button\"><span class=\"visually-hidden\">Открыть меню</span></button>\n      <nav class=\"menu\">\n        <ul>\n          <li><a href=\"#0\">HTML</a></li>\n          <li><a href=\"#0\">CSS</a></li>\n          <li><a href=\"#0\">JS</a></li>\n        </ul>\n      </nav>\n    </header>\n    <script src=\"./scripts/script.js\"></script>\n  </body>\n</html>\n"
+    },
+    {
+      "name": "styles/style.css",
+      "initialHash": "55bbbace7746a0a9e096e48697288dd1358102cc7cd517dadf92c5c6a82db1e1",
+      "content": "*,\n*::before,\n*::after {\n  box-sizing: border-box;\n}\n\nbody {\n  min-width: 850px;\n  margin: 0;\n  font-family: 'Open Sans', sans-serif;\n}\n\n.header {\n  position: relative;\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  padding: 20px 40px;\n  background-color: #fd24af;\n}\n\n.logo-link {\n  width: 200px;\n}\n\n.header__menu-button {\n  width: 40px;\n  height: 40px;\n  border: none;\n  background-color: transparent;\n  background-image: url(./images/hamburger-menu.svg);\n  background-repeat: no-repeat;\n  background-position: center;\n  background-size: contain;\n  cursor: pointer;\n}\n\n.header__menu-button:hover {\n  opacity: 0.8;\n}\n\n.menu {\n  position: absolute;\n  bottom: 0;\n  left: 0;\n  display: none;\n  width: 100%;\n  border: 1px solid #000;\n  border-top: 1px solid #000;\n  padding: 40px;\n  background-color: #fff;\n  transform: translateY(100%);\n}\n\n.menu ul {\n  display: flex;\n  justify-content: center;\n  font-size: 24px;\n  list-style: none;\n}\n\n.menu a {\n  border: 1px solid #000;\n  padding: 10px 35px;\n  color: #000;\n  font-weight: 800;\n  text-decoration: none;\n  text-transform: uppercase;\n  background-color: #ffc802;\n}\n\n.menu a:hover {\n  text-decoration: underline;\n}\n\n.visually-hidden {\n  position: absolute;\n  width: 1px;\n  height: 1px;\n  margin: -1px;\n  padding: 0;\n  border: 0;\n  clip: rect(0 0 0 0);\n  overflow: hidden;\n}\n"
+    }
+  ],
+  "verifiedAt": "2026-10-20T07:54:01.742Z",
+  "evidence": {
+    "selector": ".result .icon-status-success",
+    "message": "Всё отлично!"
+  }
+}
