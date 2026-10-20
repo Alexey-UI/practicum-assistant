@@ -1,0 +1,18 @@
+{
+  "taskId": "be7aecb2-a5da-4f70-ad4f-358ed9dc67f9",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "lessonId": "97776d49-bdfe-4a24-bc93-b34f731cbf07",
+  "files": [
+    {
+      "name": "script.js",
+      "initialHash": "1709ee3101e1dfad621b6d8def48dd3dd555b4948e9f358bd9676380b41d3978",
+      "content": "const songsContainer = document.querySelector('.songs-container');\nconst addButton = document.querySelector('.input__btn_action_add');\nconst form = document.forms.add;\nconst artist = form.elements.artist;\nconst title = form.elements.title;\n\nfunction addSong(artistValue, titleValue) {\n  const songTemplate = document.querySelector('#song-template').content;\n  const songElement = songTemplate.cloneNode(true);\n\n  songElement.querySelector('.song__artist').textContent = artistValue;\n  songElement.querySelector('.song__title').textContent = titleValue;\n\n  songsContainer.append(songElement);\n}\n\nfunction setSubmitButtonState(isFormValid) {\n  if (isFormValid) {\n    addButton.removeAttribute('disabled');\n    addButton.classList.remove('input__btn_disabled');\n  } else {\n    addButton.setAttribute('disabled', true);\n    addButton.classList.add('input__btn_disabled');\n  }\n}\n\nform.addEventListener('submit', function (evt) {\n  evt.preventDefault();\n  addSong(artist.value, title.value);\n  artist.value = '';\n  title.value = '';\n});\nform.addEventListener('input', function (evt) {\n  const isValid = artist.value.length > 0 && title.value.length > 0;\n  setSubmitButtonState(isValid);\n});\n"
+    }
+  ],
+  "instructionsHash": "e1ec3352d07d1939aa31ef87866e4983c8654fe0d0769a7eaedb77604dd738c4",
+  "verifiedAt": "2026-10-20T13:15:31.737Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Попробуйте ввести текст в поля. Теперь кнопка меняет цвет в зависимости от наличия в них текста."
+  }
+}

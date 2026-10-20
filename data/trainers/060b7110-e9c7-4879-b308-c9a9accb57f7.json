@@ -1,0 +1,18 @@
+{
+  "taskId": "060b7110-e9c7-4879-b308-c9a9accb57f7",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "lessonId": "bfc6141d-f1d2-468b-9be7-dae77e0ec622",
+  "files": [
+    {
+      "name": "index.js",
+      "initialHash": "41ce67f9f8542b80715e5a5cebe36e3937ddb9537f6a98f5680194742cf7b607",
+      "content": "const imageCreationForm = document.querySelector('.image-creation__form');\nconst image = document.querySelector('.image__background');\nconst imageText = document.querySelector('.image__text');\n\nconst saveImageStyle = () => {\n  const link = document.querySelector('.form__input_link').value;\n  const text = document.querySelector('.form__input_text').value;\n  const color = document.querySelector('.form__input-color').value;\n  const imageObject = { link, text, color };\n  sessionStorage.setItem('image-style-object', JSON.stringify(imageObject));\n}\n\nconst makeImage = () => {\n  const imageObject = JSON.parse(sessionStorage.getItem('image-style-object'));\n\n  if(imageObject) {\n    if(imageObject.link) {\n      image.src = imageObject.link;\n      image.alt = 'Итоговое изображение';\n    }\n\n    if(imageObject.text) {\n      imageText.textContent = imageObject.text;\n    }\n\n    if(imageObject.color) {\n      imageText.style.color = imageObject.color;\n    }\n  }\n}\n\nconst changeImage = (evt) => {\n  evt.preventDefault();\n  saveImageStyle();\n  makeImage();\n}\n\nmakeImage();\n\nimageCreationForm.addEventListener('submit', changeImage);"
+    }
+  ],
+  "instructionsHash": "f0f5f9c228e93151b42fbade3dc7b8c73c17538cfa2fdcf48815614a49fcfb81",
+  "verifiedAt": "2026-10-20T13:17:23.784Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Хранилище мемов готово — жаль, что всего на одну сессию."
+  }
+}

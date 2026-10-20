@@ -1,0 +1,18 @@
+{
+  "taskId": "a0f36469-76e3-46c9-8897-077bd0a0381f",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "lessonId": "abf0c129-7b0f-46f0-b476-0b8bc2d77e92",
+  "files": [
+    {
+      "name": "index.js",
+      "initialHash": "bcbcf7b57a73a6b894cdefb4b73e279f4adf2e021b387db19a05135c27e4e6ea",
+      "content": "const createGoalForm = document.querySelector('.create-goal__form');\nconst nameOfGoalText = document.querySelector('.goal__text_goal-name');\nconst dateOfEndGoalText = document.querySelector('.goal__text_goal-end-date');\nconst creatingGoalBlock = document.querySelector('.create-goal');\nconst infoGoalBlock = document.querySelector('.goal');\n\nconst saveGoal = () => {\n  const nameOfGoalInputValue = document.querySelector('.form__textarea').value;\n  const currentDate = new Date();\n  const dayOfEndGoal = currentDate.getDate();\n  const monthOfEndGoal = currentDate.getMonth() + 1;\n  const yearOfEndGoal = currentDate.getFullYear() + 1;\n  const dateOfEndGoal = `${dayOfEndGoal}.${monthOfEndGoal}.${yearOfEndGoal}`;\n  localStorage.setItem('nameOfGoal', nameOfGoalInputValue);\n  localStorage.setItem('dateOfEndGoal', dateOfEndGoal);\n}\n\nconst getGoal = () => {\n  const nameOfGoal = localStorage.getItem('nameOfGoal');\n  const dateOfEndGoal = localStorage.getItem('dateOfEndGoal');\n\n  nameOfGoalText.textContent = nameOfGoal;\n  dateOfEndGoalText.textContent = dateOfEndGoal;\n}\n\nconst addGoal = (evt) => {\n  evt.preventDefault();\n\n  saveGoal();\n  creatingGoalBlock.classList.add('page__goal_display_none');\n  infoGoalBlock.classList.remove('page__goal_display_none');\n  getGoal();\n}\n\ncreateGoalForm.addEventListener('submit', addGoal);"
+    }
+  ],
+  "instructionsHash": "e0dd2f8060fc6c4e1a0db5a28da9faa2681585c438936b7deef91b3c708fe8a8",
+  "verifiedAt": "2026-10-20T13:16:57.473Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Отлично, цель создана! Осталось не забросить её через неделю..."
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "taskId": "65d4d456-7854-400d-ba9f-71508e76f233",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "lessonId": "3b1162fb-2daa-4b21-8aae-281cd1789efc",
+  "files": [
+    {
+      "name": "script.js",
+      "initialHash": "6f360c0cfdfe008fc9a84d76602375f0a4f300ab8d8334ab7afc5a94a7ba7e99",
+      "content": "const songsContainer = document.querySelector('.songs-container');\nconst addButton = document.querySelector('.input__btn_action_add');\nconst artistInput = document.querySelector('.input__text_type_artist');\nconst titleInput = document.querySelector('.input__text_type_title');\nconst form = document.forms.add;\nconst artist = form.elements.artist;\nconst title = form.elements.title;\n\nfunction addSong(artistValue, titleValue) {\n  const songTemplate = document.querySelector('#song-template').content;\n  const songElement = songTemplate.cloneNode(true);\n\n  songElement.querySelector('.song__artist').textContent = artistValue;\n  songElement.querySelector('.song__title').textContent = titleValue;\n\n  songsContainer.append(songElement);\n}\n\nform.addEventListener('submit', function (evt) {\n  evt.preventDefault();\n  addSong(artistInput.value, titleInput.value);\n  artistInput.value = '';\n  titleInput.value = '';\n});\n"
+    }
+  ],
+  "instructionsHash": "5599bd55c5493a817462663394c98fd2d824fb303d9c4111ab0a0a82b3902769",
+  "verifiedAt": "2026-10-20T13:14:03.203Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Достали поля — осталось достать из них значения. Вы это уже делали, но в следующем уроке разберёмся чуть подробнее, в каких свойствах хранятся значения разных полей."
+  }
+}

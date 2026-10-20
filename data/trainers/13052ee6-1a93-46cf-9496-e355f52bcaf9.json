@@ -1,0 +1,18 @@
+{
+  "taskId": "13052ee6-1a93-46cf-9496-e355f52bcaf9",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "lessonId": "45f76ea0-9795-4ed5-a848-0b4da67fa3f1",
+  "files": [
+    {
+      "name": "scripts.js",
+      "initialHash": "c53c789ad36a5e3623451b1e323805d87742e3344134b5a7d1d0e7bb794c96b2",
+      "content": "const cards = [\n  {\n    image: \"./images/the-scream.jpg\",\n    alt: \"Фигура на мосту в искажённом пейзаже, выражающая отчаяние и тревогу\",\n    title: \"The Scream\",\n  },\n  {\n    image: \"./images/the-persistence-of-memory.jpg\",\n    alt: \"Пейзаж с расплавленными часами, символизирующими иллюзорность времени\",\n    title: \"The Persistence of Memory\",\n  },\n  {\n    image: \"./images/girl-with-a-pearl-earring.jpg\",\n    alt: \"Портрет девушки в тюрбане, обернувшейся через плечо с загадочным взглядом\",\n    title: \"Girl with a Pearl Earring\",\n  },\n  {\n    image: \"./images/penitent-mary-magdalene.jpg\",\n    alt: \"Женская фигура с поднятым взглядом и руками на груди, в позе раскаяния и молитвы\",\n    title: \"Penitent Mary Magdalene\",\n  },\n];\n\nconst cardsContainer = document.querySelector(\".cards\");\nconst popup = document.querySelector(\".popup\");\nconst popupImage = popup.querySelector(\".popup__image\");\nconst closePopupButton = popup.querySelector(\".popup__close-button\");\n\nfunction createCard(item) {\n  const template = document.getElementById(\"card-template\");\n  const clone = template.content.querySelector(\".cards__item\").cloneNode(true);\n  const card = clone.querySelector(\".card__image\");\n  const cardImage = clone.querySelector(\".card__image\");\n  const cardDeleteButton = clone.querySelector(\".card__delete-button\");\n  const cardTitle = clone.querySelector(\".card__title\");\n\n  cardImage.src = item.image;\n  cardImage.alt = item.alt;\n  cardTitle.textContent = item.title;\n\n  card.addEventListener(\"click\", () => {\n    popupImage.src = cardImage.src;\n    popupImage.alt = cardImage.alt;\n    popup.classList.add(\"popup_is-opened\");\n  });\n\n  cardDeleteButton.addEventListener(\"click\", (event) => {\n    event.stopPropagation();\n\n    const cardContainer = cardDeleteButton.closest(\".cards__item\");\n    if (cardContainer) cardContainer.remove();\n  });\n\n  return clone;\n}\n\ncards.forEach((card) => {\n  const newCard = createCard(card);\n  cardsContainer.append(newCard);\n});\n\nclosePopupButton.addEventListener(\"click\", () => {\n  popup.classList.remove(\"popup_is-opened\");\n  popupImage.src = \"\";\n  popupImage.alt = \"\";\n});"
+    }
+  ],
+  "instructionsHash": "8d509e34b74de91e8b7eb35c4962d22d7fa7f0e0e5421bc8559ea28d90ff0848",
+  "verifiedAt": "2026-10-20T13:11:46.984Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Отлично! Всё получилось!"
+  }
+}

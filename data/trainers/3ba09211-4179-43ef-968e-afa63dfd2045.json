@@ -1,0 +1,18 @@
+{
+  "taskId": "3ba09211-4179-43ef-968e-afa63dfd2045",
+  "lessonId": "3989da5b-efa3-424c-9f51-74b8c1d5a306",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "files": [
+    {
+      "name": "script.js",
+      "initialHash": "837934257226dfe48ec9b7311144b36f553c6b2f256d2924c892d0d5b0c0a544",
+      "content": "const songsContainer = document.querySelector('.songs-container');\nconst addButton = document.querySelector('.input__btn_action_add');\nconst artistInput = document.querySelector('.input__text_type_artist');\nconst titleInput = document.querySelector('.input__text_type_title');\n\nfunction addSong(artistValue, titleValue) {\n  const songTemplate = document.querySelector('#song-template').content;\n  const songElement = songTemplate.cloneNode(true);\n\n  songElement.querySelector('.song__artist').textContent = artistValue;\n  songElement.querySelector('.song__title').textContent = titleValue;\n\n  songsContainer.append(songElement);\n}\n\naddButton.addEventListener('click', function () {\n  addSong(artistInput.value, titleInput.value);\n  artistInput.value = '';\n  titleInput.value = '';\n});\nconsole.log(document.forms.add);\n"
+    }
+  ],
+  "instructionsHash": "aa52da91abb2ce4e664934fbd3800d50c63fe9ea5a3e298367cfd2919df606b4",
+  "verifiedAt": "2026-10-20T13:13:09.152Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Форма в консоли! Но попробуйте добавить новую песню в плейлист. Не расстраивайтесь — всё сломалось ещё в прошлом задании. Дело в том, что при добавлении формы у браузера появляется поведение по умолчанию. В следующем уроке разберёмся с тем, что конкретно происходит и как такое поведение отключить."
+  }
+}

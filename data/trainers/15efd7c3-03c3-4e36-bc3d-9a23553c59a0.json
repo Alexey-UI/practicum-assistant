@@ -1,0 +1,18 @@
+{
+  "taskId": "15efd7c3-03c3-4e36-bc3d-9a23553c59a0",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "lessonId": "b3e59948-8a52-420e-bd5e-41562d7ab63a",
+  "files": [
+    {
+      "name": "script.js",
+      "initialHash": "5d144cb53a9cc4d339d8650c24764567ec5fac6a71b2c641085de521ae31d1a4",
+      "content": "const songsContainer = document.querySelector('.songs-container');\nconst addButton = document.querySelector('.input__btn_action_add');\nconst form = document.forms.add;\nconst artist = form.elements.artist;\nconst title = form.elements.title;\n\nfunction addSong(artistValue, titleValue) {\n  const songTemplate = document.querySelector('#song-template').content;\n  const songElement = songTemplate.cloneNode(true);\n\n  songElement.querySelector('.song__artist').textContent = artistValue;\n  songElement.querySelector('.song__title').textContent = titleValue;\n\n  songsContainer.append(songElement);\n}\n\nform.addEventListener('submit', function (evt) {\n  evt.preventDefault();\n  addSong(artist.value, title.value);\n  artist.value = '';\n  title.value = '';\n});\n"
+    }
+  ],
+  "instructionsHash": "65cba7ee5222cfdde873e8e4c39f9274018a153acfcaaa6197b16776088d7925",
+  "verifiedAt": "2026-10-20T13:14:25.911Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Вот и первый опыт работы с полями формы как с объектом. Это далеко не единственный плюс. Об остальных поговорим дальше."
+  }
+}

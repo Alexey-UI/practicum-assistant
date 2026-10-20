@@ -1,0 +1,18 @@
+{
+  "taskId": "5c6b11c2-e0d8-480c-9d6a-421d93e8a0f3",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "lessonId": "da6cbf01-4f4f-4bbe-8dce-cbf5959d12f7",
+  "files": [
+    {
+      "name": "script.js",
+      "initialHash": "66b94168fc3446116d89367ab8d293d0b8f1449f2f5dd1cc4678349ae4de65e1",
+      "content": "const songsContainer = document.querySelector('.songs-container');\nconst addButton = document.querySelector('.input__btn_action_add');\nconst artistInput = document.querySelector('.input__text_type_artist');\nconst titleInput = document.querySelector('.input__text_type_title');\nconst form = document.forms.add;\n\nfunction addSong(artistValue, titleValue) {\n  const songTemplate = document.querySelector('#song-template').content;\n  const songElement = songTemplate.cloneNode(true);\n\n  songElement.querySelector('.song__artist').textContent = artistValue;\n  songElement.querySelector('.song__title').textContent = titleValue;\n\n  songsContainer.append(songElement);\n}\n\nform.addEventListener('submit', function (evt) {\n  addSong(artistInput.value, titleInput.value);\n  artistInput.value = '';\n  titleInput.value = '';\n});"
+    }
+  ],
+  "instructionsHash": "9ff7a4958953dc6ea8fbf858d2af130f68ff96f2304734cef01ab66503c1a581",
+  "verifiedAt": "2026-10-20T13:13:31.625Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Всё ещё не работает. Ах да, мы же не отменили стандартное поведение."
+  }
+}

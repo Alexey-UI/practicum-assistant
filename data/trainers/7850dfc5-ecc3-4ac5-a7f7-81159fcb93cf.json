@@ -1,0 +1,18 @@
+{
+  "taskId": "7850dfc5-ecc3-4ac5-a7f7-81159fcb93cf",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "lessonId": "1200fada-e07e-4485-88c0-82da9819c688",
+  "files": [
+    {
+      "name": "script.js",
+      "initialHash": "d162b307e1e90b40b085d4ed473c1136c20191d20631b89ef64905f524c59a83",
+      "content": "const songsContainer = document.querySelector('.songs-container');\nconst addButton = document.querySelector('.input__btn_action_add');\nconst form = document.forms.add;\nconst artist = form.elements.artist;\nconst title = form.elements.title;\n\nfunction addSong(artistValue, titleValue) {\n  const songTemplate = document.querySelector('#song-template').content;\n  const songElement = songTemplate.cloneNode(true);\n\n  songElement.querySelector('.song__artist').textContent = artistValue;\n  songElement.querySelector('.song__title').textContent = titleValue;\n\n  songsContainer.append(songElement);\n}\n\nfunction setSubmitButtonState(isFormValid) {\n  if (isFormValid) {\n    addButton.removeAttribute('disabled');\n    addButton.classList.remove('input__btn_disabled');\n  } else {\n    addButton.setAttribute('disabled', true);\n    addButton.classList.add('input__btn_disabled');\n  }\n}\n\nform.addEventListener('submit', function (evt) {\n  evt.preventDefault();\n  addSong(artist.value, title.value);\n  form.reset();\n  setSubmitButtonState(false);\n});\n\nform.addEventListener('input', function (evt) {\n  const isValid = artist.value.length > 0 && title.value.length > 0;\n  setSubmitButtonState(isValid);\n});\n"
+    }
+  ],
+  "instructionsHash": "d84b67cfd886977f0e7227543b77703688a03dec02507cf1b72ae41d8d3a0399",
+  "verifiedAt": "2026-10-20T13:16:09.807Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Cброс полей по-прежнему работает, но код стал проще."
+  }
+}

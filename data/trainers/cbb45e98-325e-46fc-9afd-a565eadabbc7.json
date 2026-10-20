@@ -1,0 +1,18 @@
+{
+  "taskId": "cbb45e98-325e-46fc-9afd-a565eadabbc7",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "lessonId": "97776d49-bdfe-4a24-bc93-b34f731cbf07",
+  "files": [
+    {
+      "name": "script.js",
+      "initialHash": "e09877271ef7dfd83c7f4973e8e4e1e2d791415c5467db090d47d245768b09a0",
+      "content": "const songsContainer = document.querySelector('.songs-container');\nconst addButton = document.querySelector('.input__btn_action_add');\nconst form = document.forms.add;\nconst artist = form.elements.artist;\nconst title = form.elements.title;\n\nfunction addSong(artistValue, titleValue) {\n  const songTemplate = document.querySelector('#song-template').content;\n  const songElement = songTemplate.cloneNode(true);\n\n  songElement.querySelector('.song__artist').textContent = artistValue;\n  songElement.querySelector('.song__title').textContent = titleValue;\n\n  songsContainer.append(songElement);\n}\n\nform.addEventListener('submit', function (evt) {\n  evt.preventDefault();\n  addSong(artist.value, title.value);\n  artist.value = '';\n  title.value = '';\n});\nform.addEventListener('input', function (evt) {\n  const isValid = artist.value.length > 0 && title.value.length > 0;\n});\n"
+    }
+  ],
+  "instructionsHash": "92273c0daa4eee6a64c5f662515092b8fd85bb286a2a65946b2cebbc1f15959c",
+  "verifiedAt": "2026-10-20T13:15:00.364Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Теперь скрипт понимает, заполнены поля или нет. Осталось связать это с работой формы."
+  }
+}

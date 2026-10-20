@@ -1,0 +1,18 @@
+{
+  "taskId": "ff95704f-bc17-44fe-9295-ba83a9baf70b",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "lessonId": "97776d49-bdfe-4a24-bc93-b34f731cbf07",
+  "files": [
+    {
+      "name": "script.js",
+      "initialHash": "38e72498df172ef81a67700512c526fcf411b152301d9dd7d9c180fe444966b7",
+      "content": "const songsContainer = document.querySelector('.songs-container');\nconst addButton = document.querySelector('.input__btn_action_add');\nconst form = document.forms.add;\nconst artist = form.elements.artist;\nconst title = form.elements.title;\n\nfunction addSong(artistValue, titleValue) {\n  const songTemplate = document.querySelector('#song-template').content;\n  const songElement = songTemplate.cloneNode(true);\n\n  songElement.querySelector('.song__artist').textContent = artistValue;\n  songElement.querySelector('.song__title').textContent = titleValue;\n\n  songsContainer.append(songElement);\n}\n\nfunction setSubmitButtonState(isFormValid) {\n}\n\nform.addEventListener('submit', function (evt) {\n  evt.preventDefault();\n  addSong(artist.value, title.value);\n  artist.value = '';\n  title.value = '';\n});\nform.addEventListener('input', function (evt) {\n  const isValid = artist.value.length > 0 && title.value.length > 0;\n});\n"
+    }
+  ],
+  "instructionsHash": "eea797ebaa4dad0bc8732cdea4a3a38798e001f1f048623a0f1fadd8aefde5cb",
+  "verifiedAt": "2026-10-20T13:15:11.530Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Часто новая функциональность в проекте — это новая функция в JS. В нашем случае это setSubmitButtonState."
+  }
+}

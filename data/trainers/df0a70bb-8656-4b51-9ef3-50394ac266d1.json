@@ -1,0 +1,18 @@
+{
+  "taskId": "df0a70bb-8656-4b51-9ef3-50394ac266d1",
+  "lessonId": "45f76ea0-9795-4ed5-a848-0b4da67fa3f1",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "files": [
+    {
+      "name": "scripts.js",
+      "initialHash": "b2ea00cc60bc3e3eb6cfa17f7c1c2e81a8795be5bf4e7caaa47ee487700204f1",
+      "content": "const buttons = document.querySelector('.buttons');\n\nbuttons.addEventListener('click', (event) => {\n  if (event.target === event.currentTarget) return;\n  alert(event.target.textContent);\n});\n"
+    }
+  ],
+  "instructionsHash": "969a1b492c55e1a582ef79dcd3f4395ad492585977df589bdb8aec46fcc3184a",
+  "verifiedAt": "2026-10-20T13:12:06.775Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Отлично! Всё получилось!"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "taskId": "c32b95bd-3dbb-402b-90b0-ae45030a96d0",
+  "lessonId": "97776d49-bdfe-4a24-bc93-b34f731cbf07",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "files": [
+    {
+      "name": "script.js",
+      "initialHash": "313d5dc5b842548628ad487c912375c96855be6f63928b2cc19271198f0a31f6",
+      "content": "const songsContainer = document.querySelector('.songs-container');\nconst addButton = document.querySelector('.input__btn_action_add');\nconst form = document.forms.add;\nconst artist = form.elements.artist;\nconst title = form.elements.title;\n\nfunction addSong(artistValue, titleValue) {\n  const songTemplate = document.querySelector('#song-template').content;\n  const songElement = songTemplate.cloneNode(true);\n\n  songElement.querySelector('.song__artist').textContent = artistValue;\n  songElement.querySelector('.song__title').textContent = titleValue;\n\n  songsContainer.append(songElement);\n}\n\nform.addEventListener('submit', function (evt) {\n  evt.preventDefault();\n  addSong(artist.value, title.value);\n  artist.value = '';\n  title.value = '';\n});\nform.addEventListener('input', function (evt) {\n  console.log(evt);\n});\n"
+    }
+  ],
+  "instructionsHash": "cf81f15b8d8d1f173445a252eef7c2a5f59331ad6a9a60aac45253804621b6a6",
+  "verifiedAt": "2026-10-20T13:14:51.197Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Слушатель добавлен. Попробуйте ввести текст в каждое поле: при каждом нажатии клавиши в консоли появится объект evt. Вы следите за вводом пользователя!"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "taskId": "aeb200eb-926c-4ca0-8242-2f46c8872eca",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "lessonId": "3989da5b-efa3-424c-9f51-74b8c1d5a306",
+  "files": [
+    {
+      "name": "index.html",
+      "initialHash": "c7232637b2493d5ceec18cd334c569f400580b2a919e680ffadc016556100bc0",
+      "content": "<!DOCTYPE html>\n\n<html>\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\" />\n  <link rel=\"stylesheet\" href=\"style.css\">\n  <title>Конструктор плейлистов</title>\n</head>\n<body>\n  <header class=\"header\">\n    <img src=\"https://code.s3.yandex.net/web-code/dom/logo.svg\" alt=\"\" class=\"header__logo\">\n    <p class=\"header__logo-sub\">Конструктор плейлистов</p>\n  </header>\n  <main class=\"container\">\n    <div class=\"cover\">\n      <div class=\"cover__image\"></div>\n      <h1 class=\"cover__heading\">Плейлист</h1>\n    </div>\n    <div class=\"block\">\n      <form name=\"add\">\n      <h3>Добавить песню</h3>\n      <div class=\"input\">\n        <input type=\"text\" name=\"title\" placeholder=\"Название\" class=\"input__text input__text_type_title\">\n        <input type=\"text\" name=\"artist\" placeholder=\"Исполнитель\" class=\"input__text input__text_type_artist\">\n        <button class=\"input__btn input__btn_action_add\">\n          Добавить\n        </button>\n      </div>\n      </form>\n    </div>\n    <div class=\"block\">\n      <h3>Добавленные</h3>\n      <div class=\"songs-container\">\n\n      </div>\n    </div>\n  </main>\n\n  <template id=\"song-template\">\n    <div class=\"song\">\n      <h4 class=\"song__artist\"></h4>\n      <p class=\"song__title\"></p>\n    </div>\n  </template>\n\n  <script src=\"script.js\"></script>\n</body>\n</html>\n"
+    }
+  ],
+  "instructionsHash": "f648dad0ca9cbee9f56becb426ab8b15cbfe1bc4de8c7184dacc4d60ab38c277",
+  "verifiedAt": "2026-10-20T13:12:57.646Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Отлично! Теперь форму можно запросто достать в JavaScript. Вы сделаете это в следующем задании."
+  }
+}

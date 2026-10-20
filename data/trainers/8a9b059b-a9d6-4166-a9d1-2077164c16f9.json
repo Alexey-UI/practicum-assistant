@@ -1,0 +1,18 @@
+{
+  "taskId": "8a9b059b-a9d6-4166-a9d1-2077164c16f9",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "lessonId": "97776d49-bdfe-4a24-bc93-b34f731cbf07",
+  "files": [
+    {
+      "name": "index.html",
+      "initialHash": "01b6a88716ec2a4f5ec4b98faad927ce7ef7fda26b0d8c1e81997c0f97658c62",
+      "content": "<!DOCTYPE html>\n\n<html>\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\" />\n  <link rel=\"stylesheet\" href=\"style.css\">\n  <title>Конструктор плейлистов</title>\n</head>\n<body>\n  <header class=\"header\">\n    <img src=\"https://code.s3.yandex.net/web-code/dom/logo.svg\" alt=\"\" class=\"header__logo\">\n    <p class=\"header__logo-sub\">Конструктор плейлистов</p>\n  </header>\n  <main class=\"container\">\n    <div class=\"cover\">\n      <div class=\"cover__image\"></div>\n      <h1 class=\"cover__heading\">Плейлист</h1>\n    </div>\n    <div class=\"block\">\n      <form name=\"add\">\n        <h3>Добавить песню</h3>\n        <div class=\"input\">\n          <input type=\"text\" name=\"title\" placeholder=\"Название\" class=\"input__text input__text_type_title\">\n          <input type=\"text\" name=\"artist\" placeholder=\"Исполнитель\" class=\"input__text input__text_type_artist\">\n          <button class=\"input__btn input__btn_action_add input__btn_disabled\" disabled>\n            Добавить\n          </button>\n        </div>\n      </form>\n    </div>\n    <div class=\"block\">\n      <h3>Добавленные</h3>\n      <div class=\"songs-container\">\n\n      </div>\n    </div>\n  </main>\n\n  <template id=\"song-template\">\n    <div class=\"song\">\n      <h4 class=\"song__artist\"></h4>\n      <p class=\"song__title\"></p>\n    </div>\n  </template>\n\n  <script src=\"script.js\"></script>\n</body>\n</html>\n"
+    }
+  ],
+  "instructionsHash": "b84876338de934084669c4078fe676ae0fc9d1ced812504061bf80a0fabf4772",
+  "verifiedAt": "2026-10-20T13:15:40.791Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Теперь кнопка не активна и при первой загрузке. Протестируйте, всё работает!"
+  }
+}
