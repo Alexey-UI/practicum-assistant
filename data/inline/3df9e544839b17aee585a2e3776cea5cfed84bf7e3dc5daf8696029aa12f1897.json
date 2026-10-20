@@ -1,0 +1,18 @@
+{
+  "id": "3df9e544839b17aee585a2e3776cea5cfed84bf7e3dc5daf8696029aa12f1897",
+  "lessonId": "c0cbb3a5-a6f9-4545-a9fc-6dcb5263e88e",
+  "url": "https://sandbox.practicum-team.ru/tasks/04-beautishcha/05-decoration/12-mix-blend/example-04/pre/",
+  "instructionsHash": "14b5e524ea8cb196729b01b23e9f1c7eac5629b845a23014de2f81b37b7575fc",
+  "files": [
+    {
+      "name": "styles/style.css",
+      "initialHash": "534e2c8d2283f01fcb0681e2cb4400271e91955641d2f6fd2ebf0994ae12c551",
+      "content": "body {\n  position: relative;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  margin: 0;\n  background: url(https://code.s3.yandex.net/web-code/images/dotted-l.svg);\n  min-block-size: 100dvh;\n}\n\n.wrapper {\n  font-family: serif;\n  inline-size: 100%;\n  block-size: 100dvh;\n}\n\n.mix {\n  display: flex;\n  align-items: center;\n  background-image: url(https://picsum.practicum-team.ru/random-image);\n  background-position: center;\n  background-size: cover;\n  block-size: 100%;\n}\n\nh1 {\n  margin: 20px auto;\n  color: black;\n  font-weight: 900;\n\n  /* пишите код здесь */\n  font-size: 92px;\n  text-align: center;\n  background-color: white;\n  mix-blend-mode: screen;\n}\n"
+    }
+  ],
+  "verifiedAt": "2026-10-20T11:23:26.656Z",
+  "evidence": {
+    "selector": ".result .icon-status-success",
+    "message": "Всё отлично!"
+  }
+}

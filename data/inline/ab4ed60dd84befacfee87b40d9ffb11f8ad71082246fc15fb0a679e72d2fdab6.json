@@ -1,0 +1,18 @@
+{
+  "id": "ab4ed60dd84befacfee87b40d9ffb11f8ad71082246fc15fb0a679e72d2fdab6",
+  "lessonId": "c0cbb3a5-a6f9-4545-a9fc-6dcb5263e88e",
+  "url": "https://sandbox.practicum-team.ru/tasks/04-beautishcha/05-decoration/12-mix-blend/example-10/pre/",
+  "instructionsHash": "3db4b313837ae5a8479c05efa65a8181cf4bf518aa4fa18eb093fd2c479c0e46",
+  "files": [
+    {
+      "name": "styles/style.css",
+      "initialHash": "b565c3798dd8cf4f004d57d49129b945565aa680470990703305ff46b3c51908",
+      "content": "body {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  margin: 0;\n  min-block-size: 100dvh;\n}\n\ndiv {\n  background:\n    repeating-linear-gradient(\n      -45deg,\n      transparent 0,\n      transparent 25%,\n      dodgerblue 0,\n      dodgerblue 50%\n    ),\n    repeating-linear-gradient(\n      45deg,\n      transparent 0,\n      transparent 25%,\n      tomato 0,\n      tomato 50%\n    ),\n    repeating-linear-gradient(transparent 0, transparent 25%, gold 0, gold 50%),\n    white;\n  background-size: 100px 100px;\n  inline-size: 100%;\n  block-size: 100dvh;\n  background-blend-mode: multiply;\n}\n"
+    }
+  ],
+  "verifiedAt": "2026-10-20T11:23:43.758Z",
+  "evidence": {
+    "selector": ".result .icon-status-success",
+    "message": "Всё отлично!"
+  }
+}

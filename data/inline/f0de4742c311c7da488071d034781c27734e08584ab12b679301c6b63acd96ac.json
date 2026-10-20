@@ -1,0 +1,18 @@
+{
+  "id": "f0de4742c311c7da488071d034781c27734e08584ab12b679301c6b63acd96ac",
+  "lessonId": "c0cbb3a5-a6f9-4545-a9fc-6dcb5263e88e",
+  "url": "https://sandbox.practicum-team.ru/tasks/04-beautishcha/05-decoration/12-mix-blend/example-02/pre/",
+  "instructionsHash": "3143269d26f5f34d9565e595c2e0fabe127d53c80d8cf5d59c1ce35dbad763a7",
+  "files": [
+    {
+      "name": "styles/style.css",
+      "initialHash": "51d1b841cdf3c75051c88d97a02aa8949c6d1c9037f2cbfef4a8815878aa5bd5",
+      "content": "body {\n  position: relative;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  margin: 0;\n  min-block-size: 100dvh;\n}\n\n.wrapper {\n  display: grid;\n  grid-template-columns: repeat(2, 1fr);\n  align-items: center;\n  inline-size: 50%;\n}\n\n.image {\n  object-fit: cover;\n  min-inline-size: 200px;\n  inline-size: 100%;\n  block-size: 100%;\n  mix-blend-mode: multiply;\n}\n\n.wrapper:hover .image {\n  position: absolute;\n  transform: translateY(-50%);\n  inset-block-start: 50%;\n  inset-inline-start: 50%;\n  inline-size: 25%;\n  block-size: fit-content;\n  translate: -50% 0;\n}\n"
+    }
+  ],
+  "verifiedAt": "2026-10-20T11:23:18.074Z",
+  "evidence": {
+    "selector": ".result .icon-status-success",
+    "message": "Всё отлично!"
+  }
+}

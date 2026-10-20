@@ -1,0 +1,18 @@
+{
+  "taskId": "25098096-5aaf-4833-815a-f5b269eb2cc2",
+  "lessonId": "d5696449-0734-4bc9-af7b-39eedae86213",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "files": [
+    {
+      "name": "style.css",
+      "initialHash": "e755c9b3aabbeac18170909ff9e2bff4f8d9902f56943d024d369c092250e593",
+      "content": "*,\n*::before,\n*::after {\n  box-sizing: border-box;\n}\n\nbody {\n  display: grid;\n  place-items: center;\n  min-block-size: 100dvb;\n  margin: 0;\n  padding: 2em;\n  font-family: 'Open Sans', sans-serif;\n  font-size: 18px;\n  background-color: rgb(156 0 0);\n  background-image: url(https://code.s3.yandex.net/web-code/images/dotted.svg);\n}\n\nspan {\n  display: block;\n  font-weight: bold;\n  font-size: clamp(3.125rem, -0.8929rem + 17.8571vw, 12.5rem);\n  text-transform: uppercase;\n  background-image: url(../images/ferrari.jpg);\n  background-position: calc(50% + var(--x, 0px)) calc(50% + var(--y, 0px));\n  background-size: 150% auto;\n  color: transparent;\n  -webkit-background-clip: text;\n  background-clip: text;\n}"
+    }
+  ],
+  "instructionsHash": "6b848c9832dcbf2f23ef359ea33c051ff0c7a72e68835bf0eb2698af4845dfd4",
+  "verifiedAt": "2026-10-20T11:24:36.465Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Вау! Щепотка JavaScript, конечно, делает эффект ярче."
+  }
+}

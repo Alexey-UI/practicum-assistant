@@ -1,0 +1,18 @@
+{
+  "id": "bc496d58640d7e3ac64af728e31f8e4252de6d08cc3a78dbdab5172652b40faa",
+  "lessonId": "d5696449-0734-4bc9-af7b-39eedae86213",
+  "url": "https://sandbox.practicum-team.ru/tasks/04-beautishcha/05-decoration/13-text/example-04/pre/",
+  "instructionsHash": "f7cad437c2c74d12dd1e92af762ad30fdc090e3757d7c5822aaeb42cb0c43682",
+  "files": [
+    {
+      "name": "styles/style.css",
+      "initialHash": "d916b507988bd309ffed0198e612b4992922354e1ba6bc1608e91087e8e47885",
+      "content": "body {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  margin: 0;\n  font-family: 'Open Sans', sans-serif;\n  background-color: #332f2c;\n  min-block-size: 100dvh;\n}\n\np {\n  margin: 20px 0 0;\n  font-weight: 900;\n  font-size: 90px;\n  text-align: center;\n  text-transform: uppercase;\n  max-inline-size: 800px;\n  color: transparent;\n  background-image: url(../images/vangogh.webp);\n  -webkit-background-clip: text;\n  background-clip: text;\n}\n"
+    }
+  ],
+  "verifiedAt": "2026-10-20T11:24:16.553Z",
+  "evidence": {
+    "selector": ".result .icon-status-success",
+    "message": "Всё отлично!"
+  }
+}

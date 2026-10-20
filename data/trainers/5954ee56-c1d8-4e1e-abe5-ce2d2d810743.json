@@ -1,0 +1,18 @@
+{
+  "taskId": "5954ee56-c1d8-4e1e-abe5-ce2d2d810743",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "lessonId": "d4ee2ed0-913f-46d7-ab3f-727bc84544fb",
+  "files": [
+    {
+      "name": "style.css",
+      "initialHash": "6a33d8c48dc256a707d9b9ba29491375e5b1de6e14bac668b6b58c323d3de762",
+      "content": ":root {\n  --card-height: 65vh;\n}\n\n@property --rotate {\n  syntax: '<angle>';\n  initial-value: 0deg;\n  inherits: false;\n}\n\n*,\n*::before,\n*::after {\n  box-sizing: border-box;\n}\n\n@keyframes spin {\n  0% {\n    --rotate: 0deg;\n  }\n\n  100% {\n    --rotate: 360deg;\n  }\n}\n\nbody {\n  display: grid;\n  place-items: center;\n  min-block-size: 100dvb;\n  margin: 0;\n  padding: 2em;\n  background-color: #000;\n}\n\n.card {\n  position: relative;\n  block-size: var(--card-height);\n  border-radius: 6px;\n  background: #191c29;\n  background-image: url(../images/akopyan.jpg);\n  background-position: center;\n  background-size: cover;\n  aspect-ratio: 2 / 3;\n}\n\n.card::before {\n  animation: spin 3s linear infinite;\n  content: '';\n  position: absolute;\n  z-index: -1;\n  inline-size: 104%;\n  block-size: 102.5%;\n  border-radius: 8px;\n  background-image:\n    linear-gradient(\n      var(--rotate, 132deg)\n      , #5ddcff, #3c67e3 43%, #4e00c2);\n  inset-block-start: -1%;\n  inset-inline-end: -2%;\n}\n\n.card::after {\n  content: '';\n  position: absolute;\n  z-index: -1;\n  inline-size: 100%;\n  block-size: 100%;\n  margin-inline: auto;\n  margin-block: 0;\n  background-image:\n    linear-gradient(\n      132deg\n      , #5ddcff, #3c67e3 43%, #4e00c2);\n  filter: blur(calc(var(--card-height) / 6));\n  transform: scale(0.8);\n  inset-block-start: calc(var(--card-height) / 6);\n  inset-inline-end: 0;\n}"
+    }
+  ],
+  "instructionsHash": "b25d5eff69b9b47e22e3303a4819f242b212f514977c1db10edacc74215dda91",
+  "verifiedAt": "2026-10-20T11:22:55.805Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Ахалай-махалай рахат ибн лукум!"
+  }
+}

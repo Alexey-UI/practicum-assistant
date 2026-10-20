@@ -1,0 +1,18 @@
+{
+  "id": "bcb7e561a564d031fb637e4265d29f603ae7a7ed75ad5d6d45c313e040181449",
+  "lessonId": "c0cbb3a5-a6f9-4545-a9fc-6dcb5263e88e",
+  "url": "https://sandbox.practicum-team.ru/tasks/04-beautishcha/05-decoration/12-mix-blend/example-05/pre/",
+  "instructionsHash": "72263c93d845c10ee49d1ea55b508911a6e315b230152185fea6fa1d039aa2e9",
+  "files": [
+    {
+      "name": "styles/style.css",
+      "initialHash": "407aedceab1562d7501c1b339b41e158fdb6ef73c2de4a07d3826feca5521822",
+      "content": "@keyframes up {\n  to {\n    transform: translateY(50%);\n  }\n}\n\nbody {\n  position: relative;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  margin: 0;\n  font-family: 'Open Sans', sans-serif;\n  background: url(https://code.s3.yandex.net/web-code/images/dotted-l.svg);\n  min-block-size: 100dvh;\n}\n\n.wrapper {\n  display: flex;\n  justify-content: center;\n  align-items: flex-start;\n  background:\n    linear-gradient(rgb(0 0 0 / 0.2), rgb(0 0 0 / 0.2)),\n    url(../images/img.jpg);\n  background-size: cover;\n  inline-size: 100%;\n  max-inline-size: 850px;\n  min-block-size: 100dvh;\n}\n\n.mix-text {\n  position: relative;\n  margin: 0;\n  color: #d3ffd3;\n  font-weight: bold;\n  font-size: 18vw;\n  transition: 0.3s cubic-bezier(0.25, 0.25, 0.33, 1.33);\n\n  /* напишите код здесь */\n  mix-blend-mode: overlay;\n}\n\n.wrapper:hover .mix-text {\n  animation: up 6s ease-out infinite alternate;\n}\n"
+    }
+  ],
+  "verifiedAt": "2026-10-20T11:23:30.488Z",
+  "evidence": {
+    "selector": ".result .icon-status-success",
+    "message": "Всё отлично!"
+  }
+}
