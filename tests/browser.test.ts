@@ -105,6 +105,24 @@ test('Пустая оболочка урока перезагружается б
     assert.equal(await page.locator('h1').innerText(), 'Урок загружен');
   } finally { await page.close(); }
 });
+test('Теория без h1 распознаётся по видимому тексту после загрузки, пустая оболочка не считается готовой', async () => {
+  const page = await browser.newPage(); let reads = 0; let checks = 0;
+  try {
+    await page.route('https://practicum.yandex.ru/**', route => {
+      reads++;
+      return route.fulfill({ contentType: 'text/html; charset=utf-8', body: reads === 1 ? '<main class="theory-viewer"><div class="paragraph"></div></main>' : '<main class="theory-viewer"><div class="paragraph">К дружелюбной вёрстке хочется тянуться.</div><button>Продолжить</button></main>' });
+    });
+    await page.exposeFunction('recordCheck', () => { checks++; });
+    await page.goto('https://practicum.yandex.ru/learn/test/lessons/aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa/');
+    await waitLessonReady(page, 100);
+    assert.equal(reads, 2);
+    await page.locator('button').evaluate(el => el.addEventListener('click', () => (window as unknown as { recordCheck(): void }).recordCheck()));
+    await waitLessonReady(page, 100);
+    assert.equal(reads, 2);
+    assert.equal(checks, 0);
+    assert.equal(await page.locator('h1').count(), 0);
+  } finally { await page.close(); }
+});
 test('Файл редактора выбирается в дереве и во вкладках с перекрывающей текст подсказкой', async () => {
   const page = await browser.newPage();
   try {
