@@ -1,0 +1,18 @@
+{
+  "taskId": "8c15104f-04c6-4fe4-bb3e-835e7c45ed8c",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "lessonId": "32385eb0-564c-41d1-9c0c-25bacd401782",
+  "files": [
+    {
+      "name": "script.js",
+      "initialHash": "706abaed69872b4d448a531a530878695ce2a0c11b210b117c8eca4b9e4ff964",
+      "content": "const container = document.querySelector('.container');\nconst songsContainer = container.querySelector('.songs-container');\nconst addButton = container.querySelector('.input__btn_action_add');\nconst resetButton = container.querySelector('.input__btn_action_reset');\nconst noSongsElement = container.querySelector('.no-songs');\n\nfunction renderHasSongs() {\n  resetButton.removeAttribute('disabled');\n  resetButton.classList.remove('input__btn_disabled');\n  noSongsElement.classList.add('no-songs_hidden');\n}\n\nfunction renderNoSongs() {\n  resetButton.setAttribute('disabled', true);\n  resetButton.classList.add('input__btn_disabled');\n  noSongsElement.classList.remove('no-songs_hidden');\n}\n\nfunction addSong(artistValue, titleValue) {\n  const songTemplate = document.querySelector('#song-template').content;\n  const songElement = songTemplate.querySelector('.song').cloneNode(true);\n}\n\naddButton.addEventListener('click', function () {\n  const artist = document.querySelector('.input__text_type_artist');\n  const title = document.querySelector('.input__text_type_title');\n\n  addSong(artist.value, title.value);\n  renderHasSongs();\n\n  artist.value = '';\n  title.value = '';\n});\n\nresetButton.addEventListener('click', function () {\n  const songs = document.querySelectorAll('.song')\n\n  for (let i = 0; i < songs.length; i++) {\n    songs[i].remove();\n  }\n\n  renderNoSongs();\n});\n"
+    }
+  ],
+  "instructionsHash": "187a08e9f5c96db82a7c538a89723f63c4a0e4e9218639a7975eb6f3871a9340",
+  "verifiedAt": "2026-10-20T12:47:25.168Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Шаблон клонирован, но пока он пустой. В следующем задании подставим в него название песни и имя её исполнителя."
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "taskId": "da910a22-64af-44b1-b265-49f0890dcbbe",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "lessonId": "7ebb6ab9-23a3-4395-8bc1-c4c16c4569b8",
+  "files": [
+    {
+      "name": "script.js",
+      "initialHash": "e7c6d07b48ed9beb37d369f86faa90ccc3fab335e5b9d3b2261dd7274baa4e15",
+      "content": "const blokPoem = 'Ночь. Улица. Фонарь. Аптека';\nconst blokArray = blokPoem.split('. ');\n\nconsole.log(blokArray); // [\"Ночь\", \"Улица\", \"Фонарь\", \"Аптека\"]\n"
+    }
+  ],
+  "instructionsHash": "8a46f57b23f0c20774fde67d7b941cc7edc91a7e1d3db1a5b00c5a800709c16e",
+  "verifiedAt": "2026-10-20T12:50:07.260Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Аптека. Улица. Фонарь."
+  }
+}

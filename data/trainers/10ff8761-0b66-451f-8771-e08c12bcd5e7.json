@@ -1,0 +1,18 @@
+{
+  "taskId": "10ff8761-0b66-451f-8771-e08c12bcd5e7",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "lessonId": "d5872b02-3645-487d-8282-1142c9572dd1",
+  "files": [
+    {
+      "name": "script.js",
+      "initialHash": "25e6723efba66c1687cbf8c76b940ecf4f5adf2023ad0d9ae806b51ab6d315a5",
+      "content": "let message = 'мне нравится экспрессо';\n\nif (message.includes('ться')) {\n  console.log('тяжело вздыхает');\n}\n\nif (message.includes('экс')) {\n  console.log('цокает языком');\n}"
+    }
+  ],
+  "instructionsHash": "e1e98d6d03394ab7f7bc15771f313048b7359db4ac09f148c5f48998c6c78933",
+  "verifiedAt": "2026-10-20T12:49:34.301Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Передаём благодарности от всей редакции."
+  }
+}

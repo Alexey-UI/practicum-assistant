@@ -1,0 +1,18 @@
+{
+  "taskId": "429fc32d-98ff-4990-85ee-640f5f2d0d36",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "lessonId": "cbb62495-12c6-4275-b2ae-2d93a26a7954",
+  "files": [
+    {
+      "name": "script.js",
+      "initialHash": "b10e5ca868f20af19b9cfd42d06f0eff3e404e71dcf990353aad493a08ef8736",
+      "content": "const age = parseInt(prompt('Ваш возраст?'), 10);\n\nconsole.log(age < 18 ? 'Вам ещё не исполнилось 18 лет.' : 'Принимайте участие в голосовании!');"
+    }
+  ],
+  "instructionsHash": "b22965d85ed3ba454e6fa51e6139f050b1b7b8bc8bc77acee2e93bf4b33be19c",
+  "verifiedAt": "2026-10-20T12:53:06.627Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Где мои 17 лет? На Большом Каретном."
+  }
+}

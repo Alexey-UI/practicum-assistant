@@ -1,0 +1,18 @@
+{
+  "taskId": "dcdb21ed-2f48-444b-968f-e53ecec475a6",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "lessonId": "1d61fc5f-f702-4584-adb9-58d80761a8a5",
+  "files": [
+    {
+      "name": "script.js",
+      "initialHash": "d55932bfdebdea1503f97b4a2966c94387172818874a8fbdfb90913aa242c80c",
+      "content": "const container = document.querySelector('.container');\nconst songsContainer = container.querySelector('.songs-container');\nconst addButton = container.querySelector('.input__btn_action_add');\nconst resetButton = container.querySelector('.input__btn_action_reset');\nconst noSongsElement = container.querySelector('.no-songs');\n\nfunction renderHasSongs() {\n  resetButton.removeAttribute('disabled');\n  resetButton.classList.remove('input__btn_disabled');\n  noSongsElement.classList.add('no-songs_hidden');\n}\n\nfunction renderNoSongs() {\n  resetButton.setAttribute('disabled', true);\n  resetButton.classList.add('input__btn_disabled');\n  noSongsElement.classList.remove('no-songs_hidden');\n}\n\nfunction addSong(artistValue, titleValue) {\n  const songTemplate = document.querySelector('#song-template').content;\n  const songElement = songTemplate.querySelector('.song').cloneNode(true);\n\n  songElement.querySelector('.song__artist').textContent = artistValue;\n  songElement.querySelector('.song__title').textContent = titleValue;\n  songElement.querySelector('.song__like').addEventListener('click', function (evt) {\n    evt.target.classList.toggle('song__like_active');\n  });\n  songsContainer.append(songElement);\n}\n\naddButton.addEventListener('click', function () {\n  const artist = document.querySelector('.input__text_type_artist');\n  const title = document.querySelector('.input__text_type_title');\n\n  addSong(artist.value, title.value);\n  renderHasSongs();\n\n  artist.value = '';\n  title.value = '';\n});\n\nresetButton.addEventListener('click', function () {\n  const songs = document.querySelectorAll('.song')\n\n  for (let i = 0; i < songs.length; i++) {\n    songs[i].remove();\n  }\n\n  renderNoSongs();\n});\n"
+    }
+  ],
+  "instructionsHash": "cf65db194a5dcf1f2fcb8a3631e8dc9dc8bc18e52ece6b85668e6dce38b25d58",
+  "verifiedAt": "2026-10-20T12:48:15.368Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Теперь песни можно лайкать!"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "taskId": "b08ce2d0-2d3a-41e4-896a-09269d49601f",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "lessonId": "71abc628-a395-4384-966a-93ba09fc88b2",
+  "files": [
+    {
+      "name": "script.js",
+      "initialHash": "f218f72ad88d285f3117772f5bf9acb067374e014e82f644436932a09f814862",
+      "content": "//console.log(Boolean());\n//console.log(Boolean(undefined));\n//console.log(Boolean(null));\n//console.log(Boolean(0));\nconsole.log(Boolean('0'));\nconsole.log(Boolean(true));\n//console.log(Boolean(false));\nconsole.log(Boolean('true'));\nconsole.log(Boolean('false'));\n"
+    }
+  ],
+  "instructionsHash": "bd6588915d8dd708a7a7166976a8dc7271a36d80324338dbe491a5e90de00c7d",
+  "verifiedAt": "2026-10-20T12:51:03.947Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Вы успешно отделили правду ото лжи."
+  }
+}

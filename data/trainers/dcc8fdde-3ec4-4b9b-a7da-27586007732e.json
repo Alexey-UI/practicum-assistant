@@ -1,0 +1,18 @@
+{
+  "taskId": "dcc8fdde-3ec4-4b9b-a7da-27586007732e",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "lessonId": "ce854009-d256-4ba6-ba8d-1c0d89acb441",
+  "files": [
+    {
+      "name": "script.js",
+      "initialHash": "37ec9f6e7bbe03e2262fdd8c38c788da0c3cd9c5af1b6d21c614994e17104d7e",
+      "content": "const t = prompt('Какая у вас температура?');\nconst normal = t >= 35.9 && t <= 37.2;\n\nconsole.log(normal);\n"
+    }
+  ],
+  "instructionsHash": "4dfd8a10069032bfb1bd33a0e91e5eb0b05273bd8f440a59f6ef19ee99fb9dfd",
+  "verifiedAt": "2026-10-20T12:52:10.627Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Если температура выше или ниже — обратитесь к врачу."
+  }
+}

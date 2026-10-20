@@ -1,0 +1,18 @@
+{
+  "taskId": "37cf02f2-afb2-48c9-8045-7de1ac0d7830",
+  "lessonId": "ce854009-d256-4ba6-ba8d-1c0d89acb441",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "files": [
+    {
+      "name": "script.js",
+      "initialHash": "d21c4159ed87f6bfa94b79feaeedffe92450b6ff915a9f406dbe1f57177ca5e4",
+      "content": "const animalOrder = 'китообразное';\nconst animalClass = 'млекопитающее';\nconst hasEmpathy = true;\n\nif (animalOrder === 'китообразное' && animalClass === 'млекопитающее' && hasEmpathy) {\n  console.log('Это же дельфин!');\n}\n"
+    }
+  ],
+  "instructionsHash": "a3c4d0ea13207ed87a245893ee3c3b5bac265edce442381c46b7aae7b380e48f",
+  "verifiedAt": "2026-10-20T12:52:28.807Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Если видите в коде три вложенных друг в друга условия if — скорее всего, что-то не так. Логическое И — отличный способ от них избавиться."
+  }
+}

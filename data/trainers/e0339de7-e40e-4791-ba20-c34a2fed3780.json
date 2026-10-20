@@ -1,0 +1,18 @@
+{
+  "taskId": "e0339de7-e40e-4791-ba20-c34a2fed3780",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "lessonId": "32385eb0-564c-41d1-9c0c-25bacd401782",
+  "files": [
+    {
+      "name": "script.js",
+      "initialHash": "25d9591b8a66a158134d2bfc033ed4a00c4122bb2ca62d202b1b5c98e68bf6e6",
+      "content": "const container = document.querySelector('.container');\nconst songsContainer = container.querySelector('.songs-container');\nconst addButton = container.querySelector('.input__btn_action_add');\nconst resetButton = container.querySelector('.input__btn_action_reset');\nconst noSongsElement = container.querySelector('.no-songs');\n\nfunction renderHasSongs() {\n  resetButton.removeAttribute('disabled');\n  resetButton.classList.remove('input__btn_disabled');\n  noSongsElement.classList.add('no-songs_hidden');\n}\n\nfunction renderNoSongs() {\n  resetButton.setAttribute('disabled', true);\n  resetButton.classList.add('input__btn_disabled');\n  noSongsElement.classList.remove('no-songs_hidden');\n}\n\nfunction addSong(artistValue, titleValue) {\n  const songTemplate = document.querySelector('#song-template').content;\n  const songElement = songTemplate.querySelector('.song').cloneNode(true);\n\n  songElement.querySelector('.song__artist').textContent = artistValue;\n  songElement.querySelector('.song__title').textContent = titleValue;\n  songsContainer.append(songElement);\n}\n\naddButton.addEventListener('click', function () {\n  const artist = document.querySelector('.input__text_type_artist');\n  const title = document.querySelector('.input__text_type_title');\n\n  addSong(artist.value, title.value);\n  renderHasSongs();\n\n  artist.value = '';\n  title.value = '';\n});\n\nresetButton.addEventListener('click', function () {\n  const songs = document.querySelectorAll('.song')\n\n  for (let i = 0; i < songs.length; i++) {\n    songs[i].remove();\n  }\n\n  renderNoSongs();\n});\n"
+    }
+  ],
+  "instructionsHash": "6d1667dc49e1f53e52ec7edcaed8516b44d6c58e8344f9010dc46110d0abc268",
+  "verifiedAt": "2026-10-20T12:47:45.424Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Готово, можно тестировать. Код функции addSong стал существенно меньше. А вёрстку теперь проще редактировать — она хранится внутри шаблона в HTML."
+  }
+}

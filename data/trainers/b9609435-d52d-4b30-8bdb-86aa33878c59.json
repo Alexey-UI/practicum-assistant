@@ -1,0 +1,18 @@
+{
+  "taskId": "b9609435-d52d-4b30-8bdb-86aa33878c59",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "lessonId": "5fbd8040-800c-4e1a-8767-fb2094533eab",
+  "files": [
+    {
+      "name": "script.js",
+      "initialHash": "372ed08a0311ad41a562ffd51ef07bd78f64b1d8575c86f22b72252ecbf7d1b5",
+      "content": "let password = prompt('Введите пароль:');\n\nif (!password) {\n  password = prompt('Пароль обязателен и не может быть пустым.');\n}"
+    }
+  ],
+  "instructionsHash": "f7aaee18a900153cfd46840e32c4028924afe2f0dd1a0272b6e9f7ea065872e7",
+  "verifiedAt": "2026-10-20T12:51:33.754Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Пустой пароль — это так себе. Уж лучше qwerty."
+  }
+}

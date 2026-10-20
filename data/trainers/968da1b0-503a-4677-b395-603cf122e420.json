@@ -1,0 +1,18 @@
+{
+  "taskId": "968da1b0-503a-4677-b395-603cf122e420",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "lessonId": "7ebb6ab9-23a3-4395-8bc1-c4c16c4569b8",
+  "files": [
+    {
+      "name": "script.js",
+      "initialHash": "160dded928fbe12dd888668e0f068d2900a76842b7deeeaf82bc1d7c332dcac4",
+      "content": "/* Функция prompt показывает диалоговое\nокно с возможностью ввести текст. Введённая строка\nпопадёт в переменную myName */\n\nconst myName = prompt('Как Вас зовут?', '');\n\nconsole.log('Здравствуйте, ' + myName[0].toUpperCase() + myName.slice(1));\n"
+    }
+  ],
+  "instructionsHash": "ff20430da4adcb79582e787af1479a74651c07026c40652994a1204975d91f59",
+  "verifiedAt": "2026-10-20T12:49:58.137Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Здравствуйте."
+  }
+}

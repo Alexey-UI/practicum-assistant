@@ -1,0 +1,18 @@
+{
+  "taskId": "5f67a51f-c32e-4b8e-a1ea-5f0658f1fc84",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "lessonId": "7bcd26fd-daf6-4124-84ae-70be3a1c2cf5",
+  "files": [
+    {
+      "name": "script.js",
+      "initialHash": "c14adeda97271e12987410d5b02905f1710fd8cb220f981d78757cfa1e9e1015",
+      "content": "const bogatyrs = '33 богатыря';\nconst knights = '24 рыцаря Круглого стола';\nconst spartans = '300 спартанцев';\nconst totalHeroes = parseInt(bogatyrs, 10) + parseInt(knights, 10) + parseInt(spartans, 10);\n\nconsole.log(totalHeroes);\n"
+    }
+  ],
+  "instructionsHash": "4fe70c407ae6381124258c8d33b8968ef4a15332e624d6c1ae308b90d9e89624",
+  "verifiedAt": "2026-10-20T12:50:25.347Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Всего 357 героев, 3 + 5 + 7 = 15, 1 + 5 = 6. Шестая планета солнечной системы — Сатурн. Если раскручивать эту цепочку дальше, можно прийти к тому, что миром правят масоны."
+  }
+}

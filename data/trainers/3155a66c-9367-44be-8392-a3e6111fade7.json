@@ -1,0 +1,18 @@
+{
+  "taskId": "3155a66c-9367-44be-8392-a3e6111fade7",
+  "lessonId": "7e9c8741-7081-4879-9362-3f2193fe590b",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "files": [
+    {
+      "name": "script.js",
+      "initialHash": "e78e2e67c8c2f0e511e9bf42ecbdac06b6d79f1655b792faff4293713a328e5e",
+      "content": "const array = [];\n\nfor (let i = 0; i <= 10; i += 1) {\n  array[i] = i;\n}\n"
+    }
+  ],
+  "instructionsHash": "c5250916129abd7210f63676f459ff1044102882fe9c4304fa3ef62f9ff6d917",
+  "verifiedAt": "2026-10-20T12:49:06.998Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "В игре знатоков против критиков 1:0 в пользу знатоков!"
+  }
+}

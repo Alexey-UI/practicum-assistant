@@ -1,0 +1,18 @@
+{
+  "taskId": "933a1531-997a-4613-b0b9-427990b5a102",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "lessonId": "0a54d3f0-3ed7-41c8-bbde-5fff06167f1a",
+  "files": [
+    {
+      "name": "script.js",
+      "initialHash": "b0fb1d0c24eda1a8a624d6ca675d154e24934651ff319c2cdea722dd832b3a3f",
+      "content": "const answer = 'Быть' || 'Не быть';\n\nconsole.log(answer); // \"Быть\"\n"
+    }
+  ],
+  "instructionsHash": "802d1c37844c075ea0b0d402bc7bcf8254ba17c9a2e14a8e0ecd421a1414be99",
+  "verifiedAt": "2026-10-20T12:51:51.503Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Вот так оператор логическое ИЛИ помог вам определиться."
+  }
+}

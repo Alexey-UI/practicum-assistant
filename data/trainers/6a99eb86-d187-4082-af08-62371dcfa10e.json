@@ -1,0 +1,18 @@
+{
+  "taskId": "6a99eb86-d187-4082-af08-62371dcfa10e",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "lessonId": "1b02c222-3d2d-4c44-8094-3da36cb3b104",
+  "files": [
+    {
+      "name": "script.js",
+      "initialHash": "f5412d2e045a230362f40c5bdb916b72060f34fc8cc791d6bc1de19d4104745a",
+      "content": "const hundred = 100;\nconst fiveHundred = 500;\n\nconsole.log('' + hundred + fiveHundred);\n"
+    }
+  ],
+  "instructionsHash": "a0894bff2697b16ea1f9017354c6f8dd577b1c4fb9d6f581600f055b78ab0ef3",
+  "verifiedAt": "2026-10-20T12:50:42.992Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Неявное преобразование типов — это данность, с которой приходится жить. Нужно знать о нём, но не злоупотреблять. Каждый раз, когда нужно преобразовать тип, лучше делать это явно. В следующем уроке разберёмся, как именно."
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "taskId": "d21c823d-c636-49e0-bc6a-2226da4f6595",
+  "lessonId": "d5872b02-3645-487d-8282-1142c9572dd1",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "files": [
+    {
+      "name": "script.js",
+      "initialHash": "df7b511d795f36f44ccdbe16ef47a48ec742478c18eb864b5750a253ca9c5bb8",
+      "content": "const haystack = 'встогесенаиголкагдето';\n\nconsole.log(haystack.indexOf('иголка'));\n"
+    }
+  ],
+  "instructionsHash": "0b0a9553306cb3c1e6938141023bd0dc1bc6acd63c8692a6860ea4723957c83f",
+  "verifiedAt": "2026-10-20T12:49:25.166Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Найти иголку в стоге сена оказалось проще, чем смысл жизни."
+  }
+}

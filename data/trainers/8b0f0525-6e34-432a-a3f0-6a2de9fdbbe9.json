@@ -1,0 +1,18 @@
+{
+  "taskId": "8b0f0525-6e34-432a-a3f0-6a2de9fdbbe9",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "lessonId": "ce854009-d256-4ba6-ba8d-1c0d89acb441",
+  "files": [
+    {
+      "name": "script.js",
+      "initialHash": "872b3f5a98c6ac02bd437818d048875828e1604fb46be2955722a841e309a01e",
+      "content": "/* Функция принимает 2 аргумента: систолическое\nи диастолическое давление (верхнее и нижнее) */\n\nfunction getNormal(sys, dia) {\n  return sys >= 100 && sys <= 135 && dia >= 60 && dia <= 85;\n}\n\nconsole.log(getNormal(110, 70)); // true\nconsole.log(getNormal(140, 75)); // false\nconsole.log(getNormal(98, 80)); // false\n"
+    }
+  ],
+  "instructionsHash": "8accf3923fc7cbaf7165b5aadd9f62bc022e9b26a0a4f9931af1a37343b0dc8c",
+  "verifiedAt": "2026-10-20T12:52:19.716Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Сидячий образ жизни — одна из причин повышенного давления, а мы ценим ваше здоровье. Изучая JavaScript, давайте себе время на прогулку и отдых. Хоть иногда."
+  }
+}

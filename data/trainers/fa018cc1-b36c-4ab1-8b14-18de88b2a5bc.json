@@ -1,0 +1,18 @@
+{
+  "taskId": "fa018cc1-b36c-4ab1-8b14-18de88b2a5bc",
+  "lessonId": "4a265b23-c30b-43a8-81e1-797d7c03d7cb",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "files": [
+    {
+      "name": "script.js",
+      "initialHash": "acce140076eda6f733ef4f5f4e8119e9a2c42a3ee127ee244f3604b2ca399d4a",
+      "content": "const where = prompt('Куда едешь? Налево, направо или прямо?', '').toLowerCase();\n\nswitch (where) {\n  case 'налево':\n    console.log('Быть тебе женатым');\n    break;\n  case 'прямо':\n    console.log('Живым не бывать');\n    break;\n  case 'направо':\n    console.log('Быть тебе богатым');\n    break;\n}\n"
+    }
+  ],
+  "instructionsHash": "26568a2d88990a0abac0f677c2f4fe081f2a51543f6763b7a102ed378ed78f78",
+  "verifiedAt": "2026-10-20T12:52:48.875Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Тот случай, когда прямо лучше не ходить."
+  }
+}

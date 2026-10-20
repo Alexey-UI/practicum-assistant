@@ -1,0 +1,18 @@
+{
+  "taskId": "dc532a4a-0c35-4cdd-a580-5b26ff82abf4",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "lessonId": "32385eb0-564c-41d1-9c0c-25bacd401782",
+  "files": [
+    {
+      "name": "index.html",
+      "initialHash": "dc2720f7bdf281c6539183bfb83fadc6cc275056321b8c357aacd89551950b95",
+      "content": "<!DOCTYPE html>\n\n<html>\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\" />\n  <link rel=\"stylesheet\" href=\"style.css\">\n  <title>Конструктор плейлистов</title>\n</head>\n<body>\n  <header class=\"header\">\n    <img src=\"https://code.s3.yandex.net/web-code/dom/logo.svg\" alt=\"\" class=\"header__logo\">\n    <p class=\"header__logo-sub\">Конструктор плейлистов</p>\n  </header>\n  <main class=\"container\">\n    <div class=\"cover\">\n      <div class=\"cover__image\"></div>\n      <h1 class=\"cover__heading\">Плейлист</h1>\n    </div>\n    <div class=\"block\">\n      <h3>Добавить песню</h3>\n      <div class=\"input\">\n        <input type=\"text\" placeholder=\"Название\" class=\"input__text input__text_type_title\">\n        <input type=\"text\" placeholder=\"Исполнитель\" class=\"input__text input__text_type_artist\">\n        <button class=\"input__btn input__btn_action_add\">\n          Добавить\n        </button>\n      </div>\n    </div>\n    <div class=\"block\">\n      <h3>Добавленные</h3>\n      <div class=\"no-songs\">\n        <p class=\"no-songs__text\">Нет добавленных песен</p>\n      </div>\n      <div class=\"songs-container\">\n\n      </div>\n      <div class=\"input__submit\">\n        <button class=\"input__btn input__btn_action_reset input__btn_disabled\" disabled>\n          Очистить плейлист\n        </button>\n      </div>\n    </div>\n  </main>\n  <template id=\"song-template\">\n    <div class=\"song\">\n      <h4 class=\"song__artist\"></h4>\n      <p class=\"song__title\"></p>\n      <button class=\"song__like\"></button>\n    </div>\n  </template>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n"
+    }
+  ],
+  "instructionsHash": "6cd714410b71ad9cc4f68a392ba48aeb8c128da36be20d10914ef33701072e9d",
+  "verifiedAt": "2026-10-20T12:47:04.570Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Шаблон готов! В следующих заданиях напишем недостающий JS-код."
+  }
+}

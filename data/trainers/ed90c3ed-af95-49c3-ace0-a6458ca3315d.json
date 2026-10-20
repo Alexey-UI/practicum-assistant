@@ -1,0 +1,18 @@
+{
+  "taskId": "ed90c3ed-af95-49c3-ace0-a6458ca3315d",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "lessonId": "cbb62495-12c6-4275-b2ae-2d93a26a7954",
+  "files": [
+    {
+      "name": "script.js",
+      "initialHash": "a521eedb3e9056de20f6b447dd792768e2f20b3632a0aea1bbfbdb8f41a79780",
+      "content": "const citizenship = prompt('Какое у вас гражданство?', 'РФ');\nconst otherDebts = parseInt(prompt('Введите общую сумму задолженности перед другими финансовыми предприятиями', '0'), 10);\nconst age = parseInt(prompt('Сколько вам полных лет?'), 10);\nconst ok = (citizenship === 'РФ' || citizenship === 'Россия') && !otherDebts && age > 21;\n\nconsole.log(ok ? 'Кредит одобрен' : 'Извините');"
+    }
+  ],
+  "instructionsHash": "15cba255fda5c7efafdb34fd0e1d5b4160728bda059fdb77381b5937b955f0b8",
+  "verifiedAt": "2026-10-20T12:53:15.789Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "С кредитами нужно быть аккуратнее."
+  }
+}

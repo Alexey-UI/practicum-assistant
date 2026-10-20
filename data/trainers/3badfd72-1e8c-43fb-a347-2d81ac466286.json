@@ -1,0 +1,18 @@
+{
+  "taskId": "3badfd72-1e8c-43fb-a347-2d81ac466286",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "lessonId": "32385eb0-564c-41d1-9c0c-25bacd401782",
+  "files": [
+    {
+      "name": "script.js",
+      "initialHash": "ede8f68b4cd991d72edd5e08f0bc674b53562e455aa50804ea0adf8d6a140373",
+      "content": "const container = document.querySelector('.container');\nconst songsContainer = container.querySelector('.songs-container');\nconst addButton = container.querySelector('.input__btn_action_add');\nconst resetButton = container.querySelector('.input__btn_action_reset');\nconst noSongsElement = container.querySelector('.no-songs');\n\nfunction renderHasSongs() {\n  resetButton.removeAttribute('disabled');\n  resetButton.classList.remove('input__btn_disabled');\n  noSongsElement.classList.add('no-songs_hidden');\n}\n\nfunction renderNoSongs() {\n  resetButton.setAttribute('disabled', true);\n  resetButton.classList.add('input__btn_disabled');\n  noSongsElement.classList.remove('no-songs_hidden');\n}\n\nfunction addSong(artistValue, titleValue) {\n  const songTemplate = document.querySelector('#song-template').content;\n}\n\naddButton.addEventListener('click', function () {\n  const artist = document.querySelector('.input__text_type_artist');\n  const title = document.querySelector('.input__text_type_title');\n\n  addSong(artist.value, title.value);\n  renderHasSongs();\n\n  artist.value = '';\n  title.value = '';\n});\n\nresetButton.addEventListener('click', function () {\n  const songs = document.querySelectorAll('.song')\n\n  for (let i = 0; i < songs.length; i++) {\n    songs[i].remove();\n  }\n\n  renderNoSongs();\n});\n"
+    }
+  ],
+  "instructionsHash": "d9af14c54cf2bbd2f2ec25f34dfa6ea36bc2514231de4c1de869a681f07b133e",
+  "verifiedAt": "2026-10-20T12:47:15.689Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Пока вы только выбрали шаблон. Дальше сделаем из него новый элемент песни."
+  }
+}
