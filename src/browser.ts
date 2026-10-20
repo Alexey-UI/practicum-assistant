@@ -1,6 +1,7 @@
 import { chromium, type BrowserContext, type Page } from 'playwright';
 import { chmod, mkdir, writeFile } from 'node:fs/promises';
 import path from 'node:path';
+import { handleExerciseDialogs } from './exercise-dialogs.js';
 
 export const START_URL = 'https://practicum.yandex.ru/profile/ap-frontend-st/';
 export const LOCAL = path.resolve('.local');
@@ -15,6 +16,7 @@ export async function openBrowser(headless = true, options: { signalsManagedByCa
   });
   context.setDefaultTimeout(30000);
   context.setDefaultNavigationTimeout(120000);
+  handleExerciseDialogs(context);
   return context;
 }
 

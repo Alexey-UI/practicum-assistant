@@ -1,0 +1,18 @@
+{
+  "taskId": "3692dd15-8f22-4205-b110-dfa69877bad8",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "lessonId": "90f0ed41-1495-444e-984c-fc485fa2efdd",
+  "files": [
+    {
+      "name": "script.js",
+      "initialHash": "57e8363d61d5de353bb808e91f3cbc748ca99b3e87bf2e15f8daf88a7b7dbbe2",
+      "content": "let password = null;\n\nwhile (password === null) {\n  password = prompt('Введите пароль:');\n}\n"
+    }
+  ],
+  "instructionsHash": "6bbbf9c4a9b3ea4b3e05e34566ecf0e3d13a619fde90928bcacf6c1b556ab824",
+  "verifiedAt": "2026-10-20T12:17:39.682Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "null — не число, не строка и не булево значение, не объект и не функция. null — это выбор, но выбор «против всех»."
+  }
+}

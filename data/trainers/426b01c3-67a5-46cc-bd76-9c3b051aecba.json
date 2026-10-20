@@ -1,0 +1,18 @@
+{
+  "taskId": "426b01c3-67a5-46cc-bd76-9c3b051aecba",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "lessonId": "185605ef-93b9-499f-b021-bdc3385af1e9",
+  "files": [
+    {
+      "name": "script.js",
+      "initialHash": "8ba6dd80f0fabba45376bbfdec6e58e22e7efed4a8e92cb43c21ef4ed02d5ab4",
+      "content": "const initialNumber = 451;\n\nconsole.log(initialNumber % 0); // NaN\nconsole.log(initialNumber / 0); // Infinity\n"
+    }
+  ],
+  "instructionsHash": "b72df2efe393a22ebcea5483a82550addd52932dcf4c0c1cbf9ce6d28098bc24",
+  "verifiedAt": "2026-10-20T12:19:28.797Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "В JavaScript можно делить на ноль. Только не говорите учителям математики."
+  }
+}

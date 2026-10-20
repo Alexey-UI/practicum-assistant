@@ -1,0 +1,18 @@
+{
+  "taskId": "00157216-5d7c-4c58-b1d9-88476e7b119c",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "lessonId": "8313850b-b4e8-417a-be97-bceed078cc6a",
+  "files": [
+    {
+      "name": "script.js",
+      "initialHash": "e1c63ea5a0b88080ad8b4fdda798d6716bfe1e9680d4c806b849f02e933eaae4",
+      "content": "function metresToFeet(metres) {\n  if (typeof metres !== 'number') {\n    console.log('Эта функция имеет дело только с числами.');\n  } else {\n    const feetInMetre = 3.28;\n    return feetInMetre * metres;\n  }\n}\n\nconst theEiffelTowerHeight = 324;\n\nconsole.log(metresToFeet(theEiffelTowerHeight));\n"
+    }
+  ],
+  "instructionsHash": "0af8a297b868ee16b0cbdb67858c6e056b7fd4f90a83121fa178bf2957fed600",
+  "verifiedAt": "2026-10-20T12:13:57.902Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Высота Эйфелевой башни в футах — 1062,72. А знаете, как французы называют четвертьфунтовый чизбургер?"
+  }
+}

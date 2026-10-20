@@ -1,0 +1,18 @@
+{
+  "taskId": "c9da5815-e4c4-44e5-b6d9-57176628fde2",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "lessonId": "185605ef-93b9-499f-b021-bdc3385af1e9",
+  "files": [
+    {
+      "name": "script.js",
+      "initialHash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "content": "console.log(Infinity - 1000000000000000000000000000000000000000000);\nconsole.log(-Infinity - 1000000000000000000000000000000000000000000);\nconsole.log(Infinity + 1000000000000000000000000000000000000000000);\nconsole.log(-Infinity + 1000000000000000000000000000000000000000000);\n"
+    }
+  ],
+  "instructionsHash": "78e98bb37facd16d41c6324c3905da86b9219e1644bcab7ebc189dcbf8a15c98",
+  "verifiedAt": "2026-10-20T12:19:11.661Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "«Есть всего две бесконечные вещи: вселенная и глупость» — так говорил американский писатель-фантаст Харлан Эллисон. Мы добавим: теперь их три, потому что появилось изучение JavaScript. А по поводу вселенной мы уже не уверены…"
+  }
+}

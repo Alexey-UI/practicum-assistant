@@ -1,0 +1,18 @@
+{
+  "taskId": "d00a2700-0f0d-4460-9658-e9d995cca9fc",
+  "lessonId": "90f0ed41-1495-444e-984c-fc485fa2efdd",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "files": [
+    {
+      "name": "script.js",
+      "initialHash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "content": "console.log(document.title);\nconsole.log(document.body);\nconsole.log(document.querySelector);\nconsole.log(document.nonexistentProperty);\n"
+    }
+  ],
+  "instructionsHash": "f10e11519132bb5931ead8f807a1d6843998fe02a26c9ac6c34d41f16ebe08a1",
+  "verifiedAt": "2026-10-20T12:14:22.359Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "В объекте document есть многое, но не всё. Смысл жизни в нём найти не получится."
+  }
+}

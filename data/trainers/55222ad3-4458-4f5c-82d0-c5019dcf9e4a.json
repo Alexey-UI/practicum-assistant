@@ -1,0 +1,18 @@
+{
+  "taskId": "55222ad3-4458-4f5c-82d0-c5019dcf9e4a",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "lessonId": "3f604a78-bde0-45c2-9209-76446b2bd8e7",
+  "files": [
+    {
+      "name": "script.js",
+      "initialHash": "905b1c17662fea6903c07c1816a7e4b9730d469febc1bb21e16570a3dd02c726",
+      "content": "const password = 'qwerty';\n\nif (password.length < 8) {\n  console.log('И это, по-вашему, надёжный пароль?');\n}\n"
+    }
+  ],
+  "instructionsHash": "0a47a0246c2c29d826590df32215094acb770cf686605df04ae25c4c4bed9098",
+  "verifiedAt": "2026-10-20T12:18:30.344Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Видите, qwerty — не очень надёжный пароль. qwerty123 куда лучше."
+  }
+}
