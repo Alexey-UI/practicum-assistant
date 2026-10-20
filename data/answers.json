@@ -419,5 +419,26 @@
     ],
     "evidence": "quiz_answered: actual selected option classes are accepted by the platform",
     "confirmedAt": "2026-10-19T17:24:14.543Z"
+  },
+  "b228acecc2c50ddbe5e85e08856f83ad5d850324cd1084ae73535301cbc772da": {
+    "answers": [
+      ":first-child или :nth-child(1)"
+    ],
+    "evidence": "quiz_answered: actual selected option classes are accepted by the platform",
+    "confirmedAt": "2026-10-20T07:20:48.286Z"
+  },
+  "3a8be63544f67664c611d8315daafe8ab34e43a6711d296739df9803885253a6": {
+    "answers": [
+      ":first-of-type"
+    ],
+    "evidence": "quiz_answered: actual selected option classes are accepted by the platform",
+    "confirmedAt": "2026-10-20T07:20:48.308Z"
+  },
+  "eb15bfc03678b38b85d0347b723ef8285bc4a3889a008926d11545652c7cda8a": {
+    "answers": [
+      "a:nth-of-type(n+2)"
+    ],
+    "evidence": "quiz_answered: actual selected option classes are accepted by the platform",
+    "confirmedAt": "2026-10-20T07:20:48.328Z"
   }
 }

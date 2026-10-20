@@ -1,0 +1,18 @@
+{
+  "id": "76e2fca4a5fe31b5a179d900cafd321d741f01c1ea7f7868f162487ad18576e5",
+  "lessonId": "b4c8900c-718f-494b-9a24-8815fcb86c74",
+  "url": "https://sandbox.practicum-team.ru/tasks/02-interactivity-and-accessibility/04-pseudo/04-count/example-01/pre/",
+  "instructionsHash": "ad18abfd49c320afbde704930991f5d3d3bde6b1f0081b3f7610acbe1a5a1d3d",
+  "files": [
+    {
+      "name": "styles/style.css",
+      "initialHash": "26c7c4f34c8a7e572f7b1166eb488a98247b718669c77f8274e553feff37101d",
+      "content": "html,\nbody {\n  height: 100%;\n}\n\nbody {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  min-width: 850px;\n  margin: 0;\n  font-family: 'Open Sans', sans-serif;\n  font-size: 18px;\n}\n\nul {\n  font-size: 20px;\n  list-style-type: square;\n}\n\n/* Тут будут стили для каждого третьего пункта списка */\n\nli:nth-child(3n) {\n  color: #fd24af;\n}\n"
+    }
+  ],
+  "verifiedAt": "2026-10-20T07:12:22.439Z",
+  "evidence": {
+    "selector": ".result .icon-status-success",
+    "message": "Всё отлично!"
+  }
+}

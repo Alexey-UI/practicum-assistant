@@ -1,0 +1,18 @@
+{
+  "taskId": "57d20f3f-1e9e-4656-b8c0-6595f851ecd6",
+  "lessonId": "28bf2401-dbd4-4871-afd5-0f25d946b7d5",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "files": [
+    {
+      "name": "style.css",
+      "initialHash": "e8276d9a51504800da270f88cc2012a7dbd1c4425b4761d3729a13eda2037ec4",
+      "content": "html {\n  height: 100%;\n}\n\nbody {\n  display: grid;\n  place-items: center;\n  min-width: 360px;\n  height: inherit;\n  margin: 0;\n  font-family: 'Open Sans', sans-serif;\n  font-size: 18px;\n  background-image: url(https://code.s3.yandex.net/web-code/images/dotted.svg);\n}\n\nh1,\np,\nul,\nli {\n  margin: 0;\n  padding: 0;\n}\n\nh2 {\n  text-transform: uppercase;\n}\n\n.text-block {\n  width: 90%;\n  margin: auto;\n  padding: 40px;\n  background-color: #fff;\n}\n.text-block p:not(:last-child) {\n  margin-bottom: 20px;\n}\n"
+    }
+  ],
+  "instructionsHash": "9aa6ae7184efaf5767cc008cec4bfcacbfaf5812dd0016a5e9cbe74b6cbb304a",
+  "verifiedAt": "2026-10-20T07:21:40.953Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Отлично! Теперь вы используете :not() не только для элементов одного класса, но и для вложенных элементов внутри контейнера."
+  }
+}

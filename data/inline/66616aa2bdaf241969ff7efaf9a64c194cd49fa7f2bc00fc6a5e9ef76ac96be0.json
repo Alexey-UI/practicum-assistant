@@ -1,0 +1,18 @@
+{
+  "id": "66616aa2bdaf241969ff7efaf9a64c194cd49fa7f2bc00fc6a5e9ef76ac96be0",
+  "lessonId": "b4c8900c-718f-494b-9a24-8815fcb86c74",
+  "url": "https://sandbox.practicum-team.ru/tasks/02-interactivity-and-accessibility/04-pseudo/04-count/example-02/pre/",
+  "instructionsHash": "4a569efe8a388f5dac77a83bff1f9b87dfe4411a8a5be6ed4c8babc0696433f3",
+  "files": [
+    {
+      "name": "styles/style.css",
+      "initialHash": "d008b3533dd34cd11928cf4585d3200ecb230c34ff6474d704a809b16eccb470",
+      "content": "html,\nbody {\n  height: 100%;\n}\n\nbody {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  min-width: 850px;\n  margin: 0;\n  font-family: 'Open Sans', sans-serif;\n  font-size: 18px;\n}\n\nul {\n  font-size: 20px;\n  list-style-type: square;\n}\n\nli:nth-child(3n) {\n  color: #fd24af;\n}\n\n/* Тут будут стили для пятого пункта списка */\n\nli:nth-child(5) {\n  text-decoration: underline;\n}\n"
+    }
+  ],
+  "verifiedAt": "2026-10-20T07:13:52.994Z",
+  "evidence": {
+    "selector": ".result .icon-status-success",
+    "message": "Всё отлично!"
+  }
+}
