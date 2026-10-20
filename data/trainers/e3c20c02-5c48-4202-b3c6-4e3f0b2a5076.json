@@ -1,0 +1,18 @@
+{
+  "taskId": "e3c20c02-5c48-4202-b3c6-4e3f0b2a5076",
+  "lessonId": "7aaf82dd-3446-4b6e-bd6c-6af7db4e4af7",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "files": [
+    {
+      "name": "style.css",
+      "initialHash": "cb6b2efcbc447618aac3386312b62ce710a893412eafbf03a878cacbf36af6f8",
+      "content": "body {\n  margin: 0;\n  font-family: 'Open Sans', sans-serif;\n  font-size: 18px;\n  text-size-adjust: 100%;\n  background-color: #ffc802;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n}\n\n.members {\n  display: flex;\n  justify-content: space-between;\n  max-inline-size: 500px;\n  block-size: 100dvb;\n  margin: 0 auto;\n  padding-inline-start: 0;\n  list-style-type: none;\n}\n\n.members::before {\n  content: '← Наведи курсор →';\n  position: absolute;\n  font-size: 30px;\n  transform: translate(-50%, -50%);\n  inset-inline-start: 50%;\n  inset-block-start: 50%;\n}\n\n.members__member {\n  position: relative;\n  inline-size: 40px;\n}\n\n.members__member::before {\n  content: '';\n  position: absolute;\n  z-index: 1;\n  box-sizing: border-box;\n  inline-size: inherit;\n  block-size: 100dvb;\n  border-inline-start: 1px solid #000;\n  border-inline-end: 1px solid #000;\n  background-color: #d9d9d9;\n  background-image:\n    repeating-linear-gradient(\n      -15deg,\n      #000,\n      #000 1px,\n      transparent 1px,\n      transparent 25px\n    );\n}\n\n.yo {\n  position: absolute;\n\n  /* Подберите значение, чтобы пропускалась только половина анимации */\n  transition-delay: -2.5s;\n  transition-duration: 5s;\n  transition-property: inset-block-end;\n  inset-inline-start: 50%;\n  inset-block-end: 0;\n}\n\n.members:hover .yo {\n  inset-block-end: calc(100% - 200px);\n}\n\n.yo_type_green {\n  transform: translateX(-70%);\n}\n\n.yo_type_pink {\n  transform: translateX(-30%);\n}"
+    }
+  ],
+  "instructionsHash": "2b0ca386da10e1af41e0398e924e8c310ccaa621c36c1be23703e598317f90bb",
+  "verifiedAt": "2026-10-20T10:28:03.557Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Отлично! Остался последний шаг."
+  }
+}

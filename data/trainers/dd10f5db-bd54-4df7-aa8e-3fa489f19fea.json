@@ -1,0 +1,18 @@
+{
+  "taskId": "dd10f5db-bd54-4df7-aa8e-3fa489f19fea",
+  "lessonId": "7aaf82dd-3446-4b6e-bd6c-6af7db4e4af7",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "files": [
+    {
+      "name": "style.css",
+      "initialHash": "eb3b6b29fa186be06482f7c0ba1b303f02893ba2d45d6c97fe584216e2d3fd26",
+      "content": "body {\n  margin: 0;\n  font-family: 'Open Sans', sans-serif;\n  font-size: 18px;\n  text-size-adjust: 100%;\n  background-color: #ffc802;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n}\n\n.members {\n  display: flex;\n  justify-content: space-between;\n  max-inline-size: 500px;\n  block-size: 100dvb;\n  margin: 0 auto;\n  padding-inline-start: 0;\n  list-style-type: none;\n}\n\n.members::before {\n  content: '← Наведи курсор →';\n  position: absolute;\n  font-size: 30px;\n  transform: translate(-50%, -50%);\n  inset-inline-start: 50%;\n  inset-block-start: 50%;\n}\n\n.members__member {\n  position: relative;\n  inline-size: 40px;\n}\n\n.members__member::before {\n  content: '';\n  position: absolute;\n  z-index: 1;\n  box-sizing: border-box;\n  inline-size: inherit;\n  block-size: 100dvb;\n  border-inline-start: 1px solid #000;\n  border-inline-end: 1px solid #000;\n  background-color: #d9d9d9;\n  background-image:\n    repeating-linear-gradient(\n      -15deg,\n      #000,\n      #000 1px,\n      transparent 1px,\n      transparent 25px\n    );\n}\n\n.yo {\n  position: absolute;\n\n  /* Задайте отрицательную задержку анимации равную длительности анимации */\n  transition-duration: 5s;\n  transition-property: inset-block-end;\n  inset-inline-start: 50%;\n  inset-block-end: 0;\n  transition-delay: -5s;\n}\n\n.members:hover .yo {\n  inset-block-end: calc(100% - 200px);\n}\n\n.yo_type_green {\n  transform: translateX(-70%);\n}\n\n.yo_type_pink {\n  transform: translateX(-30%);\n}"
+    }
+  ],
+  "instructionsHash": "f8711bd4982fafea116fef0dba7e182fcb925fa0eade8b50552465a2d4b6ef25",
+  "verifiedAt": "2026-10-20T10:27:50.841Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Из-за того, что задержка перехода равна его длительности, перемещение элементов происходит мгновенно."
+  }
+}

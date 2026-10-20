@@ -1,0 +1,18 @@
+{
+  "taskId": "d9c646e0-1401-4aa5-98e2-b2bef8563afe",
+  "lessonId": "7aaf82dd-3446-4b6e-bd6c-6af7db4e4af7",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "files": [
+    {
+      "name": "style.css",
+      "initialHash": "94fbf6e12fc9c9a06a93a3f5a5dbc3d2d6db48f0ad76dad54e6139cd688b6c6c",
+      "content": "body {\n  margin: 0;\n  font-family: 'Open Sans', sans-serif;\n  font-size: 18px;\n  text-size-adjust: 100%;\n  background-color: #ffc802;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n}\n\n.members {\n  display: flex;\n  justify-content: space-between;\n  max-inline-size: 500px;\n  block-size: 100dvb;\n  margin: 0 auto;\n  padding-inline-start: 0;\n  list-style-type: none;\n}\n\n.members::before {\n  content: '← Наведи курсор →';\n  position: absolute;\n  font-size: 30px;\n  transform: translate(-50%, -50%);\n  inset-inline-start: 50%;\n  inset-block-start: 50%;\n}\n\n.members__member {\n  position: relative;\n  inline-size: 40px;\n}\n\n.members__member::before {\n  content: '';\n  position: absolute;\n  z-index: 1;\n  box-sizing: border-box;\n  inline-size: inherit;\n  block-size: 100dvb;\n  border-inline-start: 1px solid #000;\n  border-inline-end: 1px solid #000;\n  background-color: #d9d9d9;\n  background-image:\n    repeating-linear-gradient(\n      -15deg,\n      #000,\n      #000 1px,\n      transparent 1px,\n      transparent 25px\n    );\n}\n\n.yo {\n  position: absolute;\n  transition-delay: 1s;\n  transition-duration: 5s;\n  transition-property: inset-block-end;\n  inset-inline-start: 50%;\n  inset-block-end: 0;\n}\n\n.members:hover .yo {\n  inset-block-end: calc(100% - 200px);\n}\n\n.yo_type_green {\n  transform: translateX(-70%);\n\n  /* Сделайте так, чтобы анимация происходила с одинаковой скоростью */\n  transition-timing-function: linear;\n}\n\n.yo_type_pink {\n  transform: translateX(-30%);\n\n  /* Сделайте так, чтобы анимация медленно начиналась и быстро заканчивалась */\n  transition-timing-function: ease-in;\n}"
+    }
+  ],
+  "instructionsHash": "0bd8fe5f7fd78a50b8b0469492c9b2803f84c0d3f0efa4168d0b6a77837ce80f",
+  "verifiedAt": "2026-10-20T10:28:30.990Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Разница значений видна налицо :)"
+  }
+}
