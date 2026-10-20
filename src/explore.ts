@@ -33,6 +33,30 @@ export async function explore(): Promise<void> {
       try {
         const action = JSON.parse(line);
         if (action.action === 'close') break;
+        if (action.action === 'inline') {
+          const { inlineCommand } = await import(`./inline.js?inspect=${Date.now()}`) as typeof import('./inline.js');
+          console.log(JSON.stringify(await inlineCommand(page, action))); continue;
+        }
+        if (action.action === 'inline-read' || action.action === 'inline-apply' || action.action === 'inline-check') {
+          const { readInline, applyInline, requestInlineCheck } = await import(`./inline.js?inspect=${Date.now()}`) as typeof import('./inline.js');
+          const index = action.index ?? 0;
+          if (action.action === 'inline-check') {
+            await requestInlineCheck(page, index); console.log('Проверка запрошена, результат ещё не подтверждён.'); continue;
+          }
+          const task = await (action.action === 'inline-read' ? readInline(page, index) : applyInline(page, index));
+          console.log(JSON.stringify({ id: task.id, saved: '.local/pending-inline.json', files: task.files.map(file => ({ name: file.name, hash: file.hash })) })); continue;
+        }
+        if (action.action === 'frame-dom') {
+          const index = action.index ?? 0;
+          const embeds = page.locator('.theory-viewer iframe');
+          if (!Number.isInteger(index) || index < 0 || index >= await embeds.count()) throw new Error('Неверный номер встроенного примера');
+          const frame = await (await embeds.nth(index).elementHandle())?.contentFrame();
+          if (!frame || new URL(frame.url()).origin !== 'https://sandbox.practicum-team.ru' || !new URL(frame.url()).pathname.startsWith('/tasks/')) throw new Error('Ожидался учебный sandbox Практикума');
+          const { atomicJson } = await import('./store.js');
+          const data = { url: safeUrl(frame.url()), text: await frame.locator('body').innerText(), html: await frame.locator('body').innerHTML(), aria: await frame.locator('body').ariaSnapshot() };
+          await atomicJson('.local/inline-inspect.json', data);
+          console.log(JSON.stringify({ saved: '.local/inline-inspect.json', url: data.url, html: await frame.locator(action.css ?? 'body').evaluateAll(elements => elements.map(el => el.outerHTML)) }).slice(0, 20000)); continue;
+        }
         if (action.action === 'text-question') {
           const { solveTextQuestion } = await import(`./text-quiz.js?inspect=${Date.now()}`) as typeof import('./text-quiz.js');
           console.log(JSON.stringify({ solved: await solveTextQuestion(page, page.locator('.quiz_type_text')) })); continue;

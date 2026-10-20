@@ -39,6 +39,7 @@ export async function status(): Promise<void> {
     lessons: lessons.length, solved: courses.reduce((sum, course) => sum + course.solved, 0),
     locked: courses.reduce((sum, course) => sum + course.locked, 0),
     verifiedTextQuestions: await countFiles('data/text-questions'),
+    verifiedInlineExercises: await countFiles('data/inline'), auditedInlineLessons: await countFiles('.local/inline-audits'),
     verifiedTrainerTasks: await countFiles('data/trainers'), verifiedMatchingTasks: await countFiles('data/matching'),
     referenceProjects: projects.length, acceptedProjects, preparedManualProjects, selfCheckedProjects,
     mockApiReferences: projects.filter(project => project.verification === 'mock-api').length,

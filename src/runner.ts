@@ -6,6 +6,7 @@ import { scrollLesson } from './scroll.js';
 import { loadProjects } from './projects.js';
 import { prepareManualProject, submitProject } from './submission.js';
 import { solveTrainer } from './trainer.js';
+import { gradedSandboxIndices, solveInline } from './inline.js';
 import { captureMatching, solveMatching } from './matching.js';
 import { solveTextQuestion, captureTextAnswer } from './text-quiz.js';
 import { solveFeedback } from './feedback.js';
@@ -14,6 +15,32 @@ import type { Config } from './config.js';
 import { atomicJson, journal, lockRun, readJson } from './store.js';
 
 function pause(message: string): void { console.log(message); process.exitCode = 2; }
+
+async function inlineStep(page: Page, research: boolean): Promise<boolean> {
+  for (const index of await gradedSandboxIndices(page)) {
+    if (await solveInline(page, index)) continue;
+    if (!research) return false;
+    const pending = await readJson<{ id: string }>('.local/pending-inline.json', { id: '' });
+    if (!/^[a-f0-9]{64}$/.test(pending.id)) return false;
+    const file = `.local/inline-solutions/${pending.id}.json`;
+    console.log(`Исследование встроенного упражнения: .local/pending-inline.json. Ожидаю решение: ${file}`);
+    let attempted = '';
+    let solved = false;
+    const deadline = Date.now() + 1800000;
+    while (Date.now() < deadline) {
+      const candidate = await readJson<unknown>(file, null);
+      const signature = JSON.stringify(candidate);
+      if (candidate && signature !== attempted) {
+        attempted = signature;
+        if (await solveInline(page, index, true)) { solved = true; break; }
+        console.log(`Встроенная проверка требует разбора: ${await snapshot(page, 'inline-review')}`);
+      }
+      await page.waitForTimeout(2000);
+    }
+    if (!solved) return false;
+  }
+  return true;
+}
 
 async function trainerStep(page: Page, research: boolean): Promise<'advanced' | 'finished' | 'pending'> {
   const result = await solveTrainer(page);
@@ -87,6 +114,7 @@ export async function run(): Promise<void> {
     const course = courseFlag >= 0 ? args[courseFlag + 1] : undefined;
     const onlyProjects = args.includes('--projects-first');
     const research = args.includes('--research');
+    const auditInline = args.includes('--audit-inline');
     const projects = await loadProjects();
     const skippedProjects = args.flatMap((arg, index) => arg === '--skip-project' ? [args[index + 1]] : []);
     if (skippedProjects.some(id => !projects.some(project => project.id === id))) throw new Error('Для --skip-project нужен известный ID проекта');
@@ -115,7 +143,8 @@ export async function run(): Promise<void> {
       }
       if (lesson.locked) { await journal('lesson-locked', { url: lesson.url, title: lesson.title }); continue; }
       // Catalog is authoritative; local history alone never makes a lesson solved.
-      if (lesson.solved) continue;
+      if (lesson.solved && !auditInline) continue;
+      if (auditInline && !lesson.solved && urlFlag < 0) continue;
       console.log(`Открываю: ${lesson.title}`);
       await navigate(page, lesson.url);
       const titleNode = page.locator('h1').filter({ hasText: /\S/, visible: true });
@@ -126,6 +155,14 @@ export async function run(): Promise<void> {
       const observed = await observedSolved(page);
       await saveObservedSolved(observed);
       for (const row of lessons) if (observed.has(canonicalLesson(row.url))) row.solved = true;
+      if (auditInline) {
+        await scrollLesson(page);
+        if (!await inlineStep(page, research)) { pause(`Нужен разбор встроенного упражнения. ${await snapshot(page, 'inline-pending')}`); return; }
+        const exercises = await gradedSandboxIndices(page);
+        await atomicJson(`.local/inline-audits/${lessonId(lesson.url)}.json`, { url: canonicalLesson(lesson.url), checkedAt: new Date().toISOString(), exercises: exercises.length });
+        await journal('inline-lesson-audited', { url: canonicalLesson(lesson.url), exercises: exercises.length });
+        continue;
+      }
       if (observed.has(canonicalLesson(lesson.url))) {
         const project = projects.find(project => (!project.review || project.review === 'platform') && canonicalLesson(project.lessonUrl) === canonicalLesson(lesson.url));
         if (project) await submitProject(page, project);
@@ -203,10 +240,12 @@ export async function run(): Promise<void> {
         }
         if (deferred) break;
         if (answeredQuestion) continue;
+        if (!await inlineStep(page, research)) { pause(`Нужен разбор встроенного упражнения. ${await snapshot(page, 'inline-pending')}`); return; }
         await atomicJson(`.local/lessons/${lessonId(lesson.url) ?? 'unknown'}.json`, {
           url: safeUrl(lesson.url), title: lesson.title, text: await page.locator('body').innerText(),
           links: await page.locator('.theory-viewer a[href]').evaluateAll(links => links.map(el => ({ text: el.textContent, url: (el as HTMLAnchorElement).href }))),
           images: await page.locator('.theory-viewer img[src]').evaluateAll(images => images.map(el => ({ alt: el.getAttribute('alt'), url: (el as HTMLImageElement).src }))),
+          embeds: await page.locator('.theory-viewer iframe[src]').evaluateAll(frames => frames.map(frame => (frame as HTMLIFrameElement).src)),
         });
         const nextControl = page.locator('[data-test-id="next-lesson-control-button"]').filter({ visible: true });
         const next = await nextControl.count() === 1 && await nextControl.isEnabled() ? nextControl : await exactButton(page, cfg.nextButtons);

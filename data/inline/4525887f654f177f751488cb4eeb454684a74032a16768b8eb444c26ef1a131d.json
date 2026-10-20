@@ -1,0 +1,18 @@
+{
+  "id": "4525887f654f177f751488cb4eeb454684a74032a16768b8eb444c26ef1a131d",
+  "lessonId": "0aa1b559-bd34-491b-b67d-10b165f7821a",
+  "url": "https://sandbox.practicum-team.ru/tasks/02-interactivity-and-accessibility/01-setup-and-meta/05-workout/example-01/pre/",
+  "instructionsHash": "5678de53b75162c121dfc60992734cd0b19493cf3e87caf4cae77499f4db2a27",
+  "files": [
+    {
+      "name": "index.html",
+      "initialHash": "08d67909448ac985a79de383c17e34ac2325b950119525d92ca1f396ce95c410",
+      "content": "<!DOCTYPE html>\n<html lang=\"ru\">\n  <head>\n    <meta charset=\"utf-8\" />\n    <title>Поговорка</title>\n    <link\n      rel=\"stylesheet\"\n      href=\"https://code.s3.yandex.net/web-code/fonts/fonts.css\"\n    />\n    <link rel=\"stylesheet\" href=\"./styles/style.css\" />\n  </head>\n  <body>\n    <h1>«Без 💪 не выловишь и 🐠 из 💧💧💧»</h1>\n  </body>\n</html>\n"
+    }
+  ],
+  "verifiedAt": "2026-10-19T17:43:01.239Z",
+  "evidence": {
+    "selector": ".result .icon-status-success",
+    "message": "Всё отлично!"
+  }
+}

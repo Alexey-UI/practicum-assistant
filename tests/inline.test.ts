@@ -1,0 +1,106 @@
+import { test, before, after } from 'node:test';
+import assert from 'node:assert/strict';
+import { chromium, type Browser, type Page } from 'playwright';
+import { mkdtemp, rm } from 'node:fs/promises';
+import { tmpdir } from 'node:os';
+import path from 'node:path';
+import { applyInline, readInline, requestInlineCheck, observeInline, solveInline, sandboxFrame, type InlineSolution } from '../src/inline.js';
+import { atomicJson, readJson } from '../src/store.js';
+
+let browser: Browser;
+before(async () => { browser = await chromium.launch({ channel: 'chrome', headless: true }); });
+after(async () => { await browser?.close(); });
+
+async function fixture(page: Page, success: boolean | 'retry'): Promise<void> {
+  const positive = '<svg class="icon-status-success"></svg><md-content>Всё отлично!</md-content>';
+  const negative = '<i><svg><path fill="#FF3B30"></path></svg></i><md-content>Исправьте код.</md-content><button onclick="this.parentElement.remove()">Закрыть</button>';
+  const result = success === 'retry' ? `input.value === 'fixed' ? ${JSON.stringify(positive)} : ${JSON.stringify(negative)}` : JSON.stringify(positive);
+  await page.route('https://practicum.yandex.ru/**', route => route.fulfill({ contentType: 'text/html; charset=utf-8', body: `<main class="theory-viewer"><section><p>Исправьте язык документа.</p></section><section><div class="iframe-wrapper"><iframe src="https://sandbox.practicum-team.ru/tasks/test/pre/"></iframe></div></section></main>` }));
+  await page.route('https://sandbox.practicum-team.ru/**', route => route.fulfill({ contentType: 'text/html; charset=utf-8', body: `<div class="tabs"><div class="tab" style="z-index:1">index.html</div></div><div class="CodeMirror"><textarea aria-label="Код">initial</textarea></div><div class="testsbox"><button>Проверить</button></div><script>
+    const input = document.querySelector('textarea'); document.querySelector('.CodeMirror').CodeMirror={getValue:()=>input.value};
+    input.oninput=()=>{document.querySelector('.testsbox button').disabled=false};
+    document.querySelector('.testsbox button').onclick=function(){document.body.dataset.clicks=String(Number(document.body.dataset.clicks||0)+1);this.disabled=true;${success ? `const result=document.createElement('div');result.className='result';result.innerHTML=${result};document.body.append(result);` : ''}};
+  </script>` }));
+  await page.goto('https://practicum.yandex.ru/learn/test/lessons/bbbbbbbb-bbbb-bbbb-bbbb-bbbbbbbbbbbb/');
+}
+
+test('Встроенное упражнение вводится через редактор и сохраняется только после успеха без повторной отправки', async () => {
+  const page = await browser.newPage(); const original = process.cwd(); const dir = await mkdtemp(path.join(tmpdir(), 'practicum-inline-'));
+  try {
+    process.chdir(dir); await fixture(page, true);
+    const task = await readInline(page, 0);
+    assert.equal(task.instructions, 'Исправьте язык документа.');
+    const solution = { id: task.id, lessonId: task.lessonId, url: task.url, instructionsHash: task.instructionsHash, files: [{ name: 'index.html', initialHash: task.files[0].hash, content: '<html lang="ru">\n</html>\n' }] };
+    await atomicJson(`.local/inline-solutions/${task.id}.json`, solution);
+    assert.equal(await solveInline(page, 0, true), true);
+    const saved = await readJson<InlineSolution | null>(`data/inline/${task.id}.json`, null);
+    assert.ok(saved?.evidence);
+    assert.equal(saved.files[0].initialHash, task.files[0].hash);
+    assert.equal(saved.evidence.selector, '.result .icon-status-success');
+    assert.equal(await solveInline(page, 0), true);
+    assert.equal(await (await sandboxFrame(page, 0)).locator('body').getAttribute('data-clicks'), '1');
+  } finally { process.chdir(original); await page.close(); await rm(dir, { recursive: true, force: true }); }
+});
+
+test('Асинхронное переключение вкладок не смешивает исходники HTML и CSS', async () => {
+  const page = await browser.newPage(); const original = process.cwd(); const dir = await mkdtemp(path.join(tmpdir(), 'practicum-inline-tabs-'));
+  try {
+    process.chdir(dir); await fixture(page, false);
+    const frame = await sandboxFrame(page, 0);
+    await frame.evaluate(() => {
+      // Chrome can suspend repaint callbacks for sandbox frames outside view.
+      window.requestAnimationFrame = () => 0;
+      const tabs = document.querySelector('.tabs')!;
+      tabs.innerHTML = '<div class="tab" style="z-index:1">index.html</div><div class="tab">style.css</div>';
+      for (const tab of tabs.querySelectorAll<HTMLElement>('.tab')) tab.onclick = () => setTimeout(() => {
+        for (const other of tabs.querySelectorAll<HTMLElement>('.tab')) other.style.zIndex = '';
+        tab.style.zIndex = '1';
+        document.querySelector('textarea')!.value = tab.textContent === 'index.html' ? 'initial' : 'body { color: red; }';
+      }, 50);
+    });
+    const task = await readInline(page, 0);
+    assert.deepEqual(task.files.map(file => [file.name, file.content]), [['index.html', 'initial'], ['style.css', 'body { color: red; }']]);
+    assert.notEqual(task.files[0].hash, task.files[1].hash);
+  } finally { process.chdir(original); await page.close(); await rm(dir, { recursive: true, force: true }); }
+});
+
+test('Отклонённое встроенное решение исправляется с исходным хешем, ошибочный вариант не попадает в библиотеку', async () => {
+  const page = await browser.newPage(); const original = process.cwd(); const dir = await mkdtemp(path.join(tmpdir(), 'practicum-inline-retry-'));
+  try {
+    process.chdir(dir); await fixture(page, 'retry');
+    const task = await readInline(page, 0);
+    const solution = { id: task.id, lessonId: task.lessonId, url: task.url, instructionsHash: task.instructionsHash, files: [{ name: 'index.html', initialHash: task.files[0].hash, content: 'bad' }] };
+    await atomicJson(`.local/inline-solutions/${task.id}.json`, solution);
+    assert.equal(await solveInline(page, 0, true), false);
+    assert.equal(await readJson(`data/inline/${task.id}.json`, null), null);
+    solution.files[0].content = 'fixed';
+    await atomicJson(`.local/inline-solutions/${task.id}.json`, solution);
+    assert.equal(await solveInline(page, 0, true), true);
+    const saved = await readJson<InlineSolution | null>(`data/inline/${task.id}.json`, null);
+    assert.equal(saved?.files[0].initialHash, task.files[0].hash);
+    assert.equal(await (await sandboxFrame(page, 0)).locator('body').getAttribute('data-clicks'), '2');
+  } finally { process.chdir(original); await page.close(); await rm(dir, { recursive: true, force: true }); }
+});
+
+test('Ожидающая проверка встроенного упражнения запрещает повтор и редактирование; чужие правки сохраняются', async () => {
+  const page = await browser.newPage(); const original = process.cwd(); const dir = await mkdtemp(path.join(tmpdir(), 'practicum-inline-pending-'));
+  try {
+    process.chdir(dir); await fixture(page, false);
+    const task = await readInline(page, 0);
+    await atomicJson(`.local/inline-solutions/${task.id}.json`, { id: task.id, lessonId: task.lessonId, url: task.url, instructionsHash: task.instructionsHash, files: [{ name: 'index.html', initialHash: task.files[0].hash, content: 'fixed' }] });
+    const frame = await sandboxFrame(page, 0); const input = frame.getByRole('textbox');
+    await input.fill('Чужая правка');
+    await assert.rejects(applyInline(page, 0), /Исходный файл/);
+    assert.equal(await input.inputValue(), 'Чужая правка');
+    await input.fill('initial'); await applyInline(page, 0); await requestInlineCheck(page, 0);
+    assert.equal(await observeInline(page, 0), 'unknown');
+    await assert.rejects(requestInlineCheck(page, 0), /предыдущей проверки/);
+    await assert.rejects(applyInline(page, 0), /предыдущей проверки/);
+    assert.equal(await frame.locator('body').getAttribute('data-clicks'), '1');
+    assert.equal(await readJson(`data/inline/${task.id}.json`, null), null);
+    await page.route('https://practicum.yandex.ru/not-a-sandbox/', route => route.fulfill({ contentType: 'text/html', body: '<p>Not a sandbox</p>' }));
+    await page.locator('iframe').evaluate(el => el.setAttribute('src', 'https://practicum.yandex.ru/not-a-sandbox/'));
+    await frame.waitForURL('https://practicum.yandex.ru/not-a-sandbox/', { waitUntil: 'commit' });
+    await assert.rejects(sandboxFrame(page, 0), /sandbox Практикума/);
+  } finally { process.chdir(original); await page.close(); await rm(dir, { recursive: true, force: true }); }
+});

@@ -1,0 +1,18 @@
+{
+  "id": "1d2f00b10eacf4a32b0257d8cf285be7fdc16f20f8ec07e5485bf0decb88d68e",
+  "lessonId": "0aa1b559-bd34-491b-b67d-10b165f7821a",
+  "url": "https://sandbox.practicum-team.ru/tasks/02-interactivity-and-accessibility/01-setup-and-meta/05-workout/example-04/pre/",
+  "instructionsHash": "ef4f398b67ab64ccbc506c238bdf464f185479127ef278e112a18ac5d41fb35a",
+  "files": [
+    {
+      "name": "index.html",
+      "initialHash": "3c71cac0799eefda6211437c29fefeaa93e8a45e8fd5b738dd4e05a5db3fa100",
+      "content": "<!DOCTYPE html>\n<html lang=\"ru\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\" />\n    <meta\n      name=\"description\"\n      content=\"Очень популярная народная присказка, используемая в целях мотивации\"\n    />\n    <link rel=\"icon\" href=\"./favicon/favicon.ico\" sizes=\"any\" />\n    <link rel=\"icon\" href=\"./favicon/icon.svg\" type=\"image/svg+xml\" />\n    <link rel=\"apple-touch-icon\" href=\"./favicon/apple-touch-icon.png\" />\n    <meta property=\"og:title\" content=\"Поговорка\" />\n    <meta property=\"og:url\" content=\"https://sandbox.practicum-team.ru/tasks/02-interactivity-and-accessibility/01-setup-and-meta/05-workout/example-04/pre/\" />\n    <meta property=\"og:image\" content=\"./preview/og.jpg\" />\n    <meta property=\"twitter:card\" content=\"summary_large_image\" />\n    <title>Поговорка</title>\n    <link\n      rel=\"stylesheet\"\n      href=\"https://code.s3.yandex.net/web-code/fonts/fonts.css\"\n    />\n    <link rel=\"stylesheet\" href=\"./styles/style.css\" />\n  </head>\n  <body>\n    <h1>«Без 💪 не выловишь и 🐠 из 💧💧💧»</h1>\n  </body>\n</html>\n"
+    }
+  ],
+  "verifiedAt": "2026-10-20T05:04:40.615Z",
+  "evidence": {
+    "selector": ".result .icon-status-success",
+    "message": "Всё отлично!"
+  }
+}
