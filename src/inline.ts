@@ -60,10 +60,22 @@ export async function gradedSandboxIndices(page: Page): Promise<number[]> {
 async function selectFile(frame: Frame, name: string): Promise<void> {
   const tabs = frame.locator('.tabs .tab').filter({ hasText: new RegExp(`^${name.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')}$`) });
   if (await tabs.count() !== 1) throw new Error(`Вкладка ${name} отсутствует или неоднозначна`);
-  await tabs.click();
+  const selected = () => tabs.evaluate(tab => (tab as HTMLElement).style.zIndex === '1');
+  if (await selected()) return;
+  // Target the filename rather than the padding around a wide tab.
+  await frame.locator('.tabs').getByText(name, { exact: true }).click();
   // Offscreen sandbox frames may stop receiving animation callbacks in Chrome.
   // Poll the actual selected tab independently of repaint scheduling.
-  await frame.waitForFunction(fileName => [...document.querySelectorAll<HTMLElement>('.tabs .tab')].some(tab => tab.textContent?.trim() === fileName && tab.style.zIndex === '1'), name, { timeout: 30000, polling: 100 });
+  try {
+    const deadline = Date.now() + 30000;
+    while (!await selected()) {
+      if (Date.now() >= deadline) throw new Error(`Редактор не переключился на файл ${name}`);
+      await frame.page().waitForTimeout(100);
+    }
+  } catch (error) {
+    await atomicJson('.local/inline-tab-failure.json', { file: name, url: safeUrl(frame.url()), tabs: await frame.locator('.tabs .tab').evaluateAll(items => items.map(item => item.outerHTML)) });
+    throw error;
+  }
 }
 
 async function code(frame: Frame): Promise<string> {

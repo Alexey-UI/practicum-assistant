@@ -1,0 +1,18 @@
+{
+  "id": "de73c7acab7d15ce20f6f0d8a4d3486c73140869abbf7767ed77e58ffb2076b6",
+  "lessonId": "ac1b81cb-c880-4bc3-86b1-3061357effc9",
+  "url": "https://sandbox.practicum-team.ru/tasks/02-interactivity-and-accessibility/02-frames/05-video/example-04/pre/",
+  "instructionsHash": "7fdfea8ad8950cc3cf27bfc6f5847b5c3ede576245adc84ab30414f3fbd27d45",
+  "files": [
+    {
+      "name": "index.html",
+      "initialHash": "a97af77b7a2190e8c553690b75ad67c8eb534d1df8a49f38c1b412091d36e7e4",
+      "content": "<!DOCTYPE html>\n<html lang=\"ru\">\n  <head>\n    <meta charset=\"utf-8\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <title>Вставка видео</title>\n    <link\n      rel=\"stylesheet\"\n      href=\"https://code.s3.yandex.net/web-code/fonts/fonts.css\"\n    />\n    <link rel=\"stylesheet\" href=\"./styles/style.css\" />\n  </head>\n  <body>\n    <div class=\"wrapper\">\n      <h2 class=\"title\">Ё Моё и Ёпрст путешествуют по миру</h2>\n      <video loop src=\"video.mp4\" controls autoplay muted></video>\n    </div>\n  </body>\n</html>\n"
+    }
+  ],
+  "verifiedAt": "2026-10-20T05:28:43.828Z",
+  "evidence": {
+    "selector": ".result .icon-status-success",
+    "message": "Всё отлично!"
+  }
+}

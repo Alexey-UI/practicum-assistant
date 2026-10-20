@@ -1,0 +1,18 @@
+{
+  "id": "7ce69c0f55ba8bb6bc18335542a06336d1fd69eb00307cd1a7640d8a93c82429",
+  "lessonId": "ac1b81cb-c880-4bc3-86b1-3061357effc9",
+  "url": "https://sandbox.practicum-team.ru/tasks/02-interactivity-and-accessibility/02-frames/05-video/example-06/pre/",
+  "instructionsHash": "610313e4f40b165d93d4539c87b5bf1dc73fce1a192789c728873ba98ad1e9e8",
+  "files": [
+    {
+      "name": "index.html",
+      "initialHash": "803c87732abf240948081dfb57adc87c1d38fca354974ea9399f661eecb76f74",
+      "content": "<!DOCTYPE html>\n<html lang=\"ru\">\n  <head>\n    <meta charset=\"utf-8\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <title>Вставка видео</title>\n    <link\n      rel=\"stylesheet\"\n      href=\"https://code.s3.yandex.net/web-code/fonts/fonts.css\"\n    />\n    <link rel=\"stylesheet\" href=\"./styles/style.css\" />\n  </head>\n  <body>\n    <div class=\"wrapper\">\n      <h2 class=\"title\">Ё Моё и Ёпрст путешествуют по миру</h2>\n      <video poster=\"images/poster.png\" controls autoplay muted loop>\n        <source src=\"video/video.webm\" type=\"video/webm\" />\n        <source src=\"video/video.mp4\" type=\"video/mp4\" />\n      </video>\n    </div>\n  </body>\n</html>\n"
+    }
+  ],
+  "verifiedAt": "2026-10-20T05:30:20.008Z",
+  "evidence": {
+    "selector": ".result .icon-status-success",
+    "message": "Всё отлично!"
+  }
+}

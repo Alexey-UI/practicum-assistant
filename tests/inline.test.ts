@@ -51,8 +51,8 @@ test('Асинхронное переключение вкладок не сме
       // Chrome can suspend repaint callbacks for sandbox frames outside view.
       window.requestAnimationFrame = () => 0;
       const tabs = document.querySelector('.tabs')!;
-      tabs.innerHTML = '<div class="tab" style="z-index:1">index.html</div><div class="tab">style.css</div>';
-      for (const tab of tabs.querySelectorAll<HTMLElement>('.tab')) tab.onclick = () => setTimeout(() => {
+      tabs.innerHTML = '<div class="tab" style="z-index:1;width:500px"><span>index.html</span></div><div class="tab" style="width:500px"><span>style.css</span></div>';
+      for (const tab of tabs.querySelectorAll<HTMLElement>('.tab')) tab.querySelector<HTMLElement>('span')!.onclick = () => setTimeout(() => {
         for (const other of tabs.querySelectorAll<HTMLElement>('.tab')) other.style.zIndex = '';
         tab.style.zIndex = '1';
         document.querySelector('textarea')!.value = tab.textContent === 'index.html' ? 'initial' : 'body { color: red; }';
