@@ -1,0 +1,18 @@
+{
+  "id": "a91a3de0d0a5475f1caaef947ad143e318824a774ccce22bc4cf03475c20d288",
+  "lessonId": "90103c48-9d18-4263-adca-b25090ab9d62",
+  "url": "https://sandbox.practicum-team.ru/tasks/02-interactivity-and-accessibility/03-addition-to-box-model/05-relative-fields-size/example-03/pre/",
+  "instructionsHash": "ca930458dfef5febed9d7013ff3cdade4bc3f153fff782a17b7b147287201a6c",
+  "files": [
+    {
+      "name": "styles/style.css",
+      "initialHash": "36ba9400be3e94133a39e44ca3d26ba3a4768a108b73175c00beb1027090ad47",
+      "content": "body {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  min-width: 850px;\n  min-height: 100vh;\n  margin: 0;\n  background-color: #fd24af;\n}\n\n.rt-container {\n  width: 80%;\n}\n\n.frame-box {\n  padding-bottom: 56.25%;\n  position: relative;\n}\n\niframe {\n  position: absolute;\n  inset: 0;\n  width: 100%;\n  height: 100%;\n}"
+    }
+  ],
+  "verifiedAt": "2026-10-20T06:13:51.736Z",
+  "evidence": {
+    "selector": ".result .icon-status-success",
+    "message": "Всё отлично!"
+  }
+}
