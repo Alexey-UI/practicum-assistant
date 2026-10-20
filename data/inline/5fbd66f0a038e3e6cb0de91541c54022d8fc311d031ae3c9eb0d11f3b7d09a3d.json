@@ -1,0 +1,18 @@
+{
+  "id": "5fbd66f0a038e3e6cb0de91541c54022d8fc311d031ae3c9eb0d11f3b7d09a3d",
+  "lessonId": "08d22a0c-e952-4f87-b96e-421f60660c39",
+  "url": "https://sandbox.practicum-team.ru/tasks/03-design/05-grid/02-remember/example-02/pre/",
+  "instructionsHash": "a534e5f1dcf3961a9d68136f0390813bffec8bda26bb45fc2b901f806eaf534c",
+  "files": [
+    {
+      "name": "styles/style.css",
+      "initialHash": "20683ca380fc700625290b964f5023a22fc8e3d98d7d0d07152410798bac10f8",
+      "content": "* {\n  box-sizing: border-box;\n}\n\n.body {\n  display: flex;\n  flex-direction: column;\n  justify-content: space-between;\n  align-items: center;\n  min-width: 850px;\n  max-width: 720px;\n  margin: 0 auto;\n  padding-bottom: 20px;\n  font-family: 'Open Sans', sans-serif;\n  font-size: 18px;\n}\n\nh2 {\n  margin: 0;\n  border: 1px solid #000;\n  padding: 20px 0;\n  font-weight: 800;\n  font-size: 38px;\n  text-align: center;\n  text-transform: uppercase;\n}\n\nh3 {\n  align-self: flex-start;\n  font-weight: 400;\n  font-size: 16px;\n}\n\n.container {\n  grid-template-rows: repeat(4, 1fr);\n  grid-template-columns: repeat(3, 1fr);\n  display: grid;\n}\n\n.block {\n  display: flex;\n  flex-direction: column;\n  justify-content: flex-start;\n  align-items: center;\n  border: 1px solid black;\n  padding: 20px;\n  background-color: white;\n}\n\nimg {\n  width: 200px;\n  border: 1px solid #000;\n}\n\n.block--1 {\n  background-color: #c4c4c4;\n}\n\n.block--2 {\n  background-color: #feafe8;\n}\n\n.block--3 {\n  background-color: #80d994;\n}\n\n.block__button {\n  width: 100%;\n  border: 1px solid #000;\n  padding: 20px 0;\n  color: #000;\n  font-family: inherit;\n  font-weight: 800;\n  font-size: inherit;\n  text-transform: uppercase;\n  background-color: #ffc802;\n}\n\nbutton:hover {\n  box-shadow: inset 0 0 0 100px rgb(0 0 0 / 0.15);\n  cursor: pointer;\n}\n\nbutton:focus-visible {\n  outline: 2px solid #000;\n  outline-offset: 0;\n}\n"
+    }
+  ],
+  "verifiedAt": "2026-10-20T09:20:35.409Z",
+  "evidence": {
+    "selector": ".result .icon-status-success",
+    "message": "Всё отлично!"
+  }
+}

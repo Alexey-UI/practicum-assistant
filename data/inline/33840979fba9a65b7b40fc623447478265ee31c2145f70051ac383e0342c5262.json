@@ -1,0 +1,18 @@
+{
+  "id": "33840979fba9a65b7b40fc623447478265ee31c2145f70051ac383e0342c5262",
+  "lessonId": "4d9fdffb-9a2a-44d4-89a3-71abf3b0965e",
+  "url": "https://sandbox.practicum-team.ru/tasks/03-design/06-different-devices/05-prefers/example-05/pre/",
+  "instructionsHash": "786c89eb422bcdb6676a53849bc97828d5cb4d186521f3725e917eff443ea159",
+  "files": [
+    {
+      "name": "index.html",
+      "initialHash": "5be8bcae75a7b5c3cd40b1d81ae505eeee863f49c1de9df1d1d951d6f51681f7",
+      "content": "<!DOCTYPE html>\n<html lang=\"ru\">\n  <head>\n    <meta name=\"color-scheme\" content=\"dark light\" />\n    <meta charset=\"UTF-8\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <meta http-equiv=\"X-UA-Compatible\" content=\"ie=edge\" />\n    <title>Чёрно-белый мир</title>\n    <link\n      rel=\"stylesheet\"\n      href=\"https://code.s3.yandex.net/web-code/fonts/fonts.css\"\n    />\n    <link rel=\"stylesheet\" href=\"./styles/style.css\" />\n  </head>\n  <body>\n    <h1 class=\"title\">Следуй за белым кроликом!</h1>\n\n    <div class=\"something\"></div>\n\n    <div class=\"theme-toggler\">\n      <label class=\"theme-toggler__item\">\n        <input\n          class=\"theme-toggler__control theme-toggler__control_type_light\"\n          type=\"radio\"\n          name=\"theme-scheme\"\n          value=\"light\"\n        />\n        Светлая\n      </label>\n      <label class=\"theme-toggler__item\">\n        <input\n          class=\"theme-toggler__control theme-toggler__control_type_auto\"\n          type=\"radio\"\n          name=\"theme-scheme\"\n          value=\"auto\"\n          checked\n        />\n        Авто\n      </label>\n      <label class=\"theme-toggler__item\">\n        <input\n          class=\"theme-toggler__control theme-toggler__control_type_dark\"\n          type=\"radio\"\n          name=\"theme-scheme\"\n          value=\"dark\"\n        />\n        Тёмная\n      </label>\n    </div>\n  </body>\n</html>\n"
+    }
+  ],
+  "verifiedAt": "2026-10-20T09:42:43.846Z",
+  "evidence": {
+    "selector": ".result .icon-status-success",
+    "message": "Всё отлично!"
+  }
+}

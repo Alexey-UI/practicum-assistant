@@ -1,0 +1,18 @@
+{
+  "id": "3df78758a5f5f662b6a7d1948baa6b943ba4569f004c2ffdb8478ed71f046af2",
+  "lessonId": "37e46d4f-1e82-42b4-b106-bed98d1ab9d3",
+  "url": "https://sandbox.practicum-team.ru/tasks/03-design/06-different-devices/02-without-queries/example-10/pre/",
+  "instructionsHash": "1765bc37ce274a6fcdd1139f165727ca4bde056a1ba819a310edccffff77ba11",
+  "files": [
+    {
+      "name": "styles/style.css",
+      "initialHash": "b6fe327d277b030514abe1caa933696cdf93394b06c6d3698e69e4cd9540d31a",
+      "content": "* {\n  box-sizing: border-box;\n}\n\n.page {\n  height: 100vh;\n  margin: 0;\n  background-image: url(https://code.s3.yandex.net/web-code/images/dotted.svg);\n}\n\n.yo {\n  bottom: clamp(0px, var(--breakpoint-simulation) * 1000, 86%);\n  --breakpoint: 500px;\n  --breakpoint-simulation: (100vw - var(--breakpoint));\n\n  position: fixed;\n\n  /* Напишите функцию clamp вычисляющую положение элемента */\n}\n"
+    }
+  ],
+  "verifiedAt": "2026-10-20T09:31:57.437Z",
+  "evidence": {
+    "selector": ".result .icon-status-success",
+    "message": "Всё отлично!"
+  }
+}

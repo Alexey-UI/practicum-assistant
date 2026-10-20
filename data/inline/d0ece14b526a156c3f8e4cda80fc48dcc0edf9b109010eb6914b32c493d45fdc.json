@@ -1,0 +1,18 @@
+{
+  "id": "d0ece14b526a156c3f8e4cda80fc48dcc0edf9b109010eb6914b32c493d45fdc",
+  "lessonId": "aafbe2ca-cb5d-462d-86a1-5b26018ce1d9",
+  "url": "https://sandbox.practicum-team.ru/tasks/03-design/05-grid/03-auto-row/example-02/pre/",
+  "instructionsHash": "98634972e3b51eb6eeaaf958cae1372908f08710cb82c8b26b3251f2f87c5d9c",
+  "files": [
+    {
+      "name": "styles/style.css",
+      "initialHash": "72aa30b69279482250b300e6a052ac1ef162137145c4bbd51d5383c55d532c2c",
+      "content": "* {\n  box-sizing: border-box;\n  margin: 0;\n}\n\nbody {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  min-width: 650px;\n  min-height: 100vh;\n  margin: 0;\n  font-family: 'Open Sans', sans-serif;\n  font-size: 18px;\n  background-color: #feafe8;\n}\n\n.container {\n  grid-auto-rows: 100px;\n  display: grid;\n  grid-template-columns: repeat(3, 160px);\n  grid-template-rows: repeat(2, 100px);\n  gap: 10px;\n}\n\n.block {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  border: 1px solid #000;\n}\n\n.block--1 {\n  background-color: #fff;\n}\n\n.block--2 {\n  background-color: #c4c4c4;\n}\n\n.block--3 {\n  background-color: #80d994;\n}\n"
+    }
+  ],
+  "verifiedAt": "2026-10-20T09:22:28.974Z",
+  "evidence": {
+    "selector": ".result .icon-status-success",
+    "message": "Всё отлично!"
+  }
+}

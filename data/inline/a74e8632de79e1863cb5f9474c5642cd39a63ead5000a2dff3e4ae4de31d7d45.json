@@ -1,0 +1,18 @@
+{
+  "id": "a74e8632de79e1863cb5f9474c5642cd39a63ead5000a2dff3e4ae4de31d7d45",
+  "lessonId": "2eb6a7bd-3984-4906-90f2-33dd0b0560ab",
+  "url": "https://sandbox.practicum-team.ru/tasks/03-design/05-grid/06-auto-fill-auto-fit/example-01/pre/",
+  "instructionsHash": "55d869687b66b1092fe3374528549344bd2b1fd5397f1bf1f3865b0185e0af62",
+  "files": [
+    {
+      "name": "styles/style.css",
+      "initialHash": "8c3c8083fe18ec75c4e70faf6c803384c1a11a2a3bd2d34c018c7e857f88741d",
+      "content": "* {\n  box-sizing: border-box;\n}\n\n.body {\n  display: flex;\n  flex-direction: column;\n  justify-content: space-between;\n  align-items: center;\n  min-width: 850px;\n  margin: 0 auto;\n  padding-bottom: 20px;\n  font-family: 'Open Sans', sans-serif;\n  font-size: 18px;\n}\n\nh2 {\n  max-width: 950px;\n  margin: 0 0 20px;\n  border: 1px solid #000;\n  padding: 20px 0;\n  font-weight: 800;\n  font-size: 38px;\n  text-align: center;\n  text-transform: uppercase;\n}\n\nh3 {\n  align-self: flex-start;\n  font-weight: 400;\n  font-size: 16px;\n}\n\n.container {\n  display: grid;\n  grid-template-columns: repeat(auto-fill, 300px);\n  gap: 20px;\n  width: 100%;\n}\n\n.block {\n  display: flex;\n  flex-direction: column;\n  justify-content: flex-start;\n  align-items: center;\n  border: 1px solid black;\n  padding: 20px;\n  background-color: white;\n}\n\nimg {\n  width: 200px;\n  border: 1px solid #000;\n}\n\n.block--1 {\n  background-color: #c4c4c4;\n}\n\n.block--2 {\n  background-color: #feafe8;\n}\n\n.block--3 {\n  background-color: #80d994;\n}\n\n.block__button {\n  width: 100%;\n  border: 1px solid #000;\n  padding: 20px 0;\n  color: #000;\n  font-family: inherit;\n  font-weight: 800;\n  font-size: inherit;\n  text-transform: uppercase;\n  background-color: #ffc802;\n}\n\nbutton:hover {\n  box-shadow: inset 0 0 0 100px rgb(0 0 0 / 0.15);\n  cursor: pointer;\n}\n\nbutton:focus-visible {\n  outline: 2px solid #000;\n  outline-offset: 0;\n}\n"
+    }
+  ],
+  "verifiedAt": "2026-10-20T09:27:51.527Z",
+  "evidence": {
+    "selector": ".result .icon-status-success",
+    "message": "Всё отлично!"
+  }
+}

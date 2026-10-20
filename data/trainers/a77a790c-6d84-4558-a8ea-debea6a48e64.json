@@ -1,0 +1,18 @@
+{
+  "taskId": "a77a790c-6d84-4558-a8ea-debea6a48e64",
+  "lessonId": "aafbe2ca-cb5d-462d-86a1-5b26018ce1d9",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "files": [
+    {
+      "name": "style.css",
+      "initialHash": "a91a5dd358a0d890a9d011518d54239ffd0039edd85e5b36f9f14c4f0f7ad171",
+      "content": "html {\n  block-size: 100%;\n}\n\nbody {\n  inline-size: 96%;\n  max-inline-size: 60em;\n  min-block-size: 100%;\n  margin: 0 auto;\n  font-family: 'Open Sans', sans-serif;\n  font-size: 16px;\n}\n\n.gallery {\n  display: grid;\n  grid-template-columns: repeat(3, 1fr);\n  grid-template-rows: repeat(3, 1fr);\n  grid-auto-rows: 100px 1fr;\n  gap: 1em;\n  min-block-size: calc(100vh - 4.5em);\n}\n\n.radio {\n  display: flex;\n  align-items: center;\n  gap: 1em;\n  cursor: pointer;\n}\n\n.radio__box {\n  inline-size: 27px;\n  block-size: 27px;\n  accent-color: #000;\n}\n\n.radio__box:focus-visible {\n  outline: 2px solid #000;\n  outline-offset: 0;\n}\n\n.gallery-form {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  padding: 1.5em 0;\n}\n\n.gallery__image {\n  display: none;\n  inline-size: 100%;\n  max-inline-size: 100%;\n  block-size: 100%;\n  max-block-size: 100%;\n  object-fit: cover;\n}\n\n.gallery__image_selected {\n  display: block;\n}"
+    }
+  ],
+  "instructionsHash": "8799c629ce3ca49265e62d709cdeb0b6558af3723049ddbd9677e3a8f5cc447a",
+  "verifiedAt": "2026-10-20T09:23:52.989Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Все картинки появились и больше не схлопываются! \nПохожий трюк можно делать со свойством grid-auto-columns. Но сначала изучим ещё одно CSS-свойство — grid-auto-flow."
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "id": "c49b18e2e29b7106807fd836e824055b8e3ca8472cd97fe3211f35a5d5fe8bbc",
+  "lessonId": "08d22a0c-e952-4f87-b96e-421f60660c39",
+  "url": "https://sandbox.practicum-team.ru/tasks/03-design/05-grid/02-remember/example-01/pre/",
+  "instructionsHash": "20e8bcb8ea279b7873166fc5ca922f0a9f3f75492a0daa66e2e736dcba18c885",
+  "files": [
+    {
+      "name": "styles/style.css",
+      "initialHash": "aeee2d673896c1acaf6830b424090d193a6cfd21c7af58de6f2599cd38d1b911",
+      "content": "* {\n  box-sizing: border-box;\n}\n\n.body {\n  display: flex;\n  flex-direction: column;\n  justify-content: space-between;\n  align-items: center;\n  min-width: 850px;\n  max-width: 720px;\n  margin: 0 auto;\n  padding-bottom: 20px;\n  font-family: 'Open Sans', sans-serif;\n  font-size: 18px;\n}\n\nh2 {\n  margin: 0;\n  border: 1px solid #000;\n  padding: 20px 0;\n  font-weight: 800;\n  font-size: 38px;\n  text-align: center;\n  text-transform: uppercase;\n}\n\nh3 {\n  align-self: flex-start;\n  font-weight: 400;\n  font-size: 16px;\n}\n\n.container {\n  display: grid;\n\n}\n\n.block {\n  display: flex;\n  flex-direction: column;\n  justify-content: flex-start;\n  align-items: center;\n  border: 1px solid black;\n  padding: 20px;\n  background-color: white;\n}\n\nimg {\n  width: 200px;\n  border: 1px solid #000;\n}\n\n.block--1 {\n  background-color: #c4c4c4;\n}\n\n.block--2 {\n  background-color: #feafe8;\n}\n\n.block--3 {\n  background-color: #80d994;\n}\n\n.block__button {\n  width: 100%;\n  border: 1px solid #000;\n  padding: 20px 0;\n  color: #000;\n  font-family: inherit;\n  font-weight: 800;\n  font-size: inherit;\n  text-transform: uppercase;\n  background-color: #ffc802;\n}\n\nbutton:hover {\n  box-shadow: inset 0 0 0 100px rgb(0 0 0 / 0.15);\n  cursor: pointer;\n}\n\nbutton:focus-visible {\n  outline: 2px solid #000;\n  outline-offset: 0;\n}\n"
+    }
+  ],
+  "verifiedAt": "2026-10-20T09:20:19.458Z",
+  "evidence": {
+    "selector": ".result .icon-status-success",
+    "message": "Всё отлично!"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "id": "4b437ccd9d5021f88bfa684109f125c7497dd763eb2d171874bb4e39fe6dcdd3",
+  "lessonId": "37e46d4f-1e82-42b4-b106-bed98d1ab9d3",
+  "url": "https://sandbox.practicum-team.ru/tasks/03-design/06-different-devices/02-without-queries/example-08/pre/",
+  "instructionsHash": "1c6c1b2612983d5769ce75b5bef9d857353cd69f7a3d844aaae32ce9b48b8ce7",
+  "files": [
+    {
+      "name": "styles/style.css",
+      "initialHash": "f2d96a4edd47e57b71c4f3fe6fa90e38ad2056e069593bf3d4fb81d56db24a0c",
+      "content": "* {\n  box-sizing: border-box;\n}\n\n.page {\n  height: 100vh;\n  margin: 0;\n  background-image: url(https://code.s3.yandex.net/web-code/images/dotted.svg);\n}\n\n.yo {\n  position: fixed;\n  --breakpoint: 500px;\n  /* Вынесите брейкпоинт в отдельную css-переменную */\n\n  /* Укажите фиксированное позиционирование */\n}\n"
+    }
+  ],
+  "verifiedAt": "2026-10-20T09:31:10.176Z",
+  "evidence": {
+    "selector": ".result .icon-status-success",
+    "message": "Всё отлично!"
+  }
+}

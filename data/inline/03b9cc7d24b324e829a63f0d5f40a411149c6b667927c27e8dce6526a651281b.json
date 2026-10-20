@@ -1,0 +1,18 @@
+{
+  "id": "03b9cc7d24b324e829a63f0d5f40a411149c6b667927c27e8dce6526a651281b",
+  "lessonId": "c5042356-e1cb-4c33-9cd1-84f2a6ec50db",
+  "url": "https://sandbox.practicum-team.ru/tasks/03-design/06-different-devices/03-query-sintaxis/example-02/pre/",
+  "instructionsHash": "60baed6cb5e16a5d306a50a70612d0f0850a44cfc94bf67ab5882c1db0bb0a41",
+  "files": [
+    {
+      "name": "styles/style.css",
+      "initialHash": "2f9556bf2a7d4c32066ea76ea78dd3b2fdea15d2b087a55bd0fd00013f20203a",
+      "content": "* {\n  box-sizing: border-box;\n  margin: 0;\n}\n\n.page {\n  position: relative;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  min-height: 100vh;\n  font-family: 'Open Sans', sans-serif;\n}\n\n.page::before {\n  content: '';\n  position: absolute;\n  inset: 0;\n  z-index: -1;\n  width: 100%;\n  height: 100%;\n  background-color: rgba(0 0 0 / 0.5);\n}\n\n.quote {\n  max-width: 650px;\n  padding: 50px;\n  color: #000;\n  background-color: #fff;\n}\n\n.quote__text {\n  font-size: 32px;\n  font-style: italic;\n  line-height: 1.37;\n}\n\n.quote__author {\n  margin-block-start: 25px;\n  margin-block-end: 0;\n  font-size: 18px;\n  font-style: italic;\n  line-height: 1.4;\n  text-align: right;\n}\n\n.page__video {\n  position: absolute;\n  inset: 0;\n  z-index: -2;\n  width: 100%;\n  height: 100%;\n  object-fit: cover;\n}\n\n@media not screen, (max-width: 768px) {\n  .page__video,\n  .page::before {\n    display: none;\n  }\n}\n"
+    }
+  ],
+  "verifiedAt": "2026-10-20T09:34:29.961Z",
+  "evidence": {
+    "selector": ".result .icon-status-success",
+    "message": "Всё отлично!"
+  }
+}

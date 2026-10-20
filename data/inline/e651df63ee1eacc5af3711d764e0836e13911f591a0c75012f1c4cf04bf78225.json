@@ -1,0 +1,18 @@
+{
+  "id": "e651df63ee1eacc5af3711d764e0836e13911f591a0c75012f1c4cf04bf78225",
+  "lessonId": "08d22a0c-e952-4f87-b96e-421f60660c39",
+  "url": "https://sandbox.practicum-team.ru/tasks/03-design/05-grid/02-remember/example-06/pre/",
+  "instructionsHash": "1e4b4d6df3c9afdb0161259d77b1c23aeddf224e14b8dab129f09c30a0b58769",
+  "files": [
+    {
+      "name": "styles/style.css",
+      "initialHash": "7f4c685da8a095c46e9b9def38e3c88bc83e224f5b63639291f66086ad3ce3e1",
+      "content": "* {\n  box-sizing: border-box;\n}\n\n.body {\n  display: flex;\n  flex-direction: column;\n  justify-content: space-between;\n  align-items: center;\n  min-width: 850px;\n  max-width: 720px;\n  margin: 0 auto;\n  padding-bottom: 20px;\n  font-family: 'Open Sans', sans-serif;\n  font-size: 18px;\n}\n\nh2 {\n  margin: 0;\n  font-weight: 800;\n  font-size: 38px;\n  text-align: center;\n  text-transform: uppercase;\n}\n\nh3 {\n  align-self: flex-start;\n  font-weight: 400;\n  font-size: 16px;\n}\n\n.container {\n  grid-area: content;\n  display: grid;\n  grid-template-columns: repeat(3, 1fr);\n  grid-template-rows: repeat(4, 1fr);\n  justify-content: center;\n  align-items: start;\n  gap: 20px;\n}\n\n.block {\n  display: flex;\n  flex-direction: column;\n  justify-content: flex-start;\n  align-items: center;\n  border: 1px solid black;\n  padding: 20px;\n  background-color: white;\n}\n\n.block-big--1 {\n  grid-column-start: 2;\n  grid-column-end: span 2;\n}\n\n.block-big--2 {\n  grid-row-start: 2;\n  grid-row-end: span 2;\n  align-self: flex-end;\n}\n\nimg {\n  width: 200px;\n  border: 1px solid #000;\n}\n\n.block--1 {\n  background-color: #c4c4c4;\n}\n\n.block--2 {\n  background-color: #feafe8;\n}\n\n.block--3 {\n  background-color: #80d994;\n}\n\n.block__button {\n  width: 100%;\n  border: 1px solid #000;\n  padding: 20px 0;\n  color: #000;\n  font-family: inherit;\n  font-weight: 800;\n  font-size: inherit;\n  text-transform: uppercase;\n  background-color: #ffc802;\n}\n\nbutton:focus-visible {\n  box-shadow: inset 0 0 0 100px rgb(0 0 0 / 0.15);\n  cursor: pointer;\n}\n\nbutton:focus {\n  outline: 2px solid #000;\n  outline-offset: 0;\n}\n\n.slogan {\n  display: flex;\n  align-items: center;\n  font-style: italic;\n}\n\nul {\n  margin: 0;\n  padding: 0;\n  list-style: none;\n}\n\n.header,\n.footer {\n  display: flex;\n  justify-content: space-between;\n  border: 1px solid black;\n  padding: 20px 40px;\n}\n\n.header {\n  grid-area: header;\n\n}\n\n.footer {\n  grid-area: footer;\n\n}\n\n.wrapper {\n  grid-template-areas: \"header header header\" \"content content content\" \"footer footer .\";\n  display: grid;\n  grid-template-columns: repeat(3, 1fr);\n  grid-template-rows: repeat(3, auto);\n  gap: 20px;\n}\n"
+    }
+  ],
+  "verifiedAt": "2026-10-20T09:22:02.672Z",
+  "evidence": {
+    "selector": ".result .icon-status-success",
+    "message": "Всё отлично!"
+  }
+}

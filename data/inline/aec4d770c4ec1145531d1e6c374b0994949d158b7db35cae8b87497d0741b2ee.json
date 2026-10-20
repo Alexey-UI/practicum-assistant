@@ -1,0 +1,18 @@
+{
+  "id": "aec4d770c4ec1145531d1e6c374b0994949d158b7db35cae8b87497d0741b2ee",
+  "lessonId": "37e46d4f-1e82-42b4-b106-bed98d1ab9d3",
+  "url": "https://sandbox.practicum-team.ru/tasks/03-design/06-different-devices/02-without-queries/example-06/pre/",
+  "instructionsHash": "0a2d125e9a7beb0957414f690f58c7d9561bb4485905da62cd3d1c7a9821492b",
+  "files": [
+    {
+      "name": "styles/style.css",
+      "initialHash": "2fead26c92a3387e936e023d5631c0832627e81ac0a0086e35e344fd47c3646a",
+      "content": "* {\n  box-sizing: border-box;\n  margin: 0;\n}\n\n.pages {\n  min-height: 100vh;\n  background-image: url(https://code.s3.yandex.net/web-code/images/dotted.svg);\n}\n\n.cards__list {\n  grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));\n  display: grid;\n  gap: 25px;\n  padding: 50px;\n\n  /* Опишите логику колонок */\n  list-style-type: none;\n}\n\n.card {\n  border: 1px solid #000;\n  padding: 50px;\n  font-family: 'Open Sans', sans-serif;\n  font-weight: 400;\n  font-size: 32px;\n  font-style: italic;\n  line-height: 1.37;\n  background-color: #fff;\n  aspect-ratio: 1 / 1;\n}\n"
+    }
+  ],
+  "verifiedAt": "2026-10-20T09:30:23.718Z",
+  "evidence": {
+    "selector": ".result .icon-status-success",
+    "message": "Всё отлично!"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "taskId": "ebc3b7e6-04e0-4730-bb22-b650fc78226d",
+  "lessonId": "aafbe2ca-cb5d-462d-86a1-5b26018ce1d9",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "files": [
+    {
+      "name": "style.css",
+      "initialHash": "597a849d5e6ed7580fa34d4e6aaa2128fe6715c9a769644b9eec69aba7e4df4b",
+      "content": "html {\n  block-size: 100%;\n}\n\nbody {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  min-inline-size: 360px;\n  min-block-size: 100%;\n  margin: 0;\n  font-family: 'Open Sans', sans-serif;\n  font-size: 16px;\n  background-color: #f2f2f2;\n}\n\n.content {\n  grid-auto-rows: 650px;\n  display: grid;\n  grid-template-columns: 1fr 1fr 1fr;\n  grid-template-rows: 650px 650px;\n  gap: 2em;\n  inline-size: 96%;\n  max-inline-size: 80rem;\n  padding: 40px 0;\n}\n\n.card {\n  display: flex;\n  flex-direction: column;\n  border: 1px solid #000;\n}\n\n.card__image {\n  inline-size: 100%;\n  border-bottom: 1px solid #000;\n  object-fit: cover;\n  aspect-ratio: 4 / 3;\n}\n\n.card__title {\n  margin-block-end: 0.3em;\n  font-size: 1.6em;\n  text-align: center;\n  text-transform: uppercase;\n}\n\n.card__wrap {\n  flex-grow: 1;\n  padding: 0 10px;\n}\n\n.card__actions {\n  display: flex;\n  gap: 10px;\n  padding: 0 10px 15px;\n}\n\n.card__link {\n  display: flex;\n  flex-grow: 1;\n  justify-content: center;\n  align-items: center;\n  border: 1px solid #000;\n  padding: 10px;\n  color: #000;\n  font-family: inherit;\n  font-weight: 800;\n  font-size: inherit;\n  text-decoration: none;\n  text-transform: uppercase;\n}\n\n.card__link.share {\n  background-color: #ffc802;\n}\n\n.card__link.more {\n  background-color: transparent;\n}\n\n.card__link:hover {\n  box-shadow: inset 0 0 0 100px rgb(0 0 0 / 0.15);\n  cursor: pointer;\n}\n\n.card__link:focus {\n  outline: 2px solid #000;\n  outline-offset: 0;\n}\n\n@media (width <= 950px) {\n  body {\n    font-size: 14px;\n  }\n\n  .content {\n    gap: 0.8em;\n  }\n}"
+    }
+  ],
+  "instructionsHash": "0deb91efa18be5efd5096539d53a37452c7885f7ef5c76d6ee4b476f1c3dd711",
+  "verifiedAt": "2026-10-20T09:23:05.198Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Свойство grid-auto-rows прекрасно решает проблему в тех случаях, когда содержимое грид-контейнера постоянно меняется. Отбросим грусть и двинемся дальше."
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "taskId": "22456e32-1a2f-45e0-af6e-76474e195a4f",
+  "lessonId": "9b7cf59e-46c4-4b61-a19f-4d1c48fb312e",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "files": [
+    {
+      "name": "style.css",
+      "initialHash": "832f19e2a5f67fac32ab0d3a28da77edd9e93f1913f6fb004bb0bbf766a4bbae",
+      "content": "html {\n  block-size: 100%;\n}\n\nbody {\n  max-inline-size: 60em;\n  min-block-size: 100%;\n  margin: 0 auto;\n  font-family: 'Open Sans', sans-serif;\n  font-size: 16px;\n}\n\n.gallery {\n  grid-auto-columns: 1fr;\n  grid-auto-flow: column;\n  display: grid;\n  grid-template-columns: repeat(3, 1fr);\n  grid-template-rows: repeat(3, 1fr);\n  grid-auto-rows: 100px 1fr;\n  gap: 1em;\n  min-block-size: calc(100vh - 4.5em);\n}\n\n.radio {\n  display: flex;\n  align-items: center;\n  gap: 1em;\n  cursor: pointer;\n}\n\n.radio__box {\n  inline-size: 27px;\n  block-size: 27px;\n  accent-color: #000;\n}\n\n.radio__box:focus {\n  outline: 2px solid #000;\n  outline-offset: 0;\n}\n\n.gallery-form {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  padding: 1.5em 0;\n}\n\n.gallery__image {\n  display: none;\n  inline-size: 100%;\n  max-inline-size: 100%;\n  block-size: 100%;\n  max-block-size: 100%;\n  object-fit: cover;\n}\n\n.gallery__image_selected {\n  display: block;\n}"
+    }
+  ],
+  "instructionsHash": "3f0ade9ccc045156005fb975f53d7aa6cea255a6637cce10236093fd6de2d386",
+  "verifiedAt": "2026-10-20T09:24:17.977Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Отлично! Теперь появляются новые колонки, а не строки. А все неявные треки имеют размер 1fr и делят доступное пространство со всеми элементами, размеры которых тоже указаны во фракциях."
+  }
+}

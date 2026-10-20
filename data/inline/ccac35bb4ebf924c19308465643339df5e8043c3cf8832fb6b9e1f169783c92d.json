@@ -1,0 +1,18 @@
+{
+  "id": "ccac35bb4ebf924c19308465643339df5e8043c3cf8832fb6b9e1f169783c92d",
+  "lessonId": "aaa183f4-c1c2-42f3-825d-c284f354229a",
+  "url": "https://sandbox.practicum-team.ru/tasks/03-design/05-grid/05-minmax-fit-content/example-02/pre/",
+  "instructionsHash": "81abe7f85396a4e272997e6c42cc682b50b105807feef40b64b7f04e830d9028",
+  "files": [
+    {
+      "name": "styles/style.css",
+      "initialHash": "4e266d6093174e774853c88a850ddf7780dd67ab6fa56bdcd87d6e99f0c93863",
+      "content": "* {\n  box-sizing: border-box;\n}\n\n.body {\n  display: flex;\n  flex-direction: column;\n  justify-content: space-between;\n  align-items: center;\n  min-width: 850px;\n  margin: 0 auto;\n  padding-bottom: 20px;\n  font-family: 'Open Sans', sans-serif;\n  font-size: 18px;\n}\n\nh2 {\n  max-width: 950px;\n  margin: 0 0 20px;\n  border: 1px solid #000;\n  padding: 20px 0;\n  font-weight: 800;\n  font-size: 38px;\n  text-align: center;\n  text-transform: uppercase;\n}\n\nh3 {\n  align-self: flex-start;\n  font-weight: 400;\n  font-size: 16px;\n}\n\n.container {\n  display: grid;\n  grid-template-columns: 1fr 1fr min-content;\n  gap: 20px;\n  width: 100%;\n}\n\n.block {\n  display: flex;\n  flex-direction: column;\n  justify-content: flex-start;\n  align-items: center;\n  border: 1px solid black;\n  padding: 20px;\n  background-color: white;\n}\n\nimg {\n  width: 200px;\n  border: 1px solid #000;\n}\n\n.block--1 {\n  background-color: #c4c4c4;\n}\n\n.block--2 {\n  background-color: #feafe8;\n}\n\n.block--3 {\n  background-color: #80d994;\n}\n\n.block__button {\n  width: 100%;\n  border: 1px solid #000;\n  padding: 20px 0;\n  color: #000;\n  font-family: inherit;\n  font-weight: 800;\n  font-size: inherit;\n  text-transform: uppercase;\n  background-color: #ffc802;\n}\n\nbutton:hover {\n  box-shadow: inset 0 0 0 100px rgb(0 0 0 / 0.15);\n  cursor: pointer;\n}\n\nbutton:focus-visible {\n  outline: 2px solid #000;\n  outline-offset: 0;\n}\n"
+    }
+  ],
+  "verifiedAt": "2026-10-20T09:25:08.074Z",
+  "evidence": {
+    "selector": ".result .icon-status-success",
+    "message": "Всё отлично!"
+  }
+}

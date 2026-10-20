@@ -1,0 +1,18 @@
+{
+  "id": "7acc4abbead4debb6bba0a151697b4f1be361d1ad01594cfa642e6ac45b6fdbe",
+  "lessonId": "08d22a0c-e952-4f87-b96e-421f60660c39",
+  "url": "https://sandbox.practicum-team.ru/tasks/03-design/05-grid/02-remember/example-04/pre/",
+  "instructionsHash": "aa9d5a5a47390ae26fe6394e7b95093addd07a8c542286628c6b642b0cd3f4da",
+  "files": [
+    {
+      "name": "styles/style.css",
+      "initialHash": "00f4dfd00b835e07326fff102ba8f030ed3793f82241ad0f374d238d384541a2",
+      "content": "* {\n  box-sizing: border-box;\n}\n\n.body {\n  display: flex;\n  flex-direction: column;\n  justify-content: space-between;\n  align-items: center;\n  min-width: 850px;\n  max-width: 720px;\n  margin: 0 auto;\n  padding-bottom: 20px;\n  font-family: 'Open Sans', sans-serif;\n  font-size: 18px;\n}\n\nh2 {\n  margin: 0;\n  border: 1px solid #000;\n  padding: 20px 0;\n  font-weight: 800;\n  font-size: 38px;\n  text-align: center;\n  text-transform: uppercase;\n}\n\nh3 {\n  align-self: flex-start;\n  font-weight: 400;\n  font-size: 16px;\n}\n\n.container {\n  display: grid;\n  grid-template-columns: repeat(3, 1fr);\n  grid-template-rows: repeat(4, 1fr);\n  gap: 20px;\n}\n\n.block {\n  display: flex;\n  flex-direction: column;\n  justify-content: flex-start;\n  align-items: center;\n  border: 1px solid black;\n  padding: 20px;\n  background-color: white;\n}\n\n.block-big--1 {\n  grid-column-start: 2;\n  grid-column-end: span 2;\n\n}\n\n.block-big--2 {\n  grid-row-start: 2;\n  grid-row-end: span 2;\n\n}\n\nimg {\n  width: 200px;\n  border: 1px solid #000;\n}\n\n.block--1 {\n  background-color: #c4c4c4;\n}\n\n.block--2 {\n  background-color: #feafe8;\n}\n\n.block--3 {\n  background-color: #80d994;\n}\n\n.block__button {\n  width: 100%;\n  border: 1px solid #000;\n  padding: 20px 0;\n  color: #000;\n  font-family: inherit;\n  font-weight: 800;\n  font-size: inherit;\n  text-transform: uppercase;\n  background-color: #ffc802;\n}\n\nbutton:hover {\n  box-shadow: inset 0 0 0 100px rgb(0 0 0 / 0.15);\n  cursor: pointer;\n}\n\nbutton:focus-visible {\n  outline: 2px solid #000;\n  outline-offset: 0;\n}\n"
+    }
+  ],
+  "verifiedAt": "2026-10-20T09:21:14.210Z",
+  "evidence": {
+    "selector": ".result .icon-status-success",
+    "message": "Всё отлично!"
+  }
+}

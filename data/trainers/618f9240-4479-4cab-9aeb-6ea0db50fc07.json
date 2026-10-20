@@ -1,0 +1,18 @@
+{
+  "taskId": "618f9240-4479-4cab-9aeb-6ea0db50fc07",
+  "lessonId": "64972e6c-f5b2-44b8-a009-61288fdcfa38",
+  "contextHash": "f59b8745214815ce6cecf5f321887c2d1b03fddaf1ba72f30d2b74020749618a",
+  "files": [
+    {
+      "name": "style.css",
+      "initialHash": "6bfb3cec5accba109f4bfde36bb3a2952131e85350d08c71d7fd10d0568a25a8",
+      "content": "*,\n*::before,\n*::after {\n  box-sizing: border-box;\n}\n\nbody {\n  display: grid;\n  place-items: center;\n  min-block-size: 100dvb;\n  margin: 0;\n  font-family: var(--main-font-family), sans-serif;\n  font-size: var(--main-text-size, 18px);\n  background-color: var(--white);\n  background-image: var(--bg-pattern);\n}\n\nh1,\nh2,\nh3,\np {\n  margin: 0;\n  padding: 0;\n}\n\nul {\n  padding: 0;\n  list-style: none;\n}\n\na {\n  color: inherit;\n  text-decoration: none;\n}\n\nh1 {\n  border-radius: 4px;\n  padding: 0.5em 1em;\n  color: var(--white, #fff);\n  font-weight: 800;\n  font-size: var(--h1-font-size, 45px);\n  text-transform: uppercase;\n  background-color: rgb(0 0 0 / 0.8);\n}\n\nh2 {\n  font-weight: 800;\n  font-size: var(--h2-font-size, 38px);\n  text-transform: uppercase;\n}\n\nh3 {\n  font-weight: 800;\n  font-size: var(--h3-font-size, 31px);\n  text-transform: uppercase;\n}\n\n.visually-hidden {\n  position: absolute;\n  inline-size: 1px;\n  block-size: 1px;\n  margin: -1px;\n  border: 0;\n  padding: 0;\n  overflow: hidden;\n  clip: rect(0 0 0 0);\n}\n\n.form {\n  display: grid;\n  grid-template-columns: 1fr 1fr 1fr;\n  gap: 1em;\n  inline-size: 90%;\n}\n\n.input-component_type_textarea {\n  grid-column: span 2;\n}\n\n.form-submit-button {\n  align-self: end;\n  inline-size: 100%;\n}\n\n.form-message {\n  position: absolute;\n  inset: 20px 5% auto auto;\n  inline-size: 30%;\n  padding: 1em;\n  background-color: var(--yellow);\n}\n@media (width <= 768px) {\n  .form {\n    grid-template-columns: repeat(2, 1fr);\n  }\n\n  .input-component_type_textarea {\n    grid-column: 2;\n    grid-row: 1 / 3;\n  }\n\n  .form-submit-button {\n    grid-column: 2;\n  }\n\n  .form-message {\n    inline-size: 45%;\n  }\n\n  .input-component_type_textarea textarea {\n    block-size: calc(100% - 1em);\n  }\n}\n"
+    }
+  ],
+  "instructionsHash": "60c20ae2fb2796f3e1d850b94b2536d8592cd3a226727328185e308f30a6b90b",
+  "verifiedAt": "2026-10-20T09:37:58.502Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Отлично! Это уже похоже на реальную работу."
+  }
+}

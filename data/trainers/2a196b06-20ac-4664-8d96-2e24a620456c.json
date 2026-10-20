@@ -1,0 +1,18 @@
+{
+  "taskId": "2a196b06-20ac-4664-8d96-2e24a620456c",
+  "lessonId": "37e46d4f-1e82-42b4-b106-bed98d1ab9d3",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "files": [
+    {
+      "name": "style.css",
+      "initialHash": "7d57bc1fe8c24cc15b772e2cb546b4d1b34eafff69700b90076869293f8b015c",
+      "content": "*,\n*::before,\n*::after {\n  box-sizing: border-box;\n}\n\nbody {\n  min-block-size: 100dvb;\n  margin: 0;\n  padding: 2em;\n  font-family: 'Open Sans', sans-serif;\n  font-size: 18px;\n  background-color: #fff;\n  background-image: url(https://code.s3.yandex.net/web-code/images/dotted.svg);\n}\n\nh1,\nh2,\np,\nul {\n  margin: 0;\n}\n\n.cards-list {\n  padding: 0;\n  list-style: none;\n}\n\n.card {\n  align-items: flex-start;\n  display: flex;\n  flex-wrap: wrap;\n  border: 1px solid #000;\n  background-color: #fff;\n}\n\n.card__image {\n  flex-grow: 1;\n  flex-basis: 150px;\n  inline-size: 150px;\n}\n\n.card__description {\n  flex-grow: 3;\n  flex-basis: 300px;\n  padding: 1.5em;\n}\n\n.card__title {\n  margin-block-end: 0.2em;\n  font-size: 2em;\n  text-transform: uppercase;\n}"
+    }
+  ],
+  "instructionsHash": "3f92176d790c0620142ed6438f5b7211e0a1581621c258f03f98a52b5ffa3d16",
+  "verifiedAt": "2026-10-20T09:32:39.720Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Пошло дело! Растянуть что-то на всё доступное пространство и перенести при достижении границы flex-basis — очень частый приём работы с флекс-лейаутами."
+  }
+}

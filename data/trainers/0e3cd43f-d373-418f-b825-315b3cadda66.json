@@ -1,0 +1,18 @@
+{
+  "taskId": "0e3cd43f-d373-418f-b825-315b3cadda66",
+  "lessonId": "64972e6c-f5b2-44b8-a009-61288fdcfa38",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "files": [
+    {
+      "name": "style.css",
+      "initialHash": "001ca1d7ce778de4820b1e1d8ef38d9bceb6f6dd0743eb43a602a548a430b2b4",
+      "content": "*,\n*::before,\n*::after {\n  box-sizing: border-box;\n}\n\nbody {\n  min-block-size: 100dvb;\n  margin: 0;\n  font-family: var(--main-font-family), sans-serif;\n  font-size: var(--main-text-size, 18px);\n  background-color: var(--white, #fff);\n  background-image: var(--bg-pattern);\n}\n\nul {\n  margin: 0;\n  padding: 0;\n  list-style: none;\n}\n\n.visually-hidden {\n  position: absolute;\n  inline-size: 1px;\n  block-size: 1px;\n  margin: -1px;\n  border: 0;\n  padding: 0;\n  overflow: hidden;\n  clip: rect(0 0 0 0);\n}\n\n.header {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  padding: 1rem 2rem;\n  background-color: var(--blue);\n}\n\n.logo {\n  inline-size: 150px;\n  font-weight: 800;\n  font-size: 38px;\n  text-transform: uppercase;\n}\n\n.logo__image {\n  inline-size: 100%;\n}\n\n.menu {\n  position: relative;\n}\n\n.menu__button {\n  display: block;\n  inline-size: 50px;\n  block-size: 50px;\n  border: none;\n  background-color: transparent;\n  background-image: url(../svg/hamburger-open.svg);\n  background-repeat: no-repeat;\n  background-size: contain;\n  cursor: pointer;\n}\n\n.menu__button:hover {\n  opacity: 0.6;\n}\n\n.menu_opened .menu__button {\n  background-image: url(../svg/hamburger-close.svg);\n}\n\n.menu__list {\n  position: absolute;\n  display: none;\n  flex-direction: column;\n  gap: 0.2em;\n  text-align: center;\n  inset-block-start: 65px;\n  inset-inline-end: 0;\n}\n\n.menu_opened .menu__list {\n  display: flex;\n}\n\n.menu__list a {\n  display: block;\n  border: 1px solid var(--black);\n  padding: 1em 2em;\n  color: currentColor;\n  font-size: 1.25em;\n  text-decoration: none;\n  background-color: var(--yellow);\n}\n\n.menu a:hover {\n  opacity: 0.8;\n}\n@media (min-width: 768px) {\n  .menu__button {\n    display: none;\n  }\n\n  .menu__list {\n    position: static;\n    display: flex;\n    flex-direction: row;\n    gap: 1em;\n  }\n\n  .menu__list a {\n    border: none;\n    padding: initial;\n    background-color: transparent;\n  }\n}\n"
+    }
+  ],
+  "instructionsHash": "030a214b8dff7af24664596d140c75040dc6b9b73aa01a758e26c264b6150b69",
+  "verifiedAt": "2026-10-20T09:35:03.161Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Вот он, настоящий mobile-first!"
+  }
+}

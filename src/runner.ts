@@ -283,6 +283,7 @@ async function runAttempt(): Promise<void> {
           const previous = page.url();
           await next.click();
           await page.waitForURL(url => url.href !== previous, { waitUntil: 'commit', timeout: 180000 });
+          await journal('lesson-navigation-observed', { from: safeUrl(previous), url: safeUrl(page.url()) });
           if (!await waitReadyOrDefer(page, lesson)) { deferred = true; break; }
           await settle(page);
           await journal('lesson-transition', { from: safeUrl(previous), url: safeUrl(page.url()) });

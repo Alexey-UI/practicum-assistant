@@ -1,0 +1,18 @@
+{
+  "taskId": "e2dc66d7-4e01-474c-a750-4cc702821bf3",
+  "lessonId": "37e46d4f-1e82-42b4-b106-bed98d1ab9d3",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "files": [
+    {
+      "name": "style.css",
+      "initialHash": "f3857c073de25210a07391430ce3f2eb03315aaa934c09e42e7250fdceaffafa",
+      "content": "*,\n*::before,\n*::after {\n  box-sizing: border-box;\n}\n\nbody {\n  min-inline-size: 450px;\n  min-block-size: 100dvb;\n  margin: 0;\n  padding: 2em;\n  font-family: 'Open Sans', sans-serif;\n  font-size: 18px;\n  background-color: #fff;\n  background-image: url(https://code.s3.yandex.net/web-code/images/dotted.svg);\n}\n\nh1,\nh2,\np,\nul {\n  margin: 0;\n}\n\n.cards-list {\n  gap: 1em;\n  flex-wrap: wrap;\n  display: flex;\n  padding: 0;\n  list-style: none;\n}\n\n.card {\n  display: flex;\n  flex-wrap: wrap;\n  align-items: flex-start;\n  min-block-size: 100%;\n  border: 1px solid #000;\n  background-color: #fff;\n}\n\n.card__image {\n  flex-grow: 1;\n  flex-basis: 250px;\n  inline-size: 250px;\n  object-fit: cover;\n  object-position: center;\n  aspect-ratio: 1 / 1;\n}\n\n.card__description {\n  flex-grow: 3;\n  flex-basis: 300px;\n  padding: 1.5em;\n}\n\n.card__title {\n  margin-block-end: 0.2em;\n  font-size: 2em;\n  text-transform: uppercase;\n  hyphens: auto;\n}\n.cards-list__item {\n  flex-basis: 300px;\n  flex-grow: 1;\n}\n"
+    }
+  ],
+  "instructionsHash": "94bc768621db675b545286b2be8132ca996de6d8756a2d500e5dfae2f61292eb",
+  "verifiedAt": "2026-10-20T09:33:43.625Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Никаких специальных инструментов для адаптивы, но интерфейс адаптируется. Это замечательный приём, пользуйтесь!"
+  }
+}

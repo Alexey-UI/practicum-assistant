@@ -1,0 +1,18 @@
+{
+  "id": "ee9b310c6ecb8d4e58b57989cc95061c49ef4b5552222d4c51e16c4f1a43abc0",
+  "lessonId": "37e46d4f-1e82-42b4-b106-bed98d1ab9d3",
+  "url": "https://sandbox.practicum-team.ru/tasks/03-design/06-different-devices/02-without-queries/example-01/pre/",
+  "instructionsHash": "48f823643929f04c972f478584e2bdee2ccb5b64e4451ff4a5abbdc703ff2d9e",
+  "files": [
+    {
+      "name": "styles/style.css",
+      "initialHash": "0f291105fbed299236e519ae73efc27fa257d20ec43a7cc11021d097dcebdd10",
+      "content": "* {\n  box-sizing: border-box;\n  margin: 0;\n}\n\n.page {\n  gap: 25px;\n  min-height: calc(100vh - 100px);\n  padding: 50px;\n  color: #000;\n  font-family: 'Open Sans', sans-serif;\n  background-image: url(https://code.s3.yandex.net/web-code/images/dotted.svg);\n}\n\n.places__header {\n  margin-block-start: 0;\n  margin-block-end: 50px;\n  font-weight: 800;\n  font-size: 45px;\n  text-transform: uppercase;\n}\n\n.places__list {\n  flex-wrap: wrap;\n  display: flex;\n  /* Сделайте элемент флекс-контейнером и разрешите перенос дочерних элементов */\n  gap: 25px;\n  padding: 0;\n  list-style-type: none;\n}\n\n.places__item {\n  border: 1px solid #000;\n  padding: 5px 20px;\n  font-weight: 800;\n  font-size: 18px;\n  line-height: 1.4;\n  text-transform: uppercase;\n  background-color: #ffc802;\n}\n"
+    }
+  ],
+  "verifiedAt": "2026-10-20T09:29:36.587Z",
+  "evidence": {
+    "selector": ".result .icon-status-success",
+    "message": "Всё отлично!"
+  }
+}

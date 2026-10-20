@@ -1,0 +1,18 @@
+{
+  "id": "1ec965061823b0e3fb8861d3ea505127eedd725eb8534b9a4e93b98c1d0a867c",
+  "lessonId": "6d7c84be-2349-4538-96d4-eb2a1ead3035",
+  "url": "https://sandbox.practicum-team.ru/tasks/03-design/04-units-and-funcs/07-min-max-clamp/example-05/pre/",
+  "instructionsHash": "6e30198afcf0ef2f2207bcdfd90f5ba4e4672806ff26c1bc8ba4f651952d60c9",
+  "files": [
+    {
+      "name": "styles/style.css",
+      "initialHash": "d171fcdde767ee317f4b46e8eb728bd2c1436fed97982419e3ecb2147162a59b",
+      "content": "* {\n  box-sizing: border-box;\n}\n\nbody {\n  font-family: 'Open Sans', sans-serif;\n  background-color: #5f0dee;\n}\n\n.parent {\n  max-width: 100%;\n  min-height: 100vh;\n  padding: 60px 40px;\n}\n\n.login__link {\n  display: flex;\n  align-items: center;\n  gap: 10px;\n  width: min(100%, 320px);\n  margin: auto;\n  border: 1px solid #000;\n  padding: 15px 30px;\n  font-family: inherit;\n  font-weight: 800;\n  font-size: 24px;\n  line-height: 1;\n  text-decoration: none;\n  text-transform: uppercase;\n  background-color: #ffc802;\n  cursor: pointer;\n}\n\n.login__icon {\n  width: 3em;\n}\n\n.description {\n  width: 100%;\n  background: url(https://code.s3.yandex.net/web-code/images/dotted.svg);\n}\n\n.description-p {\n  width: max(66%, 280px);\n  /* Код здесь */\n  margin: 0 0 0 auto;\n  padding: 12px 25px;\n  color: #fff;\n  background-color: #5f0dee;\n}\n\n.main-content {\n  display: flex;\n  justify-content: center;\n  margin: 40px 0;\n} \n\n.grid-wrapper {\n  display: grid;\n  grid-template-columns: 1fr 1fr 1fr;\n  margin: 40px auto;\n  padding: 0;\n  list-style: none;\n}\n\n.grid-item {\n  border: 1px solid black;\n  padding: 25px;\n  font-style: italic;\n  word-break: break-word;\n  background-color: #fff;\n}\n\n.main-block {\n  width: max(50%, 450px);\n  border: 1px solid black;\n  padding: 25px;\n  background-color: #fff;\n}\n\n.aside-block {\n  width: min(50%, 450px);\n  border: 1px solid black;\n  border-right: none;\n  background-image: url(./images/img.jpg);\n  background-position: center;\n  background-size: cover;\n}\n\n.title {\n  font-weight: 800;\n  text-transform: uppercase;\n}\n"
+    }
+  ],
+  "verifiedAt": "2026-10-20T09:18:05.405Z",
+  "evidence": {
+    "selector": ".result .icon-status-success",
+    "message": "Все круто"
+  }
+}

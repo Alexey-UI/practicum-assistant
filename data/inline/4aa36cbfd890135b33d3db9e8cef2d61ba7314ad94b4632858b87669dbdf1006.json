@@ -1,0 +1,18 @@
+{
+  "id": "4aa36cbfd890135b33d3db9e8cef2d61ba7314ad94b4632858b87669dbdf1006",
+  "lessonId": "4d9fdffb-9a2a-44d4-89a3-71abf3b0965e",
+  "url": "https://sandbox.practicum-team.ru/tasks/03-design/06-different-devices/05-prefers/example-02/pre/",
+  "instructionsHash": "0aa7eab357337c4cd1198b099afab76493ce1559839c3e656137e58576be5109",
+  "files": [
+    {
+      "name": "styles/style.css",
+      "initialHash": "0b0ff2c6fd91df3990cc668a728d0dfccac756d8aa29c986c31da16eb9260e99",
+      "content": "* {\n  box-sizing: border-box;\n  margin: 0;\n}\n\nhtml {\n  height: 100vh;\n}\n\nbody {\n  --main-text-color: #152028;\n  --main-background-color: #fff;\n\n  display: grid;\n  place-items: center;\n  min-height: 100%;\n  color: var(--main-text-color);\n  font-family: 'Open Sans', sans-serif;\n  font-size: 18px;\n  background-color: var(--main-background-color);\n}\n\n@media (prefers-color-scheme: dark) {\n  body {\n    --main-text-color: #ffffff;\n    --main-background-color: #152028;\n  }\n}\n\n@media (prefers-color-scheme: light) {\n  body {\n    --main-text-color: #152028;\n    --main-background-color: #ffffff;\n  }\n}\n\nbody:has(.theme-toggler__control_type_light:checked) {\n  --main-text-color: #152028;\n  --main-background-color: #fff;\n}\n\nbody:has(.theme-toggler__control_type_dark:checked) {\n  --main-text-color: #fff;\n  --main-background-color: #152028;\n}\n\n.title {\n  font-weight: 800;\n  font-size: 45px;\n  text-align: center;\n  text-transform: uppercase;\n}\n\n.something {\n  width: max(250px, 50vw);\n  height: max(250px, 50vw);\n  background-image: url(./images/tsss.svg);\n  background-repeat: no-repeat;\n  background-position: center;\n  background-size: contain;\n}\n\n.theme-toggler {\n  display: flex;\n}\n\n.theme-toggler__item {\n  position: relative;\n  box-sizing: border-box;\n  min-width: 125px;\n  border: 1px solid var(--main-text-color);\n  padding: 5px 20px;\n  color: var(--main-text-color);\n  font-family: inherit;\n  font-weight: 400;\n  font-size: inherit;\n  text-align: center;\n  text-transform: uppercase;\n  cursor: pointer;\n}\n\n.theme-toggler__control {\n  position: absolute;\n  -webkit-appearance: none;\n  appearance: none;\n}\n\n.theme-toggler__item:has(.theme-toggler__control:checked) {\n  color: var(--main-background-color);\n  font-weight: 800;\n  background-color: var(--main-text-color);\n}\n"
+    }
+  ],
+  "verifiedAt": "2026-10-20T09:42:22.504Z",
+  "evidence": {
+    "selector": ".result .icon-status-success",
+    "message": "Всё отлично!"
+  }
+}

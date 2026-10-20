@@ -1,0 +1,18 @@
+{
+  "id": "1fe0cfed4c94cae072f858d5b6f55af32567eb58d55c4089ef1dac7641a9a5ae",
+  "lessonId": "6d7c84be-2349-4538-96d4-eb2a1ead3035",
+  "url": "https://sandbox.practicum-team.ru/tasks/03-design/04-units-and-funcs/07-min-max-clamp/example-02/pre/",
+  "instructionsHash": "a6a11ada49d17dbfee81d36126400235f38b27911715e756d26b5756610f54dc",
+  "files": [
+    {
+      "name": "styles/style.css",
+      "initialHash": "5f484dd75e834c2601e07f355d0bb40a835f9b199c075e28c3b2481edf331114",
+      "content": "* {\n  box-sizing: border-box;\n}\n\nbody {\n  font-family: 'Open Sans', sans-serif;\n  background-color: #5f0dee;\n}\n\n.parent {\n  max-width: 100%;\n  min-height: 100vh;\n  padding: 60px 40px;\n}\n\n.login__link {\n  width: min(100%, 320px);\n  display: flex;\n  align-items: center;\n  gap: 10px;\n  margin: auto;\n  border: 1px solid #000;\n  padding: 15px 30px;\n  font-family: inherit;\n  font-weight: 800;\n  font-size: 24px;\n  line-height: 1;\n  text-decoration: none;\n  text-transform: uppercase;\n  background-color: #ffc802;\n  cursor: pointer;\n\n  /* Код здесь */\n}\n\n.login__icon {\n  width: 3em;\n}\n\n.description {\n  width: 100%;\n  background: url(https://code.s3.yandex.net/web-code/images/dotted.svg);\n}\n\n.description-p {\n  margin: 0 0 0 auto;\n  padding: 12px 25px;\n  color: #fff;\n  background-color: #5f0dee;\n}\n\n.main-content {\n  display: flex;\n  justify-content: center;\n  margin: 40px 0;\n} \n\n.grid-wrapper {\n  display: grid;\n  grid-template-columns: 1fr 1fr 1fr;\n  margin: 40px auto;\n  padding: 0;\n  list-style: none;\n}\n\n.grid-item {\n  border: 1px solid black;\n  padding: 25px;\n  font-style: italic;\n  word-break: break-word;\n  background-color: #fff;\n}\n\n.main-block {\n  border: 1px solid black;\n  padding: 25px;\n  background-color: #fff;\n}\n\n.aside-block {\n  width: 50%;\n  border: 1px solid black;\n  border-right: none;\n  background-image: url(./images/img.jpg);\n  background-position: center;\n  background-size: cover;\n}\n\n.title {\n  font-weight: 800;\n  text-transform: uppercase;\n}\n"
+    }
+  ],
+  "verifiedAt": "2026-10-20T09:16:24.653Z",
+  "evidence": {
+    "selector": ".result .icon-status-success",
+    "message": "Все круто"
+  }
+}

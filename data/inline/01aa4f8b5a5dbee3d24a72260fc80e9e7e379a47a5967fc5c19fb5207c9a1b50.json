@@ -1,0 +1,18 @@
+{
+  "id": "01aa4f8b5a5dbee3d24a72260fc80e9e7e379a47a5967fc5c19fb5207c9a1b50",
+  "lessonId": "37e46d4f-1e82-42b4-b106-bed98d1ab9d3",
+  "url": "https://sandbox.practicum-team.ru/tasks/03-design/06-different-devices/02-without-queries/example-07/pre/",
+  "instructionsHash": "ae6b023040afd710b53afd23df257e7f781367b2717f6dd7d1fb6b21b1ca35db",
+  "files": [
+    {
+      "name": "styles/style.css",
+      "initialHash": "422f9c26224ab5f3e2caad7e3ba28f0869de8b4fcce2f1ba71225272898ed81f",
+      "content": "* {\n  box-sizing: border-box;\n  margin: 0;\n}\n\n.pages {\n  min-height: 100vh;\n  background-image: url(https://code.s3.yandex.net/web-code/images/dotted.svg);\n}\n\n.cards__list {\n  display: grid;\n  grid-template-columns: repeat(auto-fit, minmax(min(380px, 100%), 1fr));\n  gap: 25px;\n  padding: 50px;\n  list-style-type: none;\n}\n\n.card {\n  border: 1px solid #000;\n  padding: 50px;\n  font-family: 'Open Sans', sans-serif;\n  font-weight: 400;\n  font-size: 32px;\n  font-style: italic;\n  line-height: 1.37;\n  background-color: #fff;\n  aspect-ratio: 1 / 1;\n}\n"
+    }
+  ],
+  "verifiedAt": "2026-10-20T09:30:38.171Z",
+  "evidence": {
+    "selector": ".result .icon-status-success",
+    "message": "Всё отлично!"
+  }
+}

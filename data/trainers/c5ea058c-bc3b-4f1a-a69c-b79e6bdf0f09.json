@@ -1,0 +1,18 @@
+{
+  "taskId": "c5ea058c-bc3b-4f1a-a69c-b79e6bdf0f09",
+  "lessonId": "aaa183f4-c1c2-42f3-825d-c284f354229a",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "files": [
+    {
+      "name": "style.css",
+      "initialHash": "5626139620b3c10b138053b78891e31449133ae981a1a6cba03c97272ca66463",
+      "content": "html {\n  block-size: 100%;\n}\n\n.page {\n  display: grid;\n  grid-template-columns: minmax(min-content, 1fr) 3fr 3fr;\n  grid-template-rows: 9em auto 9em;\n  grid-template-areas:\n    'header header header'\n    'navigation main main'\n    'footer footer footer';\n  min-block-size: 100%;\n  margin: 0;\n  font-family: 'Open Sans', sans-serif;\n  font-weight: 400;\n  font-size: 20px;\n}\n\n.content {\n  display: grid;\n  grid-template-columns: repeat(2, minmax(min-content, max-content));\n  grid-area: main;\n  gap: 1.7em;\n  padding: 0 1em 6em 0;\n  background-color: #fffffb;\n}\n\n.sidebar {\n  grid-area: navigation;\n}\n\n.header {\n  display: flex;\n  grid-area: header;\n  justify-content: space-between;\n  align-items: center;\n  margin-block-end: 1em;\n  border-block-end: 1px solid #ddd;\n  padding: 1em;\n}\n\n.header__button-wrapper {\n  display: flex;\n  gap: 6px;\n}\n\n.header__button {\n  border: 1px solid #000;\n  padding: 6px 15px;\n  color: white;\n  font-size: 12px;\n  text-transform: uppercase;\n  background-color: #464646;\n  cursor: pointer;\n}\n\n.header__button_active {\n  color: #393939;\n  background-color: #ddd;\n}\n\nbutton:hover {\n  box-shadow: inset 0 0 0 100px rgb(0 0 0 / 0.15);\n  cursor: pointer;\n}\n\nbutton:focus {\n  outline: 2px solid #000;\n  outline-offset: 0;\n}\n\n.footer {\n  display: flex;\n  grid-area: footer;\n  justify-content: space-between;\n  align-items: center;\n  padding: 0 1em;\n  background-color: #000;\n}\n\n.footer__copyright {\n  margin: 0;\n  color: #fff;\n  font-weight: 700;\n  font-size: 16px;\n  font-style: italic;\n}\n\n.logo {\n  max-inline-size: 100%;\n  max-block-size: 100%;\n  object-fit: cover;\n}\n\n.card__image {\n  max-inline-size: 100%;\n  object-fit: cover;\n}\n\n.navigation__list {\n  display: flex;\n  flex-direction: column;\n  margin: 0;\n  padding: 0;\n  list-style-type: none;\n}\n\n.navigation__link {\n  display: block;\n  padding: 0 1em 1em;\n  color: #0595fc;\n  font-weight: bold;\n  font-size: 1em;\n  text-decoration: none;\n  text-transform: uppercase;\n  transition: color 0.3s;\n}\n\n.navigation__link:hover,\n.navigation__link:active {\n  color: #6dc1fd;\n}\n\n.card__list {\n  display: flex;\n  flex-wrap: wrap;\n  padding: 0;\n  list-style-type: none;\n}\n\n.card__link {\n  display: block;\n  margin: 5px 30px 0 0;\n  padding: 0 3px;\n  color: #6dc1fd;\n  font-size: 0.9em;\n  text-decoration: none;\n  transition: color 0.2s, background-color 0.2s;\n}\n\n.card__link:hover,\n.card__link:active {\n  color: #fff;\n  background-color: #6dc1fd;\n}\n\n.card__title {\n  font-weight: 300;\n  font-size: 1.8em;\n}\n\n.card__description {\n  color: #949494;\n  font-size: 0.9em;\n}\n\n.card__more {\n  font-weight: 300;\n  font-size: 1.2em;\n}"
+    }
+  ],
+  "instructionsHash": "b77f5bef4e079180d4d26e357f11100a08ee8500bab47e31567df364409311b6",
+  "verifiedAt": "2026-10-20T09:27:10.201Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Здорово! Теперь карточки выглядят так, как мы ожидаем, — делят между собой доступное пространство. Каждая компактно укладывается в грид-контейнер, а текст внутри переносится."
+  }
+}

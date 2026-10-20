@@ -1,0 +1,18 @@
+{
+  "taskId": "4261e68b-9fbf-420c-a184-32bb25b584b3",
+  "lessonId": "37e46d4f-1e82-42b4-b106-bed98d1ab9d3",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "files": [
+    {
+      "name": "style.css",
+      "initialHash": "d62edfff4b91f8270089a4a06080349a72b1505780503d85eb19df8cb72811a3",
+      "content": "*,\n*::before,\n*::after {\n  box-sizing: border-box;\n}\n\nbody {\n  display: grid;\n  place-items: center;\n  gap: 2em;\n  min-block-size: 100dvb;\n  margin: 0;\n  font-family: var(--main-font-family), sans-serif;\n  font-size: var(--main-text-size, 18px);\n  background-color: #fff;\n  background-image: var(--bg-pattern);\n}\n\n.filter-form {\n  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));\n  display: grid;\n\n  /* Здесь нужны стили для оформления колонок */\n  gap: 0.5em;\n  inline-size: 95%;\n  border: 1px solid #000;\n  padding: 1em;\n  background-color: #80d994;\n}\n\n.visually-hidden {\n  position: absolute;\n  inline-size: 1px;\n  block-size: 1px;\n  margin: -1px;\n  border: 0;\n  padding: 0;\n  overflow: hidden;\n  clip: rect(0 0 0 0);\n}\n\n.checkbox {\n  display: block;\n  cursor: pointer;\n}\n\n.checkbox__hashtag {\n  display: block;\n  border: 1px solid var(--black);\n  padding: 10px 65px;\n  opacity: 0.6;\n  color: var(--black);\n  font-family: inherit;\n  font-weight: 800;\n  font-size: inherit;\n  text-align: center;\n  text-transform: uppercase;\n  background-color: var(--yellow);\n}\n\n.checkbox__input:checked + .checkbox__hashtag {\n  opacity: 1;\n}\n\n.checkbox__input:focus-visible + .checkbox__hashtag {\n  outline: 1px solid var(--black);\n}"
+    }
+  ],
+  "instructionsHash": "7db5aa100a98e20e6b7d76f8c8742723be5d1dd43f239b9b20c88a6066568187",
+  "verifiedAt": "2026-10-20T09:34:02.725Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Флекс отлично заполняет пространство, а грид — ячейки."
+  }
+}

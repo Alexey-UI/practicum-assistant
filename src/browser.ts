@@ -55,7 +55,7 @@ export async function waitLessonReady(page: Page, attemptTimeoutMs = 60000): Pro
       return;
     } catch (error) {
       if (page.isClosed() || attempt === 2) throw error;
-      console.log('Содержимое урока не загрузилось; повторяю загрузку страницы без отправки ответов.');
+      console.log(`Содержимое урока не загрузилось; повторяю загрузку страницы без отправки ответов: ${safeUrl(page.url())}`);
       await navigate(page, safeUrl(page.url()));
     }
   }

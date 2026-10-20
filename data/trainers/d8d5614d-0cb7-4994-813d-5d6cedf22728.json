@@ -1,0 +1,18 @@
+{
+  "taskId": "d8d5614d-0cb7-4994-813d-5d6cedf22728",
+  "lessonId": "64972e6c-f5b2-44b8-a009-61288fdcfa38",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "files": [
+    {
+      "name": "style.css",
+      "initialHash": "e9a910b818e87f0c71faada3ca84e4986506557b48a5b78c6351e4692f9e394b",
+      "content": "*,\n*::before,\n*::after {\n  box-sizing: border-box;\n}\n\nbody {\n  min-block-size: 100dvb;\n  margin: 0;\n  padding: 40px;\n  font-family: var(--main-font-family), sans-serif;\n  font-size: var(--main-text-size, 18px);\n  background-color: var(--white, #fff);\n  background-image: var(--bg-pattern);\n}\n\nh2,\nh3,\np,\nul {\n  margin: 0;\n  padding: 0;\n}\n\nul {\n  list-style: none;\n}\n\nh2 {\n  font-weight: 800;\n  font-size: var(--h2-font-size, 38px);\n  text-transform: uppercase;\n}\n\nh3 {\n  font-weight: 800;\n  font-size: var(--h3-font-size, 31px);\n  text-transform: uppercase;\n}\n\n.books {\n  display: grid;\n  grid-template-columns: repeat(4, 1fr);\n  gap: 20px 10px;\n}\n\n.books__title {\n  grid-column: 1 / 4;\n}\n\n.more-link {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  align-self: center;\n  border: 1px solid var(--black, #000);\n  padding: 10px 30px;\n  color: var(--black, #000);\n  font-family: inherit;\n  font-weight: 800;\n  font-size: inherit;\n  text-align: center;\n  text-decoration: none;\n  text-transform: uppercase;\n  background-color: #ffc802;\n}\n\n.more-link:hover {\n  box-shadow: inset 0 0 0 100px rgb(0 0 0 / 0.15);\n  cursor: pointer;\n}\n\n.more-link:focus {\n  outline: 2px solid var(--black, #000);\n  outline-offset: 0;\n}\n\n.books__list {\n  grid-column: 1 / -1;\n}\n\n.books__list-item:not(:last-of-type) {\n  margin-block-end: 20px;\n}\n\n.book-card {\n  display: flex;\n  flex-wrap: wrap;\n  align-items: flex-start;\n  border: 1px solid var(--black, #000);\n  background-color: #fff;\n}\n\n.book-card__cover {\n  inline-size: 200px;\n}\n\n.book-card__description {\n  flex-grow: 1;\n  flex-basis: 400px;\n  padding: 1em;\n}\n\n.book-card__title {\n  margin-block-end: 0.5em;\n}\n@media (max-width: 600px) {\n  body {\n    padding: 10px;\n  }\n\n  .books {\n    grid-template-columns: 1fr;\n  }\n\n  .books__title {\n    grid-column: 1;\n  }\n\n  .more-link {\n    grid-row: 3;\n  }\n}\n"
+    }
+  ],
+  "instructionsHash": "ed3dfafd351b38c25a5eb0e74ca21bc003b548ed49d17c40a6e97483f756caa7",
+  "verifiedAt": "2026-10-20T09:35:39.610Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Знали бы вы, как верстальщикам не нравились такие сильные перестановки элементов до появления гридов!"
+  }
+}
