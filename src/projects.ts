@@ -8,6 +8,7 @@ import { atomicJson, readJson } from './store.js';
 import { loadConfig } from './config.js';
 import { allowedUrl, lessonId, lessonUrl as canonicalLesson } from './browser.js';
 import { projectCheckCommand } from './commands.js';
+import { ensureManualRepository } from './project-repository.js';
 
 const exec = promisify(execFile);
 export interface Project {
@@ -116,7 +117,7 @@ async function assertPrepared(project: Project): Promise<Prepared> {
 }
 
 async function prepare(project: Project): Promise<void> {
-  await githubIdentity(project);
+  const identity = await githubIdentity(project);
   const reference = path.resolve('.local/references', project.id);
   await clone(project.source, reference);
   const { stdout: dirtyRef } = await exec('git', ['status', '--porcelain'], { cwd: reference });
@@ -124,6 +125,7 @@ async function prepare(project: Project): Promise<void> {
   await exec('git', ['fetch', 'origin', project.commit], { cwd: reference, timeout: 180000 });
   await exec('git', ['switch', '--detach', project.commit], { cwd: reference });
   const target = targetDirectory(project);
+  await ensureManualRepository(project, identity.login);
   await clone(project.destination, target);
   const { stdout: branch } = await exec('git', ['branch', '--show-current'], { cwd: target });
   if (branch.trim() !== 'main') throw new Error('Для prepare требуется ветка main; другие ветки не изменяются');
