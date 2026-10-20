@@ -7,6 +7,7 @@ import { tmpdir } from 'node:os';
 import { atomicJson, readJson } from './store.js';
 import { loadConfig } from './config.js';
 import { allowedUrl, lessonId, lessonUrl as canonicalLesson } from './browser.js';
+import { projectCheckCommand } from './commands.js';
 
 const exec = promisify(execFile);
 export interface Project {
@@ -206,7 +207,8 @@ async function publish(project: Project): Promise<void> {
   else if (visibility.trim() !== 'false') throw new Error('Не удалось проверить публичность репозитория');
   await exec('git', ['push', 'origin', 'main'], { cwd, timeout: 180000 });
   if (project.deploy === 'gh-pages') {
-    await exec('npm', ['run', 'deploy'], { cwd, timeout: 180000, env: { ...process.env, GIT_AUTHOR_NAME: user.login, GIT_COMMITTER_NAME: user.login, GIT_AUTHOR_EMAIL: email, GIT_COMMITTER_EMAIL: email } });
+    const command = await projectCheckCommand('npm', ['run', 'deploy']);
+    await exec(command.program, command.args, { cwd, timeout: 180000, env: { ...process.env, GIT_AUTHOR_NAME: user.login, GIT_COMMITTER_NAME: user.login, GIT_AUTHOR_EMAIL: email, GIT_COMMITTER_EMAIL: email } });
   }
   await ensurePages(project);
   const { stdout: sha } = await exec('git', ['rev-parse', 'HEAD'], { cwd });
@@ -236,7 +238,8 @@ export async function projectCommand(args: string[]): Promise<void> {
   for (const check of project.checks) {
     console.log(`Проверка ${check.program} ${check.args.join(' ')}`);
     // Manifest commands are reviewed code, run without shell string interpolation.
-    await exec(check.program, projectCheckArgs(check.args), { cwd: dir, timeout: 300000, maxBuffer: 4 * 1024 * 1024 });
+    const command = await projectCheckCommand(check.program, projectCheckArgs(check.args));
+    await exec(command.program, command.args, { cwd: dir, timeout: 300000, maxBuffer: 4 * 1024 * 1024 });
     results.push(check);
   }
   await atomicJson(recordFile(project), { ...saved, checks: results, verifiedAt: new Date().toISOString() });
