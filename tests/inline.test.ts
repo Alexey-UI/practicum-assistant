@@ -4,7 +4,7 @@ import { chromium, type Browser, type Page } from 'playwright';
 import { mkdtemp, rm } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import path from 'node:path';
-import { applyInline, readInline, requestInlineCheck, observeInline, solveInline, sandboxFrame, type InlineSolution } from '../src/inline.js';
+import { applyInline, readInline, requestInlineCheck, observeInline, solveInline, sandboxFrame, type InlineSolution, isInlineDemonstration } from '../src/inline.js';
 import { atomicJson, readJson } from '../src/store.js';
 
 let browser: Browser;
@@ -48,6 +48,21 @@ test('Встроенное упражнение вводится через ре
     assert.equal(await frame.locator('body').getAttribute('data-clicks'), '1');
     await frame.getByRole('textbox').fill('Другая редакция');
     assert.equal(await observeInline(page, 0), 'unknown');
+  } finally { process.chdir(original); await page.close(); await rm(dir, { recursive: true, force: true }); }
+});
+
+test('Пример для чтения не отправляется на проверку и распознаётся только в исходном контексте', async () => {
+  const page = await browser.newPage(); const original = process.cwd(); const dir = await mkdtemp(path.join(tmpdir(), 'practicum-inline-demo-'));
+  try {
+    process.chdir(dir); await fixture(page, false);
+    const task = await readInline(page, 0);
+    await atomicJson(`data/inline-demos/${task.id}-${task.instructionsHash}.json`, {id:task.id,lessonId:task.lessonId,instructionsHash:task.instructionsHash,files:task.files.map(({name,hash})=>({name,hash})),reason:'Инструкция просит только прочитать готовый пример.',reviewedAt:new Date().toISOString()});
+    assert.equal(await solveInline(page, 0), true);
+    assert.equal(await (await sandboxFrame(page, 0)).locator('body').getAttribute('data-clicks'), null);
+    assert.equal(await readJson(`data/inline/${task.id}.json`, null), null);
+    assert.equal(await isInlineDemonstration({...task,lessonId:'another'}), false);
+    assert.equal(await isInlineDemonstration({...task,instructionsHash:'another'}), false);
+    assert.equal(await isInlineDemonstration({...task,files:task.files.map(file=>({...file,hash:'changed'}))}), false);
   } finally { process.chdir(original); await page.close(); await rm(dir, { recursive: true, force: true }); }
 });
 

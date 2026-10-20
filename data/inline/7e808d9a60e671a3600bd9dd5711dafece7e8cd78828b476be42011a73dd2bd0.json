@@ -1,0 +1,18 @@
+{
+  "id": "7e808d9a60e671a3600bd9dd5711dafece7e8cd78828b476be42011a73dd2bd0",
+  "lessonId": "231d4bd2-b19a-4f2b-9576-820042dce947",
+  "url": "https://sandbox.practicum-team.ru/tasks/02-interactivity-and-accessibility/05-accesibility/08-aria/example-06/pre/",
+  "instructionsHash": "6241f954f6b74f10fc98c22eaea0ae528bff341a6034f9d5feb64cde03336548",
+  "files": [
+    {
+      "name": "index.html",
+      "initialHash": "9326b0196d31dbf6fe06bd31c5adb5851ea0670ca331b48ea38ad3d1abac4252",
+      "content": "<!DOCTYPE html>\n<html lang=\"ru\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <title>Список табов</title>\n    <link\n      rel=\"stylesheet\"\n      href=\"https://code.s3.yandex.net/web-code/fonts/fonts.css\"\n    />\n    <link rel=\"stylesheet\" href=\"./styles/styles.css\" />\n  </head>\n  <body>\n    <section class=\"tablist-zone\">\n      <ul class=\"tab-list\" role=\"tablist\">\n        <li class=\"tab\">\n          <button role=\"tab\" class=\"king-button tab_active\" aria-description=\"Показать фото Мартина Лютера Кинга\">\n            Мартин Лютер Кинг\n          </button>\n        </li>\n        <li class=\"tab\">\n          <button role=\"tab\" class=\"meredith-button\" aria-description=\"Показать фото Джеймса Мередита\">Джеймс Мередит</button>\n        </li>\n      </ul>\n      <article class=\"content king\">\n        <img\n          src=\"./images/king.jpg\"\n          alt=\"Мартин Лютер Кинг на марше за гражданские права в Вашингтоне\"\n          class=\"person\"\n        />\n        <p class=\"caption\">\n          Мартин Лютер Кинг на марше за гражданские права в Вашингтоне\n        </p>\n      </article>\n      <article class=\"content meredith\">\n        <img\n          src=\"./images/meredith.jpg\"\n          alt=\"Джеймс Мередит в сопровождении федеральных маршалов\"\n          class=\"person\"\n        />\n        <p class=\"caption\">\n          Джеймс Мередит в сопровождении федеральных маршалов\n        </p>\n      </article>\n    </section>\n    <script src=\"./scripts/script.js\"></script>\n  </body>\n</html>\n"
+    }
+  ],
+  "verifiedAt": "2026-10-20T08:07:37.887Z",
+  "evidence": {
+    "selector": ".result .icon-status-success",
+    "message": "Всё отлично!"
+  }
+}

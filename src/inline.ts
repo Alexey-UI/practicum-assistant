@@ -14,6 +14,19 @@ export interface InlineSolution {
   files: Array<{ name: string; initialHash: string; content: string }>;
   verifiedAt?: string; evidence?: { selector: string; message: string };
 }
+interface InlineDemonstration {
+  id: string; lessonId: string; instructionsHash: string;
+  files: Array<{ name: string; hash: string }>;
+  reason: string; reviewedAt: string;
+}
+
+export async function isInlineDemonstration(task: InlineTask): Promise<boolean> {
+  const demo = await readJson<InlineDemonstration | null>(`data/inline-demos/${task.id}-${task.instructionsHash}.json`, null);
+  return !!demo && demo.id === task.id && demo.lessonId === task.lessonId && demo.instructionsHash === task.instructionsHash
+    && !!demo.reason && Number.isFinite(Date.parse(demo.reviewedAt))
+    && demo.files.length === task.files.length
+    && demo.files.every(file => task.files.find(current => current.name === file.name)?.hash === file.hash);
+}
 interface InlineState {
   phase: 'requested' | 'correct' | 'wrong'; solutionHash: string; requestedAt: string;
   files?: Array<{ name: string; initialHash: string; contentHash: string }>;
@@ -213,6 +226,10 @@ export async function observeInline(page: Page, index: number, candidate = true)
 
 export async function solveInline(page: Page, index: number, candidate = false): Promise<boolean> {
   const task = await readInline(page, index);
+  if (await isInlineDemonstration(task)) {
+    await journal('inline-demonstration-read', { id: task.id, lessonId: task.lessonId, instructionsHash: task.instructionsHash });
+    return true;
+  }
   const solution = await loadSolution(task, candidate);
   if (!solution) return false;
   const hash = contentHash(JSON.stringify(solution.files));

@@ -1,0 +1,18 @@
+{
+  "taskId": "cc04d7f4-f669-4987-845a-b98bd01069b0",
+  "lessonId": "1802ab6d-71cf-44b8-b11d-142361e4bb65",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "files": [
+    {
+      "name": "index.html",
+      "initialHash": "6cf5580754e62482809d07e7a520259a45d50d8b5a3532ccb956816e40167563",
+      "content": "<!DOCTYPE html>\n<html lang=\"ru\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <title>Элементы формы</title>\n    <link\n      rel=\"stylesheet\"\n      href=\"https://code.s3.yandex.net/web-code/fonts/fonts.css\"\n    />\n    <link rel=\"stylesheet\" href=\"./styles/style.css\" />\n  </head>\n\n  <body>\n    <form class=\"form\">\n      <h3 class=\"title\">Получить поддержку, какао и булочку с&nbsp;корицей</h3>\n      <label class=\"label\" for=\"email\">Пожалуйста, введите ваш email</label>\n      <div class=\"form-wrapper\">\n        <input id=\"email\" type=\"email\" placeholder=\"name@example.com\" />\n        <button type=\"button\">Дайте две!</button>\n      </div>\n    </form>\n  </body>\n</html>"
+    }
+  ],
+  "instructionsHash": "4454601da44f6798429745628ba486fd7258a441bdc1c5b47874a26627a8410d",
+  "verifiedAt": "2026-10-20T08:05:35.650Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Теперь нет вопросов, что писать в форме, всё понятно."
+  }
+}

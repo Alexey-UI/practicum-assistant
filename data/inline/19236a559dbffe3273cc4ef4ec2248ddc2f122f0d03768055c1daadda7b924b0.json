@@ -1,0 +1,18 @@
+{
+  "id": "19236a559dbffe3273cc4ef4ec2248ddc2f122f0d03768055c1daadda7b924b0",
+  "lessonId": "231d4bd2-b19a-4f2b-9576-820042dce947",
+  "url": "https://sandbox.practicum-team.ru/tasks/02-interactivity-and-accessibility/05-accesibility/08-aria/example-03/pre/",
+  "instructionsHash": "427d014a59104155eca79de6acf2e52f50130be3914649652708fb4b773dcbe5",
+  "files": [
+    {
+      "name": "index.html",
+      "initialHash": "982d01440e19a1e35f2a3385bd01eebb5905e9ed2205a7488c04cff3d5edd11b",
+      "content": "<!DOCTYPE html>\n<html lang=\"ru\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <title>Иконки социальных сетей</title>\n    <link\n      rel=\"stylesheet\"\n      href=\"https://code.s3.yandex.net/web-code/fonts/fonts.css\"\n    />\n    <link rel=\"stylesheet\" href=\"./styles/style.css\" />\n  </head>\n  <body>\n    <nav class=\"social\">\n      <h2>Каналы:</h2>\n      <ul class=\"links-list\">\n        <li>\n          <a href=\"https://telegram.com\">\n            <img aria-hidden=\"true\" src=\"./icons/tg.svg\" alt=\"\" />\n          </a>\n        </li>\n        <li>\n          <a href=\"https://youtube.com\">\n            <img aria-hidden=\"true\" src=\"./icons/yt.svg\" alt=\"\" />\n          </a>\n        </li>\n      </ul>\n    </nav>\n  </body>\n</html>\n"
+    }
+  ],
+  "verifiedAt": "2026-10-20T08:06:32.413Z",
+  "evidence": {
+    "selector": ".result .icon-status-success",
+    "message": "Всё отлично!"
+  }
+}

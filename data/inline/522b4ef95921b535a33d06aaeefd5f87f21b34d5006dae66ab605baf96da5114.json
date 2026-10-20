@@ -1,0 +1,18 @@
+{
+  "id": "522b4ef95921b535a33d06aaeefd5f87f21b34d5006dae66ab605baf96da5114",
+  "lessonId": "1802ab6d-71cf-44b8-b11d-142361e4bb65",
+  "url": "https://sandbox.practicum-team.ru/tasks/02-interactivity-and-accessibility/05-accesibility/07-form-fields/example-02/pre/",
+  "instructionsHash": "795d927a49ba9f84d26773ff152db153d685d213ae8ed6fcb5db6974e2516902",
+  "files": [
+    {
+      "name": "index.html",
+      "initialHash": "ee2ee271b8b9da958b07c7c09cfaaa5b2481b8555324efa935505b00d2645460",
+      "content": "<!DOCTYPE html>\n<html lang=\"ru\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <title>Поля формы</title>\n    <link\n      rel=\"stylesheet\"\n      href=\"https://code.s3.yandex.net/web-code/fonts/fonts.css\"\n    />\n    <link rel=\"stylesheet\" href=\"./styles/style.css\" />\n  </head>\n  <body>\n    <form>\n      <label for=\"email\"><span class=\"visually-hidden\">Электронная почта</span></label>\n      <input id=\"email\" type=\"email\" placeholder=\"me@example.com\" />\n      <p>Подписаться на рассылку</p>\n    </form>\n  </body>\n</html>\n"
+    }
+  ],
+  "verifiedAt": "2026-10-20T08:03:08.552Z",
+  "evidence": {
+    "selector": ".result .icon-status-success",
+    "message": "Всё отлично!"
+  }
+}

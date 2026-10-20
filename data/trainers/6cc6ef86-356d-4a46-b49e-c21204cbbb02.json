@@ -1,0 +1,18 @@
+{
+  "taskId": "6cc6ef86-356d-4a46-b49e-c21204cbbb02",
+  "lessonId": "1802ab6d-71cf-44b8-b11d-142361e4bb65",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "files": [
+    {
+      "name": "index.html",
+      "initialHash": "ef53235bba675d23f7d563f3d4971599cb57edbeeeaacfc3e794f96037394dec",
+      "content": "<!DOCTYPE html>\n<html lang=\"ru\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <title>Элементы формы</title>\n    <link\n      rel=\"stylesheet\"\n      href=\"https://code.s3.yandex.net/web-code/fonts/fonts.css\"\n    />\n    <link rel=\"stylesheet\" href=\"./styles/style.css\" />\n  </head>\n\n  <body>\n    <form class=\"form\">\n      <h3 class=\"title\">Получить поддержку, какао и булочку с&nbsp;корицей</h3>\n      <label class=\"label\" for=\"email\">Пожалуйста, введите ваш email</label>\n      <div class=\"form-wrapper\">\n        <input id=\"email\" type=\"email\" />\n        <button type=\"button\">Дайте две!</button>\n      </div>\n    </form>\n  </body>\n</html>"
+    }
+  ],
+  "instructionsHash": "fda4d0560541f4e58876b6ca2b35372a501ef161fb1c8762fb75c3067ed0430c",
+  "verifiedAt": "2026-10-20T08:05:14.915Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Теперь даже скринридерам понятно, зачем нужна эта форма и что будет, если её заполнить."
+  }
+}

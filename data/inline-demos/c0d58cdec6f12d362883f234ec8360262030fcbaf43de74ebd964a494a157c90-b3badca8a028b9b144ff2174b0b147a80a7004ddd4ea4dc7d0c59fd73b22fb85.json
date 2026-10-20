@@ -1,0 +1,17 @@
+{
+  "id": "c0d58cdec6f12d362883f234ec8360262030fcbaf43de74ebd964a494a157c90",
+  "lessonId": "8917b524-bf3e-46ee-ad86-ef96fb2c58d4",
+  "instructionsHash": "b3badca8a028b9b144ff2174b0b147a80a7004ddd4ea4dc7d0c59fd73b22fb85",
+  "files": [
+    {
+      "name": "index.html",
+      "hash": "9bd2c189a6e35737e1c25ca3d2c1848fa32aa8aa6a13757dd87e5a4dff50b4e6"
+    },
+    {
+      "name": "styles/style.css",
+      "hash": "8fddabb3242c8ec51a6d788ffdc7672726feddfd8894bf9b105cfaf329fbce66"
+    }
+  ],
+  "reason": "В уроке «Что такое форма?» инструкция просит только посмотреть код уже готового примера. Sandbox переиспользован из раннего урока о flexbox; задания изменять код здесь нет.",
+  "reviewedAt": "2026-10-20T08:09:40.863996+00:00"
+}

@@ -1,0 +1,18 @@
+{
+  "id": "f9591f4fa44164bd54b07fc1e8e955e5224d92f7548aa6ca521681d27b9d8d95",
+  "lessonId": "231d4bd2-b19a-4f2b-9576-820042dce947",
+  "url": "https://sandbox.practicum-team.ru/tasks/02-interactivity-and-accessibility/05-accesibility/08-aria/example-01/pre/",
+  "instructionsHash": "5e46568c4e8ab9482d7d9a78f02fa56f0c112b009a1485e2455650fa8ef6ad3a",
+  "files": [
+    {
+      "name": "index.html",
+      "initialHash": "75c18ac6ce827cee0210212985d5601b36d081e9ab706612ff22eb0c6cfb124c",
+      "content": "<!DOCTYPE html>\n<html lang=\"ru\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <title>Menu</title>\n    <link\n      rel=\"stylesheet\"\n      href=\"https://code.s3.yandex.net/web-code/fonts/fonts.css\"\n    />\n    <link rel=\"stylesheet\" href=\"./styles/style.css\" />\n  </head>\n  <body>\n    <header class=\"header\">\n      <a class=\"logo-link\">\n        <img src=\"./images/logo.svg\" alt=\"Логотип vёрстка\" />\n      </a>\n      <button class=\"header__menu-button\">\n        <span class=\"visually-hidden\">Открыть меню</span>\n      </button>\n      <nav role=\"menu\" class=\"menu\">\n        <ul>\n          <li><a href=\"#0\">HTML</a></li>\n          <li><a href=\"#0\">CSS</a></li>\n          <li><a href=\"#0\">JS</a></li>\n        </ul>\n      </nav>\n    </header>\n    <script src=\"./scripts/script.js\"></script>\n  </body>\n</html>\n"
+    }
+  ],
+  "verifiedAt": "2026-10-20T08:06:09.157Z",
+  "evidence": {
+    "selector": ".result .icon-status-success",
+    "message": "Всё отлично!"
+  }
+}

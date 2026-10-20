@@ -6,6 +6,7 @@ import { checkCompletion } from './catalog.js';
 import { projectCommand, type Project } from './projects.js';
 import { atomicJson, journal, readJson } from './store.js';
 import { scrollLesson } from './scroll.js';
+import { closingReferenceVerified, knownClosingCheckerFailure, type PublishedProject } from './ci.js';
 
 const exec = promisify(execFile);
 interface Submission { commit: string; phase: 'requested' | 'accepted' | 'complete'; lessonUrl: string; updatedAt?: string }
@@ -39,13 +40,43 @@ async function reviewTab(page: Page): Promise<void> {
   await page.getByText('Github настроен', { exact: true }).filter({ visible: true }).first().waitFor({ timeout: 180000 });
 }
 
-async function waitCI(page: Page, project: Project, commit: string): Promise<void> {
+export async function waitCI(page: Page, project: Project, commit: string): Promise<void> {
   const deadline = Date.now() + 600000;
   while (Date.now() < deadline) {
-    const { stdout } = await exec('gh', ['run', 'list', '--repo', project.destination, '--commit', commit, '--limit', '20', '--json', 'status,conclusion,headSha'], { timeout: 90000 });
-    const runs = JSON.parse(stdout) as Array<{ status: string; conclusion: string; headSha: string }>;
+    const { stdout } = await exec('gh', ['run', 'list', '--repo', project.destination, '--commit', commit, '--limit', '20', '--json', 'status,conclusion,headSha,databaseId,workflowName,url'], { timeout: 90000 });
+    const runs = JSON.parse(stdout) as Array<{ status: string; conclusion: string; headSha: string; databaseId: number; workflowName: string; url: string }>;
     const current = runs.filter(run => run.headSha === commit);
-    if (current.some(run => run.status === 'completed' && run.conclusion !== 'success')) throw new Error('Официальная проверка GitHub не прошла. Нужен разбор журнала.');
+    if (current.some(run => run.status === 'completed' && run.conclusion !== 'success')) {
+      if (current.some(run => run.status !== 'completed')) {
+        console.log('Жду оставшиеся проверки GitHub перед разбором сбоя…');
+        await page.waitForTimeout(15000);
+        continue;
+      }
+      // Never treat a failed Action as a pass. Only the reproduced upstream
+      // incompatibility may proceed to the independent Practicum UI checker.
+      const failed = current.filter(run => run.conclusion !== 'success');
+      const published = await readJson<PublishedProject | null>(`.local/projects/${project.id}.published.json`, null);
+      if (current.every(run => run.status === 'completed') && failed.length === 1
+        && failed[0].conclusion === 'failure' && failed[0].workflowName === 'Tests'
+        && closingReferenceVerified(project, commit, published)) {
+        const run = failed[0];
+        const api = async (endpoint: string) => (await exec('gh', ['api', endpoint, '--jq', '.sha'], { timeout: 90000 })).stdout.trim();
+        const [workflow, tests, dependencies, result] = await Promise.all([
+          api(`repos/${project.destination}/contents/.github/workflows/tests.yml?ref=${commit}`),
+          api('repos/Yandex-Practicum/tests-verstka-hometask-4-fd/contents/src/tests.js?ref=ad'),
+          api('repos/Yandex-Practicum/lib-verstka-tests-public/contents/package.json?ref=main'),
+          exec('gh', ['run', 'view', String(run.databaseId), '--repo', project.destination, '--log-failed'], { timeout: 90000, maxBuffer: 4 * 1024 * 1024 }),
+        ]);
+        if (knownClosingCheckerFailure(result.stdout, { workflow, tests, dependencies })) {
+          const report = `.local/ci-issues/${project.id}.json`;
+          await atomicJson(report, { phase: 'failed-known-checker-incompatibility', repository: project.destination, commit, run: run.url, versions: { workflow, tests, dependencies }, observedAt: new Date().toISOString(), explanation: 'docs/official-checker-compatibility.md' });
+          await journal('project-ci-checker-incompatibility', { id: project.id, commit, url: run.url, report });
+          console.log(`GitHub-проверка не прошла из-за известной несовместимости тестов: ${run.url}. Отчёт: ${report}. Локальные проверки пройдены; дальше проверку выполняет Практикум.`);
+          return;
+        }
+      }
+      throw new Error('Официальная проверка GitHub не прошла. Нужен разбор журнала.');
+    }
     if (current.length && current.every(run => run.status === 'completed' && run.conclusion === 'success')) return;
     console.log('Жду официальные тесты GitHub…');
     await page.waitForTimeout(15000);
