@@ -64,6 +64,8 @@ export async function status(): Promise<void> {
     mockApiReferences: projects.filter(project => project.verification === 'mock-api').length,
     deferredLessons: Object.keys(await readJson<Record<string, unknown>>('.local/deferred-lessons.json', {})).filter(url => !completed[url] && !lessons.some(lesson => lesson.url === url && lesson.solved)).length,
     unavailableLessons: Object.keys(await readJson<Record<string, unknown>>('.local/unavailable-lessons.json', {})).filter(url => !completed[url] && !lessons.some(lesson => lesson.url === url && lesson.solved)).length,
+    unresolvedLessons: Object.keys(await readJson<Record<string, unknown>>('.local/unresolved-lessons.json', {})).filter(url => lessons.some(lesson => lesson.url === url && courseInScope(lesson.course, cfg.includeAdditionalModules))).length,
+    lastRun: await readJson<{ outcome: string; hasGaps: boolean; updatedAt: string; counts: Record<string, number> } | null>('.local/run-report.json', null).then(report => report ? { outcome: report.outcome, hasGaps: report.hasGaps, updatedAt: report.updatedAt, counts: report.counts, report: '.local/run-report.md' } : null),
   };
   await atomicJson('.local/status.json', result);
   console.log(JSON.stringify(result, null, 2));
