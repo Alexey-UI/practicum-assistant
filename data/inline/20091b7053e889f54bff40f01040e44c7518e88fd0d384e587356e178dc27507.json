@@ -1,0 +1,18 @@
+{
+  "id": "20091b7053e889f54bff40f01040e44c7518e88fd0d384e587356e178dc27507",
+  "lessonId": "2bd19501-9aa3-414e-92f6-7da46420183c",
+  "url": "https://sandbox.practicum-team.ru/tasks/000-freetrack/03-basic-css/08-box-in-box/example-02/pre/",
+  "instructionsHash": "8feaa543ed32cec8c83c8be5c7a603dd26ae0f6f744fcd2a4eeef0dbecbddaca",
+  "files": [
+    {
+      "name": "styles/style.css",
+      "initialHash": "27c55883c8904a540ba2a759c53f957f9093ad6e8339af52061a1de22ef3d36d",
+      "content": "body {\n  min-width: 850px;\n}\n\nbody,\nh1 {\n  margin: 0;\n}\n\nheader {\n  height: 100vh;\n  background-color: #eee;\n  background-image: url(https://code.s3.yandex.net/web-code/images/freetrack/03/cover.png);\n  background-position: center;\n  background-size: cover;\n}\n\nh1 {\n  color: white;\n  font-size: 74px;\n}\n\n/* Поменяйте стили ниже */\n\ndiv {\n  width: 100%;\n  height: 100%;\n  background-color: rgb(95 13 238 / 0.5);\n}\n"
+    }
+  ],
+  "verifiedAt": "2026-10-20T14:30:30.054Z",
+  "evidence": {
+    "selector": ".result .icon-status-success",
+    "message": "Всё отлично!"
+  }
+}

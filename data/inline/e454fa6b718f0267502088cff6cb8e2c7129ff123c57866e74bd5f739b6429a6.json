@@ -1,0 +1,18 @@
+{
+  "id": "e454fa6b718f0267502088cff6cb8e2c7129ff123c57866e74bd5f739b6429a6",
+  "lessonId": "6a2c191b-10ac-4d83-83a7-9d0ac06d7390",
+  "url": "https://sandbox.practicum-team.ru/tasks/000-freetrack/03-basic-css/07-transparency/example-02/pre/",
+  "instructionsHash": "1e682219e40e122f86a3a9c5366b8e78e9e849342f62df741a5388c6f3a7813f",
+  "files": [
+    {
+      "name": "styles/style.css",
+      "initialHash": "3043077ea8bc41ebd244bef000592d65358b3bc8b797c9e4b42537a048076082",
+      "content": "body {\n  min-width: 850px;\n}\n\nbody,\nh1 {\n  margin: 0;\n}\n\nheader {\n  height: 100vh;\n  background-color: #eee;\n  background-image: url(https://code.s3.yandex.net/web-code/images/freetrack/03/cover.png);\n  background-position: center;\n  background-size: cover;\n}\n\nh1 {\n  color: white;\n  font-size: 74px;\n}\n\ndiv {\n  width: 250px;\n  height: 250px;\n  background-color: rgb(255 255 255 / 0.3); /* Добавьте 70% прозрачности */\n}\n"
+    }
+  ],
+  "verifiedAt": "2026-10-20T14:29:53.844Z",
+  "evidence": {
+    "selector": ".result .icon-status-success",
+    "message": "Всё отлично!"
+  }
+}

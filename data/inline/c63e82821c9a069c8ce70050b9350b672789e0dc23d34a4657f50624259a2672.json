@@ -1,0 +1,18 @@
+{
+  "id": "c63e82821c9a069c8ce70050b9350b672789e0dc23d34a4657f50624259a2672",
+  "lessonId": "83a944ce-8d62-4db4-8d28-ccace256d914",
+  "url": "https://sandbox.practicum-team.ru/tasks/000-freetrack/03-basic-css/09-inheritance/example-01/pre/",
+  "instructionsHash": "c37865be938fd8c7b60e6e10b19801cdad6885004acec2d366e52864046300a9",
+  "files": [
+    {
+      "name": "styles/style.css",
+      "initialHash": "ce768d08d4cad93194ecf34701a4fad0cc1243261b18120b4f948703abc83797",
+      "content": "body,\nh1 {\n  margin: 0;\n}\n\nbody {\n  min-width: 850px;\n}\n\nheader {\n  height: 100vh;\n  background-color: #eee;\n  background-image: url(https://code.s3.yandex.net/web-code/images/freetrack/03/cover.png);\n  background-position: center;\n  background-size: cover;\n\n  /* Задайте выравнивание текста по центру */\n  text-align: center;\n}\n\nh1 {\n  color: white;\n  font-size: 74px;\n}\n\ndiv {\n  width: 100%;\n  height: 100%;\n  background-color: rgb(95 13 238 / 0.5);\n}\n"
+    }
+  ],
+  "verifiedAt": "2026-10-20T14:30:39.384Z",
+  "evidence": {
+    "selector": ".result .icon-status-success",
+    "message": "Всё отлично!"
+  }
+}

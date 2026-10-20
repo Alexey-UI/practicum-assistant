@@ -1,0 +1,18 @@
+{
+  "id": "b53e3de4fcea40ac60f21c1bc2d7a9d6a0a615762d905c4399f4779da9f81496",
+  "lessonId": "2bd19501-9aa3-414e-92f6-7da46420183c",
+  "url": "https://sandbox.practicum-team.ru/tasks/000-freetrack/03-basic-css/08-box-in-box/example-01/pre/",
+  "instructionsHash": "17c7aaa775cce6535466d935f8123c724a9f9a8bf94e442b5ee64b5cf187b355",
+  "files": [
+    {
+      "name": "index.html",
+      "initialHash": "231ffcda3edbc558da468502e44d526a2ba107815d2f2c855617ff194835e90a",
+      "content": "<!DOCTYPE html>\n<html lang=\"ru\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <title>4 правила вёрстки</title>\n    <link rel=\"stylesheet\" href=\"https://code.s3.yandex.net/web-code/fonts/fonts.css\" />\n    <link rel=\"stylesheet\" href=\"styles/style.css\" />\n  </head>\n  <body>\n    <header>\n      <div>\n        <h1>Четыре правила вёрстки</h1>\n      </div>      \n    </header>\n  </body>\n</html>\n"
+    }
+  ],
+  "verifiedAt": "2026-10-20T14:30:25.645Z",
+  "evidence": {
+    "selector": ".result .icon-status-success",
+    "message": "Всё отлично!"
+  }
+}

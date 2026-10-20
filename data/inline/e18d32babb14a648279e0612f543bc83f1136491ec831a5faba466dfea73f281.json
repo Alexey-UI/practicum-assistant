@@ -1,0 +1,18 @@
+{
+  "id": "e18d32babb14a648279e0612f543bc83f1136491ec831a5faba466dfea73f281",
+  "lessonId": "f8baf270-d85e-4f3d-9a82-4debf12351b1",
+  "url": "https://sandbox.practicum-team.ru/tasks/000-freetrack/03-basic-css/06-background-options/example-03/pre/",
+  "instructionsHash": "743c61cd42f29e866f60f3ec5aff542a4f20fca518ce59b5c304080a4b59216b",
+  "files": [
+    {
+      "name": "styles/style.css",
+      "initialHash": "c8c2bfd6cb8ae3dc1d232934de551356a290da2f25661d260ac55bd2ca1623ae",
+      "content": "body {\n  min-width: 850px;\n}\n\nbody,\nh1 {\n  margin: 0;\n}\n\nheader {\n  height: 100vh;\n  background-color: #eee;\n  background-image: url(https://code.s3.yandex.net/web-code/images/freetrack/03/cover.png);\n  background-repeat: no-repeat; /* Удалите это свойство */\n  background-size: cover; /* Замените размер фона */\n}\n\nh1 {\n  color: white;\n  font-size: 74px;\n}\n"
+    }
+  ],
+  "verifiedAt": "2026-10-20T14:28:57.221Z",
+  "evidence": {
+    "selector": ".result .icon-status-success",
+    "message": "Всё отлично!"
+  }
+}

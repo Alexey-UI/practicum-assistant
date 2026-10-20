@@ -1,0 +1,23 @@
+{
+  "id": "300e1098b9ca3afa33bdb32343b629fdc00d6ce9a3b4705064ba5bf76dba6811",
+  "lessonId": "6a2c191b-10ac-4d83-83a7-9d0ac06d7390",
+  "url": "https://sandbox.practicum-team.ru/tasks/000-freetrack/03-basic-css/07-transparency/example-01/pre/",
+  "instructionsHash": "230f105b24f737b866b91327c792f0c2189ace5e700398e49fc3d68da869145d",
+  "files": [
+    {
+      "name": "index.html",
+      "initialHash": "bf187f342298baa76a4d2bfb68f093e2d4444cea018a8387893194b0cbb39851",
+      "content": "<!DOCTYPE html>\n<html lang=\"ru\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <title>4 правила вёрстки</title>\n    <link rel=\"stylesheet\" href=\"https://code.s3.yandex.net/web-code/fonts/fonts.css\" />\n    <link rel=\"stylesheet\" href=\"styles/style.css\" />\n  </head>\n  <body>\n    <header>\n      <h1>Четыре правила вёрстки</h1>\n      <!-- Тут добавьте <div> -->\n      <div></div>\n    </header>\n  </body>\n</html>\n"
+    },
+    {
+      "name": "styles/style.css",
+      "initialHash": "66e946770e43e0bb1279ee4439012f895b42fb0017dd7f8870df3e52c009b513",
+      "content": "body {\n  min-width: 850px;\n}\n\nbody,\nh1 {\n  margin: 0;\n}\n\nheader {\n  height: 100vh;\n  background-color: #eee;\n  background-image: url(https://code.s3.yandex.net/web-code/images/freetrack/03/cover.png);\n  background-position: center;\n  background-size: cover;\n}\n\nh1 {\n  color: white;\n  font-size: 74px;\n}\n\n/* Тут добавьте стили для div */\n\ndiv {\n  width: 250px;\n  height: 250px;\n  background-color: rgb(255 255 255);\n}"
+    }
+  ],
+  "verifiedAt": "2026-10-20T14:29:49.548Z",
+  "evidence": {
+    "selector": ".result .icon-status-success",
+    "message": "Всё отлично!"
+  }
+}

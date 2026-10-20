@@ -1,0 +1,18 @@
+{
+  "id": "11c713c70fe9acf11fccf92290394eaf6f83b48dd1319964c1b6f094a51b0b7d",
+  "lessonId": "f8baf270-d85e-4f3d-9a82-4debf12351b1",
+  "url": "https://sandbox.practicum-team.ru/tasks/000-freetrack/03-basic-css/06-background-options/example-04/pre/",
+  "instructionsHash": "3291d3826bd35588bd2b4dd4433116a5448a40f261ef89bc57d746a60df46ef0",
+  "files": [
+    {
+      "name": "styles/style.css",
+      "initialHash": "16c11544c509bfe7e34f6a72399907ff960d28e9e7583829c894bb4005661a9d",
+      "content": "body {\n  min-width: 850px;\n}\n\nbody,\nh1 {\n  margin: 0;\n}\n\nheader {\n  height: 100vh;\n  background-color: #eee;\n  background-image: url(https://code.s3.yandex.net/web-code/images/freetrack/03/cover.png);\n  background-size: cover;\n\n  /* Задайте выравнивание фона по центру */\n  background-position: center;\n}\n\nh1 {\n  color: white;\n  font-size: 74px;\n}\n"
+    }
+  ],
+  "verifiedAt": "2026-10-20T14:29:01.494Z",
+  "evidence": {
+    "selector": ".result .icon-status-success",
+    "message": "Всё отлично!"
+  }
+}
