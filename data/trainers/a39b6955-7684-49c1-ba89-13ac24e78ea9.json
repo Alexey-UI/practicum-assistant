@@ -1,0 +1,18 @@
+{
+  "taskId": "a39b6955-7684-49c1-ba89-13ac24e78ea9",
+  "lessonId": "27be8350-8429-476d-a7f9-38f08b2572d3",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "files": [
+    {
+      "name": "style.css",
+      "initialHash": "a5b33e4a5be260b89d11a6f88b00c34172c99762ac24d2dc5a0001278fcf6877",
+      "content": "html {\n  height: 100%;\n}\n\nbody {\n  display: grid;\n  place-items: center;\n  min-width: 360px;\n  height: inherit;\n  margin: 0;\n  font-family: 'Open Sans', sans-serif;\n  font-size: 18px;\n  background-image: url(https://code.s3.yandex.net/web-code/images/dotted.svg);\n}\n\nh1,\np,\nul,\nli {\n  margin: 0;\n  padding: 0;\n}\n\n.container {\n  border: 1px solid #000;\n  padding: 40px;\n  background-color: #fff;\n}\n\n.container__title {\n  margin-bottom: 40px;\n  font-weight: 800;\n  font-size: 45px;\n  text-transform: uppercase;\n}\n\n.container__list {\n  display: grid;\n  gap: 10px;\n  padding-left: 24px;\n  list-style: square;\n}\n\n.container__link {\n  display: block;\n  color: #000;\n  text-decoration: none;\n}\n\n.container__link:hover {\n  text-decoration-line: underline;\n  text-decoration-style: wavy;\n  text-decoration-color: #80d994;\n  text-decoration-skip-ink: none;\n  text-decoration-thickness: 2px;\n}"
+    }
+  ],
+  "instructionsHash": "622e701aa3afcb00c72ccd8a59512f10250eda3c2cf8628fb9428cc366cbf878",
+  "verifiedAt": "2026-10-20T06:23:26.479Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Ничего себе, какое подчёркивание! Свойство text-decoration много от вас скрывало. Вот Дока об этом: https://doka.guide/css/text-decoration/"
+  }
+}

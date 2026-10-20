@@ -41,6 +41,7 @@ export async function status(): Promise<void> {
     verifiedTextQuestions: await countFiles('data/text-questions'),
     verifiedInlineExercises: await countFiles('data/inline'), auditedInlineLessons: await countFiles('.local/inline-audits'),
     verifiedTrainerTasks: await countFiles('data/trainers'), verifiedMatchingTasks: await countFiles('data/matching'),
+    selfCheckedPracticeTasks: await countFiles('data/practice'),
     referenceProjects: projects.length, acceptedProjects, preparedManualProjects, selfCheckedProjects,
     mockApiReferences: projects.filter(project => project.verification === 'mock-api').length,
     deferredLessons: Object.keys(await readJson<Record<string, unknown>>('.local/deferred-lessons.json', {})).filter(url => !completed[url] && !lessons.some(lesson => lesson.url === url && lesson.solved)).length,

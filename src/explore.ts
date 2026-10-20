@@ -33,6 +33,10 @@ export async function explore(): Promise<void> {
       try {
         const action = JSON.parse(line);
         if (action.action === 'close') break;
+        if (action.action === 'practice-preview') {
+          const { inspectPractice } = await import('./practice.js');
+          console.log(JSON.stringify(await inspectPractice(page))); continue;
+        }
         if (action.action === 'inline') {
           const { inlineCommand } = await import(`./inline.js?inspect=${Date.now()}`) as typeof import('./inline.js');
           console.log(JSON.stringify(await inlineCommand(page, action))); continue;

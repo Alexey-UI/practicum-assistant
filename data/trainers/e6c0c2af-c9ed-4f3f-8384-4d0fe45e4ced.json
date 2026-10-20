@@ -1,0 +1,18 @@
+{
+  "taskId": "e6c0c2af-c9ed-4f3f-8384-4d0fe45e4ced",
+  "lessonId": "27be8350-8429-476d-a7f9-38f08b2572d3",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "files": [
+    {
+      "name": "style.css",
+      "initialHash": "f9a508b6d3eeda48421a9f60fea9db6b1ac836ad5fdbfdef7293ac29266d96eb",
+      "content": "html {\n  height: 100%;\n}\n\nbody {\n  display: grid;\n  place-items: center;\n  min-width: 360px;\n  height: inherit;\n  margin: 0;\n  font-family: 'Open Sans', sans-serif;\n  font-size: 18px;\n  background-image: url(https://code.s3.yandex.net/web-code/images/dotted.svg);\n}\n\nh1,\np,\nul,\nli {\n  margin: 0;\n  padding: 0;\n}\n\n.card {\n  max-width: 500px;\n  border: 1px solid #000;\n  background-color: #fff;\n  cursor: pointer;\n}\n\n.card__title {\n  padding: 20px;\n  font-weight: 800;\n  font-size: 38px;\n  text-transform: uppercase;\n}\n\n.card__image {\n  width: 100%;\n}\n\n.card__description {\n  padding: 20px;\n}\n\n.card__actions {\n  display: flex;\n  align-items: center;\n  gap: 20px;\n  padding: 20px;\n}\n\n.card__link {\n  display: block;\n  padding: 10px 20px;\n  color: #000;\n  font-family: inherit;\n  font-weight: bold;\n  font-size: inherit;\n  text-decoration: none;\n  text-transform: uppercase;\n  background-color: #6dc1fd;\n}\n\n.card__illustration {\n  display: none;\n  height: 30px;\n  animation: shake 0.5s infinite alternate;\n}\n\n.card:hover .card__illustration {\n  display: block;\n}"
+    }
+  ],
+  "instructionsHash": "df3be0d44d58e7e41f11eac284a05be314cb5ed05e65bc54dbefb5f1d637d681",
+  "verifiedAt": "2026-10-20T06:25:00.072Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Эффектно. Есть анимация, рука двигается. Вы тоже научитесь так делать, это несложно."
+  }
+}

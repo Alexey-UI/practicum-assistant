@@ -66,6 +66,8 @@ export interface TrainerSolution {
   instructions?: string;
   instructionsHash?: string;
   contextHash?: string;
+  verification?: 'self';
+  practiceChecks?: Array<{ selector: string; hover: Record<string, string>; active?: Record<string, string> }>;
   files: Array<{ name: string; initialHash: string; content: string }>;
   verifiedAt: string;
   evidence: { selector: string; message: string };
@@ -85,7 +87,7 @@ export async function solveTrainer(page: Page, candidate = false): Promise<'adva
   if (await close.isVisible()) await close.click();
   const task = await readTrainer(page);
   if (!/^[a-f0-9-]+$/.test(task.taskId)) throw new Error('Некорректный ID задания');
-  const solution = await readJson<TrainerSolution | null>(`${candidate ? '.local/task-solutions' : 'data/trainers'}/${task.taskId}.json`, null);
+  const solution = await readJson<TrainerSolution | null>(`${candidate ? '.local/task-solutions' : 'data/trainers'}/${task.taskId}.json`, null) ?? (!candidate ? await readJson<TrainerSolution | null>(`data/practice/${task.taskId}.json`, null) : null);
   if (!solution) return 'pending';
   if (solution.taskId !== task.taskId || solution.lessonId !== lessonId(task.url) || (!candidate && (!solution.verifiedAt || !solution.evidence?.message.trim())) || !solution.files.length) {
     throw new Error('Решение тренажёра не подтверждено или относится к другому заданию');
@@ -93,6 +95,7 @@ export async function solveTrainer(page: Page, candidate = false): Promise<'adva
   if (solution.instructions && normalize(solution.instructions) !== normalize(task.instructions)) throw new Error('Текст задания изменился: требуется повторный разбор');
   if (solution.instructionsHash && solution.instructionsHash !== contentHash(normalize(task.instructions))) throw new Error('Условие задания изменилось: требуется повторный разбор');
   if (solution.contextHash && solution.contextHash !== task.contextHash) throw new Error('Иллюстрации задания изменились: требуется повторный разбор');
+  if (solution.verification === 'self') return (await import('./practice.js')).solvePractice(page, task, solution, candidate);
   const solutionHash = contentHash(JSON.stringify(solution.files));
   const stateFile = `.local/trainers/${task.taskId}.json`;
   const state = await readJson<TaskState | null>(stateFile, null);
@@ -152,6 +155,11 @@ export async function solveTrainer(page: Page, candidate = false): Promise<'adva
     await atomicJson(`data/trainers/${task.taskId}.json`, { ...portable, instructionsHash: contentHash(normalize(task.instructions)), contextHash: task.contextHash, verifiedAt: new Date().toISOString(), evidence: { selector: '.trainer-footer__message.notification_type_success', message: evidence } });
   }
   await journal('trainer-accepted', { taskId: task.taskId, url: task.url });
+  return advanceTrainer(page, task.instructions, solution.lessonId);
+}
+
+export async function advanceTrainer(page: Page, instructions: string, ownerLesson: string): Promise<'advanced' | 'finished'> {
+  const next = page.locator('[data-test-id="next-task-button"]');
   await next.waitFor({ state: 'visible', timeout: 30000 });
   const before = page.url();
   await next.click();
@@ -161,9 +169,9 @@ export async function solveTrainer(page: Page, candidate = false): Promise<'adva
     await page.waitForFunction(previous => {
       const nextText = document.querySelector('.task-description__markdown')?.textContent?.normalize('NFKC').replace(/\s+/g, ' ').trim();
       return !!nextText && nextText !== previous;
-    }, normalize(task.instructions), { timeout: 180000 });
+    }, normalize(instructions), { timeout: 180000 });
   }
-  return isTrainerTaskUrl(page.url()) && lessonId(page.url()) === solution.lessonId ? 'advanced' : 'finished';
+  return isTrainerTaskUrl(page.url()) && lessonId(page.url()) === ownerLesson ? 'advanced' : 'finished';
 }
 
 export async function writeEditor(page: Page, name: string, content: string): Promise<void> {
