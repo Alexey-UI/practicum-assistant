@@ -1,0 +1,18 @@
+{
+  "taskId": "5610d347-91f6-4319-8a9a-f1c27fb4c43d",
+  "lessonId": "9ab667a4-eedb-458f-89da-4436f4a6f977",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "files": [
+    {
+      "name": "style.css",
+      "initialHash": "c948e4cfd131fdae1473485bfe4df3f424a8fa661e43a4b4c73c7f6b921cd85d",
+      "content": "html {\n  height: 100%;\n}\n\nbody {\n  display: grid;\n  place-items: center;\n  min-width: 360px;\n  height: inherit;\n  margin: 0;\n  font-family: 'Open Sans', sans-serif;\n  font-size: 18px;\n  background-image: url(https://code.s3.yandex.net/web-code/images/dotted.svg);\n}\n\nh1,\np,\nul,\nli {\n  margin: 0;\n  padding: 0;\n}\n\n.container {\n  border: 1px solid #000;\n  padding: 40px;\n  background-color: #fff;\n}\n\n.container__title {\n  margin-bottom: 40px;\n  font-weight: 800;\n  font-size: 45px;\n  text-transform: uppercase;\n}\n\n.container__list {\n  display: grid;\n  gap: 10px;\n  padding-left: 24px;\n  list-style: none;\n}\n\n.container__list-item::before {\n  content: '';\n  width: 20px;\n  height: 20px;\n  background-image: url('../svg/dialog.svg');\n  background-size: contain;\n  background-repeat: no-repeat;\n  background-position: center;\n}\n\n.container__link {\n  display: block;\n  color: #000;\n  text-decoration: none;\n}\n\n.container__link:hover {\n  text-decoration-color: #80d994;\n  text-decoration-line: underline;\n  text-decoration-style: wavy;\n  text-decoration-thickness: 2px;\n  text-decoration-skip-ink: none;\n}"
+    }
+  ],
+  "instructionsHash": "06f5677cac61de166dafbf9d8c49878498bdee9f538107634bdf649f568c830f",
+  "verifiedAt": "2026-10-20T07:35:06.415Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Так много кода и никакого результата =(. На самом деле всё хорошо, просто нужен контекст, сейчас всё получится."
+  }
+}

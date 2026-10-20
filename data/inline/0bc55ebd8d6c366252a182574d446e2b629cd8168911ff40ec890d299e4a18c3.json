@@ -1,0 +1,18 @@
+{
+  "id": "0bc55ebd8d6c366252a182574d446e2b629cd8168911ff40ec890d299e4a18c3",
+  "lessonId": "9ab667a4-eedb-458f-89da-4436f4a6f977",
+  "url": "https://sandbox.practicum-team.ru/tasks/02-interactivity-and-accessibility/04-pseudo/07-pseudo-elements/example-06/pre/",
+  "instructionsHash": "24e8904d6f3ba5ef9f18bfa8fd8c473fd56faca05c18bc973d3052c99a72ef97",
+  "files": [
+    {
+      "name": "styles/style.css",
+      "initialHash": "259b9fc8e5354eedfc05d7d7b778febe9c8b3eba0a4f5955a0fce767b8971b8a",
+      "content": "html,\nbody {\n  height: 100%;\n  font-family: 'Open Sans', sans-serif;\n}\n\nbody {\n  min-width: 850px;\n  margin: 0;\n}\n\n.header {\n  position: relative;\n  display: flex;\n  place-items: center;\n  box-sizing: border-box;\n  width: 100%;\n  min-height: 500px;\n  padding: 50px 0;\n  background: url(./images/background.jpg) no-repeat center / cover;\n}\n\n.header-title {\n  width: 70%;\n  max-width: 560px;\n  margin: 0 auto;\n  color: white;\n  font-size: 60px;\n  text-align: center;\n  text-transform: uppercase;\n}\n\n.header::before {\n  content: '';\n  position: absolute;\n  inset: 0;\n  background-color: rgb(0 0 0 / 0.5);\n}\n"
+    }
+  ],
+  "verifiedAt": "2026-10-20T07:32:54.734Z",
+  "evidence": {
+    "selector": ".result .icon-status-success",
+    "message": "Всё отлично!"
+  }
+}
