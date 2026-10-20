@@ -73,7 +73,7 @@ test('Чтение тренажёра открывает CSS, SVG, тексто�
   const page = await browser.newPage(); const original = process.cwd(); const dir = await mkdtemp(path.join(tmpdir(), 'practicum-unopened-'));
   try {
     process.chdir(dir);
-    await page.route('https://practicum.yandex.ru/**', route => route.fulfill({ contentType: 'text/html; charset=utf-8', body: `<textarea aria-label="Содержимое редактора"></textarea><div class="task-description__markdown">Задайте размер карточки. <a href="https://www.figma.com/design/example?node-id=1-2">Макет</a></div><div class="files-tree"><span class="files-tree__node-name-container" onclick="loadCss()">style.css</span><span class="files-tree__node-name-container" onclick="loadLinks()">links.txt</span><span class="files-tree__node-name-container" onclick="loadSvg()">edit.svg</span></div><script>
+    await page.route('https://practicum.yandex.ru/**', route => route.fulfill({ contentType: 'text/html; charset=utf-8', body: `<textarea aria-label="Содержимое редактора"></textarea><div class="task-description__markdown">Задайте размер карточки. <a href="https://www.figma.com/design/example?node-id=1-2">Макет</a></div><div class="files-tree"><span class="files-tree__node-name-container" onclick="loadCss()">style.css</span><span class="files-tree__node-name-container" onclick="loadLinks()">links.txt</span><span class="files-tree__node-name-container" onclick="loadSvg()">edit.svg</span><span class="files-tree__node-name-container" onclick="throw new Error('binary must not be opened')">OpenSans-Light.woff2</span></div><script>
       const models=[{uri:{path:'/index.html'},getLanguageId:()=> 'html',getValue:()=> '<main></main>'}];
       window.monaco={editor:{getModels:()=>models}};
       function loadCss(){models.push({uri:{path:'/styles/style.css'},getLanguageId:()=> 'css',getValue:()=> '.card {}'})};
@@ -85,6 +85,7 @@ test('Чтение тренажёра открывает CSS, SVG, тексто�
     assert.equal(task.files.find(file => file.path.endsWith('style.css'))?.content, '.card {}');
     assert.equal(task.files.find(file => file.path.endsWith('links.txt'))?.content, 'https://example.com/image.webp');
     assert.equal(task.files.find(file => file.path.endsWith('edit.svg'))?.content, '<svg></svg>');
+    assert.ok(task.resources.includes('OpenSans-Light.woff2'));
     assert.deepEqual(task.links, [{ text: 'Макет', url: 'https://www.figma.com/design/example?node-id=1-2' }]);
     assert.equal((await readTrainer(page)).files.length, 4);
   } finally { process.chdir(original); await page.close(); await rm(dir, { recursive: true, force: true }); }
