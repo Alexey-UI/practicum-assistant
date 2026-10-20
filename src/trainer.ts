@@ -20,8 +20,18 @@ export async function selectEditorFile(page: Page, name: string): Promise<void> 
 }
 
 export async function readTrainer(page: Page): Promise<{ taskId: string; url: string; instructions: string; images: Array<{ url: string; alt: string }>; contextHash: string; files: EditorFile[] }> {
+  const theoryClose = page.locator('.theory-panel__modal-close');
+  if (await theoryClose.isVisible()) await theoryClose.click();
   await page.getByRole('textbox', { name: 'Содержимое редактора', exact: true }).waitFor({ state: 'visible', timeout: 180000 });
   await page.locator('.task-description__markdown').filter({ hasText: /\S/, visible: true }).waitFor({ timeout: 180000 });
+  const names = (await page.locator('.files-tree__node-name-container').filter({ visible: true }).allTextContents()).map(name => name.trim()).filter(name => /\.(?:html?|css|[cm]?js|jsx|tsx?|json)$/i.test(name));
+  if (names.length > 128 || new Set(names).size !== names.length) throw new Error('Слишком много файлов или неоднозначные имена в дереве тренажёра');
+  for (const name of names) {
+    const loaded = await page.evaluate(fileName => (window as MonacoWindow).monaco?.editor.getModels().some(model => model.uri.path.split('/').pop() === fileName), name);
+    if (loaded) continue;
+    await selectEditorFile(page, name);
+    await page.waitForFunction(fileName => (window as MonacoWindow).monaco?.editor.getModels().some(model => model.uri.path.split('/').pop() === fileName), name, { timeout: 30000 });
+  }
   const files = await page.evaluate(() => {
     const editor = (window as MonacoWindow).monaco?.editor;
     if (!editor) throw new Error('Monaco API недоступен для чтения исходного кода');

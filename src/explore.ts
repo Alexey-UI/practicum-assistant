@@ -73,7 +73,7 @@ export async function explore(): Promise<void> {
           continue;
         }
         if (action.action === 'trainer') {
-          const { readTrainer } = await import('./trainer.js');
+          const { readTrainer } = await import(`./trainer.js?inspect=${Date.now()}`) as typeof import('./trainer.js');
           const task = await readTrainer(page);
           console.log(JSON.stringify({ taskId: task.taskId, files: task.files.map(file => ({ path: file.path, hash: file.hash })), saved: '.local/pending-task.json' })); continue;
         }

@@ -3,6 +3,7 @@ import { promisify } from 'node:util';
 import { copyFile, lstat, mkdir, readFile, realpath, unlink } from 'node:fs/promises';
 import { createHash } from 'node:crypto';
 import path from 'node:path';
+import { tmpdir } from 'node:os';
 import { atomicJson, readJson } from './store.js';
 import { loadConfig } from './config.js';
 
@@ -30,6 +31,10 @@ const REPO = /^[a-z\d](?:[a-z\d-]{0,37}[a-z\d])?\/[a-zA-Z0-9_.-]+$/i;
 export function projectDestination(template: string, owner?: string): string {
   if (!REPO.test(template) || (owner !== undefined && !REPO.test(`${owner}/project`))) throw new Error('Некорректный GitHub-репозиторий');
   return owner ? `${owner}/${template.split('/')[1]}` : template;
+}
+
+export function projectCheckArgs(args: string[]): string[] {
+  return args.map((arg, index) => arg === '/private/tmp/practicum-npm-cache' && args[index - 1] === '--cache' ? path.join(tmpdir(), 'practicum-npm-cache') : arg);
 }
 
 async function githubIdentity(project: Project): Promise<{ login: string; id: number }> {
@@ -220,7 +225,7 @@ export async function projectCommand(args: string[]): Promise<void> {
   for (const check of project.checks) {
     console.log(`Проверка ${check.program} ${check.args.join(' ')}`);
     // Manifest commands are reviewed code, run without shell string interpolation.
-    await exec(check.program, check.args, { cwd: dir, timeout: 300000, maxBuffer: 4 * 1024 * 1024 });
+    await exec(check.program, projectCheckArgs(check.args), { cwd: dir, timeout: 300000, maxBuffer: 4 * 1024 * 1024 });
     results.push(check);
   }
   await atomicJson(recordFile(project), { ...saved, checks: results, verifiedAt: new Date().toISOString() });

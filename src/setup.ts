@@ -10,7 +10,8 @@ const exec = promisify(execFile);
 const source = 'Alexey-UI/practicum-frontend-solutions';
 
 export async function setup(): Promise<void> {
-  if (Number(process.versions.node.split('.')[0]) < 22) throw new Error('Требуется Node.js 22.18 или новее');
+  const [major, minor] = process.versions.node.split('.').map(Number);
+  if (major < 22 || (major === 22 && minor < 18)) throw new Error('Требуется Node.js 22.18 или новее');
   await exec('git', ['--version']);
   await exec('gh', ['--version']);
   let login: string;

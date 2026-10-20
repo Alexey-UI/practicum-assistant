@@ -5,7 +5,7 @@ import { readLessons, observedSolved, saveObservedSolved } from '../src/catalog.
 import { exactButton, questionFrom, quizOutcome } from '../src/quiz.js';
 import { DEFAULTS } from '../src/config.js';
 import { scrollLesson } from '../src/scroll.js';
-import { trainerOutcome, selectEditorFile, solveTrainer, contentHash, canReplaceTrainerFile } from '../src/trainer.js';
+import { trainerOutcome, selectEditorFile, solveTrainer, readTrainer, contentHash, canReplaceTrainerFile } from '../src/trainer.js';
 import { readTextQuestion, solveTextQuestion, captureTextAnswer } from '../src/text-quiz.js';
 import { solveFeedback } from '../src/feedback.js';
 import { solveQuiz } from '../src/quiz.js';
@@ -26,6 +26,21 @@ test('Исправленная попытка тренажёра допуска�
 });
 before(async () => { browser = await chromium.launch({ channel: 'chrome', headless: true }); });
 after(async () => { await browser?.close(); });
+test('Чтение тренажёра открывает исходный CSS, модель которого ещё не загружена', async () => {
+  const page = await browser.newPage(); const original = process.cwd(); const dir = await mkdtemp(path.join(tmpdir(), 'practicum-unopened-'));
+  try {
+    process.chdir(dir);
+    await page.route('https://practicum.yandex.ru/**', route => route.fulfill({ contentType: 'text/html; charset=utf-8', body: `<textarea aria-label="Содержимое редактора"></textarea><div class="task-description__markdown">Задайте размер карточки.</div><div class="files-tree"><span class="files-tree__node-name-container" onclick="loadCss()">style.css</span></div><script>
+      const models=[{uri:{path:'/index.html'},getLanguageId:()=> 'html',getValue:()=> '<main></main>'}];
+      window.monaco={editor:{getModels:()=>models}};
+      function loadCss(){models.push({uri:{path:'/styles/style.css'},getLanguageId:()=> 'css',getValue:()=> '.card {}'})};
+    </script>` }));
+    await page.goto('https://practicum.yandex.ru/trainer/test/lesson/aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa/task/bbbbbbbb-bbbb-bbbb-bbbb-bbbbbbbbbbbb/');
+    const task = await readTrainer(page);
+    assert.equal(task.files.find(file => file.path.endsWith('style.css'))?.content, '.card {}');
+    assert.equal((await readTrainer(page)).files.length, 2);
+  } finally { process.chdir(original); await page.close(); await rm(dir, { recursive: true, force: true }); }
+});
 test('Пустая оболочка урока перезагружается без нажатия проверки', async () => {
   const page = await browser.newPage(); let reads = 0; let checks = 0;
   try {

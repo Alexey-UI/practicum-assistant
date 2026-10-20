@@ -1,0 +1,18 @@
+{
+  "id": "6a57ffbcdc64dfe4e0bc6c7fdaa5c75daffb04217ab826f0c0c35688b8f64959",
+  "lessonId": "6bd74785-d7f9-4661-a9bc-51f15fa9737b",
+  "url": "https://sandbox.practicum-team.ru/tasks/02-interactivity-and-accessibility/03-addition-to-box-model/02-what-else-does-block-have/example-05/pre/",
+  "instructionsHash": "39fd5a2f22dbcdde9f925793adafa2833c326442eaa3e3388b156b8c324c6a82",
+  "files": [
+    {
+      "name": "index.html",
+      "initialHash": "a14343fe7df912baebcef8b4a8beadc5c95c7d8afdb6e0096047d5a353d5146a",
+      "content": "<!DOCTYPE html>\n<html lang=\"ru\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <meta http-equiv=\"X-UA-Compatible\" content=\"ie=edge\" />\n    <title>Простой блок</title>\n    <link\n      rel=\"stylesheet\"\n      href=\"https://code.s3.yandex.net/web-code/fonts/fonts.css\"\n    />\n    <link rel=\"stylesheet\" href=\"./styles/style.css\" />\n  </head>\n  <body>\n    <div>Я — шут, я — Арлекин, я — просто смех.</div>\n    <div>Я — шут, я — Арлекин, я — просто смех.</div>\n  </body>\n</html>\n"
+    }
+  ],
+  "verifiedAt": "2026-10-20T05:32:14.142Z",
+  "evidence": {
+    "selector": ".result .icon-status-success",
+    "message": "Всё отлично!"
+  }
+}

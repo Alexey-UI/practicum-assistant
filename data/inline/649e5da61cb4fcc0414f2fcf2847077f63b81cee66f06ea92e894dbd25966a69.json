@@ -1,0 +1,18 @@
+{
+  "id": "649e5da61cb4fcc0414f2fcf2847077f63b81cee66f06ea92e894dbd25966a69",
+  "lessonId": "6bd74785-d7f9-4661-a9bc-51f15fa9737b",
+  "url": "https://sandbox.practicum-team.ru/tasks/02-interactivity-and-accessibility/03-addition-to-box-model/02-what-else-does-block-have/example-04/pre/",
+  "instructionsHash": "8788928a4786e508611416544b517ee9d19c220f076f8a4c2d42f65c0dfd61b1",
+  "files": [
+    {
+      "name": "styles/style.css",
+      "initialHash": "2ddf80a65dc275c911b0eaf5b0123faf22ee31e6ec61baff6c34a28bbf73b21f",
+      "content": "body {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  min-width: 850px;\n  min-height: 100vh;\n  margin: 0;\n  font-family: 'Open Sans', sans-serif;\n  font-size: 24px;\n  background-color: #ffc802;\n}\n\ndiv {\n  box-shadow: 24px 24px 0 tomato;\n  display: flex;\n  align-items: center;\n  box-sizing: border-box;\n  width: 500px;\n  height: 300px;\n  margin-top: 40px;\n  margin-left: 20px;\n  border: 4px solid #5f0dee;\n  padding: 40px;\n  background-color: white;\n}\n"
+    }
+  ],
+  "verifiedAt": "2026-10-20T05:31:34.315Z",
+  "evidence": {
+    "selector": ".result .icon-status-success",
+    "message": "Всё отлично!"
+  }
+}
