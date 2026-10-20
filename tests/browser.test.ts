@@ -341,15 +341,20 @@ test('Радиовопрос допускает несколько правил�
 test('Урок проматывается во внутреннем контейнере, включая догруженный фрагмент', async () => {
   const page = await browser.newPage({ viewport: { width: 1100, height: 700 } });
   try {
+    for (const loadDelay of [0, 250]) {
     await page.setContent(`<main style="height: 400px; overflow-y: auto"><div class="theory-viewer" style="min-height: 1800px">Текст урока</div></main>
       <script>document.querySelector('main').addEventListener('scroll', function () {
-        if (this.scrollTop > 500 && !this.dataset.loaded) { this.dataset.loaded = 'true'; document.querySelector('.theory-viewer').style.minHeight = '2600px'; }
+        if (this.scrollTop > 500 && !this.dataset.loading) {
+          this.dataset.loading = 'true';
+          setTimeout(() => { this.dataset.loaded = 'true'; document.querySelector('.theory-viewer').style.minHeight = '2600px'; }, ${loadDelay});
+        }
       });</script>`);
     const result = await scrollLesson(page, { delayMs: 15, maxSteps: 30 });
     assert.ok(result.steps > 5);
     assert.equal(await page.locator('main').evaluate(el => el.scrollHeight - el.clientHeight - el.scrollTop), 0);
     assert.equal(await page.locator('main').getAttribute('data-loaded'), 'true');
     assert.equal(await page.evaluate(() => window.scrollY), 0);
+    }
   } finally { await page.close(); }
 });
 test('Тренажёр оценивается по статусу проверки, даже если текст успеха описывает проблему', async () => {

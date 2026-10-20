@@ -25,7 +25,9 @@ export async function scrollLesson(page: Page, options: ScrollOptions = {}): Pro
     stable = atEnd && position.height === previousHeight ? stable + 1 : 0;
     previousHeight = position.height;
     if (stable >= 2) return { steps, end: position.top };
-    await page.waitForTimeout(delay);
+    // A fast polling interval must not treat a temporarily stable bottom as
+    // completion before native scroll handlers and lazy content can run.
+    await page.waitForTimeout(atEnd ? Math.max(delay, 650) : delay);
   }
   throw new Error('Урок продолжает расти при прокрутке или достигнут лимит шагов');
 }
