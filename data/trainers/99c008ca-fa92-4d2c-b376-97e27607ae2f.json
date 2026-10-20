@@ -1,0 +1,18 @@
+{
+  "taskId": "99c008ca-fa92-4d2c-b376-97e27607ae2f",
+  "lessonId": "9ab667a4-eedb-458f-89da-4436f4a6f977",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "files": [
+    {
+      "name": "style.css",
+      "initialHash": "fbeaac9a7746396c249b268b0d59065f3a5145d2ce437dbb34dda26c072e53e8",
+      "content": "*,\n*::before,\n*::after {\n  box-sizing: border-box;\n}\n\nhtml {\n  height: 100%;\n}\n\nbody {\n  display: grid;\n  place-items: center;\n  min-width: 360px;\n  height: inherit;\n  margin: 0;\n  font-family: 'Open Sans', sans-serif;\n  font-size: 18px;\n  background-image: url(https://code.s3.yandex.net/web-code/images/dotted.svg);\n}\n\nh1,\np,\nul,\nli {\n  margin: 0;\n  padding: 0;\n}\n\nform::before {\n  content: 'Отправка каждого сообщения немного нагревает Арктический лёд';\n  position: absolute;\n  top: 0;\n  left: -1px;\n  width: calc(100% + 2px);\n  border: 1px solid #000;\n  border-bottom: none;\n  padding: 10px;\n  opacity: 0;\n  color: #fff;\n  font-weight: bold;\n  font-size: 12px;\n  background-color: #5f0dee;\n  transition: opacity 0.3s ease-in-out;\n  translate: 0 -100%;\n}\n\nform:focus-within::before {\n  opacity: 1;\n}"
+    }
+  ],
+  "instructionsHash": "444acefc3e0855076a6b7facd20215ac8f82e7f13e6ab2dd04496d19ebb412cb",
+  "verifiedAt": "2026-10-20T07:36:44.022Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Вот это интерактив на чистом CSS!"
+  }
+}

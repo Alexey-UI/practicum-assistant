@@ -1,0 +1,18 @@
+{
+  "taskId": "87433b6d-12eb-4c7e-ace7-a7da19b79858",
+  "lessonId": "9ab667a4-eedb-458f-89da-4436f4a6f977",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "files": [
+    {
+      "name": "style.css",
+      "initialHash": "1f5519b1533347ddbe617135bd798458c67c6b205aeed704ca03af6fd625146d",
+      "content": "*,\n*::before,\n*::after {\n  box-sizing: border-box;\n}\n\nhtml {\n  height: 100%;\n}\n\nbody {\n  display: grid;\n  place-items: center;\n  min-width: 360px;\n  height: inherit;\n  margin: 0;\n  font-family: 'Open Sans', sans-serif;\n  font-size: 18px;\n  background-image: url(https://code.s3.yandex.net/web-code/images/dotted.svg);\n}\n\nh1,\np,\nul,\nli {\n  margin: 0;\n  padding: 0;\n}\n\nform::before {\n  content: 'Отправка каждого сообщения немного нагревает Арктический лёд';\n  position: absolute;\n  top: 0;\n  left: -1px;\n  width: calc(100% + 2px);\n  border: 1px solid #000;\n  border-bottom: none;\n  padding: 10px;\n  opacity: 0;\n  color: #fff;\n  font-weight: bold;\n  font-size: 12px;\n  background-color: #5f0dee;\n  transition: opacity 0.3s ease-in-out;\n  translate: 0 -100%;\n}\n\nform:focus-within::before {\n  opacity: 1;\n}\n\nform::after {\n  content: 'Сообщение не отправлено';\n  position: absolute;\n  bottom: 0;\n  left: -1px;\n  width: calc(100% + 2px);\n  border: 1px solid #000;\n  border-top: none;\n  padding: 10px;\n  opacity: 0;\n  color: #000;\n  font-weight: bold;\n  font-size: 12px;\n  background-color: #feafe8;\n  transition: opacity 0.3s ease-in-out;\n  translate: 0 100%;\n}\nform.form_is-after-visible::after {\n  opacity: 1;\n}\n"
+    }
+  ],
+  "instructionsHash": "399a297d487ca943eb382c03eddc6196b7ac5acc4956a5adc1a35ac4681398d7",
+  "verifiedAt": "2026-10-20T07:38:14.166Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Вы отлично справляетесь! В этих задачах у вас были уже написаны все свойства позиционирования и сдвига псевдоэлементов. Вам ещё предстоит их двигать самостоятельно."
+  }
+}
