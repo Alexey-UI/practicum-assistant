@@ -113,15 +113,15 @@ async function questionStep(page: Page, root: Locator, cfg: Config, research: bo
   return false;
 }
 
-export async function run(): Promise<void> {
-  await withBrowserRecovery(runAttempt, async (error, attempt) => {
+export async function run(browserFactory: typeof openBrowser = openBrowser): Promise<void> {
+  await withBrowserRecovery(() => runAttempt(browserFactory), async (error, attempt) => {
     await journal('browser-restart', { attempt, url: error.url });
     console.log(`Браузер неожиданно закрылся. Возобновляю обход из сохранённого состояния (${attempt}/2): ${error.url ?? 'адрес ещё не определён'}`);
     await delay(1000);
   });
 }
 
-async function runAttempt(): Promise<void> {
+async function runAttempt(browserFactory: typeof openBrowser): Promise<void> {
   const cfg = await loadConfig();
   const unlock = await lockRun();
   let context: BrowserContext | undefined;
@@ -132,7 +132,7 @@ async function runAttempt(): Promise<void> {
   process.once('SIGINT', stop);
   process.once('SIGTERM', stop);
   try {
-    context = await openBrowser(!process.argv.includes('--headed'), { signalsManagedByCaller: true });
+    context = await browserFactory(!process.argv.includes('--headed'), { signalsManagedByCaller: true });
     if (stopping) return;
     const page = context.pages()[0] ?? await context.newPage();
     activePage = page;
@@ -198,9 +198,13 @@ async function runAttempt(): Promise<void> {
       }
       if (observed.has(canonicalLesson(lesson.url))) {
         const project = projects.find(project => (!project.review || project.review === 'platform') && canonicalLesson(project.lessonUrl) === canonicalLesson(lesson.url));
-        if (project) await submitProject(page, project);
-        await journal('lesson-already-solved', { url: canonicalLesson(lesson.url) });
-        continue;
+        if (project) {
+          if (!await submitProject(page, project)) { process.exitCode = 2; return; }
+          await journal('lesson-already-solved', { url: canonicalLesson(lesson.url) });
+          continue;
+        }
+        // A reading tick may appear immediately on entry. The catalog was unsolved,
+        // so its quizzes and inline exercises still have to be processed below.
       }
 
       const heading = await titleNode.count() ? await titleNode.first().innerText() : await page.title();
