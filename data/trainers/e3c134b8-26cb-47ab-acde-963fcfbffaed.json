@@ -1,0 +1,18 @@
+{
+  "taskId": "e3c134b8-26cb-47ab-acde-963fcfbffaed",
+  "lessonId": "ac28f51c-3b7e-4613-bfd9-973ee01ef951",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "files": [
+    {
+      "name": "style.css",
+      "initialHash": "26c249607e779c7770df1b2c3777a8ef835b99b7e3b617e418592bdf60883147",
+      "content": "*,\n*::before,\n*::after {\n  box-sizing: border-box;\n}\n\nhtml {\n  block-size: 100%;\n}\n\n.container {\n  position: relative;\n  display: grid;\n  place-items: center;\n  max-height: 100vh;\n  block-size: 100%;\n  margin: 0;\n  background-color: #fff;\n  perspective: 400px;\n}\n\n.figure {\n  position: absolute;\n  top: 25%;\n  z-index: 2;\n  inline-size: 100px;\n}\n\n.deck {\n  position: relative;\n  box-sizing: border-box;\n  inline-size: 50vmin;\n  block-size: 50vmin;\n  margin: auto;\n  border: 1.8rem solid #f9d398;\n  outline: 1px solid #000;\n  background-image:\n    repeating-linear-gradient(\n      90deg,\n      #fff,\n      #fff 12.5%,\n      #000 12.5%,\n      #000 25%\n    );\n  transform: rotateX(40deg);\n}\n\n.deck__inner {\n  inline-size: 100%;\n  block-size: 100%;\n  border: 1px solid #000;\n  background-image:\n    repeating-linear-gradient(\n      0deg,\n      #000,\n      #000 12.5%,\n      #fff 12.5%,\n      #fff 25%\n    );\n  mix-blend-mode: difference;\n}\n\n@media (width <= 640px) {\n  .figure {\n    top: 30%;\n    inline-size: 80px;\n  }\n\n  .deck {\n    inline-size: 70vmin;\n    block-size: 70vmin;\n    border: 1rem solid #f9d398;\n  }\n}"
+    }
+  ],
+  "instructionsHash": "6b4200ab62bed58442e165fdde4fedbb2428cb2c699b49dde2b865b88f5cbe0c",
+  "verifiedAt": "2026-10-20T11:38:04.072Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Мы задали перспективу — и пространство стало объёмным."
+  }
+}

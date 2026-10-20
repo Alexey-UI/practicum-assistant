@@ -1,0 +1,18 @@
+{
+  "id": "4d65f95bef2b35b52da2510baf0c4133fb5b9cf9da813d538112a03b7df637c9",
+  "lessonId": "3bb1f6f2-7a64-48e1-bef6-1f46495075ed",
+  "url": "https://sandbox.practicum-team.ru/tasks/04-beautishcha/06-transform3d/05-transform-origin/example-01/pre/",
+  "instructionsHash": "4feca2592f051ee099a35ff2f10c901899abeda20a8245c9da72778a9fff307f",
+  "files": [
+    {
+      "name": "styles/style.css",
+      "initialHash": "f2adc9ff7be314a78b6b2d10bb0413d554b682722183703caf5d0b58db9fc1a8",
+      "content": "*,\n*::before,\n*::after {\n  box-sizing: border-box;\n}\n\nbody {\n  min-height: 100dvb;\n  margin: 0;\n  overflow: hidden;\n  font-family: 'Open Sans', sans-serif;\n  font-size: 16px;\n  background-color: #fff;\n  background-image: url(https://code.s3.yandex.net/web-code/images/dotted.svg);\n}\n\n.postcard {\n  --book-size: 250px;\n\n  position: absolute;\n  padding: 0;\n  list-style: none;\n  transform: translate(-50%, -50%);\n  perspective: 1000px;\n  inset-block-start: 50%;\n  inset-inline-start: calc(50% + var(--book-size) / 2);\n  inline-size: var(--book-size);\n  aspect-ratio: 148/210;\n}\n\n.pagination {\n  position: absolute;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  gap: 10px;\n  transform: translateX(-50%);\n  inset-block-end: 20px;\n  inset-inline-start: 50%;\n}\n\n.pagination button {\n  border: 2px solid transparent;\n  padding: 10px 20px;\n  color: #fff;\n  font-family: inherit;\n  font-size: inherit;\n  background-color: #5f0dee;\n  transition: color 0.3s, border 0.3s, background-color 0.3s;\n  cursor: pointer;\n}\n\n.pagination button:hover {\n  border: 2px solid #5f0dee;\n  color: #5f0dee;\n  background-color: #fff;\n}\n\n.page {\n  position: absolute;\n  inset: 0;\n  border: 1px solid rgba(0 0 0 / 0.1);\n  padding: 20px;\n  background-color: #fff;\n  transition: transform 1s ease-in-out;\n}\n\n.cover {\n  z-index: 1;\n  display: grid;\n  place-items: center;\n  color: #fff;\n  text-align: center;\n  background-color: #5f0dee;\n}\n\n.animated {\n  /* Опишите трансформацию */\n  transform: rotateY(-180deg);\n}\n"
+    }
+  ],
+  "verifiedAt": "2026-10-20T11:38:29.163Z",
+  "evidence": {
+    "selector": ".result .icon-status-success",
+    "message": "Всё отлично!"
+  }
+}

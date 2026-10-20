@@ -1,0 +1,18 @@
+{
+  "id": "ed584f593e5758a450cacd6c7695bda67324b9a98ee422506608548aff76e91c",
+  "lessonId": "ac0f9b3d-e41f-4af3-b6bf-c9263f7016e2",
+  "url": "https://sandbox.practicum-team.ru/tasks/04-beautishcha/06-transform3d/06-backface/example-01/pre/",
+  "instructionsHash": "b3b34fd01f2c7d80f61b82acbdd814939e0ec7890288d88bedf856763cee5d2a",
+  "files": [
+    {
+      "name": "styles/style.css",
+      "initialHash": "220604b90282dd19e1216a8b0057d62598448c7f4d6dddaed2942b8cb8d4ad04",
+      "content": "*,\n*::before,\n*::after {\n  box-sizing: border-box;\n}\n\nbody {\n  min-height: 100dvb;\n  margin: 0;\n  overflow: hidden;\n  font-family: 'Open Sans', sans-serif;\n  font-size: 16px;\n  background-color: #fff;\n  background-image: url(https://code.s3.yandex.net/web-code/images/dotted.svg);\n}\n\n.postcard {\n  --book-size: 250px;\n\n  position: absolute;\n  padding: 0;\n  list-style: none;\n  transform: translate(-50%, -50%);\n  perspective: 1000px;\n  inset-block-start: 50%;\n  inset-inline-start: calc(50% + var(--book-size) / 2);\n  inline-size: var(--book-size);\n  aspect-ratio: 148/210;\n}\n\n.pagination {\n  position: absolute;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  gap: 10px;\n  transform: translateX(-50%);\n  inset-block-end: 20px;\n  inset-inline-start: 50%;\n}\n\n.pagination button {\n  border: 2px solid transparent;\n  padding: 10px 20px;\n  color: #fff;\n  font-family: inherit;\n  font-size: inherit;\n  background-color: #5f0dee;\n  transition: color 0.3s, border 0.3s, background-color 0.3s;\n  cursor: pointer;\n}\n\n.pagination button:hover {\n  border: 2px solid #5f0dee;\n  color: #5f0dee;\n  background-color: #fff;\n}\n\n.page {\n  position: absolute;\n  inset: 0;\n  border: 1px solid rgba(0 0 0 / 0.1);\n  padding: 20px;\n  background-color: #fff;\n  transition: transform 1s ease-in-out;\n  transform-origin: left center;\n  backface-visibility: hidden;\n}\n\n.cover {\n  z-index: 1;\n  display: grid;\n  place-items: center;\n  color: #fff;\n  text-align: center;\n  background-color: #5f0dee;\n}\n\n.animated {\n  transform: rotateY(-180deg);\n}\n"
+    }
+  ],
+  "verifiedAt": "2026-10-20T11:39:40.840Z",
+  "evidence": {
+    "selector": ".result .icon-status-success",
+    "message": "Всё отлично!"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "id": "536a61ff2dcce4add92ad99183793e1a60ba24dfd0c8744159e4982463e8f576",
+  "lessonId": "106f2296-48cf-40c1-b3ad-a50560a7b159",
+  "url": "https://sandbox.practicum-team.ru/tasks/04-beautishcha/06-transform3d/07-preserve-3d/example-02/pre/",
+  "instructionsHash": "12a8909aa4e8371d8ed21c89acd31866fe9753582509411b7defc83c39977ae0",
+  "files": [
+    {
+      "name": "styles/cube.css",
+      "initialHash": "f56ec61fee0c0365451354e14eb996b2bb792bf4e0fcbfd24c22bc1fbfae6d26",
+      "content": ".cube {\n  --size: 300px;\n\n  width: var(--size);\n  height: var(--size);\n  transform: rotateX(var(--cube-rotate-x)) rotateY(var(--cube-rotate-y));\n\n  /* Добавьте transform-style */\n  transform-style: preserve-3d;\n}\n\n.side {\n  position: absolute;\n  display: grid;\n  place-items: center;\n  width: var(--size);\n  height: var(--size);\n}\n\n.top {\n  background-color: rgb(253 36 175 / 0.8);\n  inset-block-start: 0;\n  inset-inline-start: 0;\n}\n\n.right {\n  background-color: rgb(254 175 232 / 0.8);\n  inset-block-start: 0;\n  inset-inline-end: 0;\n}\n\n.bottom {\n  background-color: rgb(255 200 2 / 0.8);\n  inset-block-end: 0;\n  inset-inline-start: 0;\n}\n\n.left {\n  background-color: rgb(128 217 148 / 0.8);\n  inset-block-start: 0;\n  inset-inline-start: 0;\n}\n\n.front {\n  background-color: rgb(95 13 238 / 0.8);\n  inset-block-start: 0;\n  inset-inline-start: 0;\n}\n\n.back {\n  background-color: rgb(109 193 253 / 0.8);\n  inset-block-start: 0;\n  inset-inline-start: 0;\n}\n"
+    }
+  ],
+  "verifiedAt": "2026-10-20T11:40:17.532Z",
+  "evidence": {
+    "selector": ".result .icon-status-success",
+    "message": "Всё отлично!"
+  }
+}

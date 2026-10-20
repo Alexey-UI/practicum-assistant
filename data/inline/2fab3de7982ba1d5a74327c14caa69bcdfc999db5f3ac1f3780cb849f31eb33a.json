@@ -1,0 +1,18 @@
+{
+  "id": "2fab3de7982ba1d5a74327c14caa69bcdfc999db5f3ac1f3780cb849f31eb33a",
+  "lessonId": "106f2296-48cf-40c1-b3ad-a50560a7b159",
+  "url": "https://sandbox.practicum-team.ru/tasks/04-beautishcha/06-transform3d/07-preserve-3d/example-05/pre/",
+  "instructionsHash": "6447433475bcf89ff7921c09004f41f6cfd77139923365c082d5d42e9b7d3467",
+  "files": [
+    {
+      "name": "styles/cube.css",
+      "initialHash": "e0c8e275b2e3b853afb6150a173e2c99fadfe3fdb688a49dff8d3b44d5a0fc2a",
+      "content": ".cube {\n  --size: 300px;\n\n  width: var(--size);\n  height: var(--size);\n  transform: rotateX(var(--cube-rotate-x)) rotateY(var(--cube-rotate-y));\n  transform-style: preserve-3d;\n  transform-origin: calc(var(--size) / 2) calc(var(--size) / 2) calc(-1 * var(--size) / 2);\n}\n\n.side {\n  position: absolute;\n  display: grid;\n  place-items: center;\n  width: var(--size);\n  height: var(--size);\n}\n\n.top {\n  background-color: rgb(253 36 175 / 0.8);\n  transform: rotateX(-90deg);\n  transform-origin: center top;\n  inset-block-start: 0;\n  inset-inline-start: 0;\n}\n\n.right {\n  background-color: rgb(254 175 232 / 0.8);\n  transform: rotateY(-90deg);\n  transform-origin: right center;\n  inset-block-start: 0;\n  inset-inline-end: 0;\n}\n\n.bottom {\n  background-color: rgb(255 200 2 / 0.8);\n  transform: rotateX(90deg);\n  transform-origin: center bottom;\n  inset-block-end: 0;\n  inset-inline-start: 0;\n}\n\n.left {\n  background-color: rgb(128 217 148 / 0.8);\n  transform: rotateY(90deg);\n  transform-origin: left center;\n  inset-block-start: 0;\n  inset-inline-start: 0;\n}\n\n.front {\n  background-color: rgb(95 13 238 / 0.8);\n  inset-block-start: 0;\n  inset-inline-start: 0;\n}\n\n.back {\n  background-color: rgb(109 193 253 / 0.8);\n  transform: translateZ(calc(-1 * var(--size)));\n  inset-block-start: 0;\n  inset-inline-start: 0;\n}\n"
+    }
+  ],
+  "verifiedAt": "2026-10-20T11:41:15.684Z",
+  "evidence": {
+    "selector": ".result .icon-status-success",
+    "message": "Всё отлично!"
+  }
+}

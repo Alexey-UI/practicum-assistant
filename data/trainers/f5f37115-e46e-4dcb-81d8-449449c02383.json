@@ -1,0 +1,18 @@
+{
+  "taskId": "f5f37115-e46e-4dcb-81d8-449449c02383",
+  "lessonId": "3bb1f6f2-7a64-48e1-bef6-1f46495075ed",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "files": [
+    {
+      "name": "style.css",
+      "initialHash": "25c7b8b0a22feefc146cfebe714079a5f20f4702726d48c6f1c03cad6df08b3d",
+      "content": "*,\n*::before,\n*::after {\n  box-sizing: border-box;\n}\n\nbody {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  inline-size: 100dvi;\n  block-size: 100dvb;\n  margin: 0;\n  padding: 0;\n  overflow: hidden;\n  background-color: #5f0dee;\n}\n\nimg {\n  max-inline-size: 100%;\n  max-block-size: 50vh;\n  border-radius: 30px;\n  object-fit: cover;\n}\n\n.container {\n  position: relative;\n}\n\n.button {\n  position: absolute;\n  inset: -20px 0 0 -20px;\n  z-index: 5;\n  inline-size: 50px;\n  block-size: 50px;\n  border: none;\n  padding-inline-start: 30px;\n  background-color: transparent;\n  transition: 0.4s linear;\n  cursor: pointer;\n}\n\n.button::before {\n  content: '';\n  position: absolute;\n  inset: 0;\n  inline-size: 0;\n  block-size: 0;\n  border-inline-end: 20px solid transparent;\n  border-block-start: 20px solid #ce1d5a;\n}\n\n.button::after {\n  content: '';\n  position: absolute;\n  inset: 8px 0 0 8px;\n  inline-size: 0;\n  block-size: 0;\n  border-inline-end: 20px solid transparent;\n  border-block-start: 20px solid #000;\n}\n\n.button:hover::before,\n.button:hover::after {\n  opacity: 0.7;\n}\n\n.card {\n  position: relative;\n  transition: transform 1.5s ease-in-out;\n  transform-style: preserve-3d;\n  transform-origin: left center;\n}\n\n.front {\n  z-index: 2;\n  border-radius: 30px;\n}\n\n.animated {\n  transform: rotateY(180deg);\n}"
+    }
+  ],
+  "instructionsHash": "4075f117754e440f81a9ac811cc26daf479805de938143b6ddedcb091cf7b4e3",
+  "verifiedAt": "2026-10-20T11:39:03.040Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Движение карточки поменялось. Но это ещё не предел того, чего можно добиться с помощью 3D-трансформаций."
+  }
+}

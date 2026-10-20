@@ -1,0 +1,18 @@
+{
+  "id": "d971477471f03bfcd35544a42e98bf03d285ed32949f49248e7c1d56be55a0da",
+  "lessonId": "ac0f9b3d-e41f-4af3-b6bf-c9263f7016e2",
+  "url": "https://sandbox.practicum-team.ru/tasks/04-beautishcha/06-transform3d/06-backface/example-02/pre/",
+  "instructionsHash": "79ba2c2c2703f579964963d42dc65609b5e458a91681f1791c00143a9c757cc3",
+  "files": [
+    {
+      "name": "styles/style.css",
+      "initialHash": "4ffd67b8c52df7811b986840bbf5a559d8b886e8f661149e9c5272242f14b241",
+      "content": "*,\n*::before,\n*::after {\n  box-sizing: border-box;\n}\n\nbody {\n  min-height: 100dvb;\n  margin: 0;\n  overflow: hidden;\n  font-family: 'Open Sans', sans-serif;\n  font-size: 16px;\n  background-color: #fff;\n  background-image: url(https://code.s3.yandex.net/web-code/images/dotted.svg);\n}\n\n.postcard {\n  --book-size: 250px;\n\n  position: absolute;\n  padding: 0;\n  list-style: none;\n  transform: translate(-50%, -50%);\n  perspective: 1000px;\n  inset-block-start: 50%;\n  inset-inline-start: calc(50% + var(--book-size) / 2);\n  inline-size: var(--book-size);\n  aspect-ratio: 148/210;\n}\n\n.pagination {\n  position: absolute;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  gap: 10px;\n  transform: translateX(-50%);\n  inset-block-end: 20px;\n  inset-inline-start: 50%;\n}\n\n.pagination button {\n  border: 2px solid transparent;\n  padding: 10px 20px;\n  color: #fff;\n  font-family: inherit;\n  font-size: inherit;\n  background-color: #5f0dee;\n  transition: color 0.3s, border 0.3s, background-color 0.3s;\n  cursor: pointer;\n}\n\n.pagination button:hover {\n  border: 2px solid #5f0dee;\n  color: #5f0dee;\n  background-color: #fff;\n}\n\n.list {\n  position: absolute;\n  inset: 0;\n  border: 1px solid rgba(0 0 0 / 0.1);\n  background-color: #fff;\n  transition: transform 1s ease-in-out;\n  transform-origin: left center;\n}\n\n.list.one {\n  z-index: 2;\n}\n\n.page {\n  position: absolute;\n  inset: 0;\n  display: grid;\n  place-items: center;\n  padding: 20px;\n  background-color: #fff;\n}\n\n.page.front {\n  z-index: 1;\n}\n\n.page.back {\n  /* Впишите поворот на 180 градусов по оси Y */\n  transform: rotateY(180deg);\n}\n\n.page img {\n  display: block;\n  margin: auto;\n  inline-size: 50%;\n}\n\n.cover {\n  display: grid;\n  place-items: center;\n  color: #fff;\n  text-align: center;\n  background-color: #5f0dee;\n}\n\n.animated {\n  transform: rotateY(-180deg);\n}\n"
+    }
+  ],
+  "verifiedAt": "2026-10-20T11:39:48.165Z",
+  "evidence": {
+    "selector": ".result .icon-status-success",
+    "message": "Всё отлично!"
+  }
+}
