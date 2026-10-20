@@ -15,6 +15,7 @@ import type { Config } from './config.js';
 import { atomicJson, journal, lockRun, readJson } from './store.js';
 import { UnexpectedBrowserClosure, withBrowserRecovery } from './recovery.js';
 import { setTimeout as delay } from 'node:timers/promises';
+import { courseInScope } from './course-scope.js';
 
 function pause(message: string): void { console.log(message); process.exitCode = 2; }
 
@@ -161,6 +162,8 @@ async function runAttempt(): Promise<void> {
       if (onlyProjects) lessons = lessons.filter(lesson => lesson.project);
     }
     if (args.includes('--catalog-only')) { console.log('Каталог сохранён в .local/catalog.json'); return; }
+    lessons = lessons.filter(lesson => courseInScope(lesson.course, cfg.includeAdditionalModules));
+    if (!lessons.length) throw new Error('Выбранные модули исключены из объёма работы настройками курса');
     const verified = await readJson<Record<string, string>>('.local/completed.json', {});
     const unavailable = args.includes('--skip-unavailable') ? await readJson<Record<string, unknown>>('.local/unavailable-lessons.json', {}) : {};
     for (const lesson of lessons) {

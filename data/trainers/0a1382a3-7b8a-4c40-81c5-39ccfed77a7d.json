@@ -1,0 +1,18 @@
+{
+  "taskId": "0a1382a3-7b8a-4c40-81c5-39ccfed77a7d",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "lessonId": "9f68bbdf-abf3-4e2e-bcfe-3b6c8e3b7eaa",
+  "files": [
+    {
+      "name": "script.jsx",
+      "initialHash": "f1e76a680fec4229291bc428eca58eeb3f224a748edc0ca85a5d4b43620c391c",
+      "content": "const zebras = 'Зебры';\nconst leeches = 'пиявок';\nconst elephants = 'слонята';\n\nconst root = ReactDOM.createRoot(document.getElementById('root'));\nroot.render(\n  <div>\n    <h2>Грустные факты о животных</h2>\n    <p>\n      Новорожденные {elephants} не умеют управлять хоботом.\n    </p>\n    <p>\n      {zebras} не могут спать в одиночестве.\n    </p>\n    <p>\n      У {leeches} 32 мозга.\n    </p>\n  </div>\n);"
+    }
+  ],
+  "instructionsHash": "9cb9f82a9f38e9f26e4a334e12f6c811d64273dca76a3b47659b9968d27d90f1",
+  "verifiedAt": "2026-10-20T14:01:06.440Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Теперь все животные на своих местах!"
+  }
+}

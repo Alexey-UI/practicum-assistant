@@ -672,5 +672,28 @@
     ],
     "evidence": "quiz_answered: actual selected option classes are accepted by the platform",
     "confirmedAt": "2026-10-20T13:48:11.329Z"
+  },
+  "49e2b285e22a13d2b2782962f2bdb57ce20db0f04ce313f2c9ab99b762862bfe": {
+    "answers": [
+      "Компоненты позволяют переиспользовать части интерфейса в разных местах приложения"
+    ],
+    "evidence": "quiz_answered: actual selected option classes are accepted by the platform",
+    "confirmedAt": "2026-10-20T13:59:23.894Z"
+  },
+  "051680e1e28209f63372376709d2aad897c6b5c4564e350acbd0a372a8d1d432": {
+    "answers": [
+      "Компонент в React — это функция, которая возвращает разметку",
+      "Один и тот же компонент можно использовать несколько раз с разным содержимым",
+      "React-приложение обычно строится вокруг главного компонента Apр"
+    ],
+    "evidence": "quiz_answered: actual selected option classes are accepted by the platform",
+    "confirmedAt": "2026-10-20T13:59:52.251Z"
+  },
+  "d89cd1c553a5f39e70062792e1b648b84ede7feac2102255483036db8e4b6964": {
+    "answers": [
+      "Императивный подход был внедрён императором Петром I"
+    ],
+    "evidence": "quiz_answered: actual selected option classes are accepted by the platform",
+    "confirmedAt": "2026-10-20T14:00:19.097Z"
   }
 }

@@ -1,0 +1,23 @@
+{
+  "taskId": "76d6eaf4-5a00-4b83-9a94-dbb9b95ba1a4",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "lessonId": "9f68bbdf-abf3-4e2e-bcfe-3b6c8e3b7eaa",
+  "files": [
+    {
+      "name": "index.html",
+      "initialHash": "c0c756f0710eef361d3124319269a082a6a842778850bbef21a0f52f6385e92c",
+      "content": "<!DOCTYPE html>\n<html  lang=\"ru\">\n<head>\n  <meta charset=\"UTF-8\" />\n  <link rel=\"stylesheet\" href=\"./style.css\">\n  <script src=\"https://unpkg.com/react@18/umd/react.development.js\"></script>\n  <script src=\"https://unpkg.com/react-dom@18/umd/react-dom.development.js\"></script>\n  <script src=\"https://unpkg.com/@babel/standalone/babel.min.js\"></script>\n</head>\n<body>\n\n\n\n<div id=\"root\"></div>\n<script type=\"text/jsx\" src=\"script.jsx\"></script>\n</body>\n</html>"
+    },
+    {
+      "name": "script.jsx",
+      "initialHash": "a301b55a97bb8289cd5a696365de4e790f8766a89e318a563dfea26e016dda97",
+      "content": "const root = ReactDOM.createRoot(document.getElementById('root'));\nroot.render(\n<div>\n  <h2>Грустные факты о животных</h2>\n  <p>\n    Новорожденные слонята не умеют управлять хоботом.\n  </p>\n  <p>\n    Зебры не могут спать в одиночестве.\n  </p>\n  <p>\n    У пиявок 32 мозга.\n  </p>\n</div>\n);"
+    }
+  ],
+  "instructionsHash": "50ac67ff5c830d300194934cbb99b3453124777424823f69df6a160fb153ce5f",
+  "verifiedAt": "2026-10-20T14:00:55.075Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Класс! Если пока не очень понятно, чем такой код лучше, — скоро всё встанет на свои места."
+  }
+}

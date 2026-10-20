@@ -2,6 +2,8 @@ import { readdir } from 'node:fs/promises';
 import type { Lesson } from './catalog.js';
 import { readJson, atomicJson } from './store.js';
 import { loadProjects } from './projects.js';
+import { loadConfig } from './config.js';
+import { courseInScope } from './course-scope.js';
 
 async function countFiles(dir: string): Promise<number> {
   try { return (await readdir(dir)).filter(name => name.endsWith('.json')).length; }
@@ -17,13 +19,16 @@ async function countPendingTrainerChecks(): Promise<number> {
 }
 
 export async function status(): Promise<void> {
+  const cfg = await loadConfig();
   const lessons = await readJson<Lesson[]>('.local/catalog.json', []);
   const index = await readJson<{ complete: boolean; updatedAt?: string }>('.local/catalog-index.json', { complete: false });
   const completed = await readJson<Record<string, string>>('.local/completed.json', {});
   const courses = [...new Set(lessons.map(lesson => lesson.course))].map(course => {
     const rows = lessons.filter(lesson => lesson.course === course);
-    return { course, lessons: rows.length, solved: rows.filter(lesson => lesson.solved || completed[lesson.url]).length, locked: rows.filter(lesson => lesson.locked).length };
+    return { course, excluded: !courseInScope(course, cfg.includeAdditionalModules), lessons: rows.length, solved: rows.filter(lesson => lesson.solved || completed[lesson.url]).length, locked: rows.filter(lesson => lesson.locked).length };
   });
+  const included = courses.filter(course => !course.excluded);
+  const excluded = courses.filter(course => course.excluded);
   const projects = await loadProjects();
   let acceptedProjects = 0;
   let preparedManualProjects = 0;
@@ -44,8 +49,10 @@ export async function status(): Promise<void> {
   }
   const result = {
     catalogComplete: index.complete, catalogUpdatedAt: index.updatedAt, courses,
-    lessons: lessons.length, solved: courses.reduce((sum, course) => sum + course.solved, 0),
-    locked: courses.reduce((sum, course) => sum + course.locked, 0),
+    lessons: included.reduce((sum, course) => sum + course.lessons, 0), solved: included.reduce((sum, course) => sum + course.solved, 0),
+    catalogLessons: lessons.length, excludedLessons: excluded.reduce((sum, course) => sum + course.lessons, 0),
+    excludedSolved: excluded.reduce((sum, course) => sum + course.solved, 0),
+    locked: included.reduce((sum, course) => sum + course.locked, 0),
     verifiedTextQuestions: await countFiles('data/text-questions'),
     verifiedInlineExercises: await countFiles('data/inline'), auditedInlineLessons: await countFiles('.local/inline-audits'),
     verifiedTrainerTasks: await countFiles('data/trainers'), verifiedMatchingTasks: await countFiles('data/matching'),

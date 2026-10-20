@@ -15,6 +15,7 @@ export interface Config {
   maxSteps: number;
   maxAttempts: number;
   feedbackPolicy: 'defer' | 'neutral';
+  includeAdditionalModules: boolean;
 }
 export const DEFAULTS: Config = {
   startUrl: START_URL,
@@ -26,12 +27,14 @@ export const DEFAULTS: Config = {
   submitButtons: ['Проверить', 'Ответить', 'Узнать ответ'], retryButtons: ['Попробовать ещё раз', 'Попробовать еще раз'],
   retryableLessons: [], maxSteps: 500, maxAttempts: 16,
   feedbackPolicy: 'defer',
+  includeAdditionalModules: false,
 };
 export async function loadConfig(): Promise<Config> {
   const custom = await readJson<Partial<Config>>('practicum.config.json', {});
   const cfg = { ...DEFAULTS, ...custom };
   if (cfg.githubOwner !== undefined && !/^[a-z\d](?:[a-z\d-]{0,37}[a-z\d])?$/i.test(cfg.githubOwner)) throw new Error('Неверный config.githubOwner');
   if (!['defer', 'neutral'].includes(cfg.feedbackPolicy)) throw new Error('Неверный config.feedbackPolicy');
+  if (typeof cfg.includeAdditionalModules !== 'boolean') throw new Error('Неверный config.includeAdditionalModules');
   for (const key of ['continueButtons', 'nextButtons', 'submitButtons', 'retryButtons', 'retryableLessons'] as const) {
     if (!Array.isArray(cfg[key]) || !cfg[key].every(x => typeof x === 'string' && x.trim())) throw new Error(`Неверный config.${key}`);
   }
