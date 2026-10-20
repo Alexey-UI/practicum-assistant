@@ -86,6 +86,32 @@ test('Пример для чтения не отправляется на про
   } finally { process.chdir(original); await page.close(); await rm(dir, { recursive: true, force: true }); }
 });
 
+test('Повторный пример для чтения принимает восстановленный код раннего урока только с собственной положительной квитанцией', async () => {
+  const page = await browser.newPage(); const original = process.cwd(); const dir = await mkdtemp(path.join(tmpdir(), 'practicum-inline-reused-demo-'));
+  try {
+    process.chdir(dir); await fixture(page, true);
+    const first = await readInline(page, 0);
+    await atomicJson(`.local/inline-solutions/${first.id}.json`, { ...first, files: [{ name: 'index.html', initialHash: first.files[0].hash, content: 'fixed' }] });
+    assert.equal(await solveInline(page, 0, true), true);
+    const published = await readJson(`data/inline/${first.id}.json`, null);
+    await page.goto('https://practicum.yandex.ru/learn/test/lessons/cccccccc-cccc-cccc-cccc-cccccccccccc/');
+    await page.locator('.theory-viewer p').evaluate(el => { el.textContent = 'Просто посмотрите код раннего примера.'; });
+    const frame = await sandboxFrame(page, 0);
+    await frame.getByRole('textbox').fill('fixed');
+    const task = await readInline(page, 0);
+    await atomicJson(`data/inline-demos/${task.id}-${task.instructionsHash}.json`, { id: task.id, lessonId: task.lessonId, instructionsHash: task.instructionsHash,
+      files: first.files.map(({ name, hash }) => ({ name, hash })), reason: 'Явный пример для чтения из раннего урока.', reviewedAt: new Date().toISOString() });
+    assert.equal(await isInlineDemonstration(task), true);
+    assert.equal(await solveInline(page, 0), true);
+    assert.equal(await frame.locator('body').getAttribute('data-clicks'), null);
+    assert.deepEqual(await readJson(`data/inline/${first.id}.json`, null), published);
+    assert.equal(await isInlineDemonstration({ ...task, files: task.files.map(file => ({ ...file, hash: 'unrelated edit' })) }), false);
+    const receipt = await readJson<Record<string, unknown>>(`.local/inline/${first.id}.json`, {});
+    await atomicJson(`.local/inline/${first.id}.json`, { ...receipt, phase: 'requested' });
+    assert.equal(await isInlineDemonstration(task), false);
+  } finally { process.chdir(original); await page.close(); await rm(dir, { recursive: true, force: true }); }
+});
+
 test('Повтор одного sandbox в уроке хранит отдельное решение и принимает только исходник или проверенный код предыдущего примера', async () => {
   const page = await browser.newPage(); const original = process.cwd(); const dir = await mkdtemp(path.join(tmpdir(), 'practicum-inline-repeat-'));
   try {

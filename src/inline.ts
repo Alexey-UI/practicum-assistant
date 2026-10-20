@@ -23,16 +23,31 @@ interface InlineDemonstration {
 
 export async function isInlineDemonstration(task: InlineTask): Promise<boolean> {
   const demo = await readJson<InlineDemonstration | null>(`data/inline-demos/${task.id}-${task.instructionsHash}.json`, null);
-  return !!demo && demo.id === task.id && demo.lessonId === task.lessonId && demo.instructionsHash === task.instructionsHash
+  const matches = !!demo && demo.id === task.id && demo.lessonId === task.lessonId && demo.instructionsHash === task.instructionsHash
     && !!demo.reason && Number.isFinite(Date.parse(demo.reviewedAt))
-    && demo.files.length === task.files.length
-    && demo.files.every(file => task.files.find(current => current.name === file.name)?.hash === file.hash);
+    && demo.files.length === task.files.length;
+  if (!matches) return false;
+  const ownFiles = await verifiedFileVersions(task.id, task.url);
+  return demo.files.every(file => {
+    const current = task.files.find(item => item.name === file.name);
+    return !!current && (current.hash === file.hash || ownFiles.some(own => own.name === file.name && own.initialHash === file.hash && own.contentHash === current.hash));
+  });
 }
 interface InlineState {
   phase: 'requested' | 'correct' | 'wrong'; solutionHash: string; requestedAt: string;
   files?: Array<{ name: string; initialHash: string; contentHash: string }>;
   verifiedAt?: string;
   detectedResult?: { outcome: 'correct' | 'wrong'; message: string; observedAt: string; selector: string };
+}
+
+async function verifiedFileVersions(id: string, url: string, ownerLesson?: string): Promise<NonNullable<InlineState['files']>> {
+  const solution = await readJson<InlineSolution | null>(`data/inline/${id}.json`, null);
+  const receipt = await readJson<InlineState | null>(`.local/inline/${id}.json`, null);
+  if (solution?.id === id && solution.url === url && (!ownerLesson || solution.lessonId === ownerLesson)
+    && solution.verifiedAt && solution.evidence?.message && receipt?.phase === 'correct' && receipt.verifiedAt
+    && receipt.solutionHash === contentHash(JSON.stringify(solution.files))
+    && solution.files.every(file => receipt.files?.some(saved => saved.name === file.name && saved.initialHash === file.initialHash && saved.contentHash === contentHash(file.content)))) return receipt.files ?? [];
+  return [];
 }
 
 async function loadSolution(task: InlineTask, candidate: boolean): Promise<InlineSolution | null> {
@@ -180,14 +195,7 @@ export async function applyInline(page: Page, index: number, candidate = true): 
   if (previousFiles.some(previous => !solution.files.some(file => file.name === previous.name && file.initialHash === previous.initialHash))) throw new Error('Сохраните исходные хеши и все файлы предыдущей попытки');
   let inheritedFiles: NonNullable<InlineState['files']> = [];
   for (const sharedId of task.sharedOccurrenceIds ?? []) {
-    const previous = await readJson<InlineSolution | null>(`data/inline/${sharedId}.json`, null);
-    const receipt = await readJson<InlineState | null>(`.local/inline/${sharedId}.json`, null);
-    if (previous?.id === sharedId && previous.lessonId === task.lessonId && previous.url === task.url
-      && previous.verifiedAt && previous.evidence?.message && receipt?.phase === 'correct' && receipt.verifiedAt
-      && receipt.solutionHash === contentHash(JSON.stringify(previous.files))
-      && previous.files.every(file => receipt.files?.some(saved => saved.name === file.name && saved.initialHash === file.initialHash && saved.contentHash === contentHash(file.content)))) {
-      inheritedFiles.push(...receipt.files ?? []);
-    }
+    inheritedFiles.push(...await verifiedFileVersions(sharedId, task.url, task.lessonId));
   }
   const frame = await sandboxFrame(page, index);
   for (const file of solution.files) {

@@ -1,0 +1,18 @@
+{
+  "id": "7ae72710243e7b6cb744e4eb97833f71a7d864c042a4d2679d0fc39424918d9a",
+  "lessonId": "63d2f99d-a819-4f68-a343-b9c6828f8f39",
+  "url": "https://sandbox.practicum-team.ru/tasks/02-interactivity-and-accessibility/02-frames/02-page-in-page/example-02/pre/",
+  "instructionsHash": "6e7bd132bea02225733ebf36e273812431701fbb03a96a002e50cf1627b5e1d6",
+  "files": [
+    {
+      "name": "styles/style.css",
+      "initialHash": "23b64aad8f22cfdabca957e7a688c8def541db4853c0676997d338f31150f482",
+      "content": "body {\n  min-width: 850px;\n  margin: 0;\n  font-family: 'Open Sans', sans-serif;\n  font-size: 18px;\n}\n\n.wrapper {\n  width: 90%;\n  max-width: 1200px;\n  margin-right: auto;\n  margin-left: auto;\n}\n\n.header {\n  position: relative;\n  z-index: 0;\n  padding-top: 15px;\n  padding-bottom: 15px;\n  color: white;\n  text-align: center;\n  background: url(./images/bkg.jpg) no-repeat center / cover;\n}\n\n.header::after {\n  content: '';\n  position: absolute;\n  inset: 0;\n  z-index: -1;\n  background-color: rgb(0 0 0 / 0.8);\n}\n\n.logo {\n  color: inherit;\n  text-transform: uppercase;\n}\n\n.logo:hover {\n  color: #5f0dee;\n}\n\n.cta {\n  padding: 25px;\n  color: #fff;\n  background-color: #000;\n}\n\n.cta-text {\n  margin: 0;\n}\n\n.cta-button {\n  margin-top: 30px;\n  border: 1px solid #000;\n  padding: 10px 65px;\n  color: #000;\n  font-family: inherit;\n  font-weight: 800;\n  font-size: inherit;\n  text-transform: uppercase;\n  background-color: #ffc802;\n}\n\n.cta-button:hover {\n  box-shadow: inset 0 0 0 100px rgb(0 0 0 / 0.15);\n  cursor: pointer;\n}\n\n.cta-button:focus {\n  outline: 2px solid #000;\n  outline-offset: 0;\n}\n\n.cta-button[disabled] {\n  opacity: 0.6;\n}\n\n.title {\n  margin: 100px 0;\n  font-weight: 800;\n  font-size: 45px;\n  text-transform: uppercase;\n}\n\n/* Тут напишите правило для фрейма */\n\niframe {\n  width: 100%;\n  height: 500px;\n}\n"
+    }
+  ],
+  "verifiedAt": "2026-10-20T15:55:39.943Z",
+  "evidence": {
+    "selector": ".result .icon-status-success",
+    "message": "Всё отлично!"
+  }
+}

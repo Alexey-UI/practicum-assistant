@@ -1,0 +1,18 @@
+{
+  "id": "6552d27ff40947fb7752c25c17932780205c2d35be691a88682c10ea3a2c6477",
+  "lessonId": "cc7dc8ae-cfa2-4d49-bad6-5a8670526323",
+  "url": "https://sandbox.practicum-team.ru/tasks/02-interactivity-and-accessibility/02-frames/03-youtube/example-01/pre/",
+  "instructionsHash": "c93cf0bc4be5e0c67afd47fa90901e70c7a5908c1692090cb4e532f7679e3589",
+  "files": [
+    {
+      "name": "index.html",
+      "initialHash": "8b8d008356cd11215d7ba0c17af198cd85335ffd146890350c56d3ea24a9d5d5",
+      "content": "<!DOCTYPE html>\n<html lang=\"ru\">\n  <head>\n    <meta charset=\"utf-8\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <link\n      rel=\"stylesheet\"\n      href=\"https://code.s3.yandex.net/web-code/fonts/fonts.css\"\n    />\n    <link rel=\"stylesheet\" href=\"./styles/style.css\" />\n    <title>Производитель и распространитель цветных мелков</title>\n  </head>\n  <body>\n    <header class=\"header\">\n      <div class=\"wrapper\">\n        <a href=\"/\" class=\"logo\">Shiny flakes</a>\n        <h1 class=\"title\">Производитель и распространитель цветных мелков</h1>\n        <p class=\"description\">Дарим радость взрослым и детям! ✨</p>\n      </div>\n    </header>\n    <main class=\"main\">\n      <div class=\"cta\">\n        <div class=\"wrapper\">\n          <p class=\"cta-text\">\n            Наши менеджеры готовы предложить вам гибкие условия для оптовых\n            закупок. С радостью сотрудничаем со школами и муниципальными\n            заведениями. Умеем работать с бюджетными деньгами. Вся отчётность\n            будет безупречна.\n          </p>\n          <button class=\"cta-button\">Позвонить</button>\n        </div>\n      </div>\n      <div class=\"wrapper\">\n        <p class=\"text\">\n          Если вы уже жить не можете без наших мелков, то ознакомьтесь с\n          актуальным ассортиментом:\n        </p>\n        <iframe src=\"shop.html\"></iframe>\n    <iframe width=\"720\" height=\"405\" src=\"https://rutube.ru/play/embed/6e35c4fad25431c44f7e087668a615d2\" frameborder=\"0\" webkitAllowFullScreen mozallowfullscreen allowfullscreen allow=\"encrypted-media\"></iframe>\n      </div>\n    </main>\n  </body>\n</html>\n"
+    }
+  ],
+  "verifiedAt": "2026-10-20T15:56:59.966Z",
+  "evidence": {
+    "selector": ".result .icon-status-success",
+    "message": "Всё отлично!"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "id": "27f20a5ff722eea4721b9568f5d5c60419438f600144d03ec9f8ba3452122245",
+  "lessonId": "63d2f99d-a819-4f68-a343-b9c6828f8f39",
+  "url": "https://sandbox.practicum-team.ru/tasks/02-interactivity-and-accessibility/02-frames/02-page-in-page/example-01/pre/",
+  "instructionsHash": "7419afc8c1f90ad9af0571727e98b15638f84b191eff8a13f23992cd464f01e5",
+  "files": [
+    {
+      "name": "index.html",
+      "initialHash": "241d8e96f5e8af68225c289f2280421dfbffed1d844c65c9c7907747bb45a14b",
+      "content": "<!DOCTYPE html>\n<html lang=\"ru\">\n  <head>\n    <meta charset=\"utf-8\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <link\n      rel=\"stylesheet\"\n      href=\"https://code.s3.yandex.net/web-code/fonts/fonts.css\"\n    />\n    <link rel=\"stylesheet\" href=\"./styles/style.css\" />\n    <title>Производитель и распространитель цветных мелков</title>\n  </head>\n  <body>\n    <header class=\"header\">\n      <div class=\"wrapper\">\n        <a href=\"/\" class=\"logo\">Shiny flakes</a>\n        <h1 class=\"title\">Производитель и распространитель цветных мелков</h1>\n        <p class=\"description\">Дарим радость взрослым и детям! ✨</p>\n      </div>\n    </header>\n    <main class=\"main\">\n      <div class=\"cta\">\n        <div class=\"wrapper\">\n          <p class=\"cta-text\">\n            Наши менеджеры готовы предложить вам гибкие условия для оптовых\n            закупок. С радостью сотрудничаем со школами и муниципальными\n            заведениями. Умеем работать с бюджетными деньгами. Вся отчётность\n            будет безупречна.\n          </p>\n          <button class=\"cta-button\">Позвонить</button>\n        </div>\n      </div>\n      <div class=\"wrapper\">\n        <p class=\"text\">\n          Если вы уже жить не можете без наших мелков, то ознакомьтесь с\n          актуальным ассортиментом:\n        </p>\n        <iframe src=\"shop.html\"></iframe>\n      </div>\n    </main>\n  </body>\n</html>\n"
+    }
+  ],
+  "verifiedAt": "2026-10-20T15:54:30.653Z",
+  "evidence": {
+    "selector": ".result .icon-status-success",
+    "message": "Всё отлично!"
+  }
+}

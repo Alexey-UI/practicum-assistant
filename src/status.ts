@@ -4,6 +4,7 @@ import { readJson, atomicJson } from './store.js';
 import { loadProjects } from './projects.js';
 import { loadConfig } from './config.js';
 import { courseInScope } from './course-scope.js';
+import { hasProjectAcceptance, type Submission } from './project-acceptance.js';
 
 async function countFiles(dir: string): Promise<number> {
   try { return (await readdir(dir)).filter(name => name.endsWith('.json')).length; }
@@ -44,8 +45,8 @@ export async function status(): Promise<void> {
       if (draft?.phase === 'draft') preparedManualProjects++;
       continue;
     }
-    const submission = await readJson<{ phase: string } | null>(`.local/submissions/${project.id}.json`, null);
-    if (submission?.phase === 'complete' || completed[project.lessonUrl] || lessons.some(lesson => lesson.url === project.lessonUrl && lesson.solved)) acceptedProjects++;
+    const submission = await readJson<Submission | null>(`.local/submissions/${project.id}.json`, null);
+    if (hasProjectAcceptance(submission, project.lessonUrl)) acceptedProjects++;
   }
   const result = {
     catalogComplete: index.complete, catalogUpdatedAt: index.updatedAt, courses,

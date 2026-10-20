@@ -7,9 +7,9 @@ import { projectCommand, type Project } from './projects.js';
 import { atomicJson, journal, readJson } from './store.js';
 import { scrollLesson } from './scroll.js';
 import { closingReferenceVerified, knownClosingCheckerFailure, type PublishedProject } from './ci.js';
+import { hasProjectAcceptance, PROJECT_ACCEPTED_MESSAGE, type Submission } from './project-acceptance.js';
 
 const exec = promisify(execFile);
-interface Submission { commit: string; phase: 'requested' | 'accepted' | 'complete'; lessonUrl: string; updatedAt?: string }
 
 export async function prepareManualProject(project: Project): Promise<void> {
   if (project.review !== 'teacher' && project.review !== 'self') throw new Error('Проект требует приёмки платформой');
@@ -31,7 +31,7 @@ export async function prepareManualProject(project: Project): Promise<void> {
 }
 
 async function accepted(page: Page): Promise<boolean> {
-  return page.getByText('Задание принято — отличная работа!', { exact: true }).isVisible();
+  return page.getByRole('tabpanel', { name: 'Ревью', exact: true }).getByText(PROJECT_ACCEPTED_MESSAGE, { exact: true }).isVisible();
 }
 
 async function reviewTab(page: Page): Promise<void> {
@@ -84,14 +84,14 @@ export async function waitCI(page: Page, project: Project, commit: string): Prom
   throw new Error('Официальные тесты не завершились за 10 минут; отправка отложена.');
 }
 
-export async function submitProject(page: Page, project: Project): Promise<boolean> {
+export async function submitProject(page: Page, project: Project, commands: typeof projectCommand = projectCommand): Promise<boolean> {
   if (project.review === 'teacher' || project.review === 'self') throw new Error('У проекта нет автоматической приёмки');
   const file = `.local/submissions/${project.id}.json`;
   let pending = await readJson<Submission | null>(file, null);
   const pathname = new URL(project.lessonUrl).pathname;
   const solved = page.locator(`.sidebar__lesson_status_solved[href="${pathname}"]`);
-  if (await solved.count()) {
-    await atomicJson(file, { ...pending, commit: pending?.commit ?? '', phase: 'complete', lessonUrl: project.lessonUrl, updatedAt: new Date().toISOString() });
+  if (await solved.count() && hasProjectAcceptance(pending, project.lessonUrl)) {
+    await atomicJson(file, { ...pending, phase: 'complete', updatedAt: new Date().toISOString() });
     return true;
   }
 
@@ -99,9 +99,9 @@ export async function submitProject(page: Page, project: Project): Promise<boole
   await reviewTab(page);
   if (!await accepted(page) && !pending) {
     await page.getByRole('tab', { name: 'Задание', exact: true }).click();
-    await projectCommand(['prepare', project.id]);
-    await projectCommand(['verify', project.id]);
-    await projectCommand(['publish', project.id]);
+    await commands(['prepare', project.id]);
+    await commands(['verify', project.id]);
+    await commands(['publish', project.id]);
     const published = await readJson<{ destinationCommit: string } | null>(`.local/projects/${project.id}.published.json`, null);
     if (!published) throw new Error('Нет подтверждения публикации проекта');
     await waitCI(page, project, published.destinationCommit);
@@ -124,9 +124,14 @@ export async function submitProject(page: Page, project: Project): Promise<boole
   const deadline = Date.now() + 600000;
   while (Date.now() < deadline) {
     if (await accepted(page)) {
-      const state: Submission = { ...pending, commit: pending?.commit ?? '', phase: 'accepted', lessonUrl: project.lessonUrl, updatedAt: new Date().toISOString() };
+      const state: Submission = { ...pending, commit: pending?.commit ?? '', phase: 'accepted', lessonUrl: project.lessonUrl, updatedAt: new Date().toISOString(),
+        acceptanceEvidence: { message: PROJECT_ACCEPTED_MESSAGE, observedAt: new Date().toISOString(), source: 'visible-review-tab' } };
       await atomicJson(file, state);
       await journal('project-accepted', { id: project.id, url: safeUrl(page.url()) });
+      if (await solved.count()) {
+        await atomicJson(file, { ...state, phase: 'complete', updatedAt: new Date().toISOString() });
+        return true;
+      }
       const forward = page.getByRole('button', { name: 'Вперёд', exact: true });
       if (await forward.isVisible() && await forward.isEnabled()) {
         const before = page.url();

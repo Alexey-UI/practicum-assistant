@@ -1,0 +1,18 @@
+{
+  "id": "700b19b86081bd3452707f7b7c58e4d41d3d0529afd7109605ddd163b122a3de",
+  "lessonId": "cc7dc8ae-cfa2-4d49-bad6-5a8670526323",
+  "url": "https://sandbox.practicum-team.ru/tasks/02-interactivity-and-accessibility/02-frames/03-youtube/example-02/pre/",
+  "instructionsHash": "ec7ab5deb28584e902c1dd92824c252655c79690f096cf9d267fb03d61d57730",
+  "files": [
+    {
+      "name": "index.html",
+      "initialHash": "f677a2dd3e04307a9106ce8bf377b2f8e605d73f393e17f373500332b6db5fee",
+      "content": "<!DOCTYPE html>\n<html lang=\"ru\">\n  <head>\n    <meta charset=\"utf-8\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <link\n      rel=\"stylesheet\"\n      href=\"https://code.s3.yandex.net/web-code/fonts/fonts.css\"\n    />\n    <link rel=\"stylesheet\" href=\"./styles/style.css\" />\n    <title>Производитель и распространитель цветных мелков</title>\n  </head>\n  <body>\n    <header class=\"header\">\n      <div class=\"wrapper\">\n        <a href=\"/\" class=\"logo\">Shiny flakes</a>\n        <h1 class=\"title\">Производитель и распространитель цветных мелков</h1>\n        <p class=\"description\">Дарим радость взрослым и детям! ✨</p>\n      </div>\n    </header>\n    <main class=\"main\">\n      <div class=\"cta\">\n        <div class=\"wrapper\">\n          <p class=\"cta-text\">\n            Наши менеджеры готовы предложить вам гибкие условия для оптовых\n            закупок. С радостью сотрудничаем со школами и муниципальными\n            заведениями. Умеем работать с бюджетными деньгами. Вся отчётность\n            будет безупречна.\n          </p>\n          <button class=\"cta-button\">Позвонить</button>\n        </div>\n      </div>\n      <div class=\"wrapper\">\n        <p class=\"text\">\n          Если вы уже жить не можете без наших мелков, то ознакомьтесь с\n          актуальным ассортиментом:\n        </p>\n        <iframe src=\"shop.html\"></iframe>\n        <iframe\n          src=\"https://rutube.ru/play/embed/6e35c4fad25431c44f7e087668a615d2/?t=30\"\n          frameborder=\"0\"\n          allow=\"clipboard-write; autoplay\"\n          webkitAllowFullScreen\n          mozallowfullscreen\n          allowfullscreen\n        ></iframe>\n      </div>\n    </main>\n  </body>\n</html>\n"
+    }
+  ],
+  "verifiedAt": "2026-10-20T15:57:45.347Z",
+  "evidence": {
+    "selector": ".result .icon-status-success",
+    "message": "Всё отлично!"
+  }
+}
