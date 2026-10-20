@@ -1,0 +1,18 @@
+{
+  "id": "20f3949e7a50d4dec841ef6776a76563895d5842eb1524dcffa04625f09e8a73",
+  "lessonId": "daad20ea-1391-4d23-8f9c-3a26d3b97c65",
+  "url": "https://sandbox.practicum-team.ru/tasks/02-interactivity-and-accessibility/06-forms-html/09-checkbox-radio/example-03/pre/",
+  "instructionsHash": "a0cea50448b644c55dbb58c89b658baaaa3c682a07bb9dbb9e48cc173d13c450",
+  "files": [
+    {
+      "name": "index.html",
+      "initialHash": "944cbe7fe164d2bd116e485dd491a5c96b711d1d35d2565e7abfc3a0892cfc62",
+      "content": "<!DOCTYPE html>\n<html lang=\"ru\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <title>Поля формы</title>\n    <link\n      rel=\"stylesheet\"\n      href=\"https://code.s3.yandex.net/web-code/fonts/fonts.css\"\n    />\n    <link rel=\"stylesheet\" href=\"./styles/style.css\" />\n  </head>\n  <body>\n    <form action=\"submit\" class=\"main\">\n      <h2 class=\"question\">Что вдохновляет?</h2>\n      <fieldset class=\"inspiration\">\n        <div>\n          <!-- замените ↓ на <input type=\"checkbox\" id=\"radio\" name=\"inspiration\" value=\"radio\" /> -->\n          <input type=\"checkbox\" id=\"radio\" name=\"inspiration\" value=\"radio\" checked />\n          <label for=\"radio\">Радио Шансон</label>\n        </div>\n        <div>\n          <!-- задайте такое же имя, но другое значение -->\n          <input type=\"checkbox\" id=\"verstka\" name=\"inspiration\" value=\"verstka\" />\n          <label for=\"verstka\">Вёрстка</label>\n        </div>\n        <div>\n          <!-- задайте такое же имя, но другое значение -->\n          <input type=\"checkbox\" id=\"community\" name=\"inspiration\" value=\"community\" />\n          <label for=\"community\">Одногруппники</label>\n        </div>\n        <div>\n          <!-- задайте такое же имя, но другое значение -->\n          <input type=\"checkbox\" id=\"sleep\" name=\"inspiration\" value=\"sleep\" />\n          <label for=\"sleep\">Поспать</label>\n        </div>\n        <div>\n          <!-- задайте такое же имя, но другое значение -->\n          <input type=\"checkbox\" id=\"emoe\" name=\"inspiration\" value=\"emoe\" />\n          <label for=\"emoe\">Где приколы, ё-моё?</label>\n        </div>\n      </fieldset>\n      <button type=\"submit\">Поделиться</button>\n    </form>\n  </body>\n</html>\n"
+    }
+  ],
+  "verifiedAt": "2026-10-20T08:18:10.940Z",
+  "evidence": {
+    "selector": ".result .icon-status-success",
+    "message": "Всё отлично!"
+  }
+}

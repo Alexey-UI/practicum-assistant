@@ -1,0 +1,18 @@
+{
+  "id": "98dcf05768470fb608521b8d9e73975e53445e0df69470809e517d6dbb3048b1",
+  "lessonId": "26b26347-dbdd-428a-84b1-d8523d5ce02c",
+  "url": "https://sandbox.practicum-team.ru/tasks/02-interactivity-and-accessibility/06-forms-html/08-values/example-02/pre/",
+  "instructionsHash": "9953cdf96afc34219d735bde9b778bc5eade71c3327058059225df41917d4724",
+  "files": [
+    {
+      "name": "index.html",
+      "initialHash": "2db6e7958174cd779be111733c154b567e56d89e4315f7ccba66fed619c8b546",
+      "content": "<!DOCTYPE html>\n<html lang=\"ru\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <title>Поля формы</title>\n    <link\n      rel=\"stylesheet\"\n      href=\"https://code.s3.yandex.net/web-code/fonts/fonts.css\"\n    />\n    <link rel=\"stylesheet\" href=\"./styles/style.css\" />\n  </head>\n  <body>\n    <form>\n      <label for=\"email\">Почта</label>\n      <input type=\"email\" name=\"email\" id=\"email\" />\n      <label for=\"password\">Пароль</label>\n      <input type=\"password\" name=\"password\" id=\"password\" />\n      <label for=\"authorized\" class=\"agree\">\n        <input type=\"checkbox\" id=\"authorized\" name=\"authorized\" /> Запомнить меня\n      </label>\n      <button>Войти</button>\n    </form>\n  </body>\n</html>\n"
+    }
+  ],
+  "verifiedAt": "2026-10-20T08:16:22.991Z",
+  "evidence": {
+    "selector": ".result .icon-status-success",
+    "message": "Всё отлично!"
+  }
+}

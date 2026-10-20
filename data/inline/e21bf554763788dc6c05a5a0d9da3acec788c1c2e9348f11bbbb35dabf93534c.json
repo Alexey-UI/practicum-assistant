@@ -1,0 +1,18 @@
+{
+  "id": "e21bf554763788dc6c05a5a0d9da3acec788c1c2e9348f11bbbb35dabf93534c",
+  "lessonId": "daad20ea-1391-4d23-8f9c-3a26d3b97c65",
+  "url": "https://sandbox.practicum-team.ru/tasks/02-interactivity-and-accessibility/06-forms-html/09-checkbox-radio/example-02/pre/",
+  "instructionsHash": "b696480180eb0063cb6e5e859d4af87cac80e5ba6f492cea4b27917796985850",
+  "files": [
+    {
+      "name": "index.html",
+      "initialHash": "5643057b233346c642964542219ba74aad1e15de72926a61f4a80caabb8e8dbe",
+      "content": "<!DOCTYPE html>\n<html lang=\"ru\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <title>Поля формы</title>\n    <link\n      rel=\"stylesheet\"\n      href=\"https://code.s3.yandex.net/web-code/fonts/fonts.css\"\n    />\n    <link rel=\"stylesheet\" href=\"./styles/style.css\" />\n  </head>\n  <body>\n    <form action=\"submit\" class=\"main\">\n      <h2 class=\"question\">Когда легче концентрироваться?</h2>\n      <fieldset class=\"concentration\">\n        <div>\n          <!-- добавьте ↓ name=\"concentration\" value=\"morn\" -->\n          <input type=\"radio\" id=\"morn\" name=\"concentration\" value=\"morn\" />\n          <label for=\"morn\">Утром</label>\n        </div>\n        <div>\n          <!-- задайте такое же имя, но другое значение -->\n          <input type=\"radio\" id=\"day\" name=\"concentration\" value=\"day\" />\n          <label for=\"day\">Днём</label>\n        </div>\n        <div>\n          <!-- задайте такое же имя, но другое значение -->\n          <input type=\"radio\" id=\"evn\" name=\"concentration\" value=\"evn\" />\n          <label for=\"evn\">Вечером</label>\n        </div>\n        <div>\n          <!-- задайте такое же имя, но другое значение -->\n          <input type=\"radio\" id=\"night\" name=\"concentration\" value=\"night\" />\n          <label for=\"night\">Ночью</label>\n        </div>\n      </fieldset>\n      <button type=\"submit\">Поделиться</button>\n    </form>\n  </body>\n</html>\n"
+    }
+  ],
+  "verifiedAt": "2026-10-20T08:17:50.845Z",
+  "evidence": {
+    "selector": ".result .icon-status-success",
+    "message": "Всё отлично!"
+  }
+}
