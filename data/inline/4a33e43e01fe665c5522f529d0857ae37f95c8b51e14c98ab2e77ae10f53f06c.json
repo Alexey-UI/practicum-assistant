@@ -1,0 +1,18 @@
+{
+  "id": "4a33e43e01fe665c5522f529d0857ae37f95c8b51e14c98ab2e77ae10f53f06c",
+  "lessonId": "5fde42f9-c083-49a3-98dd-795fd25c12c7",
+  "url": "https://sandbox.practicum-team.ru/tasks/01-semantics-and-layout/01-fonts-and-typography/05-text-overflow/example-04/",
+  "instructionsHash": "ad0fed4fe1d63cb94493bd9ab855283c42da6b4e91ffd5fc78b4523457a7600e",
+  "files": [
+    {
+      "name": "styles/style.css",
+      "initialHash": "a39281aec3b1e47840e95bc97fb2aaec9ca81b1c361b74d85baa45957c2ebc3d",
+      "content": "p {\n  width: 300px;\n  border: 1px solid pink;\n  font-family: 'Open Sans', sans-serif;\n  font-size: 24px;\n  overflow-wrap: break-word;\n}\n"
+    }
+  ],
+  "verifiedAt": "2026-10-20T15:19:24.921Z",
+  "evidence": {
+    "selector": ".result .icon-status-success",
+    "message": "Все круто"
+  }
+}

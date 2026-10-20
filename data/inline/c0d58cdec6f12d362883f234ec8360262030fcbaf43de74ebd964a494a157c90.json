@@ -1,0 +1,18 @@
+{
+  "id": "c0d58cdec6f12d362883f234ec8360262030fcbaf43de74ebd964a494a157c90",
+  "lessonId": "b3489d9f-0531-4179-a5b9-44cb3e98dc59",
+  "url": "https://sandbox.practicum-team.ru/tasks/01-semantics-and-layout/04-flexbox/02-transform-to-flex/example-01/pre/",
+  "instructionsHash": "ad23a13ecd9d20eb8a21b9630b9acfb5b740434859d47f172aec76ae039789a8",
+  "files": [
+    {
+      "name": "styles/style.css",
+      "initialHash": "8fddabb3242c8ec51a6d788ffdc7672726feddfd8894bf9b105cfaf329fbce66",
+      "content": "* {\n  box-sizing: border-box;\n}\n\nhtml,\nbody {\n  height: 100%;\n}\n\nbody {\n  min-width: 1000px;\n  margin: 0;\n  font-family: 'Open Sans', sans-serif;\n  font-size: 18px;\n}\n\n.form {\n  display: flex;\n}\n\n.logo {\n  height: 50px;\n}\n\n.search {\n  width: 450px;\n  border: 1px solid #000;\n  padding: 10px 15px;\n  font-family: inherit;\n  font-size: inherit;\n  background-color: transparent;\n}\n\n.search::placeholder {\n  color: rgb(0 0 0 / 0.6);\n}\n\n.search:focus {\n  outline: #000 solid 2px;\n  outline-offset: 0;\n}\n\n.search:invalid {\n  background-color: #fd24af;\n}\n\n.search:invalid::placeholder {\n  color: #000;\n}\n\n.button {\n  border: 1px solid #000;\n  padding: 10px 65px;\n  color: #000;\n  font-family: inherit;\n  font-weight: 800;\n  font-size: inherit;\n  text-transform: uppercase;\n  background-color: #ffc802;\n}\n\n.button:hover {\n  box-shadow: inset 0 0 0 100px rgb(0 0 0 / 0.15);\n  cursor: pointer;\n}\n\n.button:focus {\n  outline: 2px solid #000;\n  outline-offset: 0;\n}\n"
+    }
+  ],
+  "verifiedAt": "2026-10-20T15:19:38.083Z",
+  "evidence": {
+    "selector": ".result .icon-status-success",
+    "message": "Всё отлично!"
+  }
+}

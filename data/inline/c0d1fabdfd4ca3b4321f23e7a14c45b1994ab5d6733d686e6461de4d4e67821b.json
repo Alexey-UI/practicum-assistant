@@ -1,0 +1,18 @@
+{
+  "id": "c0d1fabdfd4ca3b4321f23e7a14c45b1994ab5d6733d686e6461de4d4e67821b",
+  "lessonId": "952fba42-6561-4545-b749-7fafac5daf7a",
+  "url": "https://sandbox.practicum-team.ru/tasks/01-semantics-and-layout/02-semantics/04-refactoring/example-01/pre/",
+  "instructionsHash": "b83f6b61d34f8448b45840cf079b3eb9b0462f8e42a8494eb9bedc0d1a65a02c",
+  "files": [
+    {
+      "name": "styles/style.css",
+      "initialHash": "329046021a29324d4aec85eeb4b028fb29f131f0a342e154665e43f3dbe12b50",
+      "content": "* {\n  box-sizing: border-box;\n}\n\nbody {\n  min-width: 850px;\n  margin: 0;\n  font-family: 'Open Sans', sans-serif;\n  font-size: 18px;\n}\n\nul {\n  margin: 0;\n  padding: 0;\n}\n\na {\n  color: currentColor;\n  text-underline-offset: 5px;\n}\n\na:hover {\n  color: #fd24af;\n}\n\n.footer {\n  padding: 15px;\n  text-align: center;\n}\n\n.wrapper {\n  max-width: 1200px;\n  margin: 0 auto;\n  padding: 0 15px;\n}\n\n.logo {\n  font-family: monospace;\n  font-size: 24px;\n}\n\n.title {\n  text-align: center;\n}\n\n.main {\n  flex-grow: 1;\n  padding: 25px;\n}\n\nbody {\n  display: flex;\n  flex-direction: column;\n  min-height: 100vh;\n}\n\n.list {\n  column-gap: 100px;\n  list-style-position: outside;\n  columns: 2;\n}\n\n.header {\n  padding: 30px;\n  background-color: #c4c4c4;\n}\n\n\n\n\n\n\n\n\n"
+    }
+  ],
+  "verifiedAt": "2026-10-20T15:15:45.125Z",
+  "evidence": {
+    "selector": ".result .icon-status-success",
+    "message": "Всё отлично!"
+  }
+}

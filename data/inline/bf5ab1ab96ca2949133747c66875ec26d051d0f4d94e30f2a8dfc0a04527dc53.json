@@ -1,0 +1,18 @@
+{
+  "id": "bf5ab1ab96ca2949133747c66875ec26d051d0f4d94e30f2a8dfc0a04527dc53",
+  "lessonId": "c6488fda-58b5-4275-a65e-2b9b2244b970",
+  "url": "https://sandbox.practicum-team.ru/tasks/000-freetrack/04-more-css/16-align-vertically/example-02/pre/",
+  "instructionsHash": "a72b829cb51495e91a84ef753bfd44015e18343f9bfd1c9b5a59a38343b6eb8e",
+  "files": [
+    {
+      "name": "index.html",
+      "initialHash": "ab567ea25a9cd073ca75e92c8fe19dabe03d46fe5671c3c1322511bc4e49bc50",
+      "content": "<!DOCTYPE html>\n<html lang=\"ru\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <title>4 правила вёрстки</title>\n    <link\n      rel=\"stylesheet\"\n      href=\"https://code.s3.yandex.net/web-code/fonts/fonts.css\"\n    />\n    <link rel=\"stylesheet\" href=\"styles/style.css\" />\n  </head>\n  <body>\n    <header>  \n      <div class=\"overlay\">\n        <h1>Четыре правила вёрстки</h1>\n      </div>      \n    </header>\n    <section class=\"content\">\n      <div class=\"card\">\n        <img\n          class=\"card-image\"\n          src=\"https://code.s3.yandex.net/web-code/images/freetrack/04/card-1.jpg\"\n          alt=\"Неоновые лампочки в виде символов светятся красным\"\n        />\n        <h3 class=\"card-title\">Пустота</h3>\n        <p class=\"card-text\">\n          Простое правило, которое часто нарушают: ставить рядом элементы с\n          похожим смыслом и окружать их пустым пространством. Пустота — мощное\n          средство воздействия.\n        </p>\n      </div>\n      <div class=\"card no-right-margin\">\n        <img\n          class=\"card-image\"\n          src=\"https://code.s3.yandex.net/web-code/images/freetrack/04/card-2.jpg\"\n          alt=\"Разметка теннисного корта крупным планом\"\n        />\n        <h3 class=\"card-title\">Сетка</h3>\n        <p class=\"card-text\">\n          Размеры элементов и расстояния между ними укладываются в гармоничную\n          схему — её называют сеткой. Если элемент выпадает, зритель может это\n          заметить.\n        </p>\n      </div>\n      <div class=\"card\">\n        <img\n          class=\"card-image\"\n          src=\"https://code.s3.yandex.net/web-code/images/freetrack/04/card-3.jpg\"\n        />\n        <h3 class=\"card-title\">Шрифты</h3>\n        <p class=\"card-text\">\n          Не больше трёх шрифтов на сайт. Один для заголовков, второй — для всех\n          остальных текстов, третий — для выделения важных слов. Должно хватить.\n        </p>\n      </div>\n      <div class=\"card no-right-margin\">\n        <img\n          class=\"card-image\"\n          src=\"https://code.s3.yandex.net/web-code/images/freetrack/04/card-4.jpg\"\n        />\n        <h3 class=\"card-title\">Цвета</h3>\n        <p class=\"card-text\">\n          Обычно на сайте два цвета: ведущий и акцентный. Подобрать удачную\n          цветовую пару можно за счёт насмотренности или специальных\n          инструментов.\n        </p>\n      </div>\n    </section>\n    <footer class=\"footer\">\n      <h4 class=\"footer-author\">Я х Практикум</h4>\n    </footer>\n  </body>\n</html>\n"
+    }
+  ],
+  "verifiedAt": "2026-10-20T14:56:15.024Z",
+  "evidence": {
+    "selector": ".result .icon-status-success",
+    "message": "Всё отлично!"
+  }
+}

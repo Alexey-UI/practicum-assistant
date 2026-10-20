@@ -1,0 +1,18 @@
+{
+  "id": "0976615ccea489e02dab3b57d9616cf76558d05d297e7d82eb8ff0b8eadc090a",
+  "lessonId": "44868f37-c9af-4140-954a-76fd0574b23f",
+  "url": "https://sandbox.practicum-team.ru/tasks/01-semantics-and-layout/02-semantics/03-tables/example-08/pre/",
+  "instructionsHash": "183b2aa42d5c058885dd3526b2c044b263770d02d44798fd90724d34e3ff1bca",
+  "files": [
+    {
+      "name": "index.html",
+      "initialHash": "aafa86b63def7417f46df08c695d2a50a2b21272413956934048df0e5ceb399d",
+      "content": "<!DOCTYPE html>\n<html lang=\"ru\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <title>Три романа с самым большим количеством слов</title>\n    <link\n      rel=\"stylesheet\"\n      href=\"https://code.s3.yandex.net/web-code/fonts/fonts.css\"\n    />\n    <link rel=\"stylesheet\" href=\"./styles/style.css\" />\n  </head>\n  <body>\n    <table>\n      <caption>Три романа с самым большим количеством слов</caption>\n      <thead>\n        <tr>\n          <th>Название книги</th>\n          <th>Автор</th>\n          <th>Количество слов</th>\n        </tr>\n      </thead>\n      <tbody>\n        <tr>\n          <td>Келидар</td>\n          <td>Махмуд Довлатабади</td>\n          <td>950 000</td>\n        </tr>\n        <tr>\n          <td>Venmurasu</td>\n          <td>Джеямонах</td>\n          <td>1 556 028</td>\n        </tr>\n        <tr>\n          <td>Люди доброй воли</td>\n          <td>Ромэн Жюль</td>\n          <td>2 000 000</td>\n        </tr>\n      </tbody>\n      <tfoot>\n        <tr>\n          <td colspan=\"2\">Среднее количество слов</td>\n          <td>1502009.3</td>\n        </tr>\n      </tfoot>\n    </table>\n  </body>\n</html>\n"
+    }
+  ],
+  "verifiedAt": "2026-10-20T15:15:02.306Z",
+  "evidence": {
+    "selector": ".result .icon-status-success",
+    "message": "Всё отлично!"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "id": "5346739afae7898dd2ec0b727d2bf2933eedddc81a10c1c5d381d7e7ba6bf6aa",
+  "lessonId": "92235169-4777-42ed-92ac-11e334febb54",
+  "url": "https://sandbox.practicum-team.ru/tasks/01-semantics-and-layout/04-flexbox/05-justify-content/example-02/pre/",
+  "instructionsHash": "95a0327532eeb0cfb099462867e7a8f53a7c6895d85f9912c2ee9a8730b19ac7",
+  "files": [
+    {
+      "name": "styles/style.css",
+      "initialHash": "b0ca2e0447468f65cf9ebab6e054109680a21bca61efe040bb1d8e08b6ec5ef1",
+      "content": "* {\n  box-sizing: border-box;\n}\n\nbody {\n  min-width: 850px;\n  margin: 0;\n  font-family: 'Open Sans', sans-serif;\n  font-weight: 600;\n  font-size: 18px;\n}\n\n.footer {\n  display: flex;\n\n  \n  \n  max-width: 1200px;\n  margin: 0 auto;\n  padding: 30px;\n  color: #fff;\n  background-color: #5f0dee;\n  justify-content: space-between;\n}\n\n.text {\n  font-size: 25px;\n}\n\n.copyright {\n  width: 100px;\n}\n\n.links-list {\n  display: flex;\n \n  list-style: none;\n}\n\n.links-list__item {\n  margin-left: 15px;\n}\n\n.link-list__link {\n  color: currentColor;\n  text-decoration: none;\n  text-transform: uppercase;\n}\n\n.link-list__link:hover {\n  text-decoration: underline;\n}\n"
+    }
+  ],
+  "verifiedAt": "2026-10-20T15:23:42.833Z",
+  "evidence": {
+    "selector": ".result .icon-status-success",
+    "message": "Всё отлично!"
+  }
+}

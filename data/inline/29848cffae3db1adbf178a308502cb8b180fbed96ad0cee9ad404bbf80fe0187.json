@@ -1,0 +1,23 @@
+{
+  "id": "29848cffae3db1adbf178a308502cb8b180fbed96ad0cee9ad404bbf80fe0187",
+  "lessonId": "c13089b3-3a0d-4259-aaa7-a69c9c5716c2",
+  "url": "https://sandbox.practicum-team.ru/tasks/01-semantics-and-layout/01-fonts-and-typography/03-add-external-fonts/example-02/pre/",
+  "instructionsHash": "57f9aa9a0402e66f5644bff37a9cb3a2f5f36dbc7197760ceee7080887622e34",
+  "files": [
+    {
+      "name": "index.html",
+      "initialHash": "a229c1cf98fb04478617d39fc7f5c98e9d489a0bac9d0dd04bf92a681e3d832f",
+      "content": "<!DOCTYPE html>\n<html lang=\"ru\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <meta http-equiv=\"X-UA-Compatible\" content=\"ie=edge\" />\n    <title>Многогранность рутины</title>\n    <link rel=\"stylesheet\" href=\"./styles/style.css\" />\n    <link rel=\"stylesheet\" href=\"https://fonts.googleapis.com/css2?family=Raleway&display=swap\" />\n  </head>\n  <body>\n    <h1 class=\"article-title\">Многогранность рутины</h1>\n    <div class=\"article-content\">\n      <p>\n        В кинофильме «Человек с бульвара Капуцинов» белокурая Диана Литтл наивно\n        <a href=\"https://www.kinopoisk.ru/film/45463/\" target=\"_blank\">говорит</a>\n        главному герою Джону Фёрсту: «Джонни, сделай монтаж». Влюблённая\n        девушка, недавно познакомившаяся с чудом синематографа, просит Джона\n        сократить расстояние от первого поцелуя до празднования свадьбы и\n        появления детей. Джонни впадает в ступор от нелепости запроса, но\n        простодушие Дианы не может вызывать ничего, кроме умиления.\n      </p>\n      <p>\n        В реальном мире нет монтажа, к результатам мы приходим шаг за шагом,\n        будто проходя по лестнице ступень за ступенью. Иногда можно перешагнуть\n        сразу через несколько, но для этого требуется больше усилий. Изучая\n        новое, пробуя использовать неизвестные ранее инструменты, невозможно\n        обойтись без рутины. Чтобы изучить что-то, необходимо повторение,\n        прилаживание изученного к разным контекстам. Никакого монтажа не будет.\n        Впереди только равномерное исследование, в котором нужно научиться\n        находить прелесть открытий.\n      </p>\n    </div>\n  </body>\n</html>\n"
+    },
+    {
+      "name": "styles/style.css",
+      "initialHash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "content": "body {\n  font-family: Raleway, sans-serif;\n}\n"
+    }
+  ],
+  "verifiedAt": "2026-10-20T15:17:27.437Z",
+  "evidence": {
+    "selector": ".result .icon-status-success",
+    "message": "Всё отлично!"
+  }
+}

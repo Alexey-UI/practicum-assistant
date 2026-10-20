@@ -1,0 +1,18 @@
+{
+  "id": "c1ab44ff8ddf652a01ef4df6c8adf8d2a923a89927afcb44a4d254188efa9a37",
+  "lessonId": "3f2f3cf2-502b-4d3c-83a0-e796f50c9d76",
+  "url": "https://sandbox.practicum-team.ru/tasks/000-freetrack/04-more-css/15-footer/example-04/pre/",
+  "instructionsHash": "0e90b3146c2f94ec8824b5967f6c498118cbe6d5558c67fa1bab95b0a49ca81c",
+  "files": [
+    {
+      "name": "styles/style.css",
+      "initialHash": "4a0eef9321bc0f4284153e374e25bfa44554c16c15a0c527568f85757e5732b1",
+      "content": "* {\n  box-sizing: border-box;\n}\n\nbody,\nh1,\nh2,\nh3,\nh4,\np {\n  margin: 0;\n  font-weight: normal;\n  font-size: 100%;\n}\n\nbody {\n  min-width: 850px;\n  font-family: 'Open Sans', Arial, sans-serif;\n}\n\nheader {\n  height: 100vh;\n  text-align: center;\n  background-color: #eee;\n  background-image: url(https://code.s3.yandex.net/web-code/images/freetrack/03/cover.png);\n  background-position: center;\n  background-size: cover;\n}\n\nh1 {\n  padding-top: 270px;\n  color: white;\n  font-weight: 800;\n  font-size: 74px;\n  text-transform: uppercase;\n}\n\n.overlay {\n  width: 100%;\n  height: 100%;\n  background-color: rgb(95 13 238 / 0.5);\n}\n\n.content {\n  width: 770px;\n  margin: 0 auto;\n  font-size: 0;\n}\n\n.card {\n  display: inline-block;\n  width: 360px;\n  margin-right: 50px;\n  margin-bottom: 50px;\n  border: 1px solid black;\n  padding: 25px 25px 30px;\n  box-shadow: 4px 4px 0 black;\n}\n\n.no-right-margin {\n  margin-right: 0;\n}\n\n.card-title {\n  margin-bottom: 10px;\n  font-weight: 800;\n  font-size: 31px;\n  text-align: center;\n  text-transform: uppercase;\n}\n\n.card-text {\n  font-size: 18px;\n}\n\n.card-image {\n  width: 100%;\n  margin-bottom: 20px;\n  border: 1px solid black;\n}\n\n.footer {\n  height: 200px;\n  background-color: #5f0dee;\n}\n\n.footer-author {\n  color: white;\n  font-weight: 800;\n  font-size: 25px;\n}\n"
+    }
+  ],
+  "verifiedAt": "2026-10-20T14:55:09.724Z",
+  "evidence": {
+    "selector": ".result .icon-status-success",
+    "message": "Всё отлично!"
+  }
+}

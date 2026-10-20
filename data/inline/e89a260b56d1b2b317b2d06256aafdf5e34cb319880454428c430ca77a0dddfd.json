@@ -1,0 +1,18 @@
+{
+  "id": "e89a260b56d1b2b317b2d06256aafdf5e34cb319880454428c430ca77a0dddfd",
+  "lessonId": "44868f37-c9af-4140-954a-76fd0574b23f",
+  "url": "https://sandbox.practicum-team.ru/tasks/01-semantics-and-layout/02-semantics/03-tables/example-02/pre/",
+  "instructionsHash": "2e3931fff20088dba3dfb6529093a3eb1c3c103c8aacfbd49dec36190225c53c",
+  "files": [
+    {
+      "name": "index.html",
+      "initialHash": "0fafb5dee6c4e041fbd471f38bda2b8e11e5ac82bb64a17d36af1942e6d23730",
+      "content": "<!DOCTYPE html>\n<html lang=\"ru\">\n<head>\n  <meta charset=\"UTF-8\" />\n  <meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\" />\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n  <title>Три романа с самым большим количеством слов</title>\n  <link\n    rel=\"stylesheet\"\n    href=\"https://code.s3.yandex.net/web-code/fonts/fonts.css\"\n  />\n  <link rel=\"stylesheet\" href=\"./styles/style.css\" />\n</head>\n<body>\n  <table>\n    <tr> <!-- первая строка с заголовками -->\n      <th>Название книги</th>\n      <th>Автор</th>\n      <th>Количество слов</th>\n    </tr>\n    <tr> <!-- вторая и последующие строки — данные таблицы -->\n      <td>Келидар</td>\n      <td>Махмуд Довлатабади</td>\n      <td>950 000</td>\n    </tr>\n  </table>\n</body>\n</html>\n"
+    }
+  ],
+  "verifiedAt": "2026-10-20T15:08:35.117Z",
+  "evidence": {
+    "selector": ".result .icon-status-success",
+    "message": "Всё отлично!"
+  }
+}

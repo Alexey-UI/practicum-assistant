@@ -1,0 +1,18 @@
+{
+  "id": "7ce4fb1d0401d0dac0ceddd91c61a00dc576b4db293005c13332321ce6c2f36a",
+  "lessonId": "c13089b3-3a0d-4259-aaa7-a69c9c5716c2",
+  "url": "https://sandbox.practicum-team.ru/tasks/01-semantics-and-layout/01-fonts-and-typography/03-add-external-fonts/example-01/pre/",
+  "instructionsHash": "ea7b5a2ad8bc216db42e87c34769da6f146a0781efb12df3c8f0506e23590b74",
+  "files": [
+    {
+      "name": "index.html",
+      "initialHash": "043372bdb7ba4ef9ac77d89a39a09e65c3a298e2ef2efa4d42e645f081da14e1",
+      "content": "<!DOCTYPE html>\n<html lang=\"ru\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <meta http-equiv=\"X-UA-Compatible\" content=\"ie=edge\" />\n    <title>Многогранность рутины</title>\n    <!-- Ссылка на шрифт Raleway: https://fonts.googleapis.com/css2?family=Raleway&display=swap -->\n    <link rel=\"stylesheet\" href=\"https://fonts.googleapis.com/css2?family=Raleway&display=swap\" />\n    <link rel=\"stylesheet\" href=\"./styles/style.css\" />\n  </head>\n  <body>\n    <h1 class=\"article-title\">Многогранность рутины</h1>\n    <div class=\"article-content\">\n      <p>\n        В кинофильме «Человек с бульвара Капуцинов» белокурая Диана Литтл наивно\n        <a href=\"https://www.kinopoisk.ru/film/45463/\" target=\"_blank\">говорит</a>\n        главному герою Джону Фёрсту: «Джонни, сделай монтаж». Влюблённая\n        девушка, недавно познакомившаяся с чудом синематографа, просит Джона\n        сократить расстояние от первого поцелуя до празднования свадьбы и\n        появления детей. Джонни впадает в ступор от нелепости запроса, но\n        простодушие Дианы не может вызывать ничего, кроме умиления.\n      </p>\n      <p>\n        В реальном мире нет монтажа, к результатам мы приходим шаг за шагом,\n        будто проходя по лестнице ступень за ступенью. Иногда можно перешагнуть\n        сразу через несколько, но для этого требуется больше усилий. Изучая\n        новое, пробуя использовать неизвестные ранее инструменты, невозможно\n        обойтись без рутины. Чтобы изучить что-то, необходимо повторение,\n        прилаживание изученного к разным контекстам. Никакого монтажа не будет.\n        Впереди только равномерное исследование, в котором нужно научиться\n        находить прелесть открытий.\n      </p>\n    </div>\n  </body>\n</html>\n"
+    }
+  ],
+  "verifiedAt": "2026-10-20T15:16:40.747Z",
+  "evidence": {
+    "selector": ".result .icon-status-success",
+    "message": "Всё отлично!"
+  }
+}

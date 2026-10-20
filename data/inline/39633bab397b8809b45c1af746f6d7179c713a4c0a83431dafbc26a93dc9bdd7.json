@@ -1,0 +1,18 @@
+{
+  "id": "39633bab397b8809b45c1af746f6d7179c713a4c0a83431dafbc26a93dc9bdd7",
+  "lessonId": "6af6b967-7b23-4110-9938-18968349af9d",
+  "url": "https://sandbox.practicum-team.ru/tasks/000-freetrack/04-more-css/17-one-step/example-01/pre/",
+  "instructionsHash": "dcdd1f02ff046cf12a750dd57131b09cad91afca26e64138f3c1595392e4993c",
+  "files": [
+    {
+      "name": "styles/style.css",
+      "initialHash": "f3bb145cd75c7421ba2ceeed0e28ce3c4999ab8bd0484751e9041fe154f41b00",
+      "content": "* {\n  box-sizing: border-box;\n}\n\nbody,\nh1,\nh2,\nh3,\nh4,\np {\n  margin: 0;\n  font-weight: normal;\n  font-size: 100%;\n}\n\nbody {\n  min-width: 850px;\n  font-family: 'Open Sans', Arial, sans-serif;\n}\n\n.header {\n  height: 100vh;\n  text-align: center;\n  background-color: #eee;\n  background-image: url(https://code.s3.yandex.net/web-code/images/freetrack/03/cover.png);\n  background-position: center;\n  background-size: cover;\n}\n\n.header-title {\n  margin: auto;\n  color: white;\n  font-weight: 800;\n  font-size: 74px;\n  text-transform: uppercase;\n}\n\n.overlay {\n  display: flex;\n  width: 100%;\n  height: 100%;\n  background-color: rgb(95 13 238 / 0.5);\n}\n\n.content {\n  width: 770px;\n  margin: 100px auto 50px;\n  font-size: 0;\n}\n\n.card {\n  display: inline-block;\n  width: 360px;\n  margin-right: 50px;\n  margin-bottom: 50px;\n  border: 1px solid black;\n  padding: 25px 25px 30px;\n  box-shadow: 4px 4px 0 black;\n}\n\n.no-right-margin {\n  margin-right: 0;\n}\n\n.card-title {\n  margin-bottom: 10px;\n  font-weight: 800;\n  font-size: 31px;\n  text-align: center;\n  text-transform: uppercase;\n}\n\n.card-text {\n  font-size: 18px;\n}\n\n.card-image {\n  width: 100%;\n  margin-bottom: 20px;\n  border: 1px solid black;\n}\n\n.footer {\n  display: flex;\n  height: 200px;\n  background-color: #5f0dee;\n}\n\n.footer-author {\n  margin: auto;\n  color: white;\n  font-weight: 800;\n  font-size: 25px;\n}\n"
+    }
+  ],
+  "verifiedAt": "2026-10-20T14:57:28.112Z",
+  "evidence": {
+    "selector": ".result .icon-status-success",
+    "message": "Всё отлично!"
+  }
+}

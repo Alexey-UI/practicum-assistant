@@ -1,0 +1,18 @@
+{
+  "id": "1bbbe51f4bfa27f087edcc47528b0cfe0090f409c3b82acfbf60532bb5a2afd5",
+  "lessonId": "5fde42f9-c083-49a3-98dd-795fd25c12c7",
+  "url": "https://sandbox.practicum-team.ru/tasks/01-semantics-and-layout/01-fonts-and-typography/05-text-overflow/example-03/pre/",
+  "instructionsHash": "b2d1bdc714d17f4d74250c529701f224127043478c1ea5c23fb263f0a2636475",
+  "files": [
+    {
+      "name": "styles/style.css",
+      "initialHash": "88b3d062f29b15c9740bd08889b14992bb8a18d240a765ff1433ddaa3bc1e372",
+      "content": "body {\n  min-width: 600px;\n  margin: 0;\n  padding: 20px;\n  background-color: #fff;\n  background-image: url(https://code.s3.yandex.net/web-code/images/dotted-l.svg);\n}\n\n.card {\n  max-width: 500px;\n  margin: auto;\n  border: 1px solid #000;\n  padding: 0 0 24px;\n  font-family: 'Open Sans', sans-serif;\n  font-size: 18px;\n  background-color: white;\n}\n\n.card__image {\n  width: 100%;\n  border-bottom: 1px solid;\n}\n\n.card__title {\n  margin: 20px 0;\n  padding: 0 20px;\n  font-weight: 800;\n  font-size: 38px;\n  letter-spacing: 2px;\n  text-transform: uppercase;\n}\n\n.card__description {\n  margin-bottom: 36px;\n  padding: 0 20px;\n}\n\n.card__description p {\n  margin: 0 0 16px;\n  overflow: hidden;\n  line-height: 1.8;\n  white-space: nowrap;\n  text-overflow: ellipsis;\n}\n\n.card__description a {\n  border-bottom: 2px dashed #feafe8;\n  color: #6dc1fd;\n  text-decoration: none;\n}\n\n.card__more-btn {\n  margin-left: 20px;\n  border: 1px solid #000;\n  padding: 10px 65px;\n  color: #000;\n  font-family: inherit;\n  font-weight: 800;\n  font-size: inherit;\n  text-decoration: none;\n  text-transform: uppercase;\n  background-color: #ffc802;\n}\n"
+    }
+  ],
+  "verifiedAt": "2026-10-20T15:19:20.468Z",
+  "evidence": {
+    "selector": ".result .icon-status-success",
+    "message": "Всё отлично!"
+  }
+}

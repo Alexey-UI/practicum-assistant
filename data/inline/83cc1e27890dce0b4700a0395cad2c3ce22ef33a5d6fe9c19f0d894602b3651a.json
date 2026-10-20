@@ -1,0 +1,18 @@
+{
+  "id": "83cc1e27890dce0b4700a0395cad2c3ce22ef33a5d6fe9c19f0d894602b3651a",
+  "lessonId": "b041751a-e456-4378-ad17-05d230637e6d",
+  "url": "https://sandbox.practicum-team.ru/tasks/01-semantics-and-layout/04-flexbox/03-nested-flex/example-03/pre/",
+  "instructionsHash": "ffcc0cbdca3dace73e555925058ed17fa2379fb1953c8bede54dbc68d633d31b",
+  "files": [
+    {
+      "name": "styles/style.css",
+      "initialHash": "2eb1246ee7ce67b478c93e0d77d2efb7a07548eb2388b0e98dd8dfb8a1b63ff4",
+      "content": "* {\n  box-sizing: border-box;\n}\n\nbody {\n  min-width: 850px;\n  margin: 0;\n  font-family: 'Open Sans', sans-serif;\n  font-size: 18px;\n}\n\n.header {\n  display: flex;\n  max-width: 1200px;\n  margin: 0 auto;\n  padding: 25px 15px;\n  background-color: #ffc802;\n}\n\n.logo__image {\n  width: 150px;\n}\n\n.menu {\n  margin-left: auto;\n}\n\n.menu__list {\n  \n  list-style: none;\n  display: flex;\n}\n\n.menu__list-item {\n  margin-left: 10px;\n}\n\n.menu__list-link {\n  color: #000;\n  font-weight: 600;\n  text-decoration: none;\n  text-transform: uppercase;\n}\n\n.menu__list-link:hover {\n  text-decoration: underline;\n}\n"
+    }
+  ],
+  "verifiedAt": "2026-10-20T15:19:59.078Z",
+  "evidence": {
+    "selector": ".result .icon-status-success",
+    "message": "Всё отлично!"
+  }
+}

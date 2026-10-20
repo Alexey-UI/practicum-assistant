@@ -1,0 +1,18 @@
+{
+  "id": "43d8f45c432cbc13b1b0ae40718ffef74b714de5d99fec433edfe7a7d3e5fc17",
+  "lessonId": "c6488fda-58b5-4275-a65e-2b9b2244b970",
+  "url": "https://sandbox.practicum-team.ru/tasks/000-freetrack/04-more-css/16-align-vertically/example-03/pre/",
+  "instructionsHash": "2bb33fb8ba6d70dfba424331b0aeec26a1a7f33a30fc42368fb2d869ffdedf91",
+  "files": [
+    {
+      "name": "styles/style.css",
+      "initialHash": "62796203596d8e1485c7f72a96c7404d6ce66839cf4578bdc11fa2ae62cebe32",
+      "content": "* {\n  box-sizing: border-box;\n}\n\nbody,\nh1,\nh2,\nh3,\nh4,\np {\n  margin: 0;\n  font-weight: normal;\n  font-size: 100%;\n}\n\nbody {\n  min-width: 850px;\n  font-family: 'Open Sans', Arial, sans-serif;\n}\n\nheader {\n  height: 100vh;\n  text-align: center;\n  background-color: #eee;\n  background-image: url(https://code.s3.yandex.net/web-code/images/freetrack/03/cover.png);\n  background-position: center;\n  background-size: cover;\n}\n\nh1 {\n  padding-top: 270px;\n  color: white;\n  font-weight: 800;\n  font-size: 74px;\n  text-transform: uppercase;\n  margin: auto;\n}\n\n.overlay {\n  width: 100%;\n  height: 100%;\n  background-color: rgb(95 13 238 / 0.5);\n  display: flex;\n}\n\n.content {\n  width: 770px;\n  margin: 0 auto;\n  font-size: 0;\n  margin-top: 50px;\n}\n\n.card {\n  display: inline-block;\n  width: 360px;\n  margin-right: 50px;\n  margin-bottom: 50px;\n  border: 1px solid black;\n  padding: 25px 25px 30px;\n  box-shadow: 4px 4px 0 black;\n}\n\n.no-right-margin {\n  margin-right: 0;\n}\n\n.card-title {\n  margin-bottom: 10px;\n  font-weight: 800;\n  font-size: 31px;\n  text-align: center;\n  text-transform: uppercase;\n}\n\n.card-text {\n  font-size: 18px;\n}\n\n.card-image {\n  width: 100%;\n  margin-bottom: 20px;\n  border: 1px solid black;\n}\n\n.footer {\n  display: flex;\n  height: 200px;\n  background-color: #5f0dee;\n}\n\n.footer-author {\n  margin: auto;\n  color: white;\n  font-weight: 800;\n  font-size: 25px;\n}\n"
+    }
+  ],
+  "verifiedAt": "2026-10-20T14:56:19.484Z",
+  "evidence": {
+    "selector": ".result .icon-status-success",
+    "message": "Всё отлично!"
+  }
+}

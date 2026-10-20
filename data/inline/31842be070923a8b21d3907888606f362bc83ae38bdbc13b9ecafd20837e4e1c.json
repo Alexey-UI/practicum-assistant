@@ -1,0 +1,18 @@
+{
+  "id": "31842be070923a8b21d3907888606f362bc83ae38bdbc13b9ecafd20837e4e1c",
+  "lessonId": "d0f0690f-3322-439c-82bc-f388eb2956a1",
+  "url": "https://sandbox.practicum-team.ru/tasks/01-semantics-and-layout/01-fonts-and-typography/04-decorating-text/example-03/",
+  "instructionsHash": "b3759e5ffa6d9463acdf77172979a13b51df8f3eaabc043f33ae5365b0ac3efc",
+  "files": [
+    {
+      "name": "styles/style.css",
+      "initialHash": "da5ae71d82025a65efa7dee7ba44c718406146a75e8c7fe27917e3a26f93adb5",
+      "content": "body {\n  min-width: 600px;\n  margin: 0;\n  padding: 20px;\n  background-color: #fff;\n  background-image: url(https://code.s3.yandex.net/web-code/images/dotted-l.svg);\n}\n\n.card {\n  max-width: 500px;\n  margin: auto;\n  border: 1px solid #000;\n  padding: 0 0 24px;\n  font-family: 'Open Sans', sans-serif;\n  font-size: 18px;\n  background-color: white;\n}\n\n.card__image {\n  width: 100%;\n  border-bottom: 1px solid;\n}\n\n.card__title {\n  margin: 20px 0;\n  padding: 0 20px;\n  font-weight: 800;\n  font-size: 38px;\n  letter-spacing: 2px;\n  text-transform: uppercase;\n}\n\n.card__description {\n  margin-bottom: 36px;\n  padding: 0 20px;\n}\n\n.card__description p {\n  margin: 0 0 16px;\n  line-height: 1.8;\n}\n\n.card__description a {\n  \n\n  \n  color: #6dc1fd;\n  border-bottom: 2px dashed #feafe8;\n  text-decoration: none;\n}\n\n.card__more-btn {\n  margin-left: 20px;\n  border: 1px solid #000;\n  padding: 10px 65px;\n  color: #000;\n  font-family: inherit;\n  font-weight: 800;\n  font-size: inherit;\n  text-transform: uppercase;\n  background-color: #ffc802;\n\n  \n  text-decoration: none;\n}\n"
+    }
+  ],
+  "verifiedAt": "2026-10-20T15:19:04.624Z",
+  "evidence": {
+    "selector": ".result .icon-status-success",
+    "message": "Все круто"
+  }
+}

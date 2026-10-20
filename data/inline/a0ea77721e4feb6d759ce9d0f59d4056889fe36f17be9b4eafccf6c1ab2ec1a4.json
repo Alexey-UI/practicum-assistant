@@ -1,0 +1,18 @@
+{
+  "id": "a0ea77721e4feb6d759ce9d0f59d4056889fe36f17be9b4eafccf6c1ab2ec1a4",
+  "lessonId": "d0f0690f-3322-439c-82bc-f388eb2956a1",
+  "url": "https://sandbox.practicum-team.ru/tasks/01-semantics-and-layout/01-fonts-and-typography/04-decorating-text/example-02/",
+  "instructionsHash": "dbe0e7dc64cc7a7809b09b14fd9199ebc8f2fb0478bcb1463a628cb0383ca46a",
+  "files": [
+    {
+      "name": "styles/style.css",
+      "initialHash": "2aed5dafe7d4339d46d0b9ea9c8b0d0e6b85e128f0ac8a03d8d5b12a662f25d5",
+      "content": "body {\n  min-width: 600px;\n  margin: 0;\n  padding: 20px;\n  background-color: #fff;\n  background-image: url(https://code.s3.yandex.net/web-code/images/dotted-l.svg);\n}\n\n.card {\n  max-width: 500px;\n  margin: auto;\n  border: 1px solid #000;\n  padding: 0 0 24px;\n  font-family: 'Open Sans', sans-serif;\n  font-size: 18px;\n  background-color: white;\n}\n\n.card__image {\n  width: 100%;\n  border-bottom: 1px solid;\n}\n\n.card__title {\n  margin: 20px 0;\n  padding: 0 20px;\n  font-weight: 800;\n  font-size: 38px;\n  text-transform: uppercase;\n\n  /* установите межбуквенное расстояние в 2px */\n  letter-spacing: 2px;\n}\n\n.card__description {\n  margin-bottom: 36px;\n  padding: 0 20px;\n}\n\n.card__description p {\n  margin: 0 0 16px;\n\n  /* Установите межстрочное расстояние в 1.8 */\n  line-height: 1.8;\n}\n\n.card__more-btn {\n  margin-left: 20px;\n  border: 1px solid #000;\n  padding: 10px 65px;\n  color: #000;\n  font-family: inherit;\n  font-weight: 800;\n  font-size: inherit;\n\n  /* трансформировать текст кнопки нужно здесь */\n  text-transform: uppercase;\n  background-color: #ffc802;\n}\n"
+    }
+  ],
+  "verifiedAt": "2026-10-20T15:17:41.547Z",
+  "evidence": {
+    "selector": ".result .icon-status-success",
+    "message": "Все круто"
+  }
+}

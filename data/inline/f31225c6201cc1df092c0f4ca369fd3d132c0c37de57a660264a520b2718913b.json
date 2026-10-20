@@ -1,0 +1,18 @@
+{
+  "id": "f31225c6201cc1df092c0f4ca369fd3d132c0c37de57a660264a520b2718913b",
+  "lessonId": "d0f0690f-3322-439c-82bc-f388eb2956a1",
+  "url": "https://sandbox.practicum-team.ru/tasks/01-semantics-and-layout/01-fonts-and-typography/04-decorating-text/example-01/pre/",
+  "instructionsHash": "ec265b34429a404d2c9015562b3935a1aac473d59803f7d10aa0c7568d5f4244",
+  "files": [
+    {
+      "name": "styles/style.css",
+      "initialHash": "9f4c45a46045829720589c2258aa46fa3810f14d1588043703ea9fe6120c485f",
+      "content": "body {\n  min-width: 600px;\n  margin: 0;\n  padding: 20px;\n  background-color: #fff;\n  background-image: url(https://code.s3.yandex.net/web-code/images/dotted-l.svg);\n}\n\n.card {\n  max-width: 500px;\n  margin: auto;\n  border: 1px solid #000;\n  padding: 0 0 24px;\n  font-family: 'Open Sans', sans-serif;\n  font-size: 18px;\n  background-color: white;\n}\n\n.card__image {\n  width: 100%;\n  border-bottom: 1px solid;\n}\n\n.card__title {\n  margin: 20px 0;\n  padding: 0 20px;\n  font-weight: 800;\n  font-size: 38px;\n\n  /* трансформировать заголовок нужно здесь */\n  text-transform: uppercase;\n}\n\n.card__description {\n  margin-bottom: 36px;\n  padding: 0 20px;\n}\n\n.card__description p {\n  margin: 0 0 16px;\n}\n\n.card__more-btn {\n  margin-left: 20px;\n  border: 1px solid #000;\n  padding: 10px 65px;\n  color: #000;\n  font-family: inherit;\n  font-weight: 800;\n  font-size: inherit;\n  background-color: #ffc802;\n\n  /* трансформировать текст кнопки нужно здесь */\n  text-transform: uppercase;\n}\n"
+    }
+  ],
+  "verifiedAt": "2026-10-20T15:17:37.602Z",
+  "evidence": {
+    "selector": ".result .icon-status-success",
+    "message": "Всё отлично!"
+  }
+}

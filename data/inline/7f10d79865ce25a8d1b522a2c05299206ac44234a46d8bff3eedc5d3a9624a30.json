@@ -1,0 +1,18 @@
+{
+  "id": "7f10d79865ce25a8d1b522a2c05299206ac44234a46d8bff3eedc5d3a9624a30",
+  "lessonId": "c6488fda-58b5-4275-a65e-2b9b2244b970",
+  "url": "https://sandbox.practicum-team.ru/tasks/000-freetrack/04-more-css/16-align-vertically/example-01/pre/",
+  "instructionsHash": "004117ee27b377df91e349ed5894dcbc1d47203ba8b85f48f9f95144f3fd5097",
+  "files": [
+    {
+      "name": "styles/style.css",
+      "initialHash": "5cb83a72ece7dd5aa8ee8b7056a168393e2ac510b6dd25d85c2714b5964bd973",
+      "content": "* {\n  box-sizing: border-box;\n}\n\nbody,\nh1,\nh2,\nh3,\nh4,\np {\n  margin: 0;\n  font-weight: normal;\n  font-size: 100%;\n}\n\nbody {\n  min-width: 850px;\n  font-family: 'Open Sans', Arial, sans-serif;\n}\n\nheader {\n  height: 100vh;\n  text-align: center;\n  background-color: #eee;\n  background-image: url(https://code.s3.yandex.net/web-code/images/freetrack/03/cover.png);\n  background-position: center;\n  background-size: cover;\n}\n\nh1 {\n  padding-top: 270px;\n  color: white;\n  font-weight: 800;\n  font-size: 74px;\n  text-transform: uppercase;\n}\n\n.overlay {\n  width: 100%;\n  height: 100%;\n  background-color: rgb(95 13 238 / 0.5);\n}\n\n.content {\n  width: 770px;\n  margin: 0 auto;\n  font-size: 0;\n  margin-top: 50px;\n}\n\n.card {\n  display: inline-block;\n  width: 360px;\n  margin-right: 50px;\n  margin-bottom: 50px;\n  border: 1px solid black;\n  padding: 25px 25px 30px;\n  box-shadow: 4px 4px 0 black;\n}\n\n.no-right-margin {\n  margin-right: 0;\n}\n\n.card-title {\n  margin-bottom: 10px;\n  font-weight: 800;\n  font-size: 31px;\n  text-align: center;\n  text-transform: uppercase;\n}\n\n.card-text {\n  font-size: 18px;\n}\n\n.card-image {\n  width: 100%;\n  margin-bottom: 20px;\n  border: 1px solid black;\n}\n\n.footer {\n  height: 200px;\n  background-color: #5f0dee;\n  display: flex;\n}\n\n.footer-author {\n  color: white;\n  font-weight: 800;\n  font-size: 25px;\n  margin: auto;\n}\n"
+    }
+  ],
+  "verifiedAt": "2026-10-20T14:55:21.138Z",
+  "evidence": {
+    "selector": ".result .icon-status-success",
+    "message": "Всё отлично!"
+  }
+}
