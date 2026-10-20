@@ -1,0 +1,18 @@
+{
+  "taskId": "495853b9-26e9-4046-813c-f135f2b3800e",
+  "lessonId": "0e87c847-e973-4388-9929-222be5082757",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "files": [
+    {
+      "name": "style.css",
+      "initialHash": "6c8b8d7dd7bc40fea78213b055e47b05b4b5e74a19bd4101f622cead2c793345",
+      "content": "*,\n*::before,\n*::after {\n  box-sizing: border-box;\n}\n\nbody {\n  display: grid;\n  place-items: center;\n  min-block-size: 100dvb;\n  margin: 0;\n  padding: 2em;\n  font-family: 'Open Sans', sans-serif;\n  font-size: 18px;\n  background-color: #5f0dee;\n}\n\n.video-list {\n  display: grid;\n  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));\n  margin: 0;\n  padding: 0;\n  list-style: none;\n}\n\nvideo {\n  inline-size: 100%;\n}\n\n.video-list li:first-of-type video {\n  /* маска первого видео */\n  -webkit-mask-image: url(../svg/ellipse-mask.svg);\n  mask-image: url(../svg/ellipse-mask.svg);\n}\n\n.video-list li:nth-of-type(2) video {\n  /* маска второго видео */\n  -webkit-mask-image: url(../svg/clover-mask.svg);\n  mask-image: url(../svg/clover-mask.svg);\n}\n\n.video-list li:nth-of-type(3) video {\n  /* маска третьего видео */\n  -webkit-mask-image: url(../svg/heart-mask.svg);\n  mask-image: url(../svg/heart-mask.svg);\n}"
+    }
+  ],
+  "instructionsHash": "c286467dfd8c06f9408ea53fb858bd4eb7813a2ba91c2b58fc474e7d132bb03d",
+  "verifiedAt": "2026-10-20T10:20:36.928Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Уже почти как нужно. Осталось отключить повтор маски."
+  }
+}

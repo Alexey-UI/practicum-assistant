@@ -1,0 +1,18 @@
+{
+  "taskId": "420af494-36be-4fb8-abff-9542e6088f6c",
+  "contextHash": "5cb4abdc14576c0a4751856e3ed63268bbbb5c4c2598b7ab6da774ad8eaf728a",
+  "lessonId": "75a54c3c-efa7-4cb3-abe5-8e1ec65da242",
+  "files": [
+    {
+      "name": "index.html",
+      "initialHash": "3595320a2f8b50cd53efa003a74fb879e2cb0f6cfa00bce356257e93b4490dee",
+      "content": "<!DOCTYPE html>\n<html lang=\"ru\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <title>Крестики нолики</title>\n    <link rel=\"stylesheet\" href=\"./styles/style.css\" />\n  </head>\n  <body>\n    <div class=\"game\">\n      <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 600 600\">\n        <rect\n          class=\"field\"\n          stroke=\"#000\"\n          fill=\"#ffc802\"\n          x=\"0\"\n          y=\"0\"\n          width=\"600\"\n          height=\"600\"\n        />\n        <line x1=\"200\" y1=\"0\" x2=\"200\" y2=\"600\" stroke=\"#000\" />\n  <line x1=\"400\" y1=\"0\" x2=\"400\" y2=\"600\" stroke=\"#000\" />\n  <line x1=\"0\" y1=\"200\" x2=\"600\" y2=\"200\" stroke=\"#000\" />\n  <line x1=\"0\" y1=\"400\" x2=\"600\" y2=\"400\" stroke=\"#000\" />\n</svg>\n    </div>\n  </body>\n</html>"
+    }
+  ],
+  "instructionsHash": "4c8ea931892e296a2472fa8d51ba3419e3247f42b1312b32d1d153476ad90cd6",
+  "verifiedAt": "2026-10-20T10:16:54.142Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Ого! Уже можно играть, если не бояться царапин на мониторе!"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "taskId": "db6b2701-d610-43c8-9525-77c11c2f7233",
+  "lessonId": "0e87c847-e973-4388-9929-222be5082757",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "files": [
+    {
+      "name": "style.css",
+      "initialHash": "ba8569f8502e12ce6d3b59892ca83b7f990d8b4c010d8754e1e638ef34934246",
+      "content": "*,\n*::before,\n*::after {\n  box-sizing: border-box;\n}\n\nbody {\n  display: grid;\n  place-items: center;\n  min-block-size: 100dvb;\n  margin: 0;\n  padding: 2em;\n  font-family: 'Open Sans', sans-serif;\n  font-size: 18px;\n  background-color: #5f0dee;\n}\n\n.video-list {\n  display: grid;\n  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));\n  margin: 0;\n  padding: 0;\n  list-style: none;\n}\n\nvideo {\n  inline-size: 100%;\n  -webkit-mask-position: center;\n  mask-position: center;\n  -webkit-mask-repeat: no-repeat;\n  mask-repeat: no-repeat;\n}\n\n.video-list li:first-of-type video {\n  -webkit-mask-image: url(../svg/ellipse-mask.svg);\n  mask-image: url(../svg/ellipse-mask.svg);\n}\n\n.video-list li:nth-of-type(2) video {\n  -webkit-mask-image: url(../svg/clover-mask.svg);\n  mask-image: url(../svg/clover-mask.svg);\n}\n\n.video-list li:nth-of-type(3) video {\n  -webkit-mask-image: url(../svg/heart-mask.svg);\n  mask-image: url(../svg/heart-mask.svg);\n}"
+    }
+  ],
+  "instructionsHash": "9283165d8f296b46092ce5bb9be36e4a2119fb53b44c92e6a86d38099fde39a2",
+  "verifiedAt": "2026-10-20T10:20:51.997Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Красотища!"
+  }
+}

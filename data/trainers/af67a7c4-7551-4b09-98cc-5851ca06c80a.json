@@ -1,0 +1,18 @@
+{
+  "taskId": "af67a7c4-7551-4b09-98cc-5851ca06c80a",
+  "lessonId": "75a54c3c-efa7-4cb3-abe5-8e1ec65da242",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "files": [
+    {
+      "name": "style.css",
+      "initialHash": "f6580bfb0bd0f8ac89eea7e0bbb8c93de2976beaba10a4e2097d449ded20f38b",
+      "content": "*,\n*::before,\n*::after {\n  box-sizing: border-box;\n}\n\nbody {\n  display: grid;\n  place-items: center;\n  min-block-size: 100dvb;\n  margin: 0;\n  padding: 2em;\n  background-color: #6dc1fd;\n}\n\n.game {\n  inline-size: 600px;\n  aspect-ratio: 1 / 1;\n}\n.field {\n  fill: #5f0dee;\n  stroke: #fd24af;\n  stroke-width: 10;\n}\n\nline,\ncircle {\n  stroke: #fff;\n}\n"
+    }
+  ],
+  "instructionsHash": "1afe660f3fe45dc887b351ec6a61a4a7614840aeac0de09f51a146fe98d7e990",
+  "verifiedAt": "2026-10-20T10:18:43.572Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Обычный CSS работает! Можно использовать любые селекторы, даже самые экзотические. Просто в SVG свой набор тегов."
+  }
+}

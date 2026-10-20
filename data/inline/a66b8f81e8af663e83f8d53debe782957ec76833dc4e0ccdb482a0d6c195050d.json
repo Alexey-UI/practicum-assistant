@@ -1,0 +1,18 @@
+{
+  "id": "a66b8f81e8af663e83f8d53debe782957ec76833dc4e0ccdb482a0d6c195050d",
+  "lessonId": "0e87c847-e973-4388-9929-222be5082757",
+  "url": "https://sandbox.practicum-team.ru/tasks/04-beautishcha/01-vector/06-svg-masks/example-02/pre/",
+  "instructionsHash": "43c82b5f6bd24f345e0c8be5e0ff88604a7db48f9cac43b080251cd9e31ebe58",
+  "files": [
+    {
+      "name": "styles/style.css",
+      "initialHash": "65b27cfb14a2294f0793a1ce7655cac20b8888db7d4648a6c915bcc4e0c8ee83",
+      "content": "* {\n  box-sizing: border-box;\n}\n\nhtml {\n  height: 100vh;\n}\n\nbody {\n  min-width: 850px;\n  min-height: 100vh;\n  margin: 0;\n  font-family: 'Open Sans', sans-serif;\n  font-size: 18px;\n  background-image: url(https://code.s3.yandex.net/web-code/images/dotted.svg);\n}\n\n.hero {\n  display: grid;\n  place-items: center;\n  padding-inline: 25px;\n  padding-block-start: 25px;\n  padding-block-end: 100px;\n  background-color: #fd24af;\n}\n\n.hero-title {\n  width: 90%;\n  max-width: 550px;\n  font-weight: 800;\n  font-size: 45px;\n  text-transform: uppercase;\n}\n\n.hero-image {\n  width: 250px;\n  height: 250px;\n  mask-image: url(../svg/mask.svg);\n}\n"
+    }
+  ],
+  "verifiedAt": "2026-10-20T10:19:44.627Z",
+  "evidence": {
+    "selector": ".result .icon-status-success",
+    "message": "Всё отлично!"
+  }
+}

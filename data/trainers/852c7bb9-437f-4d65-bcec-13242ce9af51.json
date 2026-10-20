@@ -1,0 +1,18 @@
+{
+  "taskId": "852c7bb9-437f-4d65-bcec-13242ce9af51",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "lessonId": "75a54c3c-efa7-4cb3-abe5-8e1ec65da242",
+  "files": [
+    {
+      "name": "index.html",
+      "initialHash": "73d607a0ac79ffee0fa9e571e6d73965c21dd01d59f139101c4ed181ea5742ee",
+      "content": "<!DOCTYPE html>\n<html lang=\"ru\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <title>Крестики нолики</title>\n    <link rel=\"stylesheet\" href=\"./styles/style.css\" />\n  </head>\n  <body>\n    <div class=\"game\">\n  <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 600 600\">\n    <rect class=\"field\" x=\"0\" y=\"0\" width=\"600\" height=\"600\" stroke=\"#000\" fill=\"#ffc802\" />\n  </svg>\n</div>\n  </body>\n</html>"
+    }
+  ],
+  "instructionsHash": "949f5c44ee91dd690cfb47bec5af43e72e6dc26b75a99377e5b74abf259da538",
+  "verifiedAt": "2026-10-20T10:16:39.380Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Игровое поле готово, а тег прямоугольника в SVG освоен!"
+  }
+}

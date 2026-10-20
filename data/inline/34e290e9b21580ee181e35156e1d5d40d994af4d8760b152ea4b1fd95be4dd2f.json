@@ -1,0 +1,18 @@
+{
+  "id": "34e290e9b21580ee181e35156e1d5d40d994af4d8760b152ea4b1fd95be4dd2f",
+  "lessonId": "0e87c847-e973-4388-9929-222be5082757",
+  "url": "https://sandbox.practicum-team.ru/tasks/04-beautishcha/01-vector/06-svg-masks/example-01/pre/",
+  "instructionsHash": "9c761b50ebe47815fb2ed917fbad4e13701d0e272e605241404f55b1a0f198a7",
+  "files": [
+    {
+      "name": "index.html",
+      "initialHash": "c73703bc428fcb2cb95b55e70b4312b37a0d7265cd82aaddcd2ca9a03379482c",
+      "content": "<!DOCTYPE html>\n<html lang=\"ru\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <meta http-equiv=\"X-UA-Compatible\" content=\"ie=edge\" />\n    <title>SVG-маска</title>\n    <link\n      rel=\"stylesheet\"\n      href=\"https://code.s3.yandex.net/web-code/fonts/fonts.css\"\n    />\n    <link rel=\"stylesheet\" href=\"./styles/style.css\" />\n  </head>\n  <body>\n    <header class=\"hero\">\n  <img class=\"hero-image\" src=\"https://picsum.practicum-team.ru/random-image?width=500&grayscale\" alt=\"Случайная картинка.\">\n      <h1 class=\"hero-title\">Чтобы эффективно учиться, нужно хорошо спать</h1>\n    </header>\n  </body>\n</html>\n"
+    }
+  ],
+  "verifiedAt": "2026-10-20T10:19:05.990Z",
+  "evidence": {
+    "selector": ".result .icon-status-success",
+    "message": "Всё отлично!"
+  }
+}

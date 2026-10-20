@@ -1,0 +1,18 @@
+{
+  "taskId": "3a2fa128-cc39-4356-a585-ac200e640598",
+  "lessonId": "75a54c3c-efa7-4cb3-abe5-8e1ec65da242",
+  "contextHash": "ea94dd781cfbc153ced74132ab49dde66fd23857bc2ca355b76da44ef44f0b0e",
+  "files": [
+    {
+      "name": "index.html",
+      "initialHash": "cd7360ccfaee3842cf4186579e6016d51f889d14dda2a453321a9328417600c8",
+      "content": "<!DOCTYPE html>\n<html lang=\"ru\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <title>Крестики нолики</title>\n    <link rel=\"stylesheet\" href=\"./styles/style.css\" />\n  </head>\n  <body>\n    <div class=\"game\">\n      <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 600 600\">\n        <rect\n          class=\"field\"\n          stroke=\"#000\"\n          fill=\"#ffc802\"\n          x=\"0\"\n          y=\"0\"\n          width=\"600\"\n          height=\"600\"\n        />\n        <line x1=\"200\" y1=\"0\" x2=\"200\" y2=\"600\" stroke=\"#000\"></line>\n        <line x1=\"400\" y1=\"0\" x2=\"400\" y2=\"600\" stroke=\"#000\"></line>\n        <line x1=\"0\" y1=\"200\" x2=\"600\" y2=\"200\" stroke=\"#000\"></line>\n        <line x1=\"0\" y1=\"400\" x2=\"600\" y2=\"400\" stroke=\"#000\"></line>\n        <symbol id=\"cross\">\n          <line x1=\"20\" y1=\"20\" x2=\"180\" y2=\"180\" stroke=\"#000\"></line>\n          <line x1=\"20\" y1=\"180\" x2=\"180\" y2=\"20\" stroke=\"#000\"></line>\n        </symbol>\n        <symbol id=\"round\">\n          <circle cx=\"100\" cy=\"100\" r=\"90\" stroke=\"#000\" fill=\"none\"></circle>\n        </symbol>\n        <use href=\"#cross\" x=\"0\" y=\"0\" />\n  <use href=\"#round\" x=\"200\" y=\"0\" />\n  <use href=\"#cross\" x=\"400\" y=\"0\" />\n  <use href=\"#cross\" x=\"0\" y=\"200\" />\n  <use href=\"#cross\" x=\"200\" y=\"200\" />\n  <use href=\"#round\" x=\"400\" y=\"200\" />\n  <use href=\"#round\" x=\"0\" y=\"400\" />\n  <use href=\"#round\" x=\"200\" y=\"400\" />\n  <use href=\"#cross\" x=\"400\" y=\"400\" />\n</svg>\n    </div>\n  </body>\n</html>"
+    }
+  ],
+  "instructionsHash": "42f09ebc09212f90d925e7af912c0304b9fef9661f2bd6beb01d18b8746ff9ba",
+  "verifiedAt": "2026-10-20T10:18:02.664Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Надеемся, вы болели за крестики!"
+  }
+}

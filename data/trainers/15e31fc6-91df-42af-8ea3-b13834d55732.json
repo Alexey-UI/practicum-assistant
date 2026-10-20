@@ -1,0 +1,18 @@
+{
+  "taskId": "15e31fc6-91df-42af-8ea3-b13834d55732",
+  "contextHash": "3660078bfb1f255f1c3d658495b8f802cc4b65922d559977f852496d051caaa8",
+  "lessonId": "75a54c3c-efa7-4cb3-abe5-8e1ec65da242",
+  "files": [
+    {
+      "name": "index.html",
+      "initialHash": "4ed9d08be3c362fb7ae70de77033f0c8e4e09293aac13d6a8cb9757c4c309e21",
+      "content": "<!DOCTYPE html>\n<html lang=\"ru\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <title>Крестики нолики</title>\n    <link rel=\"stylesheet\" href=\"./styles/style.css\" />\n  </head>\n  <body>\n    <div class=\"game\">\n      <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 600 600\">\n        <rect\n          class=\"field\"\n          stroke=\"#000\"\n          fill=\"#ffc802\"\n          x=\"0\"\n          y=\"0\"\n          width=\"600\"\n          height=\"600\"\n        />\n        <line x1=\"200\" y1=\"0\" x2=\"200\" y2=\"600\" stroke=\"#000\"></line>\n        <line x1=\"400\" y1=\"0\" x2=\"400\" y2=\"600\" stroke=\"#000\"></line>\n        <line x1=\"0\" y1=\"200\" x2=\"600\" y2=\"200\" stroke=\"#000\"></line>\n        <line x1=\"0\" y1=\"400\" x2=\"600\" y2=\"400\" stroke=\"#000\"></line>\n        <g class=\"cross\">\n    <line x1=\"20\" y1=\"20\" x2=\"180\" y2=\"180\" stroke=\"#000\" />\n    <line x1=\"20\" y1=\"180\" x2=\"180\" y2=\"20\" stroke=\"#000\" />\n  </g>\n  <g class=\"round\">\n    <circle cx=\"300\" cy=\"100\" r=\"90\" stroke=\"#000\" fill=\"none\" />\n  </g>\n</svg>\n    </div>\n  </body>\n</html>"
+    }
+  ],
+  "instructionsHash": "3d95c042844bb59afb3c658b8f96ba427297be0e31184e7f3fcec9fc9fc05f2c",
+  "verifiedAt": "2026-10-20T10:17:29.915Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Отлично справились! Но играть в крестики нолики с таким количеством арифметики совсем не весело =("
+  }
+}
