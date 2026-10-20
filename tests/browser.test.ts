@@ -31,7 +31,7 @@ test('Пустая оболочка урока перезагружается б
   try {
     await page.route('https://practicum.yandex.ru/**', route => {
       reads++;
-      return route.fulfill({ contentType: 'text/html; charset=utf-8', body: reads === 1 ? '<main><button>Проверить</button></main>' : '<main><h1>Урок загружен</h1></main>' });
+      return route.fulfill({ contentType: 'text/html; charset=utf-8', body: reads === 1 ? '<main><h1>Теория в модальном окне</h1><button>Проверить</button></main>' : '<main><h1>Урок загружен</h1><textarea aria-label="Содержимое редактора"></textarea></main>' });
     });
     await page.exposeFunction('recordCheck', () => { checks++; });
     await page.goto('https://practicum.yandex.ru/trainer/test/lesson/example/task/example/');

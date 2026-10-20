@@ -6,6 +6,7 @@ import { lessonId, safeUrl } from './browser.js';
 interface MirrorElement extends HTMLElement { CodeMirror?: { getValue(): string } }
 export interface InlineTask {
   id: string; lessonId: string; url: string; instructions: string; instructionsHash: string;
+  previousInstructionsHash?: string;
   files: Array<{ name: string; content: string; hash: string }>;
 }
 export interface InlineSolution {
@@ -80,19 +81,26 @@ export async function readInline(page: Page, index: number): Promise<InlineTask>
   if (!names.length || new Set(names).size !== names.length) throw new Error('Не удалось однозначно прочитать вкладки встроенного редактора');
   const instructions = await page.locator('.theory-viewer iframe').nth(index).evaluate(iframe => {
     const parts: string[] = [];
+    const previous: string[] = [];
     let current: Node | null = iframe.closest('.iframe-wrapper') ?? iframe;
     const boundary = iframe.closest('.theory-viewer');
     while (current && current !== boundary && parts.join('').length < 16000) {
       let node = current.previousSibling;
       while (node) {
-        if (node instanceof Element && (node.matches('iframe') || node.querySelector('iframe'))) return parts.join(' ');
-        parts.unshift(node.textContent ?? ''); node = node.previousSibling;
+        if (node instanceof Element && (node.matches('iframe') || node.querySelector('iframe'))) return { clean: parts.join(' '), previous: previous.join(' ') };
+        previous.unshift(node.textContent ?? '');
+        const copy = node.cloneNode(true);
+        if (copy instanceof Element) {
+          copy.querySelectorAll('.chat__message-author').forEach(author => author.remove());
+          parts.unshift(copy.matches('.chat__message-author') ? '' : copy.textContent ?? '');
+        } else parts.unshift(copy.textContent ?? '');
+        node = node.previousSibling;
       }
       current = current.parentNode;
     }
-    return parts.join(' ');
+    return { clean: parts.join(' '), previous: previous.join(' ') };
   });
-  if (!normalize(instructions)) throw new Error('Не найдено условие встроенного упражнения');
+  if (!normalize(instructions.clean)) throw new Error('Не найдено условие встроенного упражнения');
   const files: InlineTask['files'] = [];
   for (const name of names) {
     await selectFile(frame, name);
@@ -103,7 +111,7 @@ export async function readInline(page: Page, index: number): Promise<InlineTask>
   const url = safeUrl(frame.url());
   const ownerLesson = lessonId(page.url());
   if (!ownerLesson) throw new Error('Не определён урок встроенного примера');
-  const task = { id: contentHash(url), lessonId: ownerLesson, url, instructions: normalize(instructions), instructionsHash: contentHash(normalize(instructions)), files };
+  const task = { id: contentHash(url), lessonId: ownerLesson, url, instructions: normalize(instructions.clean), instructionsHash: contentHash(normalize(instructions.clean)), previousInstructionsHash: contentHash(normalize(instructions.previous)), files };
   await atomicJson('.local/pending-inline.json', task);
   return task;
 }
@@ -204,6 +212,19 @@ export async function solveInline(page: Page, index: number, candidate = false):
 
 export async function inlineCommand(page: Page, action: { command?: string; index?: number }): Promise<unknown> {
   const index = action.index ?? 0;
+  if (action.command === 'normalize-context') {
+    const task = await readInline(page, index);
+    for (const directory of ['data/inline', '.local/inline-solutions']) {
+      const file = `${directory}/${task.id}.json`;
+      const solution = await readJson<InlineSolution | null>(file, null);
+      if (!solution) continue;
+      if (solution.id !== task.id || solution.lessonId !== task.lessonId || solution.url !== task.url || ![task.instructionsHash, task.previousInstructionsHash].includes(solution.instructionsHash) || solution.files.some(item => task.files.find(current => current.name === item.name)?.hash !== contentHash(item.content))) throw new Error('Нормализация допускается только при неизменном условии и коде ранее проверенного решения');
+      const state = await readJson<InlineState | null>(`.local/inline/${task.id}.json`, null);
+      if (state?.phase !== 'correct' || state.solutionHash !== contentHash(JSON.stringify(solution.files))) throw new Error('Нет подтверждённого результата текущего решения');
+      await atomicJson(file, { ...solution, instructionsHash: task.instructionsHash });
+    }
+    return { id: task.id, normalized: true };
+  }
   if (action.command === 'preview') {
     const frame = await sandboxFrame(page, index);
     const link = frame.locator('.runtime .toolbar a');

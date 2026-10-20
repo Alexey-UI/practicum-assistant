@@ -44,6 +44,7 @@ export async function status(): Promise<void> {
     referenceProjects: projects.length, acceptedProjects, preparedManualProjects, selfCheckedProjects,
     mockApiReferences: projects.filter(project => project.verification === 'mock-api').length,
     deferredLessons: Object.keys(await readJson<Record<string, unknown>>('.local/deferred-lessons.json', {})).filter(url => !completed[url] && !lessons.some(lesson => lesson.url === url && lesson.solved)).length,
+    unavailableLessons: Object.keys(await readJson<Record<string, unknown>>('.local/unavailable-lessons.json', {})).filter(url => !completed[url] && !lessons.some(lesson => lesson.url === url && lesson.solved)).length,
   };
   await atomicJson('.local/status.json', result);
   console.log(JSON.stringify(result, null, 2));

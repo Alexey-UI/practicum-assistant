@@ -16,6 +16,20 @@ import { atomicJson, journal, lockRun, readJson } from './store.js';
 
 function pause(message: string): void { console.log(message); process.exitCode = 2; }
 
+async function waitReadyOrDefer(page: Page, lesson: Lesson): Promise<boolean> {
+  try { await waitLessonReady(page); return true; }
+  catch (error) {
+    if (page.isClosed()) throw error;
+    const artifacts = await snapshot(page, 'lesson-unavailable');
+    const failures = await readJson<Record<string, unknown>>('.local/unavailable-lessons.json', {});
+    failures[canonicalLesson(lesson.url)] = { title: lesson.title, failedUrl: safeUrl(page.url()), artifacts, observedAt: new Date().toISOString() };
+    await atomicJson('.local/unavailable-lessons.json', failures);
+    await journal('lesson-unavailable', { url: canonicalLesson(lesson.url), failedUrl: safeUrl(page.url()), artifacts });
+    console.log(`Урок не загрузился после повторных чтений, прохождение не засчитано: ${artifacts}`);
+    return false;
+  }
+}
+
 async function inlineStep(page: Page, research: boolean): Promise<boolean> {
   for (const index of await gradedSandboxIndices(page)) {
     if (await solveInline(page, index)) continue;
@@ -134,7 +148,9 @@ export async function run(): Promise<void> {
     }
     if (args.includes('--catalog-only')) { console.log('Каталог сохранён в .local/catalog.json'); return; }
     const verified = await readJson<Record<string, string>>('.local/completed.json', {});
+    const unavailable = args.includes('--skip-unavailable') ? await readJson<Record<string, unknown>>('.local/unavailable-lessons.json', {}) : {};
     for (const lesson of lessons) {
+      if (unavailable[canonicalLesson(lesson.url)]) { console.log(`Временно недоступный урок отложен: ${lesson.title}`); continue; }
       const skipped = projects.find(project => skippedProjects.includes(project.id) && canonicalLesson(project.lessonUrl) === canonicalLesson(lesson.url));
       if (skipped) {
         console.log(`Проект временно отложен: ${skipped.title}. Прохождение не засчитано.`);
@@ -150,7 +166,7 @@ export async function run(): Promise<void> {
       const titleNode = page.locator('h1').filter({ hasText: /\S/, visible: true });
       const taskTab = page.getByRole('tab', { name: 'Задание', exact: true });
       const editor = page.getByRole('textbox', { name: 'Содержимое редактора', exact: true });
-      await waitLessonReady(page);
+      if (!await waitReadyOrDefer(page, lesson)) continue;
       await journal('lesson-open', { url: safeUrl(page.url()), title: lesson.title });
       const observed = await observedSolved(page);
       await saveObservedSolved(observed);
@@ -253,7 +269,7 @@ export async function run(): Promise<void> {
           const previous = page.url();
           await next.click();
           await page.waitForURL(url => url.href !== previous, { waitUntil: 'commit', timeout: 180000 });
-          await waitLessonReady(page);
+          if (!await waitReadyOrDefer(page, lesson)) { deferred = true; break; }
           await settle(page);
           await journal('lesson-transition', { from: safeUrl(previous), url: safeUrl(page.url()) });
           if (lessonId(page.url()) === lessonId(lesson.url)) {

@@ -49,7 +49,8 @@ export async function waitLessonReady(page: Page, attemptTimeoutMs = 60000): Pro
   const editor = page.getByRole('textbox', { name: 'Содержимое редактора', exact: true });
   for (let attempt = 0; attempt < 3; attempt++) {
     try {
-      await heading.or(tab).or(editor).filter({ visible: true }).first().waitFor({ state: 'visible', timeout: attemptTimeoutMs });
+      const ready = isTrainerTaskUrl(page.url()) ? editor : heading.or(tab).or(editor);
+      await ready.filter({ visible: true }).first().waitFor({ state: 'visible', timeout: attemptTimeoutMs });
       return;
     } catch (error) {
       if (page.isClosed() || attempt === 2) throw error;

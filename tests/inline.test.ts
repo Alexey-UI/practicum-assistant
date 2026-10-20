@@ -64,6 +64,21 @@ test('Асинхронное переключение вкладок не сме
   } finally { process.chdir(original); await page.close(); await rm(dir, { recursive: true, force: true }); }
 });
 
+test('Имя участника диалога не меняет ключ условия, текст задания продолжает проверяться', async () => {
+  const page = await browser.newPage(); const original = process.cwd(); const dir = await mkdtemp(path.join(tmpdir(), 'practicum-inline-names-'));
+  try {
+    process.chdir(dir); await fixture(page, false);
+    await page.locator('.theory-viewer p').evaluate(el => { el.innerHTML = '<span class="chat__message-author">Один пользователь</span>Исправьте язык документа.'; });
+    const first = await readInline(page, 0);
+    await page.locator('.chat__message-author').evaluate(el => { el.textContent = 'Другой пользователь'; });
+    const second = await readInline(page, 0);
+    assert.equal(first.instructionsHash, second.instructionsHash);
+    assert.notEqual(first.previousInstructionsHash, second.previousInstructionsHash);
+    await page.locator('.theory-viewer p').evaluate(el => { el.append(' Новое требование.'); });
+    assert.notEqual((await readInline(page, 0)).instructionsHash, second.instructionsHash);
+  } finally { process.chdir(original); await page.close(); await rm(dir, { recursive: true, force: true }); }
+});
+
 test('Отклонённое встроенное решение исправляется с исходным хешем, ошибочный вариант не попадает в библиотеку', async () => {
   const page = await browser.newPage(); const original = process.cwd(); const dir = await mkdtemp(path.join(tmpdir(), 'practicum-inline-retry-'));
   try {
