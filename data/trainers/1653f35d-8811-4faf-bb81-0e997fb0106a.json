@@ -1,0 +1,18 @@
+{
+  "taskId": "1653f35d-8811-4faf-bb81-0e997fb0106a",
+  "lessonId": "b91570e1-7eeb-45ab-8900-105664155d47",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "files": [
+    {
+      "name": "style.css",
+      "initialHash": "543ca1050d2b16687bde0cddabf175805214721c7c87cb23abd32e0400cb5d20",
+      "content": "@keyframes rotate {\n  to {\n    transform: rotate(360deg);\n  }\n}\n\n*,\n*::before,\n*::after {\n  box-sizing: border-box;\n}\n\nhtml {\n  block-size: 100%;\n}\n\nbody {\n  display: grid;\n  place-items: center;\n  inline-size: 100%;\n  block-size: 100vh;\n  overflow: hidden;\n  background-color: #daecf9;\n  background-image: url(../images/forest.png);\n  background-repeat: no-repeat;\n  background-position: bottom center;\n  background-size: contain;\n}\n\n.helicopter {\n  position: relative;\n  transform: translate3d(-200px, -100px, 0);\n}\n\n.cockpit {\n  position: absolute;\n  z-index: 1;\n  inline-size: 200px;\n  block-size: 160px;\n  border-radius: 100px 40px 50px 50px;\n  overflow: hidden;\n  background-color: #80d994;\n}\n\n.cockpit::after {\n  content: '';\n  position: absolute;\n  inset: -40px 0 0 -60px;\n  z-index: 1;\n  inline-size: 170px;\n  block-size: 140px;\n  border-radius: 40px;\n  background-color: #8d8d8d;\n}\n\n.tail {\n  position: absolute;\n  inset: 50px 0 0 150px;\n  block-size: 10px;\n  border-inline-start: 350px solid #a6deb3;\n  border-block-start: 10px solid transparent;\n  border-block-end: 80px solid transparent;\n  transform-origin: left center;\n}\n\n.under {\n  position: absolute;\n  inset: -10px 0 0 130px;\n  inline-size: 40px;\n  block-size: 20px;\n  background-color: #3d3d3e;\n}\n\n.propeller {\n  position: absolute;\n  inset: -320px 0 0 -150px;\n  z-index: 2;\n  inline-size: 600px;\n  block-size: 600px;\n  border-radius: 50%;\n  opacity: 0.2;\n  overflow: hidden;\n  background-color: #939bab;\n  transform: rotateX(86deg);\n}\n\n.hightlight {\n  position: absolute;\n  inline-size: 100%;\n  block-size: 100%;\n  border-radius: 50%;\n  animation: rotate 0.8s linear infinite;\n}\n\n.hightlight div {\n  position: absolute;\n  inset: 50% 0 0 50%;\n  inline-size: 700px;\n  block-size: 60px;\n  margin-inline-start: -350px;\n  margin-block-start: -30px;\n  background-color: #fff;\n}\n\n.hightlight div:nth-child(1) {\n  transform: rotate(0deg);\n}\n\n.hightlight div:nth-child(2) {\n  transform: rotate(90deg);\n}\n\n.propeller-back {\n  position: absolute;\n  inset: -75px 0 0 -65px;\n  z-index: 2;\n  inline-size: 140px;\n  block-size: 140px;\n  border-radius: 50%;\n  opacity: 0.2;\n  overflow: hidden;\n  background-color: #939bab;\n  animation: rotate 0.8s linear infinite;\n}\n\n.hightlight-back div {\n  position: absolute;\n  inset: 48% 0 0 -10px;\n  inline-size: 160px;\n  block-size: 10px;\n  background-color: #fff;\n}\n\n.hightlight-back div:nth-child(1) {\n  transform: rotate(40deg);\n}\n\n.hightlight-back div:nth-child(2) {\n  transform: rotate(-40deg);\n}\n\n@media (width <= 786px) {\n  .helicopter {\n    transform: translate3d(-100px, 0, 0);\n  }\n}"
+    }
+  ],
+  "instructionsHash": "03b2b05d598f85e1b9e403759f2806cd5453c2cde09c9f3ac6f84a322f5f8038",
+  "verifiedAt": "2026-10-20T11:33:36.528Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Вы переместили вертолёт в пространстве сразу по трём осям."
+  }
+}

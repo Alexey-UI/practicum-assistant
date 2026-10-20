@@ -51,6 +51,26 @@ test('Встроенное упражнение вводится через ре
   } finally { process.chdir(original); await page.close(); await rm(dir, { recursive: true, force: true }); }
 });
 
+test('Условие после демо внутри предыдущего блока читается без текста до демо', async () => {
+  const page = await browser.newPage(); const original = process.cwd(); const dir = await mkdtemp(path.join(tmpdir(), 'practicum-inline-tail-'));
+  try {
+    process.chdir(dir); await fixture(page, false);
+    await page.locator('.theory-viewer > section').first().evaluate(el => {
+      el.innerHTML = '<p>Старое задание.</p><div><iframe></iframe></div><section><p><span class="chat__message-author">Пользователь</span>Задайте точку перспективы.</p></section>';
+    });
+    const task = await readInline(page, 1);
+    assert.equal(task.instructions, 'Задайте точку перспективы.');
+    assert.notEqual(task.instructionsHash, task.previousInstructionsHash);
+    await page.locator('.chat__message-author').evaluate(el => { el.textContent = 'Другой пользователь'; });
+    assert.equal((await readInline(page, 1)).instructionsHash, task.instructionsHash);
+    await page.locator('.theory-viewer > section section p').evaluate(el => { el.append(' Новое требование.'); });
+    assert.notEqual((await readInline(page, 1)).instructionsHash, task.instructionsHash);
+    await page.locator('.theory-viewer > section').last().evaluate(el => { el.insertAdjacentHTML('beforebegin', '<p>Отдельное условие.</p>'); });
+    assert.equal((await readInline(page, 1)).instructions, 'Отдельное условие.');
+    assert.equal(await (await sandboxFrame(page, 1)).locator('body').getAttribute('data-clicks'), null);
+  } finally { process.chdir(original); await page.close(); await rm(dir, { recursive: true, force: true }); }
+});
+
 test('Пример для чтения не отправляется на проверку и распознаётся только в исходном контексте', async () => {
   const page = await browser.newPage(); const original = process.cwd(); const dir = await mkdtemp(path.join(tmpdir(), 'practicum-inline-demo-'));
   try {

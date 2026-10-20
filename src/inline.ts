@@ -118,7 +118,21 @@ export async function readInline(page: Page, index: number, onlyNames?: string[]
     while (current && current !== boundary && parts.join('').length < 16000) {
       let node = current.previousSibling;
       while (node) {
-        if (node instanceof Element && (node.matches('iframe') || node.querySelector('iframe'))) return { clean: parts.join(' '), previous: previous.join(' ') };
+        if (node instanceof Element && (node.matches('iframe') || node.querySelector('iframe'))) {
+          // Preserve existing context keys when a separate prompt was found.
+          // A preceding block can also contain the demo and this task's prompt.
+          if (!parts.some(part => /\S/.test(part)) && !node.matches('iframe')) {
+            const lastFrame = Array.from(node.querySelectorAll('iframe')).at(-1)!;
+            const range = document.createRange();
+            range.selectNodeContents(node);
+            range.setStartAfter(lastFrame);
+            const tail = range.cloneContents();
+            previous.unshift(tail.textContent ?? '');
+            tail.querySelectorAll('.chat__message-author').forEach(author => author.remove());
+            parts.unshift(tail.textContent ?? '');
+          }
+          return { clean: parts.join(' '), previous: previous.join(' ') };
+        }
         previous.unshift(node.textContent ?? '');
         const copy = node.cloneNode(true);
         if (copy instanceof Element) {

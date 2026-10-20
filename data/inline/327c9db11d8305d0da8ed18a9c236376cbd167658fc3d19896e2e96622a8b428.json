@@ -1,0 +1,18 @@
+{
+  "id": "327c9db11d8305d0da8ed18a9c236376cbd167658fc3d19896e2e96622a8b428",
+  "lessonId": "ac28f51c-3b7e-4613-bfd9-973ee01ef951",
+  "url": "https://sandbox.practicum-team.ru/tasks/04-beautishcha/06-transform3d/04-perspective/example-03/pre/",
+  "instructionsHash": "383d252a0435bb7830d22e528990b702a96dc675605f076f9453f96efccec10a",
+  "files": [
+    {
+      "name": "styles/style.css",
+      "initialHash": "2f91a5d4d53415f930fa283efc22494f27750ccb218d78b7b118be589a995396",
+      "content": "*,\n*::before,\n*::after {\n  box-sizing: border-box;\n}\n\nhtml {\n  block-size: 100%;\n}\n\n.page {\n  margin: 0;\n  font-family: 'Open Sans', sans-serif;\n  font-size: 18px;\n  background-color: #f5f5f5;\n  background-image: url(https://code.s3.yandex.net/web-code/images/dotted.svg);\n  block-size: 100%;\n}\n\n.menu {\n  position: fixed;\n  inset: 0;\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: center;\n  background-color: rgb(0 0 0 / 0.8);\n}\n\n.menu__close {\n  position: absolute;\n  z-index: 1;\n  border: none;\n  color: #fff;\n  background-color: transparent;\n  transition: opacity 0.3s ease-in-out;\n  cursor: pointer;\n  appearance: none;\n  inline-size: 40px;\n  aspect-ratio: 1/1;\n  inset-block-start: 20px;\n  inset-inline-end: 20px;\n}\n\n.menu__close:hover {\n  opacity: 0.6;\n}\n\n.menu__close svg {\n  inline-size: 100%;\n}\n\n.menu__list {\n  display: grid;\n  place-items: center;\n  gap: 20px;\n  margin: 0;\n  padding: 0;\n  text-align: center;\n  list-style: none;\n  perspective: 200px;\n}\n\n.menu__item {\n  transition: transform 10s ease;\n}\n\n.menu__item:hover {\n  transform: rotateX(360deg);\n}\n\n.menu__link {\n  color: #fff;\n  font-size: 2em;\n  text-decoration: none;\n  text-transform: uppercase;\n}\n"
+    }
+  ],
+  "verifiedAt": "2026-10-20T11:34:25.104Z",
+  "evidence": {
+    "selector": ".result .icon-status-success",
+    "message": "Всё отлично!"
+  }
+}
