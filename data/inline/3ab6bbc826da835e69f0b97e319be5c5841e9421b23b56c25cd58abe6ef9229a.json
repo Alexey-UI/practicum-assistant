@@ -1,0 +1,18 @@
+{
+  "id": "3ab6bbc826da835e69f0b97e319be5c5841e9421b23b56c25cd58abe6ef9229a",
+  "lessonId": "d4ee2ed0-913f-46d7-ab3f-727bc84544fb",
+  "url": "https://sandbox.practicum-team.ru/tasks/04-beautishcha/05-decoration/11-animation/example-07/pre/",
+  "instructionsHash": "89f17dba2989eb2ada5d832d382153a649fc3ad8b075c1c5d9e9ad8df8a35d65",
+  "files": [
+    {
+      "name": "styles/style.css",
+      "initialHash": "a4acbd4a02980b00934c155756a4f9e765088a86dde157e7f37913dcbb768b27",
+      "content": "@keyframes blick {\n  to {\n    /* здесь мог бы быть ваш код */\n  background-position: top left;\n}\n}\n\nbody {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  margin: 0;\n  background-color: #000;\n  min-block-size: 100dvh;\n}\n\n.shine {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  margin-inline-start: auto;\n  margin-inline-end: auto;\n  margin-block-start: 40px;\n  color: #00091c;\n  font-family: Oi, cursive;\n  font-weight: 400;\n  font-size: clamp(22px, 5vw, 90px);\n  background:\n    radial-gradient(\n      farthest-corner at top,\n      #fff 0%,\n      #3cf 4%,\n      #00bfff 12.25%,\n      #07f 31.25%,\n      #00091c 50%\n    );\n  background-position: top right;\n  background-size: 200% 200%;\n  cursor: pointer;\n  inline-size: 100%;\n  block-size: 200px;\n}\n\n.shine:hover {\n  animation: blick 5s infinite alternate;\n}\n"
+    }
+  ],
+  "verifiedAt": "2026-10-20T11:22:18.510Z",
+  "evidence": {
+    "selector": ".result .icon-status-success",
+    "message": "Всё отлично!"
+  }
+}
