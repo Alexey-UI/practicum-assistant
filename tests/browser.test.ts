@@ -90,6 +90,29 @@ test('Чтение тренажёра открывает CSS, SVG, тексто�
     assert.equal((await readTrainer(page)).files.length, 4);
   } finally { process.chdir(original); await page.close(); await rm(dir, { recursive: true, force: true }); }
 });
+test('Тренажёр с активной картинкой открывает текстовую вкладку без перезагрузки и проверки', async () => {
+  const page = await browser.newPage(); const original = process.cwd(); const dir = await mkdtemp(path.join(tmpdir(), 'practicum-image-tab-')); let reads = 0;
+  try {
+    process.chdir(dir);
+    await page.route('https://practicum.yandex.ru/**', route => {
+      reads++;
+      return route.fulfill({ contentType: 'text/html; charset=utf-8', body: `<section class="tab" onclick="throw new Error('image must not be selected')"><article class="tab__text">ferrari.jpg</article></section>
+        <section class="tab" onclick="throw new Error('binary must not be selected')"><article class="tab__text">OpenSans.woff2</article></section>
+        <section class="tab" style="position:relative" onclick="document.querySelector('textarea').style.display='block';document.body.dataset.opens=String(Number(document.body.dataset.opens||0)+1)"><article class="tab__text">style.css</article><span style="position:absolute;inset:0"></span></section>
+        <textarea style="display:none" aria-label="Содержимое редактора"></textarea><div class="task-description__markdown">Добавьте обводку текста.</div>
+        <button data-test-id="check-task-button" onclick="document.body.dataset.checks='1'">Проверить</button>
+        <script>window.monaco={editor:{getModels:()=>[{uri:{path:'/styles/style.css'},getLanguageId:()=> 'css',getValue:()=> 'span {}'}]}};</script>` });
+    });
+    await page.goto('https://practicum.yandex.ru/trainer/test/lesson/aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa/task/bbbbbbbb-bbbb-bbbb-bbbb-bbbbbbbbbbbb/');
+    await waitLessonReady(page, 100);
+    assert.equal(await page.getByRole('textbox').isVisible(), false);
+    assert.equal((await readTrainer(page)).files[0].content, 'span {}');
+    await readTrainer(page);
+    assert.equal(reads, 1);
+    assert.equal(await page.locator('body').getAttribute('data-opens'), '1');
+    assert.equal(await page.locator('body').getAttribute('data-checks'), null);
+  } finally { process.chdir(original); await page.close(); await rm(dir, { recursive: true, force: true }); }
+});
 test('Пустая оболочка урока перезагружается без нажатия проверки', async () => {
   const page = await browser.newPage(); let reads = 0; let checks = 0;
   try {

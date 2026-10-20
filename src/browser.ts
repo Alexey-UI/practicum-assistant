@@ -43,6 +43,13 @@ export async function navigate(page: Page, url: string): Promise<void> {
   }
 }
 
+export function trainerTextTabs(page: Page) {
+  return page.locator('section.tab').filter({
+    has: page.locator('article.tab__text').filter({ hasText: /\.(?:html?|css|[cm]?js|jsx|tsx?|json|txt|md|svg)\s*$/i }),
+    visible: true,
+  });
+}
+
 /** Retry only document reads when an authenticated shell has no lesson content. */
 export async function waitLessonReady(page: Page, attemptTimeoutMs = 60000): Promise<void> {
   const heading = page.locator('h1').filter({ hasText: /\S/, visible: true });
@@ -51,7 +58,7 @@ export async function waitLessonReady(page: Page, attemptTimeoutMs = 60000): Pro
   const theoryText = page.locator('.theory-viewer .paragraph').filter({ hasText: /\S/, visible: true });
   for (let attempt = 0; attempt < 3; attempt++) {
     try {
-      const ready = isTrainerTaskUrl(page.url()) ? editor : heading.or(tab).or(editor).or(theoryText);
+      const ready = isTrainerTaskUrl(page.url()) ? editor.or(trainerTextTabs(page)) : heading.or(tab).or(editor).or(theoryText);
       await ready.filter({ visible: true }).first().waitFor({ state: 'visible', timeout: attemptTimeoutMs });
       return;
     } catch (error) {

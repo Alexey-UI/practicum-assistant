@@ -1,0 +1,18 @@
+{
+  "taskId": "cdb9cbc5-614d-4765-9ec2-830dd778e60f",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "lessonId": "b80f6c10-a59c-4b18-9f99-729a1587aa49",
+  "files": [
+    {
+      "name": "style.css",
+      "initialHash": "9ff0bc5c56d1a79d1581294a6a410c8e208d8a1bf1ae45ced2333465b23ee2f4",
+      "content": "*,\n*::before,\n*::after {\n  box-sizing: border-box;\n}\n\nbody {\n  display: grid;\n  place-items: center;\n  min-block-size: 100dvb;\n  margin: 0;\n  padding: 2em;\n  font-family: 'Open Sans', sans-serif;\n  font-size: 18px;\n  background-color: rgb(156 0 0);\n  background-image: url(https://code.s3.yandex.net/web-code/images/dotted.svg);\n}\n\nspan {\n  -webkit-text-stroke: 4px #fff;\n  display: block;\n  color: transparent;\n  font-weight: bold;\n  font-size: clamp(3.125rem, -0.8929rem + 17.8571vw, 12.5rem);\n  text-transform: uppercase;\n  background-image: url(../images/ferrari.jpg);\n  background-position: calc(50% + var(--x, 0px)) calc(50% + var(--y, 0px));\n  background-size: 150% auto;\n  -webkit-background-clip: text;\n  background-clip: text;\n}\n@supports (text-stroke: 4px #fff) {\n  span { text-stroke: 4px #fff; }\n}"
+    }
+  ],
+  "instructionsHash": "295ce4a1034352f2c87b5aaf829bc4089aa2c089e0e8b8531ea041de15a6593d",
+  "verifiedAt": "2026-10-20T11:30:44.561Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Настоящие спецэффекты! Красотища!"
+  }
+}

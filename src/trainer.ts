@@ -1,7 +1,7 @@
 import type { Page } from 'playwright';
 import { createHash } from 'node:crypto';
 import { atomicJson, journal, readJson, normalize } from './store.js';
-import { safeUrl, lessonId, settle, isTrainerTaskUrl } from './browser.js';
+import { safeUrl, lessonId, settle, isTrainerTaskUrl, trainerTextTabs } from './browser.js';
 
 export interface EditorFile { path: string; language: string; content: string; hash: string }
 interface MonacoModel { uri: { path: string }; getLanguageId(): string; getValue(): string }
@@ -22,7 +22,11 @@ export async function selectEditorFile(page: Page, name: string): Promise<void> 
 export async function readTrainer(page: Page): Promise<{ taskId: string; url: string; instructions: string; images: Array<{ url: string; alt: string }>; links: Array<{ text: string; url: string }>; resources: string[]; contextHash: string; files: EditorFile[] }> {
   const theoryClose = page.locator('.theory-panel__modal-close');
   if (await theoryClose.isVisible()) await theoryClose.click();
-  await page.getByRole('textbox', { name: 'Содержимое редактора', exact: true }).waitFor({ state: 'visible', timeout: 180000 });
+  const editor = page.getByRole('textbox', { name: 'Содержимое редактора', exact: true });
+  const tabs = trainerTextTabs(page);
+  await editor.or(tabs).filter({ visible: true }).first().waitFor({ timeout: 180000 });
+  if (!await editor.isVisible()) await tabs.first().click();
+  await editor.waitFor({ state: 'visible', timeout: 180000 });
   await page.locator('.task-description__markdown').filter({ hasText: /\S/, visible: true }).waitFor({ timeout: 180000 });
   const resources = (await page.locator('.files-tree__node-name-container').filter({ visible: true }).allTextContents()).map(name => name.trim());
   const names = resources.filter(name => /\.(?:html?|css|[cm]?js|jsx|tsx?|json|txt|md|svg)$/i.test(name));
