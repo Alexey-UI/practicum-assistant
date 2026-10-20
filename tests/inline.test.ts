@@ -39,6 +39,15 @@ test('Встроенное упражнение вводится через ре
     assert.equal(saved.evidence.selector, '.result .icon-status-success');
     assert.equal(await solveInline(page, 0), true);
     assert.equal(await (await sandboxFrame(page, 0)).locator('body').getAttribute('data-clicks'), '1');
+    const state = await readJson<Record<string, unknown>>(`.local/inline/${task.id}.json`, {});
+    assert.ok(state.detectedResult);
+    await atomicJson(`.local/inline/${task.id}.json`, { ...state, phase: 'requested' });
+    const frame = await sandboxFrame(page, 0);
+    await frame.locator('.result').evaluate(el => el.remove());
+    assert.equal(await observeInline(page, 0), 'correct');
+    assert.equal(await frame.locator('body').getAttribute('data-clicks'), '1');
+    await frame.getByRole('textbox').fill('Другая редакция');
+    assert.equal(await observeInline(page, 0), 'unknown');
   } finally { process.chdir(original); await page.close(); await rm(dir, { recursive: true, force: true }); }
 });
 

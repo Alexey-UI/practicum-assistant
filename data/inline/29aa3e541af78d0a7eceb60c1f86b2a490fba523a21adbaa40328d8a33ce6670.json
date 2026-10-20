@@ -1,0 +1,18 @@
+{
+  "id": "29aa3e541af78d0a7eceb60c1f86b2a490fba523a21adbaa40328d8a33ce6670",
+  "lessonId": "27be8350-8429-476d-a7f9-38f08b2572d3",
+  "url": "https://sandbox.practicum-team.ru/tasks/02-interactivity-and-accessibility/04-pseudo/02-lvha/example-02/pre/",
+  "instructionsHash": "fcff5eba3b3c58cdfadf5d2eca358e71c3975a542dfd0433b129b63d05054667",
+  "files": [
+    {
+      "name": "styles/style.css",
+      "initialHash": "c779f36308ae979a8880eeddaf235d4e67df2702cb95c8bc7bd16f5c83c425e4",
+      "content": "html,\nbody {\n  height: 100%;\n}\n\nbody {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  min-width: 850px;\n  margin: 0;\n  color: #5f0dee;\n  font-family: 'Open Sans', sans-serif;\n  font-size: 18px;\n}\n\n.banner {\n  width: 100%;\n  padding: 50px;\n  background-color: #feafe8;\n}\n\n.banner-link {\n  color: inherit;\n}\n\n.banner-button {\n  border: 1px solid currentColor;\n  padding: 10px 45px;\n  color: #5f0dee;\n  font-family: inherit;\n  font-weight: 800;\n  font-size: inherit;\n  text-transform: uppercase;\n  background-color: transparent;\n}\n\nh2 {\n  margin-top: 0;\n}\n\n/* Ховер-эффект кнопки */\n.banner-button:hover {\n  background-color: #5f0dee;\n  color: #fff;\n}\n"
+    }
+  ],
+  "verifiedAt": "2026-10-20T06:17:30.417Z",
+  "evidence": {
+    "selector": ".result .icon-status-success",
+    "message": "Всё отлично!"
+  }
+}

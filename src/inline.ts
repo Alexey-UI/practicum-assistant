@@ -18,6 +18,7 @@ interface InlineState {
   phase: 'requested' | 'correct' | 'wrong'; solutionHash: string; requestedAt: string;
   files?: Array<{ name: string; initialHash: string; contentHash: string }>;
   verifiedAt?: string;
+  detectedResult?: { outcome: 'correct' | 'wrong'; message: string; observedAt: string; selector: string };
 }
 
 async function loadSolution(task: InlineTask, candidate: boolean): Promise<InlineSolution | null> {
@@ -63,13 +64,17 @@ async function selectFile(frame: Frame, name: string): Promise<void> {
   const selected = () => tabs.evaluate(tab => (tab as HTMLElement).style.zIndex === '1');
   if (await selected()) return;
   // Target the filename rather than the padding around a wide tab.
-  await frame.locator('.tabs').getByText(name, { exact: true }).click();
   // Offscreen sandbox frames may stop receiving animation callbacks in Chrome.
   // Poll the actual selected tab independently of repaint scheduling.
   try {
     const deadline = Date.now() + 30000;
+    let nextClick = 0;
     while (!await selected()) {
       if (Date.now() >= deadline) throw new Error(`Редактор не переключился на файл ${name}`);
+      if (Date.now() >= nextClick) {
+        await frame.locator('.tabs').getByText(name, { exact: true }).click();
+        nextClick = Date.now() + 2000;
+      }
       await frame.page().waitForTimeout(100);
     }
   } catch (error) {
@@ -86,11 +91,12 @@ async function code(frame: Frame): Promise<string> {
   });
 }
 
-export async function readInline(page: Page, index: number): Promise<InlineTask> {
+export async function readInline(page: Page, index: number, onlyNames?: string[]): Promise<InlineTask> {
   const frame = await sandboxFrame(page, index);
   await frame.locator('.CodeMirror').waitFor({ state: 'visible', timeout: 120000 });
-  const names = (await frame.locator('.tabs .tab').allTextContents()).map(name => name.trim());
-  if (!names.length || new Set(names).size !== names.length) throw new Error('Не удалось однозначно прочитать вкладки встроенного редактора');
+  const allNames = (await frame.locator('.tabs .tab').allTextContents()).map(name => name.trim());
+  if (!allNames.length || new Set(allNames).size !== allNames.length || onlyNames?.some(name => !allNames.includes(name))) throw new Error('Не удалось однозначно прочитать вкладки встроенного редактора');
+  const names = onlyNames ?? allNames;
   const instructions = await page.locator('.theory-viewer iframe').nth(index).evaluate(iframe => {
     const parts: string[] = [];
     const previous: string[] = [];
@@ -124,7 +130,7 @@ export async function readInline(page: Page, index: number): Promise<InlineTask>
   const ownerLesson = lessonId(page.url());
   if (!ownerLesson) throw new Error('Не определён урок встроенного примера');
   const task = { id: contentHash(url), lessonId: ownerLesson, url, instructions: normalize(instructions.clean), instructionsHash: contentHash(normalize(instructions.clean)), previousInstructionsHash: contentHash(normalize(instructions.previous)), files };
-  await atomicJson('.local/pending-inline.json', task);
+  if (!onlyNames) await atomicJson('.local/pending-inline.json', task);
   return task;
 }
 
@@ -182,20 +188,25 @@ export async function inlineOutcome(frame: Frame): Promise<'correct' | 'wrong' |
 }
 
 export async function observeInline(page: Page, index: number, candidate = true): Promise<'correct' | 'wrong' | 'unknown'> {
-  const task = await readInline(page, index);
+  const currentFrame = await sandboxFrame(page, index);
+  const id = contentHash(safeUrl(currentFrame.url()));
+  const stored = await readJson<InlineSolution | null>(`${candidate ? '.local/inline-solutions' : 'data/inline'}/${id}.json`, null);
+  if (!stored) return 'unknown';
+  const task = await readInline(page, index, stored.files.map(file => file.name));
   const solution = await loadSolution(task, candidate);
   if (!solution) return 'unknown';
   const file = `.local/inline/${task.id}.json`;
   const state = await readJson<InlineState | null>(file, null);
   if (!state || state.solutionHash !== contentHash(JSON.stringify(solution.files)) || solution.files.some(item => task.files.find(current => current.name === item.name)?.hash !== contentHash(item.content))) return 'unknown';
   const frame = await sandboxFrame(page, index);
-  const outcome = await inlineOutcome(frame);
+  const live = await inlineOutcome(frame);
+  const outcome = live === 'unknown' ? state.detectedResult?.outcome ?? 'unknown' : live;
   if (outcome === 'unknown') return outcome;
-  const message = await frame.locator('.result md-content').innerText();
+  const message = live === 'unknown' ? state.detectedResult!.message : await frame.locator('.result md-content').innerText();
   const verifiedAt = new Date().toISOString();
   await atomicJson(file, { ...state, phase: outcome, ...(outcome === 'correct' ? { verifiedAt } : {}) });
   await journal('inline-result', { id: task.id, outcome, message });
-  if (outcome === 'correct' && candidate) await atomicJson(`data/inline/${task.id}.json`, { ...solution, verifiedAt, evidence: { selector: '.result .icon-status-success', message } });
+  if (outcome === 'correct' && candidate) await atomicJson(`data/inline/${task.id}.json`, { ...solution, verifiedAt, evidence: { selector: live === 'unknown' ? state.detectedResult!.selector : '.result .icon-status-success', message } });
   if (outcome === 'wrong') await atomicJson('.local/inline-review.json', { id: task.id, message });
   return outcome;
 }
@@ -208,6 +219,7 @@ export async function solveInline(page: Page, index: number, candidate = false):
   const state = await readJson<InlineState | null>(`.local/inline/${task.id}.json`, null);
   if (state?.phase === 'requested' && state.solutionHash !== hash) throw new Error('Сначала выясните результат предыдущей проверки встроенного примера');
   if (state?.solutionHash === hash && state.phase === 'correct' && state.verifiedAt && solution.files.every(file => task.files.find(item => item.name === file.name)?.hash === contentHash(file.content))) return true;
+  if (state?.phase === 'requested' && state.detectedResult) return await observeInline(page, index, candidate) === 'correct';
   if (state?.solutionHash === hash && state.phase === 'wrong') return false;
   if (state?.phase !== 'requested') {
     await applyInline(page, index, candidate);
@@ -216,7 +228,14 @@ export async function solveInline(page: Page, index: number, candidate = false):
   const deadline = Date.now() + 120000;
   const frame = await sandboxFrame(page, index);
   while (Date.now() < deadline) {
-    if (await inlineOutcome(frame) !== 'unknown') return await observeInline(page, index, candidate) === 'correct';
+    const outcome = await inlineOutcome(frame);
+    if (outcome !== 'unknown') {
+      const file = `.local/inline/${task.id}.json`;
+      const pending = await readJson<InlineState | null>(file, null);
+      if (!pending || pending.solutionHash !== hash) throw new Error('Состояние проверки изменилось');
+      await atomicJson(file, { ...pending, detectedResult: { outcome, message: await frame.locator('.result md-content').innerText(), observedAt: new Date().toISOString(), selector: outcome === 'correct' ? '.result .icon-status-success' : '.result' } });
+      return await observeInline(page, index, candidate) === 'correct';
+    }
     await page.waitForTimeout(500);
   }
   return false;

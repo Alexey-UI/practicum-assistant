@@ -1,0 +1,23 @@
+{
+  "id": "cda636359ef7dcc6ffff08cf1c793783bce765bcde47cd64f93d8001967394e4",
+  "lessonId": "482f4275-836d-4077-86fa-d463acc65d4d",
+  "url": "https://sandbox.practicum-team.ru/tasks/01-semantics-and-layout/07-longread/01-all/example-04/pre/",
+  "instructionsHash": "aa20b72f100acf03f8e08e80547957884fe83c56e0f1228bddd3478711f34dd5",
+  "files": [
+    {
+      "name": "index.html",
+      "initialHash": "2f0ed536cbbd2caf97c421bda1500b6dbc40983723079540ae1394349bf9e5c5",
+      "content": "<!DOCTYPE html>\n<html lang=\"ru\">\n  <head>\n    <meta charset=\"utf-8\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <title>Выпадение плавающего элемента</title>\n    <link\n      rel=\"stylesheet\"\n      href=\"https://code.s3.yandex.net/web-code/fonts/fonts.css\"\n    />\n    <link rel=\"stylesheet\" href=\"./styles/style.css\" />\n  </head>\n\n  <body>\n    <div class=\"block\">\n      <img\n        class=\"block__img\"\n        src=\"./images/img.jpg\"\n        alt=\"Голубой персонаж с влюблёнными глазами.\"\n      />\n      <div class=\"block__colored\">Ты</div>\n      <p class=\"block__text\">Когда у тебя нет созвонов с утра</p>\n      <div class=\"clearfix\"></div>\n    </div>\n  </body>\n</html>\n"
+    },
+    {
+      "name": "styles/style.css",
+      "initialHash": "911fd10b88c6b1e9f5923e7693e927dbcdefdd11a8537022addb8206a17b32a6",
+      "content": "body {\n  min-height: 100vh;\n  margin: 0;\n  padding: 45px;\n  font-family: 'Open Sans', sans-serif;\n  background-image: url(https://code.s3.yandex.net/web-code/images/dotted-l.svg);\n}\n\n.block {\n  width: 500px;\n  margin: 0 auto;\n  border: 2px solid black;\n  padding: 10px;\n  background-color: white;\n}\n\n.block__img {\n  float: right;\n  width: 250px;\n  height: 200px;\n  margin: 10px;\n  object-fit: cover;\n}\n\n.block__colored {\n  padding: 15px;\n  color: white;\n  background-color: #5f0dee;\n}\n\n.block__text {\n  margin-bottom: 5px;\n}\n\n.clearfix {\n  clear: both;\n}\n"
+    }
+  ],
+  "verifiedAt": "2026-10-20T06:16:51.651Z",
+  "evidence": {
+    "selector": ".result .icon-status-success",
+    "message": "Всё отлично!"
+  }
+}
