@@ -1,4 +1,4 @@
-import { openBrowser, navigate, snapshot, settle, safeUrl, lessonId, isTrainerTaskUrl, lessonUrl as canonicalLesson } from './browser.js';
+import { openBrowser, navigate, snapshot, settle, safeUrl, lessonId, isTrainerTaskUrl, lessonUrl as canonicalLesson, waitLessonReady } from './browser.js';
 import { catalog, checkCompletion, observedSolved, saveObservedSolved, type Lesson } from './catalog.js';
 import { loadConfig } from './config.js';
 import { captureChoiceAnswer, exactButton, quizOutcome, solveQuiz } from './quiz.js';
@@ -150,7 +150,7 @@ export async function run(): Promise<void> {
       const titleNode = page.locator('h1').filter({ hasText: /\S/, visible: true });
       const taskTab = page.getByRole('tab', { name: 'Задание', exact: true });
       const editor = page.getByRole('textbox', { name: 'Содержимое редактора', exact: true });
-      await titleNode.or(taskTab).or(editor).filter({ visible: true }).first().waitFor({ state: 'visible', timeout: 180000 });
+      await waitLessonReady(page);
       await journal('lesson-open', { url: safeUrl(page.url()), title: lesson.title });
       const observed = await observedSolved(page);
       await saveObservedSolved(observed);
@@ -253,7 +253,7 @@ export async function run(): Promise<void> {
           const previous = page.url();
           await next.click();
           await page.waitForURL(url => url.href !== previous, { waitUntil: 'commit', timeout: 180000 });
-          await titleNode.or(taskTab).or(editor).filter({ visible: true }).first().waitFor({ state: 'visible', timeout: 180000 });
+          await waitLessonReady(page);
           await settle(page);
           await journal('lesson-transition', { from: safeUrl(previous), url: safeUrl(page.url()) });
           if (lessonId(page.url()) === lessonId(lesson.url)) {

@@ -13,6 +13,7 @@ import { Answers, atomicJson, questionKey, readJson } from '../src/store.js';
 import { mkdtemp, rm } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import path from 'node:path';
+import { waitLessonReady } from '../src/browser.js';
 
 let browser: Browser;
 test('Исправленная попытка тренажёра допускает только свои изменения и сохраняет исходный хеш', () => {
@@ -25,6 +26,22 @@ test('Исправленная попытка тренажёра допуска�
 });
 before(async () => { browser = await chromium.launch({ channel: 'chrome', headless: true }); });
 after(async () => { await browser?.close(); });
+test('Пустая оболочка урока перезагружается без нажатия проверки', async () => {
+  const page = await browser.newPage(); let reads = 0; let checks = 0;
+  try {
+    await page.route('https://practicum.yandex.ru/**', route => {
+      reads++;
+      return route.fulfill({ contentType: 'text/html; charset=utf-8', body: reads === 1 ? '<main><button>Проверить</button></main>' : '<main><h1>Урок загружен</h1></main>' });
+    });
+    await page.exposeFunction('recordCheck', () => { checks++; });
+    await page.goto('https://practicum.yandex.ru/trainer/test/lesson/example/task/example/');
+    await page.locator('button').evaluate(el => el.addEventListener('click', () => (window as unknown as { recordCheck(): void }).recordCheck()));
+    await waitLessonReady(page, 100);
+    assert.equal(reads, 2);
+    assert.equal(checks, 0);
+    assert.equal(await page.locator('h1').innerText(), 'Урок загружен');
+  } finally { await page.close(); }
+});
 test('Файл редактора выбирается в дереве и во вкладках с перекрывающей текст подсказкой', async () => {
   const page = await browser.newPage();
   try {

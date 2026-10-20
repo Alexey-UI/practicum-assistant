@@ -42,6 +42,23 @@ export async function navigate(page: Page, url: string): Promise<void> {
   }
 }
 
+/** Retry only document reads when an authenticated shell has no lesson content. */
+export async function waitLessonReady(page: Page, attemptTimeoutMs = 60000): Promise<void> {
+  const heading = page.locator('h1').filter({ hasText: /\S/, visible: true });
+  const tab = page.getByRole('tab', { name: 'Задание', exact: true });
+  const editor = page.getByRole('textbox', { name: 'Содержимое редактора', exact: true });
+  for (let attempt = 0; attempt < 3; attempt++) {
+    try {
+      await heading.or(tab).or(editor).filter({ visible: true }).first().waitFor({ state: 'visible', timeout: attemptTimeoutMs });
+      return;
+    } catch (error) {
+      if (page.isClosed() || attempt === 2) throw error;
+      console.log('Содержимое урока не загрузилось; повторяю загрузку страницы без отправки ответов.');
+      await navigate(page, safeUrl(page.url()));
+    }
+  }
+}
+
 export async function snapshot(page: Page, label: string): Promise<string> {
   const dir = path.resolve('artifacts', `${Date.now()}-${label.replace(/[^a-z0-9-]/gi, '-')}`);
   await mkdir(dir, { recursive: true, mode: 0o700 });

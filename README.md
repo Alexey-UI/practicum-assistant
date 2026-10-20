@@ -5,14 +5,24 @@ TypeScript + Playwright для автоматизации интерфейса �
 Google Chrome и GitHub CLI (`gh`).
 
 ```sh
+git clone https://github.com/Alexey-UI/practicum-assistant.git
+cd practicum-assistant
 npm ci
-gh repo clone Alexey-UI/practicum-frontend-solutions solutions
+gh auth login
+npm run setup
 npm run login
-npm run explore
-npm run check
-npm test
+npm start
 npm run status
 ```
+
+`setup` проверяет Chrome, Git и аккаунт GitHub CLI, получает библиотеку эталонов
+и записывает текущий GitHub-логин в локальный `practicum.config.json`.
+Проекты публикуются в аккаунт запускающего программу. Перед изменением файлов
+или публикацией программа сверяет владельца назначения с аккаунтом `gh`.
+Для сдач с автоматической проверкой репозиторий должен быть создан и связан
+с Практикумом штатным способом на странице задания.
+Скопировать чужой `.local/` для запуска нельзя: там сессия и история другого аккаунта.
+Проверка кода: `npm run check` и `npm test`. Исследование интерфейса: `npm run explore`.
 
 `login` открывает отдельный профиль Chrome. Войти нужно вручную, после чего
 нажать Enter в терминале. Сессия хранится только в `.local/browser/`.

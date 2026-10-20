@@ -4,6 +4,7 @@ import { copyFile, lstat, mkdir, readFile, realpath, unlink } from 'node:fs/prom
 import { createHash } from 'node:crypto';
 import path from 'node:path';
 import { atomicJson, readJson } from './store.js';
+import { loadConfig } from './config.js';
 
 const exec = promisify(execFile);
 export interface Project {
@@ -23,7 +24,20 @@ export interface Project {
 }
 interface Manifest { version: 1; projects: Project[] }
 const FILE = 'solutions/projects.json';
-const REPO = /^Alexey-UI\/[a-zA-Z0-9_.-]+$/;
+const SOURCE_REPO = /^Alexey-UI\/[a-zA-Z0-9_.-]+$/;
+const REPO = /^[a-z\d](?:[a-z\d-]{0,37}[a-z\d])?\/[a-zA-Z0-9_.-]+$/i;
+
+export function projectDestination(template: string, owner?: string): string {
+  if (!REPO.test(template) || (owner !== undefined && !REPO.test(`${owner}/project`))) throw new Error('Некорректный GitHub-репозиторий');
+  return owner ? `${owner}/${template.split('/')[1]}` : template;
+}
+
+async function githubIdentity(project: Project): Promise<{ login: string; id: number }> {
+  const { stdout } = await exec('gh', ['api', 'user', '--jq', '{login: .login, id: .id}']);
+  const user = JSON.parse(stdout);
+  if (typeof user.login !== 'string' || !Number.isInteger(user.id) || project.destination.split('/')[0].toLowerCase() !== user.login.toLowerCase()) throw new Error('Репозиторий назначения должен принадлежать текущему аккаунту gh. Выполните npm run setup.');
+  return user;
+}
 
 export function safeRelative(file: string): boolean {
   return !!file && !path.isAbsolute(file) && !file.includes('\\') && file.split('/').every(part =>
@@ -36,12 +50,13 @@ async function digest(file: string): Promise<string> { return createHash('sha256
 
 export async function loadProjects(): Promise<Project[]> {
   const manifest = await readJson<Manifest>(FILE, { version: 1, projects: [] });
+  const cfg = await loadConfig();
   if (manifest.version !== 1 || !Array.isArray(manifest.projects)) throw new Error('Неверный формат манифеста проектов');
   const ids = new Set();
   for (const item of manifest.projects) {
     if (!/^[a-z0-9][a-z0-9-]*$/.test(item.id) || ids.has(item.id)) throw new Error('Некорректный или повторный id проекта');
     ids.add(item.id);
-    if (!REPO.test(item.source) || !REPO.test(item.destination) || !/^[a-f0-9]{40}$/.test(item.commit)) throw new Error('Нужны репозитории Alexey-UI и полный SHA проверенного коммита');
+    if (!SOURCE_REPO.test(item.source) || !REPO.test(item.destination) || !/^[a-f0-9]{40}$/.test(item.commit)) throw new Error('Нужен доверенный источник эталонов, репозиторий назначения и полный SHA');
     if (item.pages !== undefined && typeof item.pages !== 'boolean') throw new Error('Некорректная настройка GitHub Pages');
     if (item.review !== undefined && !['platform', 'teacher', 'self'].includes(item.review)) throw new Error('Некорректный способ приёмки проекта');
     if (item.deploy !== undefined && (item.deploy !== 'gh-pages' || !item.pages)) throw new Error('Деплой gh-pages требует pages: true');
@@ -53,7 +68,7 @@ export async function loadProjects(): Promise<Project[]> {
       if (!['npm', 'node'].includes(check.program) || !Array.isArray(check.args) || !check.args.every(x => typeof x === 'string')) throw new Error('Некорректная команда проверки');
     }
   }
-  return manifest.projects;
+  return manifest.projects.map(item => ({ ...item, destination: projectDestination(item.destination, cfg.githubOwner) }));
 }
 
 async function clone(repo: string, dir: string): Promise<void> {
@@ -84,6 +99,7 @@ async function assertPrepared(project: Project): Promise<Prepared> {
 }
 
 async function prepare(project: Project): Promise<void> {
+  await githubIdentity(project);
   const reference = path.resolve('.local/references', project.id);
   await clone(project.source, reference);
   const { stdout: dirtyRef } = await exec('git', ['status', '--porcelain'], { cwd: reference });
@@ -142,12 +158,14 @@ async function ensurePages(project: Project): Promise<void> {
     site = JSON.parse(stdout);
   }
   if (site.source?.branch !== branch || site.source.path !== '/') throw new Error(`Настройки GitHub Pages отличаются от ${branch}:/; нужен разбор перед изменением`);
-  const expected = `https://alexey-ui.github.io/${project.destination.split('/')[1]}/`;
+  const [owner, repository] = project.destination.split('/');
+  const expected = `https://${owner}.github.io/${repository}/`;
   if (site.html_url?.toLowerCase() !== expected.toLowerCase()) throw new Error('Адрес сайта GitHub Pages отличается от ожидаемого');
   console.log(`GitHub Pages настроен: ${site.html_url}`);
 }
 
 async function publish(project: Project): Promise<void> {
+  const user = await githubIdentity(project);
   const saved = await assertPrepared(project);
   if (!saved.verifiedAt) throw new Error('Сначала выполни verify');
   const cwd = targetDirectory(project);
@@ -163,9 +181,6 @@ async function publish(project: Project): Promise<void> {
   if (trackedFiles.some(file => !(file in saved.files) && !removed.has(file) && !file.startsWith('.github/'))) throw new Error('В репозитории есть дополнительные файлы вне эталона: требуется разбор перед публикацией');
   await exec('git', ['add', '--', ...Object.keys(saved.files), ...trackedFiles.filter(file => removed.has(file))], { cwd });
   const { stdout: staged } = await exec('git', ['diff', '--cached', '--name-only'], { cwd });
-  const { stdout: identity } = await exec('gh', ['api', 'user', '--jq', '{login: .login, id: .id}']);
-  const user = JSON.parse(identity);
-  if (user.login !== 'Alexey-UI' || !Number.isInteger(user.id)) throw new Error('GitHub CLI авторизован другим аккаунтом');
   const email = `${user.id}+${user.login}@users.noreply.github.com`;
   if (staged.trim()) {
     await exec('git', ['-c', `user.name=${user.login}`, '-c', `user.email=${email}`, 'commit', '-m', `Apply verified reference: ${project.id}`], { cwd });

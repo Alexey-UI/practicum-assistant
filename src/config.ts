@@ -2,6 +2,7 @@ import { readJson } from './store.js';
 import { START_URL } from './browser.js';
 
 export interface Config {
+  githubOwner?: string;
   startUrl: string;
   continueButtons: string[];
   nextButtons: string[];
@@ -29,6 +30,7 @@ export const DEFAULTS: Config = {
 export async function loadConfig(): Promise<Config> {
   const custom = await readJson<Partial<Config>>('practicum.config.json', {});
   const cfg = { ...DEFAULTS, ...custom };
+  if (cfg.githubOwner !== undefined && !/^[a-z\d](?:[a-z\d-]{0,37}[a-z\d])?$/i.test(cfg.githubOwner)) throw new Error('Неверный config.githubOwner');
   if (!['defer', 'neutral'].includes(cfg.feedbackPolicy)) throw new Error('Неверный config.feedbackPolicy');
   for (const key of ['continueButtons', 'nextButtons', 'submitButtons', 'retryButtons', 'retryableLessons'] as const) {
     if (!Array.isArray(cfg[key]) || !cfg[key].every(x => typeof x === 'string' && x.trim())) throw new Error(`Неверный config.${key}`);
