@@ -1,0 +1,18 @@
+{
+  "taskId": "d4e81a2d-ffcf-450e-b6e3-509d6a4518b2",
+  "lessonId": "110ed204-e373-4597-b21a-0f3a361a9024",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "files": [
+    {
+      "name": "style.css",
+      "initialHash": "39addfeefa347cff0c62ea761f116039af98800039ff5025c69974763fa4e7f8",
+      "content": "*,\n*::before,\n*::after {\n  box-sizing: border-box;\n}\n\nbody {\n  min-height: 100vh;\n  margin: 0;\n  padding: 40px;\n  font-family: 'Open Sans', sans-serif;\n  font-size: 18px;\n  background-color: #fff;\n  background-image: url(https://code.s3.yandex.net/web-code/images/dotted.svg);\n}\n\n.visually-hidden {\n  position: absolute;\n  width: 1px;\n  height: 1px;\n  margin: -1px;\n  border: 0;\n  padding: 0;\n  overflow: hidden;\n  clip: rect(0 0 0 0);\n}\n\n.theme-toggler {\n  position: absolute;\n  top: 20px;\n  right: 20px;\n}\n\n.theme-toggler__checkbox + span {\n  display: block;\n  width: 40px;\n  height: 40px;\n  border: 2px solid transparent;\n  border-radius: 4px;\n  background-color: #1e1e1e;\n  background-image: url(../svg/moon.svg);\n  background-repeat: no-repeat;\n  background-position: center;\n  background-size: 80%;\n  cursor: pointer;\n}\n\n.theme-toggler__checkbox:hover + span {\n  opacity: 0.9;\n}\n\n.theme-toggler__checkbox:focus + span {\n  outline: 2px solid #ffc802;\n}\n\n.theme-toggler__checkbox:checked + span {\n  border: 2px solid #ffc802;\n  background-color: #fff;\n  background-image: url(../svg/sun.svg);\n}\n\n.theme-toggler__checkbox:checked:focus + span {\n  outline: 2px solid #1e1e1e;\n}"
+    }
+  ],
+  "instructionsHash": "2a07f7f159af1a5b9f5dce18ea98245171f2949e4a93c1ca1dbec0d1bcffd862",
+  "verifiedAt": "2026-10-20T08:26:28.279Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Вау! Картинка меняется по клику! Такой вот сложный приём используют с чекбоксами постоянно."
+  }
+}

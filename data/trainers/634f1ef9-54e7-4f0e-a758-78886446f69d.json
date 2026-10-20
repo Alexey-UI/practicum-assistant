@@ -1,0 +1,18 @@
+{
+  "taskId": "634f1ef9-54e7-4f0e-a758-78886446f69d",
+  "lessonId": "110ed204-e373-4597-b21a-0f3a361a9024",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "files": [
+    {
+      "name": "style.css",
+      "initialHash": "41e9030e46b91823900e175dbee8c279c5fc7f7f1566163b55ab07b59c41fe29",
+      "content": "*,\n*::before,\n*::after {\n  box-sizing: border-box;\n}\n\nbody {\n  min-height: 100vh;\n  margin: 0;\n  padding: 40px;\n  font-family: 'Open Sans', sans-serif;\n  font-size: 18px;\n  background-color: #fff;\n  background-image: url(https://code.s3.yandex.net/web-code/images/dotted.svg);\n}\n\n.visually-hidden {\n  position: absolute;\n  width: 1px;\n  height: 1px;\n  margin: -1px;\n  border: 0;\n  padding: 0;\n  overflow: hidden;\n  clip: rect(0 0 0 0);\n}\n\n.theme-toggler {\n  position: absolute;\n  top: 20px;\n  right: 20px;\n}\n\n.theme-toggler__checkbox + span {\n  display: block;\n  width: 40px;\n  height: 40px;\n  border: 2px solid transparent;\n  border-radius: 4px;\n  background-color: #1e1e1e;\n  background-image: url(../svg/moon.svg);\n  background-repeat: no-repeat;\n  background-position: center;\n  background-size: 80%;\n  cursor: pointer;\n}\n.theme-toggler__checkbox:focus + span {\n  outline: 2px solid #ffc802;\n}\n\n.theme-toggler__checkbox + span:hover {\n  opacity: 0.9;\n}\n\n.theme-toggler__checkbox:hover + span {\n  opacity: 0.9;\n}\n"
+    }
+  ],
+  "instructionsHash": "ad03e564dd38393dfff834b8e65212b6b5f76ffd208fb60ca01c07c560b64dbd",
+  "verifiedAt": "2026-10-20T08:26:13.588Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Отличная комбинация. Скрытый элемент получает какое-то состояние, а его двойник меняет стили."
+  }
+}

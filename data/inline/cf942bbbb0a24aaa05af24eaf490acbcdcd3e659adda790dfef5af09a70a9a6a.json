@@ -1,0 +1,18 @@
+{
+  "id": "cf942bbbb0a24aaa05af24eaf490acbcdcd3e659adda790dfef5af09a70a9a6a",
+  "lessonId": "c86fe2fb-4634-4020-ad17-020ba32a20cd",
+  "url": "https://sandbox.practicum-team.ru/tasks/02-interactivity-and-accessibility/08-forms-style/08-range/example-02/pre/",
+  "instructionsHash": "3b10c3ba8b76cc638d180499cb4bb70607794c089b93356035667fc9ac76db4b",
+  "files": [
+    {
+      "name": "styles/style.css",
+      "initialHash": "e021b3c8092e3105c6b21848a2d3941eaabefa439ba7ea4e8f637923ab028a59",
+      "content": "* {\n  box-sizing: border-box;\n}\n\nhtml,\nbody {\n  height: 100%;\n}\n\nbody {\n  display: grid;\n  justify-content: center;\n  align-items: center;\n  min-width: 500px;\n  margin: 0;\n  font-family: 'Open Sans', sans-serif;\n  font-size: 18px;\n  background-color: #feafe8;\n}\n\nform {\n  width: 400px;\n  border: 2px solid #000;\n  padding: 50px;\n}\n\nlabel {\n  display: block;\n}\n\nlabel span {\n  display: block;\n  font-weight: 800;\n  font-size: 12px;\n  text-transform: uppercase;\n}\n\ninput[type=\"range\"] {\n  width: 100%;\n  -webkit-appearance: none;\n  -moz-appearance: none;\n  appearance: none;\n  background-color: transparent;\n}\n"
+    }
+  ],
+  "verifiedAt": "2026-10-20T08:38:17.724Z",
+  "evidence": {
+    "selector": ".result .icon-status-success",
+    "message": "Всё отлично!"
+  }
+}

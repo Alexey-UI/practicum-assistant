@@ -1,0 +1,18 @@
+{
+  "taskId": "6754fbe0-e0ca-4b08-b690-ff1ab14e3333",
+  "lessonId": "110ed204-e373-4597-b21a-0f3a361a9024",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "files": [
+    {
+      "name": "style.css",
+      "initialHash": "b723def7d62df8bb33bf2ff370b1a1377fa0f83069376b6b3501e9a6a5357d93",
+      "content": "*,\n*::before,\n*::after {\n  box-sizing: border-box;\n}\n\nbody {\n  display: grid;\n  place-items: center;\n  min-width: 500px;\n  min-height: 100vh;\n  margin: 0;\n  padding: 40px;\n  overflow: hidden;\n  font-family: 'Open Sans', sans-serif;\n  font-size: 18px;\n  background-color: #fff;\n  background-image: url(https://code.s3.yandex.net/web-code/images/dotted.svg);\n}\n\n.visually-hidden {\n  position: absolute;\n  width: 1px;\n  height: 1px;\n  margin: -1px;\n  border: 0;\n  padding: 0;\n  overflow: hidden;\n  clip: rect(0 0 0 0);\n}\n\n.search-form__label {\n  min-width: 300px;\n}\n\n.character {\n  position: absolute;\n  width: 200px;\n  transition: translate 0.5s ease-in-out;\n}\n\n.character:first-of-type {\n  bottom: -20px;\n  left: 40px;\n  translate: 0 100%;\n}\n\n.character:nth-of-type(2) {\n  right: 40px;\n  bottom: 0;\n  translate: calc(100% + 40px) 0;\n}\n.search-form:focus-within ~ .character {\n  translate: 0 0;\n}\n"
+    }
+  ],
+  "instructionsHash": "f1df18be74e8607090160a3257c8ea19f180a96d2c37c1af58832c3721519b69",
+  "verifiedAt": "2026-10-20T08:26:46.956Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Отлично, так можно выводить подсказки для заполняющих форму. Если вас вдруг смутило свойство translate — вы еще до него доберётесь, не переживайте."
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "id": "648a00307d195deab397278709d179b079a60ca5709640e5894c3bb27fbb768b",
+  "lessonId": "c86fe2fb-4634-4020-ad17-020ba32a20cd",
+  "url": "https://sandbox.practicum-team.ru/tasks/02-interactivity-and-accessibility/08-forms-style/08-range/example-05/pre/",
+  "instructionsHash": "b21aa530b6e7dade528b591b6126d2acd129c5cfea6c757a1aaf0dca655c66a5",
+  "files": [
+    {
+      "name": "styles/style.css",
+      "initialHash": "8c65703ffc1250f9be1d50b0d99599952c79b645b3f727363e6f65ef11c64de4",
+      "content": "* {\n  box-sizing: border-box;\n}\n\nhtml,\nbody {\n  height: 100%;\n}\n\nbody {\n  display: grid;\n  justify-content: center;\n  align-items: center;\n  min-width: 500px;\n  margin: 0;\n  font-family: 'Open Sans', sans-serif;\n  font-size: 18px;\n  background-color: #feafe8;\n}\n\nform {\n  width: 400px;\n  border: 2px solid #000;\n  padding: 50px;\n}\n\nlabel {\n  display: block;\n}\n\nlabel span {\n  display: block;\n  font-weight: 800;\n  font-size: 12px;\n  text-transform: uppercase;\n}\n\ninput[type='range'] {\n  width: 100%;\n  background-color: transparent;\n  -webkit-appearance: none;\n  -moz-appearance: none;\n  appearance: none;\n}\n\ninput[type='range']::-webkit-slider-thumb {\n  width: 26px;\n  height: 16px;\n  margin-top: -3px;\n  border: 1px solid #000;\n  border-radius: 0;\n  background-color: #fff;\n  cursor: pointer;\n  -webkit-appearance: none;\n  -moz-appearance: none;\n  appearance: none;\n}\n\ninput[type='range']::-moz-range-thumb {\n  box-sizing: border-box;\n  width: 26px;\n  height: 16px;\n  border: 1px solid #000;\n  border-radius: 0;\n  background-color: #fff;\n  cursor: pointer;\n}\n\ninput[type='range']::-webkit-slider-runnable-track {\n  width: 100%;\n  height: 10px;\n  border: none;\n  border-radius: 0;\n  background-color: #000;\n  cursor: pointer;\n}\n\ninput[type='range']::-moz-range-track {\n  width: 100%;\n  height: 10px;\n  border: none;\n  border-radius: 0;\n  background-color: #000;\n  cursor: pointer;\n}\n\ninput[type=\"range\"]:focus {\n  outline: 2px solid #000;\n  outline-offset: 2px;\n}\n"
+    }
+  ],
+  "verifiedAt": "2026-10-20T08:39:03.308Z",
+  "evidence": {
+    "selector": ".result .icon-status-success",
+    "message": "Всё отлично!"
+  }
+}

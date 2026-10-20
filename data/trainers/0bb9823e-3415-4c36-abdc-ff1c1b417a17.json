@@ -1,0 +1,18 @@
+{
+  "taskId": "0bb9823e-3415-4c36-abdc-ff1c1b417a17",
+  "lessonId": "05382ba6-339d-4a0e-b9d1-02c4d9139bd2",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "files": [
+    {
+      "name": "index.html",
+      "initialHash": "272bf1a50e651f9ef73948eac3bfd3c22ac8bdb8e550e55cb4b160e11f7ca074",
+      "content": "<!DOCTYPE html>\n<html lang=\"ru\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <title>Каскад</title>\n    <link\n      rel=\"stylesheet\"\n      href=\"https://code.s3.yandex.net/web-code/fonts/fonts.css\"\n    />\n    <link rel=\"stylesheet\" href=\"./styles/preset.css\" />\n    <link rel=\"stylesheet\" href=\"./styles/style.css\" />\n  </head>\n  <body>\n    <div class=\"container\">\n      <h1 class=\"title\">Vibes</h1>\n    </div>\n  </body>\n</html>"
+    }
+  ],
+  "instructionsHash": "7ae3e66fb862a63161e314197010571812c035e4ecb7ae01c956d9009b64fa1f",
+  "verifiedAt": "2026-10-20T08:21:30.662Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Иногда такая простая проблема может стоить нескольких часов отладки."
+  }
+}

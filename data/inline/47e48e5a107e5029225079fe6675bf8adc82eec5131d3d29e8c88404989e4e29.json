@@ -1,0 +1,18 @@
+{
+  "id": "47e48e5a107e5029225079fe6675bf8adc82eec5131d3d29e8c88404989e4e29",
+  "lessonId": "2957c8ea-3635-4cab-a9e0-5f4f486c06a8",
+  "url": "https://sandbox.practicum-team.ru/tasks/02-interactivity-and-accessibility/08-forms-style/05-pretty-flags/example-02/pre/",
+  "instructionsHash": "3b86a75623b6eefcb9cd4815513d6ae2093707a4984fa522b4260f212d684f85",
+  "files": [
+    {
+      "name": "index.html",
+      "initialHash": "54cb6022d9d37f084dfcb70c893ecf371f9d4802844488d77cf6f0cc78dfd32b",
+      "content": "<!DOCTYPE html>\n<html lang=\"ru\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <title>Кастомные элементы формы</title>\n    <link\n      rel=\"stylesheet\"\n      href=\"https://code.s3.yandex.net/web-code/fonts/fonts.css\"\n    />\n    <link rel=\"stylesheet\" href=\"./styles/style.css\" />\n  </head>\n  <body>\n    <form>\n      <fieldset>\n        <label>\n          <input class=\"visually-hidden\" type=\"radio\" name=\"answer\" />\n          Да\n        </label>\n        <label>\n          <input class=\"visually-hidden\" type=\"radio\" name=\"answer\" />\n          Нет\n        </label>\n        <label>\n          <input class=\"visually-hidden\" type=\"radio\" name=\"answer\" />\n          Не знаю\n        </label>\n      </fieldset>\n      <fieldset>\n        <label>\n          <input class=\"visually-hidden\" type=\"checkbox\" name=\"tv-show\" />\n          Новости\n        </label>\n        <label>\n          <input class=\"visually-hidden\" type=\"checkbox\" name=\"tv-show\" />\n          Фантастика\n        </label>\n        <label>\n          <input class=\"visually-hidden\" type=\"checkbox\" name=\"tv-show\" />\n          Мультики\n        </label>\n      </fieldset>\n      <fieldset>\n        <select name=\"cartoon\">\n          <option value=\"\">История игрушек</option>\n          <option value=\"\">Мулан</option>\n          <option value=\"\">Король Лев</option>\n        </select>\n      </fieldset>\n      <button>Ответить</button>\n    </form>\n  </body>\n</html>\n"
+    }
+  ],
+  "verifiedAt": "2026-10-20T08:32:19.202Z",
+  "evidence": {
+    "selector": ".result .icon-status-success",
+    "message": "Всё отлично!"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "taskId": "1304f365-a49d-4f37-9752-70aa2e23614f",
+  "lessonId": "10acd340-a1cd-4877-a0f0-ba024bdcc019",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "files": [
+    {
+      "name": "style.css",
+      "initialHash": "997bbb47c437508ee31f208c7b03f9adfd2f026731fe6e34db7d40b12ebbd4e6",
+      "content": "h1.title {\n  font-weight: bold;\n}"
+    }
+  ],
+  "instructionsHash": "4827aca788ecadd2a30712eec951570f8e8ef4d2f6298ff1c2c24ffa50a00ca8",
+  "verifiedAt": "2026-10-20T08:22:54.634Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Отлично справились! Проблемы специфичности чаще всего проявляются, когда нужно писать свой код поверх чужого."
+  }
+}

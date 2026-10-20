@@ -1,0 +1,18 @@
+{
+  "taskId": "861b8fd0-eb5d-4da9-9675-8fd1d86199a1",
+  "lessonId": "c9e6fd7a-29c4-4b54-8833-a966030d684e",
+  "contextHash": "7e870ec761921d09b7ca140ae6172fb92d85c07cbb549da701f688446c9c57e3",
+  "files": [
+    {
+      "name": "style.css",
+      "initialHash": "c85cbdecdd19b79c11c0cbc6793c9db80b97ef9dc66e56934de0d542af609bd9",
+      "content": "*,\n*::before,\n*::after {\n  box-sizing: border-box;\n}\n\nbody {\n  min-width: 500px;\n  min-height: 100vh;\n  margin: 0;\n  font-family: 'Open Sans', sans-serif;\n  font-size: 18px;\n  background-color: #fff;\n}\n\n.swiper {\n  width: 100%;\n  height: 100vh;\n  margin: 0;\n}\n\n.swiper-slide {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  color: #000;\n  font-weight: bold;\n  font-size: 100px;\n  text-align: center;\n  text-transform: uppercase;\n}\n\n.swiper-slide:nth-child(even) {\n  background-color: #feafe8;\n}\n\n.swiper-slide:nth-child(odd) {\n  background-color: #80d994;\n}\n\n\n.swiper-button {\n  border: none;\n  background-color: transparent;\n}\n\n.swiper-button::after {\n  color: black;\n}\n\n.swiper-pagination-bullet {\n  background-color: #000;\n}\n/* Перекрываем более специфичные правила внешней библиотеки Swiper. */\n.swiper-pagination-bullet {\n  margin: 0 20px !important;\n}\n\n.swiper-pagination {\n  bottom: 40px !important;\n}\n"
+    }
+  ],
+  "instructionsHash": "4b296dc6a7b103c39ad8b6e7aafb9e88aa49a0373133204659f59bfb2dd66d4b",
+  "verifiedAt": "2026-10-20T08:24:06.276Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Вы пустились во все тяжкие. Когда на сцене !important, ваш ревьюер точно не готовится к аплодисментам."
+  }
+}

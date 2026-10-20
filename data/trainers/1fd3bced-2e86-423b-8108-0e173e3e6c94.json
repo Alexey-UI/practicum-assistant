@@ -1,0 +1,18 @@
+{
+  "taskId": "1fd3bced-2e86-423b-8108-0e173e3e6c94",
+  "lessonId": "c9e6fd7a-29c4-4b54-8833-a966030d684e",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "files": [
+    {
+      "name": "style.css",
+      "initialHash": "88d5044ff7565867107bdfa0fb9cd801c125085b534f512e32a26827342ad71d",
+      "content": ".toggler {\n  position: absolute !important;\n  top: 20px;\n  right: 20px;\n}\n\nbody .toggler::after {\n  display: none !important;\n}"
+    }
+  ],
+  "instructionsHash": "664f324c2a031d452d1dac974de722837aaa189ebdbb29130ffef7e4458699f6",
+  "verifiedAt": "2026-10-20T08:24:27.380Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Понимаете, почему все так не любят !important? С ним код приходится побеждать, а не радоваться. Старайтесь никогда не использовать это слово."
+  }
+}

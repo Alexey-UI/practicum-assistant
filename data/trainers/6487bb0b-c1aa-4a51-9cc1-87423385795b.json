@@ -1,0 +1,18 @@
+{
+  "taskId": "6487bb0b-c1aa-4a51-9cc1-87423385795b",
+  "lessonId": "e2c7688c-5430-47b6-bc19-b1a17b9a874b",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "files": [
+    {
+      "name": "style.css",
+      "initialHash": "17d0e753c1a0a308703dd62c3325f29c079b5e201979d09159adf465e698eb0f",
+      "content": "*,\n*::before,\n*::after {\n  box-sizing: border-box;\n}\n\nbody {\n  display: grid;\n  place-items: center;\n  min-height: 100vh;\n  margin: 0;\n  padding: 40px;\n  font-family: 'Open Sans', sans-serif;\n  font-size: 18px;\n  background-color: #6dc1fd;\n}\n\nh1 {\n  -webkit-text-stroke: 2px #000;\n  text-stroke: 2px #000;\n  color: transparent;\n  font-size: 100px;\n  text-align: center;\n  text-transform: uppercase;\n}"
+    }
+  ],
+  "instructionsHash": "b3331ec5593eff418a099312afcabdaacdeebd0007952d5f97f57acb7cc7591f",
+  "verifiedAt": "2026-10-20T08:27:18.401Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Ох уж эти браузеры!"
+  }
+}

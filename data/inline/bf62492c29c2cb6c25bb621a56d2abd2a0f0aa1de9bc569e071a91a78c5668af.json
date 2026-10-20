@@ -1,0 +1,18 @@
+{
+  "id": "bf62492c29c2cb6c25bb621a56d2abd2a0f0aa1de9bc569e071a91a78c5668af",
+  "lessonId": "5941288a-fbe9-466b-a5a5-073eb6a5b82b",
+  "url": "https://sandbox.practicum-team.ru/tasks/02-interactivity-and-accessibility/08-forms-style/06-selects/example-04/pre/",
+  "instructionsHash": "fc8edbc61490e0232316e3bba2ff01e4239bfb657844da94d2baaafa360f1e1c",
+  "files": [
+    {
+      "name": "styles/style.css",
+      "initialHash": "e6f2335ab066ad18678bdbe26c0e15098cf5bee5534d9b9894b9a077a9cb2594",
+      "content": "* {\n  box-sizing: border-box;\n}\n\nhtml,\nbody {\n  height: 100%;\n}\n\nbody {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  min-width: 650px;\n  margin: 0;\n  font-family: 'Open Sans', sans-serif;\n  font-size: 18px;\n  background-image: url(https://code.s3.yandex.net/web-code/images/dotted-l.svg);\n}\n\nform {\n  display: flex;\n  flex-direction: column;\n  gap: 20px;\n  width: 500px;\n  border: 1px solid #000;\n  padding: 45px;\n  background-color: #6dc1fd;\n}\n\nfieldset {\n  display: grid;\n  border: none;\n  padding: 0;\n}\n\nlabel {\n  display: block;\n  font-weight: 800;\n  font-size: 12px;\n  text-transform: uppercase;\n}\n\nlabel:not(:last-child) {\n  margin-bottom: 10px;\n}\n\nbutton {\n  border: 1px solid #000;\n  padding: 10px 65px;\n  color: #000;\n  font-family: inherit;\n  font-weight: 800;\n  font-size: inherit;\n  text-transform: uppercase;\n  background-color: #feafe8;\n}\n\nbutton:hover {\n  box-shadow: inset 0 0 0 100px rgb(0 0 0 / 0.15);\n  cursor: pointer;\n}\n\nbutton:focus {\n  outline: 2px solid #000;\n  outline-offset: 0;\n}\n\n.visually-hidden {\n  position: absolute;\n  width: 1px;\n  height: 1px;\n  overflow: hidden;\n  clip: rect(0 0 0 0);\n  clip-path: inset(50%);\n  white-space: nowrap;\n}\n\nlabel span {\n  display: inline-block;\n  width: 20px;\n  height: 20px;\n  margin-right: 5px;\n  vertical-align: middle;\n  background-color: #feafe8;\n}\n\ninput[type='radio'] + span {\n  border-radius: 50%;\n}\n\ninput[type='radio']:checked + span {\n  border: 3px solid #fff;\n}\n\ninput[type='checkbox']:checked + span {\n  background-image: url(./images/check.svg);\n  background-repeat: no-repeat;\n  background-position: center;\n  background-size: contain;\n}\n\ninput[type='radio']:focus-visible + span,\ninput[type='checkbox']:focus-visible + span {\n  box-shadow: 0 0 0 5px rgb(254 175 232 / 0.5);\n}\n\nselect {\n  font-family: inherit;\n  font-size: 15px;\n  font-weight: 800;\n  text-transform: uppercase;\n  border: 1px solid #000;\n  border-radius: 0;\n  padding: 10px 15px;\n  background-color: transparent;\n  -webkit-appearance: none;\n  -moz-appearance: none;\n  appearance: none;\n\n  /* Наследуем шрифт от родителя */\n\n  /* Размер шрифта 15 пикселей */\n\n  /* Жирность шрифта 800 */\n\n  /* Трансформируем буквы в заглавные */\n}\n"
+    }
+  ],
+  "verifiedAt": "2026-10-20T08:37:09.875Z",
+  "evidence": {
+    "selector": ".result .icon-status-success",
+    "message": "Всё отлично!"
+  }
+}

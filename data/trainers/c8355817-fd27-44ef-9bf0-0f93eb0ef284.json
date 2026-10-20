@@ -1,0 +1,18 @@
+{
+  "taskId": "c8355817-fd27-44ef-9bf0-0f93eb0ef284",
+  "lessonId": "e2c7688c-5430-47b6-bc19-b1a17b9a874b",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "files": [
+    {
+      "name": "style.css",
+      "initialHash": "2138cf324928a1f64a7d2ddd1ab786b64ee9e4280773ec4e28677c48b2903d5b",
+      "content": "*,\n*::before,\n*::after {\n  box-sizing: border-box;\n}\n\nbody {\n  display: grid;\n  place-items: center;\n  min-height: 100vh;\n  margin: 0;\n  padding: 40px;\n  font-family: 'Open Sans', sans-serif;\n  font-size: 18px;\n  background-color: #6dc1fd;\n}\n\nh1 {\n  color: transparent;\n  font-size: 100px;\n  text-align: center;\n  text-transform: uppercase;\n  -webkit-text-stroke: 2px #000;\n  text-stroke: 2px #000;\n}"
+    }
+  ],
+  "instructionsHash": "1a154e4f72d1f612001f1238f8f1f3e112b55165360b2b167ead4b568dd6555d",
+  "verifiedAt": "2026-10-20T08:27:31.310Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Не так круто, как с Open Sans, но тоже достойно!"
+  }
+}

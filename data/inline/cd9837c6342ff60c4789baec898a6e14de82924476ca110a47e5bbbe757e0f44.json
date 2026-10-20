@@ -1,0 +1,18 @@
+{
+  "id": "cd9837c6342ff60c4789baec898a6e14de82924476ca110a47e5bbbe757e0f44",
+  "lessonId": "2957c8ea-3635-4cab-a9e0-5f4f486c06a8",
+  "url": "https://sandbox.practicum-team.ru/tasks/02-interactivity-and-accessibility/08-forms-style/05-pretty-flags/example-06/pre/",
+  "instructionsHash": "294e43605ecae918fc8776de6e785c21908217e4e4df9b468e33f3bdaae90d20",
+  "files": [
+    {
+      "name": "styles/style.css",
+      "initialHash": "c89643d19c097a185a3703746252dec40edef33ba443efc3e24ca50bde8a9579",
+      "content": "* {\n  box-sizing: border-box;\n}\n\nhtml,\nbody {\n  height: 100%;\n}\n\nbody {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  min-width: 650px;\n  margin: 0;\n  font-family: 'Open Sans', sans-serif;\n  font-size: 18px;\n  background-image: url(https://code.s3.yandex.net/web-code/images/dotted-l.svg);\n}\n\nform {\n  display: flex;\n  flex-direction: column;\n  gap: 20px;\n  width: 500px;\n  border: 1px solid #000;\n  padding: 45px;\n  background-color: #6dc1fd;\n}\n\nfieldset {\n  display: grid;\n  border: none;\n  padding: 0;\n}\n\nlabel {\n  display: block;\n  font-weight: 800;\n  font-size: 12px;\n  text-transform: uppercase;\n}\n\nlabel:not(:last-child) {\n  margin-bottom: 10px;\n}\n\nbutton {\n  border: 1px solid #000;\n  padding: 10px 65px;\n  color: #000;\n  font-family: inherit;\n  font-weight: 800;\n  font-size: inherit;\n  text-transform: uppercase;\n  background-color: #feafe8;\n}\n\nbutton:hover {\n  box-shadow: inset 0 0 0 100px rgb(0 0 0 / 0.15);\n  cursor: pointer;\n}\n\nbutton:focus {\n  outline: 2px solid #000;\n  outline-offset: 0;\n}\n\n.visually-hidden {\n  position: absolute;\n  width: 1px;\n  height: 1px;\n  overflow: hidden;\n  clip: rect(0 0 0 0);\n  clip-path: inset(50%);\n  white-space: nowrap;\n}\n\nlabel span {\n  display: inline-block;\n  width: 20px;\n  height: 20px;\n  margin-right: 5px;\n  vertical-align: middle;\n  background-color: #feafe8;\n}\n\ninput[type='radio'] + span {\n  border-radius: 50%;\n}\n\n/* Целый набор странных селекторов */\n\ninput[type='radio']:checked + span {\n  border: 3px solid #fff;\n  /* Тут пишем рамку */\n}\n\ninput[type='radio']:focus-visible + span {\n}\n\ninput[type='checkbox']:checked + span {\n}\n\ninput[type='checkbox']:focus-visible + span {\n}\n"
+    }
+  ],
+  "verifiedAt": "2026-10-20T08:33:27.340Z",
+  "evidence": {
+    "selector": ".result .icon-status-success",
+    "message": "Всё отлично!"
+  }
+}

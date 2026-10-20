@@ -1,0 +1,18 @@
+{
+  "id": "9ac01c84bdb893050275a38f822fdc7f2a283642e3112505b3803e12685ce44b",
+  "lessonId": "2957c8ea-3635-4cab-a9e0-5f4f486c06a8",
+  "url": "https://sandbox.practicum-team.ru/tasks/02-interactivity-and-accessibility/08-forms-style/05-pretty-flags/example-03/pre/",
+  "instructionsHash": "010450a5d0d0d7929c3c9904149af367dc29da71ba552257587c2f7716fb2d97",
+  "files": [
+    {
+      "name": "index.html",
+      "initialHash": "66a993ae5901d0826bf636bdb81a2e1b106868fe2c0a3df6934ca18c826d614c",
+      "content": "<!DOCTYPE html>\n<html lang=\"ru\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <title>Кастомные элементы формы</title>\n    <link\n      rel=\"stylesheet\"\n      href=\"https://code.s3.yandex.net/web-code/fonts/fonts.css\"\n    />\n    <link rel=\"stylesheet\" href=\"./styles/style.css\" />\n  </head>\n  <body>\n    <form>\n      <fieldset>\n        <label>\n          <input class=\"visually-hidden\" type=\"radio\" name=\"answer\" />\n          <span></span>\n          Да\n        </label>\n        <label>\n          <input class=\"visually-hidden\" type=\"radio\" name=\"answer\" />\n          <span></span>\n          Нет\n        </label>\n        <label>\n          <input class=\"visually-hidden\" type=\"radio\" name=\"answer\" />\n          <span></span>\n          Не знаю\n        </label>\n      </fieldset>\n      <fieldset>\n        <label>\n          <input class=\"visually-hidden\" type=\"checkbox\" name=\"tv-show\" />\n          <span></span>\n          Новости\n        </label>\n        <label>\n          <input class=\"visually-hidden\" type=\"checkbox\" name=\"tv-show\" />\n          <span></span>\n          Фантастика\n        </label>\n        <label>\n          <input class=\"visually-hidden\" type=\"checkbox\" name=\"tv-show\" />\n          <span></span>\n          Мультики\n        </label>\n      </fieldset>\n      <fieldset>\n        <select name=\"cartoon\">\n          <option value=\"\">История игрушек</option>\n          <option value=\"\">Мулан</option>\n          <option value=\"\">Король Лев</option>\n        </select>\n      </fieldset>\n      <button>Ответить</button>\n    </form>\n  </body>\n</html>\n"
+    }
+  ],
+  "verifiedAt": "2026-10-20T08:32:36.028Z",
+  "evidence": {
+    "selector": ".result .icon-status-success",
+    "message": "Всё отлично!"
+  }
+}

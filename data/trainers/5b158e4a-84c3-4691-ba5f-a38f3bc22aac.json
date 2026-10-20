@@ -1,0 +1,18 @@
+{
+  "taskId": "5b158e4a-84c3-4691-ba5f-a38f3bc22aac",
+  "lessonId": "05382ba6-339d-4a0e-b9d1-02c4d9139bd2",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "files": [
+    {
+      "name": "style.css",
+      "initialHash": "5a063a1a71d7d401ca34bbed4c3c0a69edaae3cfbee43d601a99c2fb86d8dd13",
+      "content": "*,\n*::before,\n*::after {\n  box-sizing: border-box;\n}\n\nbody {\n  display: grid;\n  place-items: center;\n  min-height: 100vh;\n  margin: 0;\n  padding: 40px;\n  font-family: 'Open Sans', sans-serif;\n  font-size: 18px;\n  background-color: #fff;\n  background-image: url(https://code.s3.yandex.net/web-code/images/dotted.svg);\n}\n\n.heart {\n  width: 40%;\n  padding: 20px;\n  fill: black;\n  cursor: pointer;\n}\n\n.heart:hover {\n  border-radius: 20px;\n  outline: 4px solid black;\n}\n\n.is-liked:hover {\n  border-radius: 20px;\n  outline: 4px solid red;\n}\n.is-liked {\n  fill: red;\n}\n"
+    }
+  ],
+  "instructionsHash": "e620f8aad08d26b05e93425e43aefe4d315b6adc9391daa986e0b797176c2965",
+  "verifiedAt": "2026-10-20T08:21:48.867Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Чтобы отлавливать такие проблемы, нужно держать открытыми инструменты разработчика и смотреть, какие стили применяет браузер к элементам."
+  }
+}

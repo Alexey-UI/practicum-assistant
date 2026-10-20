@@ -1,0 +1,18 @@
+{
+  "id": "bc7d46750a70d5b5d24b8377638471bd0a084150ba1ae5b252172cc2c0f0df21",
+  "lessonId": "ec0f788b-a71f-4f7a-9710-36259964a0e7",
+  "url": "https://sandbox.practicum-team.ru/tasks/02-interactivity-and-accessibility/08-forms-style/03-pseudo/example-02/pre/",
+  "instructionsHash": "e2108cb4619fa4504acde1fce7aabc61a8eb380cdbf9b3f579af7f21b05c1b05",
+  "files": [
+    {
+      "name": "styles/style.css",
+      "initialHash": "47a82defe04624024d4d21fbb2d3326939896af3e294593899899a403587a96f",
+      "content": "* {\n  box-sizing: border-box;\n}\n\nhtml,\nbody {\n  height: 100%;\n}\n\nbody {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  min-width: 650px;\n  font-family: 'Open Sans', sans-serif;\n  font-size: 18px;\n  background-image: url(https://code.s3.yandex.net/web-code/images/dotted.svg);\n}\n\nform {\n  display: grid;\n  gap: 20px;\n  width: 600px;\n  padding: 35px;\n  background-color: #80d994;\n}\n\nlabel,\ninput {\n  width: 100%;\n}\n\nlabel span {\n  display: block;\n  margin-bottom: 5px;\n  font-weight: 800;\n  font-size: 12px;\n  text-transform: uppercase;\n}\n\nbutton {\n  border: 1px solid #000;\n  padding: 10px 65px;\n  color: #000;\n  font-family: inherit;\n  font-weight: 800;\n  font-size: inherit;\n  text-transform: uppercase;\n  background-color: #ffc802;\n}\n\nbutton:hover {\n  box-shadow: inset 0 0 0 100px rgb(0 0 0 / 0.15);\n  cursor: pointer;\n}\n\nbutton:focus {\n  outline: 2px solid #000;\n  outline-offset: 0;\n}\n\nbutton[disabled] {\n  opacity: 0.6;\n}\n\ninput {\n  border: 1px solid #000;\n  padding: 10px 15px;\n  color: inherit;\n  font-family: inherit;\n  font-size: inherit;\n  background-color: transparent;\n}\n\ninput::placeholder {\n  color: rgb(0 0 0 / 0.6);\n}\n\ninput:focus {\n  outline: none;\n}\n\ninput:focus-visible {\n  outline: 2px solid #000;\n  outline-offset: 0;\n}\n\ninput:invalid {\n  background-color: #fd24af;\n}\n\nform:valid {\n  outline: 2px solid #5f0dee;\n}\n"
+    }
+  ],
+  "verifiedAt": "2026-10-20T08:31:11.393Z",
+  "evidence": {
+    "selector": ".result .icon-status-success",
+    "message": "Всё отлично!"
+  }
+}

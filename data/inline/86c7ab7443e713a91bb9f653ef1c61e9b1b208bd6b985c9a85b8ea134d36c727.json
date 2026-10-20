@@ -1,0 +1,18 @@
+{
+  "id": "86c7ab7443e713a91bb9f653ef1c61e9b1b208bd6b985c9a85b8ea134d36c727",
+  "lessonId": "f0238f72-588c-4358-b45a-56a250d7537c",
+  "url": "https://sandbox.practicum-team.ru/tasks/02-interactivity-and-accessibility/08-forms-style/02-inputs-buttons-labels/example-05/pre/",
+  "instructionsHash": "2dd546b965df8cca2dc7e9ec9de5cbb7a102683799a284bcc3700f63cec1ab6a",
+  "files": [
+    {
+      "name": "styles/style.css",
+      "initialHash": "92217d21104bf5e4c187852b892537937ae3e8bee02df4a756d805e995cba649",
+      "content": "* {\n  box-sizing: border-box;\n}\n\nhtml,\nbody {\n  height: 100%;\n}\n\nbody {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  min-width: 650px;\n  font-family: 'Open Sans', sans-serif;\n  font-size: 18px;\n  background-image: url(https://code.s3.yandex.net/web-code/images/dotted.svg);\n}\n\nform {\n  display: grid;\n  gap: 20px;\n  width: 600px;\n  padding: 35px;\n  background-color: #80d994;\n}\n\nlabel,\ninput {\n  width: 100%;\n}\n\nlabel span {\n  display: block;\n  margin-bottom: 5px;\n  font-weight: 800;\n  font-size: 12px;\n  text-transform: uppercase;\n}\n\nbutton {\n  border: 1px solid #000;\n  padding: 10px 65px;\n  color: #000;\n  font-family: inherit;\n  font-weight: 800;\n  font-size: inherit;\n  text-transform: uppercase;\n  background-color: #ffc802;\n}\n\nbutton:hover {\n  box-shadow: inset 0 0 0 100px rgb(0 0 0 / 0.15);\n  cursor: pointer;\n}\n\nbutton:focus {\n  outline: 2px solid #000;\n  outline-offset: 0;\n}\n\nbutton[disabled] {\n  opacity: 0.6;\n}\n\ninput {\n  padding: 10px 15px;\n  border: 1px solid #000;\n  color: inherit;\n  font-family: inherit;\n  font-size: inherit;\n  background-color: transparent;\n}\n"
+    }
+  ],
+  "verifiedAt": "2026-10-20T08:29:30.222Z",
+  "evidence": {
+    "selector": ".result .icon-status-success",
+    "message": "Всё отлично!"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "taskId": "11d3bb22-6e12-4be0-af36-ea9c1893d38b",
+  "lessonId": "e2c7688c-5430-47b6-bc19-b1a17b9a874b",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "files": [
+    {
+      "name": "style.css",
+      "initialHash": "f44846d492885f409b75f92719402cb32cadd75bf72e84fbb09d99cb9607193c",
+      "content": "*,\n*::before,\n*::after {\n  box-sizing: border-box;\n}\n\nbody {\n  display: grid;\n  place-items: center;\n  min-height: 100vh;\n  margin: 0;\n  padding: 40px;\n  font-family: 'Open Sans', sans-serif;\n  font-size: 18px;\n  background-color: #f5f5f5;\n}\n\n/* === Текст над изображением === */\n.content {\n  text-align: center;\n  margin-bottom: 30px;\n}\n\n.title {\n  margin: 0 0 10px;\n  font-size: 32px;\n  color: #2c3e50;\n}\n\n.description {\n  margin: 0;\n  font-size: 18px;\n  color: #666;\n}\n\n/* === Контейнер изображения === */\n.image-container {\n  position: relative;\n  width: 774px;\n  height: 1161px;\n  border: 2px solid #2c3e50;\n  border-radius: 8px;\n  overflow: hidden;\n}\n\n/* === Фоновое изображение === */\n.background-image {\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 100%;\n  height: 100%;\n  background-image: url('../images/photo-1620694563886-c3a80ec55f41.avif');\n  background-size: cover;\n  background-position: center;\n}\n\n/* === Прямоугольник для размытия === */\n.blur-box {\n  position: absolute;\n  top: 60px;\n  left: 60px;\n  right: 60px;\n  bottom: 200px;\n  background-color: rgba(255, 255, 255, 0.4);\n  border: 2px solid #000;\n  border-radius: 8px;\n}\n\n/* === Задание: добавить @supports с backdrop-filter === */\n/* Здесь ваш код: */\n@supports (backdrop-filter: blur(5px)) {\n  .blur-box {\n    background-color: transparent;\n    backdrop-filter: blur(5px);\n  }\n}\n"
+    }
+  ],
+  "instructionsHash": "07d437e5cf591a9821e5a3425a50889b1f95ec9913ca9c97ff72e100d6d04194",
+  "verifiedAt": "2026-10-20T08:27:42.046Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Это было круто! Мы верим, что когда-нибудь это свойство поддержат все браузеры, а эта задача станет частью истории."
+  }
+}

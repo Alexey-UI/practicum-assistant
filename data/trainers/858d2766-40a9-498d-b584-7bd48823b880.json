@@ -1,0 +1,18 @@
+{
+  "taskId": "858d2766-40a9-498d-b584-7bd48823b880",
+  "lessonId": "110ed204-e373-4597-b21a-0f3a361a9024",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "files": [
+    {
+      "name": "style.css",
+      "initialHash": "2b0b42720aacdca268888e6b1337764ceefb23146da2efcd347f2546fce0fa55",
+      "content": "*,\n*::before,\n*::after {\n  box-sizing: border-box;\n}\n\nbody {\n  min-height: 100vh;\n  margin: 0;\n  padding: 40px;\n  font-family: 'Open Sans', sans-serif;\n  font-size: 18px;\n  background-color: #fff;\n  background-image: url(https://code.s3.yandex.net/web-code/images/dotted.svg);\n}\n\na {\n  display: block;\n  color: currentColor;\n  text-decoration: none;\n}\n\nul {\n  border: 1px solid #000;\n  padding: 0;\n  list-style: none;\n}\n\nul li:hover {\n  background-color: #80d994;\n}\n\n.menu__list {\n  display: flex;\n  flex-direction: column;\n  width: fit-content;\n}\n\n.menu__list li:not(:last-child) {\n  border-bottom: 1px solid currentColor;\n}\n\n.menu__list a {\n  padding: 20px 40px;\n  font-weight: bold;\n  text-align: center;\n  text-transform: uppercase;\n}\n.menu__list > li {\n  background-color: #6dc1fd;\n  position: relative;\n}\n"
+    }
+  ],
+  "instructionsHash": "4b6322b5ea0369f607b16ccb902470850f1c9f410375cf74955c84f8f807c4bb",
+  "verifiedAt": "2026-10-20T08:24:54.048Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Все пункты окрасились голубым цветом — это в порядке вещей. Все пункты списка второго уровня вложенные в пункты списка первого. Сейчас станет нагляднее."
+  }
+}

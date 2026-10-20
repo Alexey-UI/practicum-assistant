@@ -1,0 +1,18 @@
+{
+  "id": "811f593d0c53182a1b2a060034e545be66078f31fb3e09f2ef57c88dc4b963aa",
+  "lessonId": "f0238f72-588c-4358-b45a-56a250d7537c",
+  "url": "https://sandbox.practicum-team.ru/tasks/02-interactivity-and-accessibility/08-forms-style/02-inputs-buttons-labels/example-08/pre/",
+  "instructionsHash": "5628fe77ddb5fdec3ddd6ef4936fc8472a7990f2758819be8260092ac0634fee",
+  "files": [
+    {
+      "name": "styles/style.css",
+      "initialHash": "4010063ac7bc018cb18c6ec9d27810323e1c990efb03a682ee6b9545b84350d8",
+      "content": "* {\n  box-sizing: border-box;\n}\n\nhtml,\nbody {\n  height: 100%;\n}\n\nbody {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  min-width: 650px;\n  font-family: 'Open Sans', sans-serif;\n  font-size: 18px;\n  background-image: url(https://code.s3.yandex.net/web-code/images/dotted.svg);\n}\n\nform {\n  display: grid;\n  gap: 20px;\n  width: 600px;\n  padding: 35px;\n  background-color: #80d994;\n}\n\nlabel,\ninput {\n  width: 100%;\n}\n\nlabel span {\n  display: block;\n  margin-bottom: 5px;\n  font-weight: 800;\n  font-size: 12px;\n  text-transform: uppercase;\n}\n\nbutton {\n  border: 1px solid #000;\n  padding: 10px 65px;\n  color: #000;\n  font-family: inherit;\n  font-weight: 800;\n  font-size: inherit;\n  text-transform: uppercase;\n  background-color: #ffc802;\n}\n\nbutton:hover {\n  box-shadow: inset 0 0 0 100px rgb(0 0 0 / 0.15);\n  cursor: pointer;\n}\n\nbutton:focus {\n  outline: 2px solid #000;\n  outline-offset: 0;\n}\n\nbutton[disabled] {\n  opacity: 0.6;\n}\n\ninput {\n  border: 1px solid #000;\n  padding: 10px 15px;\n  color: inherit;\n  font-family: inherit;\n  font-size: inherit;\n  background-color: transparent;\n}\n\ninput::placeholder {\n  color: rgb(0 0 0 / 0.6);\n}\n\ninput:focus {\n  outline: none;\n}\n\ninput:focus-visible {\n  outline: 2px solid #000000;\n  outline-offset: 0px;\n}\n"
+    }
+  ],
+  "verifiedAt": "2026-10-20T08:30:27.950Z",
+  "evidence": {
+    "selector": ".result .icon-status-success",
+    "message": "Всё отлично!"
+  }
+}

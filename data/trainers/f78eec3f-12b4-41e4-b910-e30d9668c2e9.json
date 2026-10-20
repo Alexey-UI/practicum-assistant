@@ -1,0 +1,18 @@
+{
+  "taskId": "f78eec3f-12b4-41e4-b910-e30d9668c2e9",
+  "lessonId": "c9e6fd7a-29c4-4b54-8833-a966030d684e",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "files": [
+    {
+      "name": "style.css",
+      "initialHash": "3c38b8bd88573262d4e66b65d44d68cd7b04a7e89b8ca3bfdf7a442887254853",
+      "content": "*,\n*::before,\n*::after {\n  box-sizing: border-box;\n}\n\nbody {\n  min-width: 500px;\n  min-height: 100vh;\n  margin: 0;\n  font-family: 'Open Sans', sans-serif;\n  font-size: 18px;\n  background-color: #fff;\n}\n\n.swiper {\n  width: 100%;\n  height: 100vh;\n  margin: 0;\n}\n\n.swiper-slide {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  color: #000;\n  font-weight: bold;\n  font-size: 100px;\n  text-align: center;\n  text-transform: uppercase;\n}\n\n.swiper-slide:nth-child(even) {\n  background-color: #feafe8;\n}\n\n.swiper-slide:nth-child(odd) {\n  background-color: #80d994;\n}\n\n.swiper-button {\n  background-color: transparent;\n  border: none;\n}\n\n.swiper-button::after {\n  color: black;\n}\n\n.swiper-pagination-bullet {\n  background-color: #000;\n}\n"
+    }
+  ],
+  "instructionsHash": "b9983c9ace4620dc1b7aafb26a36861693d0f7af03eb9c6c0bc9b9e8b2bbba98",
+  "verifiedAt": "2026-10-20T08:23:55.329Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Пока никакого !important. Просто каскад. Посмотрите, как правила перезаписывают друг друга в инструментах разработчика"
+  }
+}

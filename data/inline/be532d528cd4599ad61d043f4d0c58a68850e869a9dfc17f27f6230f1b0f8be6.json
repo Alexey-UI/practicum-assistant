@@ -1,0 +1,18 @@
+{
+  "id": "be532d528cd4599ad61d043f4d0c58a68850e869a9dfc17f27f6230f1b0f8be6",
+  "lessonId": "f0238f72-588c-4358-b45a-56a250d7537c",
+  "url": "https://sandbox.practicum-team.ru/tasks/02-interactivity-and-accessibility/08-forms-style/02-inputs-buttons-labels/example-06/pre/",
+  "instructionsHash": "f783f5ca5be1adb104e10364c7bb5670e3f83d2ab4bb804bf135853fadb40ce0",
+  "files": [
+    {
+      "name": "index.html",
+      "initialHash": "c01c0eb4183f2732bbf2eea9196b70eab7125906dfd2c91f4954ecfeedc37fec",
+      "content": "<!DOCTYPE html>\n<html lang=\"ru\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <title>Стилизуем поля ввода</title>\n    <link\n      rel=\"stylesheet\"\n      href=\"https://code.s3.yandex.net/web-code/fonts/fonts.css\"\n    />\n    <link rel=\"stylesheet\" href=\"./styles/style.css\" />\n  </head>\n  <body>\n    <form>\n      <label>\n        <span>Введите ваше имя</span>\n        <input type=\"text\" placeholder=\"Иванов Иван Иванович\" />\n      </label>\n      <label>\n        <span>Введите почту</span>\n        <input type=\"email\" placeholder=\"example@ya.ru\" />\n      </label>\n      <button>Отправить форму</button>\n    </form>\n  </body>\n</html>\n"
+    }
+  ],
+  "verifiedAt": "2026-10-20T08:29:47.177Z",
+  "evidence": {
+    "selector": ".result .icon-status-success",
+    "message": "Всё отлично!"
+  }
+}

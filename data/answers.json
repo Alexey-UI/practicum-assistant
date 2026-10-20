@@ -440,5 +440,104 @@
     ],
     "evidence": "quiz_answered: actual selected option classes are accepted by the platform",
     "confirmedAt": "2026-10-20T07:20:48.328Z"
+  },
+  "9a621000bcb699e6841a6c4eaab992fecc6aef102774b4281bb1c908e1477db5": {
+    "answers": [
+      "Зелёный"
+    ],
+    "evidence": "quiz_answered: actual selected option classes are accepted by the platform",
+    "confirmedAt": "2026-10-20T08:22:32.636Z"
+  },
+  "48b0d3965eca1ad738319eb4e4bd8334cef6874a6cb002cf5cda25dd85671209": {
+    "answers": [
+      "Ввести всё, что помню, и нажать Tab."
+    ],
+    "evidence": "quiz_answered: actual selected option classes are accepted by the platform",
+    "confirmedAt": "2026-10-20T08:40:14.409Z"
+  },
+  "7733ebfe6f9f51ffd96b5db25ecd2882fa354b4bf1ea03d0630b6d56fb2cd1ae": {
+    "answers": [
+      "Домашняя — это папка пользователя, в ней все ваши файлы; а корневая — это самая верхняя папка в иерархии."
+    ],
+    "evidence": "quiz_answered: actual selected option classes are accepted by the platform",
+    "confirmedAt": "2026-10-20T08:40:14.431Z"
+  },
+  "45d4aa15abe27fae1629f87dce2e3d478c976fa8f13a8a39618e7b9000dea852": {
+    "answers": [
+      "Стрелками ↑↓ можно находить команды в памяти терминала и клавишей Enter вызывать их.",
+      "Клавиша Tab — незаменимый помощник в навигации по папкам и для автозаполнения забытых команд."
+    ],
+    "evidence": "quiz_answered: actual selected option classes are accepted by the platform",
+    "confirmedAt": "2026-10-20T08:40:14.449Z"
+  },
+  "7a5218eae91f9a07dca68a38580cb895415d6c5104f1d433e439d4c4e46e8f97": {
+    "answers": [
+      "cp; затем имена файлов, которые нужно скопировать; и потом — путь к папке, в которую хотим сложить копии."
+    ],
+    "evidence": "quiz_answered: actual selected option classes are accepted by the platform",
+    "confirmedAt": "2026-10-20T08:40:43.236Z"
+  },
+  "126904fb2be15ae544f20526a281b597a0478bf5061372029a07bacfb7d51d5f": {
+    "answers": [
+      "&&"
+    ],
+    "evidence": "quiz_answered: actual selected option classes are accepted by the platform",
+    "confirmedAt": "2026-10-20T08:40:43.262Z"
+  },
+  "ec89c0438a976dfedacb988121b8e7242665353fffd79a17cc3801615f5049a4": {
+    "answers": [
+      "Переключиться в командный режим клавишей esc, ввести :q! и нажать Enter."
+    ],
+    "evidence": "quiz_answered: actual selected option classes are accepted by the platform",
+    "confirmedAt": "2026-10-20T08:41:15.501Z"
+  },
+  "7dcd80451a73fb20268ef42336ddec4d57a032d701a79bb8718384ae0a494fc5": {
+    "answers": [
+      "cat"
+    ],
+    "evidence": "quiz_answered: actual selected option classes are accepted by the platform",
+    "confirmedAt": "2026-10-20T08:41:15.523Z"
+  },
+  "be2cc21e2d53680a890390d88d738c15fc5ebfcdabd3f6f2edf7613b84aa5441": {
+    "answers": [
+      "Добавить файлы во временное хранилище командой git add, затем сделать коммит."
+    ],
+    "evidence": "quiz_answered: actual selected option classes are accepted by the platform",
+    "confirmedAt": "2026-10-20T08:41:38.795Z"
+  },
+  "e64fb9861e94665563678fa4212d7fa8754215f73aa9ee7dbb944c6a4c41e8e9": {
+    "answers": [
+      "git diff"
+    ],
+    "evidence": "quiz_answered: actual selected option classes are accepted by the platform",
+    "confirmedAt": "2026-10-20T08:42:27.840Z"
+  },
+  "d971b7d7b4cd8dfb26f5202a8f51729c7a8d7e9a2d295c5c829c07d44872f801": {
+    "answers": [
+      "git diff и хеш двух коммитов"
+    ],
+    "evidence": "quiz_answered: actual selected option classes are accepted by the platform",
+    "confirmedAt": "2026-10-20T08:42:27.855Z"
+  },
+  "57cb48b91e23fe4e299e99d770a0f36308af974ed97c19f0cb416205f56da5af": {
+    "answers": [
+      "git log --oneline"
+    ],
+    "evidence": "quiz_answered: actual selected option classes are accepted by the platform",
+    "confirmedAt": "2026-10-20T08:42:27.869Z"
+  },
+  "a22e3217b63cc8936b937500097990d3d27c2488cd70cf42d7d71245a2be0685": {
+    "answers": [
+      "git reset --hard"
+    ],
+    "evidence": "quiz_answered: actual selected option classes are accepted by the platform",
+    "confirmedAt": "2026-10-20T08:42:58.643Z"
+  },
+  "30fb2352da3ec4a09c73afaaf15d29372db6738032f61c0e49edc50333fbba74": {
+    "answers": [
+      "git commit --amend"
+    ],
+    "evidence": "quiz_answered: actual selected option classes are accepted by the platform",
+    "confirmedAt": "2026-10-20T08:42:58.661Z"
   }
 }

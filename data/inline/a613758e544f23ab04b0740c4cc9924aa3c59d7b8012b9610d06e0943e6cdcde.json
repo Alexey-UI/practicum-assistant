@@ -1,0 +1,18 @@
+{
+  "id": "a613758e544f23ab04b0740c4cc9924aa3c59d7b8012b9610d06e0943e6cdcde",
+  "lessonId": "2957c8ea-3635-4cab-a9e0-5f4f486c06a8",
+  "url": "https://sandbox.practicum-team.ru/tasks/02-interactivity-and-accessibility/08-forms-style/05-pretty-flags/example-01/pre/",
+  "instructionsHash": "3bf0acb4f7905beaff47c3f439243937703f2ec5452a8e70b6df9f28e8a82bea",
+  "files": [
+    {
+      "name": "index.html",
+      "initialHash": "75a56911cc00510e0778569651291b9f7230bc3bde1357c6dd8abfac057e2fa8",
+      "content": "<!DOCTYPE html>\n<html lang=\"ru\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <title>Кастомные элементы формы</title>\n    <link\n      rel=\"stylesheet\"\n      href=\"https://code.s3.yandex.net/web-code/fonts/fonts.css\"\n    />\n    <link rel=\"stylesheet\" href=\"./styles/style.css\" />\n  </head>\n  <body>\n    <form>\n      <fieldset>\n        <label>\n          <input type=\"radio\" name=\"answer\" />\n          Да\n        </label>\n        <label>\n          <input type=\"radio\" name=\"answer\" />\n          Нет\n        </label>\n        <label>\n          <input type=\"radio\" name=\"answer\" />\n          Не знаю\n        </label>\n      </fieldset>\n      <fieldset>\n        <label>\n          <input type=\"checkbox\" name=\"tv-show\" />\n          Новости\n        </label>\n        <label>\n          <input type=\"checkbox\" name=\"tv-show\" />\n          Фантастика\n        </label>\n        <label>\n          <input type=\"checkbox\" name=\"tv-show\" />\n          Мультики\n        </label>\n      </fieldset>\n      <fieldset>\n        <select name=\"cartoon\">\n          <option value=\"\">История игрушек</option>\n          <option value=\"\">Мулан</option>\n          <option value=\"\">Король Лев</option>\n        </select>\n      </fieldset>\n      <button>Ответить</button>\n    </form>\n  </body>\n</html>\n"
+    }
+  ],
+  "verifiedAt": "2026-10-20T08:32:07.086Z",
+  "evidence": {
+    "selector": ".result .icon-status-success",
+    "message": "Всё отлично!"
+  }
+}

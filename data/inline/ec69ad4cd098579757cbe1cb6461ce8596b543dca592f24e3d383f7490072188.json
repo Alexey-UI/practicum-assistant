@@ -1,0 +1,18 @@
+{
+  "id": "ec69ad4cd098579757cbe1cb6461ce8596b543dca592f24e3d383f7490072188",
+  "lessonId": "c86fe2fb-4634-4020-ad17-020ba32a20cd",
+  "url": "https://sandbox.practicum-team.ru/tasks/02-interactivity-and-accessibility/08-forms-style/08-range/example-03/pre/",
+  "instructionsHash": "022bf61de66e653eada7cb4cffde75cc8e6288f67a9e20c71e3deb8b536c8ca5",
+  "files": [
+    {
+      "name": "styles/style.css",
+      "initialHash": "d71f6b9db797b5ccae6e572d17fa68366dab6efb1dd78fbee27297c467114ade",
+      "content": "* {\n  box-sizing: border-box;\n}\n\nhtml,\nbody {\n  height: 100%;\n}\n\nbody {\n  display: grid;\n  justify-content: center;\n  align-items: center;\n  min-width: 500px;\n  margin: 0;\n  font-family: 'Open Sans', sans-serif;\n  font-size: 18px;\n  background-color: #feafe8;\n}\n\nform {\n  width: 400px;\n  border: 2px solid #000;\n  padding: 50px;\n}\n\nlabel {\n  display: block;\n}\n\nlabel span {\n  display: block;\n  font-weight: 800;\n  font-size: 12px;\n  text-transform: uppercase;\n}\n\ninput[type='range'] {\n  width: 100%;\n  background-color: transparent;\n  -webkit-appearance: none;\n  -moz-appearance: none;\n  appearance: none;\n}\n\ninput[type=\"range\"]::-webkit-slider-thumb { border: 1px solid #000000; height: 16px; width: 26px; border-radius: 0; background-color: #ffffff; cursor: pointer; -webkit-appearance: none; -moz-appearance: none; appearance: none; margin-top: -3px; } input[type=\"range\"]::-moz-range-thumb { box-sizing: border-box; border: 1px solid #000000; height: 16px; width: 26px; border-radius: 0; background-color: #ffffff; cursor: pointer; }\n"
+    }
+  ],
+  "verifiedAt": "2026-10-20T08:38:34.448Z",
+  "evidence": {
+    "selector": ".result .icon-status-success",
+    "message": "Всё отлично!"
+  }
+}

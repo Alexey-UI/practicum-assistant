@@ -1,0 +1,18 @@
+{
+  "id": "95ac124526ad6c86338852c82647a583c9301ba747f74230b4137a3b061de207",
+  "lessonId": "ec0f788b-a71f-4f7a-9710-36259964a0e7",
+  "url": "https://sandbox.practicum-team.ru/tasks/02-interactivity-and-accessibility/08-forms-style/03-pseudo/example-01/pre/",
+  "instructionsHash": "e284fa75b411902a08dad42aada4b9ffabac0bd2af29d83fbc935e1b4735e900",
+  "files": [
+    {
+      "name": "styles/style.css",
+      "initialHash": "9bf1c820a59b4b9e634ae6ac523e5562caa56499e957ac0654c05a4c2d303825",
+      "content": "* {\n  box-sizing: border-box;\n}\n\nhtml,\nbody {\n  height: 100%;\n}\n\nbody {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  min-width: 650px;\n  font-family: 'Open Sans', sans-serif;\n  font-size: 18px;\n  background-image: url(https://code.s3.yandex.net/web-code/images/dotted.svg);\n}\n\nform {\n  display: grid;\n  gap: 20px;\n  width: 600px;\n  padding: 35px;\n  background-color: #80d994;\n}\n\nlabel,\ninput {\n  width: 100%;\n}\n\nlabel span {\n  display: block;\n  margin-bottom: 5px;\n  font-weight: 800;\n  font-size: 12px;\n  text-transform: uppercase;\n}\n\nbutton {\n  border: 1px solid #000;\n  padding: 10px 65px;\n  color: #000;\n  font-family: inherit;\n  font-weight: 800;\n  font-size: inherit;\n  text-transform: uppercase;\n  background-color: #ffc802;\n}\n\nbutton:hover {\n  box-shadow: inset 0 0 0 100px rgb(0 0 0 / 0.15);\n  cursor: pointer;\n}\n\nbutton:focus {\n  outline: 2px solid #000;\n  outline-offset: 0;\n}\n\nbutton[disabled] {\n  opacity: 0.6;\n}\n\ninput {\n  border: 1px solid #000;\n  padding: 10px 15px;\n  color: inherit;\n  font-family: inherit;\n  font-size: inherit;\n  background-color: transparent;\n}\n\ninput::placeholder {\n  color: rgb(0 0 0 / 0.6);\n}\n\ninput:focus {\n  outline: none;\n}\n\ninput:focus-visible {\n  outline: 2px solid #000;\n  outline-offset: 0;\n}\n\n/* Тут напишите правило для невалидного поля */\n\ninput:invalid {\n  background-color: #fd24af;\n}\n"
+    }
+  ],
+  "verifiedAt": "2026-10-20T08:30:58.207Z",
+  "evidence": {
+    "selector": ".result .icon-status-success",
+    "message": "Всё отлично!"
+  }
+}
