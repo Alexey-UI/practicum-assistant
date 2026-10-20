@@ -1,0 +1,18 @@
+{
+  "taskId": "ba86bed7-9888-4b43-84de-3ec5cc990b06",
+  "lessonId": "feec6481-efcb-4f01-9985-952c6e7adce3",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "files": [
+    {
+      "name": "style.css",
+      "initialHash": "950f8ab14947bc97ace77bbaea48fd3336fa40503b8db40d1456c2bcbad09502",
+      "content": "*,\n*::before,\n*::after {\n  box-sizing: border-box;\n}\n\nbody {\n  display: grid;\n  place-items: center;\n  min-block-size: 100dvb;\n  margin: 0;\n  padding: 2em;\n  color: #ffc802;\n  font-family: 'Open Sans', sans-serif;\n  font-size: 18px;\n  background-color: #5f0dee;\n}\n\nh1 {\n  margin: 0;\n  color: transparent;\n  font-size: clamp(2.5rem, 0.5rem + 7vi, 6.25rem);\n  text-transform: uppercase;\n  -webkit-hyphens: auto;\n  hyphens: auto;\n  text-wrap: balance;\n  -webkit-text-stroke: 2px #ffc802;\n}\n\nh1::selection {\n  color: #ffc802;\n  background-color: #6dc1fd;\n}\n@supports (text-stroke: 2px #ffc802) {\n  h1 {\n    text-stroke: 2px #ffc802;\n  }\n}\n"
+    }
+  ],
+  "instructionsHash": "19da11ded0d837917d0af0e5b55f5d3678ae5cbeb7696160ffbf8b7c0fc685ee",
+  "verifiedAt": "2026-10-20T10:02:25.113Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Когда браузеры договорятся и всё доработают, ваш проект уже будет готов поддерживать самое современное."
+  }
+}

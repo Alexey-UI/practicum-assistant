@@ -560,5 +560,75 @@
     ],
     "evidence": "quiz_answered: actual selected option classes are accepted by the platform",
     "confirmedAt": "2026-10-20T09:08:06.049Z"
+  },
+  "13aa874fb8584670f2063473f54a866fb4c82200d6a8a6e2162fabfb42977494": {
+    "answers": [
+      "cp, потом название файла, и куда копируем."
+    ],
+    "evidence": "quiz_answered: actual selected option classes are accepted by the platform",
+    "confirmedAt": "2026-10-20T10:03:59.002Z"
+  },
+  "7353c00f3ed6c32b7830685ec17938d28b02e250de3c496c18c142066047f73b": {
+    "answers": [
+      "mkdir some_folder && cd some_folder && git init && touch index.html style.css"
+    ],
+    "evidence": "quiz_answered: actual selected option classes are accepted by the platform",
+    "confirmedAt": "2026-10-20T10:03:59.019Z"
+  },
+  "2c1a71ef4f4fa7b3fa3043eda09d045971622eb37a65eedf9751c48f08fcb2a0": {
+    "answers": [
+      "git pull."
+    ],
+    "evidence": "quiz_answered: actual selected option classes are accepted by the platform",
+    "confirmedAt": "2026-10-20T10:03:59.036Z"
+  },
+  "b493792adcf52300f04977ca6d76460e7fc991470a69eb1d697c8385bc82973b": {
+    "answers": [
+      "Это зона, в которую вы добавили файлы командой git add, подготовив их тем самым к коммиту."
+    ],
+    "evidence": "quiz_answered: actual selected option classes are accepted by the platform",
+    "confirmedAt": "2026-10-20T10:03:59.050Z"
+  },
+  "9f593c6489d275e65b755c699f10965b0f0780c543ad0c15f0e9724c900903bb": {
+    "answers": [
+      "git log --oneline."
+    ],
+    "evidence": "quiz_answered: actual selected option classes are accepted by the platform",
+    "confirmedAt": "2026-10-20T10:03:59.064Z"
+  },
+  "241b9767e72ce81289d9694f0a4deb1df8285eb7cf76f8c805b39446e6ccaaa9": {
+    "answers": [
+      "git branch."
+    ],
+    "evidence": "quiz_answered: actual selected option classes are accepted by the platform",
+    "confirmedAt": "2026-10-20T10:04:45.878Z"
+  },
+  "20c205182e136903600f21a45a18669ffedd23a4c987edd97fcfcad8a431b715": {
+    "answers": [
+      "git checkout -b название_ветки."
+    ],
+    "evidence": "quiz_answered: actual selected option classes are accepted by the platform",
+    "confirmedAt": "2026-10-20T10:04:45.902Z"
+  },
+  "d71b721eed685ee209ad1af4a23bbc1c4cbb4de40c0c3a9cddf97291c8a76ce0": {
+    "answers": [
+      "Имя ветки должно отражать, что в этой ветке будут разрабатывать."
+    ],
+    "evidence": "quiz_answered: actual selected option classes are accepted by the platform",
+    "confirmedAt": "2026-10-20T10:04:45.921Z"
+  },
+  "4cfc4b1d2919ddf427272e48678a9b9f0229e756508ecd3d0fa55f9d65044a32": {
+    "answers": [
+      "Переключиться в ветку main и ввести git merge bugfix/header-fix."
+    ],
+    "evidence": "quiz_answered: actual selected option classes are accepted by the platform",
+    "confirmedAt": "2026-10-20T10:05:22.238Z"
+  },
+  "ce475477c454e9e733d3d076f7312861a7fbf054ec711d5d3ee26a4f52f1d245": {
+    "answers": [
+      "git branch -D название ветки"
+    ],
+    "evidence": "quiz_answered: actual selected option classes are accepted by the platform",
+    "confirmedAt": "2026-10-20T10:05:22.259Z"
   }
 }

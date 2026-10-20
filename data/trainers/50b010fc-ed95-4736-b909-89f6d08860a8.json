@@ -1,0 +1,18 @@
+{
+  "taskId": "50b010fc-ed95-4736-b909-89f6d08860a8",
+  "lessonId": "feec6481-efcb-4f01-9985-952c6e7adce3",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "files": [
+    {
+      "name": "style.css",
+      "initialHash": "e08cd697abe3875f3096f4c89bb716970c3133aeac74f7c203da131e4fbf7ed5",
+      "content": "*,\n*::before,\n*::after {\n  box-sizing: border-box;\n}\n\nbody {\n  display: grid;\n  place-items: center;\n  min-block-size: 100dvb;\n  margin: 0;\n  padding: 2em;\n  color: #ffc802;\n  font-family: 'Open Sans', sans-serif;\n  font-size: 18px;\n  background-color: #5f0dee;\n}\n\nh1 {\n  margin: 0;\n  color: #5f0dee;\n  text-shadow: 0 0 2px #ffc802;\n  font-size: clamp(2.5rem, 0.5rem + 7vi, 6.25rem);\n  text-transform: uppercase;\n  -webkit-hyphens: auto;\n  hyphens: auto;\n  text-wrap: balance;\n}\n\nh1::selection {\n  color: #ffc802;\n  background-color: #6dc1fd;\n}\n\n@supports (text-stroke: 2px #ffc802) or (-webkit-text-stroke: 2px #ffc802) {\n  h1 {\n    text-stroke: 2px #ffc802;\n    -webkit-text-stroke: 2px #ffc802;\n    color: transparent;\n    text-shadow: none;\n  }\n}"
+    }
+  ],
+  "instructionsHash": "7917562fb61e729a334a4b0c23bfc230d9d8542184243122f60084fa5c1a79cb",
+  "verifiedAt": "2026-10-20T10:02:41.820Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Тень выглядит совсем не так круто, но опасаться не стоит — она появится только у динозавров."
+  }
+}

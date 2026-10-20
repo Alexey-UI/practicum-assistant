@@ -1,0 +1,18 @@
+{
+  "taskId": "5fd627a2-224e-423d-a62e-8cc7952fe5e8",
+  "lessonId": "feec6481-efcb-4f01-9985-952c6e7adce3",
+  "contextHash": "2a33a64645ee95619a1f8f2569d979f674958666c2dc6b7c023793c5c4168796",
+  "files": [
+    {
+      "name": "globals.css",
+      "initialHash": "83cae7a4fac37c6c70532ae8ba6fa57a1b95c67b9c4ff94fdf1b159f9c9683de",
+      "content": "*,\n*::before,\n*::after {\n  box-sizing: border-box;\n}\n\nbody {\n  min-inline-size: 320px;\n  margin: 0;\n  font-family: var(--main-font), sans-serif;\n  font-size: var(--main-font-size, 18px);\n}\n\nh1,\nh2,\nh3,\nh4,\nh5,\nh6,\np,\nul {\n  text-wrap: balance;\n  margin: 0;\n}\n\nul,\nol,\nli {\n  padding: 0;\n  list-style: none;\n}\n\na,\nbutton,\ninput,\ntextarea {\n  color: inherit;\n  font-family: inherit;\n  font-size: inherit;\n}\n\na {\n  text-decoration: none;\n}\n\nimg {\n  display: block;\n  max-width: 100%;\n}\n\n.visually-hidden {\n  position: absolute;\n  inline-size: 1px;\n  block-size: 1px;\n  margin: -1px;\n  border: 0;\n  padding: 0;\n  overflow: hidden;\n  clip: rect(0 0 0 0);\n}"
+    }
+  ],
+  "instructionsHash": "f190d23293ffce8175c7616341c87170e1f11e1ab9cd019f4f7d8ed2a8155ac0",
+  "verifiedAt": "2026-10-20T10:02:04.329Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Браузеры, которые не умеют в text-wrap: balance;  просто пропустят эту строку, но для обновлённых браузеров всё работает. Прогрессивное улучшение."
+  }
+}

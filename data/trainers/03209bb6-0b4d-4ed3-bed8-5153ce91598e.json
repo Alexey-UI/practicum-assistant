@@ -1,0 +1,18 @@
+{
+  "taskId": "03209bb6-0b4d-4ed3-bed8-5153ce91598e",
+  "lessonId": "feec6481-efcb-4f01-9985-952c6e7adce3",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "files": [
+    {
+      "name": "index.html",
+      "initialHash": "e64eb0aae6be245732068b31ab72863a874db62784fe71bb8ec03c4fca1d923d",
+      "content": "<!DOCTYPE html>\n<html lang=\"ru\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <title>Море</title>\n    <link\n      rel=\"stylesheet\"\n      href=\"https://code.s3.yandex.net/web-code/fonts/fonts.css\"\n    />\n    <link rel=\"stylesheet\" href=\"./styles/style.css\" />\n  </head>\n  <body>\n    <h1>На небесах только и говорят о море</h1>\n    <video\n      controls\n      playsinline\n      webkit-playsinline\n    >\n      <source src=\"https://code.s3.yandex.net/fullstack_developer/horizontal.mov\" type=\"video/mov\" />\n      <source src=\"https://code.s3.yandex.net/fullstack_developer/horizontal.mp4\" type=\"video/mp4\" />\n      <source src=\"https://code.s3.yandex.net/fullstack_developer/horizontal.avi\" type=\"video/avi\" />\n      <source src=\"https://code.s3.yandex.net/fullstack_developer/horizontal.webm\" type=\"video/webm\" />\n    </video>\n  </body>\n</html>"
+    }
+  ],
+  "instructionsHash": "2bdc5f01ecadb160e5dd4387806d027ee86936e6cd2d184cc6c3c68ea064ac41",
+  "verifiedAt": "2026-10-20T10:01:19.501Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Вы уже начали постепенную деградацию кода. Браузеры смогут выбрать себе формат, который поддерживают"
+  }
+}

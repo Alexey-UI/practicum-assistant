@@ -1,0 +1,18 @@
+{
+  "taskId": "2307f0c2-4ef9-44df-96cd-230f4bd1bd7d",
+  "lessonId": "feec6481-efcb-4f01-9985-952c6e7adce3",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "files": [
+    {
+      "name": "index.html",
+      "initialHash": "48889e71d49d5deb1f18def18998af27544e508c39a30373cb8fd858de2d9e78",
+      "content": "<!DOCTYPE html>\n<html lang=\"ru\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <title>Море</title>\n    <link\n      rel=\"stylesheet\"\n      href=\"https://code.s3.yandex.net/web-code/fonts/fonts.css\"\n    />\n    <link rel=\"stylesheet\" href=\"./styles/style.css\" />\n  </head>\n  <body>\n    <h1>На небесах только и говорят о море</h1>\n    <video controls playsinline webkit-playsinline>\n      <source media=\"(orientation: landscape)\" src=\"https://code.s3.yandex.net/fullstack_developer/horizontal.mov\" type=\"video/mov\" />\n      <source media=\"(orientation: landscape)\" src=\"https://code.s3.yandex.net/fullstack_developer/horizontal.mp4\" type=\"video/mp4\" />\n      <source media=\"(orientation: landscape)\" src=\"https://code.s3.yandex.net/fullstack_developer/horizontal.avi\" type=\"video/avi\" />\n      <source media=\"(orientation: landscape)\" src=\"https://code.s3.yandex.net/fullstack_developer/horizontal.web\" type=\"video/webm\" />\n      <source src=\"https://code.s3.yandex.net/fullstack_developer/vertical.mov\" type=\"video/mov\" media=\"(orientation: portrait)\" />\n      <source src=\"https://code.s3.yandex.net/fullstack_developer/vertical.mp4\" type=\"video/mp4\" media=\"(orientation: portrait)\" />\n      <source src=\"https://code.s3.yandex.net/fullstack_developer/vertical.avi\" type=\"video/avi\" media=\"(orientation: portrait)\" />\n      <source src=\"https://code.s3.yandex.net/fullstack_developer/vertical.webm\" type=\"video/webm\" media=\"(orientation: portrait)\" />\n\n      <p>\n        Ваш браузер не поддерживает видео. Вы можете скачать его в форматах\n        <a href=\"https://code.s3.yandex.net/fullstack_developer/horizontal.mov\">MOV</a>,\n        <a href=\"https://code.s3.yandex.net/fullstack_developer/horizontal.mp4\">MP4</a>,\n        <a href=\"https://code.s3.yandex.net/fullstack_developer/horizontal.avi\">AVI</a>,\n        <a href=\"https://code.s3.yandex.net/fullstack_developer/horizontal.web\">WEBM</a>\n      </p>\n    </video>\n  </body>\n</html>"
+    }
+  ],
+  "instructionsHash": "74a9d6b4014e709889955c6faa35754a6d56284164762e980e4fbde7440a424a",
+  "verifiedAt": "2026-10-20T10:01:46.930Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Постепенно деградировали, деградировали, и выдеградировали…"
+  }
+}
