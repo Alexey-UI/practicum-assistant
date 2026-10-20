@@ -1,0 +1,18 @@
+{
+  "taskId": "815c05fb-ce3f-4a1e-be19-65871f38ef5b",
+  "lessonId": "07b88741-8c6f-4be8-b354-78243d07dfc1",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "files": [
+    {
+      "name": "style.css",
+      "initialHash": "f0e8233d858916dc11735f2b94f875593e4721cd9b4f12810edbf375e9592ab8",
+      "content": "* {\n  box-sizing: border-box;\n}\n\nhtml {\n  height: 100%;\n}\n\nbody {\n  display: grid;\n  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));\n  justify-items: center;\n  align-items: start;\n  min-width: 360px;\n  height: inherit;\n  margin: 0;\n  padding: 40px;\n  font-family: 'Open Sans', sans-serif;\n  font-size: 18px;\n  background-image: url(https://code.s3.yandex.net/web-code/images/dotted.svg);\n}\n\nh1,\nh2,\np,\nul,\nli {\n  margin: 0;\n  padding: 0;\n}\n\na:hover {\n  opacity: 0.6;\n}\n\n.button {\n  width: 100%;\n  border: none;\n  padding: 10px 20px;\n  color: #fff;\n  font-family: inherit;\n  font-weight: bold;\n  font-size: inherit;\n  text-transform: uppercase;\n  background-color: #000;\n  cursor: pointer;\n}\n\n.button:hover {\n  opacity: 0.6;\n}\n\n.button:focus {\n  outline: none;\n}\n\n.button:focus-visible {\n  outline: 2px dotted #fd24af;\n}\n\n.dialog[open] {\n  display: flex;\n  flex-direction: column;\n  gap: 4px;\n  width: 90%;\n  max-width: 768px;\n}\n\n.dialog iframe {\n  display: block;\n  width: 100%;\n  aspect-ratio: 16 / 9;\n}\n\n.card {\n  display: flex;\n  flex-wrap: wrap;\n  gap: 20px;\n  width: 80%;\n  padding: 20px;\n  background-color: #fff;\n}\n\n.card:focus-within {\n  background-color: #aed5f1;\n}\n\n.card__image-container {\n  flex-grow: 1;\n  flex-basis: 300px;\n}\n\n.card__image {\n  width: 100%;\n  object-fit: cover;\n  object-position: center;\n  aspect-ratio: 1 / 1;\n}\n\n.card__description {\n  flex-grow: 1;\n  flex-basis: 300px;\n}\n\n.card__title {\n  margin-bottom: 40px;\n  font-weight: 800;\n  font-size: 38px;\n  text-transform: uppercase;\n}\n\n.card__list {\n  margin: 20px 0;\n  padding-left: 20px;\n  list-style: square;\n}\n\n.card__link {\n  color: inherit;\n}\n\n.card__link:focus {\n  outline: none;\n}\n\n.card__link:focus-visible {\n  outline: 2px dotted #fd24af;\n}\n.card:focus-within .button {\n  background-color: #ffc802;\n  color: #000;\n}\n"
+    }
+  ],
+  "instructionsHash": "5ea8dc41970154bdd8c64c6f25d403079d29c86c707eec580a46a95b2ea18e57",
+  "verifiedAt": "2026-10-20T07:05:14.796Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Прочувствуйте это поведение карточек. За вашим фокусом уже следуют не только стили элементов, которые вы выбираете, но и их окружение. С фокусами закончили. Впереди новые упражнения."
+  }
+}
