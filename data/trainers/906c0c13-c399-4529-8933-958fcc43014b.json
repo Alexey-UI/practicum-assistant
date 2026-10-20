@@ -1,0 +1,23 @@
+{
+  "taskId": "906c0c13-c399-4529-8933-958fcc43014b",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "lessonId": "0a95d735-4e46-476b-9365-e89be733393a",
+  "files": [
+    {
+      "name": "index.html",
+      "initialHash": "fa9d31c7a756243d83e3da10c0c4d7a804e3a2635510931ac28e2121878cdf42",
+      "content": "<!DOCTYPE html>\n<html lang=\"ru\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <title>Карточка</title>\n    <link\n      rel=\"stylesheet\"\n      href=\"https://code.s3.yandex.net/web-code/fonts/fonts.css\"\n    />\n    <link rel=\"stylesheet\" href=\"./styles/style.css\" />\n  </head>\n  <body>\n    <article class=\"card\">\n      <ul class=\"card__controls\">\n        <li>\n          <button aria-label=\"Редактировать\">\n            <svg aria-hidden=\"true\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\">\n  <path d=\"M5 19h1.4l8.625-8.625-1.4-1.4L5 17.6V19ZM19.3 8.925l-4.25-4.2L17.875 1.9 22.1 6.125l-2.8 2.8ZM3 21v-4.25l10.6-10.6 4.25 4.25L7.25 21H3ZM14.325 9.675l-.7-.7 1.4 1.4-.7-.7Z\"/>\n</svg>\n          </button>\n        </li>\n        <li>\n          <button aria-label=\"Удалить\">\n            <svg aria-hidden=\"true\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\">\n  <path d=\"M7 21q-.825 0-1.413-.588T5 19V6q-.425 0-.713-.288T4 5q0-.425.288-.713T5 4h4q0-.425.288-.713T10 3h4q.425 0 .713.288T15 4h4q.425 0 .713.288T20 5q0 .425-.288.713T19 6v13q0 .825-.588 1.413T17 21H7ZM17 6H7v13h10V6ZM7 6v13V6Zm5 7.9 1.9 1.9q.275.275.7.275t.7-.275q.275-.275.275-.7t-.275-.7l-1.9-1.9 1.9-1.9q.275-.275.275-.7t-.275-.7q-.275-.275-.7-.275t-.7.275L12 11.1l-1.9-1.9q-.275-.275-.7-.275t-.7.275q-.275.275-.275.7t.275.7l1.9 1.9-1.9 1.9q-.275.275-.275.7t.275.7q.275.275.7.275t.7-.275l1.9-1.9Z\"/>\n</svg>\n          </button>\n        </li>\n      </ul>\n      <h2 class=\"card__title\">Шок контент!</h2>\n      <p class=\"card__text\">\n        Научные исследования подтверждают: Вселенная оказалась всего лишь\n        огромной кофейной чашкой! Ученые обнаружили, что черные дыры — это на\n        самом деле зерна кофе, а галактики — это капли молока. Как оказалось,\n        Большой взрыв был всего лишь пузырьком вспенившейся капуччино. Возможно,\n        это объясняет, почему Вселенная такая энергичная!\n      </p>\n    </article>\n  </body>\n</html>"
+    },
+    {
+      "name": "style.css",
+      "initialHash": "f65e689e7a105222a2ea17e24172813791a254e8a3fec41a75c953c41f67c113",
+      "content": "*,\n*::before,\n*::after {\n  box-sizing: border-box;\n}\n\nbody {\n  display: grid;\n  place-items: center;\n  min-block-size: 100dvb;\n  margin: 0;\n  padding: 2em;\n  font-family: 'Open Sans', sans-serif;\n  font-size: 18px;\n  background-color: #fff;\n  background-image: url(https://code.s3.yandex.net/web-code/images/dotted.svg);\n}\n\n.card {\n  position: relative;\n  border: 1px solid #000;\n  padding: 1em;\n  background-color: #fff;\n}\n\n.card__controls {\n  position: absolute;\n  display: flex;\n  gap: 0.5em;\n  margin: 0;\n  padding: 0;\n  list-style: none;\n  inset-block-start: 0.5em;\n  inset-inline-end: 0.5em;\n}\n\n.card__title {\n  margin: 0;\n  font-size: 2em;\n  text-transform: uppercase;\n}\n\n.card__controls button {\n  inline-size: 40px;\n  block-size: 40px;\n  border: 1px solid #000;\n  padding: 0.5em;\n  background-color: #fff;\n  cursor: pointer;\n}\n\n.card__controls button:hover {\n  border: 1px solid #6dc1fd;\n}\n\n.card__controls button:focus-visible {\n  border: 1px solid #6dc1fd;\n}\n\n.card__controls svg {\n  inline-size: 100%;\n  block-size: 100%;\n  object-fit: contain;\n}\n\n.card__controls button:hover svg {\n  fill: #6dc1fd;\n}\n\n.card__controls button:focus-visible svg {\n  fill: #6dc1fd;\n}"
+    }
+  ],
+  "instructionsHash": "ba42b20dea3a906d97ae1f282f89e9739d650657ed0d741d3762f43e2d4a0b72",
+  "verifiedAt": "2026-10-20T10:15:05.508Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Отлично, теперь получается перекрашивать SVG инструментами CSS!"
+  }
+}

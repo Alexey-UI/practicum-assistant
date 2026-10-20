@@ -19,12 +19,12 @@ export async function selectEditorFile(page: Page, name: string): Promise<void> 
   await file.click();
 }
 
-export async function readTrainer(page: Page): Promise<{ taskId: string; url: string; instructions: string; images: Array<{ url: string; alt: string }>; contextHash: string; files: EditorFile[] }> {
+export async function readTrainer(page: Page): Promise<{ taskId: string; url: string; instructions: string; images: Array<{ url: string; alt: string }>; links: Array<{ text: string; url: string }>; contextHash: string; files: EditorFile[] }> {
   const theoryClose = page.locator('.theory-panel__modal-close');
   if (await theoryClose.isVisible()) await theoryClose.click();
   await page.getByRole('textbox', { name: 'Содержимое редактора', exact: true }).waitFor({ state: 'visible', timeout: 180000 });
   await page.locator('.task-description__markdown').filter({ hasText: /\S/, visible: true }).waitFor({ timeout: 180000 });
-  const names = (await page.locator('.files-tree__node-name-container').filter({ visible: true }).allTextContents()).map(name => name.trim()).filter(name => /\.(?:html?|css|[cm]?js|jsx|tsx?|json|txt|md)$/i.test(name));
+  const names = (await page.locator('.files-tree__node-name-container').filter({ visible: true }).allTextContents()).map(name => name.trim()).filter(name => /\.(?:html?|css|[cm]?js|jsx|tsx?|json|txt|md|svg)$/i.test(name));
   if (names.length > 128 || new Set(names).size !== names.length) throw new Error('Слишком много файлов или неоднозначные имена в дереве тренажёра');
   for (const name of names) {
     const loaded = await page.evaluate(fileName => (window as MonacoWindow).monaco?.editor.getModels().some(model => model.uri.path.split('/').pop() === fileName), name);
@@ -40,10 +40,11 @@ export async function readTrainer(page: Page): Promise<{ taskId: string; url: st
   const taskId = new URL(page.url()).pathname.match(/\/task\/([^/]+)\//)?.[1];
   if (!taskId) throw new Error('Не определён ID задания тренажёра');
   const images = await page.locator('.task-description__markdown img').evaluateAll(elements => elements.map(el => ({ url: (el as HTMLImageElement).src, alt: el.getAttribute('alt') ?? '' })));
+  const links = await page.locator('.task-description__markdown a[href]').evaluateAll(elements => elements.map(el => ({ text: el.textContent?.trim() ?? '', url: (el as HTMLAnchorElement).href })));
   const contextHash = contentHash(JSON.stringify(images.map(image => {
     const url = new URL(image.url); return { url: `${url.origin}${url.pathname}`, alt: image.alt };
   })));
-  const result = { taskId, url: safeUrl(page.url()), instructions: await page.locator('.task-description__markdown').innerText(), images, contextHash, files: files.map(file => ({ ...file, hash: contentHash(file.content) })) };
+  const result = { taskId, url: safeUrl(page.url()), instructions: await page.locator('.task-description__markdown').innerText(), images, links, contextHash, files: files.map(file => ({ ...file, hash: contentHash(file.content) })) };
   await atomicJson('.local/pending-task.json', result);
   return result;
 }

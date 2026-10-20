@@ -1,0 +1,23 @@
+{
+  "taskId": "0fca7d46-da12-47f9-a61a-d12099eed4e2",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "lessonId": "0a95d735-4e46-476b-9365-e89be733393a",
+  "files": [
+    {
+      "name": "edit.svg",
+      "initialHash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "content": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"#000\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"m16 3 5 5L8 21H3v-5L16 3Z\"/><path d=\"m13 6 5 5\"/></svg>\n"
+    },
+    {
+      "name": "delete.svg",
+      "initialHash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "content": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"#000\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M3 6h18M9 6V3h6v3M5 6l1 15h12l1-15M10 10v7m4-7v7\"/></svg>\n"
+    }
+  ],
+  "instructionsHash": "363fb22ca4cc26457d243a3036d2c376ad0a6b44685414e211e30442a3785232",
+  "verifiedAt": "2026-10-20T10:14:04.414Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "SVG многие воспринимают просто как векторные картинки. Иногда такого понимания достаточно, но только иногда."
+  }
+}

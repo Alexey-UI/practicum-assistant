@@ -69,21 +69,24 @@ test('После последнего задания проходчик возв
     assert.ok(page.url().includes('/lesson/new/'));
   } finally { process.chdir(original); await page.close(); await rm(dir, { recursive: true, force: true }); }
 });
-test('Чтение тренажёра открывает ещё не загруженные CSS и текстовый ресурс со ссылками', async () => {
+test('Чтение тренажёра открывает CSS, SVG, текстовые ресурсы и сохраняет ссылки из условия', async () => {
   const page = await browser.newPage(); const original = process.cwd(); const dir = await mkdtemp(path.join(tmpdir(), 'practicum-unopened-'));
   try {
     process.chdir(dir);
-    await page.route('https://practicum.yandex.ru/**', route => route.fulfill({ contentType: 'text/html; charset=utf-8', body: `<textarea aria-label="Содержимое редактора"></textarea><div class="task-description__markdown">Задайте размер карточки.</div><div class="files-tree"><span class="files-tree__node-name-container" onclick="loadCss()">style.css</span><span class="files-tree__node-name-container" onclick="loadLinks()">links.txt</span></div><script>
+    await page.route('https://practicum.yandex.ru/**', route => route.fulfill({ contentType: 'text/html; charset=utf-8', body: `<textarea aria-label="Содержимое редактора"></textarea><div class="task-description__markdown">Задайте размер карточки. <a href="https://www.figma.com/design/example?node-id=1-2">Макет</a></div><div class="files-tree"><span class="files-tree__node-name-container" onclick="loadCss()">style.css</span><span class="files-tree__node-name-container" onclick="loadLinks()">links.txt</span><span class="files-tree__node-name-container" onclick="loadSvg()">edit.svg</span></div><script>
       const models=[{uri:{path:'/index.html'},getLanguageId:()=> 'html',getValue:()=> '<main></main>'}];
       window.monaco={editor:{getModels:()=>models}};
       function loadCss(){models.push({uri:{path:'/styles/style.css'},getLanguageId:()=> 'css',getValue:()=> '.card {}'})};
       function loadLinks(){models.push({uri:{path:'/links.txt'},getLanguageId:()=> 'plaintext',getValue:()=> 'https://example.com/image.webp'})};
+      function loadSvg(){models.push({uri:{path:'/svg/edit.svg'},getLanguageId:()=> 'xml',getValue:()=> '<svg></svg>'})};
     </script>` }));
     await page.goto('https://practicum.yandex.ru/trainer/test/lesson/aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa/task/bbbbbbbb-bbbb-bbbb-bbbb-bbbbbbbbbbbb/');
     const task = await readTrainer(page);
     assert.equal(task.files.find(file => file.path.endsWith('style.css'))?.content, '.card {}');
     assert.equal(task.files.find(file => file.path.endsWith('links.txt'))?.content, 'https://example.com/image.webp');
-    assert.equal((await readTrainer(page)).files.length, 3);
+    assert.equal(task.files.find(file => file.path.endsWith('edit.svg'))?.content, '<svg></svg>');
+    assert.deepEqual(task.links, [{ text: 'Макет', url: 'https://www.figma.com/design/example?node-id=1-2' }]);
+    assert.equal((await readTrainer(page)).files.length, 4);
   } finally { process.chdir(original); await page.close(); await rm(dir, { recursive: true, force: true }); }
 });
 test('Пустая оболочка урока перезагружается без нажатия проверки', async () => {

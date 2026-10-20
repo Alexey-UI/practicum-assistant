@@ -1,0 +1,23 @@
+{
+  "taskId": "e2b682e1-77cc-4c4e-86cc-3bb29b40e982",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "lessonId": "0a95d735-4e46-476b-9365-e89be733393a",
+  "files": [
+    {
+      "name": "index.html",
+      "initialHash": "4bb2bd7fc2e02fee70aebaf0e4b5a85ea25278a06dcd2233371c5bcd5304f094",
+      "content": "<!DOCTYPE html>\n<html lang=\"ru\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <title>Карточка</title>\n    <link\n      rel=\"stylesheet\"\n      href=\"https://code.s3.yandex.net/web-code/fonts/fonts.css\"\n    />\n    <link rel=\"stylesheet\" href=\"./styles/style.css\" />\n  </head>\n  <body>\n    <article class=\"card\">\n      <ul class=\"card__controls\">\n        <li>\n          <button aria-label=\"Редактировать\">\n            <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\">\n  <use href=\"./svg/icons.svg#edit\"></use>\n</svg>\n          </button>\n        </li>\n        <li>\n          <button aria-label=\"Удалить\">\n            <svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24 24\">\n  <use href=\"./svg/icons.svg#delete\"></use>\n</svg>\n          </button>\n        </li>\n      </ul>\n      <h2 class=\"card__title\">Шок контент!</h2>\n      <p class=\"card__text\">\n        Научные исследования подтверждают: Вселенная оказалась всего лишь\n        огромной кофейной чашкой! Ученые обнаружили, что черные дыры — это на\n        самом деле зерна кофе, а галактики — это капли молока. Как оказалось,\n        Большой взрыв был всего лишь пузырьком вспенившейся капуччино. Возможно,\n        это объясняет, почему Вселенная такая энергичная!\n      </p>\n    </article>\n  </body>\n</html>"
+    },
+    {
+      "name": "icons.svg",
+      "initialHash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "content": "<svg xmlns=\"http://www.w3.org/2000/svg\">\n<symbol id=\"edit\" viewBox=\"0 0 24 24\">\n              <path\n                d=\"M5 19h1.4l8.625-8.625-1.4-1.4L5 17.6V19ZM19.3 8.925l-4.25-4.2L17.875 1.9 22.1 6.125l-2.8 2.8ZM3 21v-4.25l10.6-10.6 4.25 4.25L7.25 21H3ZM14.325 9.675l-.7-.7 1.4 1.4-.7-.7Z\"\n              />\n            </symbol>\n<symbol id=\"delete\" viewBox=\"0 0 24 24\">\n              <path\n                d=\"M7 21q-.825 0-1.413-.588T5 19V6q-.425 0-.713-.288T4 5q0-.425.288-.713T5 4h4q0-.425.288-.713T10 3h4q.425 0 .713.288T15 4h4q.425 0 .713.288T20 5q0 .425-.288.713T19 6v13q0 .825-.588 1.413T17 21H7ZM17 6H7v13h10V6ZM7 6v13V6Zm5 7.9 1.9 1.9q.275.275.7.275t.7-.275q.275-.275.275-.7t-.275-.7l-1.9-1.9 1.9-1.9q.275-.275.275-.7t-.275-.7q-.275-.275-.7-.275t-.7.275L12 11.1l-1.9-1.9q-.275-.275-.7-.275t-.7.275q-.275.275-.275.7t.275.7l1.9 1.9-1.9 1.9q-.275.275-.275.7t.275.7q.275.275.7.275t.7-.275l1.9-1.9Z\"\n              />\n            </symbol>\n</svg>\n"
+    }
+  ],
+  "instructionsHash": "faf3cc464e51fcc9a3f028d513eb0e83778b038dad1446b6ac5ac91811e216e2",
+  "verifiedAt": "2026-10-20T10:15:41.761Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Браво! Результат тот же самый, но без загромождения HTML плохо читаемыми символами."
+  }
+}
