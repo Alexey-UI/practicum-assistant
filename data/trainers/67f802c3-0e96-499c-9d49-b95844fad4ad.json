@@ -1,0 +1,18 @@
+{
+  "taskId": "67f802c3-0e96-499c-9d49-b95844fad4ad",
+  "lessonId": "304fef61-1e28-4d50-84b6-f6779112cc5b",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "files": [
+    {
+      "name": "style.css",
+      "initialHash": "1d40401426d4cd58fd87022e3b5c2c27ec9aed16185e2f7cbdd5e55daf7f368c",
+      "content": "body {\n  margin: 0;\n  font-family: 'Open Sans', sans-serif;\n  font-size: 18px;\n  text-size-adjust: 100%;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n}\n\n.scene {\n  position: relative;\n  display: flex;\n  flex-direction: column;\n  min-block-size: 100dvb;\n  overflow: hidden;\n  background-image: url(../images/sky.jpg);\n  background-repeat: no-repeat;\n  background-size: cover;\n  isolation: isolate;\n}\n\n.scene__image {\n  position: absolute;\n  background-repeat: no-repeat;\n  background-position: center bottom;\n  background-size: cover;\n}\n\n.scene__image_type_first-plan {\n  inset: 0;\n  background-image: url(../images/earth.png);\n  transition: transform 0.7s ease-out;\n}\n\n.scene__image_type_second-plan {\n  inset: -20px;\n  z-index: -1;\n  background-image: url(../images/mountains.png);\n  transition: transform 0.7s ease-out;\n}\n\n.scene__image_type_moon {\n  z-index: -2;\n  align-self: center;\n  inline-size: 130px;\n  border-radius: 50%;\n  box-shadow: 0 0 130px 0 #fff;\n  background-image: url(../images/moon.png);\n  animation: moon 25s linear infinite;\n  inset-block-start: 8%;\n  aspect-ratio: 1 / 1;\n}\n\n.content__header {\n  position: absolute;\n  z-index: 10;\n  margin: 0;\n  transform: translate(-50%, -50%);\n  inset-inline-start: 50%;\n  inset-block-start: 50%;\n}\n\n.content__button {\n  border: none;\n  padding: 25px 85px;\n  color: #000;\n  font-weight: 800;\n  font-size: clamp(18px, 2.2vw, 36px);\n  text-transform: uppercase;\n  background-color: transparent;\n  cursor: pointer;\n}\n\n.content__button:focus {\n  outline: none;\n}\n\n.content__button:is(:hover, :focus-visible) {\n  color: #fff;\n  transition-delay: 0.3s;\n  transition-property: border-color;\n}\n\n.content__button::before,\n.content__button::after {\n  content: '';\n  position: absolute;\n  z-index: -1;\n  inline-size: calc(50% + 1px);\n  block-size: 100%;\n  background-color: #fff;\n  transition-duration: 0.7s;\n  transition-property: inset-block-start, inset-inline-start, transform;\n}\n\n.content__button::before {\n  inset-block-start: -5px;\n  inset-inline-start: 0;\n}\n\n.content__button::after {\n  inset-block-start: 5px;\n  inset-inline-start: 50%;\n}\n\n.content__button:is(:hover, :focus-visible)::before {\n  background-color: #000;\n  inset-inline-start: 50%;\n  inset-block-start: 0;\n}\n\n.content__button:is(:hover, :focus-visible)::after {\n  background-color: #000;\n  inset-inline-start: 0;\n  inset-block-start: 0;\n}\n\n@keyframes moon {\n  to {\n    /* Задайте значение поворота 360 градусов */\n  transform: rotate(360deg);\n}\n}\n\n.content:has(.content__button:is(:hover, :focus-visible)) :is(.scene__image_type_first-plan) {\n  transform: scale(1.05);\n}\n\n.content:has(.content__button:is(:hover, :focus-visible)) :is(.scene__image_type_second-plan) {\n  transform: scale(0.95);\n}"
+    }
+  ],
+  "instructionsHash": "ec901c9ca7ce11cedd5134893e6e5f27935ac9270488b76c5d8cfdc7f41497c1",
+  "verifiedAt": "2026-10-20T10:31:05.734Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Поздравляем с первой анимацией!"
+  }
+}

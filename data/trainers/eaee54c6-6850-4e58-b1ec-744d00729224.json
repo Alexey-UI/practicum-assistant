@@ -1,0 +1,18 @@
+{
+  "taskId": "eaee54c6-6850-4e58-b1ec-744d00729224",
+  "lessonId": "45ead88f-b7e9-4373-a11b-833253ead5f5",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "files": [
+    {
+      "name": "style.css",
+      "initialHash": "e74088e02ebdc5b95655aa13bb6f6401b29cde6addbfc399cf3f5c8e39288bb3",
+      "content": "body {\n  margin: 0;\n  overflow: hidden;\n  background-color: #000;\n  background-image: url(../images/stars.jpg);\n  background-repeat: no-repeat;\n  background-position: center;\n  background-size: cover;\n}\n\n.planets {\n  position: relative;\n  max-inline-size: 850px;\n  min-block-size: 100dvb;\n  margin: 0 auto;\n}\n\n.planets__item {\n  position: absolute;\n  inline-size: 50%;\n  border-radius: 50%;\n  inset-inline-start: 50%;\n  inset-block-start: 50%;\n  aspect-ratio: 1 / 1;\n}\n\n.planets__item_type_earth {\n  /* Перепишите свойство transform на свойство translate */\n  translate: -50% -50%;\n}\n\n.planets__item_type_moon {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  inline-size: 75%;\n  outline: 1px solid rgb(255 255 255 / 0.25);\n  animation: moon 25s linear infinite;\n}\n\n.planet {\n  display: block;\n  max-inline-size: 100%;\n  border-radius: 50%;\n}\n\n.planet_type_moon {\n  position: absolute;\n\n  /* Перепишите свойство transform на отдельные свойства translate и scale */\n  \n  inset-inline-start: 0;\n  translate: -50%;\n  scale: 0.15;\n}\n\n@keyframes moon {\n  from {\n    transform:\n      translateX(-50%)\n      translateY(-50%)\n      rotate(0);\n  }\n\n  to {\n    transform:\n      translateX(-50%)\n      translateY(-50%)\n      rotate(1turn);\n  }\n}"
+    }
+  ],
+  "instructionsHash": "c134ce960694e23234f8ee6a80116a33a1e45a8218bc19b4ca3bd11cdfa12e5a",
+  "verifiedAt": "2026-10-20T10:33:02.095Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Теперь вы гуру трансформаций 🙂"
+  }
+}

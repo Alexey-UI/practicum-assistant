@@ -1,0 +1,18 @@
+{
+  "id": "4c0d3df61b9c8b745ed2c1f2ec080e70f3dbf4f505d074f95d23df411e605bd5",
+  "lessonId": "304fef61-1e28-4d50-84b6-f6779112cc5b",
+  "url": "https://sandbox.practicum-team.ru/tasks/04-beautishcha/02-2d/03-transform/example-05/pre/",
+  "instructionsHash": "b079119afc2a0c9b91d97f004c5c37457e4e8840de06c754f4e1176a6fe48496",
+  "files": [
+    {
+      "name": "styles/style.css",
+      "initialHash": "35ffae0672a8a262b8a201450506991b2624fa8fe21a8edc66d46e6f0023586b",
+      "content": "*,\n*::before,\n*::after {\n  box-sizing: border-box;\n}\n\nbody {\n  display: grid;\n  place-items: center;\n  gap: 50px;\n  min-width: 950px;\n  min-height: 100vh;\n  margin: 0;\n  padding: 50px;\n  font-family: 'Open Sans', sans-serif;\n  font-size: 18px;\n}\n\n.title {\n  font-weight: 800;\n  font-size: 45px;\n  text-transform: uppercase;\n}\n\n.wrapper {\n  display: flex;\n  justify-content: space-between;\n  gap: 25px;\n}\n\n.card {\n  position: relative;\n  display: flex;\n  width: clamp(200px, 30%, 350px);\n  height: 400px;\n  border: 3px solid;\n  overflow: hidden;\n  cursor: pointer;\n  transition: transform 0.2s;\n}\n\n.card:hover {\n  transform: scale(1.1);\n}\n\n.card-image {\n  position: absolute;\n  inset: -10%;\n  z-index: -1;\n  width: 120%;\n  height: 120%;\n  object-fit: cover;\n  object-position: center;\n  transition: transform 0.2s;\n}\n\n.card:hover .card-image {\n  transform: rotate(5deg);\n}\n\n.card-content {\n  margin-block-start: auto;\n  padding: 25px;\n  color: #fff;\n  background-color: rgb(0 0 0 / 0.8);\n  transform: translate(100%);\n  transition: transform 0.5s 0.2s;\n}\n\n.card:hover .card-content {\n  transform: translate(0);\n}\n\n.card-title {\n  margin: 0;\n  font-weight: 800;\n  font-size: 28px;\n  text-transform: uppercase;\n}\n\n.card-text {\n  margin: 0;\n}\n"
+    }
+  ],
+  "verifiedAt": "2026-10-20T10:29:24.891Z",
+  "evidence": {
+    "selector": ".result .icon-status-success",
+    "message": "Всё отлично!"
+  }
+}

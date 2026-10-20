@@ -1,0 +1,18 @@
+{
+  "taskId": "77897a5e-b109-439e-b0f8-962bb427eeaa",
+  "lessonId": "304fef61-1e28-4d50-84b6-f6779112cc5b",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "files": [
+    {
+      "name": "style.css",
+      "initialHash": "445596600a9fbed33cbe0bc11ca2c3536a8a6d16d6afb288ba86b7c41eeabbc2",
+      "content": "body {\n  margin: 0;\n  font-family: 'Open Sans', sans-serif;\n  font-size: 18px;\n  text-size-adjust: 100%;\n  -moz-osx-font-smoothing: grayscale;\n  -webkit-font-smoothing: antialiased;\n}\n\n.scene {\n  position: relative;\n  display: flex;\n  flex-direction: column;\n  min-block-size: 100dvb;\n  overflow: hidden;\n  background-image: url(../images/sky.jpg);\n  background-repeat: no-repeat;\n  background-size: cover;\n  isolation: isolate;\n}\n\n.scene__image {\n  position: absolute;\n  background-repeat: no-repeat;\n  background-position: center bottom;\n  background-size: cover;\n}\n\n.scene__image_type_first-plan {\n  inset: 0;\n  background-image: url(../images/earth.png);\n  transition: transform 0.7s ease-out;\n}\n\n.scene__image_type_second-plan {\n  inset: -20px;\n  z-index: -1;\n  background-image: url(../images/mountains.png);\n  transition: transform 0.7s ease-out;\n}\n\n.scene__image_type_moon {\n  z-index: -2;\n  align-self: center;\n  inline-size: 130px;\n  border-radius: 50%;\n  box-shadow: 0 0 130px 0 #fff;\n  background-image: url(../images/moon.png);\n  animation: moon 25s linear infinite;\n  inset-block-start: 8%;\n  aspect-ratio: 1 / 1;\n}\n\n.content__header {\n  position: absolute;\n  z-index: 10;\n  margin: 0;\n  transform: translate(-50%, -50%);\n  inset-inline-start: 50%;\n  inset-block-start: 50%;\n}\n\n.content__button {\n  border: none;\n  padding: 25px 85px;\n  color: #000;\n  font-weight: 800;\n  font-size: clamp(18px, 2.2vw, 36px);\n  text-transform: uppercase;\n  background-color: transparent;\n  cursor: pointer;\n}\n\n.content__button:focus {\n  outline: none;\n}\n\n.content__button:is(:hover, :focus-visible) {\n  color: #fff;\n  transition-delay: 0.3s;\n  transition-property: border-color;\n}\n\n.content__button::before,\n.content__button::after {\n  content: '';\n  position: absolute;\n  z-index: -1;\n  inline-size: calc(50% + 1px);\n  block-size: 100%;\n  background-color: #fff;\n  transition-duration: 0.7s;\n  transition-property: inset-block-start, inset-inline-start, transform;\n}\n\n.content__button::before {\n  inset-block-start: -5px;\n  inset-inline-start: 0;\n}\n\n.content__button::after {\n  inset-block-start: 5px;\n  inset-inline-start: 50%;\n}\n\n.content__button:is(:hover, :focus-visible)::before {\n  background-color: #000;\n  inset-inline-start: 50%;\n  inset-block-start: 0;\n}\n\n.content__button:is(:hover, :focus-visible)::after {\n  background-color: #000;\n  inset-inline-start: 0;\n  inset-block-start: 0;\n}\n\n@keyframes moon {\n  to {\n  }\n}\n\n.content:has(.content__button:is(:hover, :focus-visible)) :is(.scene__image_type_first-plan) {\n  /* Увеличьте элемент на 5% */\n  transform: scale(1.05);\n}\n\n.content:has(.content__button:is(:hover, :focus-visible)) :is(.scene__image_type_second-plan) {\n  /* Уменьшите элемент на 5% */\n  transform: scale(0.95);\n}"
+    }
+  ],
+  "instructionsHash": "cc94502623514ca3b3c8d86beabedf40a30b7d1522f0d4c181d26a06c222aed7",
+  "verifiedAt": "2026-10-20T10:30:53.283Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "С масштабированием справились! Вперёд к новому вызову 😉"
+  }
+}
