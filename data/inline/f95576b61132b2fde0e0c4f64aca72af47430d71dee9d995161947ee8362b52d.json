@@ -1,0 +1,18 @@
+{
+  "id": "f95576b61132b2fde0e0c4f64aca72af47430d71dee9d995161947ee8362b52d",
+  "lessonId": "4c93e753-989c-46de-ba46-943d9b8e0286",
+  "url": "https://sandbox.practicum-team.ru/tasks/03-design/04-units-and-funcs/06-calc/example-02/pre/",
+  "instructionsHash": "ad555bb02c282c72678d192bc65dbac96b4e3f47a708c99fca040ac1dc1c5f08",
+  "files": [
+    {
+      "name": "styles/style.css",
+      "initialHash": "83751adf68314f787e735dcc512580683892ffcae0cc06acdf03de7b83f4a288",
+      "content": "* {\n  box-sizing: border-box;\n  margin: 0;\n  padding: 0;\n}\n\nbody {\n  padding: 50px;\n  font-family: 'Open Sans', sans-serif;\n}\n\nh2 {\n  font-weight: 800;\n  font-size: 31px;\n  text-align: center;\n  text-transform: uppercase;\n}\n\n.parent {\n  width: 100%;\n}\n\n.images {\n  display: flex;\n  justify-content: space-between;\n  padding: 20px;\n\n  width: calc(3 / 5 * 100%);\n}\n\n.content {\n  width: calc(2 / 5 * 100%);\n  margin-left: auto;\n  padding: 20px;\n}\n\n.image,\n.wildcard {\n  width: calc((100% - 40px) / 3);\n}\n\n.images,\n.content,\n.image,\n.wildcard {\n  border: 1px solid #000;\n}\n\n.wildcard {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  color: #ffc802;\n  font-weight: 800;\n  font-size: 50px;\n  background-color: #000;\n}\n"
+    }
+  ],
+  "verifiedAt": "2026-10-20T09:12:23.470Z",
+  "evidence": {
+    "selector": ".result .icon-status-success",
+    "message": "Все круто"
+  }
+}

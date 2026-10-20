@@ -1,0 +1,18 @@
+{
+  "taskId": "8ad9b9e9-b41f-4388-8bb5-f6a36342285e",
+  "lessonId": "a8efeb26-c408-4535-95cc-642d3075aaf0",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "files": [
+    {
+      "name": "style.css",
+      "initialHash": "33da0e3118a2d814ba141901053699911beb92db7d2ca4b5f70a5666d4c84291",
+      "content": "html {\n  block-size: 100%;\n  font-size: 16px;\n}\n\nbody {\n  display: flex;\n  gap: 3rem;\n  min-inline-size: 360px;\n  min-block-size: 100%;\n  margin: 0;\n  padding: 2rem;\n  color: #fff;\n  font-family: 'Open Sans', sans-serif;\n  background-image: url(../images/bg.jpg);\n}\n\nh1,\nh2,\nh3,\np {\n  margin: 0;\n  padding: 0;\n}\n\n.article {\n  inline-size: 60%;\n  margin: auto;\n  padding: 2em;\n  background-color: #5f0dee;\n}\n\n.article__title {\n  margin-block-end: 20px;\n  font-size: 2em;\n}\n\n.article__text {\n  font-size: 1.2em;\n}\n\n.author-card {\n  display: flex;\n  flex-wrap: wrap;\n  align-items: center;\n  gap: 20px;\n  max-inline-size: 40%;\n  margin: auto;\n  padding: 20px;\n  color: #333;\n  background-color: #6dc1fd;\n}\n\n.author-card__image {\n  inline-size: 200px;\n  block-size: 220px;\n  border-radius: 50%;\n  object-fit: cover;\n  object-position: center;\n}\n\n.author-card__text {\n  font-size: 1em;\n}\n\n.author-card__title {\n  margin-block-end: 31px;\n  font-size: 31px;\n  text-transform: uppercase;\n}\n\n@media (width <= 768px) {\n  html {\n    font-size: 60%;\n\n  }\n\n  .author-card__image {\n    inline-size: 50%;\n    block-size: 50%;\n  }\n}"
+    }
+  ],
+  "instructionsHash": "79774d42ffc6f9506158880141a4a0467b53529eabf3f0dd60b7a6b0e37cee78",
+  "verifiedAt": "2026-10-20T09:11:14.028Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Мастер вёрстки: одной строчкой кода мы уменьшили размеры шрифта всех текстовых элементов."
+  }
+}

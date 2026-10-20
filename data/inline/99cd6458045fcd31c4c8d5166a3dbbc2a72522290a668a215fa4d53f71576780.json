@@ -1,0 +1,18 @@
+{
+  "id": "99cd6458045fcd31c4c8d5166a3dbbc2a72522290a668a215fa4d53f71576780",
+  "lessonId": "1d3eea70-6875-4e3b-b41f-bdc85afdb8c1",
+  "url": "https://sandbox.practicum-team.ru/tasks/03-design/04-units-and-funcs/05-min-max/example-01/pre/",
+  "instructionsHash": "9839636f16b4e21799c979580309278f08d5bb710982545be51592b5b7d76473",
+  "files": [
+    {
+      "name": "styles/style.css",
+      "initialHash": "37dae6b133d769faf33ca35161282d7f3614d9c6270b96448710785f7aef86c5",
+      "content": "* {\n  box-sizing: border-box;\n  margin: 0;\n  padding: 0;\n}\n\nbody {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  min-width: 850px;\n  min-height: 100vh;\n  font-family: 'Open Sans', sans-serif;\n  font-size: 18px;\n  background-color: #feafe8;\n}\n\n.cat-button {\n  display: block;\n  width: 100%;\n  border: 1px solid black;\n  padding: 15px;\n  font-weight: 800;\n  font-size: 18px;\n  text-align: center;\n  text-decoration: none;\n  text-transform: uppercase;\n  background-color: #fff;\n}\n\n.cat-title {\n  font-weight: 800;\n  font-size: 1.5rem;\n  text-align: center;\n  text-transform: uppercase;\n}\n\n.cat-text {\n  margin: 25px 0;\n}\n\n.parent {\n  display: flex;\n  justify-content: center;\n  align-items: stretch;\n}\n\n.content {\n  max-width: 40%;\n  min-width: 200px;\n  display: flex;\n  flex-direction: column;\n  justify-content: end;\n  border: 1px solid;\n  padding: 20px;\n\n  /* Код здесь */\n}\n\n.cat-image {\n  max-height: 600px;\n  height: 80vh;\n  max-width: 600px;\n  border: 1px solid;\n  border-left: none;\n  object-fit: cover;\n\n  /* И здесь */\n}\n"
+    }
+  ],
+  "verifiedAt": "2026-10-20T09:11:40.336Z",
+  "evidence": {
+    "selector": ".result .icon-status-success",
+    "message": "Все круто"
+  }
+}

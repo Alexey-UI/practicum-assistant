@@ -1,0 +1,18 @@
+{
+  "id": "cc9afc8cb278a711260af8fb01ee10605394bd75d66cf0d2e78fc7fc9412e678",
+  "lessonId": "4c93e753-989c-46de-ba46-943d9b8e0286",
+  "url": "https://sandbox.practicum-team.ru/tasks/03-design/04-units-and-funcs/06-calc/example-01/pre/",
+  "instructionsHash": "9374a13991d9b7d8e99894851f7c23ec0eed454a5301e7c29818550aea904c7f",
+  "files": [
+    {
+      "name": "styles/style.css",
+      "initialHash": "54a89b7041eecbfda6e707072070c0356f101f15c5720787cfc39fee7f16c6ad",
+      "content": "* {\n  box-sizing: border-box;\n  margin: 0;\n  padding: 0;\n}\n\nbody {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  min-width: 650px;\n  min-height: 100vh;\n  font-family: 'Open Sans', sans-serif;\n  font-size: 18px;\n  background-color: #feafe8;\n  background-image: url(https://code.s3.yandex.net/web-code/images/dotted.svg);\n}\n\n.child {\n  box-sizing: border-box;\n  width: calc(30% - 60px);\n  height: 100%;\n  border: 1px solid #000;\n  padding-top: 80px;\n  padding-left: 20px;\n  background-color: #feafe8;\n}\n\n.parent {\n  display: flex;\n  justify-content: center;\n  width: 100%;\n  height: 200px;\n}\n"
+    }
+  ],
+  "verifiedAt": "2026-10-20T09:11:58.305Z",
+  "evidence": {
+    "selector": ".result .icon-status-success",
+    "message": "Все круто"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "id": "ece5e45f5ee4091d9cf721d0b989dd8a041932afe0f371d008c2a9818e003f11",
+  "lessonId": "a8efeb26-c408-4535-95cc-642d3075aaf0",
+  "url": "https://sandbox.practicum-team.ru/tasks/03-design/04-units-and-funcs/04-fonts/example-04/pre/",
+  "instructionsHash": "277f35eed3366beca4ec47f36f853e0924917a721c806deb33820f592200fdd3",
+  "files": [
+    {
+      "name": "styles/style.css",
+      "initialHash": "ece8e1bdb9eb562ce5ef1fe5a497d6f6042841a7ff15383d70d8325962025074",
+      "content": "* {\n  box-sizing: border-box;\n  margin: 0;\n  padding: 0;\n}\n\nbody {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  min-height: 100vh;\n  margin: 0;\n  font-family: 'Open Sans', sans-serif;\n  font-size: 18px;\n  line-height: 1;\n  background-color: #5f0dee;\n}\n\n.login__link {\n  display: flex;\n  align-items: center;\n  gap: 10px;\n  max-width: max-content;\n  border: 1px solid;\n  padding: 15px 30px;\n  font-family: inherit;\n  font-weight: 800;\n  font-size: 12px;\n  text-decoration: none;\n  text-transform: uppercase;\n  background-color: #ffc802;\n}\n\n.login__icon {\n  width: 2em;\n  /* Стили пишите здесь */\n}\n\n@media(min-width: 620px) {\n  .login__link {\n    font-size: 16px;\n  }\n}\n\n@media(min-width: 980px) {\n  .login__link {\n    font-size: 18px;\n  }\n}\n\n@media(min-width: 1280px) {\n  .login__link {\n    font-size: 22px;\n  }\n}\n\n@media(min-width: 1440px) {\n  .login__link {\n    font-size: 24px;\n  }\n}\n"
+    }
+  ],
+  "verifiedAt": "2026-10-20T09:08:00.646Z",
+  "evidence": {
+    "selector": ".result .icon-status-success",
+    "message": "Всё отлично!"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "id": "7aa77a50c8841104422751155bc6cb821ca812cdbce02df7fdc7b9aa0e4bb826",
+  "lessonId": "4c93e753-989c-46de-ba46-943d9b8e0286",
+  "url": "https://sandbox.practicum-team.ru/tasks/03-design/04-units-and-funcs/06-calc/example-03/pre/",
+  "instructionsHash": "7cea4ed2568d4a4e2e630e74871d4e2b2ea0aad883222e2ec8b5b6e993c547a8",
+  "files": [
+    {
+      "name": "styles/style.css",
+      "initialHash": "257d440b206e10ad154ef1984597395b105699437d78cec421790354a59c6ac7",
+      "content": "* {\n  box-sizing: border-box;\n  margin: 0;\n  padding: 0;\n}\n\nbody {\n  padding: 50px;\n  font-family: 'Open Sans', sans-serif;\n}\n\nh2 {\n  line-height: calc(100vw / 50 + 0.3rem);\n  font-size: calc(100vw / 50);\n  font-weight: 800;\n  text-align: center;\n  text-transform: uppercase;\n\n  /* Код здесь */\n}\n\n.parent {\n  width: 100%;\n}\n\n.images {\n  display: flex;\n  justify-content: space-between;\n  width: calc(3 / 5 * 100%);\n  padding: 20px;\n}\n\n.content {\n  width: calc(2 / 5 * 100%);\n  margin-left: auto;\n  padding: 20px;\n}\n\n.image,\n.wildcard {\n  width: calc((100% - 40px) / 3);\n}\n\n.images,\n.content,\n.image,\n.wildcard {\n  border: 1px solid #000;\n}\n\n.wildcard {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  color: #ffc802;\n  font-weight: 800;\n  font-size: 50px;\n  background-color: #000;\n}\n"
+    }
+  ],
+  "verifiedAt": "2026-10-20T09:12:45.367Z",
+  "evidence": {
+    "selector": ".result .icon-status-success",
+    "message": "Все круто"
+  }
+}

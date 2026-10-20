@@ -1,0 +1,18 @@
+{
+  "taskId": "0dbf4f0b-591b-4533-9dd3-a9a96c377308",
+  "lessonId": "8be28ed9-83bb-459a-ac0e-380f17308e6b",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "files": [
+    {
+      "name": "style.css",
+      "initialHash": "adfe9acd949cea9ca7f3d96275dc2126e5b6293b506a44010dfac4ee4afa81ba",
+      "content": "html {\n  block-size: 100%;\n}\n\nbody {\n  position: relative;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  min-inline-size: 360px;\n  min-block-size: 100%;\n  margin: 0;\n  font-family: 'Open Sans', sans-serif;\n}\n\n.page {\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  align-items: center;\n  inline-size: 100%;\n  block-size: 100vh;\n  font-family: serif;\n  background-image: url(https://picsum.practicum-team.ru/random-image);\n  background-position: center;\n  background-size: cover;\n}\n\n.page__title {\n  margin: 60px 0 0;\n  color: #fff;\n  font-family: 'Open Sans', sans-serif;\n  font-weight: 600;\n  font-size: 42px;\n  line-height: 1.5;\n}\n\nimg {\n  inline-size: 50%;\n}\n\n@media (width <= 768px) {\n  .page__title {\n    font-size: 32px;\n  }\n}"
+    }
+  ],
+  "instructionsHash": "eccc999908277a93bcc936dcf0cc1cb7c3d0bcc239d259ac0fdd07640743caaa",
+  "verifiedAt": "2026-10-20T09:06:34.595Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "У нас получилась красивая и аккуратная шапка сайта, ровно по размеру экрана."
+  }
+}
