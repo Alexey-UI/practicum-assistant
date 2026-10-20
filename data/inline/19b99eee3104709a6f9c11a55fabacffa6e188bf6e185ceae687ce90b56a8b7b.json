@@ -1,0 +1,18 @@
+{
+  "id": "19b99eee3104709a6f9c11a55fabacffa6e188bf6e185ceae687ce90b56a8b7b",
+  "lessonId": "432d75b4-09d7-4c64-ab08-6d5e426223f7",
+  "url": "https://sandbox.practicum-team.ru/tasks/04-beautishcha/07-modern-elements/01-dialog/example-05/pre/",
+  "instructionsHash": "f543f93a7283bf9bfa9c069230bc515b12b1f0263f2c7f49a108fb08389a0119",
+  "files": [
+    {
+      "name": "styles/style.css",
+      "initialHash": "c2a6034b690b91fe15b289d58c27cfc8e5611c6882aed776e8d982bc29497555",
+      "content": "* {\n  box-sizing: border-box;\n}\n\nhtml {\n  block-size: 100%;\n}\n\nbody {\n  display: grid;\n  place-items: center;\n  min-width: 550px;\n  margin: 0;\n  padding: 50px;\n  font-family: 'Open Sans', sans-serif;\n  font-size: 18px;\n  background-image: url(https://code.s3.yandex.net/web-code/images/dotted.svg);\n  block-size: 100%;\n}\n\n.wrapper {\n  border: 1px solid #000;\n  padding: 25px;\n  background-color: #6dc1fd;\n  max-inline-size: 850px;\n  inline-size: 80%;\n  min-inline-size: 450px;\n}\n\np {\n  margin-block-start: 0;\n}\n\ndialog {\n  border-width: 1px;\n  max-inline-size: 550px;\n  inline-size: 80%;\n  min-inline-size: 250px;\n}\n\nh2 {\n  margin-block-start: 0;\n  font-weight: 800;\n  font-size: 22px;\n  text-transform: uppercase;\n}\n\nform {\n  display: flex;\n  flex-direction: column;\n  gap: 20px;\n}\n\ninput {\n  border: 1px solid #000;\n  padding: 10px 15px;\n  font-family: inherit;\n  font-size: inherit;\n  background-color: transparent;\n}\n\ninput::placeholder {\n  color: rgb(0 0 0 / 0.6);\n}\n\ninput:focus {\n  outline: 2px solid #000;\n  outline-offset: 0;\n}\n\nbutton {\n  border: 1px solid #000;\n  padding: 10px 65px;\n  color: #000;\n  font-family: inherit;\n  font-weight: 800;\n  font-size: inherit;\n  text-transform: uppercase;\n  background-color: #ffc802;\n}\n\nbutton:hover {\n  box-shadow: inset 0 0 0 100px rgb(0 0 0 / 0.15);\n  cursor: pointer;\n}\n\nbutton:focus {\n  outline: 2px solid #000;\n  outline-offset: 0;\n}\n\ndialog::backdrop {\n  background-color: rgb(0 0 0 / 0.3);\n  backdrop-filter: blur(7px);\n}\n"
+    }
+  ],
+  "verifiedAt": "2026-10-20T11:43:32.046Z",
+  "evidence": {
+    "selector": ".result .icon-status-success",
+    "message": "Всё отлично!"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "id": "841ea9e9d6baec7bcece8dbb9e7b55e19dac25cf6cbd4743fb4ce6b6cb069f82",
+  "lessonId": "15fedc7e-c489-4090-a45d-7ef302b6648b",
+  "url": "https://sandbox.practicum-team.ru/tasks/04-beautishcha/07-modern-elements/02-details/example-05/pre/",
+  "instructionsHash": "efc87f2aff8de291b62ee8d9845a02c83193ce09ecee85bbe494a30258333501",
+  "files": [
+    {
+      "name": "styles/style.css",
+      "initialHash": "c1909c0412d647e9f579385b762ddfd33efe1ef8a53cc2749c652207da416c07",
+      "content": "*,\n*::after,\n*::before {\n  box-sizing: border-box;\n}\n\nbody {\n  margin: 0;\n  font-family: 'Open Sans', sans-serif;\n  font-size: 18px;\n}\n\np {\n  margin: 0;\n}\n\n.question {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  padding: 20px;\n  color: #fff;\n  list-style: none;\n  background-color: #fd24af;\n}\n\n.question img {\n  width: 10px;\n}\n\n.question::-webkit-details-marker {\n  display: none;\n}\n\n.answer {\n  padding: 60px 20px;\n  color: #fff;\n  background-color: #5f0dee;\n}\n\ndetails[open] .question img {\n  rotate: 180deg;\n}\n"
+    }
+  ],
+  "verifiedAt": "2026-10-20T11:47:05.052Z",
+  "evidence": {
+    "selector": ".result .icon-status-success",
+    "message": "Всё отлично!"
+  }
+}

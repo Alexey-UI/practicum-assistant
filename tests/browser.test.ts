@@ -5,7 +5,7 @@ import { readLessons, observedSolved, saveObservedSolved } from '../src/catalog.
 import { exactButton, questionFrom, quizOutcome } from '../src/quiz.js';
 import { DEFAULTS } from '../src/config.js';
 import { scrollLesson } from '../src/scroll.js';
-import { trainerOutcome, selectEditorFile, solveTrainer, readTrainer, advanceTrainer, contentHash, canReplaceTrainerFile, isTrainerDemonstration } from '../src/trainer.js';
+import { trainerOutcome, selectEditorFile, solveTrainer, readTrainer, advanceTrainer, contentHash, canReplaceTrainerFile, isTrainerDemonstration, captureTrainerHint } from '../src/trainer.js';
 import { readTextQuestion, solveTextQuestion, captureTextAnswer } from '../src/text-quiz.js';
 import { solveFeedback } from '../src/feedback.js';
 import { solveQuiz } from '../src/quiz.js';
@@ -111,6 +111,30 @@ test('Тренажёр с активной картинкой открывает
     assert.equal(reads, 1);
     assert.equal(await page.locator('body').getAttribute('data-opens'), '1');
     assert.equal(await page.locator('body').getAttribute('data-checks'), null);
+  } finally { process.chdir(original); await page.close(); await rm(dir, { recursive: true, force: true }); }
+});
+test('Исследование читает подсказку один раз, закрывает её и сохраняет приватно без проверки задания', async () => {
+  const page = await browser.newPage(); const original = process.cwd(); const dir = await mkdtemp(path.join(tmpdir(), 'practicum-trainer-hint-'));
+  const taskId = 'bbbbbbbb-bbbb-bbbb-bbbb-bbbbbbbbbbbb';
+  try {
+    process.chdir(dir);
+    await page.route('https://practicum.yandex.ru/**', route => route.fulfill({ contentType: 'text/html; charset=utf-8', body: `<div class="task-description__markdown">Переверните карточку.</div><button data-test-id="trainer-hint-button" onclick="const hint=document.querySelector('.trainer-tasks__hint');hint.hidden=!hint.hidden;document.body.dataset.toggles=String(Number(document.body.dataset.toggles||0)+1)">Подсказка</button><div hidden class="trainer-tasks__hint"><div class="notification__content">.card { transform: rotateY(180deg); }</div></div><button data-test-id="check-task-button" onclick="document.body.dataset.checks='1'">Проверить</button>` }));
+    await page.goto(`https://practicum.yandex.ru/trainer/test/lesson/aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa/task/${taskId}/`);
+    await assert.rejects(captureTrainerHint(page, 'cccccccc-cccc-cccc-cccc-cccccccccccc'), /другому заданию/);
+    assert.equal(await captureTrainerHint(page, taskId), true);
+    assert.equal(await page.locator('.trainer-tasks__hint').isVisible(), false);
+    assert.equal(await captureTrainerHint(page, taskId), true);
+    assert.equal(await page.locator('body').getAttribute('data-toggles'), '2');
+    assert.equal(await page.locator('body').getAttribute('data-checks'), null);
+    assert.equal(await page.locator('.task-description__markdown').innerText(), 'Переверните карточку.');
+    const saved = await readJson<{ text: string; instructionsHash: string } | null>(`.local/trainer-hints/${taskId}.json`, null);
+    assert.equal(saved?.text, '.card { transform: rotateY(180deg); }');
+    assert.equal(saved?.instructionsHash, contentHash(normalize('Переверните карточку.')));
+    assert.equal(await readJson(`data/trainers/${taskId}.json`, null), null);
+    await page.locator('[data-test-id="trainer-hint-button"]').click();
+    assert.equal(await captureTrainerHint(page, taskId), true);
+    assert.equal(await page.locator('.trainer-tasks__hint').isVisible(), false);
+    assert.equal(await page.locator('body').getAttribute('data-toggles'), '4');
   } finally { process.chdir(original); await page.close(); await rm(dir, { recursive: true, force: true }); }
 });
 test('Пустая оболочка урока перезагружается без нажатия проверки', async () => {

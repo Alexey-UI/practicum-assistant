@@ -66,6 +66,39 @@ export async function trainerOutcome(page: Page): Promise<'correct' | 'wrong' | 
   return 'unknown';
 }
 
+export async function captureTrainerHint(page: Page, taskId: string): Promise<boolean> {
+  const currentTask = () => new URL(page.url()).pathname.match(/\/task\/([^/]+)\//)?.[1];
+  if (!/^[a-f0-9-]+$/.test(taskId) || currentTask() !== taskId) throw new Error('Подсказка относится к другому заданию');
+  const instructionsHash = contentHash(normalize(await page.locator('.task-description__markdown').innerText()));
+  const owner = lessonId(page.url());
+  const file = `.local/trainer-hints/${taskId}.json`;
+  const saved = await readJson<{ instructionsHash: string; lessonId: string; text: string } | null>(file, null);
+  const button = page.locator('[data-test-id="trainer-hint-button"]');
+  const hint = page.locator('.trainer-tasks__hint .notification__content');
+  if (saved?.instructionsHash === instructionsHash && saved.lessonId === owner && saved.text.trim()) {
+    if (await hint.isVisible()) {
+      await button.click();
+      await hint.waitFor({ state: 'hidden', timeout: 30000 });
+    }
+    return true;
+  }
+  if (await button.count() !== 1 || !await button.isVisible() || !await button.isEnabled()) return false;
+  let text = '';
+  try {
+    if (!await hint.isVisible()) await button.click();
+    await hint.filter({ hasText: /\S/, visible: true }).waitFor({ timeout: 30000 });
+    text = await hint.innerText();
+  } finally {
+    if (currentTask() === taskId && await hint.isVisible()) {
+      await button.click();
+      await hint.waitFor({ state: 'hidden', timeout: 30000 });
+    }
+  }
+  if (currentTask() !== taskId || contentHash(normalize(await page.locator('.task-description__markdown').innerText())) !== instructionsHash) throw new Error('Контекст задания изменился при чтении подсказки');
+  await atomicJson(file, { taskId, lessonId: owner, instructionsHash, text, readAt: new Date().toISOString() });
+  return true;
+}
+
 export async function isTrainerDemonstration(task: Awaited<ReturnType<typeof readTrainer>>): Promise<boolean> {
   const record = await readJson<{ taskId: string; lessonId: string; instructionsHash: string; contextHash: string; files: Array<{ path: string; hash: string }>; reason: string; reviewedAt: string } | null>(`data/trainer-demos/${task.taskId}.json`, null);
   if (!record || record.taskId !== task.taskId || record.lessonId !== lessonId(task.url) || !record.reason?.trim() || !record.reviewedAt || record.instructionsHash !== contentHash(normalize(task.instructions)) || record.contextHash !== task.contextHash) return false;

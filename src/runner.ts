@@ -5,7 +5,7 @@ import { captureChoiceAnswer, exactButton, quizOutcome, solveQuiz } from './quiz
 import { scrollLesson } from './scroll.js';
 import { loadProjects } from './projects.js';
 import { prepareManualProject, submitProject } from './submission.js';
-import { solveTrainer } from './trainer.js';
+import { solveTrainer, captureTrainerHint } from './trainer.js';
 import { gradedSandboxIndices, solveInline } from './inline.js';
 import { captureMatching, solveMatching } from './matching.js';
 import { solveTextQuestion, captureTextAnswer } from './text-quiz.js';
@@ -63,6 +63,7 @@ async function trainerStep(page: Page, research: boolean): Promise<'advanced' | 
   if (result !== 'pending' || !research) return result;
   const pending = await readJson<{ taskId: string } | null>('.local/pending-task.json', null);
   if (!pending || !/^[a-f0-9-]+$/.test(pending.taskId)) return 'pending';
+  await captureTrainerHint(page, pending.taskId);
   const candidateFile = `.local/task-solutions/${pending.taskId}.json`;
   console.log(`Исследование тренажёра: .local/pending-task.json. Ожидаю решение: ${candidateFile}`);
   let attempted = '';

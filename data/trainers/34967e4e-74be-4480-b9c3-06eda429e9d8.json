@@ -1,0 +1,18 @@
+{
+  "taskId": "34967e4e-74be-4480-b9c3-06eda429e9d8",
+  "lessonId": "432d75b4-09d7-4c64-ab08-6d5e426223f7",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "files": [
+    {
+      "name": "style.css",
+      "initialHash": "06855ae3a1ddff4fad0b708b80a13c441158fb2205c577b18f461153a007527c",
+      "content": "*,\n*::before,\n*::after {\n  box-sizing: border-box;\n}\n\nbody {\n  min-block-size: 100dvb;\n  margin: 0;\n  color: var(--white, #fff);\n  font-family: var(--main-font-family), sans-serif;\n  font-size: var(--main-text-size, 18px);\n  background-color: var(--purple);\n}\n\nh1,\nh2,\nh3,\np {\n  margin: 0;\n  padding: 0;\n}\n\nul {\n  padding: 0;\n  list-style: none;\n}\n\na {\n  color: inherit;\n  text-decoration: none;\n}\n\nh1 {\n  border-radius: 4px;\n  padding: 0.5em 1em;\n  color: var(--white, #fff);\n  font-weight: 800;\n  font-size: var(--h1-font-size, 45px);\n  text-transform: uppercase;\n  background-color: rgb(0 0 0 / 0.8);\n}\n\nh2 {\n  font-weight: 800;\n  font-size: var(--h2-font-size, 38px);\n  text-transform: uppercase;\n}\n\nh3 {\n  font-weight: 800;\n  font-size: var(--h3-font-size, 31px);\n  text-transform: uppercase;\n}\n\n.visually-hidden {\n  position: absolute;\n  inline-size: 1px;\n  block-size: 1px;\n  margin: -1px;\n  border: 0;\n  padding: 0;\n  overflow: hidden;\n  clip: rect(0 0 0 0);\n}\n\n.header {\n  display: grid;\n  place-items: center;\n  min-block-size: 100dvb;\n}\n\n.illustration {\n  position: fixed;\n  inset: 0 0 auto 0;\n  z-index: -1;\n  inline-size: 100%;\n  min-block-size: 100dvb;\n  opacity: 1;\n  transition: opacity 0.5s ease-in-out;\n}\n\n.text {\n  inline-size: 80%;\n  margin: 40px auto;\n}\n\n.text p:not(:last-child) {\n  margin-block-end: 1em;\n}\n\n.footer {\n  min-block-size: 100dvb;\n}\n\n.header__menu-button {\n  position: fixed;\n  inset: 0.8rem 0.8rem auto auto;\n  display: block;\n  inline-size: 50px;\n  block-size: 50px;\n  border: none;\n  background-color: transparent;\n  background-repeat: no-repeat;\n  background-size: contain;\n  transition: opacity 0.3s ease-in-out;\n  cursor: pointer;\n}\n\n.header__menu-button_cmd_open {\n  background-image: url(../svg/hamburger-open.svg);\n}\n\n.header__menu-button_cmd_close {\n  background-image: url(../svg/hamburger-close.svg);\n}\n\n.header__menu-button:hover {\n  opacity: 0.6;\n}\n\n.header__menu {\n  position: fixed;\n  inset: 0 0 0 auto;\n  display: grid;\n  place-items: center;\n  inline-size: 100%;\n  max-inline-size: 100%;\n  block-size: 100%;\n  max-block-size: 100%;\n  border: none;\n  padding: 2em;\n  color: var(--black);\n  background-color: var(--blue);\n  transition: translate 0.3s ease-in-out;\n  translate: 100%;\n}\n\n.header__menu[open] {\n  translate: 0;\n}\n\n.header__menu li:not(:last-child) {\n  margin-block-end: 1em;\n}\n\n.header__menu a {\n  display: block;\n  font-weight: 800;\n  text-align: center;\n  text-transform: uppercase;\n}\n\n.header__menu a:hover {\n  color: var(--white);\n}\n\n@media (orientation: landscape) {\n  .header__menu {\n    inline-size: 50%;\n  }\n}\n\n@media (width >= 768px) and (orientation: portrait) {\n  .header__menu {\n    inline-size: 50%;\n  }\n}\n.header__menu[open]::backdrop {\n  backdrop-filter: blur(10px);\n}\n\nbody:has(.header__menu[open]) {\n  overflow: hidden;\n}\n"
+    }
+  ],
+  "instructionsHash": "100d88232e7808132ade3735fa0d4cbb2a1b4b23410c2571d5d6cb313e2d5115",
+  "verifiedAt": "2026-10-20T11:45:20.484Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Интерактивность так интерактивность! И как вы уменьшили объём скриптов! Просто вау!"
+  }
+}

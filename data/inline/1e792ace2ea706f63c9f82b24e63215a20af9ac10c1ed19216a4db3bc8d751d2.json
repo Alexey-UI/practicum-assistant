@@ -1,0 +1,18 @@
+{
+  "id": "1e792ace2ea706f63c9f82b24e63215a20af9ac10c1ed19216a4db3bc8d751d2",
+  "lessonId": "15fedc7e-c489-4090-a45d-7ef302b6648b",
+  "url": "https://sandbox.practicum-team.ru/tasks/04-beautishcha/07-modern-elements/02-details/example-01/pre/",
+  "instructionsHash": "8f616aa4a8c27a343f4d0dadf2d5ed8330c3f000a312da8a6359700d19ac1dd4",
+  "files": [
+    {
+      "name": "index.html",
+      "initialHash": "03215decc1eeba72c19da9e00f0e6ff412d9648733819ef46b40f45c56567b4e",
+      "content": "<!DOCTYPE html>\n<html lang=\"en\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <meta http-equiv=\"X-UA-Compatible\" content=\"ie=edge\" />\n    <title>Details</title>\n    <link\n      rel=\"stylesheet\"\n      href=\"https://code.s3.yandex.net/web-code/fonts/fonts.css\"\n    />\n    <link rel=\"stylesheet\" href=\"./styles/style.css\" />\n  </head>\n  <body>\n    <details>\n      <summary class=\"question\">Как стать программистом за месяц?</summary>\n      <p class=\"answer\">Никак</p>\n    </details>\n  </body>\n</html>\n"
+    }
+  ],
+  "verifiedAt": "2026-10-20T11:45:44.490Z",
+  "evidence": {
+    "selector": ".result .icon-status-success",
+    "message": "Всё отлично!"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "id": "21d31a96da20ab09f5942b5e5af78926d99df17428b44578326f8fa315f478fa",
+  "lessonId": "15fedc7e-c489-4090-a45d-7ef302b6648b",
+  "url": "https://sandbox.practicum-team.ru/tasks/04-beautishcha/07-modern-elements/02-details/example-02/pre/",
+  "instructionsHash": "b86082a687790c09287a6263fa643c5d7b2d3f99ac7852bb06c7780bed54fc64",
+  "files": [
+    {
+      "name": "styles/style.css",
+      "initialHash": "c9d7f4a05cff2d4e408efcaa50b4b102db9a034e269a38ad085689bbf2cf4f02",
+      "content": "*,\n*::after,\n*::before {\n  box-sizing: border-box;\n}\n\nbody {\n  margin: 0;\n  font-family: 'Open Sans', sans-serif;\n  font-size: 18px;\n}\n\np {\n  margin: 0;\n}\n\n.question {\n  background-color: #fd24af;\n  color: #fff;\n  padding: 20px;\n}\n\n.answer {\n  background-color: #80d994;\n  color: #fff;\n  padding: 60px 20px;\n}\n"
+    }
+  ],
+  "verifiedAt": "2026-10-20T11:46:15.548Z",
+  "evidence": {
+    "selector": ".result .icon-status-success",
+    "message": "Всё отлично!"
+  }
+}

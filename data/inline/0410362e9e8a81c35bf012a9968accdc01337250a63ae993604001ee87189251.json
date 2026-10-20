@@ -1,0 +1,18 @@
+{
+  "id": "0410362e9e8a81c35bf012a9968accdc01337250a63ae993604001ee87189251",
+  "lessonId": "432d75b4-09d7-4c64-ab08-6d5e426223f7",
+  "url": "https://sandbox.practicum-team.ru/tasks/04-beautishcha/07-modern-elements/01-dialog/example-01/pre/",
+  "instructionsHash": "8f8a731c99fef96e3a83153f081cf25a64d53a5c7e7187c862110345a8ec4d17",
+  "files": [
+    {
+      "name": "index.html",
+      "initialHash": "aad3ef3ea0b7cb15f61e8cc340a2bd022c19664fb1cdf19cd29c37be3d87493b",
+      "content": "<!DOCTYPE html>\n<html lang=\"ru\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <meta http-equiv=\"X-UA-Compatible\" content=\"ie=edge\" />\n    <title>Диалог</title>\n    <link\n      rel=\"stylesheet\"\n      href=\"https://code.s3.yandex.net/web-code/fonts/fonts.css\"\n    />\n    <link rel=\"stylesheet\" href=\"./styles/style.css\" />\n  </head>\n  <body>\n    <dialog>\n      <h2>Подпишитесь на нашу рассылку</h2>\n      <form>\n        <label for=\"email\">Введите вашу почту</label>\n        <input type=\"email\" id=\"email\" placeholder=\"test@example.com\">\n        <button type=\"submit\">Подписаться</button>\n      </form>\n    </dialog>\n  </body>\n</html>\n"
+    }
+  ],
+  "verifiedAt": "2026-10-20T11:43:13.740Z",
+  "evidence": {
+    "selector": ".result .icon-status-success",
+    "message": "Всё отлично!"
+  }
+}

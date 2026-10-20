@@ -1,0 +1,23 @@
+{
+  "id": "a3f8654c321b7c0f4c45e5ffa5b0dd89ff34ae5a3051fc528ab4f8a8cb6990db",
+  "lessonId": "15fedc7e-c489-4090-a45d-7ef302b6648b",
+  "url": "https://sandbox.practicum-team.ru/tasks/04-beautishcha/07-modern-elements/02-details/example-04/pre/",
+  "instructionsHash": "80889612e1d11492bbcf1333c7435badb775a30569cd37d42cf6850c2f302971",
+  "files": [
+    {
+      "name": "index.html",
+      "initialHash": "7580bbb51c44371f2504ed0ac649b0fb21ec82d6cabe5dde1b95ae3bb00bb205",
+      "content": "<!DOCTYPE html>\n<html lang=\"en\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <meta http-equiv=\"X-UA-Compatible\" content=\"ie=edge\" />\n    <title>Details</title>\n    <link\n      rel=\"stylesheet\"\n      href=\"https://code.s3.yandex.net/web-code/fonts/fonts.css\"\n    />\n    <link rel=\"stylesheet\" href=\"./styles/style.css\" />\n  </head>\n  <body>\n    <details>\n      <summary class=\"question\"><span>Как стать программистом за месяц?</span><img src=\"./svg/arrow.svg\" aria-hidden=\"true\" /></summary>\n      <p class=\"answer\">Никак</p>\n    </details>\n  </body>\n</html>\n"
+    },
+    {
+      "name": "styles/style.css",
+      "initialHash": "3ae6ba094a9eff3e93c966272d99e0cc6d7943c53bc55fc1b18f3c65b97a997b",
+      "content": "*,\n*::after,\n*::before {\n  box-sizing: border-box;\n}\n\nbody {\n  margin: 0;\n  font-family: 'Open Sans', sans-serif;\n  font-size: 18px;\n}\n\np {\n  margin: 0;\n}\n\n.question {\n  display: flex;\n  justify-content: space-between;\n  align-items: center;\n  padding: 20px;\n  color: #fff;\n  list-style: none;\n  background-color: #fd24af;\n}\n\n.question::-webkit-details-marker {\n  display: none;\n}\n\n.answer {\n  padding: 60px 20px;\n  color: #fff;\n  background-color: #5f0dee;\n}\n\n.question img { width: 10px; }"
+    }
+  ],
+  "verifiedAt": "2026-10-20T11:46:54.962Z",
+  "evidence": {
+    "selector": ".result .icon-status-success",
+    "message": "Всё отлично!"
+  }
+}
