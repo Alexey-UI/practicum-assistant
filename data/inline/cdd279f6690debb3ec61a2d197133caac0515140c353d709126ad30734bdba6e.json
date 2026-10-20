@@ -1,0 +1,18 @@
+{
+  "id": "cdd279f6690debb3ec61a2d197133caac0515140c353d709126ad30734bdba6e",
+  "lessonId": "83ee73de-64bf-4ddc-bbe0-14376f21b98c",
+  "url": "https://sandbox.practicum-team.ru/tasks/03-design/03-css-vars/02-how-to-write/example-01/pre/",
+  "instructionsHash": "1759ce5eaebbe246434ca71bc9986a37e9c23bc2902349316d7a72b3c0c7af0d",
+  "files": [
+    {
+      "name": "styles/style.css",
+      "initialHash": "d873b90253f886217fb91093727c6fe9c169ddc49b3db1dd252bda8662ca4b8e",
+      "content": ":root {\n  --brand-color: #6dc1fd;\n}\n\n* {\n  box-sizing: border-box;\n}\n\nhtml {\n  height: 100vh;\n}\n\nbody {\n  display: grid;\n  place-items: center;\n  gap: 25px;\n  min-width: 850px;\n  min-height: 100%;\n  margin: 0;\n  padding: 50px;\n  font-family: 'Open Sans', sans-serif;\n  font-size: 18px;\n  background-image: url(https://code.s3.yandex.net/web-code/images/dotted-l.svg);\n}\n\n.card {\n  width: 50%;\n  min-width: 350px;\n  border: 1px solid black;\n  padding: 50px;\n  background-color: #fff;\n}\n\n.card__shadow {\n  filter: drop-shadow(10px 10px var(--brand-color));\n}\n\n.card__border {\n  border: 3px solid var(--brand-color);\n}\n\n.card__background {\n  background-color: var(--brand-color);\n}\n"
+    }
+  ],
+  "verifiedAt": "2026-10-20T08:51:08.124Z",
+  "evidence": {
+    "selector": ".result .icon-status-success",
+    "message": "Всё отлично!"
+  }
+}

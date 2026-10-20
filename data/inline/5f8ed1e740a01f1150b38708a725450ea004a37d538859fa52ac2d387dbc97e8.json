@@ -1,0 +1,18 @@
+{
+  "id": "5f8ed1e740a01f1150b38708a725450ea004a37d538859fa52ac2d387dbc97e8",
+  "lessonId": "81c52603-8368-4f28-beec-0c0d30f1d8a6",
+  "url": "https://sandbox.practicum-team.ru/tasks/03-design/03-css-vars/06-dark-mode/example-01/pre/",
+  "instructionsHash": "9cdd7b3eb3c237882fe99a805365922ffeba7604ba7cebabed4c785b345536db",
+  "files": [
+    {
+      "name": "styles/style.css",
+      "initialHash": "f591ce9e3b528309759e0232cb4a0391b4c2e371762ce1989e2e292a44e3a6e2",
+      "content": "* {\n  box-sizing: border-box;\n}\n\nhtml {\n  height: 100vh;\n}\n\nbody {\n  --main-text-color: #152028;\n  --main-background-color: #fff;\n  display: grid;\n  place-items: center;\n  min-height: 100%;\n  margin: 0;\n  color: var(--main-text-color);\n  font-family: 'Open Sans', sans-serif;\n  font-size: 18px;\n  background-color: var(--main-background-color);\n}\n\n.title {\n  font-weight: 800;\n  font-size: 45px;\n  text-align: center;\n  text-transform: uppercase;\n}\n\n.something {\n  width: max(250px, 50vw);\n  height: max(250px, 50vw);\n  background-image: url(../svg/tsss.svg);\n  background-repeat: no-repeat;\n  background-position: center;\n  background-size: contain;\n}\n\nlabel {\n  display: flex;\n  align-items: center;\n  gap: 15px;\n  cursor: pointer;\n}\n\ninput[type='checkbox'] {\n  width: 27px;\n  height: 27px;\n  accent-color: #000;\n}\n\ninput[type='checkbox']:focus-visible {\n  outline: 2px solid #000;\n  outline-offset: 0;\n}\n"
+    }
+  ],
+  "verifiedAt": "2026-10-20T09:00:15.289Z",
+  "evidence": {
+    "selector": ".result .icon-status-success",
+    "message": "Всё отлично!"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "id": "e087c2d019f0a14be0f050e7c0f29b8b8cf48d44c7732cb3d09a133921002e91",
+  "lessonId": "a242406d-4787-4207-bf51-2098a9650040",
+  "url": "https://sandbox.practicum-team.ru/tasks/03-design/03-css-vars/03-redefining/example-02/pre/",
+  "instructionsHash": "ee2adb4156906a79bc6f0ff1b6c7e69f29ff4cdf64394e1d555ecf79f31da5ae",
+  "files": [
+    {
+      "name": "styles/style.css",
+      "initialHash": "175013f7cceaca2a4f2bec57916f08a78e0949a9c971973153bbe48543981dd5",
+      "content": ":root {\n  --pink: #feafe8;\n  --light-blue: #6dc1fd;\n  --black: #000;\n  --white: #fff;\n  --purple: #5f0dee;\n  --small: 32px;\n  --medium: 64px;\n  --large: 128px;\n}\n\n* {\n  box-sizing: border-box;\n}\n\nhtml {\n  height: 100vh;\n}\n\nh2,\np {\n  margin: 0;\n}\n\nbody {\n  display: grid;\n  place-items: center;\n  gap: var(--small);\n  min-height: 100%;\n  margin: 0;\n  font-family: 'Open Sans', sans-serif;\n  font-size: 18px;\n  background-color: var(--black);\n}\n\n.card {\n  width: calc(var(--large) * 3);\n  border: 3px solid var(--pink);\n  padding: var(--small);\n  color: var(--white);\n}\n\n.title {\n  margin-bottom: var(--small);\n  text-align: center;\n}\n\n.accent {\n  display: block;\n  color: var(--light-blue);\n  font-size: var(--small);\n  line-height: 1;\n}\n\n.bright {\n  color: var(--black);\n  background-color: var(--pink);\n}\n\n.bright .accent {\n  color: var(--purple);\n}\n"
+    }
+  ],
+  "verifiedAt": "2026-10-20T08:55:16.236Z",
+  "evidence": {
+    "selector": ".result .icon-status-success",
+    "message": "Всё отлично!"
+  }
+}

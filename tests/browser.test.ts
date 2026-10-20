@@ -46,19 +46,21 @@ test('После последнего задания проходчик возв
     assert.ok(page.url().includes('/lesson/new/'));
   } finally { process.chdir(original); await page.close(); await rm(dir, { recursive: true, force: true }); }
 });
-test('Чтение тренажёра открывает исходный CSS, модель которого ещё не загружена', async () => {
+test('Чтение тренажёра открывает ещё не загруженные CSS и текстовый ресурс со ссылками', async () => {
   const page = await browser.newPage(); const original = process.cwd(); const dir = await mkdtemp(path.join(tmpdir(), 'practicum-unopened-'));
   try {
     process.chdir(dir);
-    await page.route('https://practicum.yandex.ru/**', route => route.fulfill({ contentType: 'text/html; charset=utf-8', body: `<textarea aria-label="Содержимое редактора"></textarea><div class="task-description__markdown">Задайте размер карточки.</div><div class="files-tree"><span class="files-tree__node-name-container" onclick="loadCss()">style.css</span></div><script>
+    await page.route('https://practicum.yandex.ru/**', route => route.fulfill({ contentType: 'text/html; charset=utf-8', body: `<textarea aria-label="Содержимое редактора"></textarea><div class="task-description__markdown">Задайте размер карточки.</div><div class="files-tree"><span class="files-tree__node-name-container" onclick="loadCss()">style.css</span><span class="files-tree__node-name-container" onclick="loadLinks()">links.txt</span></div><script>
       const models=[{uri:{path:'/index.html'},getLanguageId:()=> 'html',getValue:()=> '<main></main>'}];
       window.monaco={editor:{getModels:()=>models}};
       function loadCss(){models.push({uri:{path:'/styles/style.css'},getLanguageId:()=> 'css',getValue:()=> '.card {}'})};
+      function loadLinks(){models.push({uri:{path:'/links.txt'},getLanguageId:()=> 'plaintext',getValue:()=> 'https://example.com/image.webp'})};
     </script>` }));
     await page.goto('https://practicum.yandex.ru/trainer/test/lesson/aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa/task/bbbbbbbb-bbbb-bbbb-bbbb-bbbbbbbbbbbb/');
     const task = await readTrainer(page);
     assert.equal(task.files.find(file => file.path.endsWith('style.css'))?.content, '.card {}');
-    assert.equal((await readTrainer(page)).files.length, 2);
+    assert.equal(task.files.find(file => file.path.endsWith('links.txt'))?.content, 'https://example.com/image.webp');
+    assert.equal((await readTrainer(page)).files.length, 3);
   } finally { process.chdir(original); await page.close(); await rm(dir, { recursive: true, force: true }); }
 });
 test('Пустая оболочка урока перезагружается без нажатия проверки', async () => {

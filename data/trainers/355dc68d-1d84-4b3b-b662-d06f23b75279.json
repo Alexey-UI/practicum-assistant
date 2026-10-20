@@ -1,0 +1,18 @@
+{
+  "taskId": "355dc68d-1d84-4b3b-b662-d06f23b75279",
+  "lessonId": "c6006e88-f200-4efb-aa10-0bf7b56e4ba4",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "files": [
+    {
+      "name": "style.css",
+      "initialHash": "360a2fda04fb48fa34b09c83c542c659d33b97c45f591543d94c8dca7d606947",
+      "content": "body {\n  display: grid;\n  place-items: center;\n  box-sizing: border-box;\n  min-block-size: 100dvb;\n  margin: 0;\n  padding: 20px;\n  font-family: 'PT Sans', sans-serif;\n  background-color: skyblue;\n  background-image:\n    image-set(\n      url(https://code.s3.yandex.net/frontend-developer/fullstack-developer/sprint3/fish.avif) type(\"image/avif\") 1x,\n      url(https://code.s3.yandex.net/frontend-developer/fullstack-developer/sprint3/fish.webp) type(\"image/webp\") 1x,\n      url(https://code.s3.yandex.net/frontend-developer/fullstack-developer/sprint3/fish.png) type(\"image/png\") 1x,\n      url(https://code.s3.yandex.net/frontend-developer/fullstack-developer/sprint3/step2/fish-2x.avif) type(\"image/avif\") 2x,\n      url(https://code.s3.yandex.net/frontend-developer/fullstack-developer/sprint3/step2/fish-2x.webp) type(\"image/webp\") 2x,\n      url(https://code.s3.yandex.net/frontend-developer/fullstack-developer/sprint3/step2/fish-2x.png) type(\"image/png\") 2x,\n      url(https://code.s3.yandex.net/frontend-developer/fullstack-developer/sprint3/step2/fish-3x.avif) type(\"image/avif\") 3x,\n      url(https://code.s3.yandex.net/frontend-developer/fullstack-developer/sprint3/step2/fish-3x.webp) type(\"image/webp\") 3x,\n      url(https://code.s3.yandex.net/frontend-developer/fullstack-developer/sprint3/step2/fish-3x.png) type(\"image/png\") 3x\n    ),\n    image-set(\n      url(https://code.s3.yandex.net/frontend-developer/fullstack-developer/sprint3/water.avif) type(\"image/avif\") 1x,\n      url(https://code.s3.yandex.net/frontend-developer/fullstack-developer/sprint3/water.webp) type(\"image/webp\") 1x,\n      url(https://code.s3.yandex.net/frontend-developer/fullstack-developer/sprint3/water.jpg) type(\"image/jpeg\") 1x,\n      url(https://code.s3.yandex.net/frontend-developer/fullstack-developer/sprint3/step2/water-2x.avif) type(\"image/avif\") 2x,\n      url(https://code.s3.yandex.net/frontend-developer/fullstack-developer/sprint3/step2/water-2x.webp) type(\"image/webp\") 2x,\n      url(https://code.s3.yandex.net/frontend-developer/fullstack-developer/sprint3/step2/water-2x.jpg) type(\"image/jpeg\") 2x,\n      url(https://code.s3.yandex.net/frontend-developer/fullstack-developer/sprint3/step2/water-3x.avif) type(\"image/avif\") 3x,\n      url(https://code.s3.yandex.net/frontend-developer/fullstack-developer/sprint3/step2/water-3x.webp) type(\"image/webp\") 3x,\n      url(https://code.s3.yandex.net/frontend-developer/fullstack-developer/sprint3/step2/water-3x.jpg) type(\"image/jpeg\") 3x\n    );\n  background-repeat: no-repeat;\n  background-position: 10% 90%, center;\n  background-size: 200px, cover;\n}\n\nh1 {\n  margin: 0;\n  padding: 10px;\n  font-weight: normal;\n  font-size: 60px;\n  line-height: 1;\n  text-align: center;\n  text-transform: uppercase;\n  background-color: #fff;\n}"
+    }
+  ],
+  "instructionsHash": "25052f1d4c46cc7000f44f7cac9fef896a04e34e4c28f1557a808fe77aa68024",
+  "verifiedAt": "2026-10-20T08:49:45.608Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Ну и полотно image-set у вас получилось! Но зато так вы порадуете даже самых взыскательных зрителей."
+  }
+}

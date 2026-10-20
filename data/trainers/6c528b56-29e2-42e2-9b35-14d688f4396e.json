@@ -1,0 +1,18 @@
+{
+  "taskId": "6c528b56-29e2-42e2-9b35-14d688f4396e",
+  "lessonId": "8a9e0661-34a1-4e8a-928f-f4921b752aed",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "files": [
+    {
+      "name": "style.css",
+      "initialHash": "2e1ef42b884903f35667f66f4e4a9f64cfc0673a93f7e7dcf500e7dd80605560",
+      "content": "html {\n  block-size: 100%;\n}\n\nbody {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  min-inline-size: 360px;\n  min-block-size: 100%;\n  margin: 0;\n  color: #fff;\n  font-family: 'Open Sans', sans-serif;\n  background-image: url(https://code.s3.yandex.net/web-code/images/dotted-l.svg);\n}\n\nh1,\nh2,\nh3,\np {\n  margin: 0;\n  padding: 0;\n}\n\n.quote {\n  inline-size: 60%;\n  margin: 0;\n  padding: 4em;\n  font-size: 10px;\n  background-color: #5f0dee;\n}\n\n.quote__title {\n  margin-block-end: 20px;\n  font-size: 320%;\n  line-height: 150%;\n}\n\n.quote__text {\n  margin-block-end: 8px;\n  font-size: 200%;\n  line-height: 150%;\n}\n\n.quote__author {\n  font-size: 140%;\n  line-height: 150%;\n}\n\n@media (width <= 768px) {\n  .quote {\n    inline-size: 100%;\n    padding: 2em;\n  }\n}"
+    }
+  ],
+  "instructionsHash": "56198555ecff0773b7a014e4167e65c74af043e9c90afc38b3b08802c3d0f65d",
+  "verifiedAt": "2026-10-20T09:03:43.697Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Поздравляем, вы сделали небольшой, но важный шаг в освоении относительных единиц."
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "id": "b0df520d27f64b40d96c86730a96c5466293847ce46cf5514b18804b85f7538c",
+  "lessonId": "a242406d-4787-4207-bf51-2098a9650040",
+  "url": "https://sandbox.practicum-team.ru/tasks/03-design/03-css-vars/03-redefining/example-03/pre/",
+  "instructionsHash": "bd2cec881b73189785518287f21a51cb19658d778402d772dc0f92c1deb30a60",
+  "files": [
+    {
+      "name": "styles/style.css",
+      "initialHash": "ee1d1884df4c83186bc4efefa2f1f30831445306057b78a41539697c5b761496",
+      "content": ":root {\n  --pink: #feafe8;\n  --light-blue: #6dc1fd;\n  --black: #000;\n  --white: #fff;\n  --purple: #5f0dee;\n  --small: 32px;\n  --medium: 64px;\n  --large: 128px;\n}\n\n* {\n  box-sizing: border-box;\n}\n\nhtml {\n  height: 100vh;\n}\n\nh2,\np {\n  margin: 0;\n}\n\nbody {\n  --background-color: var(--black);\n\n  display: grid;\n  place-items: center;\n  gap: var(--small);\n  min-height: 100%;\n  margin: 0;\n  font-family: 'Open Sans', sans-serif;\n  font-size: 18px;\n  background-color: var(--background-color);\n}\n\n.card {\n  --text-color: var(--white);\n  --padding: var(--small);\n\n  width: calc(var(--large) * 3);\n  border: 3px solid var(--pink);\n  padding: var(--padding);\n  color: var(--text-color);\n}\n\n.title {\n  margin-bottom: var(--small);\n  text-align: center;\n}\n\n.accent {\n  display: block;\n  color: var(--light-blue);\n  font-size: var(--small);\n  line-height: 1;\n}\n\n.bright {\n  --text-color: var(--black);\n\n  color: var(--text-color);\n  background-color: var(--pink);\n}\n\n.bright .accent {\n  color: var(--purple);\n}\n"
+    }
+  ],
+  "verifiedAt": "2026-10-20T08:56:28.231Z",
+  "evidence": {
+    "selector": ".result .icon-status-success",
+    "message": "Всё отлично!"
+  }
+}

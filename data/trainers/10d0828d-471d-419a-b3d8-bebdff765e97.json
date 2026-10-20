@@ -1,0 +1,28 @@
+{
+  "taskId": "10d0828d-471d-419a-b3d8-bebdff765e97",
+  "lessonId": "83ee73de-64bf-4ddc-bbe0-14376f21b98c",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "files": [
+    {
+      "name": "components.css",
+      "initialHash": "92735f00d7fcea310b7728bff6c26f1113da885ec9545d11a47c0eac8d4c93bd",
+      "content": ".bgc-black {\n  background-color: var(--black);\n}\n\n.bgc-grey {\n  background-color: var(--grey);\n}\n\n.bgc-white {\n  background-color: var(--white);\n}\n\n.bgc-pattern-small-dots {\n  background-image: var(--pattern-small-dots);\n}\n\n.bgc-pattern-large-dots {\n  background-image: var(--pattern-large-dots);\n}\n\n.bgc-pink {\n  background-color: var(--pink);\n}\n\n.bgc-fuchsia {\n  background-color: var(--fuchsia);\n}\n\n.bgc-yellow {\n  background-color: var(--yellow);\n}\n\n.bgc-green {\n  background-color: var(--green);\n}\n\n.bgc-blue {\n  background-color: var(--blue);\n}\n\n.bgc-violet {\n  background-color: var(--violet);\n}\n\n.c-black {\n  color: var(--black);\n}\n\n.c-white {\n  color: var(--white);\n}\n\n.heading,\n.text {\n  font-family: var(--main-font), sans-serif;\n}\n\n.heading {\n  font-weight: var(--bold-font-weight);\n  text-transform: var(--headings-text-transform);\n}\n\n.heading_size_xxl {\n  margin-block-end: var(--h1-margin);\n  font-size: var(--h1-size);\n}\n\n.heading_size_xl {\n  margin-block-end: var(--h2-margin);\n  font-size: var(--h2-size);\n}\n\n.heading_size_l {\n  margin-block-end: var(--h3-margin);\n  font-size: var(--h3-size);\n}\n\n.heading_size_m {\n  margin-block-end: var(--h4-margin);\n  font-size: var(--h4-size);\n}\n\n.heading_size_s {\n  margin-block-end: var(--h5-margin);\n  font-size: var(--h5-size);\n}\n\n.heading_size_xs {\n  margin-block-end: var(--h6-margin);\n  font-size: var(--h6-size);\n}\n\n.text {\n  font-size: var(--main-text-size);\n}\n\n.text_accent_emphasize {\n  font-style: var(--cursive-font-style);\n}\n\n.text_accent_strong {\n  font-weight: var(--bold-font-weight);\n}"
+    },
+    {
+      "name": "pallete.css",
+      "initialHash": "b2e78508abb680833c776bf43769f1f10fd94e053bdc3535cc796fd2973db1c6",
+      "content": "/* Цвета и паттерны */\n:root {\n  --black: #000;\n  --grey: #c4c4c4;\n  --white: #fff;\n  --pattern-small-dots: url(https://code.s3.yandex.net/web-code/images/dotted.svg);\n  --pattern-large-dots: url(https://code.s3.yandex.net/web-code/images/dotted-l.svg);\n  --pink: #feafe8;\n  --fuchsia: #fd24af;\n  --yellow: #ffc802;\n  --green: #80d994;\n  --blue: #6dc1fd;\n  --violet: #5f0dee;\n}\n"
+    },
+    {
+      "name": "typography.css",
+      "initialHash": "888a2a8846fbade92b18c9afa37b1b61346a7d3995933ddd3d548fe82ece34ad",
+      "content": "/* Шрифты, их размеры, начертания, стиль и отступы */\n:root {\n  --main-font: 'PT Sans';\n  --bold-font-weight: 800;\n  --headings-text-transform: uppercase;\n  --h1-margin: 30px;\n  --h1-size: 45px;\n  --h2-margin: 31px;\n  --h2-size: 38px;\n  --h3-margin: 31px;\n  --h3-size: 31px;\n  --h4-margin: 33px;\n  --h4-size: 25px;\n  --h5-margin: 36px;\n  --h5-size: 22px;\n  --h6-margin: 46px;\n  --h6-size: 20px;\n  --main-text-size: 18px;\n  --cursive-font-style: italic;\n}\n"
+    }
+  ],
+  "instructionsHash": "65e6b128afa975370be4a0b3738889060d5ea5c58e63cad7fa49c26ba72bbd40",
+  "verifiedAt": "2026-10-20T08:52:44.067Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Теперь у вас появился пункт управления цветами и типографикой в проекте. Посмотрим дальше, к чему это приведёт."
+  }
+}

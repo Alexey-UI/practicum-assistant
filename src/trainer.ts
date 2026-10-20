@@ -24,7 +24,7 @@ export async function readTrainer(page: Page): Promise<{ taskId: string; url: st
   if (await theoryClose.isVisible()) await theoryClose.click();
   await page.getByRole('textbox', { name: 'Содержимое редактора', exact: true }).waitFor({ state: 'visible', timeout: 180000 });
   await page.locator('.task-description__markdown').filter({ hasText: /\S/, visible: true }).waitFor({ timeout: 180000 });
-  const names = (await page.locator('.files-tree__node-name-container').filter({ visible: true }).allTextContents()).map(name => name.trim()).filter(name => /\.(?:html?|css|[cm]?js|jsx|tsx?|json)$/i.test(name));
+  const names = (await page.locator('.files-tree__node-name-container').filter({ visible: true }).allTextContents()).map(name => name.trim()).filter(name => /\.(?:html?|css|[cm]?js|jsx|tsx?|json|txt|md)$/i.test(name));
   if (names.length > 128 || new Set(names).size !== names.length) throw new Error('Слишком много файлов или неоднозначные имена в дереве тренажёра');
   for (const name of names) {
     const loaded = await page.evaluate(fileName => (window as MonacoWindow).monaco?.editor.getModels().some(model => model.uri.path.split('/').pop() === fileName), name);

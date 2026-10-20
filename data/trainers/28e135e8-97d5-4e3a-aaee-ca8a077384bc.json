@@ -1,0 +1,18 @@
+{
+  "taskId": "28e135e8-97d5-4e3a-aaee-ca8a077384bc",
+  "lessonId": "221e10ae-e87a-4ec9-9bf4-d2b0432a6459",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "files": [
+    {
+      "name": "style.css",
+      "initialHash": "f46a125344b4496983381481e68c04bbc26edb00e33095ab81496bfd3f1b6bbb",
+      "content": "body {\n  min-block-size: 100dvb;\n  margin: 0;\n  padding: 2em;\n  font-family: 'Open Sans', sans-serif;\n  font-size: 18px;\n  background-color: #80d994;\n}\n\nh2,\nh3,\np,\nul {\n  margin: 0;\n}\n\nimg {\n  display: block;\n  max-inline-size: 100%;\n}\n\nul {\n  padding: 0;\n  list-style: none;\n}\n\na {\n  color: inherit;\n}\n\n.section:not(:last-child) {\n  margin-block-end: 2em;\n}\n\n.section-title {\n  margin-block-end: 0.5em;\n  font-size: 45px;\n  text-transform: uppercase;\n}\n\n.cards-list {\n  display: grid;\n  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));\n  gap: 20px;\n}\n\n.cards-list__link {\n  display: block;\n  text-decoration: none;\n}\n\n.cards-list__link:hover {\n  box-shadow: 8px 8px 0 var(--shadow-color, #000);\n}\n\n.card {\n  block-size: 100%;\n  min-block-size: 700px;\n  border: 1px solid var(--border-color, #000);\n  background-color: var(--card-bg-color, #fff);\n}\n\n.card__image {\n  inline-size: 100%;\n  border-block-end: 1px solid var(--border-color, #000);\n  aspect-ratio: 1 / 1;\n}\n\n.card__title {\n  font-weight: 800;\n  font-size: 28px;\n  text-transform: uppercase;\n}\n\n.card__description {\n  display: flex;\n  flex-direction: column;\n  gap: 10px;\n  block-size: 100%;\n  padding: 20px;\n}\n\n.price {\n  font-weight: 800;\n}\n\n.soon {\n  --card-bg-color: #feafe8;\n  --border-color: #5f0dee;\n  --shadow-color: #5f0dee;\n}"
+    }
+  ],
+  "instructionsHash": "787213e10ba0e0d525e11baef7f6842b371aef8a56dc7f73f29ff14dff991e82",
+  "verifiedAt": "2026-10-20T08:59:36.825Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Так держать! Переменные с зонами видимости сдаются под вашим натиском!"
+  }
+}

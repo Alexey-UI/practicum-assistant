@@ -1,0 +1,18 @@
+{
+  "taskId": "838c8f79-f480-4a8a-8d5d-9a96a0e91adb",
+  "lessonId": "221e10ae-e87a-4ec9-9bf4-d2b0432a6459",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "files": [
+    {
+      "name": "style.css",
+      "initialHash": "733259b21d67bffbdff6e70fb437b1b25a2e95a0bd9c381a0d83c58cac91a4ca",
+      "content": "html {\n  scroll-behavior: smooth;\n}\n\n*,\n*::before,\n*::after {\n  box-sizing: border-box;\n}\n\nbody {\n  min-inline-size: 1000px;\n  min-block-size: 100dvb;\n  margin: 0;\n  font-family: 'Open Sans', sans-serif;\n  font-size: 18px;\n}\n\nh1,\nh2,\nh3,\np,\nul,\nli {\n  margin: 0;\n  padding: 0;\n}\n\na {\n  color: inherit;\n  text-decoration: none;\n}\n\nimg {\n  display: block;\n  max-inline-size: 100%;\n}\n\na:hover {\n  text-decoration: underline;\n}\n\nul {\n  list-style: none;\n}\n\n.grid-container {\n  display: grid;\n  grid-template-columns: repeat(var(--column-count, 12), var(--column-size, 1fr));\n}\n\n.grid-item {\n  grid-column: span var(--item-span, 1);\n}\n\n.header {\n  align-items: center;\n  padding: 20px;\n  color: #fff;\n  background-color: #5f0dee;\n}\n\n.header__slogan {\n  --item-span: 5;\n  font-weight: bold;\n  font-size: 18px;\n}\n\n.header__logo {\n  --item-span: 2;\n  justify-self: center;\n  inline-size: 25%;\n  object-fit: cover;\n}\n\n.menu {\n  --item-span: 5;\n  justify-self: end;\n}\n\n.menu__list {\n  display: flex;\n  gap: 20px;\n  list-style: none;\n}\n\n.hero {\n  background-color: #ffc802;\n  aspect-ratio: 16 / 7;\n}\n\n.hero__banner {\n  --item-span: 8;\n  inline-size: 100%;\n  block-size: 100%;\n  object-fit: cover;\n  object-position: center;\n}\n\n.hero__spoiler {\n  --item-span: 4;\n  padding: 20px;\n}\n\n.hero__spoiler h2 {\n  margin-block-end: 1em;\n  font-weight: 800;\n  font-size: 38px;\n  text-transform: uppercase;\n}\n\n.hero__spoiler p {\n  margin-block-end: 1.5em;\n}\n\n.button {\n  display: block;\n  inline-size: fit-content;\n  border: 1px solid #000;\n  padding-inline: 65px;\n  padding-block: 10px;\n  color: #fff;\n  font-family: inherit;\n  font-weight: 800;\n  font-size: inherit;\n  text-transform: uppercase;\n  background-color: #5f0dee;\n}\n\n.button:hover {\n  box-shadow: inset 0 0 0 100px rgb(0 0 0 / 0.15);\n  text-decoration: none;\n  cursor: pointer;\n}\n\n.content {\n  min-block-size: 800px;\n  background-color: #ffc802;\n}\n\n.navigation {\n  --item-span: 3;\n  padding: 10px;\n}\n\n.navigation__menu {\n  position: sticky;\n  inset-block-start: 0;\n  inset-inline-end: 0;\n}\n\n.navigation__list {\n  --column-count: auto-fit;\n  --column-size: minmax(150px, 1fr);\n  gap: 5px;\n}\n\n.navigation__link {\n  inline-size: 100%;\n  padding-inline: 1em;\n  padding-block: 0.5em;\n  font-size: 14px;\n  text-align: center;\n}\n\n.text {\n  --item-span: 9;\n  padding: 20px;\n  background-color: #fff;\n}\n\n.text h3 {\n  margin-block-start: 1em;\n  font-size: 31px;\n  text-transform: uppercase;\n}\n\n.text h3:first-of-type {\n  margin-block-start: 0;\n}\n\n.text p:not(:last-child) {\n  margin-block-end: 1em;\n}\n\n.footer {\n  align-items: center;\n  min-block-size: 80px;\n  padding: 20px;\n  color: #fff;\n  background-color: #5f0dee;\n}\n\n.footer ul {\n  display: flex;\n  gap: 20px;\n}\n\n.footer__copyright {\n  --item-span: 3;\n}\n\n.footer__menu {\n  --item-span: 5;\n}\n\n.footer__social {\n  --item-span: 4;\n  justify-self: end;\n}"
+    }
+  ],
+  "instructionsHash": "d42efc4df0a0dc47cf2087ae32362c4e9f0cd7fc86427e1903c832bbafc87ec4",
+  "verifiedAt": "2026-10-20T08:58:09.127Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Удобно, но нужно привыкнуть."
+  }
+}

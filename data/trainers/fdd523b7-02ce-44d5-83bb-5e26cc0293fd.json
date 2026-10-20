@@ -1,0 +1,18 @@
+{
+  "taskId": "fdd523b7-02ce-44d5-83bb-5e26cc0293fd",
+  "lessonId": "c6006e88-f200-4efb-aa10-0bf7b56e4ba4",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "files": [
+    {
+      "name": "style.css",
+      "initialHash": "0e55f05271eb6225e01b24167a1bedcc778bdc77146f2de13efa00ebeeec0987",
+      "content": "body {\n  display: grid;\n  place-items: center;\n  box-sizing: border-box;\n  min-block-size: 100dvb;\n  margin: 0;\n  padding: 20px;\n  font-family: 'PT Sans', sans-serif;\n  background-color: skyblue;\n  background-image:\n    image-set(\n      url(https://code.s3.yandex.net/frontend-developer/fullstack-developer/sprint3/fish.avif) type(\"image/avif\"),\n      url(https://code.s3.yandex.net/frontend-developer/fullstack-developer/sprint3/fish.webp) type(\"image/webp\"),\n      url(https://code.s3.yandex.net/frontend-developer/fullstack-developer/sprint3/fish.png) type(\"image/png\")\n    ),\n    image-set(\n      url(https://code.s3.yandex.net/frontend-developer/fullstack-developer/sprint3/water.avif) type(\"image/avif\"),\n      url(https://code.s3.yandex.net/frontend-developer/fullstack-developer/sprint3/water.webp) type(\"image/webp\"),\n      url(https://code.s3.yandex.net/frontend-developer/fullstack-developer/sprint3/water.jpg) type(\"image/jpeg\")\n    );\n  background-repeat: no-repeat;\n  background-position: 10% 90%, center;\n  background-size: 200px, cover;\n}\n\nh1 {\n  margin: 0;\n  padding: 10px;\n  font-weight: normal;\n  font-size: 60px;\n  line-height: 1;\n  text-align: center;\n  text-transform: uppercase;\n  background-color: #fff;\n}"
+    }
+  ],
+  "instructionsHash": "8dd705b9b02ccaa5270b41deb090b2c839a8554d641b86cc887a2c76d8b417b0",
+  "verifiedAt": "2026-10-20T08:49:10.712Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Отлично! Экономим браузеру килобайты."
+  }
+}
