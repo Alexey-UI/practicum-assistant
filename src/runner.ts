@@ -214,6 +214,7 @@ export async function run(): Promise<void> {
       let deferred = false;
       for (let step = 0; step < cfg.maxSteps; step++) {
         if (isTrainerTaskUrl(page.url())) {
+          if (!await waitReadyOrDefer(page, lesson)) { deferred = true; break; }
           const result = await trainerStep(page, research);
           if (result === 'pending') {
             pause(`Нужен разбор задания тренажёра. ${await snapshot(page, 'trainer')}`); return;

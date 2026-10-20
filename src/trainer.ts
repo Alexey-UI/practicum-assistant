@@ -158,18 +158,23 @@ export async function solveTrainer(page: Page, candidate = false): Promise<'adva
   return advanceTrainer(page, task.instructions, solution.lessonId);
 }
 
-export async function advanceTrainer(page: Page, instructions: string, ownerLesson: string): Promise<'advanced' | 'finished'> {
+export async function advanceTrainer(page: Page, instructions: string, ownerLesson: string, transitionTimeoutMs = 60000): Promise<'advanced' | 'finished'> {
   const next = page.locator('[data-test-id="next-task-button"]');
   await next.waitFor({ state: 'visible', timeout: 30000 });
   const before = page.url();
   await next.click();
   await page.waitForURL(url => url.href !== before, { waitUntil: 'commit', timeout: 180000 });
   await settle(page);
-  if (isTrainerTaskUrl(page.url())) {
-    await page.waitForFunction(previous => {
+  await journal('trainer-transition', { url: safeUrl(page.url()), ownerLesson });
+  if (isTrainerTaskUrl(page.url()) && lessonId(page.url()) === ownerLesson) {
+    try { await page.waitForFunction(previous => {
       const nextText = document.querySelector('.task-description__markdown')?.textContent?.normalize('NFKC').replace(/\s+/g, ' ').trim();
       return !!nextText && nextText !== previous;
-    }, normalize(instructions), { timeout: 180000 });
+    }, normalize(instructions), { timeout: transitionTimeoutMs }); }
+    catch (error) {
+      if (!await page.getByRole('textbox', { name: 'Содержимое редактора', exact: true }).isVisible() && !await page.locator('.task-description__markdown').filter({ hasText: /\S/, visible: true }).isVisible()) return 'advanced';
+      throw error;
+    }
   }
   return isTrainerTaskUrl(page.url()) && lessonId(page.url()) === ownerLesson ? 'advanced' : 'finished';
 }

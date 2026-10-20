@@ -5,7 +5,7 @@ import { readLessons, observedSolved, saveObservedSolved } from '../src/catalog.
 import { exactButton, questionFrom, quizOutcome } from '../src/quiz.js';
 import { DEFAULTS } from '../src/config.js';
 import { scrollLesson } from '../src/scroll.js';
-import { trainerOutcome, selectEditorFile, solveTrainer, readTrainer, contentHash, canReplaceTrainerFile } from '../src/trainer.js';
+import { trainerOutcome, selectEditorFile, solveTrainer, readTrainer, advanceTrainer, contentHash, canReplaceTrainerFile } from '../src/trainer.js';
 import { readTextQuestion, solveTextQuestion, captureTextAnswer } from '../src/text-quiz.js';
 import { solveFeedback } from '../src/feedback.js';
 import { solveQuiz } from '../src/quiz.js';
@@ -26,6 +26,26 @@ test('Исправленная попытка тренажёра допуска�
 });
 before(async () => { browser = await chromium.launch({ channel: 'chrome', headless: true }); });
 after(async () => { await browser?.close(); });
+test('Пустой следующий шаг передаётся обработчику повторной загрузки без отправки ответа', { timeout: 10000 }, async () => {
+  const page = await browser.newPage(); const original = process.cwd(); const dir = await mkdtemp(path.join(tmpdir(), 'practicum-empty-task-'));
+  try {
+    process.chdir(dir);
+    await page.route('https://practicum.yandex.ru/**', route => route.fulfill({ contentType: 'text/html; charset=utf-8', body: route.request().url().includes('/task/first/') ? '<div class="task-description__markdown">Первое</div><button data-test-id="next-task-button" onclick="location.href=\'/trainer/test/lesson/same/task/second/\'">Далее</button>' : '<main>Редактор ещё не загружен</main>' }));
+    await page.goto('https://practicum.yandex.ru/trainer/test/lesson/same/task/first/');
+    assert.equal(await advanceTrainer(page, 'Первое', 'same', 100), 'advanced');
+    assert.ok(page.url().includes('/task/second/'));
+  } finally { process.chdir(original); await page.close(); await rm(dir, { recursive: true, force: true }); }
+});
+test('После последнего задания проходчик возвращается к теории без ожидания редактора следующего урока', { timeout: 10000 }, async () => {
+  const page = await browser.newPage(); const original = process.cwd(); const dir = await mkdtemp(path.join(tmpdir(), 'practicum-next-theory-'));
+  try {
+    process.chdir(dir);
+    await page.route('https://practicum.yandex.ru/**', route => route.fulfill({ contentType: 'text/html; charset=utf-8', body: route.request().url().includes('/lesson/old/') ? '<div class="task-description__markdown">Текущее задание</div><button data-test-id="next-task-button" onclick="location.href=\'/trainer/test/lesson/new/task/first/\'">Далее</button>' : '<main>Новый редактор ещё не загружен</main>' }));
+    await page.goto('https://practicum.yandex.ru/trainer/test/lesson/old/task/last/');
+    assert.equal(await advanceTrainer(page, 'Текущее задание', 'old'), 'finished');
+    assert.ok(page.url().includes('/lesson/new/'));
+  } finally { process.chdir(original); await page.close(); await rm(dir, { recursive: true, force: true }); }
+});
 test('Чтение тренажёра открывает исходный CSS, модель которого ещё не загружена', async () => {
   const page = await browser.newPage(); const original = process.cwd(); const dir = await mkdtemp(path.join(tmpdir(), 'practicum-unopened-'));
   try {
