@@ -1,0 +1,18 @@
+{
+  "id": "ed3c0830e507fe3b005865470bb5567253cb744fb63f66cfa54197b7f82b2308",
+  "lessonId": "789fd7f7-a585-428d-a48c-c11d8f17456e",
+  "url": "https://sandbox.practicum-team.ru/tasks/000-freetrack/02-what-are-html-css/08-images/example-01/pre/",
+  "instructionsHash": "e19138f5ad25b6dff65d58b3bd4e76ac6e3b57f81105dd23390defe5f95f0649",
+  "files": [
+    {
+      "name": "index.html",
+      "initialHash": "b283b326a8dc406c5ad348ae41e257323082d8d01e328abaf3b3406773db3bcc",
+      "content": "<!DOCTYPE html>\n<html lang=\"ru\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <title>Исправляем опечатку в картинке</title>\n  </head>\n  <body>\n    <h1>The Life of</h1>\n    <h2>Coder</h2>\n    <p><a target=\"_blank\" href=\"https://music.yandex.ru/users/ynx-praktikum/playlists/1002\">Плейлист</a> для беспечного занятия кодингом.</p>\n    <p>Один раз послушал — семь раз покодил.</p>\n    <!-- Найдите опечатку в строчке ниже -->\n    <img\n      src=\"https://pictures.s3.yandex.net/frontend-developer/free-course/mountains.jpg\"\n    />\n  </body>\n</html>\n"
+    }
+  ],
+  "verifiedAt": "2026-10-20T14:16:19.081Z",
+  "evidence": {
+    "selector": ".result .icon-status-success",
+    "message": "Всё отлично!"
+  }
+}

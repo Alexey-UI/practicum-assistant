@@ -1,0 +1,18 @@
+{
+  "id": "d071fd5fdb668744e1f3db0108932eb2ba1bbd6fdfe486715ff5630c4a51b975",
+  "lessonId": "99244343-3427-463f-a3f6-b09a7cefb9c0",
+  "url": "https://sandbox.practicum-team.ru/tasks/000-freetrack/02-what-are-html-css/04-paragraph/example-02/pre/",
+  "instructionsHash": "eae66b5c075f4f5e5d33382cf8f52962c799c2b87a59a60b74b053fa86f0ab82",
+  "files": [
+    {
+      "name": "index.html",
+      "initialHash": "a2df8112c96ee41000caec697eb9c03ea7e2c02e59706d33df34024bd1bf0e2c",
+      "content": "<!DOCTYPE html>\n<html lang=\"ru\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <title>Добавляем второй абзац</title>\n  </head>\n  <body>\n    <h1>The Life of</h1>\n    <h2>Coder</h2>\n    <p>Плейлист для беспечного занятия кодингом.</p>\n    <p>Один раз послушал — семь раз покодил.</p>\n  </body>\n</html>\n"
+    }
+  ],
+  "verifiedAt": "2026-10-20T14:14:53.966Z",
+  "evidence": {
+    "selector": ".result .icon-status-success",
+    "message": "Всё отлично!"
+  }
+}

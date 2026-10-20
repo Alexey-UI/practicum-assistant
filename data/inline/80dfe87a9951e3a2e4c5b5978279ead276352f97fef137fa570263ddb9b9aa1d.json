@@ -1,0 +1,18 @@
+{
+  "id": "80dfe87a9951e3a2e4c5b5978279ead276352f97fef137fa570263ddb9b9aa1d",
+  "lessonId": "78021bfe-d4ab-4ae6-882a-ab90336f9db0",
+  "url": "https://sandbox.practicum-team.ru/tasks/000-freetrack/01-first-code/02-basic-elements-html/example-01/pre/",
+  "instructionsHash": "a352886d19614ca2dce6582c3d9dbef30d67f9ab2d81ec960e4918b8d20a5e59",
+  "files": [
+    {
+      "name": "index.html",
+      "initialHash": "fd619d8cb86712db22b8696e43442adac0fc63338563bd9853e3baaa95083c17",
+      "content": "<!DOCTYPE html>\n<html lang=\"ru\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <title>Кнопка</title>\n    <link rel=\"stylesheet\" href=\"https://code.s3.yandex.net/web-code/styles/000-freetrack/01-first-code/02/cdn.css\" />\n  </head>\n  <body>\n    <!-- Вот кнопка, выполняйте задание тут -->\n    <button>Нажми меня</button>\n  </body>\n</html>\n\n\n"
+    }
+  ],
+  "verifiedAt": "2026-10-20T14:05:06.540Z",
+  "evidence": {
+    "selector": ".result .icon-status-success",
+    "message": "Всё отлично!"
+  }
+}

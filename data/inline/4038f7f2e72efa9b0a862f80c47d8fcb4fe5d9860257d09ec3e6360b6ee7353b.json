@@ -1,0 +1,18 @@
+{
+  "id": "4038f7f2e72efa9b0a862f80c47d8fcb4fe5d9860257d09ec3e6360b6ee7353b",
+  "lessonId": "a2efa029-3119-4592-9392-fdb7009706eb",
+  "url": "https://sandbox.practicum-team.ru/tasks/000-freetrack/01-first-code/04-css-magic/example-01/pre/",
+  "instructionsHash": "3865ee05aab1c22905bf72aebc6f7cb0bb0cd3532c6a48804a0fff5a20c0c0a0",
+  "files": [
+    {
+      "name": "styles/style.css",
+      "initialHash": "a7cb626ff435073b889ff05822bc1602bd0562abf4b3b0cc56772492a6a50e80",
+      "content": "button {\n  color: white;\n  background-color: black;\n}\n\n/* Селектор можно перевести как «после зажатия кнопки»  */\n\nbutton:active::after {\n  /* Ниже вставьте скопированный код */\n  animation: change-bg 10s step-end infinite;\n}\n"
+    }
+  ],
+  "verifiedAt": "2026-10-20T14:05:47.973Z",
+  "evidence": {
+    "selector": ".result .icon-status-success",
+    "message": "Всё отлично!"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "id": "7d12577327fc6a9995dcdd3f09aad9cba0e55c68bb3542d79381ba300480c108",
+  "lessonId": "a64703d1-292f-4622-91c9-b3cada90b30e",
+  "url": "https://sandbox.practicum-team.ru/tasks/000-freetrack/01-first-code/03-css-thoughts/example-01/pre/",
+  "instructionsHash": "cb886d98155f2ddfe4f5823919d72c30213e688f2de753eede68094cd1e4bf14",
+  "files": [
+    {
+      "name": "styles/style.css",
+      "initialHash": "87c834018651036947507316e6d7765b15a99f76d01adadebaae0c01cf917d8f",
+      "content": "/* Код, который нужно менять */\n\nbutton {\n  color: white;\n  background-color: black;\n}\n"
+    }
+  ],
+  "verifiedAt": "2026-10-20T14:05:38.521Z",
+  "evidence": {
+    "selector": ".result .icon-status-success",
+    "message": "Всё отлично!"
+  }
+}

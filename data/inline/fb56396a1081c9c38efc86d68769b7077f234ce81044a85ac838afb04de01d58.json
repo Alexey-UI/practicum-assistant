@@ -1,0 +1,18 @@
+{
+  "id": "fb56396a1081c9c38efc86d68769b7077f234ce81044a85ac838afb04de01d58",
+  "lessonId": "05de2480-8d9f-494e-b14e-d60251d2c7ca",
+  "url": "https://sandbox.practicum-team.ru/tasks/000-freetrack/02-what-are-html-css/10-page-tells-about-itself/example-04/pre/",
+  "instructionsHash": "c74e193c9944125c8f4e414cb1cac04816c2a252bec366fb85edfdce36cbb849",
+  "files": [
+    {
+      "name": "index.html",
+      "initialHash": "79bee987a6c8487a8478b674bbdcf4fcd89c0a9e7910afc186be44548f71ac59",
+      "content": "<!DOCTYPE html>\n<html lang=\"ru\">\n  <head>\n    <meta charset=\"UTF-8\">\n    <title>The Life of Coder</title>\n    <link\n      rel=\"icon\"\n      href=\"https://code.s3.yandex.net/web-code/images/playlist-favicon.ico\"\n    />\n  </head>\n  <body>\n    <h1>The Life of</h1>\n    <h2>Coder</h2>\n    <p><a target=\"_blank\" href=\"https://music.yandex.ru/users/ynx-praktikum/playlists/1002\">Плейлист</a> для беспечного занятия кодингом.</p>\n    <p>Один раз послушал — семь раз покодил.</p>\n    <img\n      src=\"https://pictures.s3.yandex.net/frontend-developer/free-course/mountains.jpg\"\n      alt=\"Чёрно-белая фотография гор в тумане\"\n      width=\"210\"\n    />\n  </body>\n</html>\n"
+    }
+  ],
+  "verifiedAt": "2026-10-20T14:19:28.423Z",
+  "evidence": {
+    "selector": ".result .icon-status-success",
+    "message": "Всё отлично!"
+  }
+}

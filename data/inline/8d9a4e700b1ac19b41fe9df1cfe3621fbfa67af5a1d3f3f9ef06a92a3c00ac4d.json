@@ -1,0 +1,18 @@
+{
+  "id": "8d9a4e700b1ac19b41fe9df1cfe3621fbfa67af5a1d3f3f9ef06a92a3c00ac4d",
+  "lessonId": "3255a2f8-d565-4155-946c-8d6c9498ab85",
+  "url": "https://sandbox.practicum-team.ru/tasks/000-freetrack/02-what-are-html-css/09-html-structure/example-01/pre/",
+  "instructionsHash": "ae23f9040b5fe57736bae1d98bf302db8a9308739bc8de86195ce79a5ba27f04",
+  "files": [
+    {
+      "name": "index.html",
+      "initialHash": "f2773e3eb1b7d8d50b2480fe566bf1583b08d6ec4ccbb34aed59d926b5c339e8",
+      "content": "<!DOCTYPE html>\n<html>\n</html>\n<h1>The Life of</h1>\n<h2>Coder</h2>\n<p><a target=\"_blank\" href=\"https://music.yandex.ru/users/ynx-praktikum/playlists/1002\">Плейлист</a> для беспечного занятия кодингом.</p>\n<p>Один раз послушал — семь раз покодил.</p>\n<img\n  src=\"https://pictures.s3.yandex.net/frontend-developer/free-course/mountains.jpg\"\n  alt=\"Чёрно-белая фотография гор в тумане\"\n  width=\"210\"\n/>\n"
+    }
+  ],
+  "verifiedAt": "2026-10-20T14:17:23.845Z",
+  "evidence": {
+    "selector": ".result .icon-status-success",
+    "message": "Всё отлично!"
+  }
+}

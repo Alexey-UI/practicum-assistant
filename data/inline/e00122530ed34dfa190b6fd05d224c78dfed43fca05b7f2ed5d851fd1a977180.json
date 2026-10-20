@@ -1,0 +1,18 @@
+{
+  "id": "e00122530ed34dfa190b6fd05d224c78dfed43fca05b7f2ed5d851fd1a977180",
+  "lessonId": "758a166b-47ae-4e22-ab6b-787464c1faf6",
+  "url": "https://sandbox.practicum-team.ru/tasks/000-freetrack/02-what-are-html-css/05-link/example-01/pre/",
+  "instructionsHash": "14a91b90a20ebcb778c71953a4859ef19c7f264fe9f233fd62da1b02a937007a",
+  "files": [
+    {
+      "name": "index.html",
+      "initialHash": "81e4b67661ee89c31e35dacd4221e95f59bd4515861b3e55754dbb161b9d9520",
+      "content": "<!DOCTYPE html>\n<html lang=\"ru\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <title>Оборачиваем слово в ссылку</title>\n  </head>\n  <body>\n    <h1>The Life of</h1>\n    <h2>Coder</h2>\n    <!-- Ссылку нужно добавить в абзаце ниже -->\n    <p><a>Плейлист</a> для беспечного занятия кодингом.</p>\n    <p>Один раз послушал — семь раз покодил.</p>\n  </body>\n</html>\n"
+    }
+  ],
+  "verifiedAt": "2026-10-20T14:15:18.464Z",
+  "evidence": {
+    "selector": ".result .icon-status-success",
+    "message": "Всё отлично!"
+  }
+}

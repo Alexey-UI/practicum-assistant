@@ -1,0 +1,18 @@
+{
+  "id": "fd170732eb2f5385709c08eff6737099a73ed692372fac057970923ba1b8dcb6",
+  "lessonId": "789fd7f7-a585-428d-a48c-c11d8f17456e",
+  "url": "https://sandbox.practicum-team.ru/tasks/000-freetrack/02-what-are-html-css/08-images/example-03/pre/",
+  "instructionsHash": "5d17f329f31775c119de01b91739ebf8891773c3d5461b96b46c0b666405c9b4",
+  "files": [
+    {
+      "name": "index.html",
+      "initialHash": "f77c4a5c2d9477dddb0ca487ce8339c15af96ddbd7bd3db01a6c6e339c8bead1",
+      "content": "<!DOCTYPE html>\n<html lang=\"ru\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <title>Добавляем атрибут ширины картинке</title>\n  </head>\n  <body>\n    <h1>The Life of</h1>\n    <h2>Coder</h2>\n    <p><a target=\"_blank\" href=\"https://music.yandex.ru/users/ynx-praktikum/playlists/1002\">Плейлист</a> для беспечного занятия кодингом.</p>\n    <p>Один раз послушал — семь раз покодил.</p>\n    <!-- Тегу картинки добавьте атрибут ширины -->\n    <img width=\"210\"\n      src=\"https://pictures.s3.yandex.net/frontend-developer/free-course/mountains.jpg\"\n      alt=\"Чёрно-белая фотография гор в тумане\"\n    />\n  </body>\n</html>\n"
+    }
+  ],
+  "verifiedAt": "2026-10-20T14:17:00.524Z",
+  "evidence": {
+    "selector": ".result .icon-status-success",
+    "message": "Всё отлично!"
+  }
+}
