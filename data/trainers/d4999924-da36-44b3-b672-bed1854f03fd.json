@@ -1,0 +1,18 @@
+{
+  "taskId": "d4999924-da36-44b3-b672-bed1854f03fd",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "lessonId": "47b6a9b3-2cb8-476c-812a-12591aa5c5f0",
+  "files": [
+    {
+      "name": "script.js",
+      "initialHash": "d48c53bab5ec88567ea58eac44e8b3498e5766203f14477ffcad7153d0aa0f5a",
+      "content": "const wannaBeArrow = () => console.log('Сделайте меня стрелочной, пожалуйста');\n\nconst wannaBeArrowToo = developerName => console.log(`${developerName}, сделайте меня стрелочной, пожалуйста`);\n\nwannaBeArrow();\nwannaBeArrowToo('Стас Басов');"
+    }
+  ],
+  "instructionsHash": "8594a89cfd0d2a99df4bd0aca58c1704ab1459eed67e91d037912eb85ab2e518",
+  "verifiedAt": "2026-10-20T13:02:08.373Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Стрелочные функции сокращают код. За это многие их и любят."
+  }
+}

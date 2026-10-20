@@ -1,0 +1,18 @@
+{
+  "taskId": "5c3c3e17-0b45-4309-a7f5-a3cb5f7ab05a",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "lessonId": "652b69f7-2114-45f6-b738-122032676fa0",
+  "files": [
+    {
+      "name": "script.js",
+      "initialHash": "c6ff9da2020d9d389e53366a5772804afd39beae09e50a60070603dacdbda156",
+      "content": "const arr = [\n  'Гравитационные силы',\n  'Электромагнитные силы',\n  'Ядерные силы',\n  'Слабые силы'\n];\n\narr.forEach(function (element, index) {\n  console.log(`${index + 1}. ${element}`);\n});"
+    }
+  ],
+  "instructionsHash": "44a7e06d7b89fe3340fbbddb86d8e933ef310346e1f46d7ff871bba72314cafe",
+  "verifiedAt": "2026-10-20T12:57:25.590Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Наши любимые силы — силы Ван-дер-Ваальса. Благодаря им ящерица может ползти по потолку и не падать вниз. Это прекрасно."
+  }
+}

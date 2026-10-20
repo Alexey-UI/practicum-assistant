@@ -1,0 +1,18 @@
+{
+  "taskId": "23dadcab-6931-4c8d-a899-70bb607ee7df",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "lessonId": "47b6a9b3-2cb8-476c-812a-12591aa5c5f0",
+  "files": [
+    {
+      "name": "script.js",
+      "initialHash": "156d590b0c2820668e297524f62e5353098b0d81a0d8ec0d0c911ea33e388ec5",
+      "content": "const arr = [1, 2, 3];\n\nconst arrSquared = arr.map(item => item * item);\n"
+    }
+  ],
+  "instructionsHash": "52629967394db263de11b4b99b78f53724ec81131831dce83b42aec1cc41d0e1",
+  "verifiedAt": "2026-10-20T13:02:17.491Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Стрелочные функции отлично подходят для колбэков, которые только возвращают результат. Код становится заметно короче."
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "taskId": "07dd7bba-d50b-4bde-94e0-67c097aecd0e",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "lessonId": "66943546-912b-408f-825e-ce4bcf96296b",
+  "files": [
+    {
+      "name": "script.js",
+      "initialHash": "accf32466c1f5793c82045c0b208c47fa48e0444b9f16bde98d7ec88a151bb3d",
+      "content": "const chessChampions = [\n  'Вильгельм Стейниц',\n  'Эммануил Ласкер',\n  'Хосе-Рауль Капабланка',\n  'Александр Алехин',\n  'Макс Эйве',\n  'Михаил Ботвинник',\n  'Василий Смыслов',\n  'Михаил Таль',\n  'Тигран Петросян',\n  'Борис Спасский',\n  'Роберт Фишер',\n  'Анатолий Карпов',\n  'Гарри Каспаров',\n  'Владимир Крамник',\n  'Вишванатан Ананд',\n  'Магнус Карлсен'\n];\n\nchessChampions.sort(function (a, b) {\n  const surnameA = a.split(' ')[1];\n  const surnameB = b.split(' ')[1];\n  if (surnameA > surnameB) return 1;\n  if (surnameA < surnameB) return -1;\n  return 0;\n});\n\nconsole.log(chessChampions);\n\n/*\n  [\n    \"Александр Алехин\",\n    \"Вишванатан Ананд\",\n    \"Михаил Ботвинник\",\n    \"Хосе-рауль Капабланка\",\n    \"Магнус Карлсен\",\n    \"Анатолий Карпов\",\n    \"Гарри Каспаров\",\n    \"Владимир Крамник\",\n    \"Эммануил Ласкер\",\n    \"Тигран Петросян\",\n    \"Василий Смыслов\",\n    \"Борис Спасский\",\n    \"Вильгельм Стейниц\",\n    \"Михаил Таль\",\n    \"Роберт Фишер\",\n    \"Макс Эйве\"\n  ]\n*/\n"
+    }
+  ],
+  "instructionsHash": "310bc817f10707535beab89404514903b1fdaa9bebcc28ef5f7817cf074011fd",
+  "verifiedAt": "2026-10-20T12:59:34.388Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Более надёжный способ сравнения строк — метод localeCompare. Он учитывает особенности разных языков. Почитайте о нём самостоятельно, когда выдастся свободная минута."
+  }
+}

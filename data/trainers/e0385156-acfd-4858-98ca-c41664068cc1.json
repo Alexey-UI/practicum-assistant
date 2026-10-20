@@ -1,0 +1,18 @@
+{
+  "taskId": "e0385156-acfd-4858-98ca-c41664068cc1",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "lessonId": "50ee2fbe-15f8-44e0-ab38-4d4cd1b4094d",
+  "files": [
+    {
+      "name": "script.js",
+      "initialHash": "03c13e66071a702ce4b5f720f228b00ab3256f5d4784a2c0fce7f01daa0d2c1e",
+      "content": "const directorsList = document.querySelector('.directors');\nconst directorTemplate = document.querySelector('.director-template').content;\n\nconst directors = [\n  {\n    name: 'Стивен Спилберг',\n    career: 'Продюсер, Режиссер, Актер, Сценарист, Монтажер',\n    films: 'https://datalens.yandex/vwlqd2afsifoq?f3d80b92-5f21-40fa-b8d8-7255e038d045=22260&c8e5e20f-9329-4545-8550-b096c5b41d16=producer',\n    top_rated_film: 'Список Шиндлера'\n  },\n  {\n    name: 'Кристофер Нолан',\n    career: 'Сценарист, Продюсер, Режиссер, Оператор, Монтажер, Актер, Композитор',\n    films: 'https://datalens.yandex/vwlqd2afsifoq?f3d80b92-5f21-40fa-b8d8-7255e038d045=41477&c8e5e20f-9329-4545-8550-b096c5b41d16=writer',\n    top_rated_film: 'Начало'\n  },\n  {\n    name: 'Мартин МакДона',\n    career: 'Сценарист, Режиссер, Продюсер',\n    films: 'https://datalens.yandex/vwlqd2afsifoq?f3d80b92-5f21-40fa-b8d8-7255e038d045=671251&c8e5e20f-9329-4545-8550-b096c5b41d16=writer',\n    top_rated_film: 'Три билборда на границе Эббинга, Миссури'\n  },\n  {\n    name: 'Алексей Балабанов',\n    career: 'Режиссер, Сценарист, Актер, Продюсер',\n    films: 'https://datalens.yandex/vwlqd2afsifoq?f3d80b92-5f21-40fa-b8d8-7255e038d045=64249&c8e5e20f-9329-4545-8550-b096c5b41d16=director',\n    top_rated_film: 'Брат'\n  },\n  {\n    name: 'Питер Фаррелли',\n    career: 'Продюсер, Режиссер, Сценарист, Актер',\n    films: 'https://datalens.yandex/vwlqd2afsifoq?f3d80b92-5f21-40fa-b8d8-7255e038d045=6139&c8e5e20f-9329-4545-8550-b096c5b41d16=producer',\n    top_rated_film: 'Зеленая книга'\n  },\n  {\n    name: 'Юрий Быков',\n    career: 'Актер, Режиссер, Сценарист, Композитор, Монтажер, Продюсер',\n    films: 'https://datalens.yandex/vwlqd2afsifoq?f3d80b92-5f21-40fa-b8d8-7255e038d045=1762044&c8e5e20f-9329-4545-8550-b096c5b41d16=actor',\n    top_rated_film: 'Дурак'\n  },\n  {\n    name: 'Жан-Марк Валле',\n    career: 'Режиссер, Продюсер, Монтажер, Актер, Сценарист',\n    films: 'https://datalens.yandex/vwlqd2afsifoq?f3d80b92-5f21-40fa-b8d8-7255e038d045=58767&c8e5e20f-9329-4545-8550-b096c5b41d16=director',\n    top_rated_film: 'Далласский клуб покупателей'\n  },\n];\n\ndirectors.forEach(function (element) {\n  const directorElement = directorTemplate.cloneNode(true);\n\n  directorElement.querySelector('.directors__name').textContent = element.name;\n  directorElement.querySelector('.directors__description').textContent = element.career;\n  directorElement.querySelector('.directors__films').href = element.films;\n\n  directorsList.append(directorElement);\n});"
+    }
+  ],
+  "instructionsHash": "6e5a9490e998a0c39c951cd6830bf07ed1f4506e2267328a9e384af326c8dfe4",
+  "verifiedAt": "2026-10-20T12:56:34.537Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Вы составили список. Но кто знает, может, через несколько лет кто-то из этих режиссёров всё-таки попадёт в новый обзор?"
+  }
+}

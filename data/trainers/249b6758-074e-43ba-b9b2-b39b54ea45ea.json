@@ -1,0 +1,18 @@
+{
+  "taskId": "249b6758-074e-43ba-b9b2-b39b54ea45ea",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "lessonId": "007ede75-257e-44c5-b61c-ea0a0d7ab9d3",
+  "files": [
+    {
+      "name": "script.js",
+      "initialHash": "e1cd3d2d8b8bc60faeb93bbc79c43242805f0635eb60053ecbc6e2e9ce01f1b5",
+      "content": "function double(value) {\n  if (Array.isArray(value)) {\n    return value.map(number => number * 2);\n  }\n  return value * 2;\n}\n\ndouble(2); // 4\ndouble([1, 2, 3]); // [2, 4, 6]"
+    }
+  ],
+  "instructionsHash": "ed393b79f7ab1717c40fde9476c356cd2e4fad6e12eb59c226cb6e695739f4ca",
+  "verifiedAt": "2026-10-20T13:08:46.461Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Сколько пшеницы потребуется, чтобы заполнить всю шахматную доску, если на одну клетку положить одно зёрнышко, на вторую — два, на третью — четыре и так далее? Оказывается, это число превысит урожай пшеницы, который собрали за всю историю человечества."
+  }
+}

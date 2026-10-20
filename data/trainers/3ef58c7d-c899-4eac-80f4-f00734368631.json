@@ -1,0 +1,18 @@
+{
+  "taskId": "3ef58c7d-c899-4eac-80f4-f00734368631",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "lessonId": "8658558c-a84b-4331-9f50-13c26c02a180",
+  "files": [
+    {
+      "name": "script.js",
+      "initialHash": "b5e03636a54456e1f2ff076e4231f264c3f4e04506dbfe6119ac8744628aa728",
+      "content": "const welcomeMessages = { \n  russian: 'Добро пожаловать',\n  english: 'Welcome',\n  french: 'Bienvenue',\n  italian: 'Benvenuto',\n  spanish: 'bienvenido',\n  chinese: '歡迎',\n  finnish: 'Tervetuloa'\n};\n\nfunction countLanguages(obj, propsArr) {\n\treturn propsArr.reduce(function (count, prop) {\n    return count + (prop in obj ? 1 : 0);\n  }, 0);\n}\n\nconsole.log(countLanguages(welcomeMessages, ['english', 'french', 'mandarin'])); // 2\nconsole.log(countLanguages(welcomeMessages, ['russian', 'czech'])); // 1"
+    }
+  ],
+  "instructionsHash": "2da826a2cb01f8e9b821be1e0783965623108ebfd4ad044822fd688d6709ce46",
+  "verifiedAt": "2026-10-20T13:06:03.269Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Вы научили программу не только разговаривать на разных языках, но и считать их!"
+  }
+}

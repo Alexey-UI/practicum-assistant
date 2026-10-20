@@ -1,0 +1,18 @@
+{
+  "taskId": "ca0eb425-04a3-4b11-841e-592490bf2497",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "lessonId": "1d4d2e16-d7bf-4ed4-8b1f-759e4ded5522",
+  "files": [
+    {
+      "name": "script.js",
+      "initialHash": "f716274f281271af5c2d33ffd8342d8eeeb2ec1c09b43951700d9b7654033175",
+      "content": "const movies = [\n  'Титаник (1997)',\n  'Чёрная Пантера (2018)',\n  'Остров Собак (2018)',\n  'Омерзительная Восьмерка (2015)'\n];\n\nconst moviesFiltered = movies.filter(function (item) {\n\treturn item.includes('(2018)');\n});\n\nconsole.log(moviesFiltered);"
+    }
+  ],
+  "instructionsHash": "21d4afcdcfc252f44d0aa493e691e5bbe38f2818fa9bfb8efc8f094c194ff289",
+  "verifiedAt": "2026-10-20T12:57:57.465Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Если любите собак, посмотрите «Остров собак». Если любите кошек, посмотрите «Чёрную Пантеру»."
+  }
+}

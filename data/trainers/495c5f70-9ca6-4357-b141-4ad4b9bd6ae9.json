@@ -1,0 +1,18 @@
+{
+  "taskId": "495c5f70-9ca6-4357-b141-4ad4b9bd6ae9",
+  "contextHash": "a98b5a52cbd625bdfa50d0bbc6bb1cd41285fc8b0d85bb1d05e62cd7c0a73097",
+  "lessonId": "c3ccd384-80db-4638-9bec-afc3ca8ee892",
+  "files": [
+    {
+      "name": "script.js",
+      "initialHash": "63ef86654019b9494c8ca1fa5543b9fb89ed617e652f03902ced3df0dfdcf5d9",
+      "content": "const building = {\n  floors: 5,\n  hasElevator: false,\n  type: 'панельный'\n};"
+    }
+  ],
+  "instructionsHash": "e45f0d9c6f651b0a047e97ad9fdd6de4f7df65eecfd32274150b4b03ad455cac",
+  "verifiedAt": "2026-10-20T13:03:40.903Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Вам удалось практически «построить» хрущёвку! Звучит не как похвала, но это именно она."
+  }
+}

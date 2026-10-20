@@ -1,0 +1,18 @@
+{
+  "taskId": "19346491-65e5-4d77-974f-29fed7746a15",
+  "lessonId": "8923165d-0280-4bba-a5f2-b2c26bc47755",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "files": [
+    {
+      "name": "script.js",
+      "initialHash": "a3b3f6c59f721c0f873fdc7d86d976c5b99e5d57a07b1c7c3c6f8bc0bf854f5a",
+      "content": "const compass = ['N', 'E', 'S', 'W'];\n\ncompass.splice(1, 0, 'NE');\ncompass.splice(1, 1);\n"
+    }
+  ],
+  "instructionsHash": "31a2f50b3d2d33e246a67ee1c8de018f53c082cc5e0558da7785f3b1ba5abb34",
+  "verifiedAt": "2026-10-20T12:56:05.909Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Мы снова спросили фронтенд-разработчика — на этот раз про использование splice. Он подумал, что это название зубной пасты.\nНо всё же splice иногда выручает."
+  }
+}

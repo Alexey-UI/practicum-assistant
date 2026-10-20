@@ -1,0 +1,18 @@
+{
+  "taskId": "0d386aa5-78ed-46e7-b0b0-4c9bc36610b3",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "lessonId": "c83c5210-e514-4ec9-8641-5da1f86ee960",
+  "files": [
+    {
+      "name": "script.js",
+      "initialHash": "96d6560e6e83f140aab8739c18394261adccad55947304ee4ed4d4f8858daf5c",
+      "content": "function makeHelloWorld() {\n  return function () {\n    console.log('Hello, world!');\n  };\n}\n\nconst helloWorld = makeHelloWorld();\n\nconsole.log(helloWorld);\nhelloWorld(); // \"Hello world!\"\n"
+    }
+  ],
+  "instructionsHash": "ec30796131b072b6eec3e62fcfb5974b6b33f9135aeac98a6fe7476bb4aaf49a",
+  "verifiedAt": "2026-10-20T13:01:45.537Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Возвращение функции из функции встречается в JavaScript повсеместно. Хорошо, что вы к этому готовы."
+  }
+}

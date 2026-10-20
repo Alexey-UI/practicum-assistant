@@ -1,0 +1,18 @@
+{
+  "taskId": "b6a73862-4d5c-4f5e-8fde-1a4192117dd8",
+  "lessonId": "8923165d-0280-4bba-a5f2-b2c26bc47755",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "files": [
+    {
+      "name": "script.js",
+      "initialHash": "e75f6a5609b315d001057ef9f5e1e03f03958f8f5882f31741b50eb7b91cef5e",
+      "content": "const partsOfWorld = [\n  'Европа',\n  'Азия',\n  'Африка',\n  'Австралия',\n  'Америка',\n  'Антарктида',\n  'Океания'\n];\nconst theOldWorld = partsOfWorld.slice(0, 3);\nconst theWholeWorld = partsOfWorld.slice();\n"
+    }
+  ],
+  "instructionsHash": "c586c76b6cd84d5a83ac4806c32368b601935c38c1e8a96e9514cc195e22ca4c",
+  "verifiedAt": "2026-10-20T12:55:56.786Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Новый свет кажется чем-то очень далёким. Но в самом узком месте Старый и Новый Свет разделяют всего 86 километров воды между Чукоткой и Аляской."
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "taskId": "0685fcde-2be8-4ffc-963a-50fc1074d531",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "lessonId": "8658558c-a84b-4331-9f50-13c26c02a180",
+  "files": [
+    {
+      "name": "script.js",
+      "initialHash": "5bb83a69284eff1e2df6b0c5b468b25e5ed46de536bebc37e49761b59a738848",
+      "content": "const right = {\n  right1: '⇸',\n  right2: '→',\n  notLeft: '⇍',\n  right3: '⇛',\n  right4: '⇉',\n  left: '⇐'\n};\n\ndelete right.left;\n\nconsole.log(right);"
+    }
+  ],
+  "instructionsHash": "ce891b616eeb22fe0f32b19cf98bee0916e6947ac2c10a8a93707db0ca2bffd8",
+  "verifiedAt": "2026-10-20T13:05:42.947Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Теперь когда направо пойдёшь — налево точно не пойдёшь."
+  }
+}

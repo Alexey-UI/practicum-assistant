@@ -1,0 +1,18 @@
+{
+  "taskId": "aa3d00aa-b1d1-421b-a198-2cb8e62b0e17",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "lessonId": "652b69f7-2114-45f6-b738-122032676fa0",
+  "files": [
+    {
+      "name": "script.js",
+      "initialHash": "8eb693a4e653421e23011b399d1fbc2f579e09a829ce7bfb636f12726a1237fd",
+      "content": "const a = [\n  'Гарри Поттер и философский камень',\n  'Гарри Поттер и Тайная комната',\n  'Гарри Поттер и узник Азкабана',\n  'Гарри Поттер и Кубок огня',\n  'Гарри Поттер и Орден феникса',\n  'Гарри Поттер и Принц-полукровка',\n  'Гарри Поттер и Дары смерти',\n  'Гарри Поттер и методы рационального мышления',\n];\n\nconst b = [];\n\na.forEach(function (element) {\n  b.push(element.split(' и ')[1]);\n});\n\nconsole.log(b);"
+    }
+  ],
+  "instructionsHash": "df2dc05589e325b5212f752db75de98e67f426c806dc52e5dd63f2e0798241f7",
+  "verifiedAt": "2026-10-20T12:57:08.518Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Смотрели последнюю часть Гарри Поттера? Говорят, книга лучше."
+  }
+}

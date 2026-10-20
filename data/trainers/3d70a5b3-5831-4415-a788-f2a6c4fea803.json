@@ -1,0 +1,18 @@
+{
+  "taskId": "3d70a5b3-5831-4415-a788-f2a6c4fea803",
+  "lessonId": "8275a599-6221-490f-9691-855386abf1e4",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "files": [
+    {
+      "name": "script.js",
+      "initialHash": "7755e8ba943ae70fcc1f1e8bde742f9eceb9b609326c6cfe6479090b9555c6a0",
+      "content": "const welcomeMessages = {\n  russian: 'Добро пожаловать',\n  english: 'Welcome',\n  french: 'Bienvenue',\n  italian: 'Benvenuto',\n  spanish: 'bienvenido',\n  chinese: '歡迎'\n};\n\nwelcomeMessages.finnish = 'Tervetuloa';\n"
+    }
+  ],
+  "instructionsHash": "d678f2eefb79b3cdde298e189846fb66fb7740fbb4023344a87a4df64311bd60",
+  "verifiedAt": "2026-10-20T13:04:12.124Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Интересно, а в букве «ё» тоже используется точечная нотация?"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "taskId": "be2ff3b1-5279-4638-a912-465ec54c2fd3",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "lessonId": "d8ef9117-69a3-45f3-b721-44704c6d2491",
+  "files": [
+    {
+      "name": "script.js",
+      "initialHash": "3aabd41cb9ce7ac8759cae96445653b6071684294139193292a21e09dc6dfba4",
+      "content": "function max(...numbers) {\n  let result = numbers[0];\n\n  for (let i = 0; i < numbers.length; i += 1) {\n    if (result < numbers[i]) {\n      result = numbers[i];\n    }\n  }\n\n  return result;\n}\n\nconsole.log(max(4, 8, 15, 16, 23, 42)); // 42\n"
+    }
+  ],
+  "instructionsHash": "865cfdd183c800caa48db102728974eaccc56ffa45035d65b9e73bd0840e0d4f",
+  "verifiedAt": "2026-10-20T13:02:52.636Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Rest-параметр в функции — прекрасная замена arguments. Это полноценный массив!"
+  }
+}

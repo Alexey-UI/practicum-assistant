@@ -1,0 +1,18 @@
+{
+  "taskId": "4e57c014-0fbf-4fb9-bcf1-98241c9306d3",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "lessonId": "a3be247b-dfa6-44e2-8245-8c6eb876eeb8",
+  "files": [
+    {
+      "name": "script.js",
+      "initialHash": "fe860e4cf720ed9f10b60365faa310c58c5b97b7a9ceb68e6d6b9f30121a10c1",
+      "content": "// дан массив чисел\nconst integersToCheck = [2, 3, 193, 79, 7, 29];\n\n/* нужно дополнить функцию isPrime, принимающую число на вход\nи возвращающую true, если число простое, а иначе false */\n\nfunction isPrime(num) {\n  if (num < 2) return false;\n  for (let divisor = 2; divisor * divisor <= num; divisor++) {\n    if (num % divisor === 0) return false;\n  }\n  return true;\n}\n\n/* ниже используйте метод .every() и функцию isPrime,\nчтобы проверить элементы маcсива */\n\nconsole.log(integersToCheck.every(isPrime));\n"
+    }
+  ],
+  "instructionsHash": "76800619a828c10fc023057abc80943392360145b94a6771e5dcaf03973d7e78",
+  "verifiedAt": "2026-10-20T12:58:50.407Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Это было непросто, но иногда мы будем давать такие задачи в качестве тренировки. На собеседованиях пригодится."
+  }
+}

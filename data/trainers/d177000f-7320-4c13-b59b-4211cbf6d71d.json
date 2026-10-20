@@ -1,0 +1,18 @@
+{
+  "taskId": "d177000f-7320-4c13-b59b-4211cbf6d71d",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "lessonId": "5b17b48e-2a7d-4b0f-9418-8aa4a1f59bb5",
+  "files": [
+    {
+      "name": "script.js",
+      "initialHash": "fd8bd6b03c39765d421917f8d064b277b726e1a7fd880f21aa184b69e06c7184",
+      "content": "function shallowCopy(obj) {\n  return Object.assign({}, obj);\n}\n\nconst myObj = {\n  one: 1,\n  two: 2,\n  three: 3\n};\n\nconst myObjCopy = shallowCopy(myObj);\n\nconsole.log(myObjCopy === myObj); // false"
+    }
+  ],
+  "instructionsHash": "13a834c083ded7ea54bd66298b35c190927531b28a064fa4a772bc72e1f48787",
+  "verifiedAt": "2026-10-20T13:07:56.439Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Почему объект утонул? У него были ужасные проблемы с восприятием глубины."
+  }
+}

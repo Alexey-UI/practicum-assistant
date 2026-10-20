@@ -1,0 +1,18 @@
+{
+  "taskId": "e342ee40-9ede-4d13-9812-2336bd05358b",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "lessonId": "8658558c-a84b-4331-9f50-13c26c02a180",
+  "files": [
+    {
+      "name": "script.js",
+      "initialHash": "f8cc3cfc375130b098aa1b623f8df2822c290b1cf34b7fbc1f063eff0e809fee",
+      "content": "const welcomeMessages = {\n  russian: 'Добро пожаловать',\n  english: 'Welcome',\n  french: 'Bienvenue',\n  italian: 'Benvenuto',\n  spanish: 'bienvenido',\n  chinese: '歡迎',\n  finnish: 'Tervetuloa'\n};\n\nfunction deleteWelcomeMessages(propsArr) {\n  propsArr.forEach(function (prop) {\n    delete welcomeMessages[prop];\n  });\n}\n\ndeleteWelcomeMessages(['italian', 'french']);\n\nconsole.log(welcomeMessages);\n\n/* Теперь итальянский и французский переводы удалены:\n\n  {\n    russian: \"Добро пожаловать\",\n    english: \"Welcome\",\n    spanish: \"bienvenido\",\n    chinese: \"歡迎\",\n    finnish: \"Tervetulo\"'\n  }\n\n*/"
+    }
+  ],
+  "instructionsHash": "59aaaf781c1c837d01ea5040c51496c0d244820635aec61f6689c03320b4f911",
+  "verifiedAt": "2026-10-20T13:05:52.096Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Теперь вы знаете, как приветствовать пользователей на всех этих языках. Следующее задание — написать фразу «Hello World!» на каждом из них.  \nШутка!  \nХотя..."
+  }
+}

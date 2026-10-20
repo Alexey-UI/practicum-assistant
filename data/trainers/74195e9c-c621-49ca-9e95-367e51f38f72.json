@@ -1,0 +1,18 @@
+{
+  "taskId": "74195e9c-c621-49ca-9e95-367e51f38f72",
+  "lessonId": "dbf5c603-fc1a-45ee-90bd-5b3ba1cf108c",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "files": [
+    {
+      "name": "scripts.js",
+      "initialHash": "98afed5fd6118aa022f0e947bb71762cabe596ca6e784ee3cb50c414034c7e33",
+      "content": "/*\n Добавьте обработку события onkeydown для объекта document. Затем напишите функцию-обработчик,\n которая при нажатии Ctrl+Shift+H выведет alert с текстом Вы нажали Ctrl+Shift+H.\n*/\n\ndocument.onkeydown = function (event) {\n  if (event.ctrlKey && event.shiftKey && event.key.toLowerCase() === 'h') {\n    alert('Вы нажали Ctrl+Shift+H');\n  }\n};\n"
+    }
+  ],
+  "instructionsHash": "dd4734f336943948e559f1ee4dd1103d436cede844f27a6552595b2367c269b0",
+  "verifiedAt": "2026-10-20T13:09:53.358Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Отлично! Всё получилось!"
+  }
+}

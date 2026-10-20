@@ -1,0 +1,18 @@
+{
+  "taskId": "7a237785-679b-49c6-a4a4-80e751d50dd4",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "lessonId": "8275a599-6221-490f-9691-855386abf1e4",
+  "files": [
+    {
+      "name": "script.js",
+      "initialHash": "765eab71aefb1b70e2b0996ac71510f58ce156c5c9d8b8d905ba01d6d547fd37",
+      "content": "const russian = 'Добро пожаловать';\nconst english = 'Welcome';\nconst french = 'Bienvenue';\nconst italian = 'Benvenuto';\nconst spanish = 'bienvenido';\nconst chinese = '歡迎';\n\nconst welcomeMessages = {\n  russian, english, french, italian, spanish, chinese\n};"
+    }
+  ],
+  "instructionsHash": "2c04cfb3937fe49219b8e4198a9ff6a217b986fd48271d7f4a6ba96b65560a54",
+  "verifiedAt": "2026-10-20T13:04:21.250Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Любопытный факт: согласно ежегодному опросу разработчиков Stack Overflow, JavaScript уже много лет остаётся самым популярным языком программирования."
+  }
+}

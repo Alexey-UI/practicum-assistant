@@ -1,0 +1,18 @@
+{
+  "taskId": "6fe89e6d-04bd-4ef4-bd9c-f7eba808a675",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "lessonId": "d398fe13-377f-4b62-8111-ddcf23e1d88e",
+  "files": [
+    {
+      "name": "script.js",
+      "initialHash": "7f90681cc9fd9efabb29e293d23e58e635c5c21739f0f3bb6ce8769db3798fb0",
+      "content": "const welcomeMessages = {\n  russian: 'Добро пожаловать',\n  english: 'Welcome',\n  french: 'Bienvenue',\n  italian: 'Benvenuto',\n  spanish: 'bienvenido',\n  chinese: '歡迎',\n  finnish: 'Tervetuloa'\n};\n\nfunction addWelcomeMessage(language, message) {\n  welcomeMessages[language] = message;\n}\n\naddWelcomeMessage('danish', 'Velkommen');\naddWelcomeMessage('zulu', 'Ukwamukela');\n\nconsole.log(welcomeMessages.danish); // \"Velkommen\"\nconsole.log(welcomeMessages.zulu); // \"Ukwamukela\""
+    }
+  ],
+  "instructionsHash": "1b70cb15044e7d4aae82172d012852b2e637fcc9c2852c345b30336f84a1d050",
+  "verifiedAt": "2026-10-20T13:04:43.819Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Спасибо, или, как сказали бы датчане, Mange tak. Здорово, когда вам везде рады."
+  }
+}

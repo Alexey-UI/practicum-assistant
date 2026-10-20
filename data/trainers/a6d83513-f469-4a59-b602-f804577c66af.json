@@ -1,0 +1,18 @@
+{
+  "taskId": "a6d83513-f469-4a59-b602-f804577c66af",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "lessonId": "511d68bd-4475-4225-b04d-fe9ac8762a1e",
+  "files": [
+    {
+      "name": "script.js",
+      "initialHash": "1d3a3d1e2725fef92a892c4a8fc446b63397c0b00071e47e13a7e89bf4ac0ca2",
+      "content": "const aladdinSane = {\n  artist: 'David Bowie',\n  album: 'Aladdin Sane',\n  year: 1973,\n  tracks: {\n    'Watch That Man': '4:30',\n    'Aladdin Sane': '5:06',\n    'Drive-In Saturday': '4:33',\n    'Panic in Detroit': '4:25',\n    'Cracked Actor': '3:01',\n    'Time': '5:15',\n    'The Prettiest Star': '3:31',\n    \"Let's Spend the Night Together\": '3:10',\n    'The Jean Genie': '4:07',\n    'Lady Grinning Soul': '3:54'\n  }\n};\n\nconst aladdinSaneCopy = Object.assign({}, aladdinSane, {\n  tracks: Object.assign({}, aladdinSane.tracks)\n});\n\nconsole.log(aladdinSane.tracks === aladdinSaneCopy.tracks); // false"
+    }
+  ],
+  "instructionsHash": "2357df655c6147d2708315762c268f3cedef474cf3169c7905940cc2b0c7e68a",
+  "verifiedAt": "2026-10-20T13:08:22.944Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Мы спросили каждого в команде Практикума, какой у них любимый фильм. Практически все ответили «JavaScript-войны: Эпизод 2 — Атака клонированных объектов». Обязательно посмотрите в выходные."
+  }
+}

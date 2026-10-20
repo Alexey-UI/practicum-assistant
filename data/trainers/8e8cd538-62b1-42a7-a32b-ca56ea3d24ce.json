@@ -1,0 +1,18 @@
+{
+  "taskId": "8e8cd538-62b1-42a7-a32b-ca56ea3d24ce",
+  "lessonId": "f445d721-a473-4071-9229-c5375e7d9a43",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "files": [
+    {
+      "name": "script.js",
+      "initialHash": "76fcfe9aef0e89e2fa60802b570cb7c50f680a59a6ad69e087087cd71871e41e",
+      "content": "const prefix = ['микро', 'милли', 'кило'];\nprefix.unshift('пико', 'нано');\n"
+    }
+  ],
+  "instructionsHash": "7f5301cda861ee664d3f6bb5c8f1b5513ecbdd9a57acf6eb510a2091340bb9ba",
+  "verifiedAt": "2026-10-20T12:55:36.638Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "shift, unshift. Нам всегда было интересно, как проходит заседание комиссии ECMA, на котором принимают решение о названии нового метода."
+  }
+}

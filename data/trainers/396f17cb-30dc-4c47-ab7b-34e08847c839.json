@@ -1,0 +1,18 @@
+{
+  "taskId": "396f17cb-30dc-4c47-ab7b-34e08847c839",
+  "lessonId": "08f2fa81-f53c-4d5c-b564-42300c998e40",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "files": [
+    {
+      "name": "scripts.js",
+      "initialHash": "691ef7b857295010fa3a4d2a7c8d35b6d6ee4ec70be7d959e3db5f080462fbe0",
+      "content": "const mouseX = document.querySelector(\".mouse_type_x\");\nconst mouseY = document.querySelector(\".mouse_type_y\");\n\n/*\n  Добавьте обработку события onmousemove для объекта document.\n  В функции-обработчике при каждом перемещении курсора выводите текущие координаты мыши:\n    - значение по оси X — в элементе .mouse_type_x,\n    - значение по оси Y — в элементе .mouse_type_y.\n*/\n\ndocument.onmousemove = function (event) {\n  mouseX.textContent = event.clientX;\n  mouseY.textContent = event.clientY;\n};\n"
+    }
+  ],
+  "instructionsHash": "3763eeefad7f144ca00c660060ce752a460cdfdffe735597077426a503d35cc3",
+  "verifiedAt": "2026-10-20T13:10:15.884Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Отлично! Всё получилось!"
+  }
+}

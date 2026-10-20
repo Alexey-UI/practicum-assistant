@@ -1,0 +1,18 @@
+{
+  "taskId": "16313a96-a587-4962-b4ab-d31b89ff3f6c",
+  "lessonId": "f445d721-a473-4071-9229-c5375e7d9a43",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "files": [
+    {
+      "name": "script.js",
+      "initialHash": "05926e1cd08a14c6e063558b21570e6c7abef2992412b26de6252a4683364e44",
+      "content": "const thumbsUp = ['👎', '👍', '👍', '👍', '👍', '👍'];\nconst thumbDown = thumbsUp.shift();\n"
+    }
+  ],
+  "instructionsHash": "255c47afe9e4e89462be37d5df0538104715a1307577f1f59bc4d9c9d0c6f229",
+  "verifiedAt": "2026-10-20T12:55:27.545Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Метод shift используют редко.\nМы спросили нашего фронтенд-разработчика, как давно он применял shift в работе. Он подумал, что спрашивают про клавишу на клавиатуре."
+  }
+}

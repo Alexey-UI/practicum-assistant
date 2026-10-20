@@ -1,0 +1,18 @@
+{
+  "taskId": "0ee1f6c6-2720-41f9-9171-9d55063ef2df",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "lessonId": "5b17b48e-2a7d-4b0f-9418-8aa4a1f59bb5",
+  "files": [
+    {
+      "name": "script.js",
+      "initialHash": "56c827c26546b804d542b143001b9878d45e63b99131080e245abd6f559b176a",
+      "content": "function evolution(obj, key, value) {\n  const copy = Object.assign({}, obj);\n  copy[key] = value;\n  return copy;\n}\n\nconst fish = {\n  eggs: 'икра',\n  eyes: 2,\n  home: 'вода'\n};\n\nconst frog = evolution(fish, 'legs', 4);\n\nconsole.log('лягушка: ', frog);\n\n// лягушка: { eggs: \"икра\", eyes: 2, home: \"вода\", legs: 4 }\n\nconsole.log('рыба: ', fish);\n\n// рыба: { eggs: \"икра\", eyes: 2, home: \"вода\", legs: 4 }\n// рыбы тоже изменились!"
+    }
+  ],
+  "instructionsHash": "1e1cc7823a687251bc1c3616b068959c2b28985423450aa2feea819efc15e5ab",
+  "verifiedAt": "2026-10-20T13:08:05.544Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Теперь рыба не сможет оправдываться тем, что у неё лапки: они исчезли."
+  }
+}

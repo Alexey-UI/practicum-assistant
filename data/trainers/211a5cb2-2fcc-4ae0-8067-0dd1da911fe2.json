@@ -1,0 +1,18 @@
+{
+  "taskId": "211a5cb2-2fcc-4ae0-8067-0dd1da911fe2",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "lessonId": "d398fe13-377f-4b62-8111-ddcf23e1d88e",
+  "files": [
+    {
+      "name": "script.js",
+      "initialHash": "90f02da1c5ccfce6731efc1d300ec483a7c864797b3176c2903e9ac9486be7ab",
+      "content": "const yourNumber = 'Л055';\nlet windowNumber;\n\nconst windows = {\n  'Л054': 1,\n  'Л055': 2,\n  'Л056': 3,\n  'Л057': 4,\n  'Л058': 5\n};\n\nwindowNumber = windows[yourNumber];\n\nconsole.log(windowNumber); // 2"
+    }
+  ],
+  "instructionsHash": "5323173506c111659489f916c790bce7cbf7b94cc4f28fcfda3f00798a3162ad",
+  "verifiedAt": "2026-10-20T13:05:06.017Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Новое решение получилось гораздо элегантнее. Очередь за посылками с AliExpress была бы вам признательна."
+  }
+}

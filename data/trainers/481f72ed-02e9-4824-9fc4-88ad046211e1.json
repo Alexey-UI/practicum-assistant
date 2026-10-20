@@ -1,0 +1,18 @@
+{
+  "taskId": "481f72ed-02e9-4824-9fc4-88ad046211e1",
+  "lessonId": "1e6e4c6c-143b-4e3c-9f18-16a838eea4d3",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "files": [
+    {
+      "name": "script.js",
+      "initialHash": "71c852a8a97bd5786b2e2b020370a8be3447a17c602e17d8ca21a815a3642d6c",
+      "content": "const boilEgg = ['всмятку', 'в мешочек'];\nboilEgg.push('вкрутую');\n"
+    }
+  ],
+  "instructionsHash": "a2369811ea6d8085c5d134236c18dcc8939c163d6143ad89afbc8578d72ccfb2",
+  "verifiedAt": "2026-10-20T12:54:58.343Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Говорят, что метод push — один из самых часто используемых. Особенно в пекинском метро в час пик."
+  }
+}

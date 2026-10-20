@@ -1,0 +1,18 @@
+{
+  "taskId": "11809deb-471d-4aff-9a75-2edc6d683907",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "lessonId": "f7a730a3-0d95-4360-9615-e4ce2372bd4c",
+  "files": [
+    {
+      "name": "script.js",
+      "initialHash": "31753293bb92c62257bb8a085c8d5fac515bd59f7de7421f072ab6c0236509d6",
+      "content": "function counter() {\n  counter.count = (counter.count || 0) + 1;\n  return counter.count;\n}\n\ncounter(); // 1\ncounter(); // 2\ncounter(); // 3\ncounter(); // 4\ncounter(); // 5\n"
+    }
+  ],
+  "instructionsHash": "e62d6b9d105181f15868b7be52a0a79a6edc8a76f30b397a63407f7a6a229aa7",
+  "verifiedAt": "2026-10-20T13:09:06.137Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Массивы — объекты, функции — тоже объекты... Что ещё скрывает JavaScript?"
+  }
+}

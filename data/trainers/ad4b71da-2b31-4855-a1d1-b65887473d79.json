@@ -1,0 +1,18 @@
+{
+  "taskId": "ad4b71da-2b31-4855-a1d1-b65887473d79",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "lessonId": "c3ccd384-80db-4638-9bec-afc3ca8ee892",
+  "files": [
+    {
+      "name": "script.js",
+      "initialHash": "f6d3c13ed72ea6673a11bddc0065a7b759fdada921c0242c7ac1aedc086e2eb2",
+      "content": "const building = {\n  type: 'панельный',\n  floors: 5,\n  hasElevator: false,\n  architect: {\n    name: 'Виталий Павлович Лагутенко',\n    homeTown: 'Могилёв',\n    yearOfBirth: 1904\n  }\n};"
+    }
+  ],
+  "instructionsHash": "3c5e69da81e36c019423975cb4290c9e79edc0f037ecce241b702b7b095e6d0c",
+  "verifiedAt": "2026-10-20T13:03:50.043Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Теперь с помощью объектов вы можете вкладывать объекты в объекты. Больше объектов — в следующем уроке!"
+  }
+}

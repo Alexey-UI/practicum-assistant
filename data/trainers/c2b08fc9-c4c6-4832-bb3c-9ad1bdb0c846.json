@@ -1,0 +1,18 @@
+{
+  "taskId": "c2b08fc9-c4c6-4832-bb3c-9ad1bdb0c846",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "lessonId": "a4dc2fb1-cefe-42d5-a521-55e66597aabc",
+  "files": [
+    {
+      "name": "script.js",
+      "initialHash": "0e342f80574549ac42794a464b591244db5be22361e8ae3a57add97c8abab904",
+      "content": "const mya = {\n  'бремя': 'burden',\n  'время': 'time',\n  'вымя': 'udder',\n  'мяч': 'ball',\n  'знамя': 'banner',\n  'имя': 'name',\n  'мясо': 'meat',\n};\n\nObject.keys(mya).forEach(function (key) {\n  if (!key.endsWith('мя')) {\n    delete mya[key];\n  } \n});\n\nconsole.log(mya);\n\n/*\n\n  {\n    бремя: \"burden\",\n    время: \"time\",\n    вымя: \"udder\",\n    знамя: \"banner\",\n    имя: \"name\"\n  }\n\n*/"
+    }
+  ],
+  "instructionsHash": "6f775b061d165e1a70eefd427f5cecbab743aad1b3d27d2056e753691b261692",
+  "verifiedAt": "2026-10-20T13:06:36.206Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Вы только что написали полезную фичу для словарей. Примерно так и работают все фильтры в интернете."
+  }
+}

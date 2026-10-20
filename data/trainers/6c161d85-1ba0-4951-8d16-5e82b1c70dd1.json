@@ -1,0 +1,18 @@
+{
+  "taskId": "6c161d85-1ba0-4951-8d16-5e82b1c70dd1",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "lessonId": "a4dc2fb1-cefe-42d5-a521-55e66597aabc",
+  "files": [
+    {
+      "name": "script.js",
+      "initialHash": "7642ebf4266c140bddd70191a6a6eb9ec59a8deebdcbf82a63a917fc386c23f5",
+      "content": "const heights = {\n  burjKhalifa: 828,\n  tokyoSkyTree: 634,\n  shanghaiTower: 632,\n  abrajAlBait: 601,\n  cantonTower: 600,\n  pingAnFinanceCentre: 600,\n  lotteWorldTower: 555,\n  cnTower: 553,\n  oneWorldTradeCenter: 541,\n  ostankinoTower: 540\n};\n\nconst stratoHeight = 11000;\n\nconst sumHeights = Object.values(heights).reduce((sum, height) => sum + height, 0);\n\nconsole.log(sumHeights >= stratoHeight);"
+    }
+  ],
+  "instructionsHash": "16a92a65459b396b5b4caee589d9fd8fd90aa3fa4207c14c79d07b3f37489a12",
+  "verifiedAt": "2026-10-20T13:06:25.047Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Как вы знали с самого начала, ответ — false: сумма высот 10 зданий, каждое не выше километра, не будет больше 11."
+  }
+}

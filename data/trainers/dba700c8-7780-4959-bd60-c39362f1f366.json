@@ -1,0 +1,18 @@
+{
+  "taskId": "dba700c8-7780-4959-bd60-c39362f1f366",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "lessonId": "a3be247b-dfa6-44e2-8245-8c6eb876eeb8",
+  "files": [
+    {
+      "name": "script.js",
+      "initialHash": "3753d13a0298db7474463eaa1b52012b40ceefde6a781a149c1606eed6ec420f",
+      "content": "const characters = ['Гав-гав', 'Незнайка', 'Бармaлей', 'Леопольд', 'Хоттабыч'];\n\nconst incorrectWord = characters.find(function (item) {\n  return item.includes('a');\n});\n\nconsole.log(incorrectWord);\n"
+    }
+  ],
+  "instructionsHash": "4504b8ee4bc70f45b7d8fb3686118b23f7dd160b98dbd6c9b84e55129207f798",
+  "verifiedAt": "2026-10-20T12:58:37.268Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Метод find прекращает перебор после того, как колбэк впервые вернёт true. Используйте его там, где необязательно обходить весь массив, а просто нужно что-то в нём найти."
+  }
+}

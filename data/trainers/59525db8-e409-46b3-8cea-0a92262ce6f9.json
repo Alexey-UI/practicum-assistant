@@ -1,0 +1,18 @@
+{
+  "taskId": "59525db8-e409-46b3-8cea-0a92262ce6f9",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "lessonId": "45126daf-9b40-4da3-9953-1046a1c8607c",
+  "files": [
+    {
+      "name": "script.js",
+      "initialHash": "9a607cbe471c02b20f8348b5f218d471ae60c8c6f51cfd00d17c304d1bb441da",
+      "content": "function copy(obj) {\n  const res = {};\n  Object.keys(obj).forEach(function (key) {\n    res[key] = obj[key];\n  });\n  return res;\n}\n\nconst firstObj = {\n\tone: 1,\n\ttwo: 2,\n\tthree: 3\n};\n\nconst secondObj = firstObj;\nconst thirdObj = copy(firstObj);\n\nconsole.log(firstObj); // { one: 1, three: 3, two: 2 }\nconsole.log(secondObj); // { one: 1, three: 3, two: 2 }\nconsole.log(thirdObj); // { one: 1, three: 3, two: 2 }\n\nfirstObj.four = 4;\n\nconsole.log(firstObj); // { four: 4, one: 1, three: 3, two: 2 }\nconsole.log(secondObj); // { four: 4, one: 1, three: 3, two: 2 }\n\n// thirdObj не изменился\nconsole.log(thirdObj); // { one: 1, three: 3, two: 2 }"
+    }
+  ],
+  "instructionsHash": "25e380129c0e85290755158070eabc8ccbfb9be88b76e81bdd531db2a46121b0",
+  "verifiedAt": "2026-10-20T13:07:06.681Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Найдено прекрасное средство от бессонницы: теперь вместо овец вы можете считать, сколько объектов уже успели создать."
+  }
+}

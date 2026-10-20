@@ -1,0 +1,18 @@
+{
+  "taskId": "5197f1a1-99bc-4ab7-af72-f1165f092493",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "lessonId": "d398fe13-377f-4b62-8111-ddcf23e1d88e",
+  "files": [
+    {
+      "name": "script.js",
+      "initialHash": "474718100e7f22def8c4fb24304d9d6b8d0b4487fc51ccaabc5896d886ff92d3",
+      "content": "const yourNumber = 'Л059';\nlet windowNumber;\n\nconst windows = {\n  'Л054': 1,\n  'Л055': 2,\n  'Л056': 3,\n  'Л057': 4,\n  'Л058': 5\n};\n\nwindowNumber = windows[yourNumber] || 0;\n\nconsole.log(windowNumber); // 0"
+    }
+  ],
+  "instructionsHash": "75a92474f4b7ee10da7eb1001a9fdf8adf015d1fe26b3c5f85ac0159607aeb15",
+  "verifiedAt": "2026-10-20T13:05:23.146Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Будем надеяться, что окно №0 существует. Иначе очередь затянется."
+  }
+}

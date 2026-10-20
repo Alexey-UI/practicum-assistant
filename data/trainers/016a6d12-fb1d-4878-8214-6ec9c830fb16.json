@@ -1,0 +1,18 @@
+{
+  "taskId": "016a6d12-fb1d-4878-8214-6ec9c830fb16",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "lessonId": "5c787cc9-3321-496e-87d2-53f9d60af0a1",
+  "files": [
+    {
+      "name": "script.js",
+      "initialHash": "08826b4e69e6a0e59c0e3f56dc3c2accd1b779bb7f8740f843f52f3d83856c94",
+      "content": "const acrostic = [\n  'Довольно именем известна я своим;',\n  'Равно клянётся плут и непорочный им,',\n  'Утехой в бедствиях всего бываю боле,',\n  'Жизнь сладостней при мне и в самой лучшей доле.',\n  'Блаженству чистых душ могу служить одна,',\n  'А меж злодеями — не быть я создана.'\n];\n\nconst cipherWord = acrostic.reduce(function (prevVal, item) {\n  return prevVal + item[0];\n}, '');\n\nconsole.log(cipherWord);\n"
+    }
+  ],
+  "instructionsHash": "4c3350bd1762dde7038819615396a505c7358e4ee684666a207612b01c9dbd3b",
+  "verifiedAt": "2026-10-20T12:59:11.751Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Дружба!"
+  }
+}

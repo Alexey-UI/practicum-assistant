@@ -1,0 +1,18 @@
+{
+  "taskId": "8ab0f703-a737-458f-adec-da2ee8d414e7",
+  "lessonId": "1e6e4c6c-143b-4e3c-9f18-16a838eea4d3",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "files": [
+    {
+      "name": "script.js",
+      "initialHash": "8fab709be06b55084d34db9ce973ed52c5e4875627c186632b8aee7fccc012f3",
+      "content": "const planets = ['☿', '♀', '♁', '♂', '♃', '♄', '♅', '♆', '♇'];\nconst pluto = planets.pop();\n"
+    }
+  ],
+  "instructionsHash": "31cd438c6608b14ad82559c4a4e8f26fd62dda0475383fe38533f3cf9e8d451f",
+  "verifiedAt": "2026-10-20T12:55:07.440Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "В 2006 году люди с планеты Земля понизили Плутон до статуса карликовой планеты. Надеемся, Плутон не обиделся."
+  }
+}

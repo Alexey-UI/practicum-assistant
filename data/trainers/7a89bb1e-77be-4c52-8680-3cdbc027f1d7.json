@@ -1,0 +1,18 @@
+{
+  "taskId": "7a89bb1e-77be-4c52-8680-3cdbc027f1d7",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "lessonId": "21267b1f-1401-4c8e-ac28-5591375144df",
+  "files": [
+    {
+      "name": "script.js",
+      "initialHash": "b872b2b7c6e887782ecede385a95fb71bb6b25eb72979784b551b65fa82c7602",
+      "content": "function compare(firstObj, secondObj) {\n\treturn firstObj === secondObj;\n}\n\nconst first = {\n  property: 'value'\n};\n\nconst second = {\n  property: 'value'\n};\n\nconst third = second;\n\nconsole.log(compare(first, second)); // false\nconsole.log(compare(second, third)); // true"
+    }
+  ],
+  "instructionsHash": "b32db135d1e30ae9d1e3337a3f60f746f03bdafa991fe135892bd0409f359002",
+  "verifiedAt": "2026-10-20T13:07:24.108Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Этот приём используется не только в JS. Чем внимательнее вы изучаете язык, тем лучше понимаете саму сущность программирования."
+  }
+}

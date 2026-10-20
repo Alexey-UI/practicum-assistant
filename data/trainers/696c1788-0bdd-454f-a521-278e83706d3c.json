@@ -1,0 +1,18 @@
+{
+  "taskId": "696c1788-0bdd-454f-a521-278e83706d3c",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "lessonId": "14b9aafc-8e89-4426-95e3-97ce1beff906",
+  "files": [
+    {
+      "name": "script.js",
+      "initialHash": "83577594b71762861097e9dfddb7ccd97752981f058466ffc1a0ceeeb24f57b3",
+      "content": "const motherAndStepmother = ['мать', 'и', 'мачеха'];\n\nconst motherAndStepmotherString = motherAndStepmother.join('-');\n\nconsole.log(motherAndStepmotherString);\n"
+    }
+  ],
+  "instructionsHash": "df6bd530b461a8873db71441ae0854602391a5b45eb9b24fd765d0386124bebb",
+  "verifiedAt": "2026-10-20T12:54:39.657Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Нижняя сторона листьев мать-и-мачехи покрыта волосками. Она испаряет воду медленнее «голой» верхней стороны. Поэтому нижняя сторона-мать по законам физики теплее верхней — мачехи."
+  }
+}

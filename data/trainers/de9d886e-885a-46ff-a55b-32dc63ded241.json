@@ -1,0 +1,18 @@
+{
+  "taskId": "de9d886e-885a-46ff-a55b-32dc63ded241",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "lessonId": "d398fe13-377f-4b62-8111-ddcf23e1d88e",
+  "files": [
+    {
+      "name": "script.js",
+      "initialHash": "df92d29f58901d0e83bdefcb13930274336043f83fc4ecd634a77c44472cce5b",
+      "content": "const phonebook = {\n  'Тёма': {\n    mobile: '+79995164420',\n    work: '+79569172374',\n    home: '+78123552223'\n  },\n  'Вася брат Андрея': {\n    mobile: '+79045174415'\n  }\n};\n\n\nfunction addPhoneNumber(name, numberType, number) {\n  if (!phonebook[name]) {\n    phonebook[name] = {};\n  }\n  phonebook[name][numberType] = number;\n}\n\n// когда функция будет готова, добавьте мобильный Анастасии Павловны\naddPhoneNumber('Анастасия Павловна', 'mobile', '+79111545616');\n\nconsole.log(phonebook['Анастасия Павловна'].mobile); // \"+79111545616\""
+    }
+  ],
+  "instructionsHash": "b6d187409fe57e42bf68eba5b7a58fbe230c2d5b24129182d2ed8362659b2bed",
+  "verifiedAt": "2026-10-20T13:04:54.919Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Алло, Анастасия Павловна? К вам тут обращаются."
+  }
+}

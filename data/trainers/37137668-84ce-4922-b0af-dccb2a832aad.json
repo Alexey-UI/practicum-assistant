@@ -1,0 +1,18 @@
+{
+  "taskId": "37137668-84ce-4922-b0af-dccb2a832aad",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "lessonId": "652b69f7-2114-45f6-b738-122032676fa0",
+  "files": [
+    {
+      "name": "script.js",
+      "initialHash": "c9f9587bd7968796225502670ea5b0351a37d167aa640585d7ed4bb0825ed3a9",
+      "content": "const characters = [\n  'Люк Скайуокер',\n  'Оби Ван',\n  'Чубакка',\n  'Энакин Скайуокер',\n  'Хан Соло',\n  'Палпатин'\n];\n\nconst newCharacters = characters.map(function (character) {\n  if (character === 'Энакин Скайуокер') {\n    return 'Дарт Вейдер';\n  }\n  return character;\n});\n\nconsole.log(newCharacters);"
+    }
+  ],
+  "instructionsHash": "4c06210f2a583d8d0200b6b06200a62e598b4cb568290b098e5fe6f051d7d147",
+  "verifiedAt": "2026-10-20T12:57:34.619Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "В шестой части «Звёздных войн» Дарт Вейдер вновь перешёл на светлую сторону. Поэтому код был бы таким:\nСкопировать код\n\nJAVASCRIPT\n\nconst newCharacters = characters.map(function (character) {\n if (character === 'Дарт Вейдер') {\n  return 'Энакин Скайуокер';\n }\n\n  return character;\n}); "
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "taskId": "ae4beedf-eaea-4aef-b867-3cb4af1ef8b9",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "lessonId": "a4dc2fb1-cefe-42d5-a521-55e66597aabc",
+  "files": [
+    {
+      "name": "script.js",
+      "initialHash": "00583d816f903bdcd79ef31caa7e01491d5b9db0a9d2ea303d6861f43ceea358",
+      "content": "function swap(obj) {\n  const res = {};\n\n  Object.keys(obj).forEach(function (key) {\n    res[obj[key]] = key;\n  });\n\n  return res;\n}\n\nconst myObj = {\n  first: 1,\n  second: 2,\n  third: 3\n};\n\nconsole.log(myObj); // { first: 1, second: 2, third: 3 }\nconsole.log(swap(myObj)); // { 1: \"first\", 2: \"second\", 3: \"third\" }\n"
+    }
+  ],
+  "instructionsHash": "2f25e23638c22265664a2de5fff234408339fc4899e64cf8b13a4f40c46c4060",
+  "verifiedAt": "2026-10-20T13:06:45.347Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Говорят, скоро роботы заменят бухгалтеров. Что ж, ваша программа уже может менять цифры местами."
+  }
+}

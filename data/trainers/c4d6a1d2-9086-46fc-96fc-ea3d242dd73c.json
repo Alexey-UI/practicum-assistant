@@ -1,0 +1,18 @@
+{
+  "taskId": "c4d6a1d2-9086-46fc-96fc-ea3d242dd73c",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "lessonId": "14b9aafc-8e89-4426-95e3-97ce1beff906",
+  "files": [
+    {
+      "name": "script.js",
+      "initialHash": "60246eddcf1dbf3f1780aa076e4dfc8ad9b24d7c5355bc9339635e695c868d24",
+      "content": "const terrestrialPlanets = ['Меркурий', 'Венера', 'Земля', 'Марс'];\nconst gasPlanets = ['Юпитер', 'Сатурн', 'Уран', 'Нептун'];\nconst star = 'Солнце';\n\nconst solarSystem = terrestrialPlanets.concat(gasPlanets, star);\n\nconsole.log(solarSystem);\n"
+    }
+  ],
+  "instructionsHash": "bfdb2d8fd2ded8586bdeb5997c217915e746803ff936d72196090c11f3bbd123",
+  "verifiedAt": "2026-10-20T12:54:27.510Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "В 2016 году учёные Константин Батыгин и Майкл Браун опубликовали статью с теоретическим доказательством существования ещё одной планеты Солнечной системы. Сейчас Батыгин и Браун пытаются доказать это на практике, ночами смотря в японский телескоп Субару из обсерватории на Гавайях."
+  }
+}

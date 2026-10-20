@@ -1,0 +1,18 @@
+{
+  "taskId": "4fdcc014-7dcd-4fd4-81ea-f24690e7e64c",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "lessonId": "8ab8bf21-4628-423f-bb99-dced3e6d8e65",
+  "files": [
+    {
+      "name": "script.js",
+      "initialHash": "ceafc544cb383a0a9cbd4dc98c571451b9ca7bfe1ff5ba6facfa5aa65c364c48",
+      "content": "const dogs = [\n  'https://pictures.s3.yandex.net/frontend-developer/functions/dog-1.jpg',\n  'https://pictures.s3.yandex.net/frontend-developer/functions/dog-2.jpg',\n  'https://pictures.s3.yandex.net/frontend-developer/functions/dog-3.jpg',\n  'https://pictures.s3.yandex.net/frontend-developer/functions/dog-4.jpg',\n  'https://pictures.s3.yandex.net/frontend-developer/functions/dog-5.jpg',\n  'https://pictures.s3.yandex.net/frontend-developer/functions/dog-6.jpg',\n];\n\nconst dogElement = document.querySelector('#dog');\nconst buttonElement = document.querySelector('button');\n\nconst getRandomArrId = function (arrLength) {\n  return Math.floor(Math.random() * arrLength);\n};\n\nconst procrastinate = function () {\n  dogElement.style.backgroundImage = `url(${dogs[getRandomArrId(dogs.length)]})`;\n};\n\nbuttonElement.addEventListener('click', procrastinate);\n"
+    }
+  ],
+  "instructionsHash": "cc3eb4ed1e41cdaa1b30691ddcba21de7acaf07ba798e94243e135c69ebc9a36",
+  "verifiedAt": "2026-10-20T13:01:26.375Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Правильно! Вы научились объявлять функции по-новому."
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "taskId": "79cd87dd-b55c-42d1-8a61-db16ff8aca86",
+  "lessonId": "9ec3b1b4-3f62-4775-9230-62f3c40608dc",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "files": [
+    {
+      "name": "script.js",
+      "initialHash": "1eec59a50bdd6b8b1c5b5c6056311288d8be8fcfe39dbb76e231a80722aaf359",
+      "content": "const dog1 = 'https://pictures.s3.yandex.net/frontend-developer/functions/dog-1.jpg';\n\nfunction consoleDog() {\n  const dog2 = 'https://pictures.s3.yandex.net/frontend-developer/functions/dog-2.jpg';\n  console.log(dog1);\n  console.log(dog2);\n}\n\nconsoleDog();\n"
+    }
+  ],
+  "instructionsHash": "7a646ceeb75fc3ebbbf066f86902abdc64a4f0eebedf99e4a7cdea69b4787b81",
+  "verifiedAt": "2026-10-20T13:00:42.489Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Правильно! dog2 берётся из области видимости функции consoleDog, а dog1 — из глобальной."
+  }
+}

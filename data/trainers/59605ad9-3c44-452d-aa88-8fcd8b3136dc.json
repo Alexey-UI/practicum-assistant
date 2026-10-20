@@ -1,0 +1,18 @@
+{
+  "taskId": "59605ad9-3c44-452d-aa88-8fcd8b3136dc",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "lessonId": "21267b1f-1401-4c8e-ac28-5591375144df",
+  "files": [
+    {
+      "name": "script.js",
+      "initialHash": "bf10479cdc5c95e6e4585ecf26ff9bba48164e84e4a8753114d5eb1f9a4a4855",
+      "content": "function isEqual(firstObj, secondObj) {\n  const firstKeys = Object.keys(firstObj);\n  const secondKeys = Object.keys(secondObj);\n  return firstKeys.length === secondKeys.length && firstKeys.every(function (key) {\n    return secondKeys.includes(key) && firstObj[key] === secondObj[key];\n  });\n}\n\nconst first = {\n  property: 'value',\n  anotherProperty: 'another value'\n};\n\nconst second = {\n  property: 'value',\n  anotherProperty: 'another value'\n};\n\nconst third = {\n  property: 'value',\n  anotherProperty: 'one more value'\n};\n\nisEqual(first, second); // true\nisEqual(second, third); // false"
+    }
+  ],
+  "instructionsHash": "d472a47c96e85b78b2be3e845d0f7f3d69e9a5dcc2c3f101a456ce2d037c936f",
+  "verifiedAt": "2026-10-20T13:07:37.255Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Вот мы и научили движок сравнивать объекты по-человечески. Как тебе такое, JavaScript?"
+  }
+}

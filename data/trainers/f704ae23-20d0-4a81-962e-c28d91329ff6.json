@@ -1,0 +1,18 @@
+{
+  "taskId": "f704ae23-20d0-4a81-962e-c28d91329ff6",
+  "lessonId": "93aa1537-bf57-495b-8815-857c8c3554fc",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "files": [
+    {
+      "name": "script.js",
+      "initialHash": "082aadce707f788ffb28893391a8febd9e16e8a0e16f1c35ccce4c04c381de3d",
+      "content": "function makeBeastArray(a = 'Коала', b = 'Вомбат', c = 'Ленивец') {\n  return [a, b, c];\n}\n"
+    }
+  ],
+  "instructionsHash": "953f118928bfddadd2192d1ad6d69bed48186a733f2000d1f20e8674831caf50",
+  "verifiedAt": "2026-10-20T13:02:35.083Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Код стал более читаемым. И писать меньше."
+  }
+}

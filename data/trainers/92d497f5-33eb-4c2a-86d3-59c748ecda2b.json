@@ -1,0 +1,18 @@
+{
+  "taskId": "92d497f5-33eb-4c2a-86d3-59c748ecda2b",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "lessonId": "a48f8815-ee4a-44b6-883f-f1e9cfa900a4",
+  "files": [
+    {
+      "name": "scripts.js",
+      "initialHash": "d8ac9f8e0f8ec5f445e3f2ed69caf67db6413713972427ba1689524edace65c8",
+      "content": "const mouseX = document.querySelector(\".mouse_type_x\");\nconst mouseY = document.querySelector(\".mouse_type_y\");\n\n// Перепишите подписку на событие со свойства onmousemove на метод addEventListener\ndocument.addEventListener('mousemove', function (event) {\n  mouseX.textContent = `${event.clientX}`;\n  mouseY.textContent = `${event.clientY}`;\n});"
+    }
+  ],
+  "instructionsHash": "c0b60709b90f24c235a79f8a55674110ac8b214b79bd11c888a861738aa1db7c",
+  "verifiedAt": "2026-10-20T13:10:41.162Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Отлично! Всё получилось!"
+  }
+}

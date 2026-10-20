@@ -1,0 +1,18 @@
+{
+  "taskId": "97208caf-6a65-4299-b517-4f59d76c52a2",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "lessonId": "8063b785-9c6c-439d-86f8-2f52c64b26c4",
+  "files": [
+    {
+      "name": "script.js",
+      "initialHash": "c8473e6053a03c130abf3f3eb9afa4f1e301d2a8f11b3872d3386a1254736b8a",
+      "content": "const dog = 'https://pictures.s3.yandex.net/frontend-developer/functions/dog-1.jpg';\n\nfunction setDog() {\n  const dog = 'https://pictures.s3.yandex.net/frontend-developer/functions/dog-2.jpg';\n  document.querySelector('.dog').style.backgroundImage = `url(${dog})`;\n}\n\ndocument.querySelector('button').addEventListener('click', setDog);"
+    }
+  ],
+  "instructionsHash": "76f0dda289f6373f3289a65b3daa2694608caa36b390b37b43bea2c7f93a879b",
+  "verifiedAt": "2026-10-20T13:01:05.519Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Правильно! Нажмите «Set Dog» снова — хаски повзрослел."
+  }
+}
