@@ -1,0 +1,18 @@
+{
+  "taskId": "0752f0f3-5c33-4633-90c4-ffd8764ed67f",
+  "lessonId": "1bfca9c5-1cbb-402c-8de3-ee1d1d0445ad",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "files": [
+    {
+      "name": "style.css",
+      "initialHash": "cebcc032d5496e528aca32a71cc3f99309c20c22616dadf379ec972ff84e3519",
+      "content": "*,\n*::before,\n*::after {\n  box-sizing: border-box;\n}\n\nbody {\n  display: grid;\n  place-items: center;\n  min-block-size: 100dvb;\n  margin: 0;\n  padding: 2em;\n  background-color: #feafe8;\n}\n\nbutton {\n  inline-size: 200px;\n  border: none;\n  background-color: transparent;\n  cursor: pointer;\n}\n\nsvg {\n  inline-size: 100%;\n}\n\n.line-top {\n  d: path('M161.5,244.5 L467.5,244.5');\n}\n\n.line-bottom {\n  d: path('M161.5,385.5 L467.5,385.5');\n}\n\nbutton:hover .line-top {\n  /* меняем верхнюю кривую */\n  d: path(\"M161.5,244.5 C176.105942,256.969743 202.285979,263.204615 240.04011,263.204615 C267.915041,263.204615 317.02552,238.405994 386.065712,230.937293 C402.378146,229.172629 429.522909,233.693532 467.5,244.5\");\n}\n\nbutton:hover .line-bottom {\n  /* меняем нижнюю кривую */\n  d: path(\"M161,382.934277 C175.605942,395.40402 201.785979,401.638892 239.54011,401.638892 C267.415041,401.638892 316.52552,376.840272 385.565712,369.37157 C401.878146,367.606907 429.022909,372.127809 467,382.934277\");\n}\n\nbutton:focus-visible .line-top {\n  /* меняем верхнюю кривую */\n  d: path(\"M161.5,244.5 C176.105942,256.969743 202.285979,263.204615 240.04011,263.204615 C267.915041,263.204615 317.02552,238.405994 386.065712,230.937293 C402.378146,229.172629 429.522909,233.693532 467.5,244.5\");\n}\n\nbutton:focus-visible .line-bottom {\n  /* меняем нижнюю кривую */\n  d: path(\"M161,382.934277 C175.605942,395.40402 201.785979,401.638892 239.54011,401.638892 C267.415041,401.638892 316.52552,376.840272 385.565712,369.37157 C401.878146,367.606907 429.022909,372.127809 467,382.934277\");\n}"
+    }
+  ],
+  "instructionsHash": "cc41f7b61b7278c0ac7049d40ec296ffb378c0ae928a5911791795e32c7f53ad",
+  "verifiedAt": "2026-10-20T10:21:48.573Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "SVG-трансформер. Прямые искривляются. Да пребудет с вами сила!"
+  }
+}

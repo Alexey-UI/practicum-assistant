@@ -284,7 +284,8 @@ async function runAttempt(): Promise<void> {
           await next.click();
           await page.waitForURL(url => url.href !== previous, { waitUntil: 'commit', timeout: 180000 });
           await journal('lesson-navigation-observed', { from: safeUrl(previous), url: safeUrl(page.url()) });
-          if (!await waitReadyOrDefer(page, lesson)) { deferred = true; break; }
+          const destination = lessons.find(row => lessonId(row.url) === lessonId(page.url())) ?? lesson;
+          if (!await waitReadyOrDefer(page, destination)) { deferred = true; break; }
           await settle(page);
           await journal('lesson-transition', { from: safeUrl(previous), url: safeUrl(page.url()) });
           if (lessonId(page.url()) === lessonId(lesson.url)) {

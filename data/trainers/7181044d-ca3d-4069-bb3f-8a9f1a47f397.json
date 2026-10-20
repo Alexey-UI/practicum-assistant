@@ -1,0 +1,18 @@
+{
+  "taskId": "7181044d-ca3d-4069-bb3f-8a9f1a47f397",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "lessonId": "1bfca9c5-1cbb-402c-8de3-ee1d1d0445ad",
+  "files": [
+    {
+      "name": "preloader.svg",
+      "initialHash": "e7c65da1b4f0c5666940086e6d7889dbb289ff8c1ce6ab11a1727b7b342a0633",
+      "content": "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 300 300\">\n<style>\n  @keyframes rotate {\n    0% {\n      transform: rotate(0deg);\n    }\n    100% {\n      transform: rotate(360deg);\n    }\n  }\n\n  .preloader {\n    animation: rotate 5s linear infinite;\n    transform-origin: center;\n  }\n\n@media (prefers-reduced-motion: reduce) {\n  .preloader {\n    animation: none;\n  }\n}\n</style>\n<g class='preloader'>\n  <circle cx='100' cy='100' r='30' stroke='#fff' fill='none' stroke-width='5'></circle>\n  <circle cx='200' cy='100' r='30' stroke='#fff' fill='none' stroke-width='5'></circle>\n  <circle cx='100' cy='200' r='30' stroke='#fff' fill='none' stroke-width='5'></circle>\n  <circle cx='200' cy='200' r='30' stroke='#fff' fill='none' stroke-width='5'></circle>\n</g>\n</svg>"
+    }
+  ],
+  "instructionsHash": "d71994dc0312ea150b23fd62bd31c126c70bf636fdb8037ea162dc1eb9835b43",
+  "verifiedAt": "2026-10-20T10:21:29.710Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Вы справились! Чтобы увидеть результат, нужно включить настройку на компьютере, а не в браузере. А еще перезагрузить страницу, ведь файл скачивается при загрузке."
+  }
+}
