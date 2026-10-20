@@ -1,0 +1,18 @@
+{
+  "taskId": "8674c14f-06c9-44ff-b75d-5f209b0e3289",
+  "lessonId": "a68b7449-8bfe-4216-8c83-327e1137de8e",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "files": [
+    {
+      "name": "style.css",
+      "initialHash": "e9ba85f257b9b082c442a1feeca9650ca32556b932225edbf620d160e70365c0",
+      "content": "@keyframes rotation {\n  from {\n    transform: rotate(0deg);\n  }\n  to {\n    transform: rotate(360deg);\n  }\n}\n\n@keyframes move_bg {\n  from {\n    background-position: 0 0;\n  }\n\n  to {\n    background-position: 100px 0;\n  }\n}\n\nhtml, body {\n  margin: 0;\n  padding: 0;\n  box-sizing: border-box;\n  font-family: Helvetica, Arial, sans-serif;\n}\n\n.header__wrapper {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  height: 70px;\n  margin: auto;\n}\n\n.menu__item {\n  margin-right: 10px;\n  color: black;\n  text-decoration: none;\n}\n\n.menu__item:last-of-type {\n  margin-right: 0;\n}\n\n.keyframes {\n  background-color: #02B341;\n  color: #fff;\n}\n\n.keyframes__wrapper {\n  width: 490px;\n  margin: auto;\n  padding: 50px 0;\n}\n\n.title {\n  margin: 0;\n  line-height: 56px;\n  font-size: 54px;\n}\n\n.subtitle {\n  line-height: 19px;\n  font-size: 14px;\n  margin-top: 35px;\n  margin-bottom: 55px;\n  max-width: 350px;\n}\n\n.demo {\n  display: flex;\n  flex-wrap: wrap;\n  justify-content: center;\n}\n\n.demo__item {\n  box-sizing: border-box;\n  border-radius: 50%;\n  width: 240px;\n  height: 240px;\n  margin-right: 10px;\n  margin-top: 10px;\n  overflow: hidden;\n}\n\n.demo__item:nth-of-type(2n) {\n  margin-right: 0;\n}\n\n.demo__item:first-of-type, .demo__item:nth-of-type(2) {\n  margin-top: 0;\n}\n\n.demo__row {\n  height: 64px;\n}\n\n.dotted {\n  background-color: #EB483F;\n  color: white;\n}\n\n.dotted__wrapper {\n  width: 490px;\n  margin: auto;\n  padding: 50px 0;\n  min-height: 350px;\n  position: relative;\n  overflow: hidden;\n}\n\n.animated {\n  width: 490px;\n  height: 350px;\n  position: absolute;\n  left: 0;\n  bottom: 0;\n  transform: translate(0, 50%);\n}\n\n.star {\n  position: absolute;\n  top: 50%;\n  left: 50%;\n}\n\n.star_size_s {\n  width: 310px;\n  height: 310px;\n  margin-left: -155px;\n  margin-top: -155px;\n}\n\n.star_size_l {\n  width: 420px;\n  height: 420px;\n  margin-left: -210px;\n  margin-top: -210px;\n}\n\n.star_size_m {\n  width: 420px;\n  height: 420px;\n  margin-left: -210px;\n  margin-top: -210px;\n}\n\n.dots {\n  position: absolute;\n  top: 50%;\n  left: 50%;\n  width: 490px;\n  height: 460px;\n  margin-top: -245px;\n  margin-left: -230px;\n}\n\n.demo__row_size_xs {\n  background-image: url(https://pictures.s3.yandex.net/animation_topic/line_xs.svg);\n}\n\n.demo__row_size_s {\n  background-image: url(https://pictures.s3.yandex.net/animation_topic/line_s.svg);\n}\n\n.demo__row_size_m {\n  background-image: url(https://pictures.s3.yandex.net/animation_topic/line_m.svg);\n}\n\n.demo__row_size_l {\n  background-image: url(https://pictures.s3.yandex.net/animation_topic/line_l.svg);\n}"
+    }
+  ],
+  "instructionsHash": "de7de467cb82cebf769fdd84a372861946753e5b51ec06e92ba2cc0baa791e97",
+  "verifiedAt": "2026-10-20T10:40:29.132Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Анимации на низком старте!"
+  }
+}

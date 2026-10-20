@@ -1,0 +1,18 @@
+{
+  "id": "ca16c8179ca8b5e333607c428a05cfb6b2735eee239c887b4e13055ecc06b07b",
+  "lessonId": "8e17fcf2-29e7-4a10-a9b2-ad9512e7dac6",
+  "url": "https://sandbox.practicum-team.ru/tasks/04-beautishcha/03-animations/04-delay/example-03/pre/",
+  "instructionsHash": "aec2069fc9d4da0a4319cce486aa79a85ce841d9aca225129d71e0f4e32c7c0f",
+  "files": [
+    {
+      "name": "styles/style.css",
+      "initialHash": "4920748699b498ff481b79dbee17deb5e42908a07a6ae98cfcf640e4583e9c5d",
+      "content": "* {\n  box-sizing: border-box;\n}\n\nhtml {\n  block-size: 100%;\n}\n\nbody {\n  display: grid;\n  grid-auto-rows: min-content;\n  align-content: center;\n  place-items: center;\n  gap: 50px;\n  margin: 0;\n  font-family: 'Open Sans', sans-serif;\n  font-size: 14px;\n  background-color: #000;\n  block-size: 100%;\n}\n\n.lights {\n  display: flex;\n  gap: 20px;\n}\n\n.light {\n  --color: #fff;\n\n  box-shadow: 0 0 15px 3px currentColor;\n  color: var(--color);\n  background-color: currentColor;\n  animation: change-color 0.5s linear forwards paused;\n  cursor: pointer;\n  inline-size: 80px;\n  block-size: 80px;\n}\n\n@keyframes change-color {\n  to {\n    --color: #fd24af;\n  }\n}\n\n.light:hover {\n  animation-play-state: running;\n}\n"
+    }
+  ],
+  "verifiedAt": "2026-10-20T10:41:15.120Z",
+  "evidence": {
+    "selector": ".result .icon-status-success",
+    "message": "Всё отлично!"
+  }
+}

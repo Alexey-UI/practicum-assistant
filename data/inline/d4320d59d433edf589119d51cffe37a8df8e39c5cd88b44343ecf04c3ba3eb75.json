@@ -1,0 +1,18 @@
+{
+  "id": "d4320d59d433edf589119d51cffe37a8df8e39c5cd88b44343ecf04c3ba3eb75",
+  "lessonId": "8e17fcf2-29e7-4a10-a9b2-ad9512e7dac6",
+  "url": "https://sandbox.practicum-team.ru/tasks/04-beautishcha/03-animations/04-delay/example-02/pre/",
+  "instructionsHash": "38656f32c0a14ef7f100966ccf92238121ff4b44d3f840c1dfc169252478c839",
+  "files": [
+    {
+      "name": "styles/style.css",
+      "initialHash": "03ab230dc0dfc0d12845217b13b1aa760784854d68bd6720f2daec22988dfe74",
+      "content": "* {\n  box-sizing: border-box;\n}\n\nhtml {\n  block-size: 100%;\n}\n\nbody {\n  display: grid;\n  grid-auto-rows: min-content;\n  align-content: center;\n  place-items: center;\n  gap: 50px;\n  margin: 0;\n  font-family: 'Open Sans', sans-serif;\n  font-size: 14px;\n  background-color: #000;\n  block-size: 100%;\n}\n\nbutton {\n  border: 1px solid #fff;\n  padding: 10px 65px;\n  color: #fff;\n  font-family: inherit;\n  font-weight: 800;\n  font-size: inherit;\n  text-transform: uppercase;\n  background-color: transparent;\n}\n\nbutton:hover {\n  box-shadow: inset 0 0 0 100px rgb(255 255 255 / 0.15);\n  cursor: pointer;\n}\n\nbutton:focus {\n  outline: 2px solid #fff;\n  outline-offset: 0;\n}\n\nbutton[disabled] {\n  opacity: 0.6;\n  pointer-events: none;\n}\n\n.lights {\n  display: flex;\n  gap: 20px;\n}\n\n.light {\n  --color: #fff;\n\n  box-shadow: 0 0 15px 3px currentColor;\n  color: var(--color);\n  background-color: currentColor;\n  inline-size: 80px;\n  block-size: 80px;\n}\n\n._active .light {\n  animation: change-color 0.5s linear forwards;\n}\n\n.light:nth-child(2) {\n  animation-delay: 1s;\n}\n\n.light:nth-child(3) {\n  animation-delay: 2s;\n}\n\n@keyframes change-color {\n  to {\n    --color: #fd24af;\n  }\n}\n"
+    }
+  ],
+  "verifiedAt": "2026-10-20T10:40:42.767Z",
+  "evidence": {
+    "selector": ".result .icon-status-success",
+    "message": "Всё отлично!"
+  }
+}

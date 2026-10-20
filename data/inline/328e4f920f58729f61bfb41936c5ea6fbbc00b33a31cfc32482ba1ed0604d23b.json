@@ -1,0 +1,18 @@
+{
+  "id": "328e4f920f58729f61bfb41936c5ea6fbbc00b33a31cfc32482ba1ed0604d23b",
+  "lessonId": "4ea9353f-ddf8-4642-8349-9b9aec869eac",
+  "url": "https://sandbox.practicum-team.ru/tasks/04-beautishcha/03-animations/02-insides/example-08/pre/",
+  "instructionsHash": "48fe2c249d3d15be94e6534149be1c86210fdb39b96f199af9b3d9c3a3c2551e",
+  "files": [
+    {
+      "name": "styles/style.css",
+      "initialHash": "b13c698ce999aa152172a3e78bce722f360ec62474744157f1e7a6dee2affb4f",
+      "content": "*,\n*::before,\n*::after {\n  box-sizing: border-box;\n}\n\nhtml {\n  block-size: 100%;\n}\n\nbody {\n  display: grid;\n  place-items: center;\n  margin: 0;\n  block-size: 100%;\n}\n\n.loader {\n  border: 10px solid #feafe8;\n  border-radius: 50%;\n  border-block-end-color: #fd24af;\n  animation-name: loading;\n  animation-iteration-count: infinite;\n  animation-timing-function: linear;\n  animation-duration: 1.5s;\n  inline-size: 100px;\n  aspect-ratio: 1/1;\n  animation-direction: reverse;\n}\n\n@keyframes loading {\n  0% {\n    rotate: 0deg;\n  }\n\n  100% {\n    rotate: 360deg;\n  }\n}\n"
+    }
+  ],
+  "verifiedAt": "2026-10-20T10:39:10.368Z",
+  "evidence": {
+    "selector": ".result .icon-status-success",
+    "message": "Всё отлично!"
+  }
+}

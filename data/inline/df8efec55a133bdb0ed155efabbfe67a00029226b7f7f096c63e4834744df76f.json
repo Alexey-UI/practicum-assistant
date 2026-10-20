@@ -1,0 +1,18 @@
+{
+  "id": "df8efec55a133bdb0ed155efabbfe67a00029226b7f7f096c63e4834744df76f",
+  "lessonId": "4ea9353f-ddf8-4642-8349-9b9aec869eac",
+  "url": "https://sandbox.practicum-team.ru/tasks/04-beautishcha/03-animations/02-insides/example-01/pre/",
+  "instructionsHash": "0d2a50d147b8071f3f7adf43d2ede07f8efad0b4f7ecde37423ba46f73f31a90",
+  "files": [
+    {
+      "name": "styles/style.css",
+      "initialHash": "7ed3357d64d669a1d5ef6189aaa2c52e1c88e764fabb423826c94e460967bde9",
+      "content": "*,\n*::before,\n*::after {\n  box-sizing: border-box;\n}\n\nhtml {\n  block-size: 100%;\n}\n\nbody {\n  display: grid;\n  place-items: center;\n  margin: 0;\n  block-size: 100%;\n}\n\n.loader {\n  /* Ваш код здесь */\n  border: 10px solid #feafe8;\n  border-radius: 50%;\n  border-block-end-color: #fd24af;\n  inline-size: 100px;\n  aspect-ratio: 1/1;\n}\n"
+    }
+  ],
+  "verifiedAt": "2026-10-20T10:35:34.325Z",
+  "evidence": {
+    "selector": ".result .icon-status-success",
+    "message": "Всё отлично!"
+  }
+}
