@@ -1,0 +1,23 @@
+{
+  "id": "3cf15637ee469a925b241a1714c79bb25ce045b82cdbb8525b6ee54b05ef9e05",
+  "lessonId": "38dd63c3-12e6-42fd-8328-39f7adf68f9a",
+  "url": "https://sandbox.practicum-team.ru/tasks/000-freetrack/03-basic-css/02-pixels/example-04/pre/",
+  "instructionsHash": "b9f8bc21e9d5107353ff7e0b31f789c10921ba47f0511275b030329679f23502",
+  "files": [
+    {
+      "name": "index.html",
+      "initialHash": "7fb9833a9b3ce763a5404ad10d05f148618ee0b116699231bffc4c299577c8c6",
+      "content": "<!DOCTYPE html>\n<html lang=\"ru\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <title>4 правила вёрстки</title>\n    <link rel=\"stylesheet\" href=\"https://code.s3.yandex.net/web-code/fonts/fonts.css\" />\n    <link rel=\"stylesheet\" href=\"styles/style.css\" />\n  </head>\n  <body>\n    <header>\n      <h1>Четыре правила вёрстки</h1>\n    </header>\n  </body>\n</html>\n"
+    },
+    {
+      "name": "styles/style.css",
+      "initialHash": "0554d3e3c6c552b96a18a398084c3c4bcacc852f7841ffeb73e878e4889122b4",
+      "content": "body {\n  min-width: 850px;\n}\n\nheader {\n  width: 500px;\n  height: 500px;\n  background-color: forestgreen;\n}\n\n/* Ниже напишите CSS-правило для h1 */\n\nh1 {\n  font-size: 74px;\n}"
+    }
+  ],
+  "verifiedAt": "2026-10-20T14:27:29.246Z",
+  "evidence": {
+    "selector": ".result .icon-status-success",
+    "message": "Всё отлично!"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "id": "de6f679376fb97a183e991ee48f489c879931be8a0dea38bfb93be483d7213f4",
+  "lessonId": "445e41d5-d08e-4c8e-8e4b-2abebece734d",
+  "url": "https://sandbox.practicum-team.ru/tasks/000-freetrack/03-basic-css/05-element-background/example-02/pre/",
+  "instructionsHash": "eb2aee4e0e67b1c2066a68ba55b854f6fd45ff9685ce1b185fa1ab6ae3cc0c31",
+  "files": [
+    {
+      "name": "styles/style.css",
+      "initialHash": "32560aecb182f907fa6eb687e420aa216d11094898837d0f90e74fdd876b9f16",
+      "content": "body {\n  min-width: 850px;\n}\n\nbody,\nh1 {\n  margin: 0;\n}\n\nheader {\n  height: 100vh;\n  background-color: #eee;\n  background-image: url(https://code.s3.yandex.net/web-code/images/freetrack/03/cover.png);\n}\n\nh1 {\n  font-size: 74px;\n\n  /* Тут измените цвет текста */\n  color: white;\n}\n"
+    }
+  ],
+  "verifiedAt": "2026-10-20T14:28:35.971Z",
+  "evidence": {
+    "selector": ".result .icon-status-success",
+    "message": "Всё отлично!"
+  }
+}

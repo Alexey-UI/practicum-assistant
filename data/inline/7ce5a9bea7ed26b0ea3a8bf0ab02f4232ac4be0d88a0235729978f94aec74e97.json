@@ -1,0 +1,18 @@
+{
+  "id": "7ce5a9bea7ed26b0ea3a8bf0ab02f4232ac4be0d88a0235729978f94aec74e97",
+  "lessonId": "c047c529-8fbf-4913-af5c-5704026e3778",
+  "url": "https://sandbox.practicum-team.ru/tasks/000-freetrack/03-basic-css/03-percents-proportions/example-03/pre/",
+  "instructionsHash": "9fa1e866ecbf06da55224197e4523b708a1e27c4ef0c4c9b3bbb58fd1d117c5c",
+  "files": [
+    {
+      "name": "styles/style.css",
+      "initialHash": "fbf7913316c451018001d7d88911906d3a870bcd263be3a9d7f00336cd8df38c",
+      "content": "body {\n  min-width: 850px;\n}\n\n/* Тут будем сбрасывать отступы */\n\nheader {\n  height: 100vh;\n  background-color: forestgreen;\n}\n\nh1 {\n  font-size: 74px;\n}\n\nbody, h1 {\n  margin: 0;\n}\n"
+    }
+  ],
+  "verifiedAt": "2026-10-20T14:28:02.584Z",
+  "evidence": {
+    "selector": ".result .icon-status-success",
+    "message": "Всё отлично!"
+  }
+}

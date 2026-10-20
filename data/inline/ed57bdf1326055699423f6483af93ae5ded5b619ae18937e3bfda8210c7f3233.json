@@ -1,0 +1,18 @@
+{
+  "id": "ed57bdf1326055699423f6483af93ae5ded5b619ae18937e3bfda8210c7f3233",
+  "lessonId": "8ef66648-a830-42d5-932a-0e634e1544b2",
+  "url": "https://sandbox.practicum-team.ru/tasks/000-freetrack/02-what-are-html-css/18-cover-sign/example-01/pre/",
+  "instructionsHash": "04c57f5dbeb96e4efa55c9551f037f23f0769f471635e57ec6a71e454e543d02",
+  "files": [
+    {
+      "name": "index.html",
+      "initialHash": "9614196c0a4113efca0ecba7a818264c60ea2ce3289e9db5ff51bd940f2d44aa",
+      "content": "<!DOCTYPE html>\n<html lang=\"ru\">\n  <head>\n    <meta charset=\"UTF-8\">\n    <title>The Life of Coder</title>\n    <link\n      rel=\"icon\"\n      href=\"https://code.s3.yandex.net/web-code/images/playlist-favicon.ico\"\n    />\n    <link\n      rel=\"stylesheet\"\n      href=\"style.css\"\n    />\n  </head>\n  <body>\n    <div>\n      <h1>The Life of</h1>\n      <h2>Coder</h2>\n      <img\n        src=\"https://pictures.s3.yandex.net/frontend-developer/free-course/mountains.jpg\"\n        alt=\"Чёрно-белая фотография гор в тумане\"\n      />\n      <h3>2022 Liza G.</h3>\n    </div>\n    <p><a target=\"_blank\" href=\"https://music.yandex.ru/users/ynx-praktikum/playlists/1002\">Плейлист</a> для беспечного занятия кодингом.</p>\n    <p>Один раз послушал — семь раз покодил.</p>\n  </body>\n</html>\n"
+    }
+  ],
+  "verifiedAt": "2026-10-20T14:25:44.287Z",
+  "evidence": {
+    "selector": ".result .icon-status-success",
+    "message": "Всё отлично!"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "id": "8457adaf0d85e98fc8091d079d05d695e481f67e3e79f7c4cab5c9bde9b1f27a",
+  "lessonId": "38dd63c3-12e6-42fd-8328-39f7adf68f9a",
+  "url": "https://sandbox.practicum-team.ru/tasks/000-freetrack/03-basic-css/02-pixels/example-02/pre/",
+  "instructionsHash": "729cf63f347b3d2951f623acb3b1fc0e3b887e45261c37373fbf57a4bb9f9e59",
+  "files": [
+    {
+      "name": "styles/style.css",
+      "initialHash": "e74c3d4a0d4a02ec07b97a6d6d6da43f1b09c257c43be6f01e6d10f610970c2f",
+      "content": "body {\n  min-width: 850px;\n}\n\nheader {\n  /* Напишите ниже свойства ширины и высоты */\n  width: 500px;\n  height: 500px;\n}\n"
+    }
+  ],
+  "verifiedAt": "2026-10-20T14:26:44.968Z",
+  "evidence": {
+    "selector": ".result .icon-status-success",
+    "message": "Всё отлично!"
+  }
+}

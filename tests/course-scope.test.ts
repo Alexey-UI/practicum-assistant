@@ -20,6 +20,9 @@ test('Исключение дополнительных модулей меня�
     ];
     await atomicJson('.local/catalog.json', rows);
     await atomicJson('data/trainers/retained-react.json', { evidence: 'Сохранённое принятое решение' });
+    await atomicJson('.local/inline/unknown.json', { phase: 'requested' });
+    await atomicJson('.local/inline/accepted.json', { phase: 'correct' });
+    await atomicJson('.local/inline/rejected.json', { phase: 'wrong' });
     const before = await readFile('.local/catalog.json', 'utf8');
     const cfg = await loadConfig();
     assert.equal(cfg.includeAdditionalModules, false);
@@ -28,6 +31,8 @@ test('Исключение дополнительных модулей меня�
     let result = await readJson<Record<string, number>>('.local/status.json', {});
     assert.equal(result.lessons, 2); assert.equal(result.solved, 1);
     assert.equal(result.catalogLessons, 3); assert.equal(result.excludedLessons, 1); assert.equal(result.excludedSolved, 1);
+    assert.equal(result.pendingInlineChecks, 1); assert.equal(result.pendingTrainerChecks, 0);
+    assert.deepEqual(await readJson('.local/inline/unknown.json', null), { phase: 'requested' });
     assert.equal(await readFile('.local/catalog.json', 'utf8'), before);
     assert.ok(await readJson('data/trainers/retained-react.json', null));
     await atomicJson('practicum.config.json', { includeAdditionalModules: true });

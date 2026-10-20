@@ -1,0 +1,18 @@
+{
+  "id": "608df7aee18c03da14c917328ede7958ce25e22646ebe543ef1b029ea40b4551",
+  "lessonId": "20648662-045e-4916-93c4-987f14bed396",
+  "url": "https://sandbox.practicum-team.ru/tasks/000-freetrack/02-what-are-html-css/17-margins/example-03/pre/",
+  "instructionsHash": "4306687d98c4f07983fed4721c893e878c35eff2788ae2c4efc5377c1feabc87",
+  "files": [
+    {
+      "name": "style.css",
+      "initialHash": "b492b98647625ef2b081f6f2def67179709c07baf2f1a9787b1a8f36faa2b623",
+      "content": "body {\n  min-width: 850px;\n}\n\nh1 {\n  margin-bottom: 0;\n  font-family: William, serif;\n  font-size: 31px;\n  font-style: italic;\n  text-transform: uppercase;\n}\n\nh2 {\n  margin-top: 0;\n  font-family: Inter, sans-serif;\n  font-size: 31px;\n  text-transform: uppercase;\n}\n\np {\n  margin-top: 0;\n  margin-bottom: 0;\n  font-family: Inter, sans-serif;\n}\n\nimg {\n  width: 210px;\n}\n\ndiv {\n  width: 500px;\n  height: 500px;\n  background-color: deepskyblue;\n  text-align: center;\n}\n"
+    }
+  ],
+  "verifiedAt": "2026-10-20T14:25:01.864Z",
+  "evidence": {
+    "selector": ".result .icon-status-success",
+    "message": "Всё отлично!"
+  }
+}

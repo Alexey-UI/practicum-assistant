@@ -1,0 +1,18 @@
+{
+  "id": "0e43100147dc29d247d03ad59e905c17409431b94d023983d366b8999dfab45e",
+  "lessonId": "16d725d5-9d6a-4662-bb3b-82b2b4855b5c",
+  "url": "https://sandbox.practicum-team.ru/tasks/000-freetrack/02-what-are-html-css/16-blocks/example-02/pre/",
+  "instructionsHash": "45402e86fc643351fe92b07b2946288e88696d60a7b84df6bab520271ba918b9",
+  "files": [
+    {
+      "name": "style.css",
+      "initialHash": "cbe9e27ce1746a348d13ec1b10be86c8cd89a53ff9a3d9598803cc168a7c00c9",
+      "content": "body {\n  min-width: 850px;\n}\n\nh1 {\n  font-family: William, serif;\n  font-size: 31px;\n  font-style: italic;\n  text-transform: uppercase;\n}\n\nh2 {\n  font-family: Inter, sans-serif;\n  font-size: 31px;\n  text-transform: uppercase;\n}\n\np {\n  font-family: Inter, sans-serif;\n}\n\nimg {\n  width: 210px;\n}\n\ndiv {\n  /* укажите свойство с цветом фона здесь */\n  background-color: deepskyblue;\n}\n"
+    }
+  ],
+  "verifiedAt": "2026-10-20T14:24:09.824Z",
+  "evidence": {
+    "selector": ".result .icon-status-success",
+    "message": "Всё отлично!"
+  }
+}

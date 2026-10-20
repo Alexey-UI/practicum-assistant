@@ -1,0 +1,18 @@
+{
+  "id": "7d8d67d0ec776ef9ebd3a124ba268fcc62495ad28d7914528eb49910501b9b5c",
+  "lessonId": "312ade66-6eea-400a-81bc-7b7b50f84153",
+  "url": "https://sandbox.practicum-team.ru/tasks/000-freetrack/03-basic-css/04-html-colors/example-03/pre/",
+  "instructionsHash": "ab7204a988682285cd00b1c798fd4384d4dee8e52e23528c5ac30dee9ed5eb42",
+  "files": [
+    {
+      "name": "styles/style.css",
+      "initialHash": "68b7faa55613c2c6adb0e51279f980222bf9d87baeb2e553dae182c830477a82",
+      "content": "body {\n  min-width: 850px;\n}\n\nbody,\nh1 {\n  margin: 0;\n}\n\nheader {\n  height: 100vh;\n  background-color: #eee; /* Поменяйте цвет фона на светло-серый */\n}\n\nh1 {\n  font-size: 74px;\n}\n"
+    }
+  ],
+  "verifiedAt": "2026-10-20T14:28:21.297Z",
+  "evidence": {
+    "selector": ".result .icon-status-success",
+    "message": "Всё отлично!"
+  }
+}

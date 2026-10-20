@@ -1,0 +1,18 @@
+{
+  "id": "8c3f2aba2f908bd8d78a1a7a1f9c874431e79d0c9e788a56d120703121ee7d88",
+  "lessonId": "445e41d5-d08e-4c8e-8e4b-2abebece734d",
+  "url": "https://sandbox.practicum-team.ru/tasks/000-freetrack/03-basic-css/05-element-background/example-01/pre/",
+  "instructionsHash": "609797c011a9cab39e15c0e6e9f0ed95ce206bbccb0dd6dbc7557679aa29afc1",
+  "files": [
+    {
+      "name": "styles/style.css",
+      "initialHash": "a72178d0e384392085cf5b5a2f5299bd20419d9ac61649bcbbc49eefcf089cc5",
+      "content": "body {\n  min-width: 850px;\n}\n\nbody,\nh1 {\n  margin: 0;\n}\n\nheader {\n  height: 100vh;\n  background-color: #eee;\n\n  /* Тут добавьте фоновую картинку */\n  background-image: url(https://code.s3.yandex.net/web-code/images/freetrack/03/cover.png);\n}\n\nh1 {\n  font-size: 74px;\n}\n"
+    }
+  ],
+  "verifiedAt": "2026-10-20T14:28:31.607Z",
+  "evidence": {
+    "selector": ".result .icon-status-success",
+    "message": "Всё отлично!"
+  }
+}

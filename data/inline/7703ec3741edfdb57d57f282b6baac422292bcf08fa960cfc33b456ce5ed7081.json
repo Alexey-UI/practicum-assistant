@@ -1,0 +1,18 @@
+{
+  "id": "7703ec3741edfdb57d57f282b6baac422292bcf08fa960cfc33b456ce5ed7081",
+  "lessonId": "8ef66648-a830-42d5-932a-0e634e1544b2",
+  "url": "https://sandbox.practicum-team.ru/tasks/000-freetrack/02-what-are-html-css/18-cover-sign/example-02/pre/",
+  "instructionsHash": "4f0c2367caa52d860879d501bfe736de770c2584cdbd69b5dadf826ebdec56e8",
+  "files": [
+    {
+      "name": "style.css",
+      "initialHash": "a0ea75574feb58ac4330a1c21c4b216632b8b4247b0d0cb604cf522f9d6b487f",
+      "content": "body {\n  min-width: 850px;\n}\n\nh1 {\n  margin-top: 0;\n  margin-bottom: 0;\n  padding-top: 45px;\n  font-family: William, serif;\n  font-size: 31px;\n  font-style: italic;\n  text-transform: uppercase;\n}\n\nh2 {\n  margin-top: 0;\n  margin-bottom: 35px;\n  font-family: Inter, sans-serif;\n  font-size: 31px;\n  text-transform: uppercase;\n}\n\np {\n  margin-top: 0;\n  margin-bottom: 0;\n  font-family: Inter, sans-serif;\n}\n\nimg {\n  width: 210px;\n}\n\ndiv {\n  width: 500px;\n  height: 500px;\n  text-align: center;\n  background-color: deepskyblue;\n}\n\nh3 {\n  margin: 0;\n  font-family: Inter, sans-serif;\n  font-weight: normal;\n  font-size: 16px;\n  line-height: 18px;\n  text-transform: uppercase;\n}\n"
+    }
+  ],
+  "verifiedAt": "2026-10-20T14:25:48.621Z",
+  "evidence": {
+    "selector": ".result .icon-status-success",
+    "message": "Всё отлично!"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "id": "d65d6133bf09c5b6049e2a7113ddea3948f3dc8f62e59024a2aa1fdf7aa7f7ab",
+  "lessonId": "20648662-045e-4916-93c4-987f14bed396",
+  "url": "https://sandbox.practicum-team.ru/tasks/000-freetrack/02-what-are-html-css/17-margins/example-02/pre/",
+  "instructionsHash": "9204c7fd08c504f79dd0db36b0acaa1df48e6010664305683c3313fe24f68f7c",
+  "files": [
+    {
+      "name": "index.html",
+      "initialHash": "df770af1fef143e018dfd2c9a18f203091bd521db780ddc585496f33bbedf6a0",
+      "content": "<!DOCTYPE html>\n<html lang=\"ru\">\n  <head>\n    <meta charset=\"UTF-8\">\n    <title>The Life of Coder</title>\n    <link\n      rel=\"icon\"\n      href=\"https://code.s3.yandex.net/web-code/images/playlist-favicon.ico\"\n    />\n    <link\n      rel=\"stylesheet\"\n      href=\"style.css\"\n    />\n  </head>\n  <body>\n    <div>\n      <h1>The Life of</h1>\n      <h2>Coder</h2>\n      <img src=\"https://pictures.s3.yandex.net/frontend-developer/free-course/mountains.jpg\"\n        alt=\"Чёрно-белая фотография гор в тумане\"\n      />\n    </div>\n    <p><a target=\"_blank\" href=\"https://music.yandex.ru/users/ynx-praktikum/playlists/1002\">Плейлист</a> для беспечного занятия кодингом.</p>\n    <p>Один раз послушал — семь раз покодил.</p>\n  </body>\n</html>\n"
+    }
+  ],
+  "verifiedAt": "2026-10-20T14:24:58.045Z",
+  "evidence": {
+    "selector": ".result .icon-status-success",
+    "message": "Всё отлично!"
+  }
+}

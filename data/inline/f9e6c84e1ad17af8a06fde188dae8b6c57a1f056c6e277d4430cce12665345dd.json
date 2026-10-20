@@ -1,0 +1,18 @@
+{
+  "id": "f9e6c84e1ad17af8a06fde188dae8b6c57a1f056c6e277d4430cce12665345dd",
+  "lessonId": "8ef66648-a830-42d5-932a-0e634e1544b2",
+  "url": "https://sandbox.practicum-team.ru/tasks/000-freetrack/02-what-are-html-css/18-cover-sign/example-03/pre/",
+  "instructionsHash": "1dfd264f955727d6b921f8e4829cac0959bb10549b52ee77b94322442d5e499b",
+  "files": [
+    {
+      "name": "style.css",
+      "initialHash": "9e746db73deb07857092fcd18baf51f0cf0a7981c9da8ddb16401779c70dab2d",
+      "content": "body {\n  min-width: 850px;\n}\n\nh1 {\n  margin-top: 0;\n  margin-bottom: 0;\n  padding-top: 45px;\n  font-family: William, serif;\n  font-size: 31px;\n  font-style: italic;\n  text-transform: uppercase;\n  font-weight: normal;\n}\n\nh2 {\n  margin-top: 0;\n  margin-bottom: 35px;\n  font-family: Inter, sans-serif;\n  font-size: 31px;\n  text-transform: uppercase;\n}\n\np {\n  margin-top: 0;\n  margin-bottom: 0;\n  font-family: Inter, sans-serif;\n}\n\nimg {\n  width: 210px;\n  margin-bottom: 80px;\n}\n\ndiv {\n  width: 500px;\n  height: 500px;\n  text-align: center;\n  background-color: deepskyblue;\n}\n\nh3 {\n  margin: 0;\n  font-family: Inter, sans-serif;\n  font-weight: normal;\n  font-size: 16px;\n  line-height: 18px;\n  text-transform: uppercase;\n}\n"
+    }
+  ],
+  "verifiedAt": "2026-10-20T14:25:53.077Z",
+  "evidence": {
+    "selector": ".result .icon-status-success",
+    "message": "Всё отлично!"
+  }
+}

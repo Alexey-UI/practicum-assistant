@@ -1,0 +1,18 @@
+{
+  "id": "0c1cc65e63dd8d24e9cc5ab5b730e23e67458cea3360e4202aa4f9a57c57185b",
+  "lessonId": "38dd63c3-12e6-42fd-8328-39f7adf68f9a",
+  "url": "https://sandbox.practicum-team.ru/tasks/000-freetrack/03-basic-css/02-pixels/example-01/pre/",
+  "instructionsHash": "165c4abba7a9893569ba601e05e593c09ed0f726ce0c8f18d29ece3c2910563f",
+  "files": [
+    {
+      "name": "index.html",
+      "initialHash": "01b1e61a9a8d36ab497a67d077f4271c0d283caf991d39b67af60b5322f3411c",
+      "content": "<!DOCTYPE html>\n<html lang=\"ru\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <title>4 правила вёрстки</title>\n    <link rel=\"stylesheet\" href=\"https://code.s3.yandex.net/web-code/fonts/fonts.css\" />\n    <link rel=\"stylesheet\" href=\"styles/style.css\" />\n  </head>\n  <body>\n    <header></header>\n    <!-- Вставьте <header> ниже. Не забудьте про закрывающий тег! -->\n  </body>\n</html>\n"
+    }
+  ],
+  "verifiedAt": "2026-10-20T14:26:40.683Z",
+  "evidence": {
+    "selector": ".result .icon-status-success",
+    "message": "Всё отлично!"
+  }
+}

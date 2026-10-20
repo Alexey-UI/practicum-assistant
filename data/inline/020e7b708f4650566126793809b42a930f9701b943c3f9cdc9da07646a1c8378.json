@@ -1,0 +1,18 @@
+{
+  "id": "020e7b708f4650566126793809b42a930f9701b943c3f9cdc9da07646a1c8378",
+  "lessonId": "38dd63c3-12e6-42fd-8328-39f7adf68f9a",
+  "url": "https://sandbox.practicum-team.ru/tasks/000-freetrack/03-basic-css/02-pixels/example-03/pre/",
+  "instructionsHash": "e8e8b456a4a55d421333fe68b9476a428afc8825e4a2f7832a9f4ea61629e2e7",
+  "files": [
+    {
+      "name": "styles/style.css",
+      "initialHash": "8ad484d3e3afd1a55ff992b4cf10d98bcbf145eb8d6493cb7c2fba84c665100c",
+      "content": "body {\n  min-width: 850px;\n}\n\nheader {\n  width: 500px;\n  height: 500px;\n\n  /* Напишите ниже свойство цвета фона */\n  background-color: forestgreen;\n}\n"
+    }
+  ],
+  "verifiedAt": "2026-10-20T14:26:48.834Z",
+  "evidence": {
+    "selector": ".result .icon-status-success",
+    "message": "Всё отлично!"
+  }
+}
