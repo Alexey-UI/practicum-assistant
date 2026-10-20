@@ -13,6 +13,8 @@ import { solveFeedback } from './feedback.js';
 import type { BrowserContext, Page, Locator } from 'playwright';
 import type { Config } from './config.js';
 import { atomicJson, journal, lockRun, readJson } from './store.js';
+import { UnexpectedBrowserClosure, withBrowserRecovery } from './recovery.js';
+import { setTimeout as delay } from 'node:timers/promises';
 
 function pause(message: string): void { console.log(message); process.exitCode = 2; }
 
@@ -110,10 +112,19 @@ async function questionStep(page: Page, root: Locator, cfg: Config, research: bo
 }
 
 export async function run(): Promise<void> {
+  await withBrowserRecovery(runAttempt, async (error, attempt) => {
+    await journal('browser-restart', { attempt, url: error.url });
+    console.log(`Браузер неожиданно закрылся. Возобновляю обход из сохранённого состояния (${attempt}/2): ${error.url ?? 'адрес ещё не определён'}`);
+    await delay(1000);
+  });
+}
+
+async function runAttempt(): Promise<void> {
   const cfg = await loadConfig();
   const unlock = await lockRun();
   let context: BrowserContext | undefined;
   let activePage: Page | undefined;
+  let crashed = false;
   let stopping = false;
   const stop = () => { stopping = true; void context?.close().catch(() => {}); };
   process.once('SIGINT', stop);
@@ -123,6 +134,7 @@ export async function run(): Promise<void> {
     if (stopping) return;
     const page = context.pages()[0] ?? await context.newPage();
     activePage = page;
+    page.on('crash', () => { crashed = true; });
     const args = process.argv.slice(3);
     const urlFlag = args.indexOf('--url');
     const courseFlag = args.indexOf('--course');
@@ -308,6 +320,9 @@ export async function run(): Promise<void> {
     console.log('Обход выбранных уроков завершён.');
   } catch (error) {
     if (stopping) { console.log('Проходчик остановлен; состояние сохранено.'); return; }
+    if (context && (crashed || activePage?.isClosed() || context.browser()?.isConnected() === false)) {
+      throw new UnexpectedBrowserClosure(activePage ? safeUrl(activePage.url()) : undefined, error);
+    }
     if (activePage && !activePage.isClosed()) {
       try { console.log(`Диагностика ошибки: ${await snapshot(activePage, 'error')}`); } catch { /* Preserve the original error. */ }
     }
