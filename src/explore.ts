@@ -39,6 +39,15 @@ export async function explore(): Promise<void> {
           const { inspectPractice } = await import('./practice.js');
           console.log(JSON.stringify(await inspectPractice(page))); continue;
         }
+        if (action.action === 'trainer-frame-dom') {
+          const { practiceFrames } = await import('./practice.js');
+          const frames = await practiceFrames(page);
+          const index = action.index ?? 0;
+          if (!Number.isInteger(index) || index < 0 || index >= frames.length) throw new Error('Неверный номер фрейма предпросмотра');
+          const frame = frames[index];
+          if (new URL(frame.url()).hostname !== 'feynman.praktikum.yandex.net') throw new Error('Неизвестный источник предпросмотра');
+          console.log(JSON.stringify(await frame.locator(action.css ?? 'body').evaluateAll(elements => elements.map(el => el.outerHTML))).slice(0, 30000)); continue;
+        }
         if (action.action === 'inline') {
           const { inlineCommand } = await import(`./inline.js?inspect=${Date.now()}`) as typeof import('./inline.js');
           console.log(JSON.stringify(await inlineCommand(page, action))); continue;

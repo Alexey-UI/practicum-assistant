@@ -1,0 +1,18 @@
+{
+  "taskId": "b313ed69-1e81-4380-9db2-31938dcde3cf",
+  "lessonId": "61d65943-1896-44a9-92a6-457d5f800fd0",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "files": [
+    {
+      "name": "script.js",
+      "initialHash": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "content": "console.log(4 * 4 - (5 * 4) / 2);\n"
+    }
+  ],
+  "instructionsHash": "b546e6e8b5a3317a94bf984e38d8210d82b3968fd83d4585611ac4e1136a3997",
+  "verifiedAt": "2026-10-20T12:03:35.275Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Правильно! Похоже, Иннокентий не успевает делать всё, что придумывает заказчик, так что стоит задуматься о расширении команды."
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "taskId": "00bcda55-53a8-4d10-ba84-6dc61f394937",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "lessonId": "0c81de92-0601-4928-b660-7928f1dae7dd",
+  "files": [
+    {
+      "name": "index.html",
+      "initialHash": "a78bd0e7a8d910ebf65779767d42e53facf1ba79379483fc8d94c5b3bb716ae2",
+      "content": "<!DOCTYPE html>\n<html lang=\"ru\">\n<head>\n  <meta charset=\"UTF-8\">\n  <title>Основы JavaScript</title>\n</head>\n<body>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n"
+    },
+    {
+      "name": "script.js",
+      "initialHash": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "content": "alert('Привет, мир!');\n"
+    }
+  ],
+  "instructionsHash": "ecf770c0c7613cec952ab742b064d61144d94452e531668cb4b7f8437b90f3b2",
+  "verifiedAt": "2026-10-20T11:56:29.417Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Модальное окно возникло, потому что так прописано в скрипте. Скоро вы научитесь писать скрипты, которые запускаются тогда, когда вам это нужно."
+  }
+}

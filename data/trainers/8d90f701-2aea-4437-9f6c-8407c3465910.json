@@ -1,0 +1,18 @@
+{
+  "taskId": "8d90f701-2aea-4437-9f6c-8407c3465910",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "lessonId": "0c81de92-0601-4928-b660-7928f1dae7dd",
+  "files": [
+    {
+      "name": "index.html",
+      "initialHash": "d4a73d0d3090b5aec1a47207659a45e19eda5de237c88aefa9f6c99834c4b010",
+      "content": "<!DOCTYPE html>\n<html lang=\"ru\">\n<head>\n  <meta charset=\"UTF-8\">\n  <title>Основы JavaScript</title>\n</head>\n<body>\n\n  <script>\n    alert('Привет, мир!');\n  </script>\n</body>\n</html>\n"
+    }
+  ],
+  "instructionsHash": "b5b937337df73c4d6c71196ed395655a841985a9fc052ab8b1f2c180ddb7a3b1",
+  "verifiedAt": "2026-10-20T11:56:12.210Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Всплывающее окно, в котором вы видите приветствие, называется модальным. Как мы уже говорили, alert сегодня используют редко. Впереди обширный курс по JavaScript и мы обязательно расскажем об альтернативах."
+  }
+}

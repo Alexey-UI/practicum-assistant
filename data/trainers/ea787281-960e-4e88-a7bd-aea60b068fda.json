@@ -1,0 +1,18 @@
+{
+  "taskId": "ea787281-960e-4e88-a7bd-aea60b068fda",
+  "lessonId": "61d65943-1896-44a9-92a6-457d5f800fd0",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "files": [
+    {
+      "name": "script.js",
+      "initialHash": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "content": "console.log(20 % 3);\n"
+    }
+  ],
+  "instructionsHash": "39978b82e06922431ee1de93d9e60b1bbd6146c5d64db412e198d27eef3a88d0",
+  "verifiedAt": "2026-10-20T12:04:16.767Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Верно! Два макета так и останутся несвёрстанными, так как три верстальщика не смогли поделить их между собой."
+  }
+}

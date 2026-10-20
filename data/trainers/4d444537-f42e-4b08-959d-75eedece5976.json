@@ -1,0 +1,18 @@
+{
+  "taskId": "4d444537-f42e-4b08-959d-75eedece5976",
+  "lessonId": "61d65943-1896-44a9-92a6-457d5f800fd0",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "files": [
+    {
+      "name": "script.js",
+      "initialHash": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "content": "console.log(70000000 + 20000000);\n"
+    }
+  ],
+  "instructionsHash": "a838555be8117033e7dcaca916db9480195f1b0f1c8f1ff69b6034d22b164380",
+  "verifiedAt": "2026-10-20T12:03:02.075Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Вы только что помогли Евгению Баженову придумать новый обзор в BadComedian. Так держать!"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "taskId": "e259edf1-cf14-40c6-bab2-9d9ca0976651",
+  "lessonId": "0c81de92-0601-4928-b660-7928f1dae7dd",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "files": [
+    {
+      "name": "script.js",
+      "initialHash": "a2d9df55b52a7e8f938637bd8cb54147428c3bf6c4c4c1bf6000ebb0fc7c96fd",
+      "content": "alert('Привет, мир!');\nconsole.log('Hello, world!');\n"
+    }
+  ],
+  "instructionsHash": "621e17ee98a4935bfe9cd64869129f758036f7c8a4a0b96c32e18e4a304f8b13",
+  "verifiedAt": "2026-10-20T11:56:42.532Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Поздравляем! Теперь с вами верный помощник — команда console.log. Она поможет увидеть, как ваша программа рождается, взрослеет и начинает работать."
+  }
+}
