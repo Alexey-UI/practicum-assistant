@@ -1,0 +1,23 @@
+{
+  "taskId": "bad35254-38e8-45df-97d0-a9645e0323a3",
+  "lessonId": "32701e1c-1498-4813-b2c2-14e1bdca5301",
+  "instructionsHash": "0e0b4208661e757dc7c1548379c9283e9a45e836e0e39ba258ea97c1ec2c4d79",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "files": [
+    {
+      "path": "/index.html",
+      "hash": "75286582e1c1a9cbf7e86d3afa405cf755993102bb327f2f4be035454d18279d"
+    },
+    {
+      "path": "/script.js",
+      "hash": "0d59ba8099b5028a06bfdd6a24c78ee980fc9f4d3b0fc572e38ab5a90efa29be"
+    },
+    {
+      "path": "/style.css",
+      "hash": "66ba62056557a174fc8e7a6f1997335b233545b0b6a5c36f5f8509a6dc9235ab"
+    }
+  ],
+  "optionalInstruction": "Если хотите, конечно.",
+  "reason": "Условие явно разрешает оставить имя автора примера без изменения. В интерфейсе доступен переход к следующему уроку; проверка необязательной правки не нужна для отказа от неё. Отказ не считается принятым решением.",
+  "reviewedAt": "2026-10-20T15:45:41.961214+00:00"
+}

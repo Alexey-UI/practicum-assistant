@@ -100,11 +100,23 @@ export async function captureTrainerHint(page: Page, taskId: string): Promise<bo
   return true;
 }
 
-export async function isTrainerDemonstration(task: Awaited<ReturnType<typeof readTrainer>>): Promise<boolean> {
-  const record = await readJson<{ taskId: string; lessonId: string; instructionsHash: string; contextHash: string; files: Array<{ path: string; hash: string }>; reason: string; reviewedAt: string } | null>(`data/trainer-demos/${task.taskId}.json`, null);
-  if (!record || record.taskId !== task.taskId || record.lessonId !== lessonId(task.url) || !record.reason?.trim() || !record.reviewedAt || record.instructionsHash !== contentHash(normalize(task.instructions)) || record.contextHash !== task.contextHash) return false;
+interface InstructionStep {
+  taskId: string; lessonId: string; instructionsHash: string; contextHash: string;
+  files: Array<{ path: string; hash: string }>; reason: string; reviewedAt: string; optionalInstruction?: string;
+}
+async function instructionStep(task: Awaited<ReturnType<typeof readTrainer>>, directory: 'trainer-demos' | 'trainer-optional'): Promise<InstructionStep | null> {
+  const record = await readJson<InstructionStep | null>(`data/${directory}/${task.taskId}.json`, null);
+  if (!record || record.taskId !== task.taskId || record.lessonId !== lessonId(task.url) || !record.reason?.trim() || !Number.isFinite(Date.parse(record.reviewedAt)) || record.instructionsHash !== contentHash(normalize(task.instructions)) || record.contextHash !== task.contextHash) return null;
   const signature = (files: Array<{ path: string; hash: string }>) => JSON.stringify(files.map(({ path, hash }) => ({ path, hash })).sort((a, b) => a.path.localeCompare(b.path)));
-  return task.files.length > 0 && signature(record.files) === signature(task.files);
+  return task.files.length > 0 && signature(record.files) === signature(task.files) ? record : null;
+}
+export async function isTrainerDemonstration(task: Awaited<ReturnType<typeof readTrainer>>): Promise<boolean> {
+  return !!await instructionStep(task, 'trainer-demos');
+}
+export async function isOptionalTrainerTask(task: Awaited<ReturnType<typeof readTrainer>>): Promise<boolean> {
+  const record = await instructionStep(task, 'trainer-optional');
+  return !!record?.optionalInstruction?.trim() && /если хотите|необязательн|по желанию/i.test(record.optionalInstruction)
+    && normalize(task.instructions).includes(normalize(record.optionalInstruction));
 }
 
 export interface TrainerSolution {
@@ -203,6 +215,15 @@ export async function solveTrainer(page: Page, candidate = false): Promise<'adva
     const next = page.locator('[data-test-id="next-task-button"]');
     if (await page.locator('[data-test-id="check-task-button"]').count() || !await next.isVisible() || !await next.isEnabled()) throw new Error('Интерфейс шага для чтения изменился: требуется повторный разбор');
     await journal('trainer-demonstration-read', { taskId: task.taskId, url: task.url });
+    return advanceTrainer(page, task.instructions, lessonId(task.url)!);
+  }
+  if (await isOptionalTrainerTask(task)) {
+    // The optional edit is declined. Never reinterpret an earlier check as a pass.
+    const state = await readJson<TaskState | null>(`.local/trainers/${task.taskId}.json`, null);
+    if (state?.phase === 'requested') return 'pending';
+    const next = page.locator('[data-test-id="next-task-button"]');
+    if (!await next.isVisible() || !await next.isEnabled()) throw new Error('Необязательный шаг не разрешает переход: требуется разбор');
+    await journal('trainer-optional-declined', { taskId: task.taskId, url: task.url });
     return advanceTrainer(page, task.instructions, lessonId(task.url)!);
   }
   const solution = await readJson<TrainerSolution | null>(`${candidate ? '.local/task-solutions' : 'data/trainers'}/${task.taskId}.json`, null) ?? (!candidate ? await readJson<TrainerSolution | null>(`data/practice/${task.taskId}.json`, null) : null);

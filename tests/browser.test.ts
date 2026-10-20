@@ -5,7 +5,7 @@ import { readLessons, observedSolved, saveObservedSolved } from '../src/catalog.
 import { exactButton, questionFrom, quizOutcome } from '../src/quiz.js';
 import { DEFAULTS } from '../src/config.js';
 import { scrollLesson } from '../src/scroll.js';
-import { trainerOutcome, selectEditorFile, solveTrainer, readTrainer, advanceTrainer, contentHash, canReplaceTrainerFile, isTrainerDemonstration, captureTrainerHint, trainerSolutionHash } from '../src/trainer.js';
+import { trainerOutcome, selectEditorFile, solveTrainer, readTrainer, advanceTrainer, contentHash, canReplaceTrainerFile, isTrainerDemonstration, isOptionalTrainerTask, captureTrainerHint, trainerSolutionHash } from '../src/trainer.js';
 import { readTextQuestion, solveTextQuestion, captureTextAnswer } from '../src/text-quiz.js';
 import { solveFeedback } from '../src/feedback.js';
 import { solveQuiz } from '../src/quiz.js';
@@ -65,6 +65,41 @@ test('Пустой следующий шаг передаётся обработ
     await page.goto('https://practicum.yandex.ru/trainer/test/lesson/same/task/first/');
     assert.equal(await advanceTrainer(page, 'Первое', 'same', 100), 'advanced');
     assert.ok(page.url().includes('/task/second/'));
+  } finally { process.chdir(original); await page.close(); await rm(dir, { recursive: true, force: true }); }
+});
+test('Явно необязательная правка допускает отказ без проверки, но не заменяет ожидающую отправку или изменённое задание', async () => {
+  const page = await browser.newPage(); const original = process.cwd(); const dir = await mkdtemp(path.join(tmpdir(), 'practicum-optional-'));
+  const url = 'https://practicum.yandex.ru/trainer/test/lesson/aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa/task/bbbbbbbb-bbbb-bbbb-bbbb-bbbbbbbbbbbb/';
+  try {
+    process.chdir(dir);
+    await page.route('https://practicum.yandex.ru/**', route => route.fulfill({ contentType: 'text/html; charset=utf-8', body: `<textarea aria-label="Содержимое редактора"></textarea><div class="task-description__markdown">Замените имя в footer. Если хотите, конечно.</div>
+      <button data-test-id="check-task-button" onclick="throw new Error('Optional edit must not be submitted')">Проверить</button>
+      <button data-test-id="next-task-button" onclick="location.href='/learn/test/lessons/cccccccc-cccc-cccc-cccc-cccccccccccc/'">Следующий урок</button>
+      <script>window.monaco={editor:{getModels:()=>[{uri:{path:'/index.html'},getLanguageId:()=> 'html',getValue:()=> '<footer>Автор примера</footer>'}]}};</script>` }));
+    await page.goto(url);
+    const task = await readTrainer(page);
+    const record = { taskId: task.taskId, lessonId: 'aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa', instructionsHash: contentHash(normalize(task.instructions)), contextHash: task.contextHash, files: task.files.map(({ path, hash }) => ({ path, hash })), optionalInstruction: 'Если хотите, конечно.', reason: 'Условие явно разрешает оставить пример без изменения.', reviewedAt: new Date().toISOString() };
+    assert.equal(await isOptionalTrainerTask(task), false);
+    await atomicJson(`data/trainer-optional/${task.taskId}.json`, record);
+    assert.equal(await isOptionalTrainerTask(task), true);
+    assert.equal(await isTrainerDemonstration(task), false);
+    assert.equal(await isOptionalTrainerTask({ ...task, instructions: 'Обязательно замените имя в footer.' }), false);
+    assert.equal(await isOptionalTrainerTask({ ...task, contextHash: 'changed' }), false);
+    assert.equal(await isOptionalTrainerTask({ ...task, files: task.files.map(file => ({ ...file, hash: 'changed' })) }), false);
+    const requestFile = `.local/trainers/${task.taskId}.json`;
+    await atomicJson(requestFile, { phase: 'requested', solutionHash: 'unchanged' });
+    assert.equal(await solveTrainer(page), 'pending');
+    assert.equal(page.url(), url);
+    assert.deepEqual(await readJson(requestFile, null), { phase: 'requested', solutionHash: 'unchanged' });
+    await rm(requestFile);
+    const next = page.locator('[data-test-id="next-task-button"]');
+    await next.evaluate(el => { (el as HTMLButtonElement).disabled = true; });
+    await assert.rejects(() => solveTrainer(page), /Необязательный шаг не разрешает переход/);
+    await next.evaluate(el => { (el as HTMLButtonElement).disabled = false; });
+    assert.equal(await solveTrainer(page), 'finished');
+    assert.notEqual(page.url(), url);
+    assert.equal(await readJson(requestFile, null), null);
+    assert.equal(await readJson(`data/trainers/${task.taskId}.json`, null), null);
   } finally { process.chdir(original); await page.close(); await rm(dir, { recursive: true, force: true }); }
 });
 test('После последнего задания проходчик возвращается к теории без ожидания редактора следующего урока', { timeout: 10000 }, async () => {

@@ -56,6 +56,7 @@ export async function status(): Promise<void> {
     verifiedTextQuestions: await countFiles('data/text-questions'),
     verifiedInlineExercises: await countFiles('data/inline'), auditedInlineLessons: await countFiles('.local/inline-audits'),
     verifiedTrainerTasks: await countFiles('data/trainers'), verifiedMatchingTasks: await countFiles('data/matching'),
+    optionalTrainerTasks: await countFiles('data/trainer-optional'),
     pendingTrainerChecks: await countPendingChecks('.local/trainers'), pendingInlineChecks: await countPendingChecks('.local/inline'),
     selfCheckedPracticeTasks: await countFiles('data/practice'),
     referenceProjects: projects.length, acceptedProjects, preparedManualProjects, selfCheckedProjects,
