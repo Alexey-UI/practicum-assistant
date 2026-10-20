@@ -5,12 +5,13 @@ import path from 'node:path';
 export const START_URL = 'https://practicum.yandex.ru/profile/ap-frontend-st/';
 export const LOCAL = path.resolve('.local');
 
-export async function openBrowser(headless = true): Promise<BrowserContext> {
+export async function openBrowser(headless = true, options: { signalsManagedByCaller?: boolean } = {}): Promise<BrowserContext> {
   await mkdir(LOCAL, { recursive: true, mode: 0o700 });
   await chmod(LOCAL, 0o700);
   const context = await chromium.launchPersistentContext(path.join(LOCAL, 'browser'), {
     channel: 'chrome', headless, viewport: { width: 1440, height: 1000 },
     acceptDownloads: false,
+    ...(options.signalsManagedByCaller ? { handleSIGINT: false, handleSIGTERM: false } : {}),
   });
   context.setDefaultTimeout(30000);
   context.setDefaultNavigationTimeout(120000);

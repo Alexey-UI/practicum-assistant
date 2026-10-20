@@ -7,11 +7,13 @@ export async function explore(): Promise<void> {
   const unlock = await lockRun();
   let stopping = false;
   let context: Awaited<ReturnType<typeof openBrowser>> | undefined;
-  const stop = () => { stopping = true; void context?.close().catch(() => {}); };
+  let terminal: ReturnType<typeof createInterface> | undefined;
+  const stop = () => { stopping = true; terminal?.close(); void context?.close().catch(() => {}); };
   process.once('SIGINT', stop);
   process.once('SIGTERM', stop);
   try {
-  context = await openBrowser(!process.argv.includes('--headed'));
+  context = await openBrowser(!process.argv.includes('--headed'), { signalsManagedByCaller: true });
+  if (stopping) return;
   const page = context.pages()[0] ?? await context.newPage();
   const network: Array<{ url: string; status?: number; failure?: string }> = [];
   page.on('response', response => {
@@ -22,7 +24,7 @@ export async function explore(): Promise<void> {
     network.push({ url: safeUrl(request.url()), failure: request.failure()?.errorText });
     if (network.length > 100) network.shift();
   });
-  const terminal = createInterface({ input: process.stdin });
+  terminal = createInterface({ input: process.stdin });
   try {
     const flag = process.argv.indexOf('--url');
     await navigate(page, flag >= 0 ? process.argv[flag + 1] : START_URL);

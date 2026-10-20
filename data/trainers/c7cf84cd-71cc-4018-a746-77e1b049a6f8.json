@@ -1,0 +1,18 @@
+{
+  "taskId": "c7cf84cd-71cc-4018-a746-77e1b049a6f8",
+  "lessonId": "2bf8d828-49b5-480c-8a3d-7369ae813759",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "files": [
+    {
+      "name": "style.css",
+      "initialHash": "fd98b33f8f2fdd4e43937482f000711f4dc11b6d1b57ac7b215a3d3ce6c1b74c",
+      "content": "html {\n  height: 100%;\n}\n\nbody {\n  display: grid;\n  place-items: center;\n  min-width: 360px;\n  height: inherit;\n  margin: 0;\n  font-family: 'Open Sans', sans-serif;\n  font-size: 18px;\n  background-image: url(https://code.s3.yandex.net/web-code/images/dotted.svg);\n}\n\nh1,\np,\nul,\nli {\n  margin: 0;\n  padding: 0;\n}\n\n.container {\n  border: 1px solid #000;\n  padding: 40px;\n  background-color: #fff;\n}\n\n.container__title {\n  margin-bottom: 40px;\n  font-weight: 800;\n  font-size: 45px;\n  text-transform: uppercase;\n}\n\n.container__list {\n  display: grid;\n  gap: 10px;\n  padding-left: 48px;\n\n  list-style: georgian;\n}\n\n.container__list-item::marker {\n  color: #80d994;\n  font-size: 30px;\n}\n\n.container__link {\n  display: block;\n  color: #000;\n  text-decoration: none;\n}\n\n.container__link:hover {\n  text-decoration-color: #80d994;\n  text-decoration-line: underline;\n  text-decoration-style: wavy;\n  text-decoration-thickness: 2px;\n  text-decoration-skip-ink: none;\n}"
+    }
+  ],
+  "instructionsHash": "15ac89c0e0695bceb9ed5bf2ce098de3b2c93c61cb3587306b695280735ca352",
+  "verifiedAt": "2026-10-20T07:47:13.824Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Для простых задач псевдоэлемент подходит отлично. Но даже это в Safari будет выглядеть  иначе, чем в Chrome, из-за разного расстояния от буллита до текста, которое рисует браузер."
+  }
+}

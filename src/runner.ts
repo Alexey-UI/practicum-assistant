@@ -119,7 +119,8 @@ export async function run(): Promise<void> {
   process.once('SIGINT', stop);
   process.once('SIGTERM', stop);
   try {
-    context = await openBrowser(!process.argv.includes('--headed'));
+    context = await openBrowser(!process.argv.includes('--headed'), { signalsManagedByCaller: true });
+    if (stopping) return;
     const page = context.pages()[0] ?? await context.newPage();
     activePage = page;
     const args = process.argv.slice(3);

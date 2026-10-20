@@ -1,0 +1,18 @@
+{
+  "taskId": "06fcadb9-04cf-4da7-98eb-962c38356e49",
+  "lessonId": "9ab667a4-eedb-458f-89da-4436f4a6f977",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "files": [
+    {
+      "name": "style.css",
+      "initialHash": "157c9ee162d745fdc7696b51ca61fb0a43673aeab3986e6b40e09f8fd08b96c0",
+      "content": "html {\n  height: 100%;\n}\n\nbody {\n  display: grid;\n  place-items: center;\n  min-width: 360px;\n  height: inherit;\n  margin: 0;\n  padding: 40px;\n  font-family: 'Open Sans', sans-serif;\n  font-size: 18px;\n  background-image: url(https://code.s3.yandex.net/web-code/images/dotted.svg);\n}\n\nh1,\nh2,\np,\nul,\nli {\n  margin: 0;\n  padding: 0;\n}\n\n.card {\n  background-color: #fff;\n\n  position: relative;\n}\n\n.card__image {\n  width: 100%;\n}\n\n.card__text {\n  padding: 40px;\n  font-weight: normal;\n  font-size: 31px;\n}\n\n.card__image-container {\n  position: relative;\n}\n\n.card__image-container::after {\n  content: 'Мудрые и непонятные слова';\n  position: absolute;\n  top: 20px;\n  left: 20px;\n  background-color: #000;\n  color: #fff;\n  padding: 10px;\n}"
+    }
+  ],
+  "instructionsHash": "7bd064fb2801a5bf74764de133d858df728e727d0dbe92e2ca984b6f9505d855",
+  "verifiedAt": "2026-10-20T07:40:27.689Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Отлично, теперь можно и отдохнуть."
+  }
+}

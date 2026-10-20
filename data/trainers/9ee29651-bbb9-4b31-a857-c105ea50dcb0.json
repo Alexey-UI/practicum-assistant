@@ -1,0 +1,18 @@
+{
+  "taskId": "9ee29651-bbb9-4b31-a857-c105ea50dcb0",
+  "lessonId": "9ab667a4-eedb-458f-89da-4436f4a6f977",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "files": [
+    {
+      "name": "style.css",
+      "initialHash": "7deda5bfee94a59e27412751f3c8967b5fd1e02c6957224531d1b89d2d023121",
+      "content": "html {\n  height: 100%;\n}\n\nbody {\n  display: grid;\n  place-items: center;\n  min-width: 360px;\n  height: inherit;\n  margin: 0;\n  padding: 40px;\n  font-family: 'Open Sans', sans-serif;\n  font-size: 18px;\n  background-image: url(https://code.s3.yandex.net/web-code/images/dotted.svg);\n}\n\nh1,\nh2,\np,\nul,\nli {\n  margin: 0;\n  padding: 0;\n}\n\n.card {\n  background-color: #fff;\n}\n\n.card__image {\n  width: 100%;\n}\n\n.card__text {\n  padding: 40px;\n  font-weight: normal;\n  font-size: 31px;\n}\n.card__image::before {\n  content: 'До изображения';\n  color: #5f0dee;\n}\n\n.card__image::after {\n  content: 'После изображения';\n  color: #fd24af;\n}\n"
+    }
+  ],
+  "instructionsHash": "3e4a11ae9731836b5df241f22a249dfddefd9d8ab64a9863fce1fb85506b3908",
+  "verifiedAt": "2026-10-20T07:38:56.911Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "А как же тогда?"
+  }
+}

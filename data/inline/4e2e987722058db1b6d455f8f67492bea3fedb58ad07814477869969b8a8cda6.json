@@ -1,0 +1,18 @@
+{
+  "id": "4e2e987722058db1b6d455f8f67492bea3fedb58ad07814477869969b8a8cda6",
+  "lessonId": "2bf8d828-49b5-480c-8a3d-7369ae813759",
+  "url": "https://sandbox.practicum-team.ru/tasks/02-interactivity-and-accessibility/04-pseudo/08-marker/example-03/pre/",
+  "instructionsHash": "0409680ef896d464cdad31d85e78f2d7a2c3e8acdf3264a94af0bed7d2cfb39a",
+  "files": [
+    {
+      "name": "styles/style.css",
+      "initialHash": "6955b36c8761e7915dc21e840dfc0e9e77be1aa7f75c4909c3a8ba57d62c426d",
+      "content": "body {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  min-width: 850px;\n  min-height: 100vh;\n  margin: 0;\n  font-family: 'Open Sans', sans-serif;\n  font-size: 1.2em;\n  background-image: url(https://code.s3.yandex.net/web-code/images/dotted-l.svg);\n}\n\ndiv {\n  border: 1px solid #000;\n  padding: 50px;\n  background-color: #fff;\n}\n\nh1 {\n  margin-top: 0;\n}\n\nol {\n  margin: 0;\n  padding: 0;\n  list-style-position: inside;\n  list-style-type: decimal-leading-zero;\n}\n\n/* Тут будут стили для маркера */\n\nli::marker {\n  color: #23054a;\n  font-weight: bold;\n  font-size: 2rem;\n}\n\nli:not(:last-child) {\n  margin-bottom: 10px;\n}\n"
+    }
+  ],
+  "verifiedAt": "2026-10-20T07:45:53.438Z",
+  "evidence": {
+    "selector": ".result .icon-status-success",
+    "message": "Всё отлично!"
+  }
+}
