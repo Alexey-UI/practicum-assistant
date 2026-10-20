@@ -1,0 +1,18 @@
+{
+  "id": "f05e5c40fe5b5c0e01e53380d1d4f4925d47f4708bce0a3b560fb7f50e7b7d7c",
+  "lessonId": "e0450e03-c1f0-44fe-80f8-0a27293d8e81",
+  "url": "https://sandbox.practicum-team.ru/tasks/000-freetrack/04-more-css/05-typography-under-control/example-01/pre/",
+  "instructionsHash": "2a8f7d543a5f4f4b610b72bea1c312ddbd3f94b07ac9cf61beb5b0b45a186018",
+  "files": [
+    {
+      "name": "styles/style.css",
+      "initialHash": "04f7dc95d443339adfdbd54b23f2d157ab28c1dff592eac8187875fa148089d0",
+      "content": "/* Расширьте этот селектор */\n\nbody,\nh1 {\n  margin: 0;\n}\n\nbody {\n  min-width: 850px;\n  font-family: 'Open Sans', Arial, sans-serif;\n}\n\nheader {\n  height: 100vh;\n  text-align: center;\n  background-color: #eee;\n  background-image: url(https://code.s3.yandex.net/web-code/images/freetrack/03/cover.png);\n  background-position: center;\n  background-size: cover;\n}\n\nh1 {\n  padding-top: 270px;\n  color: white;\n  font-weight: 800;\n  font-size: 74px;\n  text-transform: uppercase;\n}\n\n.overlay {\n  width: 100%;\n  height: 100%;\n  background-color: rgb(95 13 238 / 0.5);\n}\n\n.card {\n  width: 360px;\n  background-color: #e3f3ff;\n}\n\nbody, h1, h2, h3, h4, p {\n  margin: 0;\n}\n"
+    }
+  ],
+  "verifiedAt": "2026-10-20T14:40:19.001Z",
+  "evidence": {
+    "selector": ".result .icon-status-success",
+    "message": "Всё отлично!"
+  }
+}

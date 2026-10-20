@@ -1,0 +1,20 @@
+{
+  "id": "d131a3db2b7ffd1a60e4422405569115218901e22013df029d6d59fd0d7b0f85",
+  "lessonId": "2b807e1f-ce87-4b51-a96d-e5d811819ee6",
+  "url": "https://sandbox.practicum-team.ru/tasks/000-freetrack/02-what-are-html-css/02-html-tags/example-01/pre/",
+  "instructionsHash": "09bd88e03c0cbb9dfde242e7045445c0a37e0f221a49706081802b3a5234fdf1",
+  "files": [
+    {
+      "name": "index.html",
+      "initialHash": "d4fae24b0aa124f452f6cc5a90645beb733a1192562fb6a0f6f1b6a9ac5e2608",
+      "content": "<!DOCTYPE html>\n<html lang=\"ru\">\n  <head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>Исправляем тег заголовка первого уровня</title>\n  </head>\n  <body>\n    <!-- Выполняйте задание тут -->\n    <h1>The Life of</h1>\n  </body>\n</html>"
+    }
+  ],
+  "verifiedAt": "2026-10-20T14:46:40.739Z",
+  "evidence": {
+    "selector": ".result .icon-status-success",
+    "message": "В отдельной публичной песочнице наблюдался зелёный маркер .result .icon-status-success.",
+    "mode": "anonymous-public-sandbox",
+    "observedMessage": ""
+  }
+}

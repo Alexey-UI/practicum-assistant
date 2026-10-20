@@ -1,0 +1,18 @@
+{
+  "id": "cbc1a5145523cd95aa5737216b48ea9df3cc250f38eca3eae24ac4812c315527",
+  "lessonId": "534cb372-23f5-4f45-9d90-38186b361bf3",
+  "url": "https://sandbox.practicum-team.ru/tasks/000-freetrack/04-more-css/06-flow-block-model/example-01/pre/",
+  "instructionsHash": "a33a4d5fd439360ffd95ca85137196019fcd23f0aaef80053c88136f00dfdd06",
+  "files": [
+    {
+      "name": "index.html",
+      "initialHash": "b5f4d1ac5a8c63b1d16557bfe11ac9f4690589639d6ba6473c33789501e05ab1",
+      "content": "<!DOCTYPE html>\n<html lang=\"ru\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <title>4 правила вёрстки</title>\n    <link rel=\"stylesheet\" href=\"https://code.s3.yandex.net/web-code/fonts/fonts.css\" />\n    <link rel=\"stylesheet\" href=\"styles/style.css\" />\n  </head>\n  <body>\n    <!--<header>  \n      <div class=\"overlay\">\n        <h1>Четыре правила вёрстки</h1>\n      </div>      \n    </header>-->\n    <section>\n      <div class=\"card\">\n        <h3 class=\"card-title\">Пустота</h3>\n        <p class=\"card-text\">Простое правило, которое часто нарушают: ставить рядом элементы с похожим смыслом и окружать их пустым пространством. Пустота — мощное средство воздействия.</p>        \n      </div>\n      <div class=\"card\">\n        <h3 class=\"card-title\">Сетка</h3>\n        <p class=\"card-text\">Размеры элементов и расстояния между ними укладываются в гармоничную схему — её называют сеткой. Если элемент выпадает, зритель может это заметить.</p>        \n      </div>\n      <!-- Не забудьте поменять текст! -->      \n    </section>\n  </body>\n</html>\n"
+    }
+  ],
+  "verifiedAt": "2026-10-20T14:44:37.979Z",
+  "evidence": {
+    "selector": ".result .icon-status-success",
+    "message": "Всё отлично!"
+  }
+}

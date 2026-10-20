@@ -1,0 +1,18 @@
+{
+  "id": "6fe360cd44b43a4fc106c87ede31700d9c7d7c507b696487cc491cd785c36d92",
+  "lessonId": "79d09663-3996-4045-83fa-ab7268e29cbd",
+  "url": "https://sandbox.practicum-team.ru/tasks/000-freetrack/04-more-css/02-new-section/example-03/pre/",
+  "instructionsHash": "68417ca74948ae9fefe22b7689d412e183a69cde07cac17207cd0e8d70d2f726",
+  "files": [
+    {
+      "name": "index.html",
+      "initialHash": "0bd93782863c3e7b64f56aa88ddf88e6b4b8a3452cce0db8798b3977fcc7e331",
+      "content": "<!DOCTYPE html>\n<html lang=\"ru\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <title>4 правила вёрстки</title>\n    <link rel=\"stylesheet\" href=\"https://code.s3.yandex.net/web-code/fonts/fonts.css\" />\n    <link rel=\"stylesheet\" href=\"styles/style.css\" />\n  </head>\n  <body>\n    <header>  \n      <div>\n        <h1>Четыре правила вёрстки</h1>\n      </div>      \n    </header>\n    <section>\n      <div>\n        <h3>Пустота</h3>\n        <p>Простое правило, которое часто нарушают: ставить рядом элементы с похожим смыслом и окружать их пустым пространством. Пустота — мощное средство воздействия.</p>\n      </div>\n    </section>\n  </body>\n</html>\n"
+    }
+  ],
+  "verifiedAt": "2026-10-20T14:37:00.998Z",
+  "evidence": {
+    "selector": ".result .icon-status-success",
+    "message": "Всё отлично!"
+  }
+}

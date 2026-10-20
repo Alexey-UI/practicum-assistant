@@ -1,0 +1,18 @@
+{
+  "id": "83d06576fc1d8ec8f76311e62344960e0e3f697f203bffc48b3ccf939ed9cbc3",
+  "lessonId": "b40c2d7f-0b34-4d1b-af84-552f1d49e91f",
+  "url": "https://sandbox.practicum-team.ru/tasks/000-freetrack/04-more-css/07-margins-paddings/example-01/pre/",
+  "instructionsHash": "1e265adeb721935bbdd3db8f73cf479cb94b8e962808fd2b8f7290343d271d71",
+  "files": [
+    {
+      "name": "styles/style.css",
+      "initialHash": "1e458cd740cbd4abb8b6bfa84d3e0ff2dedacb08adcbd84dfec90ea533cdafc9",
+      "content": "body,\nh1,\nh2,\nh3,\nh4,\np {\n  margin: 0;\n  font-weight: normal;\n  font-size: 100%;\n}\n\nbody {\n  min-width: 850px;\n  font-family: 'Open Sans', Arial, sans-serif;\n}\n\nheader {\n  height: 100vh;\n  text-align: center;\n  background-color: #eee;\n  background-image: url(https://code.s3.yandex.net/web-code/images/freetrack/03/cover.png);\n  background-position: center;\n  background-size: cover;\n}\n\nh1 {\n  padding-top: 270px;\n  color: white;\n  font-weight: 800;\n  font-size: 74px;\n  text-transform: uppercase;\n}\n\n.overlay {\n  width: 100%;\n  height: 100%;\n  background-color: rgb(95 13 238 / 0.5);\n}\n\n.card {\n  width: 360px;\n  margin-bottom: 50px;\n  background-color: #e3f3ff;\n}\n\n.card-title {\n  font-weight: 800;\n  font-size: 31px;\n  text-align: center;\n  text-transform: uppercase;\n  margin-bottom: 10px;\n}\n\n.card-text {\n  font-size: 18px;\n}\n\n.card-image {\n  width: 100%;\n  margin-bottom: 20px;\n}\n"
+    }
+  ],
+  "verifiedAt": "2026-10-20T14:46:51.050Z",
+  "evidence": {
+    "selector": ".result .icon-status-success",
+    "message": "Всё отлично!"
+  }
+}

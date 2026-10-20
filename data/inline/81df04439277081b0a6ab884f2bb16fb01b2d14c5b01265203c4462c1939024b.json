@@ -1,0 +1,18 @@
+{
+  "id": "81df04439277081b0a6ab884f2bb16fb01b2d14c5b01265203c4462c1939024b",
+  "lessonId": "e0450e03-c1f0-44fe-80f8-0a27293d8e81",
+  "url": "https://sandbox.practicum-team.ru/tasks/000-freetrack/04-more-css/05-typography-under-control/example-04/pre/",
+  "instructionsHash": "6880f4bfa21a4ba4347522d947d765b09411ffc0b0108408fe712d654ab21f0e",
+  "files": [
+    {
+      "name": "styles/style.css",
+      "initialHash": "be2d415fb1ddfb41229ab9f5d71d1d3d0b23245578f7965a7d4d3b575a704943",
+      "content": "body,\nh1,\nh2,\nh3,\nh4,\np {\n  margin: 0;\n  font-weight: normal;\n  font-size: 100%;\n}\n\nbody {\n  min-width: 850px;\n  font-family: 'Open Sans', Arial, sans-serif;\n}\n\nheader {\n  height: 100vh;\n  text-align: center;\n  background-color: #eee;\n  background-image: url(https://code.s3.yandex.net/web-code/images/freetrack/03/cover.png);\n  background-position: center;\n  background-size: cover;\n}\n\nh1 {\n  padding-top: 270px;\n  color: white;\n  font-weight: 800;\n  font-size: 74px;\n  text-transform: uppercase;\n}\n\n.overlay {\n  width: 100%;\n  height: 100%;\n  background-color: rgb(95 13 238 / 0.5);\n}\n\n.card {\n  width: 360px;\n  background-color: #e3f3ff;\n}\n\n/* Тут будут новые СSS-правила */\n\n.card-title {\n  font-weight: 800;\n  font-size: 31px;\n  text-align: center;\n  text-transform: uppercase;\n}\n\n.card-text {\n  font-size: 18px;\n}\n"
+    }
+  ],
+  "verifiedAt": "2026-10-20T14:42:09.179Z",
+  "evidence": {
+    "selector": ".result .icon-status-success",
+    "message": "Всё отлично!"
+  }
+}

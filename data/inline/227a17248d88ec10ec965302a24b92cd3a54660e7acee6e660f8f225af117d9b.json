@@ -1,0 +1,18 @@
+{
+  "id": "227a17248d88ec10ec965302a24b92cd3a54660e7acee6e660f8f225af117d9b",
+  "lessonId": "e0450e03-c1f0-44fe-80f8-0a27293d8e81",
+  "url": "https://sandbox.practicum-team.ru/tasks/000-freetrack/04-more-css/05-typography-under-control/example-03/pre/",
+  "instructionsHash": "eb959d416bea031d8615b4ca3c6fe5588a7788738830fc23edc8677bf6391707",
+  "files": [
+    {
+      "name": "index.html",
+      "initialHash": "b282e8cb43e7a1a61de81eb0e260acd7524a66ea8bc4655aad1f7994067fb35e",
+      "content": "<!DOCTYPE html>\n<html lang=\"ru\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <title>4 правила вёрстки</title>\n    <link rel=\"stylesheet\" href=\"https://code.s3.yandex.net/web-code/fonts/fonts.css\" />\n    <link rel=\"stylesheet\" href=\"styles/style.css\" />\n  </head>\n  <body>\n    <!--<header>  \n      <div class=\"overlay\">\n        <h1>Четыре правила вёрстки</h1>\n      </div>      \n    </header>-->\n    <section>\n      <div class=\"card\">\n        <!-- Заголовку и тексту задайте классы -->\n        <h3 class=\"card-title\">Пустота</h3>\n        <p class=\"card-text\">Простое правило, которое часто нарушают: ставить рядом элементы с похожим смыслом и окружать их пустым пространством. Пустота — мощное средство воздействия.</p>        \n      </div>\n    </section>\n  </body>\n</html>\n"
+    }
+  ],
+  "verifiedAt": "2026-10-20T14:42:05.187Z",
+  "evidence": {
+    "selector": ".result .icon-status-success",
+    "message": "Всё отлично!"
+  }
+}

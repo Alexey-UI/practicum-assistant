@@ -2,18 +2,67 @@
 
 TypeScript + Playwright для автоматизации интерфейса курса
 <https://practicum.yandex.ru/profile/ap-frontend-st/>. Требуются Node.js 22.18+,
-Google Chrome и GitHub CLI (`gh`).
+Google Chrome и GitHub CLI (`gh`). Для нового компьютера используйте Node.js 24.
+
+Установите [Node.js с npm](https://nodejs.org/en/download),
+[Git](https://git-scm.com/downloads/), [Chrome](https://www.google.com/chrome/)
+и [GitHub CLI](https://cli.github.com/), затем откройте новый терминал.
+Нужны собственные аккаунты GitHub и Практикума с доступом к указанному курсу.
+
+| Система | Терминал и особенности |
+| --- | --- |
+| Windows 11 | Командная строка (`cmd.exe`) или PowerShell. Если PowerShell запрещает `npm.ps1`, используйте `npm.cmd` вместо `npm` в командах ниже. |
+| macOS 14+ | Приложение «Терминал»; Chrome поддерживает Intel и Apple Silicon. |
+| Linux | Ubuntu 22.04/24.04 или Debian 12/13, x86-64, с установленным Chrome и рабочим столом для первого входа. |
+
+Требования к ОС приведены в [документации Playwright](https://playwright.dev/docs/intro#system-requirements).
+На Linux без графической сессии ручной вход через `login` недоступен.
+
+Выполняйте команды по одной строке. Первые четыре проверяют установленные инструменты:
 
 ```sh
+node --version
+npm --version
+git --version
+gh --version
 git clone https://github.com/Alexey-UI/practicum-assistant.git
 cd practicum-assistant
 npm ci
-gh auth login
+gh auth login --hostname github.com --git-protocol https --web
+gh auth setup-git --hostname github.com
 npm run setup
 npm run login
 npm start
 npm run status
 ```
+
+При входе в GitHub выберите свой аккаунт. Команда
+[`gh auth setup-git`](https://cli.github.com/manual/gh_auth_setup-git) настраивает Git
+на использование авторизации GitHub CLI для последующего push по HTTPS.
+При `npm run login` войдите в Практикум в открывшемся отдельном Chrome, дождитесь
+программы курса и нажмите Enter в терминале. Пароль и коды вводятся только в браузере.
+После этого `npm start` работает в фоне. Входить вручную при каждом запуске не требуется.
+
+Для остановки нажмите Ctrl+C и дождитесь сообщения о сохранении состояния.
+Для продолжения выполните `npm start` из той же папки. Не запускайте второй
+экземпляр и не удаляйте `.local/run.lock`, пока первый процесс работает.
+На медленной сети загрузка может занимать несколько минут.
+Незнакомое задание или неизвестный результат проверки приводят к остановке для
+разбора. Не очищайте историю проверок, чтобы принудительно повторить отправку.
+
+`npm run status` показывает прогресс основной программы (`solved / lessons`),
+принятые проекты (`acceptedProjects`), отложенные опросы (`deferredLessons`),
+недоступные уроки (`unavailableLessons`), закрытые уроки (`locked`) и проверки
+с неизвестным результатом (`pendingTrainerChecks`, `pendingInlineChecks`).
+Сообщение о завершении обхода не означает, что все эти счётчики стали нулевыми.
+При остановке сохраните текст ошибки и ссылку на текущий урок. Не передавайте
+другим людям `.local/`, профиль Chrome, cookies, токены или полный архив снимков аккаунта.
+
+Автоматически проходят доступные уроки с известными решениями и четыре проекта
+с проверкой Практикума. Учительские сдачи остаются черновиками; Mesto с сервером
+требует личных параметров подключения. Свободные отзывы не заполняются,
+недоступные и закрытые задания не получают искусственных отметок.
+Полная проверка всех упражнений ранее прочитанных уроков пока продолжается.
 
 `setup` проверяет Chrome, Git и аккаунт GitHub CLI, получает библиотеку эталонов
 и записывает текущий GitHub-логин в локальный `practicum.config.json`.

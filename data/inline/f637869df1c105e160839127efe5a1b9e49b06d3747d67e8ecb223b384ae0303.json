@@ -1,0 +1,18 @@
+{
+  "id": "f637869df1c105e160839127efe5a1b9e49b06d3747d67e8ecb223b384ae0303",
+  "lessonId": "83a944ce-8d62-4db4-8d28-ccace256d914",
+  "url": "https://sandbox.practicum-team.ru/tasks/000-freetrack/03-basic-css/09-inheritance/example-02/pre/",
+  "instructionsHash": "2ba0d47d6c7d493dea9faa5282ec8ccb1948389e018ab7c8d94ebeef1d516e5c",
+  "files": [
+    {
+      "name": "styles/style.css",
+      "initialHash": "ab33d13d7cbdcf2549568ac13e7ea53372e1062fedb8725fe202646a572cead3",
+      "content": "body,\nh1 {\n  margin: 0;\n}\n\n/* Редактируйте это CSS-правило */\n\nbody {\n  min-width: 850px;\n  font-family: 'Open Sans', 'Arial', sans-serif;\n}\n\nheader {\n  height: 100vh;\n  text-align: center;\n  background-color: #eee;\n  background-image: url(https://code.s3.yandex.net/web-code/images/freetrack/03/cover.png);\n  background-position: center;\n  background-size: cover;\n}\n\nh1 {\n  color: white;\n  font-size: 74px;\n}\n\ndiv {\n  width: 100%;\n  height: 100%;\n  background-color: rgb(95 13 238 / 0.5);\n}\n"
+    }
+  ],
+  "verifiedAt": "2026-10-20T14:32:25.392Z",
+  "evidence": {
+    "selector": ".result .icon-status-success",
+    "message": "Всё отлично!"
+  }
+}

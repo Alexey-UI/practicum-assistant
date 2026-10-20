@@ -1,0 +1,18 @@
+{
+  "id": "a9b1abefe2415773fef27bdd9ba6dc5a405c26a02b52f1a59a26f38892d52a39",
+  "lessonId": "bae67330-d884-4ea0-9023-ee30271055c1",
+  "url": "https://sandbox.practicum-team.ru/tasks/000-freetrack/03-basic-css/10-typography/example-02/pre/",
+  "instructionsHash": "e920ae134f27646a4eb8185630498ac62e7cef2edd3c5dc9154a071a1755f1e2",
+  "files": [
+    {
+      "name": "styles/style.css",
+      "initialHash": "c8972e5970019f2df209bb1c0444e86335c49f01dfc0fb2e7f8adadefe93fd5b",
+      "content": "body {\n  min-width: 850px;\n}\n\nbody,\nh1 {\n  margin: 0;\n}\n\nbody {\n  font-family: 'Open Sans', Arial, sans-serif;\n}\n\nheader {\n  height: 100vh;\n  text-align: center;\n  background-color: #eee;\n  background-image: url(https://code.s3.yandex.net/web-code/images/freetrack/03/cover.png);\n  background-position: center;\n  background-size: cover;\n}\n\nh1 {\n  color: white;\n  font-size: 74px;\n  text-transform: uppercase;\n\n  /* Измените толщину шрифта */\n  font-weight: 800;\n}\n\ndiv {\n  width: 100%;\n  height: 100%;\n  background-color: rgb(95 13 238 / 0.5);\n}\n"
+    }
+  ],
+  "verifiedAt": "2026-10-20T14:32:39.554Z",
+  "evidence": {
+    "selector": ".result .icon-status-success",
+    "message": "Всё отлично!"
+  }
+}

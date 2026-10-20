@@ -1,0 +1,18 @@
+{
+  "id": "f22ee99a3222567133f77afa6e02090f6125d76497720cd370503220c904c9b4",
+  "lessonId": "a7981b9d-1b2f-4f34-a73c-4d8317ca2891",
+  "url": "https://sandbox.practicum-team.ru/tasks/000-freetrack/04-more-css/12-margin-auto/example-03/pre/",
+  "instructionsHash": "811136bef0d313cc35479e1bcb0e0c6f7f18f5fdf28ea5781a3dccc5571933e2",
+  "files": [
+    {
+      "name": "styles/style.css",
+      "initialHash": "39fe35a079e1bca8b9d0e296e6c857d193ef27861d1b680e38d3a68d4e2eb2e3",
+      "content": "* {\n  box-sizing: border-box;\n}\n\nbody,\nh1,\nh2,\nh3,\nh4,\np {\n  margin: 0;\n  font-weight: normal;\n  font-size: 100%;\n}\n\nbody {\n  min-width: 850px;\n  font-family: 'Open Sans', Arial, sans-serif;\n}\n\nheader {\n  height: 100vh;\n  text-align: center;\n  background-color: #eee;\n  background-image: url(https://code.s3.yandex.net/web-code/images/freetrack/03/cover.png);\n  background-position: center;\n  background-size: cover;\n}\n\nh1 {\n  padding-top: 270px;\n  color: white;\n  font-weight: 800;\n  font-size: 74px;\n  text-transform: uppercase;\n}\n\n.overlay {\n  width: 100%;\n  height: 100%;\n  background-color: rgb(95 13 238 / 0.5);\n}\n\n.content {\n  width: 770px;\n  font-size: 0;\n  background-color: #8aafcf;\n  margin: 0 auto;\n}\n\n.card {\n  display: inline-block;\n  width: 360px;\n  margin-bottom: 50px;\n  border: 1px solid rgb(250 50 50 / 0.4);\n  padding: 25px 25px 30px;\n  background-color: #e3f3ff;\n}\n\n.card-title {\n  margin-bottom: 10px;\n  font-weight: 800;\n  font-size: 31px;\n  text-align: center;\n  text-transform: uppercase;\n}\n\n.card-text {\n  font-size: 18px;\n}\n\n.card-image {\n  width: 100%;\n  margin-bottom: 20px;\n  border: 1px solid rgb(250 50 50 / 0.4);\n}\n"
+    }
+  ],
+  "verifiedAt": "2026-10-20T14:50:19.005Z",
+  "evidence": {
+    "selector": ".result .icon-status-success",
+    "message": "Всё отлично!"
+  }
+}

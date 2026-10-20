@@ -1,0 +1,18 @@
+{
+  "id": "bc39d19b7f357b766a410ee0ef276b0f1072abf651364d1e1ee7278c34a83096",
+  "lessonId": "534cb372-23f5-4f45-9d90-38186b361bf3",
+  "url": "https://sandbox.practicum-team.ru/tasks/000-freetrack/04-more-css/06-flow-block-model/example-04/pre/",
+  "instructionsHash": "3926e7bb057ce896a5e99a670c0d2071fd5ac3578c0427e689243e976710d5f6",
+  "files": [
+    {
+      "name": "styles/style.css",
+      "initialHash": "672f88b52b0f1b22b3fe708b7da0689047b335a880a73adec153282f5e78a2c5",
+      "content": "body,\nh1,\nh2,\nh3,\nh4,\np {\n  margin: 0;\n  font-weight: normal;\n  font-size: 100%;\n}\n\nbody {\n  min-width: 850px;\n  font-family: 'Open Sans', Arial, sans-serif;\n}\n\nheader {\n  height: 100vh;\n  text-align: center;\n  background-color: #eee;\n  background-image: url(https://code.s3.yandex.net/web-code/images/freetrack/03/cover.png);\n  background-position: center;\n  background-size: cover;\n}\n\nh1 {\n  padding-top: 270px;\n  color: white;\n  font-weight: 800;\n  font-size: 74px;\n  text-transform: uppercase;\n}\n\n.overlay {\n  width: 100%;\n  height: 100%;\n  background-color: rgb(95 13 238 / 0.5);\n}\n\n.card {\n  width: 360px;\n  margin-bottom: 50px;\n  background-color: #e3f3ff;\n}\n\n.card-title {\n  font-weight: 800;\n  font-size: 31px;\n  text-align: center;\n  text-transform: uppercase;\n}\n\n.card-text {\n  font-size: 18px;\n}\n\n/* Тут будет новое CSS-правило */\n\n.card-image {\n  width: 100%;\n}\n"
+    }
+  ],
+  "verifiedAt": "2026-10-20T14:46:39.780Z",
+  "evidence": {
+    "selector": ".result .icon-status-success",
+    "message": "Всё отлично!"
+  }
+}

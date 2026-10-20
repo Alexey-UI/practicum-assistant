@@ -1,0 +1,18 @@
+{
+  "id": "05c840a67e034ba6e5946eb72f2f57c4490bdf4c538b39b3bf97ec9c14202243",
+  "lessonId": "d05a5f53-c3ac-439d-8c64-4fdae662a7f1",
+  "url": "https://sandbox.practicum-team.ru/tasks/000-freetrack/04-more-css/08-shortcut/example-01/pre/",
+  "instructionsHash": "e486fd6469e55a1e9bca87dc9f424429fdac8013fb126f7829ddd5f3f6798ed9",
+  "files": [
+    {
+      "name": "styles/style.css",
+      "initialHash": "f0b0edb4ffb1b7409a8495cdc722c553eaa739ed425604b94289979ee7c3467d",
+      "content": "body,\nh1,\nh2,\nh3,\nh4,\np {\n  margin: 0;\n  font-weight: normal;\n  font-size: 100%;\n}\n\nbody {\n  min-width: 850px;\n  font-family: 'Open Sans', Arial, sans-serif;\n}\n\nheader {\n  height: 100vh;\n  text-align: center;\n  background-color: #eee;\n  background-image: url(https://code.s3.yandex.net/web-code/images/freetrack/03/cover.png);\n  background-position: center;\n  background-size: cover;\n}\n\nh1 {\n  padding-top: 270px;\n  color: white;\n  font-weight: 800;\n  font-size: 74px;\n  text-transform: uppercase;\n}\n\n.overlay {\n  width: 100%;\n  height: 100%;\n  background-color: rgb(95 13 238 / 0.5);\n}\n\n.card {\n  width: 360px;\n  margin-bottom: 50px;\n  background-color: #e3f3ff;\n  padding: 25px 25px 30px;\n}\n\n.card-title {\n  margin-bottom: 10px;\n  font-weight: 800;\n  font-size: 31px;\n  text-align: center;\n  text-transform: uppercase;\n}\n\n.card-text {\n  font-size: 18px;\n}\n\n.card-image {\n  width: 100%;\n  margin-bottom: 20px;\n}\n"
+    }
+  ],
+  "verifiedAt": "2026-10-20T14:47:25.439Z",
+  "evidence": {
+    "selector": ".result .icon-status-success",
+    "message": "Всё отлично!"
+  }
+}

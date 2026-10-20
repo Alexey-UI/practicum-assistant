@@ -1,0 +1,18 @@
+{
+  "id": "66a502f719e4d288c1eb5ba64682d569378cedaa133170edba3c62dffa1df4f2",
+  "lessonId": "79d09663-3996-4045-83fa-ab7268e29cbd",
+  "url": "https://sandbox.practicum-team.ru/tasks/000-freetrack/04-more-css/02-new-section/example-02/pre/",
+  "instructionsHash": "c47f1d9712648522cdc95a3ed821bbaac329ca70f16a99c57bbe6b9c203fb20e",
+  "files": [
+    {
+      "name": "index.html",
+      "initialHash": "2a321efe2f7c61e89a1dba72d2a715c448db7b9e99ec814bddb12d6f03dedf4d",
+      "content": "<!DOCTYPE html>\n<html lang=\"ru\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <title>4 правила вёрстки</title>\n    <link rel=\"stylesheet\" href=\"https://code.s3.yandex.net/web-code/fonts/fonts.css\" />\n    <link rel=\"stylesheet\" href=\"styles/style.css\" />\n  </head>\n  <body>\n    <header>  \n      <div>\n        <h1>Четыре правила вёрстки</h1>\n      </div>      \n    </header>\n    <section>\n      <div></div>\n      <!-- Тут будет контейнер <div> -->\n    </section>\n  </body>\n</html>\n"
+    }
+  ],
+  "verifiedAt": "2026-10-20T14:36:18.980Z",
+  "evidence": {
+    "selector": ".result .icon-status-success",
+    "message": "Всё отлично!"
+  }
+}

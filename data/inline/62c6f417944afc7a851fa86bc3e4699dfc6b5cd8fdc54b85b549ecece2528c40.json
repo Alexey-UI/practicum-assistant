@@ -1,0 +1,18 @@
+{
+  "id": "62c6f417944afc7a851fa86bc3e4699dfc6b5cd8fdc54b85b549ecece2528c40",
+  "lessonId": "6aa1eab8-f253-4f3c-b6d5-54c39145ad5f",
+  "url": "https://sandbox.practicum-team.ru/tasks/000-freetrack/04-more-css/04-nice-and-useful/example-01/pre/",
+  "instructionsHash": "fce7e0ce1e0f32b0887c627e43e9573c4a25f5e5e1d526acfd952a2c360bc873",
+  "files": [
+    {
+      "name": "index.html",
+      "initialHash": "d7867b63519012413faf8567ae4cd50e76b19fe17875d2feab2497931c71fd23",
+      "content": "<!DOCTYPE html>\n<html lang=\"ru\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <title>4 правила вёрстки</title>\n    <link rel=\"stylesheet\" href=\"https://code.s3.yandex.net/web-code/fonts/fonts.css\" />\n    <link rel=\"stylesheet\" href=\"styles/style.css\" />\n  </head>\n  <body>\n    <!--\n    <header>  \n      <div class=\"overlay\">\n        <h1>Четыре правила вёрстки</h1>\n      </div>      \n    </header>\n    -->\n    <section>\n      <div class=\"card\">\n        <h3>Пустота</h3>\n        <p>Простое правило, которое часто нарушают: ставить рядом элементы с похожим смыслом и окружать их пустым пространством. Пустота — мощное средство воздействия.</p>        \n      </div>\n    </section>\n  </body>\n</html>\n"
+    }
+  ],
+  "verifiedAt": "2026-10-20T14:40:09.025Z",
+  "evidence": {
+    "selector": ".result .icon-status-success",
+    "message": "Всё отлично!"
+  }
+}

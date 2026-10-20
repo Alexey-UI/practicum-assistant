@@ -1,0 +1,18 @@
+{
+  "id": "b17b42feba08263d1d1e7d8c997d9656d4c9822a1efa921e2d5283d06e3e4727",
+  "lessonId": "534cb372-23f5-4f45-9d90-38186b361bf3",
+  "url": "https://sandbox.practicum-team.ru/tasks/000-freetrack/04-more-css/06-flow-block-model/example-03/pre/",
+  "instructionsHash": "17daa18db02aa459501ec40701714b618f23ef8ba21995b39abb24305b66b474",
+  "files": [
+    {
+      "name": "index.html",
+      "initialHash": "0a5d69fa83c103068255ac437dd1831064737d0153fe83d98410a61803be8553",
+      "content": "<!DOCTYPE html>\n<html lang=\"ru\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <title>4 правила вёрстки</title>\n    <link\n      rel=\"stylesheet\"\n      href=\"https://code.s3.yandex.net/web-code/fonts/fonts.css\"\n    />\n    <link rel=\"stylesheet\" href=\"styles/style.css\" />\n  </head>\n  <body>\n    <!--<header>  \n      <div class=\"overlay\">\n        <h1>Четыре правила вёрстки</h1>\n      </div>      \n    </header>-->\n    <section>\n      <div class=\"card\">\n        <!-- Исправьте разметку картинки -->\n        <img class=\"card-image\"\n        src=\"https://code.s3.yandex.net/web-code/images/freetrack/04/card-1.jpg\"\n        alt=\"Неоновые лампочки в виде символов светятся красным\" />\n        <h3 class=\"card-title\">Пустота</h3>\n        <p class=\"card-text\">\n          Простое правило, которое часто нарушают: ставить рядом элементы с\n          похожим смыслом и окружать их пустым пространством. Пустота — мощное\n          средство воздействия.\n        </p>\n      </div>\n      <div class=\"card\">\n        <!-- Исправьте разметку картинки -->\n        <img class=\"card-image\"\n        src=\"https://code.s3.yandex.net/web-code/images/freetrack/04/card-2.jpg\"\n        alt=\"Разметка теннисного корта крупным планом\" />\n        <h3 class=\"card-title\">Сетка</h3>\n        <p class=\"card-text\">\n          Размеры элементов и расстояния между ними укладываются в гармоничную\n          схему — её называют сеткой. Если элемент выпадает, зритель может это\n          заметить.\n        </p>\n      </div>\n    </section>\n  </body>\n</html>\n"
+    }
+  ],
+  "verifiedAt": "2026-10-20T14:46:35.892Z",
+  "evidence": {
+    "selector": ".result .icon-status-success",
+    "message": "Всё отлично!"
+  }
+}

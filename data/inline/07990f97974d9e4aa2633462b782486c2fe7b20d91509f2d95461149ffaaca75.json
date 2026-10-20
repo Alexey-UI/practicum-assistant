@@ -1,0 +1,18 @@
+{
+  "id": "07990f97974d9e4aa2633462b782486c2fe7b20d91509f2d95461149ffaaca75",
+  "lessonId": "a6187843-77e4-4b51-8682-0d612b945839",
+  "url": "https://sandbox.practicum-team.ru/tasks/000-freetrack/04-more-css/03-classes/example-02/pre/",
+  "instructionsHash": "fb63dc3e55fc297577c42b522b8a16d774976a35b7efd2530590221f616c6c9e",
+  "files": [
+    {
+      "name": "styles/style.css",
+      "initialHash": "656e95ca4485bbdae47deb92080e93652fcacf29ad03cbc63409147675870e68",
+      "content": "body,\nh1 {\n  margin: 0;\n}\n\nbody {\n  min-width: 850px;\n  font-family: 'Open Sans', Arial, sans-serif;\n}\n\nheader {\n  height: 100vh;\n  text-align: center;\n  background-color: #eee;\n  background-image: url(https://code.s3.yandex.net/web-code/images/freetrack/03/cover.png);\n  background-position: center;\n  background-size: cover;\n}\n\nh1 {\n  padding-top: 270px;\n  color: white;\n  font-weight: 800;\n  font-size: 74px;\n  text-transform: uppercase;\n}\n\n.overlay {\n  width: 100%;\n  height: 100%;\n  background-color: rgb(95 13 238 / 0.5);\n}\n"
+    }
+  ],
+  "verifiedAt": "2026-10-20T14:39:02.233Z",
+  "evidence": {
+    "selector": ".result .icon-status-success",
+    "message": "Всё отлично!"
+  }
+}

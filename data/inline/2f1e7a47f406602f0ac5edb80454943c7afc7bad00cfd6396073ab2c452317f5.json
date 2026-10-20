@@ -1,0 +1,23 @@
+{
+  "id": "2f1e7a47f406602f0ac5edb80454943c7afc7bad00cfd6396073ab2c452317f5",
+  "lessonId": "cff0e0d5-82f5-4305-a269-722f7a77acc6",
+  "url": "https://sandbox.practicum-team.ru/tasks/000-freetrack/04-more-css/13-some-classes/example-01/pre/",
+  "instructionsHash": "f1fe83038432510042c6b2b4a80fc26c1669497dc43a416d01e0f13f20196205",
+  "files": [
+    {
+      "name": "index.html",
+      "initialHash": "8ed71458044ef7e559ec852ed5b3eb0c8bf1abc39bc074a727da10c430cf9798",
+      "content": "<!DOCTYPE html>\n<html lang=\"ru\">\n  <head>\n    <meta charset=\"UTF-8\" />\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />\n    <title>4 правила вёрстки</title>\n    <link\n      rel=\"stylesheet\"\n      href=\"https://code.s3.yandex.net/web-code/fonts/fonts.css\"\n    />\n    <link rel=\"stylesheet\" href=\"styles/style.css\" />\n  </head>\n  <body>\n    <!--<header>  \n      <div class=\"overlay\">\n        <h1>Четыре правила вёрстки</h1>\n      </div>      \n    </header>-->\n    <section class=\"content\">\n      <div class=\"card\">\n        <img\n          class=\"card-image\"\n          src=\"https://code.s3.yandex.net/web-code/images/freetrack/04/card-1.jpg\"\n          alt=\"Неоновые лампочки в виде символов светятся красным\"\n        />\n        <h3 class=\"card-title\">Пустота</h3>\n        <p class=\"card-text\">\n          Простое правило, которое часто нарушают: ставить рядом элементы с\n          похожим смыслом и окружать их пустым пространством. Пустота — мощное\n          средство воздействия.\n        </p>\n      </div>\n      <div class=\"card no-right-margin\">\n        <img\n          class=\"card-image\"\n          src=\"https://code.s3.yandex.net/web-code/images/freetrack/04/card-2.jpg\"\n          alt=\"Разметка теннисного корта крупным планом\"\n        />\n        <h3 class=\"card-title\">Сетка</h3>\n        <p class=\"card-text\">\n          Размеры элементов и расстояния между ними укладываются в гармоничную\n          схему — её называют сеткой. Если элемент выпадает, зритель может это\n          заметить.\n        </p>\n      </div>\n    </section>\n  </body>\n</html>\n"
+    },
+    {
+      "name": "styles/style.css",
+      "initialHash": "7c565be956daa08f898a01bf133fdcdffa96d6ed03189c6956a1f7db80bab016",
+      "content": "* {\n  box-sizing: border-box;\n}\n\nbody,\nh1,\nh2,\nh3,\nh4,\np {\n  margin: 0;\n  font-weight: normal;\n  font-size: 100%;\n}\n\nbody {\n  min-width: 850px;\n  font-family: 'Open Sans', Arial, sans-serif;\n}\n\nheader {\n  height: 100vh;\n  text-align: center;\n  background-color: #eee;\n  background-image: url(https://code.s3.yandex.net/web-code/images/freetrack/03/cover.png);\n  background-position: center;\n  background-size: cover;\n}\n\nh1 {\n  padding-top: 270px;\n  color: white;\n  font-weight: 800;\n  font-size: 74px;\n  text-transform: uppercase;\n}\n\n.overlay {\n  width: 100%;\n  height: 100%;\n  background-color: rgb(95 13 238 / 0.5);\n}\n\n.content {\n  width: 770px;\n  margin: 0 auto;\n  font-size: 0;\n  background-color: #8aafcf;\n}\n\n.card {\n  display: inline-block;\n  width: 360px;\n  margin-right: 50px;\n  margin-bottom: 50px;\n  border: 1px solid rgb(250 50 50 / 0.4);\n  padding: 25px 25px 30px;\n  background-color: #e3f3ff;\n}\n\n.card-title {\n  margin-bottom: 10px;\n  font-weight: 800;\n  font-size: 31px;\n  text-align: center;\n  text-transform: uppercase;\n}\n\n.card-text {\n  font-size: 18px;\n}\n\n.card-image {\n  width: 100%;\n  margin-bottom: 20px;\n  border: 1px solid rgb(250 50 50 / 0.4);\n}\n\n.no-right-margin {\n  margin-right: 0;\n}"
+    }
+  ],
+  "verifiedAt": "2026-10-20T14:51:02.515Z",
+  "evidence": {
+    "selector": ".result .icon-status-success",
+    "message": "Всё отлично!"
+  }
+}

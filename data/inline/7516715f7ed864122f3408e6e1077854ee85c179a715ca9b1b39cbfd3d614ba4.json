@@ -1,0 +1,18 @@
+{
+  "id": "7516715f7ed864122f3408e6e1077854ee85c179a715ca9b1b39cbfd3d614ba4",
+  "lessonId": "bae67330-d884-4ea0-9023-ee30271055c1",
+  "url": "https://sandbox.practicum-team.ru/tasks/000-freetrack/03-basic-css/10-typography/example-01/pre/",
+  "instructionsHash": "b4c8f26582249a1e03f0b0fed63f3b64992915d082bd44bb838b62c9d880ccd2",
+  "files": [
+    {
+      "name": "styles/style.css",
+      "initialHash": "757216ca5096d5e1316bbc55a595632aa5ceb5a72cf3edfb2bbe13f0fbf6d15e",
+      "content": "body {\n  min-width: 850px;\n}\n\nbody,\nh1 {\n  margin: 0;\n}\n\nbody {\n  font-family: 'Open Sans', Arial, sans-serif;\n}\n\nheader {\n  height: 100vh;\n  text-align: center;\n  background-color: #eee;\n  background-image: url(https://code.s3.yandex.net/web-code/images/freetrack/03/cover.png);\n  background-position: center;\n  background-size: cover;\n}\n\nh1 {\n  color: white;\n  font-size: 74px;\n\n  /* Переведите заголовок в верхний регистр */\n  text-transform: uppercase;\n}\n\ndiv {\n  width: 100%;\n  height: 100%;\n  background-color: rgb(95 13 238 / 0.5);\n}\n"
+    }
+  ],
+  "verifiedAt": "2026-10-20T14:32:35.626Z",
+  "evidence": {
+    "selector": ".result .icon-status-success",
+    "message": "Всё отлично!"
+  }
+}
