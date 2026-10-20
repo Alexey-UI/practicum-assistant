@@ -1,0 +1,18 @@
+{
+  "taskId": "9619ae48-cffa-43f6-beb6-19f589c296fd",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "lessonId": "b58d0298-02a2-4a19-b7c1-64952b19ea3e",
+  "files": [
+    {
+      "name": "script.js",
+      "initialHash": "8f4b977158bc8a1e527fa17d0e9f42968ca821b03149fa4393d14cc8913a0f13",
+      "content": "const container = document.querySelector('.container');\nconst songsContainer = container.querySelector('.songs-container');\nconst addButton = container.querySelector('.input__btn_action_add');\nconst resetButton = container.querySelector('.input__btn_action_reset');\nconst noSongsElement = container.querySelector('.no-songs');\n\nfunction renderHasSongs() {\n  resetButton.removeAttribute('disabled');\n  resetButton.classList.remove('input__btn_disabled');\n  noSongsElement.classList.add('no-songs_hidden');\n}\n\nfunction renderNoSongs() {\n  resetButton.setAttribute('disabled', true);\n  resetButton.classList.add('input__btn_disabled');\n  noSongsElement.classList.remove('no-songs_hidden');\n}\n\nfunction addSong(artistValue, titleValue) {\n  const trackContainer = document.createElement('div');\n  trackContainer.classList.add('song');\n  songsContainer.insertAdjacentHTML('beforeend', `\n    <div class=\"song\">\n      <h4 class=\"song__artist\">${artistValue}</h4>\n      <p class=\"song__title\">${titleValue}</p>\n      <button class=\"song__like\"></button>\n    </div>\n  `);\n}\n\naddButton.addEventListener('click', function () {\n  const artist = document.querySelector('.input__text_type_artist');\n  const title = document.querySelector('.input__text_type_title');\n\n  addSong(artist.value, title.value);\n  renderHasSongs();\n\n  artist.value = '';\n  title.value = '';\n});\n"
+    }
+  ],
+  "instructionsHash": "4f934a5c1321a9e252b5ce06b9a2eb1948892e7dc2af0b1cead36f82264efc85",
+  "verifiedAt": "2026-10-20T12:36:16.711Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Пока ничего не изменилось: вы просто создали контейнер. Теперь наполните его элементами."
+  }
+}

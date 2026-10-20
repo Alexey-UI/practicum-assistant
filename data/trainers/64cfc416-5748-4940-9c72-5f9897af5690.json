@@ -1,0 +1,18 @@
+{
+  "taskId": "64cfc416-5748-4940-9c72-5f9897af5690",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "lessonId": "e5dbeeae-f5ae-4788-88af-647594ad5199",
+  "files": [
+    {
+      "name": "script.js",
+      "initialHash": "8b48cdc349d01ed266b5d20f1b84f938d45bde33ea60d5ac8b1ebbd319850459",
+      "content": "const container = document.querySelector('.container');\nconst songsContainer = container.querySelector('.songs-container');\nconst addButton = container.querySelector('.input__btn_action_add');\nconst resetButton = container.querySelector('.input__btn_action_reset');\nconst noSongsElement = container.querySelector('.no-songs');\n\nfunction renderHasSongs() {\n  resetButton.removeAttribute('disabled');\n  resetButton.classList.remove('input__btn_disabled');\n  noSongsElement.classList.add('no-songs_hidden');\n}\n\nfunction renderNoSongs() {\n  resetButton.setAttribute('disabled', true);\n  resetButton.classList.add('input__btn_disabled');\n  noSongsElement.classList.remove('no-songs_hidden');\n}\n\nfunction addSong(artistValue, titleValue) {\n  const trackContainer = document.createElement('div');\n  trackContainer.classList.add('song');\n\n  const artistElement = document.createElement('h4');\n  artistElement.classList.add('song__artist');\n  artistElement.textContent = artistValue;\n\n  const titleElement = document.createElement('h4');\n  titleElement.classList.add('song__title');\n  titleElement.textContent = titleValue;\n\n  const likeButtonElement = document.createElement('button');\n  likeButtonElement.classList.add('song__like');\n\n  trackContainer.append(artistElement, titleElement, likeButtonElement);\n  songsContainer.append(trackContainer);\n}\n\naddButton.addEventListener('click', function () {\n  const artist = document.querySelector('.input__text_type_artist');\n  const title = document.querySelector('.input__text_type_title');\n\n  addSong(artist.value, title.value);\n  renderHasSongs();\n\n  artist.value = '';\n  title.value = '';\n});\n\nresetButton.addEventListener('click', function () {\n  const songs = document.querySelectorAll('.song');\n  \n  for (let i = 0; i < songs.length; i++) {\n    songs[i].remove();\n  }\n});\n"
+    }
+  ],
+  "instructionsHash": "136c03fe268d3e6c2e795dcde0df9d8f9194364b09513ec54bb939cf8e8f4662",
+  "verifiedAt": "2026-10-20T12:42:17.159Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Отлично! Добавьте песни, а затем нажмите кнопку «Очистить плейлист». Всё сработает, только после нажатия не появится надпись «Нет добавленных песен», а сама кнопка останется активной. В следующем задании исправим это всего одной строкой кода."
+  }
+}

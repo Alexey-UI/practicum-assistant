@@ -1,0 +1,18 @@
+{
+  "taskId": "c8c5bce1-bad9-4b53-9c6a-8c22af535b00",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "lessonId": "b58d0298-02a2-4a19-b7c1-64952b19ea3e",
+  "files": [
+    {
+      "name": "script.js",
+      "initialHash": "09c85e683717b01e97261b963faa1c552621c2ccfb47db86f4268b2553e4b892",
+      "content": "const container = document.querySelector('.container');\nconst songsContainer = container.querySelector('.songs-container');\nconst addButton = container.querySelector('.input__btn_action_add');\nconst resetButton = container.querySelector('.input__btn_action_reset');\nconst noSongsElement = container.querySelector('.no-songs');\n\nfunction renderHasSongs() {\n  resetButton.removeAttribute('disabled');\n  resetButton.classList.remove('input__btn_disabled');\n  noSongsElement.classList.add('no-songs_hidden');\n}\n\nfunction renderNoSongs() {\n  resetButton.setAttribute('disabled', true);\n  resetButton.classList.add('input__btn_disabled');\n  noSongsElement.classList.remove('no-songs_hidden');\n}\n\nfunction addSong(artistValue, titleValue) {\n  const trackContainer = document.createElement('div');\n  trackContainer.classList.add('song');\n  const artistElement = document.createElement('h4');\n  artistElement.classList.add('song__artist');\n  artistElement.textContent = artistValue;\n  const titleElement = document.createElement('h4');\n  titleElement.classList.add('song__title');\n  titleElement.textContent = titleValue;\n  const likeButtonElement = document.createElement('button');\n  likeButtonElement.classList.add('song__like');\n}\n\naddButton.addEventListener('click', function () {\n  const artist = document.querySelector('.input__text_type_artist');\n  const title = document.querySelector('.input__text_type_title');\n\n  addSong(artist.value, title.value);\n  renderHasSongs();\n\n  artist.value = '';\n  title.value = '';\n});\n"
+    }
+  ],
+  "instructionsHash": "9a3181898f473e23a33298d9f56c3f1a2ac1f81fc4461d18fbc7e6b6d939f7f2",
+  "verifiedAt": "2026-10-20T12:36:43.869Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Мы создали все необходимые элементы. Осталось собрать их воедино и добавить в DOM."
+  }
+}

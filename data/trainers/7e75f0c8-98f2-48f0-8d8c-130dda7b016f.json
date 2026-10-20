@@ -1,0 +1,18 @@
+{
+  "taskId": "7e75f0c8-98f2-48f0-8d8c-130dda7b016f",
+  "lessonId": "752262a1-c0b8-4c12-8987-896097f93832",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "files": [
+    {
+      "name": "script.js",
+      "initialHash": "343aae3d84049b7c584c7e9f8e077f7e10968b73c883dec6c8854b3fe2606049",
+      "content": "const container = document.querySelector('.container');\nconst songsContainer = container.querySelector('.songs-container');\nconst addButton = container.querySelector('.input__btn_action_add');\nconst resetButton = container.querySelector('.input__btn_action_reset');\nconst noSongsElement = container.querySelector('.no-songs');\n\nfunction renderHasSongs() {\n  resetButton.removeAttribute('disabled');\n  resetButton.classList.remove('input__btn_disabled');\n  noSongsElement.classList.add('no-songs_hidden');\n}\n\nfunction renderNoSongs() {\n  resetButton.setAttribute('disabled', true);\n  resetButton.classList.add('input__btn_disabled');\n  noSongsElement.classList.remove('no-songs_hidden');\n}\n\nfunction addSong(artistValue, titleValue) {\n  const trackContainer = document.createElement('div');\n  trackContainer.classList.add('song');\n  const artistElement = document.createElement('h4');\n  artistElement.classList.add('song__artist');\n  artistElement.textContent = artistValue;\n  const titleElement = document.createElement('h4');\n  titleElement.classList.add('song__title');\n  titleElement.textContent = titleValue;\n  const likeButtonElement = document.createElement('button');\n  likeButtonElement.classList.add('song__like');\n  trackContainer.append(artistElement, titleElement, likeButtonElement);\n  songsContainer.append(trackContainer);\n}\n\naddButton.addEventListener('click', function () {\n  const artist = document.querySelector('.input__text_type_artist');\n  const title = document.querySelector('.input__text_type_title');\n\n  addSong(artist.value, title.value);\n  renderHasSongs();\n\n  artist.value = '';\n  title.value = '';\n});\n"
+    }
+  ],
+  "instructionsHash": "99e7a062da6e02df84c80a81f4ff7c5cf61ef736d158c8e1f29f90de2c9ae855",
+  "verifiedAt": "2026-10-20T12:41:44.563Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Попробуйте вставить вредоносный код в какое-нибудь текстовое поле и нажмите «Добавить»:\nСкопировать код\n\nHTML\n\n<img src=\"https://invalid_url\" onerror=\"alert('but most of all, samy is my hero')\" > \nКак видите, это простой текст. Не бывать ему разметкой."
+  }
+}

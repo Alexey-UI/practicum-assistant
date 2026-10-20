@@ -1,0 +1,18 @@
+{
+  "taskId": "a7fa12d1-c507-4a1d-8483-ceaa82b9c954",
+  "lessonId": "752262a1-c0b8-4c12-8987-896097f93832",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "files": [
+    {
+      "name": "script.js",
+      "initialHash": "0ab5f7dc026c132c620d4cdb5a0faf33acb3c6833694a7bdaed063ee996820c0",
+      "content": "const container = document.querySelector('.container');\nconst songsContainer = container.querySelector('.songs-container');\nconst addButton = container.querySelector('.input__btn_action_add');\nconst resetButton = container.querySelector('.input__btn_action_reset');\nconst noSongsElement = container.querySelector('.no-songs');\n\nfunction renderHasSongs() {\n  resetButton.removeAttribute('disabled');\n  resetButton.classList.remove('input__btn_disabled');\n  noSongsElement.classList.add('no-songs_hidden');\n}\n\nfunction renderNoSongs() {\n  resetButton.setAttribute('disabled', true);\n  resetButton.classList.add('input__btn_disabled');\n  noSongsElement.classList.remove('no-songs_hidden');\n}\n\nfunction addSong(artistValue, titleValue) {\n  const trackContainer = document.createElement('div');\n  trackContainer.classList.add('song');\n  const artistElement = document.createElement('h4');\n  artistElement.classList.add('song__artist');\n  artistElement.textContent = artistValue;\n  const titleElement = document.createElement('h4');\n  titleElement.classList.add('song__title');\n  titleElement.textContent = titleValue;\n  const likeButtonElement = document.createElement('button');\n  likeButtonElement.classList.add('song__like');\n  trackContainer.append(artistElement, titleElement, likeButtonElement);\n  songsContainer.insertAdjacentHTML('beforeend', `\n    <div class=\"song\">\n      <h4 class=\"song__artist\">${artistValue}</h4>\n      <p class=\"song__title\">${titleValue}</p>\n      <button class=\"song__like\"></button>\n    </div>\n  `);\n}\n\naddButton.addEventListener('click', function () {\n  const artist = document.querySelector('.input__text_type_artist');\n  const title = document.querySelector('.input__text_type_title');\n\n  addSong(artist.value, title.value);\n  renderHasSongs();\n\n  artist.value = '';\n  title.value = '';\n});\n"
+    }
+  ],
+  "instructionsHash": "762620e0d63bf203ac544dc575b58d9cce58d410c85d209b9d948c179b00bede",
+  "verifiedAt": "2026-10-20T12:41:25.395Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Почти готово! Осталось добавить этот элемент в DOM и избавиться от insertAdjacentHTML."
+  }
+}

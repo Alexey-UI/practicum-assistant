@@ -1,0 +1,18 @@
+{
+  "taskId": "c3257113-ea6b-43d8-bcc0-3f130553f8a8",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "lessonId": "e5dbeeae-f5ae-4788-88af-647594ad5199",
+  "files": [
+    {
+      "name": "script.js",
+      "initialHash": "8a2d50f464cb71385c514d9cbdcf7e50c2a47a66b8e61882461e2fda35987ca7",
+      "content": "const container = document.querySelector('.container');\nconst songsContainer = container.querySelector('.songs-container');\nconst addButton = container.querySelector('.input__btn_action_add');\nconst resetButton = container.querySelector('.input__btn_action_reset');\nconst noSongsElement = container.querySelector('.no-songs');\n\nfunction renderHasSongs() {\n  resetButton.removeAttribute('disabled');\n  resetButton.classList.remove('input__btn_disabled');\n  noSongsElement.classList.add('no-songs_hidden');\n}\n\nfunction renderNoSongs() {\n  resetButton.setAttribute('disabled', true);\n  resetButton.classList.add('input__btn_disabled');\n  noSongsElement.classList.remove('no-songs_hidden');\n}\n\nfunction addSong(artistValue, titleValue) {\n  const trackContainer = document.createElement('div');\n  trackContainer.classList.add('song');\n\n  const artistElement = document.createElement('h4');\n  artistElement.classList.add('song__artist');\n  artistElement.textContent = artistValue;\n\n  const titleElement = document.createElement('h4');\n  titleElement.classList.add('song__title');\n  titleElement.textContent = titleValue;\n\n  const likeButtonElement = document.createElement('button');\n  likeButtonElement.classList.add('song__like');\n\n  trackContainer.append(artistElement, titleElement, likeButtonElement);\n  songsContainer.append(trackContainer);\n}\n\naddButton.addEventListener('click', function () {\n  const artist = document.querySelector('.input__text_type_artist');\n  const title = document.querySelector('.input__text_type_title');\n\n  addSong(artist.value, title.value);\n  renderHasSongs();\n\n  artist.value = '';\n  title.value = '';\n});\n\nresetButton.addEventListener('click', function () {\n  const songs = document.querySelectorAll('.song');\n  \n  for (let i = 0; i < songs.length; i++) {\n    songs[i].remove();\n  }\n  renderNoSongs();\n});\n"
+    }
+  ],
+  "instructionsHash": "8eb77d16d82404b772cb7447fdda51d8232c520b05622a307553a1d7645268ec",
+  "verifiedAt": "2026-10-20T12:42:30.326Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Самое сложное позади. Но что за плейлист без лайков?"
+  }
+}
