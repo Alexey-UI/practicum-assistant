@@ -1,0 +1,18 @@
+{
+  "taskId": "bbafdb6e-6e87-4501-a8f0-6572f46b4516",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "lessonId": "09002e55-2810-49b2-9fef-29430dbb87b9",
+  "files": [
+    {
+      "name": "script.js",
+      "initialHash": "cc348b7e241ea3df5bbe92f5db70961640e705d31c9c37f5a071b5fbb4d64a58",
+      "content": "const quoteElement = document.querySelector('.quote');\n\nfetch('https://api.kanye.rest')\n  .then((res) => res.json())\n  .then((data) => {\n    quoteElement.textContent = data.quote;\n  });\n"
+    }
+  ],
+  "instructionsHash": "f422d18f0b569d663ffb0779d210067b14831eb094575620a151fa388d88ea5a",
+  "verifiedAt": "2026-10-20T13:50:58.383Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Как говорил Канье Уэст: «Я лучший». В этом мы с ним не согласны, так как считаем, что лучшие — вы."
+  }
+}

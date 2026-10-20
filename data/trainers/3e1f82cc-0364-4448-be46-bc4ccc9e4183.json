@@ -1,0 +1,18 @@
+{
+  "taskId": "3e1f82cc-0364-4448-be46-bc4ccc9e4183",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "lessonId": "897c32e7-ad0b-4666-abc2-994a15ad1f79",
+  "files": [
+    {
+      "name": "script.js",
+      "initialHash": "2c909f2b7113f5b35c3d228caeacdaa7ca4b1444f443e62e485b392b4140dfe7",
+      "content": "// создаёт разметку для поста\nfunction createPostMarkup(post) {\n  return `\n    <div class=\"post\">\n      <p class=\"post__title\">${post.title}</p>\n      <p class=\"post__text\">${post.body}</p>\n    </div>\n  `;\n}\n\n// вставляет разметку в DOM\nfunction addPostToDOM(container, markup) {\n  container.insertAdjacentHTML('afterbegin', markup);\n}\n\nfunction getPosts() {\n  fetch('https://jsonplaceholder.typicode.com/posts')\n    .then((res) => res.json())\n    .then((posts) => {\n      const container = document.querySelector('.container');\n      posts.forEach((post) => {\n        addPostToDOM(container, createPostMarkup(post));\n      });\n    });\n}\n\ngetPosts();"
+    }
+  ],
+  "instructionsHash": "5767438ac29ea7929016be8601b1ca1ee4a094319976dc1572c69f253767c75d",
+  "verifiedAt": "2026-10-20T13:51:52.657Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Как отобразить динамическую информацию за 3 шага? Отправить запрос, получить ответ, отобразить результат. Поздравляем: вы прошли через каждый этап."
+  }
+}

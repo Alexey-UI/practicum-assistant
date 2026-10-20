@@ -1,0 +1,18 @@
+{
+  "taskId": "b9072e03-1ed3-4158-b6b1-0e6a51977617",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "lessonId": "160cf859-23b3-402e-8a28-9c8f02a49938",
+  "files": [
+    {
+      "name": "script.js",
+      "initialHash": "7d4322eb3d7df52c3d286ebd76f835f0a8f000d41d3f0bf2b28761c2fb43a7de",
+      "content": "function wait(ms) {\n  return new Promise((resolve) => {\n    setTimeout(resolve, ms);\n  });\n}\n\nwait(2000)\n  .then(() => console.log('Прошло 2000мс'));\n"
+    }
+  ],
+  "instructionsHash": "98568e5f1bdba465fe8c4aea1f5ee4df35b800ef967587bb138ef7c31ed221df",
+  "verifiedAt": "2026-10-20T13:48:36.390Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Вы только что промисифицировали setTimeout: обернули его в функцию wait, возвращающую промис."
+  }
+}

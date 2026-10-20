@@ -1,0 +1,18 @@
+{
+  "taskId": "21dda117-95b8-4de2-b065-93698471d923",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "lessonId": "da893603-d024-4850-96ae-763ca0ad0bdf",
+  "files": [
+    {
+      "name": "script.js",
+      "initialHash": "bcdd1974080a27c98915ceff8f1a5846d57e278c33328a3885e2664b612bf10f",
+      "content": "const tweets = [\n  'Какой-то странный тред',\n  'Твит, адресованный Илону Маску',\n  'Ответ на инфоповод'\n];\n\nfunction forEach(arr, callback) {\n  for (let index = 0; index < arr.length; index++) {\n    if (index in arr) callback(arr[index], index, arr);\n  }\n}\n\nforEach(tweets, function (tweet) {\n\tconsole.log(tweet);\n});"
+    }
+  ],
+  "instructionsHash": "47520ae02b298c688c4957c50172b97143b7c73ee2e376ceebc5dad80ef30253",
+  "verifiedAt": "2026-10-20T13:46:40.327Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Всё правильно. Теперь вам и встроенный forEach не нужен — можете написать свой."
+  }
+}

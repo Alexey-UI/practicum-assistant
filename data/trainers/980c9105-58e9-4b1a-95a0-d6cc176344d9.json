@@ -1,0 +1,18 @@
+{
+  "taskId": "980c9105-58e9-4b1a-95a0-d6cc176344d9",
+  "contextHash": "1374967e0e6e52ba0a49d92c5700e4b83756cda962a1864899761ff547ad3681",
+  "lessonId": "bf950b3e-21be-4cc5-af2c-f47fb98c6507",
+  "files": [
+    {
+      "name": "script.js",
+      "initialHash": "6b0d20c37dcc6085448eb4022391dfb757c2b61a6209eebbaa60886c769fe53a",
+      "content": "const form = document.forms.search;\nconst content = document.querySelector('.content');\nconst result = document.querySelector('.content__result');\nconst error = document.querySelector('.content__error');\nconst spinner = document.querySelector('.spinner');\n\nfunction search(entity, entityId) {\n  return fetch(`https://swapi.nomoreparties.co/${entity}/${entityId}`);\n}\n\nfunction renderResult(text) {\n  result.textContent = text;\n  error.textContent = '';\n}\n\nfunction renderError(err) {\n  error.textContent = err;\n  result.textContent = '';\n}\n\nform.addEventListener('submit', function submit(e) {\n  e.preventDefault();\n  search(form.elements.entity.value, form.elements.entityId.value)\n    .then((res) => {\n      if (res.ok) {\n        return res.json();\n      }\n      return Promise.reject(res.status);\n    })\n    .then((res) => {\n      renderResult(res.name);\n    })\n    .catch((err) => {\n      renderError(`Ошибка: ${err}`);\n    });\n});"
+    }
+  ],
+  "instructionsHash": "c2f34949b88a9a7e9a4265c4bafb91c65c932f6737703741f3f882e7f00a9eb6",
+  "verifiedAt": "2026-10-20T13:54:27.657Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Иди, запрос, на сервер. И возвращайся со щитом или... ошибкой. Что бы ты ни вернул, теперь мы об этом узнаем."
+  }
+}

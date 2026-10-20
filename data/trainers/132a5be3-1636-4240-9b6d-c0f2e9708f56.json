@@ -1,0 +1,18 @@
+{
+  "taskId": "132a5be3-1636-4240-9b6d-c0f2e9708f56",
+  "contextHash": "8443321e08486cd5645f522a6f80e7619a5fca723ff52ac14a31f47c521d479d",
+  "lessonId": "bf950b3e-21be-4cc5-af2c-f47fb98c6507",
+  "files": [
+    {
+      "name": "script.js",
+      "initialHash": "935a5c6744999883bf945fcc2fd2980eddafacd956298ab56d7e0814b47e9357",
+      "content": "const form = document.forms.search;\nconst content = document.querySelector('.content');\nconst result = document.querySelector('.content__result');\nconst error = document.querySelector('.content__error');\nconst spinner = document.querySelector('.spinner');\n\nfunction search(entity, entityId) {\n  return fetch(`https://swapi.nomoreparties.co/${entity}/${entityId}`);\n}\n\nform.addEventListener('submit', function submit(e) {\n  e.preventDefault();\n});"
+    }
+  ],
+  "instructionsHash": "52cecf4834e1a2e01f4f8baeefd572faa0799fb491efc85c4f1ebb789974d5d2",
+  "verifiedAt": "2026-10-20T13:53:00.467Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Приём, приём. Ура, связь с сервером установлена!"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "taskId": "9118771d-7d94-4a8b-9722-4c42232d8d50",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "lessonId": "32025f93-3e50-4485-933b-31dc2f3ffc09",
+  "files": [
+    {
+      "name": "script.js",
+      "initialHash": "a63eaa3605028aafb9c0caacf3c2486db5793326f0c55a2c9d0f3425d7fb9e4f",
+      "content": "const formElement = document.querySelector('.form');\nconst formInput = formElement.querySelector('.form__input');\n\nformElement.addEventListener('submit', function (evt) {\n  evt.preventDefault();\n});\n\nformInput.addEventListener('input', function (evt) {\n  console.log(evt.target.validity);\n});\n\n"
+    }
+  ],
+  "instructionsHash": "0963d82a6bc56b4d729b9f206d273c914a48fa3e0eb6d83138ee590c7b6589ed",
+  "verifiedAt": "2026-10-20T13:41:12.627Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Попробуйте ввести что-то в поле. Посмотрите, как изменяется значение свойств объекта validity:\nвведите 13 любых символов и посмотрите, как поменяется свойство tooShort;\nудалите все символы и посмотрите на valueMissing;\nв конце введите корректный url по типу https://yandex.ru и посмотрите, каким стало значение свойства valid.\nОбъект validity — ключ к проверке данных через JS. Вся проверка данных строится на его свойствах. Этим вы займётесь в следующих заданиях."
+  }
+}

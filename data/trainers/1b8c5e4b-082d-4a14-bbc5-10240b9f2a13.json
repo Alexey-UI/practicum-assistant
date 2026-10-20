@@ -1,0 +1,18 @@
+{
+  "taskId": "1b8c5e4b-082d-4a14-bbc5-10240b9f2a13",
+  "lessonId": "160cf859-23b3-402e-8a28-9c8f02a49938",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "files": [
+    {
+      "name": "script.js",
+      "initialHash": "7a389cf82149fe0893a7cfd808fa3e7f930fdab6110d10afc60ca9e0fd8aedba",
+      "content": "function loadImage(imageUrl) {\n  return new Promise((resolve, reject) => {\n    const image = document.createElement('img');\n    image.src = imageUrl;\n    image.onerror = reject;\n    image.onload = resolve;\n  });\n}\n\nloadImage('https://pictures.s3.yandex.net/frontend-developer/functions/dog-1.jpg')\n  .then((evt) => {\n    document.body.append(evt.target);\n  })\n  .catch(() => {\n    console.error('Всё идёт не по плану.');\n  });\n"
+    }
+  ],
+  "instructionsHash": "c42f4cac97d1dddc71a13793914fa0349bf725cfb69b8a8abf94cb67327c4b27",
+  "verifiedAt": "2026-10-20T13:49:05.360Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Если честно, мы сами не поняли, как вы это сделали. Но вы это сделали."
+  }
+}

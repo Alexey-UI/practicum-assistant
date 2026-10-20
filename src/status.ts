@@ -8,6 +8,14 @@ async function countFiles(dir: string): Promise<number> {
   catch (error) { if ((error as NodeJS.ErrnoException).code === 'ENOENT') return 0; throw error; }
 }
 
+async function countPendingTrainerChecks(): Promise<number> {
+  let names: string[];
+  try { names = await readdir('.local/trainers'); }
+  catch (error) { if ((error as NodeJS.ErrnoException).code === 'ENOENT') return 0; throw error; }
+  const states = await Promise.all(names.filter(name => name.endsWith('.json')).map(name => readJson<{ phase?: string } | null>(`.local/trainers/${name}`, null)));
+  return states.filter(state => state?.phase === 'requested').length;
+}
+
 export async function status(): Promise<void> {
   const lessons = await readJson<Lesson[]>('.local/catalog.json', []);
   const index = await readJson<{ complete: boolean; updatedAt?: string }>('.local/catalog-index.json', { complete: false });
@@ -41,6 +49,7 @@ export async function status(): Promise<void> {
     verifiedTextQuestions: await countFiles('data/text-questions'),
     verifiedInlineExercises: await countFiles('data/inline'), auditedInlineLessons: await countFiles('.local/inline-audits'),
     verifiedTrainerTasks: await countFiles('data/trainers'), verifiedMatchingTasks: await countFiles('data/matching'),
+    pendingTrainerChecks: await countPendingTrainerChecks(),
     selfCheckedPracticeTasks: await countFiles('data/practice'),
     referenceProjects: projects.length, acceptedProjects, preparedManualProjects, selfCheckedProjects,
     mockApiReferences: projects.filter(project => project.verification === 'mock-api').length,

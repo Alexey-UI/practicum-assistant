@@ -1,0 +1,18 @@
+{
+  "taskId": "efe5ba4c-911f-4adf-ab98-ce143a98e580",
+  "lessonId": "09002e55-2810-49b2-9fef-29430dbb87b9",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "files": [
+    {
+      "name": "script.js",
+      "initialHash": "adbb687ae607d1fa3be9a666ff37c30ed76d8c10d66079e6265bbeadae9e1822",
+      "content": "const quoteElement = document.querySelector('.quote');\n\nfunction updateQuote() {\n  fetch('https://api.kanye.rest')\n    .then((res) => res.json())\n    .then((data) => {\n      quoteElement.textContent = data.quote;\n    });\n}\n\ndocument.querySelector('.header__btn').addEventListener('click', updateQuote);\n"
+    }
+  ],
+  "instructionsHash": "72524655b83880b0943f89429329c6e05335bb88a48efe1fefa50e416152f528",
+  "verifiedAt": "2026-10-20T13:51:17.523Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Это ваш первый веб-сервис. Поздравляем!"
+  }
+}

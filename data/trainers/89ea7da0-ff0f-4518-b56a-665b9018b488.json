@@ -1,0 +1,18 @@
+{
+  "taskId": "89ea7da0-ff0f-4518-b56a-665b9018b488",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "lessonId": "65e69ff6-a224-49a5-8b9f-da8acd71bb2e",
+  "files": [
+    {
+      "name": "script.js",
+      "initialHash": "d67f03fe3f21f3e2a456fc9ba30a18707294279f28c71ab53ed80ac79e6833e8",
+      "content": "const showInputError = (formElement, inputElement, errorMessage) => {\n  const errorElement = formElement.querySelector(`.${inputElement.id}-error`);\n  inputElement.classList.add('form__input_type_error');\n  errorElement.textContent = errorMessage;\n  errorElement.classList.add('form__input-error_active');\n};\n\nconst hideInputError = (formElement, inputElement) => {\n  const errorElement = formElement.querySelector(`.${inputElement.id}-error`);\n  inputElement.classList.remove('form__input_type_error');\n  errorElement.classList.remove('form__input-error_active');\n  errorElement.textContent = '';\n};\n\nconst checkInputValidity = (formElement, inputElement) => {\n  if (!inputElement.validity.valid) {\n    showInputError(formElement, inputElement, inputElement.validationMessage);\n  } else {\n    hideInputError(formElement, inputElement);\n  }\n};\n\nconst hasInvalidInput = (inputList) => {\n  return inputList.some((inputElement) => !inputElement.validity.valid);\n};\n\nconst toggleButtonState = (inputList, buttonElement) => {\n  if (hasInvalidInput(inputList)) {\n    buttonElement.classList.add('button_inactive');\n  } else {\n    buttonElement.classList.remove('button_inactive');\n  }\n};\n\nconst setEventListeners = (formElement) => {\n  const inputList = Array.from(formElement.querySelectorAll('.form__input'));\n  inputList.forEach((inputElement) => {\n    inputElement.addEventListener('input', function () {\n      checkInputValidity(formElement, inputElement);\n    });\n  });\n};\n\nconst enableValidation = () => {\n  const formList = Array.from(document.querySelectorAll('.form'));\n  formList.forEach((formElement) => {\n    formElement.addEventListener('submit', function (evt) {\n      evt.preventDefault();\n    });\n\n    const fieldsetList = Array.from(formElement.querySelectorAll('.form__set'));\n    fieldsetList.forEach((fieldset) => {\n      setEventListeners(fieldset);\n    });\n  });\n};\n\nenableValidation();\n"
+    }
+  ],
+  "instructionsHash": "f1659c2731e42b8dcd50e97d947c317f7b91a08d8459e4b9ee39a3538f2dc4c7",
+  "verifiedAt": "2026-10-20T13:44:16.054Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Осталось совсем немного!"
+  }
+}

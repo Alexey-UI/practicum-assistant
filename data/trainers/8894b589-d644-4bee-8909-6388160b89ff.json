@@ -1,0 +1,18 @@
+{
+  "taskId": "8894b589-d644-4bee-8909-6388160b89ff",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "lessonId": "0b3e7c6f-7c6d-43e8-9c44-c4b372ca6ed8",
+  "files": [
+    {
+      "name": "script.js",
+      "initialHash": "88e2af0e019ec9103fc969492b1e158c81fd66ba7b218fa92cb482795aac6079",
+      "content": "const showInputError = (formElement, inputElement, errorMessage) => {\n  const errorElement = formElement.querySelector(`.${inputElement.id}-error`);\n  inputElement.classList.add('form__input_type_error');\n  errorElement.textContent = errorMessage;\n  errorElement.classList.add('form__input-error_active');\n};\n\nconst hideInputError = (formElement, inputElement) => {\n  const errorElement = formElement.querySelector(`.${inputElement.id}-error`);\n  inputElement.classList.remove('form__input_type_error');\n  errorElement.classList.remove('form__input-error_active');\n  errorElement.textContent = '';\n};\n\nconst checkInputValidity = (formElement, inputElement) => {\n  if (!inputElement.validity.valid) {\n    showInputError(formElement, inputElement, inputElement.validationMessage);\n  } else {\n    hideInputError(formElement, inputElement);\n  }\n};\n\nconst setEventListeners = (formElement) => {\n  const inputList = Array.from(formElement.querySelectorAll('.form__input'));\n  inputList.forEach((inputElement) => {\n    inputElement.addEventListener('input', function () {\n      checkInputValidity(formElement, inputElement);\n    });\n  });\n};\n\nconst enableValidation = () => {\n  const formList = Array.from(document.querySelectorAll('.form'));\n  formList.forEach((formElement) => {\n    formElement.addEventListener('submit', (evt) => {\n      evt.preventDefault();\n    });\n    setEventListeners(formElement);\n  });\n};\n\nenableValidation();\n"
+    }
+  ],
+  "instructionsHash": "c0a7a54bb29f497b553bce58b859504c5b9e73e207ff3ddf0b2c87666685a8c4",
+  "verifiedAt": "2026-10-20T13:43:30.989Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Супер! Теперь вас ждёт заключительный урок о взаимодействии с другими элементами DOM."
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "taskId": "3bcfed92-cdb4-4e40-a38e-98ac2ee0ea78",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "lessonId": "a7ab35c3-2ae3-44a8-9af7-93dd00457e26",
+  "files": [
+    {
+      "name": "index.html",
+      "initialHash": "a47ff96d67103cd23833607b13806927dfb025f87ef24d7910698ed0eab945ce",
+      "content": "<!doctype html>\n<html lang=\"ru\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\"\n        content=\"width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0\">\n  <meta http-equiv=\"X-UA-Compatible\" content=\"ie=edge\">\n  <title>Подписка</title>\n  <link rel=\"stylesheet\" href=\"https://code.s3.yandex.net/web-code/normalize.css\">\n  <link rel=\"stylesheet\" href=\"https://code.s3.yandex.net/web-code/form-validation/lesson-2/index.css\">\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body class=\"page\">\n  <div class=\"page__content\">\n    <main class=\"page__section content\">\n      <h1 class=\"content__title\">\n        Оформите подписку\n      </h1>\n      <form class=\"form\">\n        <label class=\"form__field\">\n          Введите ваш email:\n          <input class=\"form__input\" type=\"email\" required>\n        </label>\n        <label class=\"form__field form__field_type_row\">\n          <input class=\"form__checkbox\" type=\"checkbox\" required>\n          <span class=\"form__checkbox-item\"></span>\n          <span class=\"form__text\">Согласие на обработку персональных данных</span>\n        </label>\n        <button type=\"submit\" class=\"button\">\n          Подписаться на уведомления\n        </button>\n      </form>\n    </main>\n  </div>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n"
+    }
+  ],
+  "instructionsHash": "9b6bcc6c1f1c886acf160e82e542f85cee94c833d06e3ebe0296b776ca274789",
+  "verifiedAt": "2026-10-20T13:40:00.260Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Верно! Попробуйте отправить форму с пустым полем — появится браузерная ошибка. А если ввести некорректный email, сообщение об ошибке изменится."
+  }
+}

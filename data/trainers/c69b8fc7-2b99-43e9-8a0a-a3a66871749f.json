@@ -1,0 +1,18 @@
+{
+  "taskId": "c69b8fc7-2b99-43e9-8a0a-a3a66871749f",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "lessonId": "9c50235c-672a-4c58-af67-c15372ab147f",
+  "files": [
+    {
+      "name": "script.js",
+      "initialHash": "3a140c688641c96305ff67e63563efd4e51ae945702db7611dbea3974cb5ef41",
+      "content": "function handleLoadError() {\n  console.log('Всё идёт не по плану');\n}\n\nfunction handleImageLoad(evt) {\n  // после загрузки добавим элемент изображения в DOM\n  document.body.append(evt.target);\n}\n\n// дополните код функции\nfunction loadImage(imageUrl, loadCallback, errorCallback) {\n  const img = document.createElement('img');\n  img.src = imageUrl;\n  img.onload = loadCallback;\n  img.onerror = errorCallback;\n}\n\nloadImage(\n  'https://pictures.s3.yandex.net/frontend-developer/functions/dog-12345.jpg',\n  handleImageLoad,\n  handleLoadError\n);\n"
+    }
+  ],
+  "instructionsHash": "4543e7d5908854496f497bd212f2a2cc167e9be74789c7414329bbb40ec207a3",
+  "verifiedAt": "2026-10-20T13:47:24.835Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Теперь если изображение не удастся загрузить, в консоли появится сообщение. Кстати, загляните в консоль."
+  }
+}

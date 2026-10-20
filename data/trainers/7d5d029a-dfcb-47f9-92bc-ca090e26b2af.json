@@ -1,0 +1,18 @@
+{
+  "taskId": "7d5d029a-dfcb-47f9-92bc-ca090e26b2af",
+  "lessonId": "a7ab35c3-2ae3-44a8-9af7-93dd00457e26",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "files": [
+    {
+      "name": "style.css",
+      "initialHash": "5d7829d56e3119daece150d361a17dd55bf536935b9e27e0c32fa19b3cc7fe3a",
+      "content": ".form__input:hover {\n  border-bottom-color: #000;\n}\n\n.form__input:focus {\n  border-bottom-color: #007DFF;\n}\n.form__input:invalid {\n  border-bottom: 1px solid red;\n}\n\n.form__input:valid {\n  border-bottom: 1px solid green;\n}\n\n.form__checkbox:checked + .form__checkbox-item {\n  background: #007DFF;\n}\n\n.form__checkbox:checked + .form__checkbox-item::before {\n  background: url(https://code.s3.yandex.net/web-code/checkbox.svg) center no-repeat;\n}\n"
+    }
+  ],
+  "instructionsHash": "ce2a0939842c76f59b50a3d628a93346fd0f59497a7f540ce84b05df5b1f7e66",
+  "verifiedAt": "2026-10-20T13:40:19.348Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Верно! Проверьте, как браузер реагирует на разные действия:\nначните вводить @yandex.ru — поле отметится стилем :invalid;\nвведите login@yandex.ru — поле отметится стилем :valid;\nнажмите на чекбокс — внутри появится галочка, а он перейдёт в состояние :checked."
+  }
+}

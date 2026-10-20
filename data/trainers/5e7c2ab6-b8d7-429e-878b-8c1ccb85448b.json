@@ -1,0 +1,18 @@
+{
+  "taskId": "5e7c2ab6-b8d7-429e-878b-8c1ccb85448b",
+  "lessonId": "af76587c-5e37-4597-b742-6161360a722f",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "files": [
+    {
+      "name": "script.js",
+      "initialHash": "ce740638a3a603ebf8b4c1123e1177a5e47dc53b243ed2e7c64497fbbcfe42a4",
+      "content": "function consoleDate() {\n  const date = new Date();\n  console.log(`${date.getHours()}:${date.getMinutes()}:${date.getSeconds()}`);\n}\nsetInterval(consoleDate, 1000);\n"
+    }
+  ],
+  "instructionsHash": "c900b91fc5b180e388bdeade117899c9104931dc8fb9a99fcad700cd258d5da4",
+  "verifiedAt": "2026-10-20T13:47:47.989Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "В 2005 JavaScript использовали как правило для одной из двух целей: добавить на сайт часы или добавить на сайт эффект идущего снега. С половиной JS-задач 2005 года вы справились."
+  }
+}

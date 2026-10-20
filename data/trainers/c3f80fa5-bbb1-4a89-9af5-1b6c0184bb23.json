@@ -1,0 +1,18 @@
+{
+  "taskId": "c3f80fa5-bbb1-4a89-9af5-1b6c0184bb23",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "lessonId": "bf950b3e-21be-4cc5-af2c-f47fb98c6507",
+  "files": [
+    {
+      "name": "script.js",
+      "initialHash": "228e3c99e8645beed098b25831b79870ed0638ce7b4e19f49183011cfd419bbc",
+      "content": "const form = document.forms.search;\nconst content = document.querySelector('.content');\nconst result = document.querySelector('.content__result');\nconst error = document.querySelector('.content__error');\nconst spinner = document.querySelector('.spinner');\n\nfunction search(entity, entityId) {\n  return fetch(`https://swapi.nomoreparties.co/${entity}/${entityId}`);\n}\n\nfunction renderResult(text) {\n  result.textContent = text;\n  error.textContent = '';\n}\n\nfunction renderError(err) {\n  error.textContent = err;\n  result.textContent = '';\n}\n\nform.addEventListener('submit', function submit(e) {\n  e.preventDefault();\n  search(form.elements.entity.value, form.elements.entityId.value)\n    .then((res) => {\n      if (res.ok) {\n        return res.json();\n      }\n      return Promise.reject(res.status);\n    })\n    .then((res) => {\n      console.log(res);\n    })\n    .catch((err) => {\n      console.log(`Ошибка: ${err}`);\n    });\n});"
+    }
+  ],
+  "instructionsHash": "9caa1e301a4436a8d63eafa64680efe679646d3475e6ef6409bb5d0f207e6a17",
+  "verifiedAt": "2026-10-20T13:54:11.914Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Объект ответа пойман и посажен в консоль. Теперь можно его препарировать и изучать."
+  }
+}

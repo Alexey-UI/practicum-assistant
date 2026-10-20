@@ -1,0 +1,18 @@
+{
+  "taskId": "81215237-bc04-4e81-ba1a-29580e309bde",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "lessonId": "0b3e7c6f-7c6d-43e8-9c44-c4b372ca6ed8",
+  "files": [
+    {
+      "name": "script.js",
+      "initialHash": "0301e1cf267bb97f7187d39af70da20b788a6183d2346dc6ae2f58cfb54187eb",
+      "content": "const form = document.querySelector('.form');\nconst formInput = form.querySelector('.form__input');\nconst formError = form.querySelector(`.${formInput.id}-error`);\n\nconst showInputError = (formElement, inputElement, errorMessage) => {\n  const errorElement = formElement.querySelector(`.${inputElement.id}-error`);\n  inputElement.classList.add('form__input_type_error');\n  errorElement.textContent = errorMessage;\n  errorElement.classList.add('form__input-error_active');\n};\n\nconst hideInputError = (formElement, inputElement) => {\n  const errorElement = formElement.querySelector(`.${inputElement.id}-error`);\n  inputElement.classList.remove('form__input_type_error');\n  errorElement.classList.remove('form__input-error_active');\n  errorElement.textContent = '';\n};\n\nconst checkInputValidity = (formElement, inputElement) => {\n  if (!inputElement.validity.valid) {\n    showInputError(formElement, inputElement, inputElement.validationMessage);\n  } else {\n    hideInputError(formElement, inputElement);\n  }\n};\n\nform.addEventListener('submit', function (evt) {\n  evt.preventDefault();\n});\n\nformInput.addEventListener('input', function () {\n  checkInputValidity(form, formInput);\n});"
+    }
+  ],
+  "instructionsHash": "344f8c8a83a0d11e0c07676ae0759c940d47551a7d8841bd607f81d4cf896f52",
+  "verifiedAt": "2026-10-20T13:43:02.690Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Отлично. Остались две самые объёмные части. Нужно изменить способ добавления слушателей событий форме и полям ввода. Переходим к ним."
+  }
+}

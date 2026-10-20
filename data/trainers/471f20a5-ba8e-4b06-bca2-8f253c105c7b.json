@@ -1,0 +1,18 @@
+{
+  "taskId": "471f20a5-ba8e-4b06-bca2-8f253c105c7b",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "lessonId": "32025f93-3e50-4485-933b-31dc2f3ffc09",
+  "files": [
+    {
+      "name": "index.html",
+      "initialHash": "8f66446572bd4cefc723d65281003cd98ff4fc37de703754a06b81decce3df3c",
+      "content": "<!doctype html>\n<html lang=\"ru\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\"\n        content=\"width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0\">\n  <meta http-equiv=\"X-UA-Compatible\" content=\"ie=edge\">\n  <title>Подписка</title>\n  <link rel=\"stylesheet\" href=\"https://code.s3.yandex.net/web-code/normalize.css\">\n  <link rel=\"stylesheet\" href=\"https://code.s3.yandex.net/web-code/form-validation/lesson-3/task-1/index.css\">\n</head>\n<body class=\"page\">\n<div class=\"page__content\">\n  <main class=\"page__section content\">\n    <form class=\"form\" novalidate>\n      <label class=\"form__field\">\n        Введите ваш URL-адрес:\n        <input type=\"url\" class=\"form__input\" placeholder=\"\" required minlength=\"13\">\n      </label>\n      <button type=\"submit\" class=\"button\">\n        Отправить\n      </button>\n    </form>\n  </main>\n</div>\n<script src=\"script.js\"></script>\n</body>\n</html>\n"
+    }
+  ],
+  "instructionsHash": "45bb7fe2bfa4207d3e4e444ea14ae6d67305cb09d5d8fe8e861fd17f30fa72e6",
+  "verifiedAt": "2026-10-20T13:40:59.495Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Отлично! Попробуйте ввести данные в поле form__input. Попытайтесь отправить форму. Теперь сообщения об ошибках отсутствуют."
+  }
+}

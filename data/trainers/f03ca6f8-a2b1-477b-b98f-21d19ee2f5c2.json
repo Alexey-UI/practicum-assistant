@@ -1,0 +1,18 @@
+{
+  "taskId": "f03ca6f8-a2b1-477b-b98f-21d19ee2f5c2",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "lessonId": "897c32e7-ad0b-4666-abc2-994a15ad1f79",
+  "files": [
+    {
+      "name": "script.js",
+      "initialHash": "c97c2c844a033c822f43a2ecabf5d1877271c91b14cfee02638b6b7a7e5f6792",
+      "content": "// создаёт разметку для поста\nfunction createPostMarkup(post) {\n  return `\n    <div class=\"post\">\n      <p class=\"post__title\">${post.title}</p>\n      <p class=\"post__text\">${post.body}</p>\n    </div>\n  `;\n}\n\n// вставляет разметку в DOM\nfunction addPostToDOM(container, markup) {\n  container.insertAdjacentHTML('afterbegin', markup);\n}\n\nfunction getPosts() {\n  fetch('https://jsonplaceholder.typicode.com/posts')\n    .then((res) => res.json())\n    .then((posts) => console.log(posts));\n}\n\ngetPosts();"
+    }
+  ],
+  "instructionsHash": "c126572c303041ce4c7fc3a0bf070bb674b8e4e8ab032eff129eeead9684350d",
+  "verifiedAt": "2026-10-20T13:51:41.578Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Вы спросили у сервера: где тестовые посты? И сервер ответил: теперь посты у вас в консоли. Как говорят разработчики: осталось их отрендерить."
+  }
+}

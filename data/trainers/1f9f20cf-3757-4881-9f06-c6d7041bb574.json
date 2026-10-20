@@ -1,0 +1,18 @@
+{
+  "taskId": "1f9f20cf-3757-4881-9f06-c6d7041bb574",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "lessonId": "c425ce7a-f5eb-4299-b834-0f259e1f4c9d",
+  "files": [
+    {
+      "name": "script.js",
+      "initialHash": "a9d8c3e1b5a8fa4c8b0542271623c024fcac1258a40fa07d361fe2d699b541d9",
+      "content": "const formElement = document.querySelector('.form');\nconst formInput = formElement.querySelector('.form__input');\nconst formError = formElement.querySelector(`.${formInput.id}-error`);\n\nconst showError = (input, errorMessage) => {\n  input.classList.add('form__input_type_error');\n  formError.textContent = errorMessage;\n  formError.classList.add('form__input-error_active');\n};\n\nconst hideError = (input) => {\n  input.classList.remove('form__input_type_error');\n  formError.classList.remove('form__input-error_active');\n  formError.textContent = '';\n};\n\nconst checkInputValidity = () => {\n  if (!formInput.validity.valid) {\n    showError(formInput, formInput.validationMessage);\n  } else {\n    hideError(formInput);\n  }\n};\n\nformElement.addEventListener('submit', function (evt) {\n  evt.preventDefault();\n});\n\nformInput.addEventListener('input', function () {\n  checkInputValidity();\n});\n"
+    }
+  ],
+  "instructionsHash": "86dc9e1c442fb8bc3034c7a28a175be627eebc1ac97a2b2bcb400c44f40fad49",
+  "verifiedAt": "2026-10-20T13:42:22.998Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Попробуйте ввести разные данные в поле: ошибка появляется и исчезает. В следующем уроке разберёмся, как адаптировать написанный код для нескольких полей и форм."
+  }
+}

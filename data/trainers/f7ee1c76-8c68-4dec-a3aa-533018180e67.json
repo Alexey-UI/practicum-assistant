@@ -1,0 +1,18 @@
+{
+  "taskId": "f7ee1c76-8c68-4dec-a3aa-533018180e67",
+  "lessonId": "01c93420-cd71-4bc4-8858-5e385f3ebe53",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "files": [
+    {
+      "name": "script.js",
+      "initialHash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "content": "fetch('https://swapi.nomoreparties.co/people')\n  .then((response) => {\n    console.log(response);\n  });\n"
+    }
+  ],
+  "instructionsHash": "3a3030f508572c855fe03859e1d5c3d6e34a861e5658a0b713413cdb9816473f",
+  "verifiedAt": "2026-10-20T13:50:11.518Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Сложно понять, что появилось в консоли, но это уже что-то."
+  }
+}

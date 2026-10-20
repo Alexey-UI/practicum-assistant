@@ -1,0 +1,18 @@
+{
+  "taskId": "acc7e15a-9585-424a-bb56-b13a72de9c25",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "lessonId": "bf950b3e-21be-4cc5-af2c-f47fb98c6507",
+  "files": [
+    {
+      "name": "script.js",
+      "initialHash": "70a36accb7e621021b40c822fef8cf787cb4f12a4392fadd8cf623b3b2fd5871",
+      "content": "const form = document.forms.search;\nconst content = document.querySelector('.content');\nconst result = document.querySelector('.content__result');\nconst error = document.querySelector('.content__error');\nconst spinner = document.querySelector('.spinner');\n\nfunction search(entity, entityId) {\n  return fetch(`https://swapi.nomoreparties.co/${entity}/${entityId}`);\n}\n\nform.addEventListener('submit', function submit(e) {\n  e.preventDefault();\n  search(form.elements.entity.value, form.elements.entityId.value)\n    .then((res) => {\n      if (res.ok) {\n        console.log('Всё хорошо');\n      }\n    });\n});"
+    }
+  ],
+  "instructionsHash": "84ff2e81de0a623953c78db143fe65e7a7d39f5ec9a44550fbe6ea153d112c4e",
+  "verifiedAt": "2026-10-20T13:53:17.635Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Теперь мы сможем добраться до любой планеты! Надеемся, с гиперприводом всё хорошо."
+  }
+}

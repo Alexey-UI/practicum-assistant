@@ -1,0 +1,18 @@
+{
+  "taskId": "20dc7edf-e122-46b8-9b81-547d27ff1cbd",
+  "contextHash": "0eb26fbe670be08b0583b3accffc9c026fecb8a2fd5c13b67244991372b7d182",
+  "lessonId": "bf950b3e-21be-4cc5-af2c-f47fb98c6507",
+  "files": [
+    {
+      "name": "script.js",
+      "initialHash": "e39dd8c4e42bf534d8fcf1c088b56645c2b45cdb0d9c56559d4f950c994d7da0",
+      "content": "const form = document.forms.search;\nconst content = document.querySelector('.content');\nconst result = document.querySelector('.content__result');\nconst error = document.querySelector('.content__error');\nconst spinner = document.querySelector('.spinner');\n\nfunction search(entity, entityId) {\n  return fetch(`https://swapi.nomoreparties.co/${entity}/${entityId}`);\n}\n\nfunction renderResult(text) {\n  result.textContent = text;\n  error.textContent = '';\n}\n\nfunction renderError(err) {\n  error.textContent = err;\n  result.textContent = '';\n}\n\nfunction renderLoading(isLoading) {\n  if (isLoading) {\n    spinner.classList.add('spinner_visible');\n    content.classList.add('content_hidden');\n  } else {\n    spinner.classList.remove('spinner_visible');\n    content.classList.remove('content_hidden');\n  }\n}\n\nform.addEventListener('submit', function submit(e) {\n  e.preventDefault();\n  search(form.elements.entity.value, form.elements.entityId.value)\n    .then((res) => {\n      if (res.ok) {\n        return res.json();\n      }\n      return Promise.reject(res.status);\n    })\n    .then((res) => {\n      renderResult(res.name);\n    })\n    .catch((err) => {\n      renderError(`Ошибка: ${err}`);\n    });\n});"
+    }
+  ],
+  "instructionsHash": "0b6cb659cbfd88e64a72d9274ef438f8ec9490a30614fda37d8e3461150a7e09",
+  "verifiedAt": "2026-10-20T13:54:40.763Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Этот небольшой код сохранит немало нервов — мало что бесит больше тормозящей техники."
+  }
+}

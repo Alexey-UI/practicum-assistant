@@ -1,0 +1,18 @@
+{
+  "taskId": "7ec9bb2e-8c14-4e88-a238-d78fe8aecd10",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "lessonId": "09002e55-2810-49b2-9fef-29430dbb87b9",
+  "files": [
+    {
+      "name": "script.js",
+      "initialHash": "78ba0f8061259ffc45506ec0c63ddbe511d46d1cda269d874512f80543a746c8",
+      "content": "const user = {\n  name: 'Иван',\n  age: 30,\n  hasDog: true,\n  dog: {\n    name: 'Бонни',\n    age: 6\n  }\n};\n\nconst userDeepCopy = JSON.parse(JSON.stringify(user));\n\nconsole.log(user === userDeepCopy); // false\nconsole.log(user.dog === userDeepCopy.dog); // false\nconsole.log(user.name === userDeepCopy.name); // true\nconsole.log(user.dog.name === userDeepCopy.dog.name); // true\n"
+    }
+  ],
+  "instructionsHash": "3f787d191e9535676bd47531f25823429433235cd51deb1566f5201ef2950e10",
+  "verifiedAt": "2026-10-20T13:50:34.173Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Вот это финт ушами! Вы перевели объект в строку, а затем — обратно в объект. Это отличный способ сделать глубокую копию объекта. Но будьте внимательны: если в свойства объекта закралась функция, этот трюк не пройдёт."
+  }
+}

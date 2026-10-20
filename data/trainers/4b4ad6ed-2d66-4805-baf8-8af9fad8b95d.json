@@ -1,0 +1,18 @@
+{
+  "taskId": "4b4ad6ed-2d66-4805-baf8-8af9fad8b95d",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "lessonId": "9c50235c-672a-4c58-af67-c15372ab147f",
+  "files": [
+    {
+      "name": "script.js",
+      "initialHash": "4d5b9f3afe3756a31f3f8893afab7e3eac61ae0ec552b90e30c42a3566d6e95e",
+      "content": "function handleImageLoad(evt) {\n  // после загрузки добавим элемент изображения в DOM\n  document.body.append(evt.target);\n}\n\n// дополните код функции\nfunction loadImage(imageUrl, loadCallback, errorCallback) {\n  const img = document.createElement('img');\n  img.src = imageUrl;\n  img.onload = loadCallback;\n  img.onerror = errorCallback;\n}\n\nloadImage(\n  'https://pictures.s3.yandex.net/frontend-developer/functions/dog-1.jpg',\n  handleImageLoad\n);\n"
+    }
+  ],
+  "instructionsHash": "594d518c702243dd5d50b395fdd629a40d14f28c790c412c7d6db97753f31908",
+  "verifiedAt": "2026-10-20T13:47:09.729Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Да! Если картинка с сервера не пришла, можно и DOM не трогать. Для этого только колбэк errorCallback нужно дописать."
+  }
+}

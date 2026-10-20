@@ -1,0 +1,18 @@
+{
+  "taskId": "d4d726bc-396d-401c-8ab2-7d271fbbcf70",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "lessonId": "c425ce7a-f5eb-4299-b834-0f259e1f4c9d",
+  "files": [
+    {
+      "name": "script.js",
+      "initialHash": "31abcfb9a9a5c71c8be001916b7ad62b51c77ee8b1ba9e8f53037c7fdbf77c92",
+      "content": "const formElement = document.querySelector('.form');\nconst formInput = formElement.querySelector('.form__input');\n\nconst showError = (input) => {\n  input.classList.add('form__input_type_error');\n};\n\nconst hideError = (input) => {\n  input.classList.remove('form__input_type_error');\n};\n\nconst checkInputValidity = () => {\n  if (!formInput.validity.valid) {\n    showError(formInput);\n  } else {\n    hideError(formInput);\n  }\n};\n\nformElement.addEventListener('submit', function (evt) {\n  evt.preventDefault();\n});\n\nformInput.addEventListener('input', function () {\n  checkInputValidity();\n});\n"
+    }
+  ],
+  "instructionsHash": "ebcd095f60f28c3132222bf61a75a4d692eb43d871441a46652882f90cfd5ab8",
+  "verifiedAt": "2026-10-20T13:41:48.779Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Супер! Попробуйте вводить разные данные в поле и посмотрите, как изменяется его состояние. Но текста ошибки по-прежнему нет. В следующих заданиях это исправим."
+  }
+}

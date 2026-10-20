@@ -1,0 +1,18 @@
+{
+  "taskId": "587593f7-daea-4c4d-9568-0b5d11249cb8",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "lessonId": "bf950b3e-21be-4cc5-af2c-f47fb98c6507",
+  "files": [
+    {
+      "name": "script.js",
+      "initialHash": "7cfab193a4140d92bfb68785f6f1695a94f35d0c66dace4e8e2ae9da82961b66",
+      "content": "const form = document.forms.search;\nconst content = document.querySelector('.content');\nconst result = document.querySelector('.content__result');\nconst error = document.querySelector('.content__error');\nconst spinner = document.querySelector('.spinner');\n\nfunction search(entity, entityId) {\n  return fetch(`https://swapi.nomoreparties.co/${entity}/${entityId}`);\n}\n\nfunction renderResult(text) {\n  result.textContent = text;\n  error.textContent = '';\n}\n\nfunction renderError(err) {\n  error.textContent = err;\n  result.textContent = '';\n}\n\nform.addEventListener('submit', function submit(e) {\n  e.preventDefault();\n  search(form.elements.entity.value, form.elements.entityId.value)\n    .then((res) => {\n      if (res.ok) {\n        console.log('Всё хорошо');\n      }\n    });\n});"
+    }
+  ],
+  "instructionsHash": "d52b3da4fc9bdbbd9bb37548459b09a95c936c65a6bfafc5ec63dddbe6991614",
+  "verifiedAt": "2026-10-20T13:53:34.763Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Вы написали функцию, признающую ошибки. Что не всем легко даётся. Sorry seems to be the hardest word."
+  }
+}

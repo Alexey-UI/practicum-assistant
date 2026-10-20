@@ -1,0 +1,18 @@
+{
+  "taskId": "a64ec4d2-74ee-4dc4-b341-a118626f9dc9",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "lessonId": "897c32e7-ad0b-4666-abc2-994a15ad1f79",
+  "files": [
+    {
+      "name": "script.js",
+      "initialHash": "15ab68085c11efc3ba1c068b8b389ee69f6ab4135b9616a81ae1a7a6d4670164",
+      "content": "// создаёт разметку для поста\nfunction createPostMarkup(post) {\n  return `\n    <div class=\"post\">\n      <p class=\"post__title\">${post.title}</p>\n      <p class=\"post__text\">${post.body}</p>\n    </div>\n  `;\n}\n\n// вставляет разметку в DOM\nfunction addPostToDOM(container, markup) {\n  container.insertAdjacentHTML('afterbegin', markup);\n}\n\nfunction createPost(newPost) {\n  fetch('https://jsonplaceholder.typicode.com/posts', {\n    method: 'POST',\n    body: JSON.stringify({ title: newPost.title, body: newPost.body }),\n    headers: {\n      'Content-Type': 'application/json; charset=UTF-8'\n    }\n  })\n    .then((res) => res.json())\n    .then((post) => {\n      addPostToDOM(document.querySelector('.container'), createPostMarkup(post));\n    });\n}\n\n// обработчик сабмита формы\ndocument.forms.post.addEventListener('submit', function (event) {\n  event.preventDefault();\n\n  const { title, text } = event.currentTarget.elements;\n\n  createPost({\n    title: title.value,\n    body: text.value\n  });\n});\n"
+    }
+  ],
+  "instructionsHash": "a6d0e342f16f5ad9fb41ba49a9a9339da3ddcd9804847dbb97681326bb449eef",
+  "verifiedAt": "2026-10-20T13:52:37.122Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Работает! Теперь можно сделать свой фейсбук. С домино и медведями."
+  }
+}

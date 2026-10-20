@@ -1,0 +1,18 @@
+{
+  "taskId": "1fef011b-d9f2-4500-8457-03ae0cd8a542",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "lessonId": "c425ce7a-f5eb-4299-b834-0f259e1f4c9d",
+  "files": [
+    {
+      "name": "script.js",
+      "initialHash": "048e3fea83d043bf8377a320bae1af6269c06f163486284376478cd49992ebf5",
+      "content": "const formElement = document.querySelector('.form');\nconst formInput = formElement.querySelector('.form__input');\n\nconst showError = (input) => {\n  input.classList.add('form__input_type_error');\n};\n\nconst hideError = (input) => {\n  input.classList.remove('form__input_type_error');\n};\n\nformElement.addEventListener('submit', function (evt) {\n  evt.preventDefault();\n});"
+    }
+  ],
+  "instructionsHash": "87f9b2c744472d80314731ffc0652ffd030ef305dd5df1085789c8bd355e7140",
+  "verifiedAt": "2026-10-20T13:41:37.038Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Два условия и показ ошибок готовы. Дальше — больше."
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "taskId": "969cdef4-ea53-4224-b7ad-b23933aa8769",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "lessonId": "a7ab35c3-2ae3-44a8-9af7-93dd00457e26",
+  "files": [
+    {
+      "name": "index.html",
+      "initialHash": "af8f7caf52f15a5a4ad4273f7d83e1cf3547357bd11b51de84215cffe5a50127",
+      "content": "<!doctype html>\n<html lang=\"ru\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\"\n        content=\"width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0\">\n  <meta http-equiv=\"X-UA-Compatible\" content=\"ie=edge\">\n  <title>Подписка</title>\n  <link rel=\"stylesheet\" href=\"https://code.s3.yandex.net/web-code/normalize.css\">\n  <link rel=\"stylesheet\" href=\"https://code.s3.yandex.net/web-code/form-validation/lesson-2/index.css\">\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body class=\"page\">\n<div class=\"page__content\">\n  <main class=\"page__section content\">\n    <h1 class=\"content__title\">\n      Оформите подписку\n    </h1>\n    <form class=\"form\">\n      <label class=\"form__field\">\n        Введите ваш email:\n        <input type=\"email\" class=\"form__input\" required minlength=\"7\" maxlength=\"25\">\n      </label>\n      <label class=\"form__field form__field_type_row\">\n        <input class=\"form__checkbox\" type=\"checkbox\" required>\n        <span class=\"form__checkbox-item\"></span>\n        <span class=\"form__text\">Согласие на обработку персональных данных</span>\n      </label>\n      <button type=\"submit\" class=\"button\">\n        Подписаться на уведомления\n      </button>\n    </form>\n  </main>\n</div>\n<script src=\"script.js\"></script>\n</body>\n</html>\n"
+    }
+  ],
+  "instructionsHash": "fe7197662123a820faed13a3396ed7aadb07d990bd893d0e83e39ee9b582dec3",
+  "verifiedAt": "2026-10-20T13:40:38.467Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Попробуйте ввести короткую почту наподобие a@a.co и отправить форму. Посмотрите на сообщение браузера: появилась ошибка. Поле станет валидным, если добавить ещё один символ — a@a.com. Когда символов станет 25, больше ничего ввести не получится.\nИ что-то мы засиделись с вёрсткой — пора возвращаться к JavaScript. В следующем уроке вы узнаете, как валидировать формы с ним."
+  }
+}

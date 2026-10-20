@@ -1,0 +1,18 @@
+{
+  "taskId": "b58adb0e-4733-4b28-affe-34d1454bcea9",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "lessonId": "0b3e7c6f-7c6d-43e8-9c44-c4b372ca6ed8",
+  "files": [
+    {
+      "name": "script.js",
+      "initialHash": "4afd66fcea1ee56b5d81534413fefa6091fddf5b144091f8d285a346052f6a6a",
+      "content": "const form = document.querySelector('.form');\nconst formInput = form.querySelector('.form__input');\nconst formError = form.querySelector(`.${formInput.id}-error`);\n\nconst showInputError = (formElement, inputElement, errorMessage) => {\n  const errorElement = formElement.querySelector(`.${inputElement.id}-error`);\n  inputElement.classList.add('form__input_type_error');\n  errorElement.textContent = errorMessage;\n  errorElement.classList.add('form__input-error_active');\n};\n\nconst hideInputError = (formElement, inputElement) => {\n  const errorElement = formElement.querySelector(`.${inputElement.id}-error`);\n  inputElement.classList.remove('form__input_type_error');\n  errorElement.classList.remove('form__input-error_active');\n  errorElement.textContent = '';\n};\n\nconst checkInputValidity = () => {\n  if (!formInput.validity.valid) {\n    showInputError(form, formInput, formInput.validationMessage);\n  } else {\n    hideInputError(form, formInput);\n  }\n};\n\nform.addEventListener('submit', function (evt) {\n  evt.preventDefault();\n});\n\nformInput.addEventListener('input', function () {\n  checkInputValidity();\n});"
+    }
+  ],
+  "instructionsHash": "65374c00ce164be390890c8323de964fc344c685dcf08b9dd89c1aa759304639",
+  "verifiedAt": "2026-10-20T13:42:48.063Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Изменение существующего кода — задача не из простых. Но вы с ней прекрасно справляетесь."
+  }
+}

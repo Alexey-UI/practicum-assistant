@@ -1,0 +1,18 @@
+{
+  "taskId": "dcc067b4-7d07-41f2-aa12-d05528f4f875",
+  "lessonId": "09002e55-2810-49b2-9fef-29430dbb87b9",
+  "contextHash": "0203d8e401a0a2bd856af1ea8f294e80149028c07da98d8dd2a4b4447353e6e5",
+  "files": [
+    {
+      "name": "script.js",
+      "initialHash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "content": "fetch('https://api.kanye.rest')\n  .then((res) => res.json())\n  .then((data) => {\n    console.log(data);\n  });\n"
+    }
+  ],
+  "instructionsHash": "4dcd8a6185e8d6a41a3831d58511d57e69d02a4558d2357ee693f61a1e494b50",
+  "verifiedAt": "2026-10-20T13:50:47.242Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Как говорил Канье Уэст: «Сдаться сложнее, чем сделать ещё одну попытку». Поэтому продолжим в следующем задании."
+  }
+}
