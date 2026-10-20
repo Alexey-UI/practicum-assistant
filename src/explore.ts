@@ -112,7 +112,8 @@ export async function explore(): Promise<void> {
           const target = action.css ? page.locator(action.css) : page.getByRole(action.role ?? 'button', { name: action.name, exact: true });
           const count = await target.count();
           if (count !== 1) throw new Error(`Найдено элементов: ${count}; нужен один точный селектор`);
-          await target.click({ noWaitAfter: true });
+          if (action.button !== undefined && !['left', 'right', 'middle'].includes(action.button)) throw new Error('Неизвестная кнопка мыши');
+          await target.click({ noWaitAfter: true, button: action.button ?? 'left' });
         } else if (action.action === 'fill') {
           const field = action.css ? page.locator(action.css) : page.getByLabel(action.label, { exact: true });
           if (await field.count() !== 1) throw new Error('Поле ввода не найдено или неоднозначно');

@@ -1,0 +1,18 @@
+{
+  "taskId": "1accfef4-9619-40be-8d20-e91381990df4",
+  "lessonId": "0d2c6a3b-e1e7-4717-9ad6-c9fbc091840a",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "files": [
+    {
+      "name": "index.js",
+      "initialHash": "9e407bf2fed203935b7c5aa5fa1cb50c735e4e3a39aed930f5aa7f7a65998a73",
+      "content": "import * as all from './lib.js';\n\nconsole.log(all.symbol);\n"
+    }
+  ],
+  "instructionsHash": "5dc3e3dfe19cf908c2cb92d4ff06fc4b1910f232af555da49423c6a6f659485f",
+  "verifiedAt": "2026-10-20T13:23:36.385Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Вот это да — импорт ещё сильнее скукожился."
+  }
+}

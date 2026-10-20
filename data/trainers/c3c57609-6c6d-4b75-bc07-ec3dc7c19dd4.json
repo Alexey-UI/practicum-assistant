@@ -1,0 +1,18 @@
+{
+  "taskId": "c3c57609-6c6d-4b75-bc07-ec3dc7c19dd4",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "lessonId": "804a8e21-5bb4-4d14-a16a-1843a6a271c0",
+  "files": [
+    {
+      "name": "script.js",
+      "initialHash": "ab5cb6d1184dd80d8b569cbfece334ec3ba357c721d3dd8bfa7c7f52b5e7e1d0",
+      "content": "function evenSum(numbers) {\n  let sum = 0;\n  \n  for(let i = 0; i < numbers.length; i++) {\n    const number = numbers[i];\n    console.log(number);\n    \n    if(number % 2 === 1) {\n      sum += number;\n    }\n  }\n  \n  return sum;\n}\n\n// Правильный результат: 2 + 4 = 6\nconsole.log(evenSum([1, 2, 3, 4]));\n\n// Правильный результат: 2 + 10 + 16 = 28\nconsole.log(evenSum([5, 2, 10, 1, 99, 16])); "
+    }
+  ],
+  "instructionsHash": "c6aa5ee9aeadfb6ffb4cb92a4c58d1dd774158e5adcd7be5ddc6077945e3fe26",
+  "verifiedAt": "2026-10-20T13:20:09.750Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "В консоль выводятся все элементы массива: значит цикл написан правильно. Продолжаем искать ошибку..."
+  }
+}

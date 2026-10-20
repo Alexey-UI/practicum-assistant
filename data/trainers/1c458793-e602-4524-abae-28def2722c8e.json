@@ -1,0 +1,18 @@
+{
+  "taskId": "1c458793-e602-4524-abae-28def2722c8e",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "lessonId": "804a8e21-5bb4-4d14-a16a-1843a6a271c0",
+  "files": [
+    {
+      "name": "script.js",
+      "initialHash": "980527fb6171da79c9098554bbb8795dbbe8a03febe73cc4b84efbe76e3470f5",
+      "content": "function evenSum(numbers) {\n  let sum = 0;\n  \n  for(let i = 0; i < numbers.length; i++) {\n    const number = numbers[i];\n    \n    if(number % 2 === 0) {\n      console.log(number); // Ошибка где-то здесь!\n      sum += number;\n    }\n  }\n  \n  return sum;\n}\n\n// Правильный результат: 2 + 4 = 6\nconsole.log(evenSum([1, 2, 3, 4]));\n\n// Правильный результат: 2 + 10 + 16 = 28\nconsole.log(evenSum([5, 2, 10, 1, 99, 16])); \n"
+    }
+  ],
+  "instructionsHash": "495f8054eb7289d2de0dd207cef765594d72cacc4a0fede517a52c5fac359e87",
+  "verifiedAt": "2026-10-20T13:20:33.018Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Вот теперь функция работает. Поздравляем!"
+  }
+}

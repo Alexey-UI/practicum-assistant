@@ -1,0 +1,18 @@
+{
+  "taskId": "9339e964-6a24-4d5f-8b37-4a1cbd6f5d1b",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "lessonId": "804a8e21-5bb4-4d14-a16a-1843a6a271c0",
+  "files": [
+    {
+      "name": "script.js",
+      "initialHash": "a22d1170298a1e0a34d8ef07eef23af2353b2555c916cea8b34d6ccb2968118f",
+      "content": "function evenSum(numbers) {\n  let sum = 0;\n  \n  for(let i = 0; i < numbers.length; i++) {\n    const number = numbers[i];\n    \n    if(number % 2 === 1) {\n      console.log(number);\n      sum += number;\n    }\n  }\n  \n  return sum;\n}\n\n// Правильный результат: 2 + 4 = 6\nconsole.log(evenSum([1, 2, 3, 4]));\n\n// Правильный результат: 2 + 10 + 16 = 28\nconsole.log(evenSum([5, 2, 10, 1, 99, 16])); \n"
+    }
+  ],
+  "instructionsHash": "cd4094a6782ca1287b2e57cf66ce496606fed65c85192ada1d8c023d8be6c52c",
+  "verifiedAt": "2026-10-20T13:20:23.889Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "В консоль выводятся нечётные элементы вместо чётных! Ошибка где-то здесь!"
+  }
+}

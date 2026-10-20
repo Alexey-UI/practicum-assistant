@@ -116,7 +116,7 @@ export interface TrainerSolution {
   verification?: 'self';
   practiceChecks?: Array<{ selector: string; hover: Record<string, string>; active?: Record<string, string> }>;
   previewActions?: PreviewAction[];
-  files: Array<{ name: string; initialHash: string; content: string }>;
+  files: Array<{ name: string; initialHash: string; content: string; create?: true }>;
   verifiedAt: string;
   evidence: { selector: string; message: string };
 }
@@ -130,6 +130,66 @@ export function trainerSolutionHash(solution: Pick<TrainerSolution, 'files' | 'p
 export function canReplaceTrainerFile(currentHash: string, file: TrainerSolution['files'][number], previous?: AttemptFile): boolean {
   return [file.initialHash, contentHash(file.content)].includes(currentHash) ||
     !!previous && previous.initialHash === file.initialHash && previous.contentHash === currentHash;
+}
+
+interface CreatedFileReceipt {
+  taskId: string; lessonId: string; instructionsHash: string; contextHash: string;
+  name: string; phase: 'requested' | 'created'; updatedAt: string;
+}
+
+/** Validate every existing source before creating or editing any file. */
+export async function applyTrainerFiles(page: Page, task: Awaited<ReturnType<typeof readTrainer>>, files: TrainerSolution['files'], previousFiles: AttemptFile[] = []): Promise<void> {
+  if (new Set(files.map(file => file.name)).size !== files.length) throw new Error('Имена файлов решения неоднозначны');
+  const creationRecords = new Map<string, { path: string; receipt: CreatedFileReceipt }>();
+  for (const file of files) {
+    if (file.create !== undefined && file.create !== true) throw new Error('Неизвестный режим создания файла');
+    if (file.create) {
+      if (!/^[a-zA-Z0-9][a-zA-Z0-9_.-]{0,119}\.(?:html?|css|[cm]?js|jsx|tsx?|json|txt|md|svg)$/i.test(file.name) || file.initialHash !== contentHash('')) throw new Error('Новый файл должен иметь безопасное имя в корне проекта и хеш пустого исходника');
+      const path = `.local/trainer-files/${task.taskId}/${file.name}.json`;
+      const saved = await readJson<CreatedFileReceipt | null>(path, null);
+      const receipt: CreatedFileReceipt = { taskId: task.taskId, lessonId: lessonId(task.url)!, instructionsHash: contentHash(normalize(task.instructions)), contextHash: task.contextHash, name: file.name, phase: 'requested', updatedAt: new Date().toISOString() };
+      if (saved && (saved.taskId !== receipt.taskId || saved.lessonId !== receipt.lessonId || saved.instructionsHash !== receipt.instructionsHash || saved.contextHash !== receipt.contextHash || saved.name !== file.name)) throw new Error('Контекст создания файла изменился');
+      const existing = task.files.filter(item => item.path.split('/').pop() === file.name);
+      if (existing.length || task.resources.includes(file.name)) {
+        if (!saved || existing.length !== 1 || !canReplaceTrainerFile(existing[0].hash, file, previousFiles.find(item => item.name === file.name))) throw new Error(`Новый файл ${file.name} уже существует без подтверждения собственного создания либо изменён`);
+      } else if (saved?.phase === 'requested') {
+        throw new Error(`Результат создания ${file.name} ещё не подтверждён; сначала нужен разбор`);
+      }
+      creationRecords.set(file.name, { path, receipt });
+    } else {
+      await selectEditorFile(page, file.name);
+      const matches = (await readTrainer(page)).files.filter(item => item.path.split('/').pop() === file.name);
+      if (matches.length !== 1 || !canReplaceTrainerFile(matches[0].hash, file, previousFiles.find(previous => previous.name === file.name))) throw new Error(`Исходный файл ${file.name} изменён: нужен разбор перед применением эталона`);
+    }
+  }
+  const assertScope = () => { if (safeUrl(page.url()) !== task.url) throw new Error('Создание или редактирование относится к другому заданию'); };
+  for (const file of files) {
+    assertScope();
+    const record = creationRecords.get(file.name);
+    if (record && !task.files.some(item => item.path.split('/').pop() === file.name)) {
+      if (await page.locator('.files-tree__node-name-input').filter({ visible: true }).count()) throw new Error('В дереве уже редактируется имя файла');
+      await atomicJson(record.path, record.receipt);
+      await page.locator('.files-tree__body').click({ button: 'right' });
+      const create = page.locator('.context-menu-default_visible .context-menu-default__item').filter({ hasText: /^Новый файл$/, visible: true });
+      if (await create.count() !== 1) throw new Error('Нет однозначной команды создания файла');
+      await create.click();
+      const nameInput = page.locator('.files-tree__node-name-input').filter({ visible: true });
+      await nameInput.waitFor({ state: 'visible' });
+      assertScope();
+      await nameInput.fill(file.name);
+      await nameInput.press('Enter');
+      const created = page.locator('.files-tree__node-name-container').getByText(file.name, { exact: true }).filter({ visible: true });
+      await created.waitFor({ state: 'visible', timeout: 60000 });
+      await selectEditorFile(page, file.name);
+      const actual = (await readTrainer(page)).files.filter(item => item.path.split('/').pop() === file.name);
+      if (actual.length !== 1 || actual[0].hash !== contentHash('')) throw new Error('Новый файл не пуст либо неоднозначен');
+      assertScope();
+      await atomicJson(record.path, { ...record.receipt, phase: 'created', updatedAt: new Date().toISOString() });
+      await journal('trainer-file-created', { taskId: task.taskId, name: file.name });
+    }
+    const existing = task.files.filter(item => item.path.split('/').pop() === file.name);
+    if (existing.length !== 1 || existing[0].hash !== contentHash(file.content)) await writeEditor(page, file.name, file.content);
+  }
 }
 
 // A task is advanced only after real checker feedback or a previously accepted
@@ -171,20 +231,7 @@ export async function solveTrainer(page: Page, candidate = false): Promise<'adva
       if (previousFiles.some(previous => !solution.files.some(file => file.name === previous.name && file.initialHash === previous.initialHash))) {
         throw new Error('Повторное решение должно сохранять исходные хеши и включать все ранее изменённые файлы');
       }
-      // Compare each initial file before changing anything. Unknown edits are
-      // preserved in pending-task.json for investigation instead of overwritten.
-      for (const file of solution.files) {
-        await selectEditorFile(page, file.name);
-        const matches = (await readTrainer(page)).files.filter(item => item.path.split('/').pop() === file.name);
-        const current = matches.length === 1 ? matches[0] : undefined;
-        if (!current || !canReplaceTrainerFile(current.hash, file, previousFiles.find(previous => previous.name === file.name))) {
-          throw new Error(`Исходный файл ${file.name} изменён: нужен разбор перед применением эталона`);
-        }
-      }
-      for (const file of solution.files) {
-        const existing = task.files.filter(item => item.path.split('/').pop() === file.name);
-        if (existing.length !== 1 || existing[0].hash !== contentHash(file.content)) await writeEditor(page, file.name, file.content);
-      }
+      await applyTrainerFiles(page, task, solution.files, previousFiles);
       if (solution.previewActions) await (await import('./preview-actions.js')).runPreviewActions(page, task.taskId, solution.previewActions);
       const oldMessage = page.locator('.trainer-footer__message:not(.draggable-notification__manikin) .notification__close').filter({ visible: true });
       if (await oldMessage.count() === 1) await oldMessage.click();

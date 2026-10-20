@@ -1,0 +1,23 @@
+{
+  "taskId": "a359e27e-bc8c-4cfa-847b-8f4d6b631c59",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "lessonId": "08e75656-c525-4158-8e14-f00d075b9c4d",
+  "files": [
+    {
+      "name": "lib.js",
+      "initialHash": "e28c1d10033e311903b700c1923d4920a306c974eaa90289589bcf7eea54faa5",
+      "content": "export function multiply(a, b) {\n  return a * b;\n}\n"
+    },
+    {
+      "name": "index.js",
+      "initialHash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "content": "import { multiply } from './lib.js';\n\nmultiply(7, 10);\n"
+    }
+  ],
+  "instructionsHash": "f7e224255bd0c879ddc8eca31faf3648b2922848f4afdfb278142b8d5a65ba39",
+  "verifiedAt": "2026-10-20T13:22:08.430Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Теперь файл index.js стал своего рода точкой входа для всех подключаемых модулей."
+  }
+}

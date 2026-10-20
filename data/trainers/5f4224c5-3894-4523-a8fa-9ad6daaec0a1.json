@@ -1,0 +1,18 @@
+{
+  "taskId": "5f4224c5-3894-4523-a8fa-9ad6daaec0a1",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "lessonId": "0d2c6a3b-e1e7-4717-9ad6-c9fbc091840a",
+  "files": [
+    {
+      "name": "lib.js",
+      "initialHash": "1de793b05650a15ca9fdbab8f27de4401616494c638e012ce374c8cb799b6a0f",
+      "content": "const alpha = 'άλφα';\nconst LAMBDA_SYMBOL = 'λ';\n\nlet currentSymbol;\n\nfor (let i = 0; i < alpha.length; i += 1) {\n  currentSymbol = alpha[i];\n\n  if (currentSymbol === LAMBDA_SYMBOL) {\n    console.log(`${alpha} содержит ${LAMBDA_SYMBOL}`);\n    break;\n  }\n}\n\n\nexport { alpha, LAMBDA_SYMBOL, currentSymbol };\n"
+    }
+  ],
+  "instructionsHash": "949037e369a11b44d7bf05f579b700685b80dfe06b959fc1167eb55874373906",
+  "verifiedAt": "2026-10-20T13:22:58.246Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Вы причесали код, стало опрятнее — красота!"
+  }
+}

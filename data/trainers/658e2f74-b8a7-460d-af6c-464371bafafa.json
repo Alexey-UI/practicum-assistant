@@ -1,0 +1,23 @@
+{
+  "taskId": "658e2f74-b8a7-460d-af6c-464371bafafa",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "lessonId": "0d2c6a3b-e1e7-4717-9ad6-c9fbc091840a",
+  "files": [
+    {
+      "name": "lib.js",
+      "initialHash": "bed71e649e2580b8ad22b2805bd3cc65db7c3e4f34a0719cb1a949e0e0176bc2",
+      "content": "export const alpha = 'άλφα';\nexport const LAMBDA_SYMBOL = 'λ';\n\nexport let currentSymbol;\n\nfor (let i = 0; i < alpha.length; i += 1) {\n  currentSymbol = alpha[i];\n\n  if (currentSymbol === LAMBDA_SYMBOL) {\n    console.log(`${alpha} содержит ${LAMBDA_SYMBOL}`);\n    break;\n  }\n}\n"
+    },
+    {
+      "name": "index.js",
+      "initialHash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "content": "import { alpha, LAMBDA_SYMBOL, currentSymbol } from './lib.js';\n\nconsole.log(currentSymbol);\n"
+    }
+  ],
+  "instructionsHash": "13192b789f94d494340ad4687582415e24a3d1dcfa79a14f90c40e1e7a3a9b9d",
+  "verifiedAt": "2026-10-20T13:22:45.106Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Отличный экспорт! Дайте три."
+  }
+}

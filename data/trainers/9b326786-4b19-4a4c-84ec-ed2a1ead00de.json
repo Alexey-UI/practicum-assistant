@@ -1,0 +1,23 @@
+{
+  "taskId": "9b326786-4b19-4a4c-84ec-ed2a1ead00de",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "lessonId": "0d2c6a3b-e1e7-4717-9ad6-c9fbc091840a",
+  "files": [
+    {
+      "name": "index.js",
+      "initialHash": "8fe4905097f87585bd09ca4b29fda3fe61a7b469b32b2191dd1b91cadfe0880c",
+      "content": "import { al, lambda, symbol } from './lib.js';\n\nconsole.log(symbol);\n"
+    },
+    {
+      "name": "lib.js",
+      "initialHash": "7002721424b7e27aa055ee2da811809c9be44e74a00971237d4632eb8ecb605d",
+      "content": "const alpha = 'άλφα';\nconst LAMBDA_SYMBOL = 'λ';\n\nlet currentSymbol;\n\nfor (let i = 0; i < alpha.length; i += 1) {\n  currentSymbol = alpha[i];\n\n  if (currentSymbol === LAMBDA_SYMBOL) {\n    console.log(`${alpha} содержит ${LAMBDA_SYMBOL}`);\n    break;\n  }\n}\n\n\nexport { alpha as al, LAMBDA_SYMBOL as lambda, currentSymbol as symbol };\n"
+    }
+  ],
+  "instructionsHash": "cb46e8f623a39fec8b9185d7b5c84312db09af1325f0697dbabd669267a1db5b",
+  "verifiedAt": "2026-10-20T13:23:27.252Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Всё верно. Хорошо, что директива as даёт нам возможность давать переменным клички."
+  }
+}

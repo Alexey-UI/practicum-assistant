@@ -1,0 +1,18 @@
+{
+  "taskId": "467004c2-3be3-4d7a-ab86-0120f84a4f4b",
+  "lessonId": "4b64d917-78fb-4ed3-83b7-87b26d246798",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "files": [
+    {
+      "name": "index.js",
+      "initialHash": "a317eb4ec5d504fc91979fc4696a8e501e2b2be9655186f1f7cb43514649a65a",
+      "content": "(function () {\n  const songsContainer = document.querySelector('.songs-container');\n  const addButton = document.querySelector('.input__btn_action_add');\n  const artistInput = document.querySelector('.input__text_type_artist');\n  const titleInput = document.querySelector('.input__text_type_title');\n\n  function addSong(artistValue, titleValue) {\n    const songTemplate = document.querySelector('#song-template').content;\n    const songElement = songTemplate.cloneNode(true);\n\n    songElement.querySelector('.song__artist').textContent = artistValue;\n    songElement.querySelector('.song__title').textContent = titleValue;\n\n    songsContainer.append(songElement);\n    artistInput.value = '';\n    titleInput.value = '';\n  }\n\n  function keyHandler(evt) {\n    if (evt.key === 'Enter') {\n      addSong(artistInput.value, titleInput.value);\n    }\n  }\n\n  addButton.addEventListener('click', function () {\n    addSong(artistInput.value, titleInput.value);\n  });\n\n  artistInput.addEventListener('keydown', keyHandler);\n  titleInput.addEventListener('keydown', keyHandler);\n\n  songsContainer.addEventListener('click', function (evt) {\n    if (evt.target.classList.contains('song__like')) {\n      evt.target.classList.toggle('song__like_active');\n    }\n  });\n\n})();\n"
+    }
+  ],
+  "instructionsHash": "12fe389cfcbd43f0dd2395e513140bcfa3f2d695463c43c09dc68202c8dbe296",
+  "verifiedAt": "2026-10-20T13:21:28.753Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Теперь в коде нет глобальных переменных, и внезапных коллизий не произойдёт."
+  }
+}

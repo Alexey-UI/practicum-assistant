@@ -630,5 +630,40 @@
     ],
     "evidence": "quiz_answered: actual selected option classes are accepted by the platform",
     "confirmedAt": "2026-10-20T10:05:22.259Z"
+  },
+  "4aa95653fb5610110c895d0e69e1140d51d247b2b3fdd7f396cda4b6cc102bfa": {
+    "answers": [
+      "Открыть инструмент разработчика и посмотреть в консоль, там точно найдётся ответ."
+    ],
+    "evidence": "quiz_answered: actual selected option classes are accepted by the platform",
+    "confirmedAt": "2026-10-20T13:18:58.911Z"
+  },
+  "e933fc5713b1e86b4bd36ad04dfd57c3ab37c6171db3ac33a8e414d2874b2655": {
+    "answers": [
+      "Тип ошибки, сообщение ошибки, путь до ошибки и строка, на которой ошибка."
+    ],
+    "evidence": "quiz_answered: actual selected option classes are accepted by the platform",
+    "confirmedAt": "2026-10-20T13:18:58.926Z"
+  },
+  "b35dd2392856684380b886929794f36de533659a507d153a4d70127f7df38167": {
+    "answers": [
+      "Reference Error."
+    ],
+    "evidence": "quiz_answered: actual selected option classes are accepted by the platform",
+    "confirmedAt": "2026-10-20T13:19:36.697Z"
+  },
+  "789b2c083a2292bef529711e0e8c5ba0d099e8ba4a60dfa6914b70d71b699aea": {
+    "answers": [
+      "Type Error."
+    ],
+    "evidence": "quiz_answered: actual selected option classes are accepted by the platform",
+    "confirmedAt": "2026-10-20T13:19:36.721Z"
+  },
+  "e41178fcb8ba24d831bedd11ec3ec9ad152dc35fcf74fa107c31b67a113f4190": {
+    "answers": [
+      "Syntax Error."
+    ],
+    "evidence": "quiz_answered: actual selected option classes are accepted by the platform",
+    "confirmedAt": "2026-10-20T13:19:36.737Z"
   }
 }

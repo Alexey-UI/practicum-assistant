@@ -1,0 +1,23 @@
+{
+  "taskId": "1beedd71-1904-45c2-a830-a505da3fe97a",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "lessonId": "0d2c6a3b-e1e7-4717-9ad6-c9fbc091840a",
+  "files": [
+    {
+      "name": "plus.js",
+      "initialHash": "36eb4a39b8c7fcb184aa8f2508db5a22e757a9a0646e4c48e5b79282f9b0533b",
+      "content": "export default function plus(x) {\n  return x + x;\n}\n"
+    },
+    {
+      "name": "index.js",
+      "initialHash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "content": "import plus from './plus.js';\n\nconsole.log(plus(2000));\n"
+    }
+  ],
+  "instructionsHash": "5e25ef7c8d8f201c5a5d876b0afc21f8ff6f60a782c7279514b31147ac7b439f",
+  "verifiedAt": "2026-10-20T13:22:31.616Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Вот она модульность: функциональность в одном файле, а обращение к нему — в другом."
+  }
+}

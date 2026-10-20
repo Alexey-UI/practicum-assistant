@@ -1,0 +1,24 @@
+{
+  "taskId": "986f436e-23b2-4cdd-b0d8-ddeaf3fbc3bd",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "lessonId": "0d2c6a3b-e1e7-4717-9ad6-c9fbc091840a",
+  "files": [
+    {
+      "name": "data.js",
+      "create": true,
+      "initialHash": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "content": "export const alpha = 'άλφα';\nexport const LAMBDA_SYMBOL = 'λ';\n"
+    },
+    {
+      "name": "lib.js",
+      "initialHash": "fff308b9d2a5fd67ae7ac92478c14bce4f5e1c73bd9b9d65d56267b58615b64e",
+      "content": "import { alpha, LAMBDA_SYMBOL } from './data.js';\n\nlet currentSymbol;\n\nfor (let i = 0; i < alpha.length; i += 1) {\n  currentSymbol = alpha[i];\n\n  if (currentSymbol === LAMBDA_SYMBOL) {\n    console.log(`${alpha} содержит ${LAMBDA_SYMBOL}`);\n    break;\n  }\n}\n\n\nexport { alpha as al, LAMBDA_SYMBOL as lambda, currentSymbol as symbol };\n"
+    }
+  ],
+  "instructionsHash": "6589a300a8c16ac00b94dbd5e8730b3ab2014dcf1b51473130bc9f34992b824a",
+  "verifiedAt": "2026-10-20T13:28:45.680Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Вы связали три файла. Теперь у вас в проекте буквально всё переплетено."
+  }
+}

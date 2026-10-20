@@ -1,0 +1,18 @@
+{
+  "taskId": "2dcd6263-297c-4399-821c-4644067a7aa0",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "lessonId": "08e75656-c525-4158-8e14-f00d075b9c4d",
+  "files": [
+    {
+      "name": "index.html",
+      "initialHash": "adc319be834264b17b22323ef7c690023765781307cd963684644ecc99332a82",
+      "content": "<!DOCTYPE html>\n<html lang=\"ru\">\n<head>\n  <meta charset=\"UTF-8\">\n  <title>Modules</title>\n</head>\n<body>\n  <script type=\"module\" src=\"index.js\"></script>\n</body>\n</html>\n"
+    }
+  ],
+  "instructionsHash": "916e956ad7c4859775728c7bf328f9d81c5955a9b75f96ad78349aff73eb208d",
+  "verifiedAt": "2026-10-20T13:21:59.241Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Всё правильно. Вы убедили браузер отнестись к модулям с пониманием."
+  }
+}
