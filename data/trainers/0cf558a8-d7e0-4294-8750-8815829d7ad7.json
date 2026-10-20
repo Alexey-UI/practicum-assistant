@@ -1,0 +1,18 @@
+{
+  "taskId": "0cf558a8-d7e0-4294-8750-8815829d7ad7",
+  "lessonId": "c4a9add9-eb27-48a4-961c-bbadcba8c403",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "files": [
+    {
+      "name": "style.css",
+      "initialHash": "8440a3b474735d27c7f9d389e2593dcda75eb7eb69c5e56fba82cf9a2a4f4ddc",
+      "content": "*,\n*::before,\n*::after {\n  box-sizing: border-box;\n}\n\nbody {\n  display: grid;\n  place-items: center;\n  min-block-size: 100dvb;\n  margin: 0;\n  padding: 2em;\n  font-family: 'Open Sans', sans-serif;\n  font-size: 18px;\n  background-color: #fff;\n  background-image: url(https://code.s3.yandex.net/web-code/images/dotted.svg);\n}\n\n@keyframes vibe {\n  from {\n    /* начальное состояние теней */\n  text-shadow: 0 0 0 #feafe8, 0 0 0 #ffc802, 0 0 0 #80d994, 0 0 0 #fd24af, 0 0 0 #6dc1fd, 0 0 0 tomato, 0 0 0 #5f0dee, 0 0 0 orchid;\n}\n\n  to {\n    /* конечное состояние теней */\n  text-shadow: 0px 4px 0 #feafe8, 0px 6px 0 #ffc802, -4px 0px 0 #80d994, -6px 0px 0 #fd24af, 0px -4px 0 #6dc1fd, 0px -6px 0 tomato, 4px 0px 0 #5f0dee, 6px 0px 0 orchid;\n}\n}\n\nspan {\n  display: grid;\n  place-items: center;\n  inline-size: fit-content;\n  border: 4px solid #ffc802;\n  border-radius: 50%;\n  padding: 40px;\n  font-family: sans-serif;\n  font-weight: bold;\n  font-size: 100px;\n  letter-spacing: 4px;\n  text-transform: uppercase;\n  background-color: #fff;\n  animation:\n    vibe 1s ease-in-out infinite alternate,\n    round 1s linear infinite;\n  aspect-ratio: 1 / 1;\n}"
+    }
+  ],
+  "instructionsHash": "854b1edccd085051dbd619cce6bbc14f4be37600eaf5a89d4464c9237ea79094",
+  "verifiedAt": "2026-10-20T11:06:22.808Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Вайбит так вайбит!"
+  }
+}

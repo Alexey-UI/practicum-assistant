@@ -1,0 +1,18 @@
+{
+  "taskId": "83546267-0d2d-4a7d-8ce8-5bbed6ea1fd1",
+  "lessonId": "c4a9add9-eb27-48a4-961c-bbadcba8c403",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "files": [
+    {
+      "name": "style.css",
+      "initialHash": "3d0cd2b1cd9183779fb1a44c7400638b41eadcdeea6a974d62257693038aafb0",
+      "content": "*,\n*::before,\n*::after {\n  box-sizing: border-box;\n}\n\nbody {\n  display: grid;\n  place-items: center;\n  min-block-size: 100dvb;\n  margin: 0;\n  padding: 2em;\n  font-family: 'Open Sans', sans-serif;\n  font-size: 18px;\n  background-color: #fff;\n  background-image: url(https://code.s3.yandex.net/web-code/images/dotted.svg);\n}\n\n@keyframes vibe {\n  from {\n    text-shadow:\n      0 0 0 #feafe8,\n      0 0 0 #ffc802,\n      0 0 0 #80d994,\n      0 0 0 #fd24af,\n      0 0 0 #6dc1fd,\n      0 0 0 tomato,\n      0 0 0 #5f0dee,\n      0 0 0 orchid;\n  }\n\n  to {\n    text-shadow:\n      0 4px 0 #feafe8,\n      0 6px 0 #ffc802,\n      -4px 0 0 #80d994,\n      -6px 0 0 #fd24af,\n      0 -4px 0 #6dc1fd,\n      0 -6px 0 tomato,\n      4px 0 0 #5f0dee,\n      6px 0 0 orchid;\n  }\n}\n\n@keyframes round {\n  0% {\n    box-shadow: -8px -8px 0 #fd24af;\n  }\n\n  25% {\n    box-shadow: 8px -8px 0 #5f0dee;\n  }\n\n  50% {\n    box-shadow: 8px 8px 0 #80d994;\n  }\n\n  75% {\n    box-shadow: -8px 8px 0 #5f0dee;\n  }\n\n  100% {\n    box-shadow: -8px -8px 0 #fd24af;\n  }\n}\n\nspan {\n  display: grid;\n  place-items: center;\n  inline-size: fit-content;\n  border: 4px solid #ffc802;\n  border-radius: 50%;\n  padding: 40px;\n  font-family: sans-serif;\n  font-weight: bold;\n  font-size: 100px;\n  letter-spacing: 4px;\n  text-transform: uppercase;\n  background-color: #fff;\n  animation:\n    vibe 1s ease-in-out infinite alternate,\n    round 1s linear infinite;\n  aspect-ratio: 1 / 1;\n}\n@media (prefers-reduced-motion: reduce) {\n  span {\n    animation: none;\n  }\n}\n"
+    }
+  ],
+  "instructionsHash": "07e3a67e80206c910a747e9c757660423f0d07e4f51e29532e200e00095b2c42",
+  "verifiedAt": "2026-10-20T11:07:20.341Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Теперь не только эффектно, но и заботливо!"
+  }
+}

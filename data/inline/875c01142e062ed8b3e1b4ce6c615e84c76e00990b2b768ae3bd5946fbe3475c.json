@@ -1,0 +1,18 @@
+{
+  "id": "875c01142e062ed8b3e1b4ce6c615e84c76e00990b2b768ae3bd5946fbe3475c",
+  "lessonId": "c4a9add9-eb27-48a4-961c-bbadcba8c403",
+  "url": "https://sandbox.practicum-team.ru/tasks/04-beautishcha/05-decoration/04-texts-shadows/example-02/pre/",
+  "instructionsHash": "2235610f4e2c666ce472594e251ed0d6afba631757272852f67afde07803ba0f",
+  "files": [
+    {
+      "name": "styles/style.css",
+      "initialHash": "c88f30e111bdc050ce141dac13d446d50d11ab6d728dd7377ba20ef2f2ae9d20",
+      "content": "html {\n  block-size: 100%;\n}\n\nbody {\n  position: relative;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  margin: 0;\n  font-family: 'Open Sans', sans-serif;\n  block-size: 100%;\n}\n\n.image {\n  border-radius: 50%;\n  inline-size: 195px;\n  block-size: 190px;\n  box-shadow: 0 0 3px 4px #1919ff, 0 0 0 8px #6fc1fd, 0 0 0 12px #dfe9f5, 0 0 0 16px #6fc1fd, 0 0 3px 20px #1919ff;\n}\n"
+    }
+  ],
+  "verifiedAt": "2026-10-20T11:04:51.609Z",
+  "evidence": {
+    "selector": ".result .icon-status-success",
+    "message": "Всё отлично!"
+  }
+}

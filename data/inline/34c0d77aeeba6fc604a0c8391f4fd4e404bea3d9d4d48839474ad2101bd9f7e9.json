@@ -1,0 +1,18 @@
+{
+  "id": "34c0d77aeeba6fc604a0c8391f4fd4e404bea3d9d4d48839474ad2101bd9f7e9",
+  "lessonId": "d00ded1d-c2b3-4dea-abd2-8019b28cf69c",
+  "url": "https://sandbox.practicum-team.ru/tasks/04-beautishcha/05-decoration/02-border-image/example-03/pre/",
+  "instructionsHash": "2d33dcfebb1604ddef66ec5984e07bb6f5b145c108394343cb34ab68b705b45c",
+  "files": [
+    {
+      "name": "styles/style.css",
+      "initialHash": "cda6cbb7c52cc4c4ab5090370d5ef7f5a21b2118ac89f50c880a3084f2891118",
+      "content": "html {\n  block-size: 100%;\n}\n\nbody {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  margin: 0;\n  font-family: 'Open Sans', sans-serif;\n  font-weight: 800;\n  font-size: 24px;\n  text-align: center;\n  text-transform: uppercase;\n  block-size: 100%;\n}\n\n.element {\n  margin: 3em;\n  border: 80px solid transparent;\n  padding: 20px 50px;\n  inline-size: fit-content;\n  max-inline-size: 850px;\n  border-image-source: url(https://code.s3.yandex.net/web-developer/verstka/mondr-base.png);\n  border-image-slice: 20% 10% 20% 30% fill;\n  border-image-width: 30px 20%;\n}\n"
+    }
+  ],
+  "verifiedAt": "2026-10-20T11:03:34.559Z",
+  "evidence": {
+    "selector": ".result .icon-status-success",
+    "message": "Всё отлично!"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "id": "50e8a54eec60433febdb2e2bdebfa94e7adcc34d629cd1f2b19c850419b85cf3",
+  "lessonId": "41dcc3d7-bb70-4ee5-95a4-b32ca0a81d3b",
+  "url": "https://sandbox.practicum-team.ru/tasks/04-beautishcha/05-decoration/03-shadows/example-04/pre/",
+  "instructionsHash": "a0eb81ddd1fc3c8e75011e02f847631e5778a7fc7b3dc54b4b3c50a52b1987b7",
+  "files": [
+    {
+      "name": "styles/style.css",
+      "initialHash": "bc939ca8e1b69653afb32b6d148eeee825bc0a718463bf6b5e6c407b1eb2501d",
+      "content": "html {\n  block-size: 100%;\n}\n\nbody {\n  position: relative;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  margin: 0;\n  block-size: 100%;\n}\n\nbody::after {\n  content: '';\n  position: absolute;\n  inset: 60% 0 0;\n  z-index: -1;\n  border-block-start: 1px solid;\n  background-color: #80d994;\n}\n\n.tv {\n  position: relative;\n  inline-size: 450px;\n}\n\n/* цвет экрана */\n\n.tv::before {\n  content: '';\n  position: absolute;\n  inset: 150px 0 20px;\n  z-index: 0;\n  background-color: #000;\n}\n\nsvg {\n  position: relative;\n  z-index: 1;\n}\n\n.tv-button {\n  position: absolute;\n  z-index: 2;\n  border: 1px solid #000;\n  border-radius: 50%;\n  box-shadow: 5px 5px 0 0 rgb(0 0 0 / 0.25);\n  background-color: #ffc802;\n  cursor: pointer;\n  inset-inline-end: 32px;\n  inset-block-end: 56px;\n  inline-size: 50px;\n  block-size: 50px;\n}\n\n.visually-hidden {\n  position: absolute;\n  overflow: hidden;\n  clip: rect(0 0 0 0);\n  inline-size: 1px;\n  block-size: 1px;\n  clip-path: inset(50%);\n  white-space: nowrap;\n}\n\n.tv-button:hover,\n.tv-button:focus {\n  outline: none;\n  box-shadow: 0 0 0 2px rgba(70 42 68 / 1), 0 0 0 8px rgba(255 230 160 / 1);\n}\n"
+    }
+  ],
+  "verifiedAt": "2026-10-20T11:04:38.921Z",
+  "evidence": {
+    "selector": ".result .icon-status-success",
+    "message": "Всё отлично!"
+  }
+}

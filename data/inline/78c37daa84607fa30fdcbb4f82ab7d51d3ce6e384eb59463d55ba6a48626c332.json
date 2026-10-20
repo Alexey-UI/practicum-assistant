@@ -1,0 +1,18 @@
+{
+  "id": "78c37daa84607fa30fdcbb4f82ab7d51d3ce6e384eb59463d55ba6a48626c332",
+  "lessonId": "c4a9add9-eb27-48a4-961c-bbadcba8c403",
+  "url": "https://sandbox.practicum-team.ru/tasks/04-beautishcha/05-decoration/04-texts-shadows/example-03/pre/",
+  "instructionsHash": "2d5c5e3cb102d6178f9d6b6bb0a96783f975d075c17d6d9f1d9e560733f7b616",
+  "files": [
+    {
+      "name": "styles/style.css",
+      "initialHash": "1cdcf8260d771dbe20c16550984af63516431bef3bceeb4a0f844fad8fc5d416",
+      "content": "html {\n  block-size: 100%;\n}\n\nbody {\n  position: relative;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  margin: 0;\n  block-size: 100%;\n}\n\nbody::after {\n  content: '';\n  position: absolute;\n  inset: 60% 0 0;\n  z-index: -1;\n  border-block-start: 1px solid;\n  background-color: #80d994;\n}\n\n.tv {\n  position: relative;\n  inline-size: 450px;\n}\n\n/* цвет экрана */\n\n.tv::before {\n  content: '';\n  position: absolute;\n  inset: 150px 0 20px;\n  z-index: 0;\n  background-color: #000;\n}\n\n.tv:has(.tv-button:active)::before {\n  background-color: #fff;\n}\n\nsvg {\n  position: relative;\n  z-index: 1;\n}\n\n.tv-button {\n  position: absolute;\n  z-index: 2;\n  border: 1px solid #000;\n  border-radius: 50%;\n  background-color: #ffc802;\n  cursor: pointer;\n  inset-inline-end: 32px;\n  inset-block-end: 56px;\n  inline-size: 50px;\n  block-size: 50px;\n\n  /* пишите код здесь */\n  box-shadow: inset 5px 5px 0 0 rgb(255 255 255 / 0.75), 5px 5px 0 0 rgb(0 0 0 / 0.25);\n}\n\n.tv-button:active {\n  box-shadow: inset 5px 5px 0 0 rgb(0 0 0 / 0.25);\n}\n\n.visually-hidden {\n  position: absolute;\n  overflow: hidden;\n  clip: rect(0 0 0 0);\n  inline-size: 1px;\n  block-size: 1px;\n  clip-path: inset(50%);\n  white-space: nowrap;\n}\n"
+    }
+  ],
+  "verifiedAt": "2026-10-20T11:04:55.960Z",
+  "evidence": {
+    "selector": ".result .icon-status-success",
+    "message": "Всё отлично!"
+  }
+}

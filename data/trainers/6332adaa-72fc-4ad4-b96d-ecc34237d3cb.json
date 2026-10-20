@@ -1,0 +1,18 @@
+{
+  "taskId": "6332adaa-72fc-4ad4-b96d-ecc34237d3cb",
+  "lessonId": "c4a9add9-eb27-48a4-961c-bbadcba8c403",
+  "contextHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "files": [
+    {
+      "name": "style.css",
+      "initialHash": "533c3e74e1ed53305cf5f091c98926017e0b8ac63a3a79d3faa05dd6502a7251",
+      "content": "*,\n*::before,\n*::after {\n  box-sizing: border-box;\n}\n\nbody {\n  display: grid;\n  place-items: center;\n  min-block-size: 100dvb;\n  margin: 0;\n  padding: 2em;\n  font-family: 'Open Sans', sans-serif;\n  font-size: 18px;\n  background-color: #fff;\n  background-image: url(https://code.s3.yandex.net/web-code/images/dotted.svg);\n}\n\n@keyframes vibe {\n  from {\n    text-shadow:\n      0 0 0 #feafe8,\n      0 0 0 #ffc802,\n      0 0 0 #80d994,\n      0 0 0 #fd24af,\n      0 0 0 #6dc1fd,\n      0 0 0 tomato,\n      0 0 0 #5f0dee,\n      0 0 0 orchid;\n  }\n\n  to {\n    text-shadow:\n      0 4px 0 #feafe8,\n      0 6px 0 #ffc802,\n      -4px 0 0 #80d994,\n      -6px 0 0 #fd24af,\n      0 -4px 0 #6dc1fd,\n      0 -6px 0 tomato,\n      4px 0 0 #5f0dee,\n      6px 0 0 orchid;\n  }\n}\n\n@keyframes round {\n  0% {\n    /* Тень левого верхнего угла блока */\n  box-shadow: -8px -8px 0 #fd24af;\n}\n\n  25% {\n    /* Тень правого верхнего угла блока */\n  box-shadow: 8px -8px 0 #5f0dee;\n}\n\n  50% {\n    /* Тень правого нижнего угла блока */\n  box-shadow: 8px 8px 0 #80d994;\n}\n\n  75% {\n    /* Тень левого нижнего угла блока */\n  box-shadow: -8px 8px 0 #5f0dee;\n}\n\n  100% {\n    /* Такая же тень, как в начале */\n  box-shadow: -8px -8px 0 #fd24af;\n}\n}\n\nspan {\n  display: grid;\n  place-items: center;\n  inline-size: fit-content;\n  border: 4px solid #ffc802;\n  border-radius: 50%;\n  padding: 40px;\n  font-family: sans-serif;\n  font-weight: bold;\n  font-size: 100px;\n  letter-spacing: 4px;\n  text-transform: uppercase;\n  background-color: #fff;\n  animation:\n    vibe 1s ease-in-out infinite alternate,\n    round 1s linear infinite;\n  aspect-ratio: 1 / 1;\n}"
+    }
+  ],
+  "instructionsHash": "5bd3ff4ed6f12e013d368e73b6377a755d445a58a8543d53326723968f978c80",
+  "verifiedAt": "2026-10-20T11:06:53.564Z",
+  "evidence": {
+    "selector": ".trainer-footer__message.notification_type_success",
+    "message": "Современно! Молодёжно! Прогрессивно!"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "id": "fbb9db526458b92efcab29b236caa55b507c1c213819d8d3ca93303251901f1f",
+  "lessonId": "c4a9add9-eb27-48a4-961c-bbadcba8c403",
+  "url": "https://sandbox.practicum-team.ru/tasks/04-beautishcha/05-decoration/04-texts-shadows/example-06/pre/",
+  "instructionsHash": "50929262db8ec0244d188251f1739cb8af12d5ef2b6e7ea70c895a5baff51b03",
+  "files": [
+    {
+      "name": "styles/style.css",
+      "initialHash": "b723524530435dff1576a652cbd2b9306b460a435b20de3fd535d28f4e46600a",
+      "content": "html {\n  block-size: 100%;\n}\n\nbody {\n  position: relative;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  margin: 0;\n  font-family: 'Open Sans', sans-serif;\n  background-color: #000;\n  block-size: 100%;\n}\n\np {\n  color: #fff;\n  font-size: 48px;\n  text-shadow:\n    0 0 5px #ffdd1b, 0 0 10px #ffdd1b, 0 0 15px #ffdd1b,\n    0 0 30px #ffd700, 0 0 60px #ffd700, 0 0 90px #ffd700, 0 0 120px #ffd700;\n  cursor: pointer;\n}\n\np:hover {\n  animation: blink 0.5s infinite alternate;\n}\n\n@keyframes blink {\n  0%,\n  18%,\n  22%,\n  25%,\n  53%,\n  57%,\n  100% {\n    text-shadow: 0 0 5px #ffdd1b, 0 0 10px #ffdd1b, 0 0 15px #ffdd1b,\n    0 0 30px #ffd700, 0 0 60px #ffd700, 0 0 90px #ffd700, 0 0 120px #ffd700;\n  }\n\n  20%,\n  24%,\n  55% {\n    text-shadow: none;\n  }\n}\n"
+    }
+  ],
+  "verifiedAt": "2026-10-20T11:05:47.979Z",
+  "evidence": {
+    "selector": ".result .icon-status-success",
+    "message": "Всё отлично!"
+  }
+}

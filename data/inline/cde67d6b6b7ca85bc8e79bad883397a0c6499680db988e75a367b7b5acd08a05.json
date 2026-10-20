@@ -1,0 +1,18 @@
+{
+  "id": "cde67d6b6b7ca85bc8e79bad883397a0c6499680db988e75a367b7b5acd08a05",
+  "lessonId": "2e693968-dd06-4411-9d12-196f67360d29",
+  "url": "https://sandbox.practicum-team.ru/tasks/04-beautishcha/05-decoration/05-filters/example-08/pre/",
+  "instructionsHash": "812a8ed35b52b21222f67770cf8f6503e70a7c15c58abb1cabc33858639e8c62",
+  "files": [
+    {
+      "name": "styles/style.css",
+      "initialHash": "4b182cd337cf27417c7151a86c7d333c61b66f743e2d779fbc363c32399e689a",
+      "content": "html {\n  block-size: 100%;\n}\n\nbody {\n  position: relative;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  margin: 0;\n  block-size: 100%;\n}\n\nbody::after {\n  content: '';\n  position: absolute;\n  inset: 60% 0 0;\n  z-index: -1;\n  border-block-start: 1px solid;\n  background-color: #80d994;\n}\n\n.tv {\n  position: relative;\n  overflow: hidden;\n  inline-size: 650px;\n}\n\n/* цвет экрана */\n\n.tv::before {\n  content: '';\n  position: absolute;\n  inset: 150px 0 20px;\n  z-index: 0;\n  overflow: hidden;\n  background-color: #fff;\n  inline-size: 100%;\n  block-size: 450px;\n}\n\nvideo {\n  position: absolute;\n  z-index: 0;\n  object-fit: cover;\n  inset-block-start: 40%;\n  inset-inline-start: 0;\n  inline-size: 90%;\n\n  /* напишите фильтр здесь */\n  filter: sepia(80%);\n}\n\nsvg {\n  position: relative;\n  z-index: 1;\n}\n\n.tv-button {\n  position: absolute;\n  z-index: 2;\n  border: 1px solid #000;\n  border-radius: 50%;\n  box-shadow:\n    inset 5px 5px 0 0 rgb(255 255 255 / 0.75),\n    5px 5px 0 0 rgb(0 0 0 / 0.25);\n  background-color: #ffc802;\n  cursor: pointer;\n  inset-inline-end: 32px;\n  inset-block-end: 56px;\n  inline-size: 50px;\n  block-size: 50px;\n}\n\n.tv-button:active {\n  box-shadow: inset 5px 5px 0 0 rgb(0 0 0 / 0.25);\n}\n\n.visually-hidden {\n  position: absolute;\n  overflow: hidden;\n  clip: rect(0 0 0 0);\n  inline-size: 1px;\n  block-size: 1px;\n  clip-path: inset(50%);\n  white-space: nowrap;\n}\n"
+    }
+  ],
+  "verifiedAt": "2026-10-20T11:07:55.653Z",
+  "evidence": {
+    "selector": ".result .icon-status-success",
+    "message": "Всё отлично!"
+  }
+}

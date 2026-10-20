@@ -1,0 +1,18 @@
+{
+  "id": "b1d4339256c86e18d9eb44ce0548f1d375def143702943b0ef3d808da3745305",
+  "lessonId": "c4a9add9-eb27-48a4-961c-bbadcba8c403",
+  "url": "https://sandbox.practicum-team.ru/tasks/04-beautishcha/05-decoration/04-texts-shadows/example-04/pre/",
+  "instructionsHash": "2cc55e5a17092c527c0545108c3d1d4a19213f2a3a66f701b02e374c023e53ac",
+  "files": [
+    {
+      "name": "styles/style.css",
+      "initialHash": "e18450a08a1905fb475be38b30295d357759ca0a26b4e2c3f79be165c999c5f9",
+      "content": "@import url(https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Pacifico&family=Press+Start+2P&display=swap);\n\nhtml,\nbody {\n  block-size: 100%;\n}\n\nbody {\n  position: relative;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  margin: 0;\n  font-family: 'Press Start 2P', sans-serif;\n  background-color: #000;\n  block-size: 100%;\n}\n\np {\n  color: #fff;\n  font-size: 48px;\n  cursor: pointer;\n  text-shadow: 0 0 5px #ffdd1b, 0 0 15px #ffdd1b, 0 0 30px #ffdd1b;\n}\n\np:hover {\n  animation: blink 0.5s infinite alternate;\n}\n\n@keyframes blink {\n  0%,\n  18%,\n  22%,\n  25%,\n  53%,\n  57%,\n  100% {\n  }\n\n  20%,\n  24%,\n  55% {\n  }\n}\n"
+    }
+  ],
+  "verifiedAt": "2026-10-20T11:05:00.238Z",
+  "evidence": {
+    "selector": ".result .icon-status-success",
+    "message": "Всё отлично!"
+  }
+}

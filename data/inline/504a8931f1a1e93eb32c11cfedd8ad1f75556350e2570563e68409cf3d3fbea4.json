@@ -1,0 +1,18 @@
+{
+  "id": "504a8931f1a1e93eb32c11cfedd8ad1f75556350e2570563e68409cf3d3fbea4",
+  "lessonId": "2e693968-dd06-4411-9d12-196f67360d29",
+  "url": "https://sandbox.practicum-team.ru/tasks/04-beautishcha/05-decoration/05-filters/example-01/pre/",
+  "instructionsHash": "3a2728dbb6e3371ae6f2de819c88069451ea32062640f9c2dbf50d2b0856765a",
+  "files": [
+    {
+      "name": "styles/style.css",
+      "initialHash": "36a317f215e17970124da29428f356d289c5ca87ac4eded5ca71a5eb9389d7c9",
+      "content": "* {\n  box-sizing: border-box;\n}\n\nhtml {\n  block-size: 100%;\n}\n\nbody {\n  position: relative;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  margin: 0;\n  padding: 50px;\n  font-family: 'Open Sans', sans-serif;\n  block-size: 100%;\n}\n\n.light {\n  position: absolute;\n  z-index: 1;\n  display: block;\n  font-size: 3rem;\n  transform: rotate(180deg) translate(50%);\n  cursor: pointer;\n  inset-block-start: 50px;\n  inset-inline-start: 50%;\n  max-inline-size: 50px;\n  max-block-size: 50px;\n}\n\nh1 {\n  position: relative;\n  margin: 50px 0 0;\n  font-weight: 800;\n  font-size: 46px;\n  line-height: 1;\n  text-align: center;\n  text-transform: uppercase;\n  inset-block-start: -15%;\n}\n\n.image {\n  position: absolute;\n  z-index: -1;\n  object-fit: cover;\n  object-position: bottom;\n  filter: brightness(0.06);\n  transition: 1s ease;\n  inset-block-end: 0;\n  inset-inline-start: 0;\n  inline-size: 100%;\n  block-size: 100%;\n}\n\n.bright {\n  /* задайте фильтр здесь */\n  filter: brightness(100%);\n}\n"
+    }
+  ],
+  "verifiedAt": "2026-10-20T11:07:36.130Z",
+  "evidence": {
+    "selector": ".result .icon-status-success",
+    "message": "Всё отлично!"
+  }
+}
