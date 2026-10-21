@@ -15,7 +15,8 @@ import type { Config } from './config.js';
 import { atomicJson, journal, lockRun, readJson } from './store.js';
 import { UnexpectedBrowserClosure, withBrowserRecovery } from './recovery.js';
 import { setTimeout as delay } from 'node:timers/promises';
-import { courseInScope } from './course-scope.js';
+import { courseInScope, throughCourse, untilCourseArgument } from './course-scope.js';
+import { courseBoundary } from './course-boundary.js';
 import { RunReport, type UnresolvedLesson } from './run-report.js';
 
 function pause(message: string): void { console.log(message); process.exitCode = 2; }
@@ -123,6 +124,8 @@ export async function run(browserFactory: typeof openBrowser = openBrowser): Pro
 }
 
 async function runAttempt(browserFactory: typeof openBrowser): Promise<void> {
+  const args = process.argv.slice(3);
+  const untilCourse = untilCourseArgument(args);
   const cfg = await loadConfig();
   const unlock = await lockRun();
   let context: BrowserContext | undefined;
@@ -131,6 +134,8 @@ async function runAttempt(browserFactory: typeof openBrowser): Promise<void> {
   let stopping = false;
   let report: RunReport | undefined;
   let reportOutcome: 'completed' | 'stopped' | 'failed' = 'stopped';
+  let boundary: { blockedUrl?: string } | undefined;
+  let currentLesson: Lesson | undefined;
   const stop = () => { stopping = true; void context?.close().catch(() => {}); };
   process.once('SIGINT', stop);
   process.once('SIGTERM', stop);
@@ -140,7 +145,6 @@ async function runAttempt(browserFactory: typeof openBrowser): Promise<void> {
     const page = context.pages()[0] ?? await context.newPage();
     activePage = page;
     page.on('crash', () => { crashed = true; });
-    const args = process.argv.slice(3);
     const urlFlag = args.indexOf('--url');
     const courseFlag = args.indexOf('--course');
     const course = courseFlag >= 0 ? args[courseFlag + 1] : undefined;
@@ -159,14 +163,18 @@ async function runAttempt(browserFactory: typeof openBrowser): Promise<void> {
       if (!index?.complete) throw new Error('Для --use-catalog сначала нужен завершённый сбор каталога');
       lessons = await readJson<Lesson[]>('.local/catalog.json', []);
       if (course) lessons = lessons.filter(lesson => lesson.course.includes(course));
-      if (onlyProjects) lessons = lessons.filter(lesson => lesson.project);
       if (!lessons.length) throw new Error('В сохранённом каталоге нет подходящих уроков');
     } else {
       lessons = await catalog(page, course, '.local/catalog.json', args.includes('--resume-catalog'));
-      if (onlyProjects) lessons = lessons.filter(lesson => lesson.project);
+    }
+    lessons = lessons.filter(lesson => courseInScope(lesson.course, cfg.includeAdditionalModules));
+    lessons = throughCourse(lessons, untilCourse);
+    if (untilCourse) {
+      console.log(`Обход до модуля включительно: ${lessons.at(-1)!.course}`);
+      boundary = await courseBoundary(page, lessons.map(lesson => lesson.url));
     }
     if (args.includes('--catalog-only')) { console.log('Каталог сохранён в .local/catalog.json'); return; }
-    lessons = lessons.filter(lesson => courseInScope(lesson.course, cfg.includeAdditionalModules));
+    if (onlyProjects) lessons = lessons.filter(lesson => lesson.project);
     if (!lessons.length) throw new Error('Выбранные модули исключены из объёма работы настройками курса');
     report = new RunReport(lessons);
     await report.save('running');
@@ -182,6 +190,7 @@ async function runAttempt(browserFactory: typeof openBrowser): Promise<void> {
     const verified = await readJson<Record<string, string>>('.local/completed.json', {});
     const unavailable = args.includes('--skip-unavailable') ? await readJson<Record<string, unknown>>('.local/unavailable-lessons.json', {}) : {};
     lessonLoop: for (const lesson of lessons) {
+      currentLesson = lesson;
       if (unavailable[canonicalLesson(lesson.url)]) {
         console.log(`Временно недоступный урок отложен: ${lesson.title}`);
         await report.record(lesson, 'unavailable', { reason: 'Повторная загрузка отключена флагом --skip-unavailable' }); continue;
@@ -338,6 +347,19 @@ async function runAttempt(browserFactory: typeof openBrowser): Promise<void> {
         const nextControl = page.locator('[data-test-id="next-lesson-control-button"]').filter({ visible: true });
         const next = await nextControl.count() === 1 && await nextControl.isEnabled() ? nextControl : await exactButton(page, cfg.nextButtons);
         if (next) {
+          // Complete the final selected lesson without opening the next module.
+          if (untilCourse && lesson === lessons.at(-1) && cfg.nextButtons.includes((await next.innerText()).replace(/\s+/g, ' ').trim())) {
+            if (await checkCompletion(page, lesson.url)) {
+              verified[canonicalLesson(lesson.url)] = new Date().toISOString();
+              await atomicJson('.local/completed.json', verified);
+              await saveObservedSolved(new Set([canonicalLesson(lesson.url)]));
+              await journal('lesson-completed', { url: canonicalLesson(lesson.url), courseLimit: true });
+              await report.record(lesson, 'verified');
+              completed = true; break;
+            }
+            if (await pendingLesson(lesson, 'Граница модулей достигнута, но галочка последнего урока не подтверждена', 'course-limit')) continue lessonLoop;
+            return;
+          }
           const previous = page.url();
           await next.click();
           await page.waitForURL(url => url.href !== previous, { waitUntil: 'commit', timeout: 180000 });
@@ -393,6 +415,11 @@ async function runAttempt(browserFactory: typeof openBrowser): Promise<void> {
     console.log('Обход выбранных уроков завершён. Пропуски и неподтверждённые результаты: .local/run-report.md. Это не означает полную приёмку курса.');
   } catch (error) {
     if (stopping) { console.log('Проходчик остановлен; состояние сохранено.'); return; }
+    if (boundary?.blockedUrl) {
+      if (currentLesson && report) await report.defer(currentLesson, 'Переход за границу выбранных модулей остановлен; завершение текущего урока требует подтверждения', '', boundary.blockedUrl);
+      console.log(`Переход в следующий модуль остановлен до загрузки: ${boundary.blockedUrl}. Отчёт: .local/run-report.md`);
+      return;
+    }
     if (context && (crashed || activePage?.isClosed() || context.browser()?.isConnected() === false)) {
       throw new UnexpectedBrowserClosure(activePage ? safeUrl(activePage.url()) : undefined, error);
     }

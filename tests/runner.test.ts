@@ -8,6 +8,64 @@ import { run } from '../src/runner.js';
 import { atomicJson, readJson } from '../src/store.js';
 import { readInline } from '../src/inline.js';
 
+test('Ошибки сочетания --until-course выявляются до открытия браузера', async () => {
+  const argv = process.argv;
+  try {
+    process.argv = ['node', 'cli.ts', 'run', '--until-course'];
+    await assert.rejects(run(async () => { throw new Error('Браузер не должен открыться'); }), /нужно название/);
+  } finally { process.argv = argv; }
+});
+
+for (const transition of ['normal', 'document', 'spa']) test(`Ограничение модулем: ${transition}`, { timeout: 60000 }, async () => {
+  const guardedRedirect = transition !== 'normal';
+  const dir = await mkdtemp(path.join(tmpdir(), 'practicum-until-course-'));
+  const original = process.cwd(); const argv = process.argv; const exitCode = process.exitCode;
+  const browser = await chromium.launch({ channel: 'chrome', headless: true });
+  const lesson = 'https://practicum.yandex.ru/learn/test/lessons/aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa/';
+  const next = 'https://practicum.yandex.ru/learn/test/lessons/bbbbbbbb-bbbb-bbbb-bbbbbbbbbbbb/';
+  const sandbox = 'https://sandbox.practicum-team.ru/tasks/test-course-boundary/pre/';
+  const requests: string[] = [];
+  try {
+    process.chdir(dir); process.argv = ['node', 'cli.ts', 'run', '--use-catalog', '--until-course', 'Семантика'];
+    const context = await browser.newContext();
+    await context.route('**/*', route => {
+      const url = route.request().url(); requests.push(url);
+      if (url === sandbox) return route.fulfill({ contentType: 'text/html; charset=utf-8', body: `<div class="tabs"><div class="tab" style="z-index:1">index.html</div></div>
+        <div class="CodeMirror"><textarea>initial</textarea></div><button>Проверить</button><script>
+        const input=document.querySelector('textarea');document.querySelector('.CodeMirror').CodeMirror={getValue:()=>input.value};
+        document.querySelector('button').onclick=()=>{if(input.value!=='fixed')throw new Error('Wrong code');document.body.insertAdjacentHTML('beforeend','<div class="result"><svg class="icon-status-success"></svg><md-content>Принято</md-content></div>')};</script>` });
+      if (url === lesson) return route.fulfill({ contentType: 'text/html; charset=utf-8', body: `<h1>Последний урок модуля</h1><a class="sidebar__lesson sidebar__lesson_status_solved" href="${new URL(lesson).pathname}">Прочитано</a>
+        <main class="theory-viewer"><p>Исправьте пример.</p><div class="iframe-wrapper"><iframe src="${sandbox}" style="width:700px;height:300px"></iframe></div></main>
+        <button data-test-id="next-lesson-control-button" onclick="${transition === 'spa' ? `history.pushState(null,'','${next}')` : `location.href='${next}'`}">${guardedRedirect ? 'Открыть задание' : 'К следующему уроку'}</button>` });
+      return route.fulfill({ contentType: 'text/html; charset=utf-8', body: '<h1>Следующий модуль не должен загружаться</h1>' });
+    });
+    const page = await context.newPage(); await page.goto(lesson);
+    const task = await readInline(page, 0);
+    await atomicJson(`data/inline/${task.id}.json`, { id: task.id, lessonId: task.lessonId, url: task.url, instructionsHash: task.instructionsHash,
+      files: [{ name: 'index.html', initialHash: task.files[0].hash, content: 'fixed' }], verifiedAt: new Date().toISOString(), evidence: { selector: '.result .icon-status-success', message: 'Проверенный эталон' } });
+    await atomicJson('.local/catalog-index.json', { complete: true });
+    const rows = [
+      { url: 'https://practicum.yandex.ru/learn/test/lessons/cccccccc-cccc-cccc-cccc-cccccccccccc/', title: 'Ранее пройденный', course: 'Введение', topic: '', solved: true, project: false },
+      { url: lesson, title: 'Последний урок', course: 'Вёрстка. Семантика', topic: '', solved: false, project: false },
+      { url: next, title: 'Следующий модуль', course: 'JavaScript', topic: '', solved: false, project: false },
+    ];
+    await atomicJson('.local/catalog.json', rows);
+    requests.length = 0;
+    await run(async () => context);
+    assert.equal(requests.includes(next), false, 'За пределы выбранных модулей не уходит даже запрос документа');
+    assert.equal((await readJson<any>(`.local/inline/${task.id}.json`, null)).phase, 'correct', 'Последнее упражнение выполняется до остановки');
+    const report = await readJson<any>('.local/run-report.json', null);
+    assert.equal(report.lessons.length, 2);
+    assert.equal(report.lessons[1].disposition, guardedRedirect ? 'deferred' : 'verified');
+    assert.equal(report.outcome, guardedRedirect ? 'stopped' : 'completed');
+    assert.equal((await readJson<any[]>('.local/catalog.json', []))[2].solved, false);
+    assert.equal(process.exitCode, exitCode);
+  } finally {
+    await browser.close(); process.chdir(original); process.argv = argv; process.exitCode = exitCode;
+    await rm(dir, { recursive: true, force: true });
+  }
+});
+
 test('Галочка после открытия новой теории не пропускает её упражнение; прежние пройденные уроки сохраняются', { timeout: 60000 }, async () => {
   const dir = await mkdtemp(path.join(tmpdir(), 'practicum-runner-'));
   const original = process.cwd(); const argv = process.argv; const exitCode = process.exitCode;

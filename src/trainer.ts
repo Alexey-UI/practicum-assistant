@@ -3,6 +3,7 @@ import { createHash } from 'node:crypto';
 import { atomicJson, journal, readJson, normalize } from './store.js';
 import { safeUrl, lessonId, settle, isTrainerTaskUrl, trainerTextTabs } from './browser.js';
 import type { PreviewAction } from './preview-actions.js';
+import { isCourseLimited } from './course-boundary.js';
 
 export interface EditorFile { path: string; language: string; content: string; hash: string }
 interface MonacoModel { uri: { path: string }; getLanguageId(): string; getValue(): string }
@@ -290,6 +291,7 @@ export async function solveTrainer(page: Page, candidate = false): Promise<'adva
 export async function advanceTrainer(page: Page, instructions: string, ownerLesson: string, transitionTimeoutMs = 60000): Promise<'advanced' | 'finished'> {
   const next = page.locator('[data-test-id="next-task-button"]');
   await next.waitFor({ state: 'visible', timeout: 30000 });
+  if (isCourseLimited(page) && /^(?:Следующий урок|К следующему уроку)$/u.test(normalize(await next.innerText()))) return 'finished';
   const before = page.url();
   await next.click();
   await page.waitForURL(url => url.href !== before, { waitUntil: 'commit', timeout: 180000 });

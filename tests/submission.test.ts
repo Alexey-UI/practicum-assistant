@@ -9,6 +9,7 @@ import { hasProjectAcceptance, PROJECT_ACCEPTED_MESSAGE, type Submission } from 
 import { atomicJson, readJson } from '../src/store.js';
 import { status } from '../src/status.js';
 import type { Project } from '../src/projects.js';
+import { courseBoundary } from '../src/course-boundary.js';
 
 let browser: Browser;
 before(async () => { browser = await chromium.launch({ channel: 'chrome', headless: true }); });
@@ -43,6 +44,27 @@ test('Видимая приёмка во вкладке ревью разреш�
     assert.equal(hasProjectAcceptance(saved, project.lessonUrl), true);
     assert.equal(await submitProject(page, project, commands), true);
     assert.equal(await page.locator('body').getAttribute('data-review-opens'), '1');
+  } finally { process.chdir(original); await page.close(); await rm(dir, { recursive: true, force: true }); }
+});
+test('При границе модулей принятый проект проверяет галочку без кнопки Вперёд в следующий модуль', async () => {
+  const page = await browser.newPage(); const original = process.cwd(); const dir = await mkdtemp(path.join(tmpdir(), 'practicum-project-course-limit-'));
+  let reads = 0;
+  try {
+    process.chdir(dir);
+    await page.route('https://practicum.yandex.ru/**', route => {
+      reads++;
+      return route.fulfill({ contentType: 'text/html; charset=utf-8', body: `<div role="tablist"><button role="tab">Ревью</button></div>
+        <div role="tabpanel" aria-label="Ревью"><p>Github настроен</p><p>${PROJECT_ACCEPTED_MESSAGE}</p></div>
+        ${reads > 1 ? `<a class="sidebar__lesson sidebar__lesson_status_solved" href="${new URL(project.lessonUrl).pathname}">Пройдено</a>` : ''}
+        <button onclick="history.pushState(null,'','/learn/test/lessons/bbbbbbbb-bbbb-bbbb-bbbb-bbbbbbbbbbbb/')">Вперёд</button>` });
+    });
+    await page.goto(project.lessonUrl);
+    await courseBoundary(page, [project.lessonUrl]);
+    await atomicJson(file, { phase: 'requested', commit: '2'.repeat(40), lessonUrl: project.lessonUrl });
+    assert.equal(await submitProject(page, project, async () => { throw new Error('No new publication'); }), true);
+    assert.equal(page.url(), project.lessonUrl);
+    assert.equal(reads, 2);
+    assert.equal(hasProjectAcceptance(await readJson(file, null), project.lessonUrl), true);
   } finally { process.chdir(original); await page.close(); await rm(dir, { recursive: true, force: true }); }
 });
 test('Отчёт считает только подтверждённую приёмку проекта, отдельно от галочки и прежней квитанции complete', async () => {

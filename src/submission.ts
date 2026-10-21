@@ -8,6 +8,7 @@ import { atomicJson, journal, readJson } from './store.js';
 import { scrollLesson } from './scroll.js';
 import { closingReferenceVerified, knownClosingCheckerFailure, type PublishedProject } from './ci.js';
 import { hasProjectAcceptance, PROJECT_ACCEPTED_MESSAGE, type Submission } from './project-acceptance.js';
+import { isCourseLimited } from './course-boundary.js';
 
 const exec = promisify(execFile);
 
@@ -133,7 +134,7 @@ export async function submitProject(page: Page, project: Project, commands: type
         return true;
       }
       const forward = page.getByRole('button', { name: 'Вперёд', exact: true });
-      if (await forward.isVisible() && await forward.isEnabled()) {
+      if (!isCourseLimited(page) && await forward.isVisible() && await forward.isEnabled()) {
         const before = page.url();
         await forward.click();
         await page.waitForURL(url => url.href !== before, { waitUntil: 'commit', timeout: 180000 });

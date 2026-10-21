@@ -1,4 +1,5 @@
 import { test, before, after } from 'node:test';
+import { courseBoundary } from '../src/course-boundary.js';
 import assert from 'node:assert/strict';
 import { chromium, type Browser } from 'playwright';
 import { readLessons, observedSolved, saveObservedSolved } from '../src/catalog.js';
@@ -357,6 +358,19 @@ test('Урок проматывается во внутреннем контей
     }
   } finally { await page.close(); }
 });
+test('При границе модулей тренажёр завершает обработку без нажатия перехода к следующему уроку', async () => {
+  const page = await browser.newPage();
+  const url = 'https://practicum.yandex.ru/trainer/test/lesson/aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa/task/example/';
+  try {
+    await page.route('**/*', route => route.fulfill({ contentType: 'text/html; charset=utf-8', body: '<button data-test-id="next-task-button" onclick="document.body.dataset.clicked=\'true\'">Следующий урок</button>' }));
+    await page.goto(url);
+    await courseBoundary(page, [url]);
+    assert.equal(await advanceTrainer(page, 'Готово', 'aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa'), 'finished');
+    assert.equal(page.url(), url);
+    assert.equal(await page.locator('body').getAttribute('data-clicked'), null);
+  } finally { await page.close(); }
+});
+
 test('Тренажёр оценивается по статусу проверки, даже если текст успеха описывает проблему', async () => {
   const page = await browser.newPage();
   try {

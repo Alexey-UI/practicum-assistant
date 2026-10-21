@@ -3,10 +3,39 @@ import assert from 'node:assert/strict';
 import { mkdtemp, rm, readFile } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import path from 'node:path';
-import { courseInScope } from '../src/course-scope.js';
+import { courseInScope, throughCourse, untilCourseArgument } from '../src/course-scope.js';
 import { status } from '../src/status.js';
 import { loadConfig } from '../src/config.js';
 import { atomicJson, readJson } from '../src/store.js';
+
+test('Граница модуля включительна, учитывает порядок каталога и однозначность названия', () => {
+  const rows = ['Введение', 'Вёрстка. Семантика', 'Вёрстка. Семантика', 'Вёрстка. Адаптивность', 'JavaScript'].map((course, index) => ({ course, index }));
+  const before = JSON.stringify(rows);
+  assert.deepEqual(throughCourse(rows, '  СЕМАНТИКА  '), rows.slice(0, 3));
+  assert.deepEqual(throughCourse(rows, 'Введение'), rows.slice(0, 1));
+  assert.deepEqual(throughCourse(rows, 'JavaScript'), rows);
+  assert.equal(throughCourse(rows), rows);
+  assert.throws(() => throughCourse(rows, 'Вёрстка'), /Неоднозначный/);
+  assert.throws(() => throughCourse(rows, 'Нет такого модуля'), /не найден/);
+  assert.throws(() => throughCourse(rows, ' '), /название/);
+  assert.equal(JSON.stringify(rows), before, 'Граница не обрезает сохранённый каталог');
+  const exact = [{ course: 'JavaScript' }, { course: 'Продолжение JavaScript' }];
+  assert.deepEqual(throughCourse(exact, 'JavaScript'), exact.slice(0, 1));
+});
+
+test('Параметр конечного модуля требует значение и исключает конфликтующие фильтры', () => {
+  assert.equal(untilCourseArgument(['--until-course', 'Адаптивность']), 'Адаптивность');
+  assert.equal(untilCourseArgument(['--until-course=Адаптивность']), 'Адаптивность');
+  assert.equal(untilCourseArgument([]), undefined);
+  for (const args of [
+    ['--until-course'], ['--until-course='], ['--until-course', '--research'], ['--until-course', ' '],
+    ['--until-course', 'Введение', '--until-course', 'JavaScript'],
+    ['--course', 'Введение', '--until-course', 'JavaScript'],
+    ['--url', 'https://practicum.yandex.ru/', '--until-course', 'JavaScript'],
+    ['--course=Введение', '--until-course=JavaScript'],
+    ['--until-course=Введение', '--until-course', 'JavaScript'],
+  ]) assert.throws(() => untilCourseArgument(args), /until-course/);
+});
 
 test('Исключение дополнительных модулей меняет объём отчёта, сохраняя их прогресс и решения', async () => {
   const original = process.cwd(); const log = console.log;

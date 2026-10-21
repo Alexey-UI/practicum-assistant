@@ -4,7 +4,9 @@ import { createInterface } from 'node:readline/promises';
 const command = process.argv[2] ?? 'help';
 async function main(): Promise<void> {
   if (command === 'help') {
-    console.log('Команды: setup, login, inspect, explore, run, projects, status, answers'); return;
+    console.log('Команды: setup, login, inspect, explore, run, projects, status, answers');
+    console.log('Пройти до модуля включительно: npm start -- --until-course "Адаптивность"');
+    return;
   }
   if (command === 'setup') { const { setup } = await import('./setup.js'); await setup(); return; }
   if (command === 'login' || command === 'inspect') {
